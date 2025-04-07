@@ -7,7 +7,7 @@ import { Icon } from '../../utils/icons';
 import { useTranslate } from '../../context/LanguageContext';
 
 const WhyChooseUsSection: React.FC = () => {
-  const { t } = useTranslate();
+  const { t, language } = useTranslate();
   type IconType = typeof FaLightbulb;
 
   interface Reason {
@@ -59,31 +59,23 @@ const WhyChooseUsSection: React.FC = () => {
     <section id="why-choose-us" className="section bg-nextpixel-dark text-white py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-24 max-w-4xl mx-auto">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl md:text-4xl font-bold mb-4"
-          >
-            {t('whyChooseUs.title').includes('nas') ? (
-              <>
-                {t('whyChooseUs.title').split('nas')[0]}
-                <span className="text-nextpixel-turquoise">nas</span>
-                {t('whyChooseUs.title').split('nas')[1]}
-              </>
-            ) : t('whyChooseUs.title').includes('uns') ? (
-              <>
-                {t('whyChooseUs.title').split('uns')[0]}
-                <span className="text-nextpixel-turquoise">uns</span>
-                {t('whyChooseUs.title').split('uns')[1]}
-              </>
-            ) : (
-              <>
-                {t('whyChooseUs.title').split(' ').slice(0, -1).join(' ')} <span className="text-nextpixel-turquoise">{t('whyChooseUs.title').split(' ').slice(-1)}</span>
-              </>
-            )}
-          </motion.h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+        {language === 'sr' && typeof t('whyChooseUs.title') === 'string' && (t('whyChooseUs.title') as string).includes('Zašto') ? (
+          <>
+            {(t('whyChooseUs.title') as string).split('Zašto')[0]}
+            <span className="text-nextpixel-blue">Zašto</span>
+            {(t('whyChooseUs.title') as string).split('Zašto')[1]}
+          </>
+        ) : language === 'de' && typeof t('whyChooseUs.title') === 'string' && (t('whyChooseUs.title') as string).includes('uns') ? (
+          <>
+            {(t('whyChooseUs.title') as string).split('uns')[0]}
+            <span className="text-nextpixel-turquoise">uns</span>
+            {(t('whyChooseUs.title') as string).split('uns')[1]}
+          </>
+        ) : (
+          t('whyChooseUs.title')
+        )}
+      </h2>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -91,15 +83,9 @@ const WhyChooseUsSection: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="w-20 h-1 bg-nextpixel-turquoise mx-auto mb-6"
           ></motion.div>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-lg text-gray-300 max-w-3xl mx-auto"
-          >
-            {t('whyChooseUs.subtitle')}
-          </motion.p>
+          <p className="text-lg text-nextpixel-gray max-w-3xl mx-auto mb-16">
+        {typeof t('whyChooseUs.subtitle') === 'string' ? t('whyChooseUs.subtitle') as string : ''}
+      </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-12">
@@ -115,8 +101,8 @@ const WhyChooseUsSection: React.FC = () => {
               <div className="text-nextpixel-turquoise mb-4">
                 <Icon icon={reason.icon} size={36} aria-hidden={true} />
               </div>
-              <h3 className="text-xl font-bold mb-2">{t(reason.titleKey)}</h3>
-              <p className="text-gray-300">{t(reason.descriptionKey)}</p>
+              <h3 className="text-xl font-bold mb-3">{typeof t(reason.titleKey) === 'string' ? t(reason.titleKey) as string : ''}</h3>
+              <p className="text-nextpixel-gray">{typeof t(reason.descriptionKey) === 'string' ? t(reason.descriptionKey) as string : ''}</p>
             </motion.div>
           ))}
         </div>

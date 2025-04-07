@@ -1,11 +1,17 @@
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslate } from '../../context/LanguageContext';
 
 const HeroSection: React.FC = () => {
-  const { t } = useTranslate();
+  const { t, language } = useTranslate();
+  const [mounted, setMounted] = useState(false);
+
+  // Ovo rešava problem hidratacije tako što se inicijalni render poklapa sa serverskim
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   return (
     <section id="home" className="relative min-h-screen flex items-center bg-gradient-to-br from-nextpixel-dark to-nextpixel-blue overflow-hidden">
       {/* Background Elements */}
@@ -22,25 +28,33 @@ const HeroSection: React.FC = () => {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              {t('hero.title').split('moderno').length > 1 ? (
-                <>
-                  {t('hero.title').split('moderno')[0]}
-                  <span className="text-nextpixel-turquoise">moderno</span>
-                  {t('hero.title').split('moderno')[1]}
-                </>
-              ) : (
-                t('hero.title')
+              {!mounted ? 'Digital solutions for your success' : (
+                typeof t('hero.title') === 'string' && (t('hero.title') as string).includes('moderno') ? (
+                  <>
+                    {(t('hero.title') as string).split('moderno')[0]}
+                    <span className="text-nextpixel-turquoise">moderno</span>
+                    {(t('hero.title') as string).split('moderno')[1]}
+                  </>
+                ) : (
+                  t('hero.title')
+                )
               )}
             </h1>
             <p className="text-lg text-gray-300 mb-8">
-              {t('hero.subtitle')}
+              {!mounted ? 'We create modern web solutions for your business' : (
+                typeof t('hero.subtitle') === 'string' ? t('hero.subtitle') as string : ''
+              )}
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <a href="#services" className="btn-primary text-center">
-                {t('hero.services')}
+                {!mounted ? 'Our Services' : (
+                  typeof t('hero.services') === 'string' ? t('hero.services') as string : 'Our Services'
+                )}
               </a>
               <a href="#contact" className="btn-secondary text-center">
-                {t('hero.contact')}
+                {!mounted ? 'Contact Us' : (
+                  typeof t('hero.contact') === 'string' ? t('hero.contact') as string : 'Contact Us'
+                )}
               </a>
             </div>
           </motion.div>
@@ -102,7 +116,11 @@ const HeroSection: React.FC = () => {
           }}
           className="text-white flex flex-col items-center"
         >
-          <span className="mb-2">{t('hero.learnMore')}</span>
+          <span className="mb-2">
+            {!mounted ? 'Learn More' : (
+              typeof t('hero.learnMore') === 'string' ? t('hero.learnMore') as string : 'Learn More'
+            )}
+          </span>
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
             className="h-6 w-6" 

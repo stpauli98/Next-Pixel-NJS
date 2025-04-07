@@ -7,7 +7,7 @@ import { Icon } from '../../utils/icons';
 import { useTranslate } from '../../context/LanguageContext';
 
 const ContactSection: React.FC = () => {
-  const { t } = useTranslate();
+  const { t, language } = useTranslate();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -95,25 +95,23 @@ const ContactSection: React.FC = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl md:text-4xl font-bold mb-4"
-          >
-            {t('contact.title').includes('nas') ? (
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            {typeof t('contact.title') === 'string' && (t('contact.title') as string).includes('Kontakt') ? (
               <>
-                {t('contact.title').split('nas')[0]}
-                <span className="text-nextpixel-blue">nas</span>
-                {t('contact.title').split('nas')[1]}
+                {(t('contact.title') as string).split('Kontakt')[0]}
+                <span className="text-nextpixel-turquoise">Kontakt</span>
+                {(t('contact.title') as string).split('Kontakt')[1]}
+              </>
+            ) : typeof t('contact.title') === 'string' && (t('contact.title') as string).includes('Contact') ? (
+              <>
+                {(t('contact.title') as string).split('Contact')[0]}
+                <span className="text-nextpixel-turquoise">Contact</span>
+                {(t('contact.title') as string).split('Contact')[1]}
               </>
             ) : (
-              <>
-                {t('contact.title').split(' ').slice(0, -1).join(' ')} <span className="text-nextpixel-blue">{t('contact.title').split(' ').slice(-1)}</span>
-              </>
+              t('contact.title')
             )}
-          </motion.h2>
+          </h2>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -121,14 +119,14 @@ const ContactSection: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="w-20 h-1 bg-nextpixel-turquoise mx-auto mb-6"
           ></motion.div>
-          <motion.p
+              <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-lg text-nextpixel-gray max-w-3xl mx-auto"
           >
-            {t('contact.subtitle')}
+            {typeof t('contact.subtitle') === 'string' ? t('contact.subtitle') as string : ''}
           </motion.p>
         </div>
 
@@ -143,24 +141,28 @@ const ContactSection: React.FC = () => {
             className="lg:col-span-2"
           >
             <div className="bg-white rounded-lg shadow-lg p-6 md:p-8">
-              <h3 className="text-2xl font-bold mb-6 text-center">{t('contact.sendMessage')}</h3>
+              <h3 className="text-2xl font-bold mb-6 text-center">
+                {typeof t('contact.sendMessage') === 'string' ? t('contact.sendMessage') as string : 'Send us a message'}
+              </h3>
               
               {submitError && (
                 <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6">
-                  {submitError}
+                  {typeof submitError === 'string' ? submitError : 'An error occurred'}
                 </div>
               )}
               
               {submitSuccess && (
                 <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6">
-                  {t('contact.successMessage')}
+                  {typeof t('contact.successMessage') === 'string' ? t('contact.successMessage') as string : 'Your message has been sent successfully!'}
                 </div>
               )}
               
               <form onSubmit={handleSubmit} className="w-full">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
                   <div className="w-full">
-                    <label htmlFor="name" className="block text-nextpixel-gray mb-2 font-medium">{t('contact.name')} *</label>
+                    <label htmlFor="name" className="block text-nextpixel-gray mb-2 font-medium">
+                      {typeof t('contact.name') === 'string' ? t('contact.name') as string : 'Name'} *
+                    </label>
                     <input
                       type="text"
                       id="name"
@@ -169,11 +171,13 @@ const ContactSection: React.FC = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nextpixel-blue transition-all duration-200"
-                      placeholder={t('contact.namePlaceholder')}
+                      placeholder={typeof t('contact.namePlaceholder') === 'string' ? t('contact.namePlaceholder') as string : 'Your name'}
                     />
                   </div>
                   <div className="w-full">
-                    <label htmlFor="email" className="block text-nextpixel-gray mb-2 font-medium">{t('contact.email')} *</label>
+                    <label htmlFor="email" className="block text-nextpixel-gray mb-2 font-medium">
+                      {typeof t('contact.email') === 'string' ? t('contact.email') as string : 'Email'} *
+                    </label>
                     <input
                       type="email"
                       id="email"
@@ -182,13 +186,15 @@ const ContactSection: React.FC = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nextpixel-blue transition-all duration-200"
-                      placeholder={t('contact.emailPlaceholder')}
+                      placeholder={typeof t('contact.emailPlaceholder') === 'string' ? t('contact.emailPlaceholder') as string : 'Your email'}
                     />
                   </div>
                 </div>
                 
                 <div className="mb-6">
-                  <label htmlFor="phone" className="block text-nextpixel-gray mb-2 font-medium">{t('contact.phone')}</label>
+                  <label htmlFor="phone" className="block text-nextpixel-gray mb-2 font-medium">
+                    {typeof t('contact.phone') === 'string' ? t('contact.phone') as string : 'Phone'}
+                  </label>
                   <input
                     type="tel"
                     id="phone"
@@ -196,12 +202,14 @@ const ContactSection: React.FC = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nextpixel-blue transition-all duration-200"
-                    placeholder={t('contact.phonePlaceholder')}
+                    placeholder={typeof t('contact.phonePlaceholder') === 'string' ? t('contact.phonePlaceholder') as string : 'Your phone number'}
                   />
                 </div>
                 
                 <div className="mb-6">
-                  <label htmlFor="subject" className="block text-nextpixel-gray mb-2 font-medium">{t('contact.subject')} *</label>
+                  <label htmlFor="subject" className="block text-nextpixel-gray mb-2 font-medium">
+                    {typeof t('contact.subject') === 'string' ? t('contact.subject') as string : 'Subject'} *
+                  </label>
                   <input
                     type="text"
                     id="subject"
@@ -210,12 +218,14 @@ const ContactSection: React.FC = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nextpixel-blue transition-all duration-200"
-                    placeholder={t('contact.subjectPlaceholder')}
+                    placeholder={typeof t('contact.subjectPlaceholder') === 'string' ? t('contact.subjectPlaceholder') as string : 'Subject of your message'}
                   />
                 </div>
                 
                 <div className="mb-6">
-                  <label htmlFor="message" className="block text-nextpixel-gray mb-2 font-medium">{t('contact.message')} *</label>
+                  <label htmlFor="message" className="block text-nextpixel-gray mb-2 font-medium">
+                    {typeof t('contact.message') === 'string' ? t('contact.message') as string : 'Message'} *
+                  </label>
                   <textarea
                     id="message"
                     name="message"
@@ -224,12 +234,12 @@ const ContactSection: React.FC = () => {
                     required
                     rows={6}
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nextpixel-blue transition-all duration-200"
-                    placeholder={t('contact.messagePlaceholder')}
+                    placeholder={typeof t('contact.messagePlaceholder') === 'string' ? t('contact.messagePlaceholder') as string : 'Your message'}
                   ></textarea>
                 </div>
                 
                 <div className="flex justify-center">
-                  <button
+                    <button
                     type="submit"
                     disabled={isSubmitting}
                     className="px-6 py-3 bg-nextpixel-blue text-white font-medium rounded-md hover:bg-nextpixel-blue/90 transition-colors flex items-center justify-center disabled:opacity-70 w-full md:w-auto"
@@ -240,10 +250,10 @@ const ContactSection: React.FC = () => {
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                         </svg>
-                        {t('contact.sending')}
+                        {typeof t('contact.sending') === 'string' ? t('contact.sending') as string : 'Sending...'}
                       </>
                     ) : (
-                      t('contact.send')
+                      typeof t('contact.send') === 'string' ? t('contact.send') as string : 'Send Message'
                     )}
                   </button>
                 </div>
@@ -259,7 +269,9 @@ const ContactSection: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="bg-white rounded-lg shadow-lg p-6 md:p-8 h-full flex flex-col">
-              <h3 className="text-2xl font-bold mb-6 text-center">{t('contact.info.title')}</h3>
+              <h3 className="text-xl font-bold mb-6">
+                {typeof t('contact.contactInfo') === 'string' ? t('contact.contactInfo') as string : 'Contact Information'}
+              </h3>
               
               <div className="space-y-6 flex-grow">
                 {contactInfo.map((item, index) => (
@@ -294,7 +306,9 @@ const ContactSection: React.FC = () => {
               </div>
               
               <div className="mt-8 text-center">
-                <h4 className="font-bold mb-4 text-gray-800">{t('contact.followUs')}</h4>
+                <h4 className="font-bold mb-4 text-gray-800">
+                  {typeof t('contact.followUs') === 'string' ? t('contact.followUs') as string : 'Follow Us'}
+                </h4>
                 <div className="flex space-x-5 justify-center">
                   <a href="https://facebook.com" className="text-nextpixel-gray hover:text-nextpixel-blue transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">

@@ -14,70 +14,84 @@ interface Project {
 
 const PortfolioSection: React.FC = () => {
   const { t } = useTranslate();
-  const projects: Project[] = [
+  const projects = [
     {
       id: 1,
-      title: t('portfolio.projects.project1.title'),
-      category: t('portfolio.category.webShop'),
+      title: typeof t('portfolio.projects.project1.title') === 'string' ? t('portfolio.projects.project1.title') as string : 'Project 1',
+      description: typeof t('portfolio.projects.project1.description') === 'string' ? t('portfolio.projects.project1.description') as string : '',
+      category: typeof t('portfolio.category.webShop') === 'string' ? t('portfolio.category.webShop') as string : 'Web Shop',
       image: '/images/e-commerc.png',
-      description: t('portfolio.projects.project1.description')
     },
     {
       id: 2,
-      title: t('portfolio.projects.project2.title'),
-      category: t('portfolio.category.webDesign'),
+      title: typeof t('portfolio.projects.project2.title') === 'string' ? t('portfolio.projects.project2.title') as string : 'Project 2',
+      description: typeof t('portfolio.projects.project2.description') === 'string' ? t('portfolio.projects.project2.description') as string : '',
+      category: typeof t('portfolio.category.webDesign') === 'string' ? t('portfolio.category.webDesign') as string : 'Web Design',
       image: '/images/corporate-website.png',
-      description: t('portfolio.projects.project2.description')
     },
     {
       id: 3,
-      title: t('portfolio.projects.project3.title'),
-      category: t('portfolio.category.software'),
+      title: typeof t('portfolio.projects.project3.title') === 'string' ? t('portfolio.projects.project3.title') as string : 'Project 3',
+      description: typeof t('portfolio.projects.project3.description') === 'string' ? t('portfolio.projects.project3.description') as string : '',
+      category: typeof t('portfolio.category.software') === 'string' ? t('portfolio.category.software') as string : 'Software',
       image: '/images/pm-app.png',
-      description: t('portfolio.projects.project3.description')
     },
     {
       id: 4,
-      title: t('portfolio.projects.project4.title'),
-      category: t('portfolio.category.seo'),
+      title: typeof t('portfolio.projects.project4.title') === 'string' ? t('portfolio.projects.project4.title') as string : 'Project 4',
+      description: typeof t('portfolio.projects.project4.description') === 'string' ? t('portfolio.projects.project4.description') as string : '',
+      category: typeof t('portfolio.category.seo') === 'string' ? t('portfolio.category.seo') as string : 'SEO',
       image: '/images/seo-optim.png',
-      description: t('portfolio.projects.project4.description')
     },
     {
       id: 5,
-      title: t('portfolio.projects.project5.title'),
-      category: t('portfolio.category.software'),
+      title: typeof t('portfolio.projects.project5.title') === 'string' ? t('portfolio.projects.project5.title') as string : 'Project 5',
+      description: typeof t('portfolio.projects.project5.description') === 'string' ? t('portfolio.projects.project5.description') as string : '',
+      category: typeof t('portfolio.category.software') === 'string' ? t('portfolio.category.software') as string : 'Software',
       image: '/images/mobile-app.png',
-      description: t('portfolio.projects.project5.description')
     },
     {
       id: 6,
-      title: t('portfolio.projects.project6.title'),
-      category: t('portfolio.category.webDesign'),
+      title: typeof t('portfolio.projects.project6.title') === 'string' ? t('portfolio.projects.project6.title') as string : 'Project 6',
+      description: typeof t('portfolio.projects.project6.description') === 'string' ? t('portfolio.projects.project6.description') as string : '',
+      category: typeof t('portfolio.category.webDesign') === 'string' ? t('portfolio.category.webDesign') as string : 'Web Design',
       image: '/images/redesign.png',
-      description: t('portfolio.projects.project6.description')
-    }
+    },
   ];
 
   const categories = [
-    t('portfolio.category.all'), 
-    t('portfolio.category.webDesign'), 
-    t('portfolio.category.webShop'), 
-    t('portfolio.category.seo'), 
-    t('portfolio.category.software')
+    { id: 'all', name: typeof t('portfolio.category.all') === 'string' ? t('portfolio.category.all') as string : 'All' },
+    { id: 'webDesign', name: typeof t('portfolio.category.webDesign') === 'string' ? t('portfolio.category.webDesign') as string : 'Web Design' },
+    { id: 'webShop', name: typeof t('portfolio.category.webShop') === 'string' ? t('portfolio.category.webShop') as string : 'Web Shop' },
+    { id: 'seo', name: typeof t('portfolio.category.seo') === 'string' ? t('portfolio.category.seo') as string : 'SEO' },
+    { id: 'software', name: typeof t('portfolio.category.software') === 'string' ? t('portfolio.category.software') as string : 'Software' },
   ];
-  
-  // Koristimo useEffect da ažuriramo activeCategory kada se promeni jezik
-  const [activeCategory, setActiveCategory] = useState(t('portfolio.category.all'));
-  
-  // Ažuriramo activeCategory kad god se promeni prevod za 'all'
-  React.useEffect(() => {
-    setActiveCategory(t('portfolio.category.all'));
-  }, [t]);
 
-  const filteredProjects = activeCategory === t('portfolio.category.all') 
-    ? projects 
+  const [activeCategory, setActiveCategory] = useState(categories[0].name);
+
+  const filteredProjects = activeCategory === categories[0].name
+    ? projects
     : projects.filter(project => project.category === activeCategory);
+
+  const formatTitle = (title: string) => {
+    if (title.includes('radovi')) {
+      const parts = title.split('radovi');
+      return (
+        <>
+          {parts[0]}<span className="text-nextpixel-blue">radovi</span>{parts[1]}
+        </>
+      );
+    } else if (title.includes('Arbeiten')) {
+      const parts = title.split('Arbeiten');
+      return (
+        <>
+          {parts[0]}<span className="text-nextpixel-blue">Arbeiten</span>{parts[1]}
+        </>
+      );
+    } else {
+      return title;
+    }
+  };
 
   return (
     <section id="portfolio" className="section bg-white py-32">
@@ -90,23 +104,7 @@ const PortfolioSection: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="text-3xl md:text-4xl font-bold mb-4"
           >
-            {t('portfolio.title').includes('radovi') ? (
-              <>
-                {t('portfolio.title').split('radovi')[0]}
-                <span className="text-nextpixel-blue">radovi</span>
-                {t('portfolio.title').split('radovi')[1]}
-              </>
-            ) : t('portfolio.title').includes('Arbeiten') ? (
-              <>
-                {t('portfolio.title').split('Arbeiten')[0]}
-                <span className="text-nextpixel-blue">Arbeiten</span>
-                {t('portfolio.title').split('Arbeiten')[1]}
-              </>
-            ) : (
-              <>
-                {t('portfolio.title').split(' ')[0]} <span className="text-nextpixel-blue">{t('portfolio.title').split(' ').slice(1).join(' ')}</span>
-              </>
-            )}
+            {formatTitle(typeof t('portfolio.title') === 'string' ? t('portfolio.title') as string : 'Portfolio')}
           </motion.h2>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -122,7 +120,7 @@ const PortfolioSection: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-lg text-nextpixel-gray max-w-3xl mx-auto"
           >
-            {t('portfolio.subtitle')}
+            {typeof t('portfolio.subtitle') === 'string' ? t('portfolio.subtitle') as string : 'Subtitle'}
           </motion.p>
         </div>
 
@@ -136,14 +134,14 @@ const PortfolioSection: React.FC = () => {
           {categories.map((category, index) => (
             <button
               key={index}
-              onClick={() => setActiveCategory(category)}
+              onClick={() => setActiveCategory(category.name)}
               className={`px-6 py-3 rounded-full transition-all text-sm font-medium ${
-                activeCategory === category
+                activeCategory === category.name
                   ? 'bg-nextpixel-blue text-white shadow-md'
                   : 'bg-gray-100 text-nextpixel-gray hover:bg-gray-200 hover:shadow-sm'
               }`}
             >
-              {category.charAt(0).toUpperCase() + category.slice(1)}
+              {category.name.charAt(0).toUpperCase() + category.name.slice(1)}
             </button>
           ))}
         </motion.div>
@@ -172,14 +170,16 @@ const PortfolioSection: React.FC = () => {
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-nextpixel-dark to-transparent opacity-0 group-hover:opacity-95 transition-opacity duration-300 flex flex-col justify-end p-6 z-10">
-                <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
-                <p className="text-gray-300 text-sm leading-relaxed">{project.description}</p>
+                <h3 className="text-xl font-bold mb-2">
+                  {formatTitle(project.title)}
+                </h3>
+                <p className="text-gray-300 text-sm leading-relaxed">{typeof project.description === 'string' ? project.description : ''}</p>
                 <div className="flex justify-between items-center mt-4">
                   <span className="inline-block text-nextpixel-turquoise text-sm font-medium">
                     {project.category.charAt(0).toUpperCase() + project.category.slice(1)}
                   </span>
                   <span className="inline-block text-white text-sm font-medium hover:text-nextpixel-turquoise transition-colors">
-                    {t('portfolio.viewProject')} →
+                    {typeof t('portfolio.viewProject') === 'string' ? t('portfolio.viewProject') as string : 'View Project'} →
                   </span>
                 </div>
               </div>
@@ -198,7 +198,7 @@ const PortfolioSection: React.FC = () => {
             href="#contact" 
             className="btn-primary inline-block px-8 py-4 text-white bg-nextpixel-blue hover:bg-blue-700 rounded-full font-medium transition-colors duration-300 shadow-md hover:shadow-lg"
           >
-            {t('portfolio.startProject')}
+            {typeof t('portfolio.startProject') === 'string' ? t('portfolio.startProject') as string : 'Start Your Project'}
           </a>
         </motion.div>
       </div>

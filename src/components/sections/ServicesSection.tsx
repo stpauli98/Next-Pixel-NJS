@@ -2,12 +2,13 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaDesktop, FaShoppingCart, FaSearch, FaServer, FaCode, FaMobileAlt } from 'react-icons/fa';
+import { FaDesktop, FaShoppingCart, FaSearch, FaServer, FaCode, FaMobileAlt, FaLaptopCode } from 'react-icons/fa';
+import { FaMobileScreen, FaMagnifyingGlass, FaPalette } from 'react-icons/fa6';
 import { Icon } from '../../utils/icons';
 import { useTranslate } from '../../context/LanguageContext';
 
 const ServicesSection: React.FC = () => {
-  const { t } = useTranslate();
+  const { t, language } = useTranslate();
   type IconType = typeof FaDesktop;
 
 interface Service {
@@ -18,34 +19,34 @@ interface Service {
 
 const services: Service[] = [
     {
-      icon: FaDesktop,
-      title: t('services.webDesign.title'),
-      description: t('services.webDesign.description')
+      icon: FaLaptopCode,
+      title: typeof t('services.webDevelopment.title') === 'string' ? t('services.webDevelopment.title') as string : 'Web Development',
+      description: typeof t('services.webDevelopment.description') === 'string' ? t('services.webDevelopment.description') as string : ''
+    },
+    {
+      icon: FaMobileScreen,
+      title: typeof t('services.mobileDevelopment.title') === 'string' ? t('services.mobileDevelopment.title') as string : 'Mobile Development',
+      description: typeof t('services.mobileDevelopment.description') === 'string' ? t('services.mobileDevelopment.description') as string : ''
     },
     {
       icon: FaShoppingCart,
-      title: t('services.ecommerce.title'),
-      description: t('services.ecommerce.description')
+      title: typeof t('services.ecommerce.title') === 'string' ? t('services.ecommerce.title') as string : 'E-commerce',
+      description: typeof t('services.ecommerce.description') === 'string' ? t('services.ecommerce.description') as string : ''
     },
     {
-      icon: FaSearch,
-      title: t('services.seo.title'),
-      description: t('services.seo.description')
+      icon: FaMagnifyingGlass,
+      title: typeof t('services.seo.title') === 'string' ? t('services.seo.title') as string : 'SEO',
+      description: typeof t('services.seo.description') === 'string' ? t('services.seo.description') as string : ''
     },
     {
-      icon: FaServer,
-      title: t('services.maintenance.title'),
-      description: t('services.maintenance.description')
-    },
-    {
-      icon: FaCode,
-      title: t('services.development.title'),
-      description: t('services.development.description')
+      icon: FaPalette,
+      title: typeof t('services.design.title') === 'string' ? t('services.design.title') as string : 'Design',
+      description: typeof t('services.design.description') === 'string' ? t('services.design.description') as string : ''
     },
     {
       icon: FaMobileAlt,
-      title: t('services.responsive.title'),
-      description: t('services.responsive.description')
+      title: typeof t('services.responsive.title') === 'string' ? t('services.responsive.title') as string : 'Responsive Design',
+      description: typeof t('services.responsive.description') === 'string' ? t('services.responsive.description') as string : ''
     }
   ];
 
@@ -53,31 +54,23 @@ const services: Service[] = [
     <section id="services" className="section bg-nextpixel-light py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-24 max-w-4xl mx-auto">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl md:text-4xl font-bold mb-4"
-          >
-            {t('services.title').includes('usluge') ? (
-              <>
-                {t('services.title').split('usluge')[0]}
-                <span className="text-nextpixel-blue">usluge</span>
-                {t('services.title').split('usluge')[1]}
-              </>
-            ) : t('services.title').includes('Dienstleistungen') ? (
-              <>
-                {t('services.title').split('Dienstleistungen')[0]}
-                <span className="text-nextpixel-blue">Dienstleistungen</span>
-                {t('services.title').split('Dienstleistungen')[1]}
-              </>
-            ) : (
-              <>
-                {t('services.title').split(' ')[0]} <span className="text-nextpixel-blue">{t('services.title').split(' ').slice(1).join(' ')}</span>
-              </>
-            )}
-          </motion.h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+        {typeof t('services.title') === 'string' && (t('services.title') as string).includes('Usluge') ? (
+          <>
+            {(t('services.title') as string).split('Usluge')[0]}
+            <span className="text-nextpixel-turquoise">Usluge</span>
+            {(t('services.title') as string).split('Usluge')[1]}
+          </>
+        ) : typeof t('services.title') === 'string' && (t('services.title') as string).includes('Services') ? (
+          <>
+            {(t('services.title') as string).split('Services')[0]}
+            <span className="text-nextpixel-turquoise">Services</span>
+            {(t('services.title') as string).split('Services')[1]}
+          </>
+        ) : (
+          t('services.title')
+        )}
+      </h2>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -85,15 +78,9 @@ const services: Service[] = [
             transition={{ duration: 0.6, delay: 0.2 }}
             className="w-20 h-1 bg-nextpixel-turquoise mx-auto mb-6"
           ></motion.div>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-lg text-nextpixel-gray max-w-3xl mx-auto"
-          >
-            {t('services.subtitle')}
-          </motion.p>
+          <p className="text-lg text-nextpixel-gray max-w-3xl mx-auto mb-16">
+        {typeof t('services.subtitle') === 'string' ? t('services.subtitle') as string : ''}
+      </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-12">

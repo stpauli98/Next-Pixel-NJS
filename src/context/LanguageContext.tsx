@@ -7,7 +7,7 @@ import i18n from '../i18n';
 interface LanguageContextType {
   language: string;
   changeLanguage: (lang: string) => void;
-  t: (key: string, options?: any) => string;
+  t: (key: string, options?: any) => string | React.ReactNode;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);

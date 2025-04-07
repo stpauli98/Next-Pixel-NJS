@@ -12,7 +12,7 @@ import { useTranslate } from '../../context/LanguageContext';
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { t } = useTranslate();
+  const { t, language } = useTranslate();
   const [mounted, setMounted] = useState(false);
 
   // Postavlja mounted na true nakon inicijalne hidratacije
@@ -44,11 +44,11 @@ const Navbar: React.FC = () => {
   
   // Koristi prevedene vrednosti samo nakon što je komponenta montirana na klijentu
   const navLinks = mounted ? [
-    { name: t('nav.home'), href: '#home' },
-    { name: t('nav.about'), href: '#about' },
-    { name: t('nav.services'), href: '#services' },
-    { name: t('nav.portfolio'), href: '#portfolio' },
-    { name: t('nav.contact'), href: '#contact' },
+    { name: typeof t('nav.home') === 'string' ? t('nav.home') as string : 'Home', href: '#home' },
+    { name: typeof t('nav.about') === 'string' ? t('nav.about') as string : 'About', href: '#about' },
+    { name: typeof t('nav.services') === 'string' ? t('nav.services') as string : 'Services', href: '#services' },
+    { name: typeof t('nav.portfolio') === 'string' ? t('nav.portfolio') as string : 'Portfolio', href: '#portfolio' },
+    { name: typeof t('nav.contact') === 'string' ? t('nav.contact') as string : 'Contact', href: '#contact' },
   ] : defaultNavLinks;
 
   return (
@@ -72,7 +72,7 @@ const Navbar: React.FC = () => {
             </a>
           ))}
           <a href="#contact" className="btn-primary">
-            {mounted ? t('nav.contactUs') : 'Kontaktirajte nas'}
+            {mounted ? (typeof t('nav.contactUs') === 'string' ? t('nav.contactUs') as string : 'Contact Us') : 'Kontaktirajte nas'}
           </a>
           <LanguageSelector />
         </div>
@@ -110,7 +110,7 @@ const Navbar: React.FC = () => {
               className="btn-primary text-center"
               onClick={() => setIsOpen(false)}
             >
-              {mounted ? t('nav.contactUs') : 'Kontaktirajte nas'}
+              {mounted ? (typeof t('nav.contactUs') === 'string' ? t('nav.contactUs') as string : 'Contact Us') : 'Kontaktirajte nas'}
             </a>
             <div className="py-2">
               <LanguageSelector />

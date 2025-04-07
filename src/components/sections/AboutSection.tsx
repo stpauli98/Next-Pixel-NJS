@@ -8,27 +8,27 @@ import { useTranslate } from '../../context/LanguageContext';
 
 
 const AboutSection: React.FC = () => {
-  const { t } = useTranslate();
+  const { t, language } = useTranslate();
   const features = [
     {
       icon: FaLaptopCode,
-      title: t('features.expertise.title'),
-      description: t('features.expertise.description')
+      title: typeof t('features.expertise.title') === 'string' ? t('features.expertise.title') as string : '',
+      description: typeof t('features.expertise.description') === 'string' ? t('features.expertise.description') as string : ''
     },
     {
       icon: FaUsers,
-      title: t('features.userFocus.title'),
-      description: t('features.userFocus.description')
+      title: typeof t('features.userFocus.title') === 'string' ? t('features.userFocus.title') as string : '',
+      description: typeof t('features.userFocus.description') === 'string' ? t('features.userFocus.description') as string : ''
     },
     {
       icon: FaRocket,
-      title: t('features.fastDelivery.title'),
-      description: t('features.fastDelivery.description')
+      title: typeof t('features.fastDelivery.title') === 'string' ? t('features.fastDelivery.title') as string : '',
+      description: typeof t('features.fastDelivery.description') === 'string' ? t('features.fastDelivery.description') as string : ''
     },
     {
       icon: FaAward,
-      title: t('features.quality.title'),
-      description: t('features.quality.description')
+      title: typeof t('features.quality.title') === 'string' ? t('features.quality.title') as string : '',
+      description: typeof t('features.quality.description') === 'string' ? t('features.quality.description') as string : ''
     }
   ];
 
@@ -43,11 +43,11 @@ const AboutSection: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="text-3xl md:text-4xl font-bold mb-4"
           >
-            {t('about.title').includes('O nama') ? (
+            {typeof t('about.title') === 'string' && (t('about.title') as string).includes('O nama') ? (
               <>
                 O na<span className="text-nextpixel-blue">ma</span>
               </>
-            ) : t('about.title').includes('Wer wir sind') ? (
+            ) : typeof t('about.title') === 'string' && (t('about.title') as string).includes('Wer wir sind') ? (
               <>
                 Wer wir <span className="text-nextpixel-blue">sind</span>
               </>
@@ -69,7 +69,7 @@ const AboutSection: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-lg text-nextpixel-gray max-w-3xl mx-auto"
           >
-            {t('about.description')}
+            {typeof t('about.description') === 'string' ? t('about.description') as string : ''}
           </motion.p>
         </div>
 
@@ -102,12 +102,12 @@ const AboutSection: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3 className="text-2xl font-bold mb-6">{t('about.subtitle')}</h3>
+            <h3 className="text-2xl font-bold mb-6">{typeof t('about.subtitle') === 'string' ? t('about.subtitle') as string : ''}</h3>
             <p className="text-nextpixel-gray mb-6">
-              {t('about.history')}
+              {typeof t('about.history') === 'string' ? t('about.history') as string : ''}
             </p>
             <p className="text-nextpixel-gray mb-8">
-              {t('about.philosophy')}
+              {typeof t('about.philosophy') === 'string' ? t('about.philosophy') as string : ''}
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-10">
