@@ -20,7 +20,7 @@ const PortfolioSection: React.FC = () => {
       title: typeof t('portfolio.projects.project1.title') === 'string' ? t('portfolio.projects.project1.title') as string : 'Project 1',
       description: typeof t('portfolio.projects.project1.description') === 'string' ? t('portfolio.projects.project1.description') as string : '',
       category: typeof t('portfolio.category.webShop') === 'string' ? t('portfolio.category.webShop') as string : 'Web Shop',
-      image: '/images/e-commerce.png',
+      image: '/images/web-shop.png',
     },
     {
       id: 2,
