@@ -1,0 +1,184 @@
+{
+  "about": {
+    "title": "Who we are",
+    "subtitle": "Digital agency with a passion for innovation",
+    "description": "NextPixel is a digital agency that specializes in creating websites, web shops, SEO optimization, website maintenance, as well as developing custom software solutions according to client requirements.",
+    "history": "Since 2015, we have been dedicated to creating digital solutions that help our clients achieve their business goals. Our approach combines technical expertise, creativity, and a deep understanding of our clients' business needs.",
+    "philosophy": "We believe that successful digital solutions must not only be technically excellent, but also user-friendly, aesthetically appealing, and optimized to achieve business results."
+  },
+  "features": {
+    "expertise": {
+      "title": "Expert Team",
+      "description": "Our team of experts has years of experience in developing web and software solutions."
+    },
+    "userFocus": {
+      "title": "User Focus",
+      "description": "We tailor each project to the specific needs of clients and their users."
+    },
+    "fastDelivery": {
+      "title": "Fast Delivery",
+      "description": "We respect deadlines and ensure fast implementation of projects without compromising quality."
+    },
+    "quality": {
+      "title": "Quality",
+      "description": "We use the latest technologies and best practices to develop high-quality solutions."
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "language": {
+    "sr": "Serbian",
+    "en": "English",
+    "de": "German"
+  },
+  "hero": {
+    "title": "Digital solutions for your success",
+    "subtitle": "We create websites and applications that deliver results",
+    "services": "Our services",
+    "contact": "Contact us",
+    "learnMore": "Learn more"
+  },
+  "services": {
+    "title": "Our services",
+    "subtitle": "We provide a wide range of digital services tailored to your needs",
+    "requestQuote": "Request a quote",
+    "webDesign": {
+      "title": "Web design",
+      "description": "We create modern, responsive and user-friendly websites that represent your brand in the best way."
+    },
+    "ecommerce": {
+      "title": "E-commerce",
+      "description": "We develop online stores that provide excellent user experience and increase sales."
+    },
+    "seo": {
+      "title": "SEO optimization",
+      "description": "We optimize your website to achieve better visibility in search engines and attract more visitors."
+    },
+    "webDevelopment": {
+      "title": "Web development",
+      "description": "We develop custom web applications that solve specific business problems and improve efficiency."
+    },
+    "mobileDevelopment": {
+      "title": "Mobile development",
+      "description": "We create mobile applications that provide excellent user experience on all devices."
+    },
+    "digitalMarketing": {
+      "title": "Digital marketing",
+      "description": "We develop and implement digital marketing strategies that help you reach your target audience."
+    }
+  },
+  "whyChooseUs": {
+    "title": "Why choose us",
+    "subtitle": "We are dedicated to providing the best solutions for our clients",
+    "experience": {
+      "title": "Experience",
+      "description": "With over 8 years of experience, we have the expertise to deliver high-quality digital solutions."
+    },
+    "expertise": {
+      "title": "Expertise",
+      "description": "Our team consists of experts in various fields of digital technology and marketing."
+    },
+    "clientFocus": {
+      "title": "Client focus",
+      "description": "We put our clients' needs first and work closely with them to achieve their goals."
+    },
+    "results": {
+      "title": "Results",
+      "description": "We are focused on delivering measurable results that help our clients grow their business."
+    }
+  },
+  "portfolio": {
+    "title": "Our portfolio",
+    "subtitle": "Check out some of our recent projects",
+    "viewProject": "View project",
+    "startProject": "Start a Project",
+    "category": {
+      "all": "all",
+      "webDesign": "web-design",
+      "webShop": "web-shop",
+      "seo": "seo",
+      "software": "software"
+    },
+    "projects": {
+      "project1": {
+        "title": "E-commerce platform",
+        "description": "Development of a complete e-commerce solution with payment processing and inventory management."
+      },
+      "project2": {
+        "title": "Corporate website",
+        "description": "Design and development of a corporate website with a content management system."
+      },
+      "project3": {
+        "title": "Project Management Application",
+        "description": "Development of a custom project management application for teams."
+      },
+      "project4": {
+        "title": "SEO Optimization",
+        "description": "Implementation of an SEO strategy that increased organic traffic by 150%."
+      },
+      "project5": {
+        "title": "Mobile Application",
+        "description": "Development of a mobile application for iOS and Android platforms."
+      },
+      "project6": {
+        "title": "Website Redesign",
+        "description": "Complete redesign of an existing website with a focus on user experience."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact us",
+    "subtitle": "Get in touch with your questions and requests",
+    "sendMessage": "Send us a message",
+    "name": "Full name",
+    "email": "Email address",
+    "phone": "Phone",
+    "subject": "Subject",
+    "message": "Message",
+    "namePlaceholder": "Your full name",
+    "emailPlaceholder": "email@example.com",
+    "phonePlaceholder": "+1 XXX XXX XXXX",
+    "subjectPlaceholder": "Message subject",
+    "messagePlaceholder": "Your message...",
+    "send": "Send message",
+    "sending": "Sending...",
+    "successMessage": "Your message has been sent successfully! We will contact you soon.",
+    "form": {
+      "name": "Full name",
+      "email": "Email address",
+      "phone": "Phone",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send message",
+      "sending": "Sending...",
+      "success": "Your message has been sent successfully! We will contact you soon.",
+      "error": "An error occurred while sending your message. Please try again.",
+      "required": "Required field",
+      "invalidEmail": "Enter a valid email address"
+    },
+    "info": {
+      "title": "Contact information",
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "addressDetails": "123 Main Street, New York, NY 10001, USA"
+    },
+    "workingHours": {
+      "title": "Working hours",
+      "weekdays": "Mon - Fri: 09:00 - 17:00",
+      "weekend": "Sat: 10:00 - 14:00"
+    },
+    "followUs": "Follow us"
+  },
+  "footer": {
+    "description": "Digital agency specialized in creating modern websites, e-commerce solutions and digital marketing strategies.",
+    "copyright": "© 2025 NextPixel. All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  }
+}

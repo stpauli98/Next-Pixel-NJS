@@ -1,0 +1,184 @@
+{
+  "about": {
+    "title": "Wer wir sind",
+    "subtitle": "Digitalagentur mit Leidenschaft für Innovation",
+    "description": "NextPixel ist eine Digitalagentur, die sich auf die Erstellung von Websites, Webshops, SEO-Optimierung, Website-Wartung sowie die Entwicklung maßgeschneiderter Softwarelösungen nach Kundenwünschen spezialisiert hat.",
+    "history": "Seit 2015 widmen wir uns der Erstellung digitaler Lösungen, die unseren Kunden helfen, ihre Geschäftsziele zu erreichen. Unser Ansatz kombiniert technisches Fachwissen, Kreativität und ein tiefes Verständnis der geschäftlichen Anforderungen unserer Kunden.",
+    "philosophy": "Wir glauben, dass erfolgreiche digitale Lösungen nicht nur technisch hervorragend sein müssen, sondern auch benutzerfreundlich, ästhetisch ansprechend und für die Erzielung von Geschäftsergebnissen optimiert sein sollten."
+  },
+  "features": {
+    "expertise": {
+      "title": "Expertenteam",
+      "description": "Unser Expertenteam verfügt über jahrelange Erfahrung in der Entwicklung von Web- und Softwarelösungen."
+    },
+    "userFocus": {
+      "title": "Benutzerfokus",
+      "description": "Wir passen jedes Projekt an die spezifischen Bedürfnisse der Kunden und ihrer Benutzer an."
+    },
+    "fastDelivery": {
+      "title": "Schnelle Lieferung",
+      "description": "Wir respektieren Fristen und gewährleisten eine schnelle Umsetzung von Projekten ohne Qualitätseinbußen."
+    },
+    "quality": {
+      "title": "Qualität",
+      "description": "Wir verwenden die neuesten Technologien und Best Practices, um hochwertige Lösungen zu entwickeln."
+    }
+  },
+  "nav": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "services": "Dienstleistungen",
+    "portfolio": "Portfolio",
+    "contact": "Kontakt"
+  },
+  "language": {
+    "sr": "Serbisch",
+    "en": "Englisch",
+    "de": "Deutsch"
+  },
+  "hero": {
+    "title": "Digitale Lösungen für Ihren Erfolg",
+    "subtitle": "Wir erstellen Websites und Anwendungen, die Ergebnisse liefern",
+    "services": "Unsere Dienstleistungen",
+    "contact": "Kontaktieren Sie uns",
+    "learnMore": "Mehr erfahren"
+  },
+  "services": {
+    "title": "Unsere Dienstleistungen",
+    "subtitle": "Wir bieten eine breite Palette digitaler Dienstleistungen, die auf Ihre Bedürfnisse zugeschnitten sind",
+    "requestQuote": "Angebot anfordern",
+    "webDesign": {
+      "title": "Webdesign",
+      "description": "Wir erstellen moderne, responsive und benutzerfreundliche Websites, die Ihre Marke bestmöglich repräsentieren."
+    },
+    "ecommerce": {
+      "title": "E-Commerce",
+      "description": "Wir entwickeln Online-Shops, die ein hervorragendes Benutzererlebnis bieten und den Umsatz steigern."
+    },
+    "seo": {
+      "title": "SEO-Optimierung",
+      "description": "Wir optimieren Ihre Website, um eine bessere Sichtbarkeit in Suchmaschinen zu erreichen und mehr Besucher anzuziehen."
+    },
+    "webDevelopment": {
+      "title": "Webentwicklung",
+      "description": "Wir entwickeln maßgeschneiderte Webanwendungen, die spezifische Geschäftsprobleme lösen und die Effizienz verbessern."
+    },
+    "mobileDevelopment": {
+      "title": "Mobile Entwicklung",
+      "description": "Wir erstellen mobile Anwendungen, die auf allen Geräten ein hervorragendes Benutzererlebnis bieten."
+    },
+    "digitalMarketing": {
+      "title": "Digitales Marketing",
+      "description": "Wir entwickeln und implementieren digitale Marketingstrategien, die Ihnen helfen, Ihre Zielgruppe zu erreichen."
+    }
+  },
+  "whyChooseUs": {
+    "title": "Warum uns wählen",
+    "subtitle": "Wir sind bestrebt, die besten Lösungen für unsere Kunden zu bieten",
+    "experience": {
+      "title": "Erfahrung",
+      "description": "Mit über 8 Jahren Erfahrung verfügen wir über das Know-how, um hochwertige digitale Lösungen zu liefern."
+    },
+    "expertise": {
+      "title": "Fachwissen",
+      "description": "Unser Team besteht aus Experten in verschiedenen Bereichen der digitalen Technologie und des Marketings."
+    },
+    "clientFocus": {
+      "title": "Kundenfokus",
+      "description": "Wir stellen die Bedürfnisse unserer Kunden an erste Stelle und arbeiten eng mit ihnen zusammen, um ihre Ziele zu erreichen."
+    },
+    "results": {
+      "title": "Ergebnisse",
+      "description": "Wir konzentrieren uns darauf, messbare Ergebnisse zu liefern, die unseren Kunden helfen, ihr Geschäft auszubauen."
+    }
+  },
+  "portfolio": {
+    "title": "Unsere Arbeiten",
+    "subtitle": "Sehen Sie sich einige unserer erfolgreichsten Projekte an und entdecken Sie, was wir für Sie tun können.",
+    "viewProject": "Projekt ansehen",
+    "startProject": "Projekt starten",
+    "category": {
+      "all": "alle",
+      "webDesign": "webdesign",
+      "webShop": "webshop",
+      "seo": "seo",
+      "software": "software"
+    },
+    "projects": {
+      "project1": {
+        "title": "E-Commerce-Plattform",
+        "description": "Entwicklung einer modernen E-Commerce-Plattform mit integriertem Zahlungssystem und Bestandsverwaltung."
+      },
+      "project2": {
+        "title": "Unternehmenswebsite",
+        "description": "Design und Entwicklung einer responsiven Unternehmenswebsite mit erweiterten Funktionen."
+      },
+      "project3": {
+        "title": "Projektmanagement-Anwendung",
+        "description": "Entwicklung einer maßgeschneiderten Projektmanagement-Anwendung für Teams."
+      },
+      "project4": {
+        "title": "SEO-Optimierung",
+        "description": "Implementierung einer SEO-Strategie, die den organischen Traffic um 150% erhöht hat."
+      },
+      "project5": {
+        "title": "Mobile Anwendung",
+        "description": "Entwicklung einer mobilen Anwendung für iOS- und Android-Plattformen."
+      },
+      "project6": {
+        "title": "Website-Redesign",
+        "description": "Komplettes Redesign einer bestehenden Website mit Fokus auf Benutzererfahrung."
+      }
+    }
+  },
+  "contact": {
+    "title": "Kontaktieren Sie uns",
+    "subtitle": "Nehmen Sie Kontakt mit uns auf für Ihre Fragen und Anfragen",
+    "sendMessage": "Senden Sie uns eine Nachricht",
+    "name": "Vollständiger Name",
+    "email": "E-Mail-Adresse",
+    "phone": "Telefon",
+    "subject": "Betreff",
+    "message": "Nachricht",
+    "namePlaceholder": "Ihr vollständiger Name",
+    "emailPlaceholder": "email@beispiel.com",
+    "phonePlaceholder": "+49 XXX XXX XXXX",
+    "subjectPlaceholder": "Betreff der Nachricht",
+    "messagePlaceholder": "Ihre Nachricht...",
+    "send": "Nachricht senden",
+    "sending": "Wird gesendet...",
+    "successMessage": "Ihre Nachricht wurde erfolgreich gesendet! Wir werden Sie in Kürze kontaktieren.",
+    "form": {
+      "name": "Vollständiger Name",
+      "email": "E-Mail-Adresse",
+      "phone": "Telefon",
+      "subject": "Betreff",
+      "message": "Nachricht",
+      "submit": "Nachricht senden",
+      "sending": "Wird gesendet...",
+      "success": "Ihre Nachricht wurde erfolgreich gesendet! Wir werden Sie in Kürze kontaktieren.",
+      "error": "Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+      "required": "Pflichtfeld",
+      "invalidEmail": "Geben Sie eine gültige E-Mail-Adresse ein"
+    },
+    "info": {
+      "title": "Kontaktinformationen",
+      "address": "Adresse",
+      "phone": "Telefon",
+      "email": "E-Mail",
+      "addressDetails": "Musterstraße 123, 10115 Berlin, Deutschland"
+    },
+    "workingHours": {
+      "title": "Öffnungszeiten",
+      "weekdays": "Mo - Fr: 09:00 - 17:00",
+      "weekend": "Sa: 10:00 - 14:00"
+    },
+    "followUs": "Folgen Sie uns"
+  },
+  "footer": {
+    "description": "Digitalagentur, spezialisiert auf die Erstellung moderner Websites, E-Commerce-Lösungen und digitaler Marketingstrategien.",
+    "copyright": "© 2025 NextPixel. Alle Rechte vorbehalten.",
+    "privacyPolicy": "Datenschutzrichtlinie",
+    "termsOfService": "Nutzungsbedingungen"
+  }
+}

@@ -1,0 +1,209 @@
+{
+  "about": {
+    "title": "Ko smo mi",
+    "subtitle": "Digitalna agencija sa strašću za inovacije",
+    "description": "NextPixel je digitalna agencija koja se bavi izradom web stranica, web shopova, SEO optimizacijom, održavanjem web sajtova, kao i razvojem softverskih rješenja po zahtjevu klijenata.",
+    "history": "Od 2015. godine posvećeni smo stvaranju digitalnih rješenja koja pomažu našim klijentima da ostvare svoje poslovne ciljeve. Naš pristup kombinuje tehničku stručnost, kreativnost i duboko razumijevanje poslovnih potreba naših klijenata.",
+    "philosophy": "Vjerujemo da uspješna digitalna rješenja moraju biti ne samo tehnički izvrsna, već i prilagođena korisnicima, estetski privlačna i optimizovana za postizanje poslovnih rezultata."
+  },
+  "hero": {
+    "title": "Digitalna rješenja za vaš uspjeh",
+    "subtitle": "Kreiramo web stranice i aplikacije koje donose rezultate",
+    "services": "Naše usluge",
+    "contact": "Kontaktirajte nas",
+    "learnMore": "Saznajte više"
+  },
+  "services": {
+    "title": "Naše usluge",
+    "subtitle": "Pružamo širok spektar digitalnih usluga prilagođenih vašim potrebama",
+    "requestQuote": "Zatražite ponudu",
+    "webDesign": {
+      "title": "Web dizajn",
+      "description": "Kreiramo moderne, responzivne i korisnicima prilagođene web stranice koje predstavljaju vaš brend na najbolji način."
+    },
+    "ecommerce": {
+      "title": "E-commerce",
+      "description": "Razvijamo online prodavnice koje pružaju odlično korisničko iskustvo i povećavaju prodaju."
+    },
+    "seo": {
+      "title": "SEO optimizacija",
+      "description": "Poboljšavamo vidljivost vaše web stranice na pretraživačima i povećavamo organski saobraćaj."
+    },
+    "maintenance": {
+      "title": "Održavanje",
+      "description": "Nudimo redovno održavanje, ažuriranje i tehničku podršku za vašu web stranicu."
+    },
+    "development": {
+      "title": "Web razvoj",
+      "description": "Razvijamo prilagođena web rješenja koristeći najnovije tehnologije i najbolje prakse."
+    },
+    "responsive": {
+      "title": "Responzivni dizajn",
+      "description": "Osiguravamo da vaša web stranica izgleda i funkcioniše savršeno na svim uređajima."
+    }
+  },
+  "features": {
+    "expertise": {
+      "title": "Stručni tim",
+      "description": "Naš tim stručnjaka ima višegodišnje iskustvo u razvoju web i softverskih rješenja."
+    },
+    "userFocus": {
+      "title": "Korisnički fokus",
+      "description": "Svaki projekat prilagođavamo specifičnim potrebama klijenata i njihovih korisnika."
+    },
+    "fastDelivery": {
+      "title": "Brza isporuka",
+      "description": "Poštujemo rokove i osiguravamo brzu implementaciju projekata bez kompromisa u kvaliteti."
+    },
+    "quality": {
+      "title": "Kvalitet",
+      "description": "Koristimo najnovije tehnologije i najbolje prakse za razvoj visokokvalitetnih rješenja."
+    }
+  },
+  "nav": {
+    "home": "Početna",
+    "about": "O nama",
+    "services": "Usluge",
+    "portfolio": "Portfolio",
+    "contact": "Kontakt",
+    "contactUs": "Kontaktirajte nas"
+  },
+  "language": {
+    "sr": "Srpski",
+    "en": "Engleski",
+    "de": "Njemački"
+  },
+  "whyChooseUs": {
+    "title": "Zašto odabrati nas",
+    "subtitle": "Razlozi zbog kojih nas klijenti biraju",
+    "talkAboutProject": "Razgovarajmo o vašem projektu",
+    "creativity": {
+      "title": "Kreativnost",
+      "description": "Naš tim donosi svježe i inovativne ideje za svaki projekat."
+    },
+    "fastDelivery": {
+      "title": "Brza isporuka",
+      "description": "Poštujemo rokove i trudimo se da projekte završimo u najkraćem mogućem roku."
+    },
+    "expertTeam": {
+      "title": "Stručni tim",
+      "description": "Naš tim čine iskusni stručnjaci u različitim oblastima digitalnog razvoja."
+    },
+    "support": {
+      "title": "Podrška 24/7",
+      "description": "Uvijek smo dostupni za pitanja i podršku našim klijentima."
+    },
+    "deadlines": {
+      "title": "Poštovanje rokova",
+      "description": "Razumijemo važnost vremena i uvijek isporučujemo projekte na vrijeme."
+    },
+    "quality": {
+      "title": "Vrhunski kvalitet",
+      "description": "Ne pravimo kompromise kada je u pitanju kvalitet našeg rada."
+    },
+    "results": {
+      "title": "Fokus na rezultate",
+      "description": "Naš cilj je da vam pomognemo da ostvarite konkretne poslovne rezultate."
+    }
+  },
+  "portfolio": {
+    "title": "Naši radovi",
+    "subtitle": "Pogledajte neke od naših najuspješnijih projekata i otkrijte šta možemo učiniti za vas.",
+    "viewProject": "Pogledaj projekat",
+    "startProject": "Započnite projekat",
+    "category": {
+      "all": "sve",
+      "webDesign": "web-dizajn",
+      "webShop": "web-shop",
+      "seo": "seo",
+      "software": "softver"
+    },
+    "projects": {
+      "project1": {
+        "title": "E-commerce platforma",
+        "description": "Razvoj moderne e-commerce platforme sa integriranim sistemom plaćanja i upravljanjem zalihama."
+      },
+      "project2": {
+        "title": "Korporativna web stranica",
+        "description": "Dizajn i razvoj responzivne korporativne web stranice sa naprednim funkcionalnostima."
+      },
+      "project3": {
+        "title": "Aplikacija za upravljanje projektima",
+        "description": "Razvoj prilagođene aplikacije za upravljanje projektima i timovima."
+      },
+      "project4": {
+        "title": "SEO optimizacija",
+        "description": "Implementacija SEO strategije koja je povećala organsku posjećenost za 150%."
+      },
+      "project5": {
+        "title": "Mobilna aplikacija",
+        "description": "Razvoj mobilne aplikacije za iOS i Android platforme."
+      },
+      "project6": {
+        "title": "Redizajn web stranice",
+        "description": "Kompletan redizajn postojeće web stranice sa fokusom na korisničko iskustvo."
+      }
+    }
+  },
+  "relatedProjects": "Slični projekti",
+  "contact": {
+    "title": "Kontaktirajte nas",
+    "subtitle": "Javite nam se sa vašim pitanjima i zahtjevima",
+    "sendMessage": "Pošaljite nam poruku",
+    "name": "Ime i prezime",
+    "email": "Email adresa",
+    "phone": "Telefon",
+    "subject": "Predmet",
+    "message": "Poruka",
+    "namePlaceholder": "Vaše ime i prezime",
+    "emailPlaceholder": "email@example.com",
+    "phonePlaceholder": "+387 XX XXX XXX",
+    "subjectPlaceholder": "Naslov poruke",
+    "messagePlaceholder": "Vaša poruka...",
+    "send": "Pošalji poruku",
+    "sending": "Slanje...",
+    "successMessage": "Vaša poruka je uspješno poslata! Kontaktiraćemo vas uskoro.",
+    "form": {
+      "name": "Ime i prezime",
+      "email": "Email adresa",
+      "phone": "Telefon",
+      "subject": "Predmet",
+      "message": "Poruka",
+      "submit": "Pošalji poruku",
+      "sending": "Slanje...",
+      "success": "Vaša poruka je uspješno poslata! Kontaktiraćemo vas uskoro.",
+      "error": "Došlo je do greške prilikom slanja poruke. Molimo pokušajte ponovo.",
+      "required": "Obavezno polje",
+      "invalidEmail": "Unesite validnu email adresu"
+    },
+    "info": {
+      "title": "Kontakt informacije",
+      "address": "Adresa",
+      "phone": "Telefon",
+      "email": "Email",
+      "addressDetails": "Zmaja od Bosne 7, 71000 Sarajevo, Bosna i Hercegovina"
+    },
+    "workingHours": {
+      "title": "Radno vrijeme",
+      "weekdays": "Pon - Pet: 09:00 - 17:00",
+      "weekend": "Sub: 10:00 - 14:00"
+    },
+    "followUs": "Pratite nas"
+  },
+  "footer": {
+    "description": "Digitalna agencija specijalizovana za kreiranje modernih web stranica, e-commerce rješenja i digitalnih marketinških strategija.",
+    "quickLinks": {
+      "title": "Brzi linkovi"
+    },
+    "services": {
+      "title": "Usluge",
+      "webDevelopment": "Web razvoj"
+    },
+    "contact": {
+      "address": "Zmaja od Bosne 7, 71000 Sarajevo, Bosna i Hercegovina"
+    },
+    "copyright": "Sva prava zadržana.",
+    "privacyPolicy": "Politika privatnosti",
+    "terms": "Uslovi korištenja"
+  }
+}
