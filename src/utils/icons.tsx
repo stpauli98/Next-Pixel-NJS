@@ -1,4 +1,6 @@
-import React from 'react';
+"use client";
+
+import React, { ElementType } from 'react';
 import { IconType } from 'react-icons';
 
 interface IconProps {
@@ -16,8 +18,11 @@ export const Icon: React.FC<IconProps> = ({
   color,
   ...props 
 }) => {
+  // Koristi ElementType da bi TypeScript znao da je IconComponent React komponenta
+  const Component = IconComponent as ElementType;
+  
   return (
-    <IconComponent 
+    <Component 
       className={className} 
       size={size} 
       color={color}
