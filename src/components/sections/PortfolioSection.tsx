@@ -20,7 +20,7 @@ const PortfolioSection: React.FC = () => {
       title: typeof t('portfolio.projects.project1.title') === 'string' ? t('portfolio.projects.project1.title') as string : 'Project 1',
       description: typeof t('portfolio.projects.project1.description') === 'string' ? t('portfolio.projects.project1.description') as string : '',
       category: typeof t('portfolio.category.webShop') === 'string' ? t('portfolio.category.webShop') as string : 'Web Shop',
-      image: '/images/e-commerc.png',
+      image: '/images/e-commerce.png',
     },
     {
       id: 2,
@@ -160,8 +160,7 @@ const PortfolioSection: React.FC = () => {
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className={`${project.id === 1 ? 'h-64 w-auto object-contain' : 'w-full h-full object-cover'} transition-transform duration-500 group-hover:scale-110`}
-                  style={project.id === 1 ? { objectPosition: 'center' } : {}}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.onerror = null;

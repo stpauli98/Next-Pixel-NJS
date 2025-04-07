@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaPhone, FaLocationDot } from 'react-icons/fa6';
 import { Icon } from '../../utils/icons';
@@ -8,6 +8,12 @@ import { useTranslate } from '../../context/LanguageContext';
 
 const ContactSection: React.FC = () => {
   const { t, language } = useTranslate();
+  const [mounted, setMounted] = useState(false);
+
+  // Rešava problem hidratacije
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -69,23 +75,32 @@ const ContactSection: React.FC = () => {
     }
   };
 
-  const contactInfo = [
+  // Definišemo tipove za kontakt informacije
+  interface ContactInfoItem {
+    icon: typeof FaEnvelope | typeof FaPhone | typeof FaLocationDot;
+    titleKey: string;
+    info?: string;
+    infoKey?: string;
+    link: string;
+  }
+
+  const contactInfo: ContactInfoItem[] = [
     {
       icon: FaEnvelope,
-      title: t('contact.info.email'),
+      titleKey: 'contact.info.email',
       info: 'pixelnext9@gmail.com',
       link: 'mailto:pixelnext9@gmail.com'
     },
     {
       icon: FaPhone,
-      title: t('contact.info.phone'),
+      titleKey: 'contact.info.phone',
       info: '+387 66 603 900',
       link: 'tel:+38766603900'
     },
     {
       icon: FaLocationDot,
-      title: t('contact.info.address'),
-      info: t('contact.info.addressDetails'),
+      titleKey: 'contact.info.address',
+      infoKey: 'contact.info.addressDetails',
       link: 'https://maps.google.com/?q=Gradiska'
     }
   ];
@@ -96,7 +111,11 @@ const ContactSection: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            {typeof t('contact.title') === 'string' && (t('contact.title') as string).includes('Kontakt') ? (
+            {!mounted ? (
+              <>
+                <span className="text-nextpixel-turquoise">Contact</span> Us
+              </>
+            ) : typeof t('contact.title') === 'string' && (t('contact.title') as string).includes('Kontakt') ? (
               <>
                 {(t('contact.title') as string).split('Kontakt')[0]}
                 <span className="text-nextpixel-turquoise">Kontakt</span>
@@ -109,7 +128,7 @@ const ContactSection: React.FC = () => {
                 {(t('contact.title') as string).split('Contact')[1]}
               </>
             ) : (
-              t('contact.title')
+              typeof t('contact.title') === 'string' ? t('contact.title') as string : <><span className="text-nextpixel-turquoise">Contact</span> Us</>
             )}
           </h2>
           <motion.div
@@ -287,22 +306,44 @@ const ContactSection: React.FC = () => {
                       <Icon icon={item.icon} size={20} className="text-nextpixel-blue" aria-hidden={true} />
                     </div>
                     <div className="text-center sm:text-left">
-                      <h4 className="font-bold text-gray-800">{item.title}</h4>
-                      <a 
-                        href={item.link} 
-                        className="text-nextpixel-gray hover:text-nextpixel-blue transition-colors block"
-                      >
-                        {item.info}
-                      </a>
+                       <h4 className="font-bold text-gray-800">
+                         {!mounted ? 
+                           (index === 0 ? 'Email' : index === 1 ? 'Phone' : 'Address') :
+                           (typeof t(item.titleKey || '') === 'string' ? t(item.titleKey || '') as string : (index === 0 ? 'Email' : index === 1 ? 'Phone' : 'Address'))
+                         }
+                       </h4>
+                       <a 
+                         href={item.link} 
+                         className="text-nextpixel-gray hover:text-nextpixel-blue transition-colors block"
+                       >
+                         {!mounted ? 
+                           (item.info || (index === 2 ? 'Gradiška, Bosnia and Herzegovina' : '')) :
+                           (index === 2 && 'infoKey' in item ? 
+                             (typeof t(item.infoKey || '') === 'string' ? t(item.infoKey || '') as string : 'Gradiška, Bosnia and Herzegovina') :
+                             item.info)
+                         }
+                       </a>
                     </div>
                   </motion.div>
                 ))}
               </div>
               
               <div className="mt-8 text-center">
-                <h4 className="font-bold mb-4 text-gray-800">{t('contact.workingHours.title')}</h4>
-                <p className="text-nextpixel-gray mb-2">{t('contact.workingHours.weekdays')}</p>
-                <p className="text-nextpixel-gray">{t('contact.workingHours.weekend')}</p>
+                <h4 className="font-bold mb-4 text-gray-800">
+                  {!mounted ? 'Working Hours' : 
+                    (typeof t('contact.workingHours.title') === 'string' ? t('contact.workingHours.title') as string : 'Working Hours')
+                  }
+                </h4>
+                <p className="text-nextpixel-gray mb-2">
+                  {!mounted ? 'Monday - Friday: 9:00 - 17:00' : 
+                    (typeof t('contact.workingHours.weekdays') === 'string' ? t('contact.workingHours.weekdays') as string : 'Monday - Friday: 9:00 - 17:00')
+                  }
+                </p>
+                <p className="text-nextpixel-gray">
+                  {!mounted ? 'Saturday - Sunday: Closed' : 
+                    (typeof t('contact.workingHours.weekend') === 'string' ? t('contact.workingHours.weekend') as string : 'Saturday - Sunday: Closed')
+                  }
+                </p>
               </div>
               
               <div className="mt-8 text-center">

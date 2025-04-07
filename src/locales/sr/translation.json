@@ -33,6 +33,18 @@
       "title": "Održavanje",
       "description": "Nudimo redovno održavanje, ažuriranje i tehničku podršku za vašu web stranicu."
     },
+    "webDevelopment": {
+      "title": "Web razvoj",
+      "description": "Razvijamo prilagođene web aplikacije koje rješavaju specifične poslovne probleme i poboljšavaju efikasnost."
+    },
+    "mobileDevelopment": {
+      "title": "Mobilni razvoj",
+      "description": "Kreiramo mobilne aplikacije koje pružaju odlično korisničko iskustvo na svim uređajima."
+    },
+    "design": {
+      "title": "Dizajn",
+      "description": "Kreiramo vizuelno atraktivne i funkcionalne dizajne koji ističu vaš brend i privlače pažnju korisnika."
+    },
     "development": {
       "title": "Web razvoj",
       "description": "Razvijamo prilagođena web rješenja koristeći najnovije tehnologije i najbolje prakse."
@@ -205,5 +217,74 @@
     "copyright": "Sva prava zadržana.",
     "privacyPolicy": "Politika privatnosti",
     "terms": "Uslovi korištenja"
+  },
+  "common": {
+    "backToHome": "Nazad na početnu"
+  },
+  "privacy": {
+    "title": "Politika privatnosti",
+    "collect": {
+      "title": "1. Informacije koje prikupljamo",
+      "content": "Prikupljamo lične podatke koje dobrovoljno dajete kada izrazite interes za dobijanje informacija o našim uslugama, kada učestvujete u aktivnostima na našoj web stranici ili kada nas kontaktirate. Lični podaci koje prikupljamo mogu uključivati imena, e-mail adrese, brojeve telefona i druge informacije koje odlučite dati."
+    },
+    "use": {
+      "title": "2. Kako koristimo vaše informacije",
+      "content": "Koristimo informacije koje prikupljamo za pružanje, održavanje i poboljšanje naših usluga. To uključuje korištenje podataka za komunikaciju s vama, odgovaranje na vaše upite i slanje informacija o našim uslugama. Također možemo koristiti vaše informacije za ispunjavanje zakonskih obaveza i rješavanje sporova."
+    },
+    "sharing": {
+      "title": "3. Dijeljenje i otkrivanje informacija",
+      "content": "Ne prodajemo, ne trgujemo ili na drugi način prenosimo vaše lične podatke vanjskim stranama. To ne uključuje pouzdane treće strane koje nam pomažu u radu naše web stranice, vođenju našeg poslovanja ili pružanju usluga vama, pod uslovom da se te strane slože da će čuvati ove informacije kao povjerljive."
+    },
+    "security": {
+      "title": "4. Sigurnost podataka",
+      "content": "Implementiramo odgovarajuće tehničke i organizacione sigurnosne mjere za zaštitu vaših ličnih podataka od neovlaštenog pristupa, izmjene, otkrivanja ili uništenja. Međutim, nijedna metoda prijenosa putem interneta ili elektronskog skladištenja nije 100% sigurna, i ne možemo garantovati apsolutnu sigurnost."
+    },
+    "cookies": {
+      "title": "5. Kolačići i tehnologije praćenja",
+      "content": "Možemo koristiti kolačiće i slične tehnologije praćenja za praćenje aktivnosti na našoj web stranici i pohranu određenih informacija. Možete uputiti svoj preglednik da odbije sve kolačiće ili da naznači kada se kolačić šalje. Međutim, ako ne prihvatite kolačiće, možda nećete moći koristiti neke dijelove naše web stranice."
+    },
+    "rights": {
+      "title": "6. Vaša prava",
+      "content": "Ovisno o vašoj lokaciji, možete imati određena prava u vezi s vašim ličnim podacima, kao što su pravo pristupa, ispravljanja ili brisanja vaših podataka. Za ostvarivanje ovih prava, kontaktirajte nas koristeći informacije navedene ispod."
+    },
+    "changes": {
+      "title": "7. Promjene ove Politike privatnosti",
+      "content": "Možemo povremeno ažurirati našu Politiku privatnosti. Obavijestit ćemo vas o svim promjenama objavljivanjem nove Politike privatnosti na ovoj stranici i ažuriranjem datuma 'Posljednje ažuriranje'. Savjetujemo vam da periodično pregledate ovu Politiku privatnosti zbog eventualnih promjena."
+    },
+    "contact": {
+      "title": "8. Kontaktirajte nas",
+      "content": "Ako imate bilo kakvih pitanja o ovoj Politici privatnosti, molimo vas da nas kontaktirate na pixelnext9@gmail.com."
+    }
+  },
+  "terms": {
+    "title": "Uslovi korištenja",
+    "acceptance": {
+      "title": "1. Prihvatanje uslova",
+      "content": "Pristupom ili korištenjem naših usluga, slažete se da ćete biti vezani ovim Uslovima korištenja. Ako se ne slažete s ovim uslovima, molimo vas da ne koristite naše usluge."
+    },
+    "services": {
+      "title": "2. Opis usluga",
+      "content": "NextPixel pruža web dizajn, razvoj, e-commerce rješenja, SEO optimizaciju i druge digitalne usluge kako je opisano na našoj web stranici. Zadržavamo pravo da u bilo kojem trenutku modificiramo, suspendujemo ili prekinemo bilo koji dio naših usluga."
+    },
+    "intellectual": {
+      "title": "3. Prava intelektualnog vlasništva",
+      "content": "Sav sadržaj, dizajn, kod i materijali koje je kreirao NextPixel zaštićeni su zakonima o intelektualnom vlasništvu. Nakon potpune uplate, klijenti dobijaju licencu za korištenje isporučenih materijala kako je navedeno u njihovom ugovoru o uslugama."
+    },
+    "payment": {
+      "title": "4. Plaćanje i naplata",
+      "content": "Uslovi plaćanja su navedeni u pojedinačnim ugovorima o uslugama. Fakture dospijevaju po primitku, osim ako nije drugačije navedeno. Zadržavamo pravo da suspendujemo usluge zbog neplaćanja."
+    },
+    "liability": {
+      "title": "5. Ograničenje odgovornosti",
+      "content": "NextPixel neće biti odgovoran za bilo kakve indirektne, slučajne, posebne, posljedične ili kaznene štete, ili bilo kakav gubitak profita ili prihoda, bilo da su nastali direktno ili indirektno, ili bilo kakav gubitak podataka, korištenja, goodwilla ili drugih nematerijalnih gubitaka."
+    },
+    "law": {
+      "title": "6. Mjerodavno pravo",
+      "content": "Ovi Uslovi će biti regulisani i tumačeni u skladu sa zakonima Bosne i Hercegovine, bez obzira na odredbe o sukobu zakona."
+    },
+    "changes": {
+      "title": "7. Promjene uslova",
+      "content": "Zadržavamo pravo da u bilo kojem trenutku modificiramo ove Uslove. Obavijestit ćemo klijente o svim značajnim promjenama. Vaše kontinuirano korištenje naših usluga nakon takvih modifikacija predstavlja vaše prihvatanje ažuriranih Uslova."
+    }
   }
 }
