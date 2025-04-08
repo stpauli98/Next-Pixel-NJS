@@ -289,7 +289,7 @@ const ContactSection: React.FC = () => {
           >
             <div className="bg-white rounded-lg shadow-lg p-6 md:p-8 h-full flex flex-col">
               <h3 className="text-xl font-bold mb-6">
-                {typeof t('contact.contactInfo') === 'string' ? t('contact.contactInfo') as string : 'Contact Information'}
+                {typeof t('contact.info.title') === 'string' ? t('contact.info.title') as string : 'Contact Information'}
               </h3>
               
               <div className="space-y-6 flex-grow">
