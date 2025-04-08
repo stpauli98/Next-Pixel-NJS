@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaLocationDot, FaPhone, FaEnvelope } from 'react-icons/fa6';
 import { Icon } from '../../utils/icons';
 import { useTranslate } from '../../context/LanguageContext';
+import Link from 'next/link';
 
 const Footer: React.FC = () => {
   const { t, language } = useTranslate();
@@ -87,6 +88,13 @@ const Footer: React.FC = () => {
                     typeof t('nav.contact') === 'string' ? t('nav.contact') as string : 'Contact'
                   )}
                 </a>
+              </li>
+              <li>
+                <Link href="/blog" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
+                  {!mounted ? 'Blog' : (
+                    typeof t('nav.blog') === 'string' ? t('nav.blog') as string : 'Blog'
+                  )}
+                </Link>
               </li>
             </ul>
           </div>

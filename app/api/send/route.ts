@@ -42,8 +42,8 @@ export async function POST(request: Request) {
     
     // TypeScript zahteva da proverimo da li je resend definisan, iako smo to već uradili iznad
     const { data, error } = await resend!.emails.send({
-      from: 'NextPixel <onboarding@resend.dev>',
-      to: [process.env.RECIPIENT_EMAIL || 'pixelnext9@gmail.com'],
+      from: 'Poruka od musterije | NextPixel <onboarding@resend.dev>',
+      to: [process.env.RECIPIENT_EMAIL || ""],
       subject: `Nova poruka od ${name}`,
       react: EmailTemplate({ 
         name,

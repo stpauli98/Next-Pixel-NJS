@@ -1,0 +1,219 @@
+export const metadata = {
+  title: "Koliko košta izrada sajta u 2025? Kompletan vodič za firme",
+  description: "Ako planirate novi sajt, ovaj vodič će vam pomoći da razumete cene, šta sve ulazi u ponudu i na šta da obratite pažnju."
+}
+
+export const blogData = {
+  date: "2025-04-08",
+  author: "Next Pixel",
+  excerpt: "Ako planirate novi sajt, ovaj vodič će vam pomoći da razumete cene, šta sve ulazi u ponudu i na šta da obratite pažnju.",
+  tags: ["izrada sajta", "cene", "vodič", "web development"]
+}
+
+import { BlogLayout } from "@/components/blog/BlogLayout"
+import { BlogImage } from "@/components/blog/BlogImage"
+import { ShareButtons } from "@/components/blog/ShareButtons"
+
+<BlogLayout>
+  <h1 className="mt-20 text-4xl font-bold mb-4 text-nextpixel-dark dark:text-white">Koliko košta izrada sajta u 2025? Kompletan vodič za firme</h1>
+  
+  <div className="flex items-center mb-6 text-gray-600 dark:text-gray-400">
+    <span className="mr-4">Autor: {blogData.author}</span>
+    <span>Datum objave: {new Date(blogData.date).toLocaleDateString('sr-Latn-RS', {day: 'numeric', month: 'long', year: 'numeric'})}</span>
+  </div>
+  
+  <div className="max-w-2xl mx-auto my-6">
+    <BlogImage 
+      src="/blogImages/web-development-cost.png" 
+      alt="Izrada sajta - troškovi i cene u 2025. godini" 
+      width={800} 
+      height={420} 
+      caption="Pregled troškova izrade web sajta u 2025. godini" 
+    />
+  </div>
+  
+  <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg mb-8 border-l-4 border-blue-500">
+    <p className="text-lg">Planirate da pokrenete sajt za firmu, ali ne znate koliko to košta? U ovom vodiču objasnićemo vam sve: od cena, opcija, do onoga što dobijate za svoj novac.</p>
+  </div>
+  
+  <h2 className="text-2xl font-semibold mt-10 mb-4 text-nextpixel-dark dark:text-white">Osnovne kategorije cena</h2>
+  
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700 mb-4 md:mb-0">
+      <div className="flex items-center mb-4">
+        <div className="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mr-4">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-nextpixel-turquoise" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h3 className="text-lg font-bold text-nextpixel-turquoise">Landing stranica</h3>
+      </div>
+      <p className="text-2xl font-bold mb-2">150€–400€</p>
+      <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">Idealno za promociju jednog proizvoda ili usluge</p>
+      <div className="pt-2 border-t border-gray-100 dark:border-gray-700">
+        <p className="text-sm text-gray-500 dark:text-gray-400">Rok izrade: 1-2 nedelje</p>
+      </div>
+    </div>
+    
+    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700 mb-4 md:mb-0">
+      <div className="flex items-center mb-4">
+        <div className="w-12 h-12 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mr-4">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-nextpixel-turquoise" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+          </svg>
+        </div>
+        <h3 className="text-lg font-bold text-nextpixel-turquoise">Mali sajt (do 5 stranica)</h3>
+      </div>
+      <p className="text-2xl font-bold mb-2">500€–900€</p>
+      <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">Savršeno za male biznise i preduzetnike</p>
+      <div className="pt-2 border-t border-gray-100 dark:border-gray-700">
+        <p className="text-sm text-gray-500 dark:text-gray-400">Rok izrade: 2-3 nedelje</p>
+      </div>
+    </div>
+    
+    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700 mb-4 md:mb-0">
+      <div className="flex items-center mb-4">
+        <div className="w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mr-4">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-nextpixel-turquoise" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <h3 className="text-lg font-bold text-nextpixel-turquoise">Srednji sajt (portfolio, firme)</h3>
+      </div>
+      <p className="text-2xl font-bold mb-2">900€–1.500€</p>
+      <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">Za rastuće kompanije sa više usluga</p>
+      <div className="pt-2 border-t border-gray-100 dark:border-gray-700">
+        <p className="text-sm text-gray-500 dark:text-gray-400">Rok izrade: 3-5 nedelja</p>
+      </div>
+    </div>
+    
+    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700 mb-4 md:mb-0">
+      <div className="flex items-center mb-4">
+        <div className="w-12 h-12 rounded-full bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center mr-4">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-nextpixel-turquoise" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+        </div>
+        <h3 className="text-lg font-bold text-nextpixel-turquoise">Online prodavnica (shop)</h3>
+      </div>
+      <p className="text-2xl font-bold mb-2">1.500€–3.500€</p>
+      <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">Kompletan e-commerce sistem sa plaćanjem</p>
+      <div className="pt-2 border-t border-gray-100 dark:border-gray-700">
+        <p className="text-sm text-gray-500 dark:text-gray-400">Rok izrade: 6-10 nedelja</p>
+      </div>
+    </div>
+  </div>
+  
+  <h2 className="text-2xl font-semibold mt-10 mb-4 text-nextpixel-dark dark:text-white">Šta sve utiče na cenu?</h2>
+  
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+    <ul className="list-disc pl-5 space-y-2">
+      <li>Broj stranica</li>
+      <li>Dizajn (custom ili template)</li>
+      <li>Responsivnost (mobilna optimizacija)</li>
+      <li>CMS (WordPress, headless, custom)</li>
+    </ul>
+    
+    <ul className="list-disc pl-5 space-y-2">
+      <li>SEO optimizacija</li>
+      <li>Brzina učitavanja</li>
+      <li>Integracije (formulare, Google Maps, newsletter...)</li>
+    </ul>
+  </div>
+  
+  <div className="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-lg mb-8 border-l-4 border-amber-500">
+    <h3 className="font-semibold text-lg mb-2">Skriveni troškovi</h3>
+    <p>Obratite pažnju i na:</p>
+    <ul className="list-disc pl-5 mt-2">
+      <li>Domen i hosting (50–100€/god)</li>
+      <li>Održavanje (mesečno ili godišnje)</li>
+      <li>Buduće izmene</li>
+    </ul>
+  </div>
+  
+  <h2 className="text-2xl font-semibold mt-10 mb-4 text-nextpixel-dark dark:text-white">Kako da znate da li je ponuda realna?</h2>
+  
+  <p className="mb-4">Ako dobijete ponudu od 150€, zapitajte se:</p>
+  
+  <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg mb-10 border border-gray-100 dark:border-gray-700">
+    <h3 className="text-lg font-bold mb-4 text-nextpixel-dark dark:text-white flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 text-nextpixel-turquoise" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      Ključna pitanja koja treba postaviti
+    </h3>
+    
+    <ul className="list-none space-y-4">
+      <li className="flex items-start">
+        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mr-3">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 text-nextpixel-turquoise" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <div>
+          <p className="font-medium">Da li uključuje dizajn?</p>
+          <p className="text-sm text-gray-600 dark:text-gray-400">Proverite da li je dizajn uključen u cenu ili se naplaćuje dodatno</p>
+        </div>
+      </li>
+      
+      <li className="flex items-start">
+        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mr-3">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 text-nextpixel-turquoise" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <div>
+          <p className="font-medium">Da li je optimizovan za SEO i mobilne uređaje?</p>
+          <p className="text-sm text-gray-600 dark:text-gray-400">Ključno za vidljivost na Google-u i dobro korisničko iskustvo</p>
+        </div>
+      </li>
+      
+      <li className="flex items-start">
+        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mr-3">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 text-nextpixel-turquoise" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <div>
+          <p className="font-medium">Koliko stranica uključuje ponuda?</p>
+          <p className="text-sm text-gray-600 dark:text-gray-400">Broj stranica direktno utiče na cenu i vreme izrade</p>
+        </div>
+      </li>
+      
+      <li className="flex items-start">
+        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mr-3">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 text-nextpixel-turquoise" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <div>
+          <p className="font-medium">Da li je prilagođen vama ili je template?</p>
+          <p className="text-sm text-gray-600 dark:text-gray-400">Jedinstveni dizajn košta više, ali bolje predstavlja vaš brend</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  
+  <h2 className="text-2xl font-semibold mt-10 mb-4 text-nextpixel-dark dark:text-white">Zaključak</h2>
+  
+  <p className="text-lg mb-6">Cena izrade sajta varira, ali uvek gledajte <strong>šta dobijate</strong> – ne samo cenu.</p>
+  
+  <div className="bg-nextpixel-turquoise text-white p-6 rounded-lg shadow-lg mb-8">
+    <p className="text-xl font-semibold mb-2">👉 Zanima vas ponuda za vaš sajt?</p>
+    <a 
+      href="/#contact" 
+      className="inline-block bg-white text-nextpixel-turquoise font-bold py-2 px-6 rounded-full hover:bg-gray-100 transition-colors"
+    >
+      Kontaktirajte nas →
+    </a>
+  </div>
+  
+  <hr className="my-8 border-gray-300 dark:border-gray-700" />
+  
+  <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Podelite ovaj članak:</p>
+  
+  <ShareButtons 
+    url="https://nextpixel.rs/blog/koliko-kosta-izrada-sajta-2025" 
+    title="Koliko košta izrada sajta u 2025?" 
+  />
+</BlogLayout>
