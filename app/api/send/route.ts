@@ -4,11 +4,14 @@ import { Resend } from 'resend';
 
 // Koristimo API ključ iz .env fajla
 // U produkciji, potrebno je postaviti pravi Resend API ključ u .env fajlu
-const resendApiKey = process.env.RESEND_API_KEY || '';
+const resendApiKey = process.env.RESEND_API_KEY;
 
-// Inicijalizujemo Resend sa API ključem
-// Ako API ključ nije dostupan, koristimo prazan string da izbegnemo grešku pri inicijalizaciji
-const resend = new Resend(resendApiKey);
+// Inicijalizujemo Resend samo ako imamo API ključ
+// Inače ćemo koristiti mock implementaciju
+let resend: Resend | null = null;
+if (resendApiKey) {
+  resend = new Resend(resendApiKey);
+}
 
 export async function POST(request: Request) {
   try {
@@ -22,8 +25,8 @@ export async function POST(request: Request) {
       );
     }
 
-    // Proveravamo da li imamo API ključ
-    if (!resendApiKey) {
+    // Proveravamo da li imamo inicijalizovan Resend objekat
+    if (!resend) {
       console.log('Missing Resend API key. Email will not be sent.');
       // Simuliramo uspešno slanje emaila u development okruženju
       return new Response(
@@ -37,7 +40,8 @@ export async function POST(request: Request) {
       );
     }
     
-    const { data, error } = await resend.emails.send({
+    // TypeScript zahteva da proverimo da li je resend definisan, iako smo to već uradili iznad
+    const { data, error } = await resend!.emails.send({
       from: 'NextPixel <onboarding@resend.dev>',
       to: [process.env.RECIPIENT_EMAIL || 'pixelnext9@gmail.com'],
       subject: `Nova poruka od ${name}`,
