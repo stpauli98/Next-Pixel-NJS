@@ -19,6 +19,15 @@ const Navbar: React.FC = () => {
   useEffect(() => {
     setMounted(true);
   }, []);
+  
+  // Force re-render when language changes
+  useEffect(() => {
+    // This will force the component to re-render when language changes
+    if (mounted) {
+      // This is intentionally empty - just having language in the dependency array
+      // ensures the component re-renders when language changes
+    }
+  }, [language, mounted]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -72,7 +81,11 @@ const Navbar: React.FC = () => {
             </a>
           ))}
           <a href="#contact" className="btn-primary">
-            {mounted ? (typeof t('nav.contactUs') === 'string' ? t('nav.contactUs') as string : 'Contact Us') : 'Kontaktirajte nas'}
+            {mounted ? (
+              language === 'sr' ? 'Kontaktirajte nas' : 
+              language === 'en' ? 'Contact Us' : 
+              language === 'de' ? 'Kontaktieren Sie uns' : 'Contact Us'
+            ) : 'Kontaktirajte nas'}
           </a>
           <LanguageSelector />
         </div>
@@ -110,7 +123,11 @@ const Navbar: React.FC = () => {
               className="btn-primary text-center"
               onClick={() => setIsOpen(false)}
             >
-              {mounted ? (typeof t('nav.contactUs') === 'string' ? t('nav.contactUs') as string : 'Contact Us') : 'Kontaktirajte nas'}
+              {mounted ? (
+                language === 'sr' ? 'Kontaktirajte nas' : 
+                language === 'en' ? 'Contact Us' : 
+                language === 'de' ? 'Kontaktieren Sie uns' : 'Contact Us'
+              ) : 'Kontaktirajte nas'}
             </a>
             <div className="py-2">
               <LanguageSelector />

@@ -4,7 +4,10 @@ import { Resend } from 'resend';
 
 // Koristimo API ključ iz .env fajla
 // U produkciji, potrebno je postaviti pravi Resend API ključ u .env fajlu
-const resendApiKey = process.env.RESEND_API_KEY;
+const resendApiKey = process.env.RESEND_API_KEY || '';
+
+// Inicijalizujemo Resend sa API ključem
+// Ako API ključ nije dostupan, koristimo prazan string da izbegnemo grešku pri inicijalizaciji
 const resend = new Resend(resendApiKey);
 
 export async function POST(request: Request) {
@@ -42,6 +45,7 @@ export async function POST(request: Request) {
         name,
         email,
         subject: `Nova poruka od ${name}`,
+        phone,
         message 
       }) as React.ReactElement,
     });

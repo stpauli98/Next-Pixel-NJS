@@ -4,6 +4,7 @@ interface EmailTemplateProps {
   name: string;
   email: string;
   subject: string;
+  phone: string;
   message: string;
 }
 
@@ -11,6 +12,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
   name,
   email,
   subject,
+  phone,
   message,
 }) => (
   <div style={{ fontFamily: 'Arial, sans-serif', maxWidth: '600px', margin: '0 auto' }}>
@@ -21,6 +23,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
       <p style={{ margin: '8px 0' }}><strong>Name:</strong> {name}</p>
       <p style={{ margin: '8px 0' }}><strong>Email:</strong> {email}</p>
       <p style={{ margin: '8px 0' }}><strong>Subject:</strong> {subject}</p>
+      <p style={{ margin: '8px 0' }}><strong>Phone:</strong> {phone}</p>
       <div style={{ margin: '16px 0' }}>
         <p style={{ margin: '8px 0' }}><strong>Message:</strong></p>
         <p style={{ margin: '8px 0', whiteSpace: 'pre-wrap' }}>{message}</p>
