@@ -1,8 +1,8 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
+import BlogNavbar from '@/components/blog/BlogNavbar';
+import BlogFooter from '@/components/blog/BlogFooter';
 
 export const metadata: Metadata = {
   title: 'NextPixel Blog',
@@ -12,10 +12,10 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   return (
     <div className="flex flex-col min-h-screen">
-      <Navbar />
+      <BlogNavbar />
       <main className="flex-grow">
         <div className="container mx-auto px-4 py-12">
-          <h1 className="mt-10 text-4xl font-bold mb-8 text-center">NextPixel Blog</h1>
+          <h1 className="mt-20 text-4xl font-bold mb-8 text-center">NextPixel Blog</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Zašto je potrebna Web Stranica u 2025. godini? */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
@@ -39,7 +39,7 @@ export default function BlogPage() {
           </div>
         </div>
       </main>
-      <Footer />
+      <BlogFooter />
     </div>
   );
 }

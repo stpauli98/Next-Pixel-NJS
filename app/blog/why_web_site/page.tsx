@@ -1,8 +1,8 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Content from './content.mdx';
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
+import BlogNavbar from '@/components/blog/BlogNavbar';
+import BlogFooter from '@/components/blog/BlogFooter';
 
 // Define metadata from the MDX frontmatter
 export const metadata: Metadata = {
@@ -13,11 +13,11 @@ export const metadata: Metadata = {
 export default function WhyWebSite() {
   return (
     <div className="flex flex-col min-h-screen">
-      <Navbar />
-      <main className="flex-grow">
+      <BlogNavbar />
+      <main className="flex-grow pt-24">
         <Content />
       </main>
-      <Footer />
+      <BlogFooter />
     </div>
   );
 }
