@@ -194,7 +194,7 @@
       "address": "Adresa",
       "phone": "Telefon",
       "email": "Email",
-      "addressDetails": "Zmaja od Bosne 7, 71000 Sarajevo, Bosna i Hercegovina"
+      "addressDetails": "Gradiška"
     },
     "workingHours": {
       "title": "Radno vrijeme",
@@ -210,10 +210,14 @@
     },
     "services": {
       "title": "Usluge",
-      "webDevelopment": "Web razvoj"
+      "webDesign": "Web dizajn",
+      "webDevelopment": "Web razvoj",
+      "eCommerce": "E-Commerce",
+      "seo": "SEO-Optimizacija",
+      "maintenance": "Održavanje"
     },
     "contact": {
-      "address": "Zmaja od Bosne 7, 71000 Sarajevo, Bosna i Hercegovina"
+      "address": "Gradiška"
     },
     "copyright": "Sva prava zadržana.",
     "privacyPolicy": "Politika privatnosti",

@@ -167,7 +167,7 @@
       "address": "Address",
       "phone": "Phone",
       "email": "Email",
-      "addressDetails": "123 Main Street, New York, NY 10001, USA"
+      "addressDetails": "Gradiška"
     },
     "workingHours": {
       "title": "Working hours",
@@ -178,9 +178,23 @@
   },
   "footer": {
     "description": "Digital agency specialized in creating modern websites, e-commerce solutions and digital marketing strategies.",
-    "copyright": "© 2025 NextPixel. All rights reserved.",
+    "quickLinks": {
+      "title": "Quick Links"
+    },
+    "services": {
+      "title": "Services",
+      "webDesign": "Web Design",
+      "webDevelopment": "Web Development",
+      "eCommerce": "E-Commerce",
+      "seo": "SEO Optimization",
+      "maintenance": "Maintenance"
+    },
+    "contact": {
+      "address": "Gradiška"
+    },
+    "copyright": "All rights reserved.",
     "privacyPolicy": "Privacy Policy",
-    "termsOfService": "Terms of Service"
+    "terms": "Terms of Service"
   },
   "common": {
     "backToHome": "Back to Home"

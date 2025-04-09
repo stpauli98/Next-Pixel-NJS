@@ -31,12 +31,6 @@ const Footer: React.FC = () => {
               )}
             </p>
             <div className="flex space-x-4">
-              <a href="https://facebook.com" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
-                <Icon icon={FaFacebook} size={20} aria-hidden={true} />
-              </a>
-              <a href="https://twitter.com" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
-                <Icon icon={FaTwitter} size={20} aria-hidden={true} />
-              </a>
               <a href="https://instagram.com" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                 <Icon icon={FaInstagram} size={20} aria-hidden={true} />
               </a>
@@ -110,7 +104,7 @@ const Footer: React.FC = () => {
               <li>
                 <a href="#services" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? 'Web Design' : (
-                    typeof t('services.webDesign.title') === 'string' ? t('services.webDesign.title') as string : 'Web Design'
+                    typeof t('footer.services.webDesign') === 'string' ? t('footer.services.webDesign') as string : 'Web Design'
                   )}
                 </a>
               </li>
@@ -124,21 +118,21 @@ const Footer: React.FC = () => {
               <li>
                 <a href="#services" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? 'E-commerce' : (
-                    typeof t('services.ecommerce.title') === 'string' ? t('services.ecommerce.title') as string : 'E-commerce'
+                    typeof t('footer.services.eCommerce') === 'string' ? t('footer.services.eCommerce') as string : 'E-commerce'
                   )}
                 </a>
               </li>
               <li>
                 <a href="#services" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? 'SEO' : (
-                    typeof t('services.seo.title') === 'string' ? t('services.seo.title') as string : 'SEO'
+                    typeof t('footer.services.seo') === 'string' ? t('footer.services.seo') as string : 'SEO'
                   )}
                 </a>
               </li>
               <li>
                 <a href="#services" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? 'Maintenance' : (
-                    typeof t('services.maintenance.title') === 'string' ? t('services.maintenance.title') as string : 'Maintenance'
+                    typeof t('footer.services.maintenance') === 'string' ? t('footer.services.maintenance') as string : 'Maintenance'
                   )}
                 </a>
               </li>

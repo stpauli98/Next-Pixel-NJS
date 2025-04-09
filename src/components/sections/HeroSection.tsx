@@ -65,7 +65,7 @@ const HeroSection: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="hidden lg:block"
           >
-            <div className="relative overflow-hidden rounded-xl">
+            <div className="relative overflow-hidden rounded-xl max-w-md mx-auto">
               {/* Pozadinski efekt */}
               <div className="absolute inset-0 bg-nextpixel-turquoise rounded-xl opacity-25 blur-xl transform -rotate-6"></div>
               
@@ -89,11 +89,11 @@ const HeroSection: React.FC = () => {
                 <img 
                   src="/images/NextPixelV2.png" 
                   alt="Digital Solutions" 
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-cover max-h-[400px]"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.onerror = null;
-                    target.src = "https://placehold.co/600x400/0A2463/FFFFFF?text=NextPixel";
+                    target.src = "https://placehold.co/500x350/0A2463/FFFFFF?text=NextPixel";
                   }}
                 />
               </div>

@@ -168,16 +168,16 @@ const PortfolioSection: React.FC = () => {
                   }}
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-nextpixel-dark to-transparent opacity-0 group-hover:opacity-95 transition-opacity duration-300 flex flex-col justify-end p-6 z-10">
-                <h3 className="text-xl font-bold mb-2">
+              <div className="absolute inset-0 bg-gradient-to-t from-nextpixel-dark/80 to-transparent opacity-0 group-hover:opacity-95 transition-opacity duration-300 flex flex-col justify-end p-6 z-10">
+                <h3 className="text-xl font-bold mb-2 text-nextpixel-turquoise">
                   {formatTitle(project.title)}
                 </h3>
-                <p className="text-gray-300 text-sm leading-relaxed">{typeof project.description === 'string' ? project.description : ''}</p>
+                <p className="text-gray-100 text-sm leading-relaxed">{typeof project.description === 'string' ? project.description : ''}</p>
                 <div className="flex justify-between items-center mt-4">
                   <span className="inline-block text-nextpixel-turquoise text-sm font-medium">
                     {project.category.charAt(0).toUpperCase() + project.category.slice(1)}
                   </span>
-                  <span className="inline-block text-white text-sm font-medium hover:text-nextpixel-turquoise transition-colors">
+                  <span className="inline-block text-white text-sm font-medium hover:text-nextpixel-6439a32bfabbb0ee6726f6218674864de8930c62 transition-colors">
                     {typeof t('portfolio.viewProject') === 'string' ? t('portfolio.viewProject') as string : 'View Project'} →
                   </span>
                 </div>

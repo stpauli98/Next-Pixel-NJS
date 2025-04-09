@@ -167,7 +167,7 @@
       "address": "Adresse",
       "phone": "Telefon",
       "email": "E-Mail",
-      "addressDetails": "Musterstraße 123, 10115 Berlin, Deutschland"
+      "addressDetails": "Gradiška"
     },
     "workingHours": {
       "title": "Öffnungszeiten",
@@ -178,9 +178,23 @@
   },
   "footer": {
     "description": "Digitalagentur, spezialisiert auf die Erstellung moderner Websites, E-Commerce-Lösungen und digitaler Marketingstrategien.",
-    "copyright": "© 2025 NextPixel. Alle Rechte vorbehalten.",
+    "quickLinks": {
+      "title": "Schnelllinks"
+    },
+    "services": {
+      "title": "Dienstleistungen",
+      "webDesign": "Webdesign",
+      "webDevelopment": "Web Entwicklung",
+      "eCommerce": "E-Commerce",
+      "seo": "SEO-Optimierung",
+      "maintenance": "Wartung"
+    },
+    "contact": {
+      "address": "Gradiška"
+    },
+    "copyright": "Alle Rechte vorbehalten.",
     "privacyPolicy": "Datenschutzrichtlinie",
-    "termsOfService": "Nutzungsbedingungen"
+    "terms": "Nutzungsbedingungen"
   },
   "common": {
     "backToHome": "Zurück zur Startseite"
