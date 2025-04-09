@@ -81,9 +81,11 @@ export async function getBlogPosts(lang: string): Promise<BlogPost[]> {
       // Remove the original blogData export to avoid conflicts
       const contentWithoutBlogDataExport = fileContent.replace(/export const blogData = ({[\s\S]*?})/m, '');
       
-      // Compile the MDX content
+      // Compile the MDX content with blogData injected into the scope
       const result = await compileMDX<{ title?: string; description?: string; date?: string; excerpt?: string; author?: string; tags?: string[] }>({
-        source: contentWithoutBlogDataExport,
+        source: `{/* Inject blogData into MDX scope */}
+{(() => { globalThis.blogData = ${JSON.stringify(blogData)}; return null; })()}
+${contentWithoutBlogDataExport}`,
         components,
         options: { parseFrontmatter: true },
       });
@@ -137,9 +139,11 @@ export async function getBlogPost(lang: string, slug: string): Promise<FullBlogP
   // Remove the original blogData export to avoid conflicts
   const contentWithoutBlogDataExport = fileContent.replace(/export const blogData = ({[\s\S]*?})/m, '');
   
-  // Compile the MDX content
+  // Compile the MDX content with blogData injected into the scope
   const result = await compileMDX<{ title?: string; description?: string; date?: string; excerpt?: string; author?: string; tags?: string[] }>({
-    source: contentWithoutBlogDataExport,
+    source: `{/* Inject blogData into MDX scope */}
+{(() => { globalThis.blogData = ${JSON.stringify(blogData)}; return null; })()}
+${contentWithoutBlogDataExport}`,
     components,
     options: { parseFrontmatter: true },
   });

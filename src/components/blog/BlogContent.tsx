@@ -3,6 +3,19 @@
 import React, { createContext, useContext } from 'react';
 import { ReactNode } from 'react';
 
+// Declare global type for window with blogData property
+declare global {
+  interface Window {
+    blogData: any;
+  }
+}
+
+// Make blogData available globally for MDX content
+if (typeof window !== 'undefined') {
+  // Only set in browser context to avoid SSR issues
+  window.blogData = window.blogData || {};
+}
+
 // Create a context for blog data
 export const BlogDataContext = createContext<any>(null);
 
@@ -33,6 +46,11 @@ interface BlogContentProps {
 }
 
 export const BlogContent: React.FC<BlogContentProps> = ({ blogData, children }) => {
+  // Make blogData available globally for MDX content
+  if (typeof window !== 'undefined') {
+    window.blogData = blogData;
+  }
+  
   return (
     <BlogDataContext.Provider value={blogData}>
       <article className="prose prose-lg dark:prose-invert max-w-none mx-auto">

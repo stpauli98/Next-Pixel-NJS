@@ -2,9 +2,10 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-// Using a different import approach for compatibility
-import * as FaIcons from 'react-icons/fa';
+// Import icons from react-icons/fa6 for React 19 compatibility
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaLocationDot, FaPhone, FaEnvelope } from 'react-icons/fa6';
 import { useTranslate } from '@/context/LanguageContext';
+import { IconComponent } from '@/components/ui/IconComponent';
 
 interface BlogFooterProps {
   lang?: string;
@@ -36,16 +37,16 @@ const BlogFooter: React.FC<BlogFooterProps> = ({ lang }) => {
             </p>
             <div className="flex space-x-4">
               <a href="https://facebook.com" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors" aria-label="Facebook">
-                <FaIcons.FaFacebook size={20} aria-hidden="true" />
+                <IconComponent icon={FaFacebookF} size={20} />
               </a>
               <a href="https://twitter.com" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors" aria-label="Twitter">
-                <FaIcons.FaTwitter size={20} aria-hidden="true" />
+                <IconComponent icon={FaTwitter} size={20} />
               </a>
               <a href="https://instagram.com" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors" aria-label="Instagram">
-                <FaIcons.FaInstagram size={20} aria-hidden="true" />
+                <IconComponent icon={FaInstagram} size={20} />
               </a>
               <a href="https://linkedin.com" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors" aria-label="LinkedIn">
-                <FaIcons.FaLinkedin size={20} aria-hidden="true" />
+                <IconComponent icon={FaLinkedinIn} size={20} />
               </a>
             </div>
           </div>
@@ -92,7 +93,7 @@ const BlogFooter: React.FC<BlogFooterProps> = ({ lang }) => {
             </h4>
             <ul className="space-y-3">
               <li className="flex items-start">
-                <FaIcons.FaMapMarkerAlt className="mt-1 mr-3 text-nextpixel-turquoise" size={16} aria-hidden="true" />
+                <IconComponent icon={FaLocationDot} size={16} className="mt-1 mr-3 text-nextpixel-turquoise" />
                 <span className="text-gray-300">
                   {!mounted ? 'Sarajevo, Bosnia and Herzegovina' : (
                     typeof t('footer.contact.address') === 'string' ? t('footer.contact.address') as string : 'Sarajevo, Bosnia and Herzegovina'
@@ -100,11 +101,11 @@ const BlogFooter: React.FC<BlogFooterProps> = ({ lang }) => {
                 </span>
               </li>
               <li className="flex items-center">
-                <FaIcons.FaPhone className="mr-3 text-nextpixel-turquoise" size={16} aria-hidden="true" />
+                <IconComponent icon={FaPhone} size={16} className="mr-3 text-nextpixel-turquoise" />
                 <span className="text-gray-300">+387 33 123 456</span>
               </li>
               <li className="flex items-center">
-                <FaIcons.FaEnvelope className="mr-3 text-nextpixel-turquoise" size={16} aria-hidden="true" />
+                <IconComponent icon={FaEnvelope} size={16} className="mr-3 text-nextpixel-turquoise" />
                 <span className="text-gray-300">info@nextpixel.com</span>
               </li>
             </ul>

@@ -6,6 +6,7 @@ import { FaBars, FaXmark } from 'react-icons/fa6';
 import { motion } from 'framer-motion';
 import LanguageSelector from '@/components/LanguageSelector';
 import { useTranslate } from '@/context/LanguageContext';
+import { IconComponent } from '@/components/ui/IconComponent';
 
 interface BlogNavbarProps {
   lang?: string;
@@ -97,7 +98,10 @@ const BlogNavbar: React.FC<BlogNavbarProps> = ({ lang }) => {
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? "Close menu" : "Open menu"}
         >
-          {isOpen ? <FaXmark size={24} aria-hidden={true} /> : <FaBars size={24} aria-hidden={true} />}
+          {isOpen ? 
+            <IconComponent icon={FaXmark} size={24} /> : 
+            <IconComponent icon={FaBars} size={24} />
+          }
         </button>
       </div>
 
