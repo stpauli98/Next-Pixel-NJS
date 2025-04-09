@@ -2,10 +2,12 @@
 
 import React, { useState } from 'react';
 import { useTranslate } from '../context/LanguageContext';
+import Image from 'next/image';
 
 interface LanguageOption {
   code: string;
   name: string;
+  flag: string;
 }
 
 const LanguageSelector: React.FC = () => {
@@ -13,9 +15,9 @@ const LanguageSelector: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const languages: LanguageOption[] = [
-    { code: 'sr', name: 'Srpski' },
-    { code: 'en', name: 'English' },
-    { code: 'de', name: 'Deutsch' }
+    { code: 'sr', name: 'Srpski', flag: '/images/flags/serbia.svg' },
+    { code: 'en', name: 'English', flag: '/images/flags/usa.svg' },
+    { code: 'de', name: 'Deutsch', flag: '/images/flags/germany.svg' }
   ];
 
   const currentLanguage = languages.find(lang => lang.code === language) || languages[0];
@@ -33,10 +35,17 @@ const LanguageSelector: React.FC = () => {
     <div className="relative">
       <button
         onClick={toggleDropdown}
-        className="flex items-center space-x-1 text-sm font-medium focus:outline-none"
+        className="flex items-center space-x-2 text-sm font-medium focus:outline-none"
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
+        <div className="relative w-5 h-4 overflow-hidden rounded-sm">
+          <img 
+            src={currentLanguage.flag} 
+            alt={`${currentLanguage.name} flag`} 
+            className="object-cover w-full h-full"
+          />
+        </div>
         <span>{currentLanguage.name}</span>
         <svg 
           className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} 
@@ -59,10 +68,17 @@ const LanguageSelector: React.FC = () => {
                 onClick={() => handleLanguageChange(lang.code)}
                 className={`block w-full text-left px-4 py-2 text-sm ${
                   lang.code === language ? 'bg-gray-100 text-gray-900' : 'text-gray-700 hover:bg-gray-100'
-                }`}
+                } flex items-center space-x-2`}
                 role="menuitem"
               >
-                {lang.name}
+                <div className="relative w-5 h-4 overflow-hidden rounded-sm">
+                  <img 
+                    src={lang.flag} 
+                    alt={`${lang.name} flag`} 
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <span>{lang.name}</span>
               </button>
             ))}
           </div>

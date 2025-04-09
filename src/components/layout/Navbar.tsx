@@ -47,8 +47,7 @@ const Navbar: React.FC = () => {
     { name: 'Početna', href: '#home' },
     { name: 'O nama', href: '#about' },
     { name: 'Usluge', href: '#services' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'Kontakt', href: '#contact' },
+    { name: 'Portfolio', href: '#portfolio' }
   ];
   
   // Koristi prevedene vrednosti samo nakon što je komponenta montirana na klijentu
@@ -56,8 +55,7 @@ const Navbar: React.FC = () => {
     { name: typeof t('nav.home') === 'string' ? t('nav.home') as string : 'Home', href: '#home' },
     { name: typeof t('nav.about') === 'string' ? t('nav.about') as string : 'About', href: '#about' },
     { name: typeof t('nav.services') === 'string' ? t('nav.services') as string : 'Services', href: '#services' },
-    { name: typeof t('nav.portfolio') === 'string' ? t('nav.portfolio') as string : 'Portfolio', href: '#portfolio' },
-    { name: typeof t('nav.contact') === 'string' ? t('nav.contact') as string : 'Contact', href: '#contact' },
+    { name: typeof t('nav.portfolio') === 'string' ? t('nav.portfolio') as string : 'Portfolio', href: '#portfolio' }
   ] : defaultNavLinks;
 
   return (
