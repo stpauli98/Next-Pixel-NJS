@@ -2,10 +2,15 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaLocationDot, FaPhone, FaEnvelope } from 'react-icons/fa6';
+// Using a different import approach for compatibility
+import * as FaIcons from 'react-icons/fa';
 import { useTranslate } from '@/context/LanguageContext';
 
-const BlogFooter: React.FC = () => {
+interface BlogFooterProps {
+  lang?: string;
+}
+
+const BlogFooter: React.FC<BlogFooterProps> = ({ lang }) => {
   const { t, language } = useTranslate();
   const currentYear = new Date().getFullYear();
   const [mounted, setMounted] = useState(false);
@@ -31,16 +36,16 @@ const BlogFooter: React.FC = () => {
             </p>
             <div className="flex space-x-4">
               <a href="https://facebook.com" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors" aria-label="Facebook">
-                <FaFacebook size={20} aria-hidden={true} />
+                <FaIcons.FaFacebook size={20} aria-hidden="true" />
               </a>
               <a href="https://twitter.com" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors" aria-label="Twitter">
-                <FaTwitter size={20} aria-hidden={true} />
+                <FaIcons.FaTwitter size={20} aria-hidden="true" />
               </a>
               <a href="https://instagram.com" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors" aria-label="Instagram">
-                <FaInstagram size={20} aria-hidden={true} />
+                <FaIcons.FaInstagram size={20} aria-hidden="true" />
               </a>
               <a href="https://linkedin.com" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors" aria-label="LinkedIn">
-                <FaLinkedin size={20} aria-hidden={true} />
+                <FaIcons.FaLinkedin size={20} aria-hidden="true" />
               </a>
             </div>
           </div>
@@ -87,7 +92,7 @@ const BlogFooter: React.FC = () => {
             </h4>
             <ul className="space-y-3">
               <li className="flex items-start">
-                <FaLocationDot className="mt-1 mr-3 text-nextpixel-turquoise" size={16} aria-hidden={true} />
+                <FaIcons.FaMapMarkerAlt className="mt-1 mr-3 text-nextpixel-turquoise" size={16} aria-hidden="true" />
                 <span className="text-gray-300">
                   {!mounted ? 'Sarajevo, Bosnia and Herzegovina' : (
                     typeof t('footer.contact.address') === 'string' ? t('footer.contact.address') as string : 'Sarajevo, Bosnia and Herzegovina'
@@ -95,11 +100,11 @@ const BlogFooter: React.FC = () => {
                 </span>
               </li>
               <li className="flex items-center">
-                <FaPhone className="mr-3 text-nextpixel-turquoise" size={16} aria-hidden={true} />
+                <FaIcons.FaPhone className="mr-3 text-nextpixel-turquoise" size={16} aria-hidden="true" />
                 <span className="text-gray-300">+387 33 123 456</span>
               </li>
               <li className="flex items-center">
-                <FaEnvelope className="mr-3 text-nextpixel-turquoise" size={16} aria-hidden={true} />
+                <FaIcons.FaEnvelope className="mr-3 text-nextpixel-turquoise" size={16} aria-hidden="true" />
                 <span className="text-gray-300">info@nextpixel.com</span>
               </li>
             </ul>

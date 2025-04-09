@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslate } from '../../src/context/LanguageContext';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const TermsPage: React.FC = () => {
   const { t, language } = useTranslate();
@@ -122,11 +123,11 @@ const TermsPage: React.FC = () => {
           </div>
           
           <div className="mt-12 text-center">
-            <a href="/" className="px-6 py-3 bg-nextpixel-blue text-white font-medium rounded-md hover:bg-nextpixel-blue/90 transition-colors inline-block">
+            <Link href="/" className="px-6 py-3 bg-nextpixel-blue text-white font-medium rounded-md hover:bg-nextpixel-blue/90 transition-colors inline-block">
               {!mounted ? 'Back to Home' : 
                 (typeof t('common.backToHome') === 'string' ? t('common.backToHome') as string : 'Back to Home')
               }
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>
