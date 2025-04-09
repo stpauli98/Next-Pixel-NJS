@@ -7,7 +7,11 @@ import { motion } from 'framer-motion';
 import LanguageSelector from '@/components/LanguageSelector';
 import { useTranslate } from '@/context/LanguageContext';
 
-const BlogNavbar: React.FC = () => {
+interface BlogNavbarProps {
+  lang?: string;
+}
+
+const BlogNavbar: React.FC<BlogNavbarProps> = ({ lang }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { t, language } = useTranslate();
