@@ -82,7 +82,7 @@ export async function getBlogPosts(lang: string): Promise<BlogPost[]> {
       const contentWithoutBlogDataExport = fileContent.replace(/export const blogData = ({[\s\S]*?})/m, '');
       
       // Compile the MDX content
-      const result = await compileMDX({
+      const result = await compileMDX<{ title?: string; description?: string; date?: string; excerpt?: string; author?: string; tags?: string[] }>({
         source: contentWithoutBlogDataExport,
         components,
         options: { parseFrontmatter: true },
@@ -138,7 +138,7 @@ export async function getBlogPost(lang: string, slug: string): Promise<FullBlogP
   const contentWithoutBlogDataExport = fileContent.replace(/export const blogData = ({[\s\S]*?})/m, '');
   
   // Compile the MDX content
-  const result = await compileMDX({
+  const result = await compileMDX<{ title?: string; description?: string; date?: string; excerpt?: string; author?: string; tags?: string[] }>({
     source: contentWithoutBlogDataExport,
     components,
     options: { parseFrontmatter: true },
