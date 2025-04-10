@@ -1,6 +1,6 @@
 import React from 'react';
 import { Metadata } from 'next';
-import Content from './content.mdx';
+import Content from './page.mdx';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 

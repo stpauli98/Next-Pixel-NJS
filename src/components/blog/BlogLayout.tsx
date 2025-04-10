@@ -6,7 +6,7 @@ interface BlogLayoutProps {
   
   export const BlogLayout: React.FC<BlogLayoutProps> = ({ children }) => {
     return (
-      <div className="mt-24 max-w-3xl mx-auto px-4 py-10 text-base leading-relaxed">
+      <div className="mt-20 max-w-3xl mx-auto px-4 py-10 text-base leading-relaxed">
         {children}
       </div>
     )

@@ -58,8 +58,7 @@ const BlogNavbar: React.FC<BlogNavbarProps> = ({ lang }) => {
     { name: typeof t('nav.home') === 'string' ? t('nav.home') as string : 'Home', href: '/' },
     { name: 'Blog', href: '/blog' },
     { name: typeof t('nav.about') === 'string' ? t('nav.about') as string : 'About', href: '/#about' },
-    { name: typeof t('nav.services') === 'string' ? t('nav.services') as string : 'Services', href: '/#services' },
-    { name: typeof t('nav.contact') === 'string' ? t('nav.contact') as string : 'Contact', href: '/#contact' },
+    { name: typeof t('nav.services') === 'string' ? t('nav.services') as string : 'Services', href: '/#services' }
   ] : defaultNavLinks;
 
   return (

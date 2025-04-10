@@ -1,8 +1,8 @@
 import React from 'react';
 import { Metadata } from 'next';
-import Link from 'next/link';
 import BlogNavbar from '@/components/blog/BlogNavbar';
 import BlogFooter from '@/components/blog/BlogFooter';
+import BlogCard from '@/components/blog/BlogCard';
 
 export const metadata: Metadata = {
   title: 'NextPixel Blog',
@@ -18,24 +18,18 @@ export default function BlogPage() {
           <h1 className="mt-20 text-4xl font-bold mb-8 text-center">NextPixel Blog</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Zašto je potrebna Web Stranica u 2025. godini? */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="p-6">
-                <h2 className="text-2xl font-bold mb-2">
-                  <Link href="/blog/why_web_site" className="text-nextpixel-dark hover:text-nextpixel-turquoise transition-colors">
-                    Zašto je potrebna Web Stranica u 2025. godini?
-                  </Link>
-                </h2>
-                <p className="text-gray-600 mb-4">
-                  Saznajte zašto je web stranica neophodna za uspjeh vašeg poslovanja u digitalnom dobu.
-                </p>
-                <Link 
-                  href="/blog/why_web_site" 
-                  className="inline-block bg-nextpixel-turquoise text-white py-2 px-4 rounded hover:bg-nextpixel-dark transition-colors"
-                >
-                  Pročitaj više
-                </Link>
-              </div>
-            </div>
+            <BlogCard
+              title="Zašto je potrebna Web Stranica u 2025. godini?"
+              summary="Saznajte zašto je web stranica neophodna za uspjeh vašeg poslovanja u digitalnom dobu."
+              slug="why_web_site"
+            />
+            
+            {/* MDX Page */}
+            <BlogCard
+              title="Naslov"
+              summary="Ukratko"
+              slug="mdx-page"
+            />
           </div>
         </div>
       </main>
