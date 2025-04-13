@@ -87,6 +87,8 @@ const AboutSection: React.FC = () => {
               <Image
                 src="/about-image.jpg" 
                 alt="NextPixel Team" 
+                width={600}
+                height={400}
                 className="relative z-10 rounded-lg shadow-xl w-full h-auto"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;

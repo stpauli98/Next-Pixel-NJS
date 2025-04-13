@@ -44,6 +44,8 @@ const LanguageSelector: React.FC = () => {
             src={currentLanguage.flag} 
             alt={`${currentLanguage.name} flag`} 
             className="object-cover w-full h-full"
+            width={20}
+            height={16}
           />
         </div>
         <span>{currentLanguage.name}</span>
@@ -76,6 +78,8 @@ const LanguageSelector: React.FC = () => {
                     src={lang.flag} 
                     alt={`${lang.name} flag`} 
                     className="object-cover w-full h-full"
+                    width={20}
+                    height={16}
                   />
                 </div>
                 <span>{lang.name}</span>

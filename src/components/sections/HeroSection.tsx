@@ -91,6 +91,8 @@ const HeroSection: React.FC = () => {
                   src="/images/NextPixelV2.png" 
                   alt="Digital Solutions" 
                   className="w-full h-auto object-cover max-h-[400px]"
+                  width={500}
+                  height={350}
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.onerror = null;
