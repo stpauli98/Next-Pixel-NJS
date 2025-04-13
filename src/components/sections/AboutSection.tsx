@@ -9,7 +9,7 @@ import Image from 'next/image';
 
 
 const AboutSection: React.FC = () => {
-  const { t, language } = useTranslate();
+  const { t } = useTranslate(); 
   const features = [
     {
       icon: FaLaptopCode,
