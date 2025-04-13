@@ -11,19 +11,20 @@ export const metadata: Metadata = {
   },
   description: 'Profesionalna digitalna agencija specijalizirana za web dizajn, razvoj softvera i digitalni marketing.',
   keywords: 'digitalna agencija, web dizajn, razvoj softvera, digitalni marketing, SEO, web aplikacije, web stranica',
-  metadataBase: new URL('https://next-pixel-njs.onrender.com'),
   openGraph: {
     title: 'NextPixel - Digitalna agencija za web i softverska rješenja',
     description: 'Profesionalna digitalna agencija specijalizirana za web dizajn, razvoj softvera i digitalni marketing.',
     url: 'https://next-pixel-njs.onrender.com',
-    siteName: 'NextPixel',
+    images: [
+      {
+        url: '/opengraph-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'NextPixel - Digitalna agencija za web i softverska rješenja',
+      },
+    ],
     locale: 'sr_RS',
     type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'NextPixel - Digitalna agencija za web i softverska rješenja',
-    description: 'Profesionalna digitalna agencija specijalizirana za web dizajn, razvoj softvera i digitalni marketing.',
   },
 };
 
