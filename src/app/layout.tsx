@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'NextPixel - Digitalna agencija za web i softverska rješenja',
     description: 'Profesionalna digitalna agencija specijalizirana za web dizajn, razvoj softvera i digitalni marketing.',
+    url: 'https://next-pixel-njs.onrender.com',
     images: [
       {
         url: '/opengraph-image.png',

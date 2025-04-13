@@ -86,24 +86,13 @@ const AboutSection: React.FC = () => {
               <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-nextpixel-blue rounded-lg opacity-20"></div>
               <figure className="relative z-10 mx-auto max-w-2xl my-6">  
                 <Image
-                  src="/images/NextPixelV2.png" 
+                  src="/images/team.png" 
                   alt="NextPixel Team" 
                   width={600}
                   height={400}
                   className="relative z-10 rounded-xl shadow-lg w-full h-auto"
                   priority
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.onerror = null;
-                    target.src = `/images/NextPixelV2_Mini.png`;
-                    // Fallback to placeholder if both images fail
-                    target.onerror = () => {
-                      target.onerror = null;
-                      target.src = `https://placehold.co/600x400/0A2463/FFFFFF?text=${encodeURIComponent('NextPixel Team')}`;
-                    };
-                  }}
                 />
-                <figcaption className="text-center text-sm text-nextpixel-gray mt-2">NextPixel Team - Building digital solutions</figcaption>
               </figure>
             </div>
           </motion.div>
