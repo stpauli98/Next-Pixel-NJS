@@ -7,7 +7,12 @@ const nextConfig = {
   // Optionally, add any other Next.js config below
   reactStrictMode: true,
   images: {
-    domains: ['localhost'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'placehold.co',
+      },
+    ],
   },
   env: {
     // Make the API key available to both client and server
