@@ -4,6 +4,7 @@ import { Metadata } from 'next';
 import BlogNavbar from '@/components/blogComponents/BlogNavbar';
 import BlogFooter from '@/components/blogComponents/BlogFooter';
 import BlogCard from '@/components/blogComponents/BlogCard';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: {
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
   description: 'Pročitajte najnovije članke o web razvoju, dizajnu i digitalnom marketingu.',
   keywords: 'blog, web dizajn, razvoj softvera, digitalni marketing, SEO, web aplikacije, web stranica',
 };
+
 
 export default function BlogPage() {
   return (
@@ -26,13 +28,12 @@ export default function BlogPage() {
               title="Zašto je potrebna Web Stranica u 2025. godini?"
               summary="Saznajte zašto je web stranica neophodna za uspjeh vašeg poslovanja u digitalnom dobu."
               slug="why_web_site"
-            />
-            
-            {/* MDX Page */}
-            <BlogCard
-              title="Naslov"
-              summary="Ukratko"
-              slug="mdx-page"
+              image={{
+                src: '/blogImages/image1.png',
+                alt: 'Image 1'
+              }}
+              date="2025-04-13"
+              readTime="5 min"
             />
           </div>
         </div>
