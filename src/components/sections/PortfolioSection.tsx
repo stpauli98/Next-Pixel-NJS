@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslate } from '../../context/LanguageContext';
+import Image from 'next/image';
 
 interface Project {
   id: number;
@@ -157,7 +158,7 @@ const PortfolioSection: React.FC = () => {
               className="group relative overflow-hidden rounded-xl shadow-lg h-full flex flex-col transform transition-transform hover:-translate-y-2 duration-300"
             >
               <div className="w-full h-72 overflow-hidden bg-white flex items-center justify-center p-0">
-                <img 
+                <Image
                   src={project.image} 
                   alt={project.title} 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"

@@ -40,7 +40,7 @@ const LanguageSelector: React.FC = () => {
         aria-haspopup="true"
       >
         <div className="relative w-5 h-4 overflow-hidden rounded-sm">
-          <img 
+          <Image 
             src={currentLanguage.flag} 
             alt={`${currentLanguage.name} flag`} 
             className="object-cover w-full h-full"
@@ -72,7 +72,7 @@ const LanguageSelector: React.FC = () => {
                 role="menuitem"
               >
                 <div className="relative w-5 h-4 overflow-hidden rounded-sm">
-                  <img 
+                  <Image 
                     src={lang.flag} 
                     alt={`${lang.name} flag`} 
                     className="object-cover w-full h-full"

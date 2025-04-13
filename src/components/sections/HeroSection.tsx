@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslate } from '../../context/LanguageContext';
+import Image from 'next/image';
 
 const HeroSection: React.FC = () => {
   const { t, language } = useTranslate();
@@ -86,7 +87,7 @@ const HeroSection: React.FC = () => {
                 </div>
                 
                 {/* Sama slika */}
-                <img 
+                <Image 
                   src="/images/NextPixelV2.png" 
                   alt="Digital Solutions" 
                   className="w-full h-auto object-cover max-h-[400px]"

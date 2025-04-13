@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { FaLaptopCode, FaUsers, FaRocket, FaAward } from 'react-icons/fa';
 import { Icon } from '../../utils/icons';
 import { useTranslate } from '../../context/LanguageContext';
+import Image from 'next/image';
 
 
 const AboutSection: React.FC = () => {
@@ -83,7 +84,7 @@ const AboutSection: React.FC = () => {
             <div className="relative">
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-nextpixel-turquoise rounded-lg opacity-20"></div>
               <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-nextpixel-blue rounded-lg opacity-20"></div>
-              <img 
+              <Image
                 src="/about-image.jpg" 
                 alt="NextPixel Team" 
                 className="relative z-10 rounded-lg shadow-xl w-full h-auto"
