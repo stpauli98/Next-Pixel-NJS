@@ -1,11 +1,11 @@
 import React from 'react';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import BlogNavbar from '@/components/blog/BlogNavbar';
-import BlogFooter from '@/components/blog/BlogFooter';
+import BlogNavbar from '@/components/blogComponents/BlogNavbar';
+import BlogFooter from '@/components/blogComponents/BlogFooter';
 import { getBlogPost, getAllBlogSlugs } from '@/lib/blog';
-import { BlogLanguageSelector } from '@/components/blog/BlogLanguageSelector';
-import { BlogContent } from '@/components/blog/BlogContent';
+import { BlogLanguageSelector } from '@/components/blogComponents/BlogLanguageSelector';
+import { BlogContent } from '@/components/blogComponents/BlogContent';
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string; slug: string }> }): Promise<Metadata> {
   const resolvedParams = await params;

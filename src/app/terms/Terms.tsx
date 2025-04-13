@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { useTranslate } from '../../src/context/LanguageContext';
+import { useTranslate } from '@/context/LanguageContext';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 const TermsPage: React.FC = () => {
-  const { t, language } = useTranslate();
+  const { t } = useTranslate();
   const [mounted, setMounted] = useState(false);
 
   // Rešava problem hidratacije
@@ -71,8 +71,8 @@ const TermsPage: React.FC = () => {
             
             <div>
               <h2 className="text-xl font-bold mb-4 text-nextpixel-blue">
-                {!mounted ? '4. Payment and Billing' : 
-                  (typeof t('terms.payment.title') === 'string' ? t('terms.payment.title') as string : '4. Payment and Billing')
+                {!mounted ? '4. Payment Terms' : 
+                  (typeof t('terms.payment.title') === 'string' ? t('terms.payment.title') as string : '4. Payment Terms')
                 }
               </h2>
               <p className="text-nextpixel-gray">

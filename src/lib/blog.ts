@@ -1,10 +1,10 @@
 import fs from 'fs';
 import path from 'path';
 import { compileMDX } from 'next-mdx-remote/rsc';
-import { BlogImage } from '@/components/blog/BlogImage';
-import { ShareButtons } from '@/components/blog/ShareButtons';
-import { BlogLayout } from '@/components/blog/BlogLayout';
-import { BlogContent, BlogMeta, BlogTags } from '@/components/blog/BlogContent';
+import { BlogImage } from '@/components/blogComponents/BlogImage';
+import { ShareButtons } from '@/components/blogComponents/ShareButtons';
+import { BlogLayout } from '@/components/blogComponents/BlogLayout';
+import { BlogContent, BlogMeta, BlogTags } from '@/components/blogComponents/BlogContent';
 import { ReactNode } from 'react';
 
 const BLOG_DIR = path.join(process.cwd(), 'content', 'blog');

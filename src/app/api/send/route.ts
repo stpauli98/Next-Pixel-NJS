@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { EmailTemplate } from '../../../src/components/EmailTemplate';
+import { EmailTemplate } from '@/components/EmailTemplate';
 import { Resend } from 'resend';
 
 // Koristimo API ključ iz .env fajla

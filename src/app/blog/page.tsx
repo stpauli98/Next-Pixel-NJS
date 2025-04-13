@@ -1,12 +1,16 @@
+
 import React from 'react';
 import { Metadata } from 'next';
-import BlogNavbar from '@/components/blog/BlogNavbar';
-import BlogFooter from '@/components/blog/BlogFooter';
-import BlogCard from '@/components/blog/BlogCard';
+import BlogNavbar from '@/components/blogComponents/BlogNavbar';
+import BlogFooter from '@/components/blogComponents/BlogFooter';
+import BlogCard from '@/components/blogComponents/BlogCard';
 
 export const metadata: Metadata = {
-  title: 'NextPixel Blog',
+  title: {
+    absolute: 'NextPixel Blog',
+  },
   description: 'Pročitajte najnovije članke o web razvoju, dizajnu i digitalnom marketingu.',
+  keywords: 'blog, web dizajn, razvoj softvera, digitalni marketing, SEO, web aplikacije, web stranica',
 };
 
 export default function BlogPage() {

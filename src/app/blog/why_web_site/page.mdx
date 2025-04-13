@@ -10,11 +10,11 @@ export const blogData = {
   tags: ["izrada sajta", "cene", "vodič", "web development"]
 }
 
-import { BlogLayout } from "@/components/blog/BlogLayout"
-import { BlogImage } from "@/components/blog/BlogImage"
-import { ShareButtons } from "@/components/blog/ShareButtons"
-import BlogNavbar from "@/components/blog/BlogNavbar";
-import BlogFooter from "@/components/blog/BlogFooter";
+import { BlogLayout } from "@/components/blogComponents/BlogLayout"
+import { BlogImage } from "@/components/blogComponents/BlogImage"
+import { ShareButtons } from "@/components/blogComponents/ShareButtons"
+import BlogNavbar from "@/components/blogComponents/BlogNavbar";
+import BlogFooter from "@/components/blogComponents/BlogFooter";
 
 <div className="flex flex-col min-h-screen">
   <BlogNavbar />
@@ -69,12 +69,28 @@ import BlogFooter from "@/components/blog/BlogFooter";
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
           </svg>
         </div>
-        <h3 className="text-lg font-bold text-nextpixel-dark">Mali sajt (do 5 stranica)</h3>
+        <h3 className="text-lg font-bold text-nextpixel-dark">Prezentacioni sajt</h3>
       </div>
-      <p className="text-2xl font-bold mb-2">500€–900€</p>
-      <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">Savršeno za male biznise i preduzetnike</p>
+      <p className="text-2xl font-bold mb-2">400€–1.000€</p>
+      <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">Za manje firme koje žele profesionalno online prisustvo</p>
       <div className="pt-2 border-t border-gray-100 dark:border-gray-700">
         <p className="text-sm text-gray-500 dark:text-gray-400">Rok izrade: 2-3 nedelje</p>
+      </div>
+    </div>
+    
+    <div className="bg-white dark:bg-gray-200 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700 mb-4 md:mb-0">
+      <div className="flex items-center mb-4">
+        <div className="w-12 h-12 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center mr-4">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-nextpixel-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+        </div>
+        <h3 className="text-lg font-bold text-nextpixel-dark">E-commerce sajt</h3>
+      </div>
+      <p className="text-2xl font-bold mb-2">1.000€–3.000€</p>
+      <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">Za prodaju proizvoda online sa sistemom plaćanja</p>
+      <div className="pt-2 border-t border-gray-100 dark:border-gray-700">
+        <p className="text-sm text-gray-500 dark:text-gray-400">Rok izrade: 3-5 nedelja</p>
       </div>
     </div>
     
@@ -85,26 +101,10 @@ import BlogFooter from "@/components/blog/BlogFooter";
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
           </svg>
         </div>
-        <h3 className="text-lg font-bold text-nextpixel-dark">Srednji sajt (portfolio, firme)</h3>
+        <h3 className="text-lg font-bold text-nextpixel-dark">Napredna web aplikacija</h3>
       </div>
-      <p className="text-2xl font-bold mb-2">900€–1.500€</p>
-      <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">Za rastuće kompanije sa više usluga</p>
-      <div className="pt-2 border-t border-gray-100 dark:border-gray-700">
-        <p className="text-sm text-gray-500 dark:text-gray-400">Rok izrade: 3-5 nedelja</p>
-      </div>
-    </div>
-    
-    <div className="bg-white dark:bg-gray-200 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700 mb-4 md:mb-0">
-      <div className="flex items-center mb-4">
-        <div className="w-12 h-12 rounded-full bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center mr-4">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-nextpixel-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-          </svg>
-        </div>
-        <h3 className="text-lg font-bold text-nextpixel-dark">Online prodavnica (shop)</h3>
-      </div>
-      <p className="text-2xl font-bold mb-2">1.500€–3.500€</p>
-      <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">Kompletan e-commerce sistem sa plaćanjem</p>
+      <p className="text-2xl font-bold mb-2">3.000€+</p>
+      <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">Za kompleksne sisteme sa prilagođenim funkcionalnostima</p>
       <div className="pt-2 border-t border-gray-100 dark:border-gray-700">
         <p className="text-sm text-gray-500 dark:text-gray-400">Rok izrade: 6-10 nedelja</p>
       </div>
@@ -115,26 +115,21 @@ import BlogFooter from "@/components/blog/BlogFooter";
   
   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
     <dl className="list-disc pl-5 space-y-2">
-      <li>Broj stranica</li>
-      <li>Dizajn (custom ili template)</li>
-      <li>Responsivnost (mobilna optimizacija)</li>
-      <li>CMS (WordPress, headless, custom)</li>
+      <dt className="font-bold text-nextpixel-dark dark:text-nextpixel-dark">Dizajn</dt>
+      <dd className="text-gray-600 dark:text-gray-400 mb-2">Jedinstveni dizajn košta više od template-a, ali bolje predstavlja vaš brend.</dd>
+      
+      <dt className="font-bold text-nextpixel-dark dark:text-nextpixel-dark">Broj stranica</dt>
+      <dd className="text-gray-600 dark:text-gray-400 mb-2">Više stranica = veća cijena. Razmislite šta vam je zaista potrebno.</dd>
+      
+      <dt className="font-bold text-nextpixel-dark dark:text-nextpixel-dark">Funkcionalnosti</dt>
+      <dd className="text-gray-600 dark:text-gray-400 mb-2">Kontakt forme, galerije, integracije sa društvenim mrežama, itd.</dd>
     </dl>
     
-    <dl className="list-disc pl-5 space-y-2">
-      <li>SEO optimizacija</li>
-      <li>Brzina učitavanja</li>
-      <li>Integracije (formulare, Google Maps, newsletter...)</li>
-    </dl>
-  </div>
-  
-  <div className="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-lg mb-8 border-l-4 border-amber-500">
-    <h3 className="font-semibold text-lg mb-2">Skriveni troškovi</h3>
-    <p>Obratite pažnju i na:</p>
-    <ul className="list-disc pl-5 mt-2">
-      <li>Domen i hosting (50–100€/god)</li>
-      <li>Održavanje (mesečno ili godišnje)</li>
-      <li>Buduće izmene</li>
+    <ul className="list-disc pl-5 space-y-2">
+      <li className="text-gray-600 dark:text-gray-400"><span className="font-bold text-nextpixel-dark dark:text-nextpixel-dark">CMS</span> - Sistem za upravljanje sadržajem (da možete sami mijenjati sadržaj)</li>
+      <li className="text-gray-600 dark:text-gray-400"><span className="font-bold text-nextpixel-dark dark:text-nextpixel-dark">Responzivnost</span> - Prilagođavanje različitim uređajima</li>
+      <li className="text-gray-600 dark:text-gray-400"><span className="font-bold text-nextpixel-dark dark:text-nextpixel-dark">SEO optimizacija</span> - Za bolju vidljivost na Google-u</li>
+      <li className="text-gray-600 dark:text-gray-400"><span className="font-bold text-nextpixel-dark dark:text-nextpixel-dark">Održavanje</span> - Mjesečni troškovi nakon izrade</li>
     </ul>
   </div>
   
@@ -144,8 +139,8 @@ import BlogFooter from "@/components/blog/BlogFooter";
   
   <div className="bg-white dark:bg-gray-200 p-6 rounded-xl shadow-lg mb-10 border border-gray-100 dark:border-gray-700">
     <h3 className="text-lg font-bold mb-4 text-nextpixel-dark dark:text-dark flex items-center">
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-nextpixel-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-nextpixel-turquoise" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
       </svg>
       Ključna pitanja koja treba postaviti
     </h3>
@@ -227,5 +222,3 @@ import BlogFooter from "@/components/blog/BlogFooter";
     <BlogFooter />
   </div>
 </div>
-
-

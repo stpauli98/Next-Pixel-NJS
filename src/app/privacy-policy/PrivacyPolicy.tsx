@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { useTranslate } from '../../src/context/LanguageContext';
+import { useTranslate } from '@/context/LanguageContext';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
-const PrivacyPolicyPage: React.FC = () => {
-  const { t, language } = useTranslate();
+const PrivacyPolicy: React.FC = () => {
+  const { t } = useTranslate();
   const [mounted, setMounted] = useState(false);
 
   // Rešava problem hidratacije
@@ -63,8 +63,8 @@ const PrivacyPolicyPage: React.FC = () => {
                 }
               </h2>
               <p className="text-nextpixel-gray">
-                {!mounted ? 'We do not sell, trade, or otherwise transfer your personal information to outside parties. This does not include trusted third parties who assist us in operating our website, conducting our business, or servicing you, as long as those parties agree to keep this information confidential.' : 
-                  (typeof t('privacy.sharing.content') === 'string' ? t('privacy.sharing.content') as string : 'We do not sell, trade, or otherwise transfer your personal information to outside parties. This does not include trusted third parties who assist us in operating our website, conducting our business, or servicing you, as long as those parties agree to keep this information confidential.')
+                {!mounted ? 'We do not share your personal information with third parties except as described in this Privacy Policy. We may share your information with service providers who perform services on our behalf, when required by law, or in connection with a merger, acquisition, or sale of all or a portion of our assets.' : 
+                  (typeof t('privacy.sharing.content') === 'string' ? t('privacy.sharing.content') as string : 'We do not share your personal information with third parties except as described in this Privacy Policy. We may share your information with service providers who perform services on our behalf, when required by law, or in connection with a merger, acquisition, or sale of all or a portion of our assets.')
                 }
               </p>
             </div>
@@ -76,8 +76,8 @@ const PrivacyPolicyPage: React.FC = () => {
                 }
               </h2>
               <p className="text-nextpixel-gray">
-                {!mounted ? 'We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet or electronic storage is 100% secure, and we cannot guarantee absolute security.' : 
-                  (typeof t('privacy.security.content') === 'string' ? t('privacy.security.content') as string : 'We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet or electronic storage is 100% secure, and we cannot guarantee absolute security.')
+                {!mounted ? 'We take reasonable measures to help protect your personal information from loss, theft, misuse, unauthorized access, disclosure, alteration, and destruction. However, no method of transmission over the Internet or method of electronic storage is 100% secure.' : 
+                  (typeof t('privacy.security.content') === 'string' ? t('privacy.security.content') as string : 'We take reasonable measures to help protect your personal information from loss, theft, misuse, unauthorized access, disclosure, alteration, and destruction. However, no method of transmission over the Internet or method of electronic storage is 100% secure.')
                 }
               </p>
             </div>
@@ -148,4 +148,4 @@ const PrivacyPolicyPage: React.FC = () => {
   );
 };
 
-export default PrivacyPolicyPage;
+export default PrivacyPolicy;

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import BlogNavbar from '@/components/blog/BlogNavbar';
-import BlogFooter from '@/components/blog/BlogFooter';
+import BlogNavbar from '@/components/blogComponents/BlogNavbar';
+import BlogFooter from '@/components/blogComponents/BlogFooter';
 import { getBlogPosts } from '@/lib/blog';
-import { BlogLanguageSelector } from '@/components/blog/BlogLanguageSelector';
+import { BlogLanguageSelector } from '@/components/blogComponents/BlogLanguageSelector';
 
 // Define the BlogPost interface here to avoid circular dependencies
 interface BlogPost {
