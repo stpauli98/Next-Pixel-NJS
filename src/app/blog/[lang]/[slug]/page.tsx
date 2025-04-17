@@ -21,6 +21,33 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: post.title,
     description: post.description,
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      type: 'article',
+      url: `https://next-pixel-njs.onrender.com/blog/${lang}/${slug}`,
+      images: [
+        {
+          url: post.blogData.ogImage || '/opengraph-image.png', // koristi custom sliku ako postoji
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      title: post.title,
+      description: post.description,
+      card: 'summary_large_image',
+      images: [
+        {
+          url: post.blogData.ogImage || '/opengraph-image.png', // koristi custom sliku ako postoji
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },  
   };
 }
 
