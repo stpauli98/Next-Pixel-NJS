@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   keywords: 'terms of service, terms, service',
 };
 
+
 export default function TermsPage() {
   return <Terms />;
 }
