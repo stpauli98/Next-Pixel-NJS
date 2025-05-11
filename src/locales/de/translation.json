@@ -44,68 +44,89 @@
     "contact": "Kontaktieren Sie uns",
     "learnMore": "Mehr erfahren"
   },
-  "services": {
-    "title": "Unsere Dienstleistungen",
-    "subtitle": "Wir bieten eine breite Palette digitaler Dienstleistungen, die auf Ihre Bedürfnisse zugeschnitten sind",
-    "requestQuote": "Angebot anfordern",
-    "webDesign": {
-      "title": "Webdesign",
-      "description": "Wir erstellen moderne, responsive und benutzerfreundliche Websites, die Ihre Marke bestmöglich repräsentieren."
-    },
-    "ecommerce": {
-      "title": "E-Commerce",
-      "description": "Wir entwickeln Online-Shops, die ein hervorragendes Benutzererlebnis bieten und den Umsatz steigern."
-    },
-    "seo": {
-      "title": "SEO-Optimierung",
-      "description": "Wir optimieren Ihre Website, um eine bessere Sichtbarkeit in Suchmaschinen zu erreichen und mehr Besucher anzuziehen."
-    },
-    "webDevelopment": {
-      "title": "Webentwicklung",
-      "description": "Wir entwickeln maßgeschneiderte Webanwendungen, die spezifische Geschäftsprobleme lösen und die Effizienz verbessern."
-    },
-    "mobileDevelopment": {
-      "title": "Mobile Entwicklung",
-      "description": "Wir erstellen mobile Anwendungen, die auf allen Geräten ein hervorragendes Benutzererlebnis bieten."
-    },
-    "digitalMarketing": {
-      "title": "Digitales Marketing",
-      "description": "Wir entwickeln und implementieren digitale Marketingstrategien, die Ihnen helfen, Ihre Zielgruppe zu erreichen."
-    }
+ "services": {
+  "title": "Unsere Dienstleistungen",
+  "subtitle": "Wir bieten eine breite Palette digitaler Services, maßgeschneidert auf Ihre Bedürfnisse",
+  "requestQuote": "Angebot anfordern",
+  "webDesign": {
+    "title": "Webdesign",
+    "description": "Moderne, responsive und benutzerfreundliche Websites, die Ihre Marke perfekt repräsentieren."
   },
-  "whyChooseUs": {
-    "title": "Warum uns wählen",
-    "subtitle": "Gründe, warum Kunden uns wählen",
-    "talkAboutProject": "Lassen Sie uns über Ihr Projekt sprechen",
-    "creativity": {
-      "title": "Kreativität",
-      "description": "Unser Team bringt frische und innovative Ideen in jedes Projekt ein."
-    },
-    "fastDelivery": {
-      "title": "Schnelle Lieferung",
-      "description": "Wir halten Fristen ein und bemühen uns, Projekte so schnell wie möglich abzuschließen."
-    },
-    "expertTeam": {
-      "title": "Fachkundiges Team",
-      "description": "Unser Team besteht aus erfahrenen Experten in verschiedenen Bereichen der digitalen Entwicklung."
-    },
-    "support": {
-      "title": "24/7 Support",
-      "description": "Wir sind immer für Fragen und Unterstützung für unsere Kunden da."
-    },
-    "deadlines": {
-      "title": "Termintreue",
-      "description": "Wir verstehen die Bedeutung der Zeit und liefern Projekte immer pünktlich ab."
-    },
-    "quality": {
-      "title": "Erstklassige Qualität",
-      "description": "Wir machen keine Kompromisse, wenn es um die Qualität unserer Arbeit geht."
-    },
-    "results": {
-      "title": "Ergebnisorientierung",
-      "description": "Unser Ziel ist es, Ihnen zu helfen, konkrete Geschäftsergebnisse zu erzielen."
-    }
+  "ecommerce": {
+    "title": "E-Commerce",
+    "description": "Wir entwickeln Online-Shops mit exzellentem Nutzererlebnis, die den Umsatz steigern."
   },
+  "seo": {
+    "title": "SEO-Optimierung",
+    "description": "Wir verbessern die Sichtbarkeit Ihrer Website in Suchmaschinen und erhöhen den Traffic."
+  },
+  "maintenance": {
+    "title": "Wartung",
+    "description": "Regelmäßige Updates, technische Betreuung und Support für Ihre Website."
+  },
+  "webDevelopment": {
+    "title": "Webentwicklung",
+    "description": "Individuelle Webanwendungen zur Lösung spezifischer Geschäftsanforderungen."
+  },
+  "mobileDevelopment": {
+    "title": "Mobile Entwicklung",
+    "description": "Mobile Apps mit hervorragender Nutzererfahrung auf allen Geräten."
+  },
+  "design": {
+    "title": "Design",
+    "description": "Visuell ansprechende und funktionale Designs, die Ihre Marke hervorheben."
+  },
+  "development": {
+    "title": "Webentwicklung",
+    "description": "Individuelle Weblösungen mit modernsten Technologien."
+  },
+  "responsive": {
+    "title": "Responsive Design",
+    "description": "Ihre Website funktioniert optimal auf allen Geräten – vom Handy bis zum Desktop."
+  }
+},
+"whyChooseUs": {
+  "title": "Warum uns wählen",
+  "subtitle": "Wir bieten unseren Kunden maßgeschneiderte Lösungen mit höchstem Anspruch",
+  "talkAboutProject": "Lassen Sie uns über Ihr Projekt sprechen",
+  "creativity": {
+    "title": "Kreativität",
+    "description": "Unser Team bringt frische und innovative Ideen in jedes Projekt ein."
+  },
+  "fastDelivery": {
+    "title": "Schnelle Lieferung",
+    "description": "Wir halten Fristen ein und liefern Projekte schnellstmöglich ab."
+  },
+  "expertTeam": {
+    "title": "Fachkundiges Team",
+    "description": "Unser Team besteht aus erfahrenen Spezialisten in verschiedenen digitalen Bereichen."
+  },
+  "support": {
+    "title": "24/7 Support",
+    "description": "Wir stehen Ihnen jederzeit für Fragen und Support zur Verfügung."
+  },
+  "deadlines": {
+    "title": "Termintreue",
+    "description": "Wir verstehen, wie wichtig Zeit ist, und liefern stets pünktlich."
+  },
+  "quality": {
+    "title": "Erstklassige Qualität",
+    "description": "Qualität steht bei uns an erster Stelle – ohne Kompromisse."
+  },
+  "results": {
+    "title": "Ergebnisorientierung",
+    "description": "Unser Ziel ist es, messbare Geschäftsergebnisse für Sie zu erzielen."
+  },
+  "clientFocus": {
+    "title": "Kundenorientierung",
+    "description": "Wir stellen Ihre Bedürfnisse in den Mittelpunkt und arbeiten eng mit Ihnen zusammen."
+  },
+  "experience": {
+    "title": "Erfahrung",
+    "description": "Über 8 Jahre Erfahrung in der Umsetzung digitaler Projekte auf höchstem Niveau."
+  }
+},
+
   "portfolio": {
     "title": "Unsere Arbeiten",
     "subtitle": "Sehen Sie sich einige unserer erfolgreichsten Projekte an und entdecken Sie, was wir für Sie tun können.",

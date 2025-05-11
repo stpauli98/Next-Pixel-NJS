@@ -45,54 +45,88 @@
     "learnMore": "Learn more"
   },
   "services": {
-    "title": "Our services",
-    "subtitle": "We provide a wide range of digital services tailored to your needs",
-    "requestQuote": "Request a quote",
-    "webDesign": {
-      "title": "Web design",
-      "description": "We create modern, responsive and user-friendly websites that represent your brand in the best way."
-    },
-    "ecommerce": {
-      "title": "E-commerce",
-      "description": "We develop online stores that provide excellent user experience and increase sales."
-    },
-    "seo": {
-      "title": "SEO optimization",
-      "description": "We optimize your website to achieve better visibility in search engines and attract more visitors."
-    },
-    "webDevelopment": {
-      "title": "Web development",
-      "description": "We develop custom web applications that solve specific business problems and improve efficiency."
-    },
-    "mobileDevelopment": {
-      "title": "Mobile development",
-      "description": "We create mobile applications that provide excellent user experience on all devices."
-    },
-    "digitalMarketing": {
-      "title": "Digital marketing",
-      "description": "We develop and implement digital marketing strategies that help you reach your target audience."
-    }
+  "title": "Our Services",
+  "subtitle": "We offer a wide range of digital services tailored to your needs",
+  "requestQuote": "Request a quote",
+  "webDesign": {
+    "title": "Web Design",
+    "description": "We create modern, responsive, and user-friendly websites that represent your brand at its best."
   },
-  "whyChooseUs": {
-    "title": "Why choose us",
-    "subtitle": "We are dedicated to providing the best solutions for our clients",
-    "experience": {
-      "title": "Experience",
-      "description": "With over 8 years of experience, we have the expertise to deliver high-quality digital solutions."
-    },
-    "expertise": {
-      "title": "Expertise",
-      "description": "Our team consists of experts in various fields of digital technology and marketing."
-    },
-    "clientFocus": {
-      "title": "Client focus",
-      "description": "We put our clients' needs first and work closely with them to achieve their goals."
-    },
-    "results": {
-      "title": "Results",
-      "description": "We are focused on delivering measurable results that help our clients grow their business."
-    }
+  "ecommerce": {
+    "title": "E-Commerce",
+    "description": "We build online stores that offer great user experience and boost sales."
   },
+  "seo": {
+    "title": "SEO Optimization",
+    "description": "We improve your site’s visibility in search engines and increase organic traffic."
+  },
+  "maintenance": {
+    "title": "Maintenance",
+    "description": "We provide regular updates, monitoring, and technical support for your site."
+  },
+  "webDevelopment": {
+    "title": "Web Development",
+    "description": "We build custom web applications to solve business challenges and improve efficiency."
+  },
+  "mobileDevelopment": {
+    "title": "Mobile Development",
+    "description": "We create mobile apps that deliver excellent user experience across all devices."
+  },
+  "design": {
+    "title": "Design",
+    "description": "We design visually attractive and functional interfaces that enhance your brand."
+  },
+  "development": {
+    "title": "Web Development",
+    "description": "We build custom digital solutions using the latest technologies and best practices."
+  },
+  "responsive": {
+    "title": "Responsive Design",
+    "description": "We ensure your website looks and works great on all devices."
+  }
+},
+
+ "whyChooseUs": {
+  "title": "Why Choose Us",
+  "subtitle": "We are dedicated to providing the best solutions for our clients",
+  "talkAboutProject": "Let's talk about your project",
+  "creativity": {
+    "title": "Creativity",
+    "description": "Our team brings fresh and innovative ideas to every project."
+  },
+  "fastDelivery": {
+    "title": "Fast Delivery",
+    "description": "We meet deadlines and strive to complete projects as quickly as possible."
+  },
+  "expertTeam": {
+    "title": "Expert Team",
+    "description": "Our team consists of experienced professionals in various areas of digital development."
+  },
+  "support": {
+    "title": "24/7 Support",
+    "description": "We're always available to answer questions and provide support."
+  },
+  "deadlines": {
+    "title": "Deadline Respect",
+    "description": "We understand the importance of time and always deliver on time."
+  },
+  "quality": {
+    "title": "Top Quality",
+    "description": "We never compromise on the quality of our work."
+  },
+  "results": {
+    "title": "Result-Oriented",
+    "description": "We aim to deliver measurable and impactful business results."
+  },
+  "clientFocus": {
+    "title": "Client Focus",
+    "description": "We put client needs first and collaborate closely to achieve their goals."
+  },
+  "experience": {
+    "title": "Experience",
+    "description": "With over 8 years of experience, we deliver high-quality digital solutions."
+  }
+},
   "portfolio": {
     "title": "Our portfolio",
     "subtitle": "Check out some of our recent projects",
