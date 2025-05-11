@@ -300,9 +300,9 @@ const ContactSection: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-                    className="flex items-start"
+                    className="flex flex-col sm:flex-row items-center sm:items-start"
                   >
-                    <div className="bg-nextpixel-blue/10 p-3 rounded-full mr-4 flex-shrink-0">
+                    <div className="bg-nextpixel-blue/10 p-3 rounded-full mb-3 sm:mb-0 sm:mr-4 flex-shrink-0">
                       <Icon icon={item.icon} size={20} className="text-nextpixel-blue" aria-hidden={true} />
                     </div>
                     <div className="text-center sm:text-left">

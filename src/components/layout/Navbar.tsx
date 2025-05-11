@@ -88,13 +88,18 @@ const Navbar: React.FC = () => {
           <LanguageSelector />
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-nextpixel-dark focus:outline-none"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <Icon icon={FaXmark} size={24} aria-hidden={true} /> : <Icon icon={FaBars} size={24} aria-hidden={true} />}
-        </button>
+        {/* Mobile Language Selector and Menu Button */}
+        <div className="md:hidden flex items-center space-x-4">
+          <div className="flex items-center">
+            <LanguageSelector />
+          </div>
+          <button
+            className="text-nextpixel-dark focus:outline-none"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <Icon icon={FaXmark} size={24} aria-hidden={true} /> : <Icon icon={FaBars} size={24} aria-hidden={true} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -127,9 +132,6 @@ const Navbar: React.FC = () => {
                 language === 'de' ? 'Kontaktieren Sie uns' : 'Contact Us'
               ) : 'Kontaktirajte nas'}
             </a>
-            <div className="py-2">
-              <LanguageSelector />
-            </div>
           </div>
         </motion.div>
       )}
