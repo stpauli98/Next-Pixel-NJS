@@ -4,6 +4,7 @@ import React, { createContext, useContext, useState, useEffect, ReactNode } from
 import { useTranslation } from 'react-i18next';
 import { TFunction } from 'i18next';
 import i18n from '../i18n';
+import Cookies from 'js-cookie';
 
 interface LanguageContextType {
   language: string;
@@ -15,7 +16,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const { t } = useTranslation();
-  // Always start with a fixed language for consistent server/client rendering
+  // Get initial language from cookie or use Serbian as default
   const [language, setLanguage] = useState('sr');
   
   // Koristi ref da pratimo da li je komponenta montirana
@@ -24,33 +25,38 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
 
   // Inicijalizacija i postavljanje event listenera
   useEffect(() => {
-    // Osiguravamo da i18n koristi srpski jezik za inicijalno renderovanje
+    // Prvo proveravamo da li postoji cookie sa jezikom
+    const cookieLanguage = Cookies.get('i18nextLng');
+    const initialLanguage = cookieLanguage || 'sr';
+    
+    // Osiguravamo da i18n koristi odabrani jezik za inicijalno renderovanje
     if (!isInitialized.current) {
-      i18n.changeLanguage('sr');
+      i18n.changeLanguage(initialLanguage);
+      setLanguage(initialLanguage);
       isInitialized.current = true;
     }
-    
-    // Označavamo da je komponenta montirana
+
     isMounted.current = true;
     
-    // Postavljamo event listener za promenu jezika
+    // Funkcija za ažuriranje jezika u state-u kada se promeni u i18n
     const handleLanguageChanged = (lng: string) => {
       if (isMounted.current) {
         setLanguage(lng);
+        // Postavljamo cookie koji će trajati 365 dana
+        Cookies.set('i18nextLng', lng, { expires: 365, path: '/' });
       }
     };
-
+    
+    // Dodajemo event listener za promenu jezika
     i18n.on('languageChanged', handleLanguageChanged);
-
-    // Učitavamo sačuvani jezik iz localStorage samo na klijentskoj strani
+    
+    // Ako smo na klijentu, pokušavamo da učitamo jezik iz cookie-a ili localStorage-a
     if (typeof window !== 'undefined') {
-      // Odložimo učitavanje jezika da bi se prvo završila hidratacija
       const timer = setTimeout(() => {
-        if (isMounted.current) {
-          const savedLanguage = localStorage.getItem('i18nextLng');
-          if (savedLanguage && savedLanguage !== 'sr') {
-            i18n.changeLanguage(savedLanguage);
-          }
+        const storedLanguage = Cookies.get('i18nextLng') || localStorage.getItem('i18nextLng');
+        if (storedLanguage) {
+          i18n.changeLanguage(storedLanguage);
+          setLanguage(storedLanguage);
         }
       }, 0);
       
@@ -70,6 +76,8 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
   const changeLanguage = (lang: string) => {
     i18n.changeLanguage(lang);
     setLanguage(lang); // Eksplicitno postavljanje language state-a
+    // Postavljamo cookie koji će trajati 365 dana
+    Cookies.set('i18nextLng', lang, { expires: 365, path: '/' });
   };
 
   return (

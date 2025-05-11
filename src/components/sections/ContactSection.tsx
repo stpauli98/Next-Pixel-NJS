@@ -145,7 +145,9 @@ const ContactSection: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-lg text-nextpixel-gray max-w-3xl mx-auto"
           >
-            {typeof t('contact.subtitle') === 'string' ? t('contact.subtitle') as string : ''}
+            {!mounted ? 'Javite nam se sa vašim pitanjima i zahtjevima' : (
+              typeof t('contact.subtitle') === 'string' ? t('contact.subtitle') as string : ''
+            )}
           </motion.p>
         </div>
 
@@ -161,7 +163,9 @@ const ContactSection: React.FC = () => {
           >
             <div className="bg-white rounded-lg shadow-lg p-6 md:p-8">
               <h3 className="text-2xl font-bold mb-6 text-center">
-                {typeof t('contact.sendMessage') === 'string' ? t('contact.sendMessage') as string : 'Send us a message'}
+                {!mounted ? 'Pošaljite nam poruku' : (
+                  typeof t('contact.sendMessage') === 'string' ? t('contact.sendMessage') as string : 'Send us a message'
+                )}
               </h3>
               
               {submitError && (
@@ -180,7 +184,7 @@ const ContactSection: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
                   <div className="w-full">
                     <label htmlFor="name" className="block text-nextpixel-gray mb-2 font-medium">
-                      {typeof t('contact.name') === 'string' ? t('contact.name') as string : 'Name'} *
+                      {!mounted ? 'Ime' : (typeof t('contact.name') === 'string' ? t('contact.name') as string : 'Name')} *
                     </label>
                     <input
                       type="text"
@@ -190,12 +194,12 @@ const ContactSection: React.FC = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nextpixel-blue transition-all duration-200"
-                      placeholder={typeof t('contact.namePlaceholder') === 'string' ? t('contact.namePlaceholder') as string : 'Your name'}
+                      placeholder={!mounted ? 'Vaše ime' : (typeof t('contact.namePlaceholder') === 'string' ? t('contact.namePlaceholder') as string : 'Your name')}
                     />
                   </div>
                   <div className="w-full">
                     <label htmlFor="email" className="block text-nextpixel-gray mb-2 font-medium">
-                      {typeof t('contact.email') === 'string' ? t('contact.email') as string : 'Email'} *
+                      {!mounted ? 'Email' : (typeof t('contact.email') === 'string' ? t('contact.email') as string : 'Email')} *
                     </label>
                     <input
                       type="email"
@@ -205,14 +209,14 @@ const ContactSection: React.FC = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nextpixel-blue transition-all duration-200"
-                      placeholder={typeof t('contact.emailPlaceholder') === 'string' ? t('contact.emailPlaceholder') as string : 'Your email'}
+                      placeholder={!mounted ? 'Vaš email' : (typeof t('contact.emailPlaceholder') === 'string' ? t('contact.emailPlaceholder') as string : 'Your email')}
                     />
                   </div>
                 </div>
                 
                 <div className="mb-6">
                   <label htmlFor="phone" className="block text-nextpixel-gray mb-2 font-medium">
-                    {typeof t('contact.phone') === 'string' ? t('contact.phone') as string : 'Phone'}
+                    {!mounted ? 'Telefon' : (typeof t('contact.phone') === 'string' ? t('contact.phone') as string : 'Phone')}
                   </label>
                   <input
                     type="tel"
@@ -221,13 +225,13 @@ const ContactSection: React.FC = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nextpixel-blue transition-all duration-200"
-                    placeholder={typeof t('contact.phonePlaceholder') === 'string' ? t('contact.phonePlaceholder') as string : 'Your phone number'}
+                    placeholder={!mounted ? 'Vaš broj telefona' : (typeof t('contact.phonePlaceholder') === 'string' ? t('contact.phonePlaceholder') as string : 'Your phone number')}
                   />
                 </div>
                 
                 <div className="mb-6">
                   <label htmlFor="subject" className="block text-nextpixel-gray mb-2 font-medium">
-                    {typeof t('contact.subject') === 'string' ? t('contact.subject') as string : 'Subject'} *
+                    {!mounted ? 'Naslov' : (typeof t('contact.subject') === 'string' ? t('contact.subject') as string : 'Subject')} *
                   </label>
                   <input
                     type="text"
@@ -237,13 +241,13 @@ const ContactSection: React.FC = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nextpixel-blue transition-all duration-200"
-                    placeholder={typeof t('contact.subjectPlaceholder') === 'string' ? t('contact.subjectPlaceholder') as string : 'Subject of your message'}
+                    placeholder={!mounted ? 'Naslov vaše poruke' : (typeof t('contact.subjectPlaceholder') === 'string' ? t('contact.subjectPlaceholder') as string : 'Subject of your message')}
                   />
                 </div>
                 
                 <div className="mb-6">
                   <label htmlFor="message" className="block text-nextpixel-gray mb-2 font-medium">
-                    {typeof t('contact.message') === 'string' ? t('contact.message') as string : 'Message'} *
+                    {!mounted ? 'Poruka' : (typeof t('contact.message') === 'string' ? t('contact.message') as string : 'Message')} *
                   </label>
                   <textarea
                     id="message"
@@ -253,7 +257,7 @@ const ContactSection: React.FC = () => {
                     required
                     rows={6}
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nextpixel-blue transition-all duration-200"
-                    placeholder={typeof t('contact.messagePlaceholder') === 'string' ? t('contact.messagePlaceholder') as string : 'Your message'}
+                    placeholder={!mounted ? 'Vaša poruka' : (typeof t('contact.messagePlaceholder') === 'string' ? t('contact.messagePlaceholder') as string : 'Your message')}
                   ></textarea>
                 </div>
                 
@@ -269,10 +273,10 @@ const ContactSection: React.FC = () => {
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                         </svg>
-                        {typeof t('contact.sending') === 'string' ? t('contact.sending') as string : 'Sending...'}
+                        {!mounted ? 'Šalje se...' : (typeof t('contact.sending') === 'string' ? t('contact.sending') as string : 'Sending...')}
                       </>
                     ) : (
-                      typeof t('contact.send') === 'string' ? t('contact.send') as string : 'Send Message'
+                      !mounted ? 'Pošalji poruku' : (typeof t('contact.send') === 'string' ? t('contact.send') as string : 'Send Message')
                     )}
                   </button>
                 </div>
@@ -289,7 +293,9 @@ const ContactSection: React.FC = () => {
           >
             <div className="bg-white rounded-lg shadow-lg p-6 md:p-8 h-full flex flex-col">
               <h3 className="text-xl font-bold mb-6">
-                {typeof t('contact.info.title') === 'string' ? t('contact.info.title') as string : 'Contact Information'}
+                {!mounted ? 'Kontakt informacije' : (
+                  typeof t('contact.info.title') === 'string' ? t('contact.info.title') as string : 'Contact Information'
+                )}
               </h3>
               
               <div className="space-y-6 flex-grow">
@@ -348,7 +354,9 @@ const ContactSection: React.FC = () => {
               
               <div className="mt-8 text-center">
                 <h4 className="font-bold mb-4 text-gray-800">
-                  {typeof t('contact.followUs') === 'string' ? t('contact.followUs') as string : 'Follow Us'}
+                  {!mounted ? 'Pratite nas' : (
+                    typeof t('contact.followUs') === 'string' ? t('contact.followUs') as string : 'Follow Us'
+                  )}
                 </h4>
                 <div className="flex space-x-5 justify-center">
                   <a href="https://www.instagram.com/pixelnext9" className="text-nextpixel-gray hover:text-nextpixel-blue transition-colors">

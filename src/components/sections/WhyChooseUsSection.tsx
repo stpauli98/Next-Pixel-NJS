@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaCheckCircle, FaLightbulb, FaClock, FaChartLine, FaRocket, FaUsers, FaHeadset } from 'react-icons/fa';
+import { FaCheckCircle, FaLightbulb, FaClock, FaChartLine, FaRocket, FaUsers, FaHeadset, FaBriefcase, FaHandshake } from 'react-icons/fa';
 import { Icon } from '../../utils/icons';
 import { useTranslate } from '../../context/LanguageContext';
 
@@ -86,6 +86,16 @@ const WhyChooseUsSection: React.FC = () => {
       icon: FaChartLine,
       titleKey: 'whyChooseUs.results.title',
       descriptionKey: 'whyChooseUs.results.description'
+    },
+    {
+      icon: FaHandshake,
+      titleKey: 'whyChooseUs.clientFocus.title',
+      descriptionKey: 'whyChooseUs.clientFocus.description'
+    },
+    {
+      icon: FaBriefcase,
+      titleKey: 'whyChooseUs.experience.title',
+      descriptionKey: 'whyChooseUs.experience.description'
     }
   ];
 

@@ -32,10 +32,10 @@ const Footer: React.FC = () => {
               )}
             </p>
             <div className="flex space-x-4">
-              <a href="https://instagram.com" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
+              <a href="https://instagram.com/pixelnext9" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                 <Icon icon={FaInstagram} size={20} aria-hidden={true} />
               </a>
-              <a href="https://linkedin.com" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
+              <a href="" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                 <Icon icon={FaLinkedin} size={20} aria-hidden={true} />
               </a>
             </div>

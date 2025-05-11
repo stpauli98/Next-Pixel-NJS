@@ -40,8 +40,9 @@ instance
     
     // detection options
     detection: {
-      order: ['localStorage', 'navigator'],
-      caches: ['localStorage'],
+      order: ['cookie', 'localStorage', 'navigator'],
+      lookupCookie: 'i18nextLng',
+      caches: ['cookie', 'localStorage'],
     },
     
     // Ensure language is loaded on init

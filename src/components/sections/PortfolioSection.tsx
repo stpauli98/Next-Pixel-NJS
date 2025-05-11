@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslate } from '../../context/LanguageContext';
 import Image from 'next/image';
@@ -14,8 +14,16 @@ interface Project {
 }
 
 const PortfolioSection: React.FC = () => {
-  const { t } = useTranslate();
-  const projects = [
+  const { t, language } = useTranslate();
+  const [mounted, setMounted] = useState(false);
+  
+  // Rešava problem hidratacije
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  
+  // Definišemo projekte nakon što je komponenta montirana da bi se izbegli problemi hidratacije
+  const getProjects = () => [
     {
       id: 1,
       title: typeof t('portfolio.projects.project1.title') === 'string' ? t('portfolio.projects.project1.title') as string : 'Project 1',
@@ -60,19 +68,29 @@ const PortfolioSection: React.FC = () => {
     },
   ];
 
-  const categories = [
-    { id: 'all', name: typeof t('portfolio.category.all') === 'string' ? t('portfolio.category.all') as string : 'All' },
-    { id: 'webDesign', name: typeof t('portfolio.category.webDesign') === 'string' ? t('portfolio.category.webDesign') as string : 'Web Design' },
-    { id: 'webShop', name: typeof t('portfolio.category.webShop') === 'string' ? t('portfolio.category.webShop') as string : 'Web Shop' },
-    { id: 'seo', name: typeof t('portfolio.category.seo') === 'string' ? t('portfolio.category.seo') as string : 'SEO' },
-    { id: 'software', name: typeof t('portfolio.category.software') === 'string' ? t('portfolio.category.software') as string : 'Software' },
+  // Definišemo kategorije sa fallback vrednostima za inicijalni render
+  const getCategories = () => [
+    { id: 'all', name: !mounted ? 'All' : (typeof t('portfolio.category.all') === 'string' ? t('portfolio.category.all') as string : 'All') },
+    { id: 'webDesign', name: !mounted ? 'Web Design' : (typeof t('portfolio.category.webDesign') === 'string' ? t('portfolio.category.webDesign') as string : 'Web Design') },
+    { id: 'webShop', name: !mounted ? 'Web Shop' : (typeof t('portfolio.category.webShop') === 'string' ? t('portfolio.category.webShop') as string : 'Web Shop') },
+    { id: 'seo', name: !mounted ? 'SEO' : (typeof t('portfolio.category.seo') === 'string' ? t('portfolio.category.seo') as string : 'SEO') },
+    { id: 'software', name: !mounted ? 'Software' : (typeof t('portfolio.category.software') === 'string' ? t('portfolio.category.software') as string : 'Software') },
   ];
 
-  const [activeCategory, setActiveCategory] = useState(categories[0].name);
+  const [activeCategory, setActiveCategory] = useState('all');
+  const [visibleProjects, setVisibleProjects] = useState<Project[]>([]);
 
-  const filteredProjects = activeCategory === categories[0].name
-    ? projects
-    : projects.filter(project => project.category === activeCategory);
+  // Inicijalizacija projekata nakon što je komponenta montirana
+  useEffect(() => {
+    if (mounted) {
+      setVisibleProjects(getProjects());
+    }
+  }, [mounted]);
+
+  // Filtriramo projekte na osnovu aktivne kategorije
+  const filteredProjects = activeCategory === 'all'
+    ? visibleProjects
+    : visibleProjects.filter(project => project.category.toLowerCase().includes(activeCategory.toLowerCase()));
 
   const formatTitle = (title: string) => {
     if (title.includes('radovi')) {
@@ -105,7 +123,9 @@ const PortfolioSection: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="text-3xl md:text-4xl font-bold mb-4"
           >
-            {formatTitle(typeof t('portfolio.title') === 'string' ? t('portfolio.title') as string : 'Portfolio')}
+            {!mounted ? 'Portfolio' : (
+              formatTitle(typeof t('portfolio.title') === 'string' ? t('portfolio.title') as string : 'Portfolio')
+            )}
           </motion.h2>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -119,9 +139,11 @@ const PortfolioSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-lg text-nextpixel-gray max-w-3xl mx-auto"
+            className="text-lg text-nextpixel-gray max-w-3xl mx-auto mb-12"
           >
-            {typeof t('portfolio.subtitle') === 'string' ? t('portfolio.subtitle') as string : 'Subtitle'}
+            {!mounted ? 'Check out some of our recent projects' : (
+              typeof t('portfolio.subtitle') === 'string' ? t('portfolio.subtitle') as string : ''
+            )}
           </motion.p>
         </div>
 
@@ -132,12 +154,12 @@ const PortfolioSection: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="flex flex-wrap justify-center mb-20 gap-4"
         >
-          {categories.map((category, index) => (
+          {getCategories().map((category, index) => (
             <button
               key={index}
-              onClick={() => setActiveCategory(category.name)}
+              onClick={() => setActiveCategory(category.id)}
               className={`px-6 py-3 rounded-full transition-all text-sm font-medium ${
-                activeCategory === category.name
+                activeCategory === category.id
                   ? 'bg-nextpixel-blue text-white shadow-md'
                   : 'bg-gray-100 text-nextpixel-gray hover:bg-gray-200 hover:shadow-sm'
               }`}
@@ -148,7 +170,16 @@ const PortfolioSection: React.FC = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-12">
-          {filteredProjects.map((project, index) => (
+          {!mounted ? (
+            // Prikazujemo placeholder projekte tokom inicijalnog renderovanja
+            Array(3).fill(0).map((_, index) => (
+              <div 
+                key={index}
+                className="relative overflow-hidden rounded-xl shadow-lg h-full flex flex-col bg-gray-100"
+                style={{height: '400px'}}
+              ></div>
+            ))
+          ) : filteredProjects.map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 30 }}
@@ -200,7 +231,9 @@ const PortfolioSection: React.FC = () => {
             href="#contact" 
             className="btn-primary inline-block px-8 py-4 text-white bg-nextpixel-blue hover:bg-blue-700 rounded-full font-medium transition-colors duration-300 shadow-md hover:shadow-lg"
           >
-            {typeof t('portfolio.startProject') === 'string' ? t('portfolio.startProject') as string : 'Start Your Project'}
+            {!mounted ? 'Start Your Project' : (
+              typeof t('portfolio.startProject') === 'string' ? t('portfolio.startProject') as string : 'Start Your Project'
+            )}
           </a>
         </motion.div>
       </div>
