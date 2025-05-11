@@ -5,6 +5,7 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaLocationDot, FaPhone,
 import { Icon } from '../../utils/icons';
 import { useTranslate } from '../../context/LanguageContext';
 import Link from 'next/link';
+import LanguageSelector from '../../components/LanguageSelector';
 
 const Footer: React.FC = () => {
   const { t, language } = useTranslate();
@@ -157,20 +158,27 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center">
                 <Icon icon={FaPhone} className="mr-3 text-nextpixel-turquoise" aria-hidden={true} />
-                <span className="text-gray-300">+387 33 123 456</span>
+                <span className="text-gray-300">+387 66 603 900</span>
               </li>
               <li className="flex items-center">
                 <Icon icon={FaEnvelope} className="mr-3 text-nextpixel-turquoise" aria-hidden={true} />
-                <span className="text-gray-300">info@nextpixel.com</span>
+                <span className="text-gray-300">pixelnext9@gmail.com</span>
               </li>
             </ul>
+            
+            {/* Language Selector */}
+            <div className="mt-6">
+              <h4 className="text-xl font-bold mb-4">
+              </h4>
+              <LanguageSelector />
+            </div>
           </div>
         </div>
         
         <div className="border-t border-gray-700 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400">
-              &copy; {currentYear} NextPixel. {!mounted ? 'All rights reserved.' : (
+              &copy; {currentYear} <a href="https://www.nextpixel.dev" className="hover:text-nextpixel-turquoise transition-colors">NextPixel</a>. {!mounted ? 'All rights reserved.' : (
                 typeof t('footer.copyright') === 'string' ? t('footer.copyright') as string : 'All rights reserved.'
               )}
             </p>

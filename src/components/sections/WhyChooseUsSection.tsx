@@ -13,7 +13,8 @@ const WhyChooseUsSection: React.FC = () => {
   // Rešava problem hidratacije
   useEffect(() => {
     setMounted(true);
-  }, []);
+  }, [language]);
+
   type IconType = typeof FaLightbulb;
 
   // Fallback funkcije za slučaj da prevodi nisu dostupni

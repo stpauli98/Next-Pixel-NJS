@@ -3,7 +3,7 @@
     "title": "Wer wir sind",
     "subtitle": "Digitalagentur mit Leidenschaft für Innovation",
     "description": "NextPixel ist eine Digitalagentur, die sich auf die Erstellung von Websites, Webshops, SEO-Optimierung, Website-Wartung sowie die Entwicklung maßgeschneiderter Softwarelösungen nach Kundenwünschen spezialisiert hat.",
-    "history": "Seit 2015 widmen wir uns der Erstellung digitaler Lösungen, die unseren Kunden helfen, ihre Geschäftsziele zu erreichen. Unser Ansatz kombiniert technisches Fachwissen, Kreativität und ein tiefes Verständnis der geschäftlichen Anforderungen unserer Kunden.",
+    "history": "Seit 2020 widmen wir uns der Erstellung digitaler Lösungen, die unseren Kunden helfen, ihre Geschäftsziele zu erreichen. Unser Ansatz kombiniert technisches Fachwissen, Kreativität und ein tiefes Verständnis der geschäftlichen Anforderungen unserer Kunden.",
     "philosophy": "Wir glauben, dass erfolgreiche digitale Lösungen nicht nur technisch hervorragend sein müssen, sondern auch benutzerfreundlich, ästhetisch ansprechend und für die Erzielung von Geschäftsergebnissen optimiert sein sollten."
   },
   "features": {
@@ -75,22 +75,35 @@
   },
   "whyChooseUs": {
     "title": "Warum uns wählen",
-    "subtitle": "Wir sind bestrebt, die besten Lösungen für unsere Kunden zu bieten",
-    "experience": {
-      "title": "Erfahrung",
-      "description": "Mit über 8 Jahren Erfahrung verfügen wir über das Know-how, um hochwertige digitale Lösungen zu liefern."
+    "subtitle": "Gründe, warum Kunden uns wählen",
+    "talkAboutProject": "Lassen Sie uns über Ihr Projekt sprechen",
+    "creativity": {
+      "title": "Kreativität",
+      "description": "Unser Team bringt frische und innovative Ideen in jedes Projekt ein."
     },
-    "expertise": {
-      "title": "Fachwissen",
-      "description": "Unser Team besteht aus Experten in verschiedenen Bereichen der digitalen Technologie und des Marketings."
+    "fastDelivery": {
+      "title": "Schnelle Lieferung",
+      "description": "Wir halten Fristen ein und bemühen uns, Projekte so schnell wie möglich abzuschließen."
     },
-    "clientFocus": {
-      "title": "Kundenfokus",
-      "description": "Wir stellen die Bedürfnisse unserer Kunden an erste Stelle und arbeiten eng mit ihnen zusammen, um ihre Ziele zu erreichen."
+    "expertTeam": {
+      "title": "Fachkundiges Team",
+      "description": "Unser Team besteht aus erfahrenen Experten in verschiedenen Bereichen der digitalen Entwicklung."
+    },
+    "support": {
+      "title": "24/7 Support",
+      "description": "Wir sind immer für Fragen und Unterstützung für unsere Kunden da."
+    },
+    "deadlines": {
+      "title": "Termintreue",
+      "description": "Wir verstehen die Bedeutung der Zeit und liefern Projekte immer pünktlich ab."
+    },
+    "quality": {
+      "title": "Erstklassige Qualität",
+      "description": "Wir machen keine Kompromisse, wenn es um die Qualität unserer Arbeit geht."
     },
     "results": {
-      "title": "Ergebnisse",
-      "description": "Wir konzentrieren uns darauf, messbare Ergebnisse zu liefern, die unseren Kunden helfen, ihr Geschäft auszubauen."
+      "title": "Ergebnisorientierung",
+      "description": "Unser Ziel ist es, Ihnen zu helfen, konkrete Geschäftsergebnisse zu erzielen."
     }
   },
   "portfolio": {

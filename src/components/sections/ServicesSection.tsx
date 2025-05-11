@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaDesktop, FaShoppingCart, FaSearch, FaServer, FaCode, FaMobileAlt, FaLaptopCode } from 'react-icons/fa';
 import { FaMobileScreen, FaMagnifyingGlass, FaPalette } from 'react-icons/fa6';
@@ -9,6 +9,16 @@ import { useTranslate } from '../../context/LanguageContext';
 
 const ServicesSection: React.FC = () => {
   const { t, language } = useTranslate();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []); // Only set mounted once on mount
+
+  if (!mounted) {
+    return null;
+  }
+
   type IconType = typeof FaDesktop;
 
 interface Service {

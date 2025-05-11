@@ -9,7 +9,14 @@ import Image from 'next/image';
 
 
 const AboutSection: React.FC = () => {
-  const { t } = useTranslate(); 
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => setMounted(true), []);
+  const { t } = useTranslate();
+
+  if (!mounted) {
+    return null;
+  }
+
   const features = [
     {
       icon: FaLaptopCode,
