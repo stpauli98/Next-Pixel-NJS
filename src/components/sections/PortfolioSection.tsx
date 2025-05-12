@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslate } from '../../context/LanguageContext';
 import Image from 'next/image';
+import ProjectDetailsModal from '../ProjectDetailsModal';
 
 interface Project {
   id: number;
@@ -11,16 +12,29 @@ interface Project {
   category: string;
   image: string;
   description: string;
+  url?: string;
+  technologies?: string[];
+  features?: string[];
 }
 
 const PortfolioSection: React.FC = () => {
   const { t, language } = useTranslate();
   const [mounted, setMounted] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   
   // Rešava problem hidratacije
   useEffect(() => {
     setMounted(true);
   }, []);
+  
+  // Osvježavanje komponente kada se promijeni jezik
+  useEffect(() => {
+    if (mounted) {
+      // Osvježavanje projekata kada se promijeni jezik
+      setVisibleProjects(getProjects());
+    }
+  }, [language, mounted]);
   
   // Definišemo projekte nakon što je komponenta montirana da bi se izbegli problemi hidratacije
   const getProjects = () => [
@@ -66,12 +80,30 @@ const PortfolioSection: React.FC = () => {
       category: typeof t('portfolio.category.webDesign') === 'string' ? t('portfolio.category.webDesign') as string : 'Web Design',
       image: '/images/redesign.png',
     },
+    {
+      id: 7,
+      title: typeof t('portfolio.projects.project7.title') === 'string' ? t('portfolio.projects.project7.title') as string : 'Sačuvajte sve uspomene sa vašeg vjenčanja',
+      description: typeof t('portfolio.projects.project7.description') === 'string' ? t('portfolio.projects.project7.description') as string : 'Jednostavan način da prikupite sve fotografije koje su vaši gosti napravili tokom vjenčanja na jednom mestu, bez komplikacija.',
+      category: typeof t('portfolio.category.webApp') === 'string' ? t('portfolio.category.webApp') as string : 'Web App',
+      image: 'https://i.imgur.com/43BFX0Q.png',
+      url: 'https://www.dodajuspomenu.com',
+      technologies: ['Next.js', 'React', 'Tailwind CSS', 'Firebase', 'Cloudinary'],
+      features: [
+        typeof t('portfolio.features.createEvent') === 'string' ? t('portfolio.features.createEvent') as string : 'Kreiranje besplatnog događaja za vjenčanje',
+        typeof t('portfolio.features.shareLink') === 'string' ? t('portfolio.features.shareLink') as string : 'Jednostavno dijeljenje linka sa gostima',
+        typeof t('portfolio.features.collectPhotos') === 'string' ? t('portfolio.features.collectPhotos') as string : 'Automatsko prikupljanje i organizacija fotografija',
+        typeof t('portfolio.features.viewPhotos') === 'string' ? t('portfolio.features.viewPhotos') as string : 'Pregled svih fotografija na jednom mjestu',
+        typeof t('portfolio.features.downloadPhotos') === 'string' ? t('portfolio.features.downloadPhotos') as string : 'Preuzimanje fotografija u visokoj rezoluciji',
+        typeof t('portfolio.features.responsive') === 'string' ? t('portfolio.features.responsive') as string : 'Responzivan dizajn za mobilne uređaje'
+      ]
+    },
   ];
 
   // Definišemo kategorije sa fallback vrednostima za inicijalni render
   const getCategories = () => [
     { id: 'all', name: !mounted ? 'All' : (typeof t('portfolio.category.all') === 'string' ? t('portfolio.category.all') as string : 'All') },
     { id: 'webDesign', name: !mounted ? 'Web Design' : (typeof t('portfolio.category.webDesign') === 'string' ? t('portfolio.category.webDesign') as string : 'Web Design') },
+    { id: 'webApp', name: !mounted ? 'Web App' : (typeof t('portfolio.category.webApp') === 'string' ? t('portfolio.category.webApp') as string : 'Web App') },
     { id: 'webShop', name: !mounted ? 'Web Shop' : (typeof t('portfolio.category.webShop') === 'string' ? t('portfolio.category.webShop') as string : 'Web Shop') },
     { id: 'seo', name: !mounted ? 'SEO' : (typeof t('portfolio.category.seo') === 'string' ? t('portfolio.category.seo') as string : 'SEO') },
     { id: 'software', name: !mounted ? 'Software' : (typeof t('portfolio.category.software') === 'string' ? t('portfolio.category.software') as string : 'Software') },
@@ -211,9 +243,16 @@ const PortfolioSection: React.FC = () => {
                   <span className="inline-block text-nextpixel-turquoise text-sm font-medium">
                     {project.category.charAt(0).toUpperCase() + project.category.slice(1)}
                   </span>
-                  <span className="inline-block text-white text-sm font-medium hover:text-nextpixel-6439a32bfabbb0ee6726f6218674864de8930c62 transition-colors">
+                  <button 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedProject(project);
+                      setIsModalOpen(true);
+                    }}
+                    className="inline-block text-white text-sm font-medium hover:text-nextpixel-turquoise transition-colors"
+                  >
                     {typeof t('portfolio.viewProject') === 'string' ? t('portfolio.viewProject') as string : 'View Project'} →
-                  </span>
+                  </button>
                 </div>
               </div>
             </motion.div>
@@ -237,6 +276,13 @@ const PortfolioSection: React.FC = () => {
           </a>
         </motion.div>
       </div>
+      
+      {/* Project Details Modal */}
+      <ProjectDetailsModal 
+        project={selectedProject}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </section>
   );
 };

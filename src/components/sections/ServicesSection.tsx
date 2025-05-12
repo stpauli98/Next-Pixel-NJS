@@ -10,10 +10,17 @@ import { useTranslate } from '../../context/LanguageContext';
 const ServicesSection: React.FC = () => {
   const { t, language } = useTranslate();
   const [mounted, setMounted] = useState(false);
+  const [forceUpdate, setForceUpdate] = useState(0);
 
   useEffect(() => {
     setMounted(true);
-  }, []); // Only set mounted once on mount
+  }, []);
+
+  useEffect(() => {
+    if (mounted) {
+      setForceUpdate(prev => prev + 1);
+    }
+  }, [language, mounted]);
 
   if (!mounted) {
     return null;

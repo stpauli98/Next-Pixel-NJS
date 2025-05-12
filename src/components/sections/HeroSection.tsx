@@ -8,11 +8,20 @@ import Image from 'next/image';
 const HeroSection: React.FC = () => {
   const { t, language } = useTranslate();
   const [mounted, setMounted] = useState(false);
+  const [forceUpdate, setForceUpdate] = useState(0);
 
   // Ovo rešava problem hidratacije tako što se inicijalni render poklapa sa serverskim
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  // Osvježavanje komponente kada se promijeni jezik
+  useEffect(() => {
+    if (mounted) {
+      // Ovo će prisiliti komponentu da se ponovno renderira kada se promijeni jezik
+      setForceUpdate(prev => prev + 1);
+    }
+  }, [language, mounted]);
   return (
     <section id="home" className="relative min-h-screen flex items-center bg-gradient-to-br from-nextpixel-dark to-nextpixel-blue overflow-hidden">
       {/* Background Elements */}

@@ -10,8 +10,19 @@ import Image from 'next/image';
 
 const AboutSection: React.FC = () => {
   const [mounted, setMounted] = React.useState(false);
+  const { t, language } = useTranslate();
+  const [forceUpdate, setForceUpdate] = React.useState(0);
+  
+  // Postavljanje mounted na true nakon inicijalne hidratacije
   React.useEffect(() => setMounted(true), []);
-  const { t } = useTranslate();
+  
+  // Osvježavanje komponente kada se promijeni jezik
+  React.useEffect(() => {
+    if (mounted) {
+      // Ovo će prisiliti komponentu da se ponovno renderira kada se promijeni jezik
+      setForceUpdate(prev => prev + 1);
+    }
+  }, [language, mounted]);
 
   if (!mounted) {
     return null;

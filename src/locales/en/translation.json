@@ -135,6 +135,7 @@
     "category": {
       "all": "all",
       "webDesign": "web-design",
+      "webApp": "web-app",
       "webShop": "web-shop",
       "seo": "seo",
       "software": "software"
@@ -163,7 +164,23 @@
       "project6": {
         "title": "Website Redesign",
         "description": "Complete redesign of an existing website with a focus on user experience."
+      },
+      "project7": {
+        "title": "Save All Your Wedding Memories",
+        "description": "A simple way to collect all photos taken by your guests during the wedding in one place, without complications."
       }
+    },
+    "technologies": "Technologies Used",
+    "description": "Description",
+    "keyFeatures": "Key Features",
+    "visitWebsite": "Visit Website",
+    "features": {
+      "createEvent": "Create a free wedding event",
+      "shareLink": "Easily share the link with guests",
+      "collectPhotos": "Automatic collection and organization of photos",
+      "viewPhotos": "View all photos in one place",
+      "downloadPhotos": "Download photos in high resolution",
+      "responsive": "Responsive design for mobile devices"
     }
   },
   "contact": {

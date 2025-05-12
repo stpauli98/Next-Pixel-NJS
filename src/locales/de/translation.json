@@ -136,6 +136,7 @@
       "all": "alle",
       "webDesign": "webdesign",
       "webShop": "webshop",
+      "webApp": "webapp",
       "seo": "seo",
       "software": "software"
     },
@@ -163,8 +164,25 @@
       "project6": {
         "title": "Website-Redesign",
         "description": "Komplettes Redesign einer bestehenden Website mit Fokus auf Benutzererfahrung."
+      },
+      "project7": {
+       "title": "Bewahren Sie alle Erinnerungen an Ihre Hochzeit auf",
+       "description": "Eine einfache Möglichkeit, alle Fotos zu sammeln, die Ihre Gäste während der Hochzeit gemacht haben – alles an einem Ort, ganz ohne Aufwand"
       }
-    }
+    },
+   "technologies": "Verwendete Technologien",
+  "description": "Beschreibung",
+  "keyFeatures": "Hauptfunktionen",
+  "visitWebsite": "Website besuchen",
+  "features": {
+    "createEvent": "Kostenloses Hochzeitsevent erstellen",
+    "shareLink": "Link einfach mit Gästen teilen",
+    "collectPhotos": "Automatische Sammlung und Organisation von Fotos",
+    "viewPhotos": "Alle Fotos an einem Ort ansehen",
+    "downloadPhotos": "Fotos in hoher Auflösung herunterladen",
+    "responsive": "Responsives Design für mobile Geräte"
+  }
+
   },
   "contact": {
     "title": "Kontaktieren Sie uns",

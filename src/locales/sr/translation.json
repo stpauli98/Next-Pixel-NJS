@@ -134,9 +134,13 @@
     "subtitle": "Pogledajte neke od naših najuspješnijih projekata i otkrijte šta možemo učiniti za vas.",
     "viewProject": "Pogledaj projekat",
     "startProject": "Započnite projekat",
+    "visitWebsite": "Posjetite web stranicu",
+    "technologies": "Korištene tehnologije",
+    "keyFeatures": "Ključne karakteristike",
     "category": {
       "all": "sve",
       "webDesign": "web-dizajn",
+      "webApp": "web-aplikacija",
       "webShop": "web-shop",
       "seo": "seo",
       "software": "softver"
@@ -165,7 +169,19 @@
       "project6": {
         "title": "Redizajn web stranice",
         "description": "Kompletan redizajn postojeće web stranice sa fokusom na korisničko iskustvo."
+      },
+      "project7": {
+        "title": "Sačuvajte sve uspomene sa vašeg vjenčanja",
+        "description": "Jednostavan način da prikupite sve fotografije koje su vaši gosti napravili tokom vjenčanja na jednom mestu, bez komplikacija."
       }
+    },
+    "features": {
+      "createEvent": "Kreiranje besplatnog događaja za vjenčanje",
+      "shareLink": "Jednostavno dijeljenje linka sa gostima",
+      "collectPhotos": "Automatsko prikupljanje i organizacija fotografija",
+      "viewPhotos": "Pregled svih fotografija na jednom mjestu",
+      "downloadPhotos": "Preuzimanje fotografija u visokoj rezoluciji",
+      "responsive": "Responzivan dizajn za mobilne uređaje"
     }
   },
   "relatedProjects": "Slični projekti",
