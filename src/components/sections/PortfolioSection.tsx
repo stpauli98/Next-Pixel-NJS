@@ -235,8 +235,10 @@ const PortfolioSection: React.FC = () => {
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-nextpixel-dark/80 to-transparent opacity-0 group-hover:opacity-95 transition-opacity duration-300 flex flex-col justify-end p-6 z-10">
-                <h3 className="text-xl font-bold mb-2 text-nextpixel-turquoise">
-                  {formatTitle(project.title)}
+                <h3 className="text-xl font-bold mb-2 inline-block">
+                  <span className="bg-nextpixel-dark/90 px-3 py-1 rounded-md text-nextpixel-turquoise shadow-md">
+                    {formatTitle(project.title)}
+                  </span>
                 </h3>
                 <p className="text-gray-100 text-sm leading-relaxed">{typeof project.description === 'string' ? project.description : ''}</p>
                 <div className="flex justify-between items-center mt-4">
