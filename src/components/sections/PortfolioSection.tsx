@@ -42,14 +42,14 @@ const PortfolioSection: React.FC = () => {
       id: 1,
       title: typeof t('portfolio.projects.project1.title') === 'string' ? t('portfolio.projects.project1.title') as string : 'Project 1',
       description: typeof t('portfolio.projects.project1.description') === 'string' ? t('portfolio.projects.project1.description') as string : '',
-      category: typeof t('portfolio.category.webShop') === 'string' ? t('portfolio.category.webShop') as string : 'Web Shop',
+      category: typeof t('portfolio.category.webShop') === 'string' ? t('portfolio.category.webShop') as string : 'web-shop',
       image: '/images/web-shop.png',
     },
     {
       id: 2,
       title: typeof t('portfolio.projects.project2.title') === 'string' ? t('portfolio.projects.project2.title') as string : 'Project 2',
       description: typeof t('portfolio.projects.project2.description') === 'string' ? t('portfolio.projects.project2.description') as string : '',
-      category: typeof t('portfolio.category.webDesign') === 'string' ? t('portfolio.category.webDesign') as string : 'Web Design',
+      category: typeof t('portfolio.category.webDesign') === 'string' ? t('portfolio.category.webDesign') as string : 'web-design',
       image: '/images/corporate-website.png',
     },
     {
@@ -102,9 +102,9 @@ const PortfolioSection: React.FC = () => {
   // Definišemo kategorije sa fallback vrednostima za inicijalni render
   const getCategories = () => [
     { id: 'all', name: !mounted ? 'All' : (typeof t('portfolio.category.all') === 'string' ? t('portfolio.category.all') as string : 'All') },
-    { id: 'webDesign', name: !mounted ? 'Web Design' : (typeof t('portfolio.category.webDesign') === 'string' ? t('portfolio.category.webDesign') as string : 'Web Design') },
-    { id: 'webApp', name: !mounted ? 'Web App' : (typeof t('portfolio.category.webApp') === 'string' ? t('portfolio.category.webApp') as string : 'Web App') },
-    { id: 'webShop', name: !mounted ? 'Web Shop' : (typeof t('portfolio.category.webShop') === 'string' ? t('portfolio.category.webShop') as string : 'Web Shop') },
+    { id: 'web-design', name: !mounted ? 'Web Design' : (typeof t('portfolio.category.webDesign') === 'string' ? t('portfolio.category.webDesign') as string : 'Web Design') },
+    { id: 'web-app', name: !mounted ? 'Web App' : (typeof t('portfolio.category.webApp') === 'string' ? t('portfolio.category.webApp') as string : 'Web App') },
+    { id: 'web-shop', name: !mounted ? 'Web Shop' : (typeof t('portfolio.category.webShop') === 'string' ? t('portfolio.category.webShop') as string : 'Web Shop') },
     { id: 'seo', name: !mounted ? 'SEO' : (typeof t('portfolio.category.seo') === 'string' ? t('portfolio.category.seo') as string : 'SEO') },
     { id: 'software', name: !mounted ? 'Software' : (typeof t('portfolio.category.software') === 'string' ? t('portfolio.category.software') as string : 'Software') },
   ];
@@ -122,7 +122,40 @@ const PortfolioSection: React.FC = () => {
   // Filtriramo projekte na osnovu aktivne kategorije
   const filteredProjects = activeCategory === 'all'
     ? visibleProjects
-    : visibleProjects.filter(project => project.category.toLowerCase().includes(activeCategory.toLowerCase()));
+    : visibleProjects.filter(project => {
+      // Get the category ID for the current project by comparing with translation keys
+      const categoryEntries = Object.entries({
+        'webDesign': t('portfolio.category.webDesign'),
+        'webApp': t('portfolio.category.webApp'),
+        'webShop': t('portfolio.category.webShop'),
+        'seo': t('portfolio.category.seo'),
+        'software': t('portfolio.category.software')
+      });
+      
+      // Find which category key matches this project's category name
+      const matchingCategory = categoryEntries.find(([_, translatedName]) => 
+        project.category === translatedName || 
+        project.category.toLowerCase() === translatedName?.toString().toLowerCase()
+      );
+      
+      // Get the category ID from the matching entry
+      const projectCategoryId = matchingCategory ? matchingCategory[0] : null;
+      
+      // Also check if the category name directly includes the active category
+      const directMatch = project.category.toLowerCase().includes(activeCategory.toLowerCase());
+      
+      // For webDesign, webApp, webShop, software - do direct comparison with the category ID
+      if (activeCategory === 'web-design' && projectCategoryId === 'webDesign') return true;
+      if (activeCategory === 'web-app' && projectCategoryId === 'webApp') return true;
+      if (activeCategory === 'web-shop' && projectCategoryId === 'webShop') return true;
+      if (activeCategory === 'software' && projectCategoryId === 'software') return true;
+      
+      // Special case for Serbian 'softver' category
+      if (activeCategory === 'softver' && projectCategoryId === 'software') return true;
+      
+      // For other categories or fallback
+      return directMatch;
+    });
 
   const formatTitle = (title: string) => {
     if (title.includes('radovi')) {
