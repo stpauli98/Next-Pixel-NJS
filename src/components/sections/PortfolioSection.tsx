@@ -226,7 +226,7 @@ const PortfolioSection: React.FC = () => {
                   alt={project.title} 
                   width={600}
                   height={400}
-                  className={`w-full h-full transition-transform duration-500 group-hover:scale-110 ${project.id === 7 ? 'object-contain bg-nextpixel-white' : 'object-cover'}`}
+                  className={`w-full h-full transition-transform duration-500 group-hover:scale-110 ${project.id === 7 ? 'object-contain bg-nextpixel-white' : 'object-cover'}`} //Ovde se mjenja oblik i izgled sike u kartici
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.onerror = null;
