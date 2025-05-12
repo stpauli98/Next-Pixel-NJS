@@ -35,7 +35,7 @@ const ProjectDetailsModal: React.FC<ProjectDetailsModalProps> = ({ project, isOp
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-2 sm:p-4">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -49,7 +49,7 @@ const ProjectDetailsModal: React.FC<ProjectDetailsModalProps> = ({ project, isOp
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="relative bg-white dark:bg-nextpixel-dark rounded-xl shadow-2xl max-w-4xl w-full mx-auto overflow-hidden"
+            className="relative bg-white dark:bg-nextpixel-dark rounded-xl shadow-2xl max-w-4xl w-full mx-auto overflow-hidden max-h-[90vh] overflow-y-auto"
           >
             {/* Close button */}
             <button 
@@ -63,7 +63,7 @@ const ProjectDetailsModal: React.FC<ProjectDetailsModalProps> = ({ project, isOp
             </button>
             
             {/* Project image */}
-            <div className="w-full h-80 relative">
+            <div className="w-full h-48 sm:h-64 md:h-80 relative">
               <Image
                 src={project.image}
                 alt={project.title}
@@ -79,10 +79,10 @@ const ProjectDetailsModal: React.FC<ProjectDetailsModalProps> = ({ project, isOp
             </div>
             
             {/* Project details */}
-            <div className="p-8">
-              <div className="flex flex-wrap justify-between items-start gap-4 mb-6">
+            <div className="p-4 sm:p-6 md:p-8">
+              <div className="flex flex-col sm:flex-row sm:flex-wrap justify-between items-start gap-4 mb-6">
                 <div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-nextpixel-blue dark:text-nextpixel-turquoise mb-2">
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-nextpixel-blue dark:text-nextpixel-turquoise mb-2">
                     {project.title}
                   </h2>
                   <span className="inline-block px-4 py-1 bg-nextpixel-turquoise/10 text-nextpixel-turquoise rounded-full text-sm font-medium">
@@ -95,7 +95,7 @@ const ProjectDetailsModal: React.FC<ProjectDetailsModalProps> = ({ project, isOp
                     href={project.url} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-flex items-center px-5 py-2 bg-nextpixel-blue text-white rounded-full hover:bg-blue-700 transition-colors shadow-md"
+                    className="inline-flex items-center px-4 sm:px-5 py-2 bg-nextpixel-blue text-white rounded-full hover:bg-blue-700 transition-colors shadow-md text-sm sm:text-base whitespace-nowrap"
                   >
                     <span>{typeof t('portfolio.visitWebsite') === 'string' ? t('portfolio.visitWebsite') as string : 'Visit Website'}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -105,13 +105,13 @@ const ProjectDetailsModal: React.FC<ProjectDetailsModalProps> = ({ project, isOp
                 )}
               </div>
               
-              <div className="prose prose-lg dark:prose-invert max-w-none mb-8">
+              <div className="prose prose-base sm:prose-lg dark:prose-invert max-w-none mb-6 sm:mb-8">
                 <p className="text-nextpixel-gray dark:text-gray-300">{project.description}</p>
               </div>
               
               {project.technologies && project.technologies.length > 0 && (
-                <div className="mb-8">
-                  <h3 className="text-xl font-semibold mb-4 text-nextpixel-blue dark:text-nextpixel-turquoise">
+                <div className="mb-6 sm:mb-8">
+                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-nextpixel-blue dark:text-nextpixel-turquoise">
                     {typeof t('portfolio.technologies') === 'string' ? t('portfolio.technologies') as string : 'Technologies Used'}
                   </h3>
                   <div className="flex flex-wrap gap-2">
@@ -129,14 +129,14 @@ const ProjectDetailsModal: React.FC<ProjectDetailsModalProps> = ({ project, isOp
               
               {project.features && project.features.length > 0 && (
                 <div>
-                  <h3 className="text-xl font-semibold mb-4 text-nextpixel-blue dark:text-nextpixel-turquoise">
+                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-nextpixel-blue dark:text-nextpixel-turquoise">
                     {typeof t('portfolio.keyFeatures') === 'string' ? t('portfolio.keyFeatures') as string : 'Key Features'}
                   </h3>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     {project.features.map((feature, index) => (
-                      <li key={index} className="flex items-start">
-                        <div className="flex-shrink-0 h-6 w-6 text-nextpixel-turquoise mr-2">
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <li key={index} className="flex items-start text-sm sm:text-base">
+                        <div className="flex-shrink-0 h-5 w-5 sm:h-6 sm:w-6 text-nextpixel-turquoise mr-2 mt-0.5">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
                         </div>
