@@ -9,11 +9,20 @@ import { useTranslate } from '../../context/LanguageContext';
 const WhyChooseUsSection: React.FC = () => {
   const { t, language } = useTranslate();
   const [mounted, setMounted] = useState(false);
+  const [forceUpdate, setForceUpdate] = useState(0);
 
   // Rešava problem hidratacije
   useEffect(() => {
     setMounted(true);
-  }, [language]);
+  }, []);
+
+  // Osvježavanje komponente kada se promijeni jezik
+  useEffect(() => {
+    if (mounted) {
+      // Ovo će prisiliti komponentu da se ponovno renderira kada se promijeni jezik
+      setForceUpdate(prev => prev + 1);
+    }
+  }, [language, mounted]);
 
   type IconType = typeof FaLightbulb;
 

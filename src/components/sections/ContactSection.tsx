@@ -9,11 +9,21 @@ import { useTranslate } from '../../context/LanguageContext';
 const ContactSection: React.FC = () => {
   const { t, language } = useTranslate();
   const [mounted, setMounted] = useState(false);
+  const [forceUpdate, setForceUpdate] = useState(0);
 
   // Rešava problem hidratacije
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  
+  // Osvježavanje komponente kada se promijeni jezik
+  useEffect(() => {
+    if (mounted) {
+      // Ovo će prisiliti komponentu da se ponovno renderira kada se promijeni jezik
+      setForceUpdate(prev => prev + 1);
+    }
+  }, [language, mounted]);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
