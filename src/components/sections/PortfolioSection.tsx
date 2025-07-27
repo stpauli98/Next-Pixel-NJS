@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslate } from '../../context/LanguageContext';
 import Image from 'next/image';
@@ -28,16 +28,8 @@ const PortfolioSection: React.FC = () => {
     setMounted(true);
   }, []);
   
-  // Osvježavanje komponente kada se promijeni jezik
-  useEffect(() => {
-    if (mounted) {
-      // Osvježavanje projekata kada se promijeni jezik
-      setVisibleProjects(getProjects());
-    }
-  }, [language, mounted]);
-  
   // Definišemo projekte nakon što je komponenta montirana da bi se izbegli problemi hidratacije
-  const getProjects = () => [
+  const getProjects = useCallback(() => [
     {
       id: 1,
       title: typeof t('portfolio.projects.project1.title') === 'string' ? t('portfolio.projects.project1.title') as string : 'Project 1',
@@ -97,7 +89,15 @@ const PortfolioSection: React.FC = () => {
         typeof t('portfolio.features.responsive') === 'string' ? t('portfolio.features.responsive') as string : 'Responzivan dizajn za mobilne uređaje'
       ]
     },
-  ];
+  ], [t]);
+
+  // Osvježavanje komponente kada se promijeni jezik
+  useEffect(() => {
+    if (mounted) {
+      // Osvježavanje projekata kada se promijeni jezik
+      setVisibleProjects(getProjects());
+    }
+  }, [language, mounted, getProjects]);
 
   // Definišemo kategorije sa fallback vrednostima za inicijalni render
   const getCategories = () => [
@@ -117,7 +117,7 @@ const PortfolioSection: React.FC = () => {
     if (mounted) {
       setVisibleProjects(getProjects());
     }
-  }, [mounted]);
+  }, [mounted, getProjects]);
 
   // Filtriramo projekte na osnovu aktivne kategorije
   const filteredProjects = activeCategory === 'all'

@@ -1,0 +1,25 @@
+{
+  "name": "NextPixel - Digital Solutions",
+  "short_name": "NextPixel",
+  "description": "Digital agency specialized in creating modern websites, e-commerce solutions and digital marketing strategies.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A2463",
+  "theme_color": "#00FFFF",
+  "icons": [
+    {
+      "src": "/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-512.png", 
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["business", "technology", "productivity"],
+  "lang": "sr-Latn-RS",
+  "scope": "/",
+  "orientation": "portrait-primary"
+}

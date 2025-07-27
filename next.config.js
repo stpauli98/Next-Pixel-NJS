@@ -1,4 +1,7 @@
 const createMDX = require('@next/mdx')
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+})
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -32,5 +35,5 @@ const withMDX = createMDX({
   // Add markdown plugins here, as desired
 })
 
-// Merge MDX config with Next.js config
-module.exports = withMDX(nextConfig)
+// Merge MDX config with Next.js config and bundle analyzer
+module.exports = withBundleAnalyzer(withMDX(nextConfig))

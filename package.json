@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "analyze": "cross-env ANALYZE=true next build",
     "siteMap": "next-sitemap",
     "start": "next start",
     "lint": "next lint"
@@ -62,8 +63,10 @@
     ]
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^15.4.4",
     "@types/react-icons": "^2.2.7",
     "autoprefixer": "^10.4.21",
+    "cross-env": "^10.0.0",
     "eslint": "^9.24.0",
     "eslint-config-next": "^15.3.0",
     "postcss": "^8.5.3",

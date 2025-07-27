@@ -3,10 +3,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useClientTranslation } from '@/hooks/useClientTranslation';
-import Image from 'next/image';
+import { HeroImage } from '@/components/OptimizedImage';
 
 const HeroSection: React.FC = () => {
-  const { t, language, isHydrated, isReady } = useClientTranslation();
+  const { t, isHydrated, isReady } = useClientTranslation();
 
   // Pokazuj loading state tokom hydration-a da izbegneš mismatch
   if (!isHydrated || !isReady) {
@@ -97,17 +97,14 @@ const HeroSection: React.FC = () => {
                 </div>
                 
                 {/* Sama slika */}
-                <Image 
+                <HeroImage 
                   src="/images/NextPixelV2.png" 
-                  alt="Digital Solutions" 
+                  alt="NextPixel Digital Solutions - Digitalna agencija za web i softverska rješenja" 
                   className="w-full h-auto object-cover max-h-[400px]"
                   width={500}
                   height={350}
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.onerror = null;
-                    target.src = "https://placehold.co/500x350/0A2463/FFFFFF?text=NextPixel";
-                  }}
+                  fallbackSrc="https://placehold.co/500x350/0A2463/FFFFFF?text=NextPixel"
+                  quality={90}
                 />
               </div>
             </div>
