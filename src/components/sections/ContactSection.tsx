@@ -4,27 +4,11 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaPhone, FaLocationDot } from 'react-icons/fa6';
 import { Icon } from '../../utils/icons';
-import { useTranslate } from '../../context/LanguageContext';
+import { useClientTranslation } from '@/hooks/useClientTranslation';
 import { logInfo, logError } from '@/utils/logger';
 
 const ContactSection: React.FC = () => {
-  const { t, language } = useTranslate();
-  const [mounted, setMounted] = useState(false);
-  const [forceUpdate, setForceUpdate] = useState(0);
-
-  // Rešava problem hidratacije
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  
-  // Osvježavanje komponente kada se promijeni jezik
-  useEffect(() => {
-    if (mounted) {
-      // Ovo će prisiliti komponentu da se ponovno renderira kada se promijeni jezik
-      setForceUpdate(prev => prev + 1);
-    }
-  }, [language, mounted]);
+  const { t, language, isHydrated } = useClientTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -133,7 +117,7 @@ const ContactSection: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            {!mounted ? (
+            {!isHydrated ? (
               <>
                 <span className="text-nextpixel-turquoise">Contact</span> Us
               </>
@@ -167,7 +151,7 @@ const ContactSection: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-lg text-nextpixel-gray max-w-3xl mx-auto"
           >
-            {!mounted ? 'Javite nam se sa vašim pitanjima i zahtjevima' : (
+            {!isHydrated ? 'Javite nam se sa vašim pitanjima i zahtjevima' : (
               typeof t('contact.subtitle') === 'string' ? t('contact.subtitle') as string : ''
             )}
           </motion.p>
@@ -185,7 +169,7 @@ const ContactSection: React.FC = () => {
           >
             <div className="bg-white rounded-lg shadow-lg p-6 md:p-8">
               <h3 className="text-2xl font-bold mb-6 text-center">
-                {!mounted ? 'Pošaljite nam poruku' : (
+                {!isHydrated ? 'Pošaljite nam poruku' : (
                   typeof t('contact.sendMessage') === 'string' ? t('contact.sendMessage') as string : 'Send us a message'
                 )}
               </h3>
@@ -206,7 +190,7 @@ const ContactSection: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
                   <div className="w-full">
                     <label htmlFor="name" className="block text-nextpixel-gray mb-2 font-medium">
-                      {!mounted ? 'Ime' : (typeof t('contact.name') === 'string' ? t('contact.name') as string : 'Name')} *
+                      {!isHydrated ? 'Ime' : (typeof t('contact.name') === 'string' ? t('contact.name') as string : 'Name')} *
                     </label>
                     <input
                       type="text"
@@ -216,12 +200,12 @@ const ContactSection: React.FC = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nextpixel-blue transition-all duration-200"
-                      placeholder={!mounted ? 'Vaše ime' : (typeof t('contact.namePlaceholder') === 'string' ? t('contact.namePlaceholder') as string : 'Your name')}
+                      placeholder={!isHydrated ? 'Vaše ime' : (typeof t('contact.namePlaceholder') === 'string' ? t('contact.namePlaceholder') as string : 'Your name')}
                     />
                   </div>
                   <div className="w-full">
                     <label htmlFor="email" className="block text-nextpixel-gray mb-2 font-medium">
-                      {!mounted ? 'Email' : (typeof t('contact.email') === 'string' ? t('contact.email') as string : 'Email')} *
+                      {!isHydrated ? 'Email' : (typeof t('contact.email') === 'string' ? t('contact.email') as string : 'Email')} *
                     </label>
                     <input
                       type="email"
@@ -231,14 +215,14 @@ const ContactSection: React.FC = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nextpixel-blue transition-all duration-200"
-                      placeholder={!mounted ? 'Vaš email' : (typeof t('contact.emailPlaceholder') === 'string' ? t('contact.emailPlaceholder') as string : 'Your email')}
+                      placeholder={!isHydrated ? 'Vaš email' : (typeof t('contact.emailPlaceholder') === 'string' ? t('contact.emailPlaceholder') as string : 'Your email')}
                     />
                   </div>
                 </div>
                 
                 <div className="mb-6">
                   <label htmlFor="phone" className="block text-nextpixel-gray mb-2 font-medium">
-                    {!mounted ? 'Telefon' : (typeof t('contact.phone') === 'string' ? t('contact.phone') as string : 'Phone')}
+                    {!isHydrated ? 'Telefon' : (typeof t('contact.phone') === 'string' ? t('contact.phone') as string : 'Phone')}
                   </label>
                   <input
                     type="tel"
@@ -247,13 +231,13 @@ const ContactSection: React.FC = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nextpixel-blue transition-all duration-200"
-                    placeholder={!mounted ? 'Vaš broj telefona' : (typeof t('contact.phonePlaceholder') === 'string' ? t('contact.phonePlaceholder') as string : 'Your phone number')}
+                    placeholder={!isHydrated ? 'Vaš broj telefona' : (typeof t('contact.phonePlaceholder') === 'string' ? t('contact.phonePlaceholder') as string : 'Your phone number')}
                   />
                 </div>
                 
                 <div className="mb-6">
                   <label htmlFor="subject" className="block text-nextpixel-gray mb-2 font-medium">
-                    {!mounted ? 'Naslov' : (typeof t('contact.subject') === 'string' ? t('contact.subject') as string : 'Subject')} *
+                    {!isHydrated ? 'Naslov' : (typeof t('contact.subject') === 'string' ? t('contact.subject') as string : 'Subject')} *
                   </label>
                   <input
                     type="text"
@@ -263,13 +247,13 @@ const ContactSection: React.FC = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nextpixel-blue transition-all duration-200"
-                    placeholder={!mounted ? 'Naslov vaše poruke' : (typeof t('contact.subjectPlaceholder') === 'string' ? t('contact.subjectPlaceholder') as string : 'Subject of your message')}
+                    placeholder={!isHydrated ? 'Naslov vaše poruke' : (typeof t('contact.subjectPlaceholder') === 'string' ? t('contact.subjectPlaceholder') as string : 'Subject of your message')}
                   />
                 </div>
                 
                 <div className="mb-6">
                   <label htmlFor="message" className="block text-nextpixel-gray mb-2 font-medium">
-                    {!mounted ? 'Poruka' : (typeof t('contact.message') === 'string' ? t('contact.message') as string : 'Message')} *
+                    {!isHydrated ? 'Poruka' : (typeof t('contact.message') === 'string' ? t('contact.message') as string : 'Message')} *
                   </label>
                   <textarea
                     id="message"
@@ -279,7 +263,7 @@ const ContactSection: React.FC = () => {
                     required
                     rows={6}
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nextpixel-blue transition-all duration-200"
-                    placeholder={!mounted ? 'Vaša poruka' : (typeof t('contact.messagePlaceholder') === 'string' ? t('contact.messagePlaceholder') as string : 'Your message')}
+                    placeholder={!isHydrated ? 'Vaša poruka' : (typeof t('contact.messagePlaceholder') === 'string' ? t('contact.messagePlaceholder') as string : 'Your message')}
                   ></textarea>
                 </div>
                 
@@ -295,10 +279,10 @@ const ContactSection: React.FC = () => {
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                         </svg>
-                        {!mounted ? 'Šalje se...' : (typeof t('contact.sending') === 'string' ? t('contact.sending') as string : 'Sending...')}
+                        {!isHydrated ? 'Šalje se...' : (typeof t('contact.sending') === 'string' ? t('contact.sending') as string : 'Sending...')}
                       </>
                     ) : (
-                      !mounted ? 'Pošalji poruku' : (typeof t('contact.send') === 'string' ? t('contact.send') as string : 'Send Message')
+                      !isHydrated ? 'Pošalji poruku' : (typeof t('contact.send') === 'string' ? t('contact.send') as string : 'Send Message')
                     )}
                   </button>
                 </div>
@@ -315,7 +299,7 @@ const ContactSection: React.FC = () => {
           >
             <div className="bg-white rounded-lg shadow-lg p-6 md:p-8 h-full flex flex-col">
               <h3 className="text-xl font-bold mb-6">
-                {!mounted ? 'Kontakt informacije' : (
+                {!isHydrated ? 'Kontakt informacije' : (
                   typeof t('contact.info.title') === 'string' ? t('contact.info.title') as string : 'Contact Information'
                 )}
               </h3>
@@ -335,7 +319,7 @@ const ContactSection: React.FC = () => {
                     </div>
                     <div className="text-center sm:text-left">
                        <h4 className="font-bold text-gray-800">
-                         {!mounted ? 
+                         {!isHydrated ? 
                            (index === 0 ? 'Email' : index === 1 ? 'Phone' : 'Address') :
                            (typeof t(item.titleKey || '') === 'string' ? t(item.titleKey || '') as string : (index === 0 ? 'Email' : index === 1 ? 'Phone' : 'Address'))
                          }
@@ -344,7 +328,7 @@ const ContactSection: React.FC = () => {
                          href={item.link} 
                          className="text-nextpixel-gray hover:text-nextpixel-blue transition-colors block"
                        >
-                         {!mounted ? 
+                         {!isHydrated ? 
                            (item.info || (index === 2 ? 'Gradiška, Bosnia and Herzegovina' : '')) :
                            (index === 2 && 'infoKey' in item ? 
                              (typeof t(item.infoKey || '') === 'string' ? t(item.infoKey || '') as string : 'Gradiška, Bosnia and Herzegovina') :
@@ -358,17 +342,17 @@ const ContactSection: React.FC = () => {
               
               <div className="mt-8 text-center">
                 <h4 className="font-bold mb-4 text-gray-800">
-                  {!mounted ? 'Working Hours' : 
+                  {!isHydrated ? 'Working Hours' : 
                     (typeof t('contact.workingHours.title') === 'string' ? t('contact.workingHours.title') as string : 'Working Hours')
                   }
                 </h4>
                 <p className="text-nextpixel-gray mb-2">
-                  {!mounted ? 'Monday - Friday: 9:00 - 17:00' : 
+                  {!isHydrated ? 'Monday - Friday: 9:00 - 17:00' : 
                     (typeof t('contact.workingHours.weekdays') === 'string' ? t('contact.workingHours.weekdays') as string : 'Monday - Friday: 9:00 - 17:00')
                   }
                 </p>
                 <p className="text-nextpixel-gray">
-                  {!mounted ? 'Saturday - Sunday: Closed' : 
+                  {!isHydrated ? 'Saturday - Sunday: Closed' : 
                     (typeof t('contact.workingHours.weekend') === 'string' ? t('contact.workingHours.weekend') as string : 'Saturday - Sunday: Closed')
                   }
                 </p>
@@ -376,7 +360,7 @@ const ContactSection: React.FC = () => {
               
               <div className="mt-8 text-center">
                 <h4 className="font-bold mb-4 text-gray-800">
-                  {!mounted ? 'Pratite nas' : (
+                  {!isHydrated ? 'Pratite nas' : (
                     typeof t('contact.followUs') === 'string' ? t('contact.followUs') as string : 'Follow Us'
                   )}
                 </h4>

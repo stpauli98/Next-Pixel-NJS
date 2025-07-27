@@ -154,7 +154,15 @@ export function isBlogPost(obj: any): obj is BlogPost {
 }
 
 export function isFullBlogPost(obj: any): obj is FullBlogPost {
-  return isBlogPost(obj) && 
+  return obj && 
+    typeof obj === 'object' &&
+    typeof obj.slug === 'string' &&
+    typeof obj.title === 'string' &&
+    typeof obj.description === 'string' &&
+    typeof obj.date === 'string' &&
+    typeof obj.excerpt === 'string' &&
+    typeof obj.author === 'string' &&
+    Array.isArray(obj.tags) &&
     obj.content !== undefined && 
     obj.blogData !== undefined;
 }
@@ -178,20 +186,4 @@ export type BlogListComponent = React.ComponentType<{
   loading?: boolean;
 }>;
 
-// Export svih tipova za lakše importovanje
-export type {
-  BlogMetadata,
-  BlogDataExtracted,
-  BlogFrontmatter,
-  BlogPost,
-  FullBlogPost,
-  BlogSlugParams,
-  BlogCategory,
-  BlogTag,
-  BlogListing,
-  BlogSearchResult,
-  BlogContextData,
-  BlogContentComponent,
-  BlogMetaComponent,
-  BlogListComponent,
-};
+// Note: All types are already exported inline above

@@ -24,11 +24,10 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     openGraph: {
       title: post.title,
       description: post.description,
-      type: 'article',
       url: `https://next-pixel-njs.onrender.com/blog/${lang}/${slug}`,
       images: [
         {
-          url: post.blogData.ogImage || '/opengraph-image.png', // koristi custom sliku ako postoji
+          url: (typeof post.blogData.ogImage === 'string' ? post.blogData.ogImage : null) || '/opengraph-image.png',
           width: 1200,
           height: 630,
           alt: post.title,
@@ -41,7 +40,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       card: 'summary_large_image',
       images: [
         {
-          url: post.blogData.ogImage || '/opengraph-image.png', // koristi custom sliku ako postoji
+          url: (typeof post.blogData.ogImage === 'string' ? post.blogData.ogImage : null) || '/opengraph-image.png',
           width: 1200,
           height: 630,
           alt: post.title,

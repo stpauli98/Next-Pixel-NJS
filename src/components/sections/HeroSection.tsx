@@ -1,27 +1,28 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { useTranslate } from '../../context/LanguageContext';
+import { useClientTranslation } from '@/hooks/useClientTranslation';
 import Image from 'next/image';
 
 const HeroSection: React.FC = () => {
-  const { t, language } = useTranslate();
-  const [mounted, setMounted] = useState(false);
-  const [forceUpdate, setForceUpdate] = useState(0);
+  const { t, language, isHydrated, isReady } = useClientTranslation();
 
-  // Ovo rešava problem hidratacije tako što se inicijalni render poklapa sa serverskim
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  // Osvježavanje komponente kada se promijeni jezik
-  useEffect(() => {
-    if (mounted) {
-      // Ovo će prisiliti komponentu da se ponovno renderira kada se promijeni jezik
-      setForceUpdate(prev => prev + 1);
-    }
-  }, [language, mounted]);
+  // Pokazuj loading state tokom hydration-a da izbegneš mismatch
+  if (!isHydrated || !isReady) {
+    return (
+      <section id="home" className="relative min-h-screen flex items-center bg-gradient-to-br from-nextpixel-dark to-nextpixel-blue overflow-hidden">
+        <div className="container mx-auto px-4 z-10">
+          <div className="text-center text-white">
+            <div className="animate-pulse">
+              <div className="h-12 bg-white/20 rounded mb-4"></div>
+              <div className="h-6 bg-white/10 rounded mb-8"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
   return (
     <section id="home" className="relative min-h-screen flex items-center bg-gradient-to-br from-nextpixel-dark to-nextpixel-blue overflow-hidden">
       {/* Background Elements */}
@@ -38,7 +39,7 @@ const HeroSection: React.FC = () => {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              {!mounted ? 'Digital solutions for your success' : (
+              {!isHydrated ? 'Digital solutions for your success' : (
                 typeof t('hero.title') === 'string' && (t('hero.title') as string).includes('moderno') ? (
                   <>
                     {(t('hero.title') as string).split('moderno')[0]}
@@ -51,18 +52,18 @@ const HeroSection: React.FC = () => {
               )}
             </h1>
             <p className="text-lg text-gray-300 mb-8">
-              {!mounted ? 'We create modern web solutions for your business' : (
+              {!isHydrated ? 'We create modern web solutions for your business' : (
                 typeof t('hero.subtitle') === 'string' ? t('hero.subtitle') as string : ''
               )}
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <a href="#services" className="btn-primary text-center">
-                {!mounted ? 'Our Services' : (
+                {!isHydrated ? 'Our Services' : (
                   typeof t('hero.services') === 'string' ? t('hero.services') as string : 'Our Services'
                 )}
               </a>
               <a href="#contact" className="btn-secondary text-center">
-                {!mounted ? 'Contact Us' : (
+                {!isHydrated ? 'Contact Us' : (
                   typeof t('hero.contact') === 'string' ? t('hero.contact') as string : 'Contact Us'
                 )}
               </a>
@@ -129,7 +130,7 @@ const HeroSection: React.FC = () => {
           className="text-white flex flex-col items-center"
         >
           <span className="mb-2">
-            {!mounted ? 'Learn More' : (
+            {!isHydrated ? 'Learn More' : (
               typeof t('hero.learnMore') === 'string' ? t('hero.learnMore') as string : 'Learn More'
             )}
           </span>

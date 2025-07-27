@@ -5,14 +5,9 @@ import BlogNavbar from '@/components/blogComponents/BlogNavbar';
 import BlogFooter from '@/components/blogComponents/BlogFooter';
 import BlogCard from '@/components/blogComponents/BlogCard';
 import Image from 'next/image';
+import { pageMetadata } from '@/config/metadata';
 
-export const metadata: Metadata = {
-  title: {
-    absolute: 'NextPixel Blog',
-  },
-  description: 'Pročitajte najnovije članke o web razvoju, dizajnu i digitalnom marketingu.',
-  keywords: 'blog, web dizajn, razvoj softvera, digitalni marketing, SEO, web aplikacije, web stranica',
-};
+export const metadata: Metadata = pageMetadata.blog;
 
 
 export default function BlogPage() {

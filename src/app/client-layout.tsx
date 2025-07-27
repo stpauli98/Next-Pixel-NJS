@@ -1,4 +1,7 @@
+'use client';
+
 import { LanguageProvider } from '@/context/LanguageContext';
+import { ErrorBoundary } from '@/components/ErrorBoundary';
 import '@/i18n'; // Import i18n configuration
 
 export default function ClientLayout({
@@ -7,8 +10,19 @@ export default function ClientLayout({
   children: React.ReactNode
 }) {
   return (
-    <LanguageProvider>
-      {children}
-    </LanguageProvider>
+    <ErrorBoundary 
+      level="global"
+      onError={(error, errorInfo) => {
+        // Custom error handling za app-level greške
+        console.error('App-level error caught by ErrorBoundary:', {
+          error: error.message,
+          componentStack: errorInfo.componentStack
+        });
+      }}
+    >
+      <LanguageProvider>
+        {children}
+      </LanguageProvider>
+    </ErrorBoundary>
   );
 }
