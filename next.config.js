@@ -19,12 +19,11 @@ const nextConfig = {
     ],
   },
   env: {
-    // Make the API key available to both client and server
-    NEXT_PUBLIC_RESEND_API_KEY: process.env.RESEND_API_KEY,
-    // Also make it available with the name the API route expects
+    // BEZBEDNOSNA POPRAVKA: Uklonjen NEXT_PUBLIC_RESEND_API_KEY
+    // API ključ mora ostati samo na server strani
     RESEND_API_KEY: process.env.RESEND_API_KEY,
-    // Recipient email
-    NEXT_PUBLIC_RECIPIENT_EMAIL: process.env.RECIPIENT_EMAIL,
+    // BEZBEDNOSNA POPRAVKA: Uklonjen NEXT_PUBLIC_RECIPIENT_EMAIL
+    // Email adresa mora ostati samo na server strani
     RECIPIENT_EMAIL: process.env.RECIPIENT_EMAIL || 'pixelnext9@gmail.com',
   },
 }

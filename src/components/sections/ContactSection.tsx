@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { FaEnvelope, FaPhone, FaLocationDot } from 'react-icons/fa6';
 import { Icon } from '../../utils/icons';
 import { useTranslate } from '../../context/LanguageContext';
+import { logInfo, logError } from '@/utils/logger';
 
 const ContactSection: React.FC = () => {
   const { t, language } = useTranslate();
@@ -72,14 +73,25 @@ const ContactSection: React.FC = () => {
         });
         
         setSubmitSuccess(true);
-        console.log('Form submitted successfully:', data);
+        logInfo('Forma uspešno poslata', { 
+          name: formData.name, 
+          email: formData.email,
+          component: 'ContactSection'
+        });
       } else {
         setSubmitError(data.error || 'Došlo je do greške prilikom slanja poruke. Molimo pokušajte ponovo.');
-        console.error('Form submission error:', data);
+        logError('Greška pri slanju forme', new Error(data.error || 'Unknown error'), {
+          component: 'ContactSection',
+          formData: { name: formData.name, email: formData.email },
+          responseData: data
+        });
       }
     } catch (error) {
       setSubmitError('Došlo je do greške prilikom slanja poruke. Molimo pokušajte ponovo.');
-      console.error('Form submission error:', error);
+      logError('Greška pri slanju forme - mrežna greška', error, {
+        component: 'ContactSection',
+        formData: { name: formData.name, email: formData.email }
+      });
     } finally {
       setIsSubmitting(false);
     }

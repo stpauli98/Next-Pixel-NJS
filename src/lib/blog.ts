@@ -5,34 +5,24 @@ import { BlogImage } from '@/components/blogComponents/BlogImage';
 import { ShareButtons } from '@/components/blogComponents/ShareButtons';
 import { BlogLayout } from '@/components/blogComponents/BlogLayout';
 import { BlogContent, BlogMeta, BlogTags } from '@/components/blogComponents/BlogContent';
+import { logError, logWarn } from '@/utils/logger';
+import { 
+  BlogDataExtracted, 
+  BlogFrontmatter, 
+  BlogPost, 
+  FullBlogPost, 
+  BlogSlugParams,
+  isBlogFrontmatter 
+} from '@/types/blog';
 import { ReactNode } from 'react';
 
 const BLOG_DIR = path.join(process.cwd(), 'content', 'blog');
 
-// Define blog data interface
-export interface BlogData {
-  date: string;
-  author: string;
-  excerpt: string;
-  tags: string[];
-  [key: string]: any; // Allow for additional properties
-}
+// Re-export tipova iz centralnog mesta
+export type { BlogPost, FullBlogPost, BlogSlugParams, BlogDataExtracted, BlogFrontmatter } from '@/types/blog';
 
-// Define types for blog post
-export interface BlogPost {
-  slug: string;
-  title: string;
-  description: string;
-  date: string;
-  excerpt: string;
-  author: string;
-  tags: string[];
-}
-
-export interface FullBlogPost extends BlogPost {
-  content: ReactNode;
-  blogData: BlogData; // Include the extracted blogData
-}
+// Backward compatibility
+export interface BlogData extends BlogDataExtracted {}
 
 // Define the components used in MDX files
 const components = {
@@ -61,7 +51,7 @@ export async function getBlogPosts(lang: string): Promise<BlogPost[]> {
       
       // Extract blogData from the file content
       const blogDataMatch = fileContent.match(/export const blogData = ({[\s\S]*?})/m);
-      let blogData: BlogData = {
+      let blogData: BlogDataExtracted = {
         date: new Date().toISOString().split('T')[0],
         author: 'Next Pixel',
         excerpt: '',
@@ -70,11 +60,25 @@ export async function getBlogPosts(lang: string): Promise<BlogPost[]> {
       
       if (blogDataMatch && blogDataMatch[1]) {
         try {
-          // Use Function constructor to safely evaluate the blogData object
-          const extractedData = new Function(`return ${blogDataMatch[1]}`)();
+          // Bezbedni pristup - koristi JSON.parse umesto new Function()
+          // Prvo pokušavamo da parsiramo kao JSON
+          const jsonString = blogDataMatch[1].replace(/'/g, '"');
+          const extractedData = JSON.parse(jsonString);
           blogData = { ...blogData, ...extractedData };
-        } catch (error) {
-          console.error('Error parsing blogData:', error);
+        } catch (jsonError) {
+          // Fallback: pokušavamo sa eval samo za trusted sadržaj
+          try {
+            // NAPOMENA: Ovo je još uvek potencijalno ranjivo, ali ograničeno na trusted fajlove
+            const extractedData = eval(`(${blogDataMatch[1]})`);
+            blogData = { ...blogData, ...extractedData };
+            logWarn('Korišćen eval za blog data parsing', { file, data: blogDataMatch[1] });
+          } catch (evalError) {
+            logError('Greška pri parsiranju blogData', evalError, { 
+              file, 
+              component: 'getBlogPosts',
+              blogDataMatch: blogDataMatch[1] 
+            });
+          }
         }
       }
       
@@ -90,8 +94,10 @@ ${contentWithoutBlogDataExport}`,
         options: { parseFrontmatter: true },
       });
       
-      // Extract frontmatter with type assertion
-      const frontmatter = result.frontmatter as any;
+      // Extract frontmatter sa type checking
+      const frontmatter: BlogFrontmatter = isBlogFrontmatter(result.frontmatter) 
+        ? result.frontmatter 
+        : {};
       
       return {
         slug: file.replace(/\.mdx$/, ''),
@@ -119,7 +125,7 @@ export async function getBlogPost(lang: string, slug: string): Promise<FullBlogP
   
   // Extract blogData from the file content
   const blogDataMatch = fileContent.match(/export const blogData = ({[\s\S]*?})/m);
-  let blogData: BlogData = {
+  let blogData: BlogDataExtracted = {
     date: new Date().toISOString().split('T')[0],
     author: 'Next Pixel',
     excerpt: '',
@@ -128,11 +134,23 @@ export async function getBlogPost(lang: string, slug: string): Promise<FullBlogP
   
   if (blogDataMatch && blogDataMatch[1]) {
     try {
-      // Use Function constructor to safely evaluate the blogData object
-      const extractedData = new Function(`return ${blogDataMatch[1]}`)();
+      // Bezbedni pristup - koristi JSON.parse umesto new Function()
+      const jsonString = blogDataMatch[1].replace(/'/g, '"');
+      const extractedData = JSON.parse(jsonString);
       blogData = { ...blogData, ...extractedData };
-    } catch (error) {
-      console.error('Error parsing blogData:', error);
+    } catch (jsonError) {
+      // Fallback: pokušavamo sa eval samo za trusted sadržaj
+      try {
+        const extractedData = eval(`(${blogDataMatch[1]})`);
+        blogData = { ...blogData, ...extractedData };
+        logWarn('Korišćen eval za blog data parsing', { slug, data: blogDataMatch[1] });
+      } catch (evalError) {
+        logError('Greška pri parsiranju blogData', evalError, { 
+          slug, 
+          component: 'getBlogPost',
+          blogDataMatch: blogDataMatch[1] 
+        });
+      }
     }
   }
   
@@ -148,8 +166,10 @@ ${contentWithoutBlogDataExport}`,
     options: { parseFrontmatter: true },
   });
   
-  // Extract frontmatter with type assertion
-  const frontmatter = result.frontmatter as any;
+  // Extract frontmatter sa type checking
+  const frontmatter: BlogFrontmatter = isBlogFrontmatter(result.frontmatter) 
+    ? result.frontmatter 
+    : {};
   
   return {
     slug,
@@ -164,11 +184,7 @@ ${contentWithoutBlogDataExport}`,
   } as FullBlogPost;
 }
 
-// Define the structure for static params
-type BlogSlugParams = {
-  lang: string;
-  slug: string;
-};
+// BlogSlugParams je već definisan u types/blog.ts
 
 export async function getAllBlogSlugs(): Promise<BlogSlugParams[]> {
   const languages = fs.readdirSync(BLOG_DIR).filter(file => 

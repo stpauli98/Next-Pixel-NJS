@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { EmailTemplate } from '@/components/EmailTemplate';
 import { Resend } from 'resend';
+import { logWarn, logError, logInfo } from '@/utils/logger';
 
 // Koristimo API ključ iz .env fajla
 // U produkciji, potrebno je postaviti pravi Resend API ključ u .env fajlu
@@ -27,7 +28,11 @@ export async function POST(request: Request) {
 
     // Proveravamo da li imamo inicijalizovan Resend objekat
     if (!resend) {
-      console.log('Missing Resend API key. Email will not be sent.');
+      logWarn('Nedostaje Resend API ključ - email neće biti poslat', {
+        component: 'EmailAPI',
+        environment: process.env.NODE_ENV,
+        hasApiKey: !!resendApiKey
+      });
       // Simuliramo uspešno slanje emaila u development okruženju
       return new Response(
         JSON.stringify({ 
@@ -55,7 +60,11 @@ export async function POST(request: Request) {
     });
 
     if (error) {
-      console.error('Error sending email:', error);
+      logError('Greška pri slanju email-a', error, {
+        component: 'EmailAPI',
+        recipientEmail: process.env.RECIPIENT_EMAIL,
+        hasResendKey: !!resendApiKey
+      });
       return new Response(
         JSON.stringify({ error: 'Failed to send email' }),
         { status: 500, headers: { 'Content-Type': 'application/json' } }
@@ -67,7 +76,11 @@ export async function POST(request: Request) {
       { status: 200, headers: { 'Content-Type': 'application/json' } }
     );
   } catch (error) {
-    console.error('Error in API route:', error);
+    logError('Greška u API ruti za slanje email-a', error, {
+      component: 'EmailAPI',
+      method: 'POST',
+      url: '/api/send'
+    });
     return new Response(
       JSON.stringify({ error: 'Internal server error' }),
       { status: 500, headers: { 'Content-Type': 'application/json' } }

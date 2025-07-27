@@ -2,11 +2,12 @@
 
 import React, { createContext, useContext } from 'react';
 import { ReactNode } from 'react';
+import { BlogDataExtracted } from '@/types/blog';
 
 // Declare global type for window with blogData property
 declare global {
   interface Window {
-    blogData: any;
+    blogData: BlogDataExtracted;
   }
 }
 
@@ -17,10 +18,10 @@ if (typeof window !== 'undefined') {
 }
 
 // Create a context for blog data
-export const BlogDataContext = createContext<any>(null);
+export const BlogDataContext = createContext<BlogDataExtracted | null>(null);
 
 // Create a hook to access blog data
-export const useBlogData = () => {
+export const useBlogData = (): BlogDataExtracted => {
   const blogData = useContext(BlogDataContext);
   if (!blogData) {
     // Provide default values if blogData is not available
@@ -35,13 +36,7 @@ export const useBlogData = () => {
 };
 
 interface BlogContentProps {
-  blogData: {
-    date: string;
-    author: string;
-    excerpt: string;
-    tags: string[];
-    [key: string]: any;
-  };
+  blogData: BlogDataExtracted;
   children: ReactNode;
 }
 
@@ -97,7 +92,7 @@ export const BlogTags: React.FC<{
   
   return (
     <div className={className}>
-      {blogData.tags.map((tag: string) => (
+      {blogData.tags.map((tag: string, index: number) => (
         <span 
           key={tag} 
           className="px-3 py-1 text-sm bg-nextpixel-turquoise/10 text-nextpixel-turquoise rounded-full"
