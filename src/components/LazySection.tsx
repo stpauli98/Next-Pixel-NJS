@@ -2,6 +2,7 @@
 
 import React, { Suspense } from 'react';
 import dynamic from 'next/dynamic';
+import { logError } from '@/utils/logger';
 
 /**
  * Loading komponenta za lazy-loaded sekcije
@@ -66,7 +67,7 @@ class LazyErrorBoundary extends React.Component<
   }
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    console.error('Lazy component failed to load:', error, errorInfo);
+    logError('Lazy component failed to load', error, { errorInfo });
   }
 
   render() {
