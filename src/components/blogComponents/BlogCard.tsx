@@ -17,6 +17,8 @@ interface BlogCardProps {
   maxSummaryLength?: number;
   category?: string;
   readTime?: string;
+  readMoreText?: string;
+  lang?: string;
 }
 
 const BlogCard: React.FC<BlogCardProps> = ({ 
@@ -28,7 +30,9 @@ const BlogCard: React.FC<BlogCardProps> = ({
   image,
   maxSummaryLength = 150,
   category,
-  readTime
+  readTime,
+  readMoreText = 'Read more',
+  lang = 'sr'
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   
@@ -80,7 +84,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
         )}
         <h2 className="text-xl md:text-2xl font-bold mb-3 line-clamp-2">
           <Link 
-            href={`/blog/${slug}`} 
+            href={lang ? `/blog/${lang}/${slug}` : `/blog/${slug}`} 
             className="text-nextpixel-dark dark:text-white hover:text-nextpixel-turquoise dark:hover:text-nextpixel-turquoise transition-colors"
           >
             {title}
@@ -90,10 +94,10 @@ const BlogCard: React.FC<BlogCardProps> = ({
           {displaySummary}
         </p>
         <Link 
-          href={`/blog/${slug}`} 
+          href={lang ? `/blog/${lang}/${slug}` : `/blog/${slug}`} 
           className="inline-block bg-nextpixel-turquoise text-white py-2 px-4 rounded-lg hover:bg-nextpixel-dark transition-colors mt-auto font-medium text-sm"
         >
-          Pročitaj više
+          {readMoreText}
         </Link>
       </div>
     </div>

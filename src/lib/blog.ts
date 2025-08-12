@@ -60,25 +60,28 @@ export async function getBlogPosts(lang: string): Promise<BlogPost[]> {
       
       if (blogDataMatch && blogDataMatch[1]) {
         try {
-          // Bezbedni pristup - koristi JSON.parse umesto new Function()
-          // Prvo pokušavamo da parsiramo kao JSON
-          const jsonString = blogDataMatch[1].replace(/'/g, '"');
-          const extractedData = JSON.parse(jsonString);
+          // Safe parsing - use a custom parser for the object literal
+          const dataString = blogDataMatch[1]
+            .replace(/date:\s*["']([^"']+)["']/g, '"date": "$1"')
+            .replace(/author:\s*["']([^"']+)["']/g, '"author": "$1"')
+            .replace(/excerpt:\s*["']([^"']+)["']/g, '"excerpt": "$1"')
+            .replace(/tags:\s*\[([^\]]+)\]/g, (match, tags) => {
+              const formattedTags = tags.split(',').map((tag: string) => 
+                '"' + tag.trim().replace(/["']/g, '') + '"'
+              ).join(',');
+              return '"tags": [' + formattedTags + ']';
+            })
+            .replace(/([{,])\s*([a-zA-Z_][a-zA-Z0-9_]*):/g, '$1"$2":')
+            .replace(/'/g, '"');
+          
+          const extractedData = JSON.parse('{' + dataString + '}');
           blogData = { ...blogData, ...extractedData };
-        } catch (jsonError) {
-          // Fallback: pokušavamo sa eval samo za trusted sadržaj
-          try {
-            // NAPOMENA: Ovo je još uvek potencijalno ranjivo, ali ograničeno na trusted fajlove
-            const extractedData = eval(`(${blogDataMatch[1]})`);
-            blogData = { ...blogData, ...extractedData };
-            logWarn('Korišćen eval za blog data parsing', { file, data: blogDataMatch[1] });
-          } catch (evalError) {
-            logError('Greška pri parsiranju blogData', evalError, { 
-              file, 
-              component: 'getBlogPosts',
-              blogDataMatch: blogDataMatch[1] 
-            });
-          }
+        } catch (error) {
+          logError('Greška pri parsiranju blogData', error, { 
+            file, 
+            component: 'getBlogPosts',
+            blogDataMatch: blogDataMatch[1] 
+          });
         }
       }
       
@@ -134,23 +137,28 @@ export async function getBlogPost(lang: string, slug: string): Promise<FullBlogP
   
   if (blogDataMatch && blogDataMatch[1]) {
     try {
-      // Bezbedni pristup - koristi JSON.parse umesto new Function()
-      const jsonString = blogDataMatch[1].replace(/'/g, '"');
-      const extractedData = JSON.parse(jsonString);
+      // Safe parsing - use a custom parser for the object literal
+      const dataString = blogDataMatch[1]
+        .replace(/date:\s*["']([^"']+)["']/g, '"date": "$1"')
+        .replace(/author:\s*["']([^"']+)["']/g, '"author": "$1"')
+        .replace(/excerpt:\s*["']([^"']+)["']/g, '"excerpt": "$1"')
+        .replace(/tags:\s*\[([^\]]+)\]/g, (match, tags) => {
+          const formattedTags = tags.split(',').map((tag: string) => 
+            '"' + tag.trim().replace(/["']/g, '') + '"'
+          ).join(',');
+          return '"tags": [' + formattedTags + ']';
+        })
+        .replace(/([{,])\s*([a-zA-Z_][a-zA-Z0-9_]*):/g, '$1"$2":')
+        .replace(/'/g, '"');
+      
+      const extractedData = JSON.parse('{' + dataString + '}');
       blogData = { ...blogData, ...extractedData };
-    } catch (jsonError) {
-      // Fallback: pokušavamo sa eval samo za trusted sadržaj
-      try {
-        const extractedData = eval(`(${blogDataMatch[1]})`);
-        blogData = { ...blogData, ...extractedData };
-        logWarn('Korišćen eval za blog data parsing', { slug, data: blogDataMatch[1] });
-      } catch (evalError) {
-        logError('Greška pri parsiranju blogData', evalError, { 
-          slug, 
-          component: 'getBlogPost',
-          blogDataMatch: blogDataMatch[1] 
-        });
-      }
+    } catch (error) {
+      logError('Greška pri parsiranju blogData', error, { 
+        slug, 
+        component: 'getBlogPost',
+        blogDataMatch: blogDataMatch[1] 
+      });
     }
   }
   

@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 // Import icons from react-icons/fa6 for React 19 compatibility
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaLocationDot, FaPhone, FaEnvelope } from 'react-icons/fa6';
+import { FaInstagram, FaLocationDot, FaPhone, FaEnvelope } from 'react-icons/fa6';
 import { useTranslate } from '@/context/LanguageContext';
 import { IconComponent } from '@/components/ui/IconComponent';
 
@@ -12,7 +12,7 @@ interface BlogFooterProps {
 }
 
 const BlogFooter: React.FC<BlogFooterProps> = ({ lang }) => {
-  const { t, language } = useTranslate();
+  const { t } = useTranslate();
   const currentYear = new Date().getFullYear();
   const [mounted, setMounted] = useState(false);
 
