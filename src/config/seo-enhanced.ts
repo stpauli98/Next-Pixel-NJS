@@ -25,10 +25,10 @@ export const geoConfig = {
   
   // Business Contact Information
   contact: {
-    phone: '+387-51-123-456', // Update with actual phone
-    whatsapp: '+387-51-123-456', // Update if available
-    email: 'info@nextpixel.dev',
-    supportEmail: 'support@nextpixel.dev',
+    phone: '+387 66 603 900',
+    whatsapp: '+387 66 603 900',
+    email: 'pixelnext9@gmail.com',
+    supportEmail: 'pixelnext9@gmail.com',
   },
   
   // Business Hours
@@ -84,20 +84,20 @@ export const enhancedStructuredData = {
   localBusiness: {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
-    '@id': 'https://next-pixel-njs.onrender.com/#organization',
+    '@id': 'https://nextpixel.dev/#organization',
     name: 'NextPixel',
     alternateName: 'NextPixel Digital Agency',
     description: 'Professional digital agency specialized in web design, software development, and digital marketing in Bosnia and Herzegovina',
-    url: 'https://next-pixel-njs.onrender.com',
+    url: 'https://nextpixel.dev',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://next-pixel-njs.onrender.com/images/NextPixelV2.png',
+      url: 'https://nextpixel.dev/images/NextPixelV2.png',
       width: 500,
       height: 350,
     },
     image: [
-      'https://next-pixel-njs.onrender.com/images/NextPixelV2.png',
-      'https://next-pixel-njs.onrender.com/opengraph-image.png',
+      'https://nextpixel.dev/images/NextPixelV2.png',
+      'https://nextpixel.dev/opengraph-image.png',
     ],
     telephone: geoConfig.contact.phone,
     email: geoConfig.contact.email,
@@ -219,7 +219,7 @@ export const enhancedStructuredData = {
     areaServed: geoConfig.primary.serviceArea,
     availableChannel: {
       '@type': 'ServiceChannel',
-      serviceUrl: 'https://next-pixel-njs.onrender.com/#contact',
+      serviceUrl: 'https://nextpixel.dev/#contact',
       servicePhone: geoConfig.contact.phone,
       availableLanguage: geoConfig.primary.languages,
     },
@@ -252,7 +252,7 @@ export const hreflangConfig = {
   
   // Generate hreflang links for a given path
   generateHreflangLinks: (path: string) => {
-    const baseUrl = 'https://next-pixel-njs.onrender.com';
+    const baseUrl = 'https://nextpixel.dev';
     return {
       'sr': `${baseUrl}/sr${path}`,
       'en': `${baseUrl}/en${path}`,

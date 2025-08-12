@@ -52,7 +52,7 @@ export const ServiceSchema: React.FC<ServiceSchemaProps> = ({
     availableChannel: {
       '@type': 'ServiceChannel',
       serviceUrl: url,
-      servicePhone: '+381601234567',
+      servicePhone: '+38766603900',
       availableLanguage: ['sr', 'en', 'de']
     }
   };

@@ -116,10 +116,10 @@ const CustomErrorFallback: React.FC<{
             Ako se problem nastavi, molimo kontaktirajte našu podršku.
           </p>
           <a 
-            href="mailto:support@nextpixel.rs"
+            href="mailto:pixelnext9@gmail.com"
             className="text-sm text-nextpixel-blue hover:text-nextpixel-blue/80 transition-colors"
           >
-            support@nextpixel.rs
+            pixelnext9@gmail.com
           </a>
         </div>
       </div>

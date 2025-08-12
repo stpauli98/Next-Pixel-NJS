@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     openGraph: {
       title: post.title,
       description: post.description,
-      url: `https://next-pixel-njs.onrender.com/blog/${lang}/${slug}`,
+      url: `https://nextpixel.dev/blog/${lang}/${slug}`,
       images: [
         {
           url: (typeof post.blogData.ogImage === 'string' ? post.blogData.ogImage : null) || '/opengraph-image.png',

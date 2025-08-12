@@ -22,8 +22,8 @@ const enhancedStructuredData = {
       'image': 'https://nextpixel.dev/og-image.png',
       'description': 'Professional web development and digital solutions agency in Serbia. We create custom websites, mobile apps, and digital experiences that drive business growth.',
       'url': 'https://nextpixel.dev',
-      'telephone': '+381601234567',
-      'email': 'info@nextpixel.com',
+      'telephone': '+38766603900',
+      'email': 'pixelnext9@gmail.com',
       'address': {
         '@type': 'PostalAddress',
         'streetAddress': '',

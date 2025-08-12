@@ -56,11 +56,11 @@ verification: {
 Add to each page's metadata:
 ```typescript
 alternates: {
-  canonical: `https://next-pixel-njs.onrender.com${path}`,
+  canonical: `https://nextpixel.dev${path}`,
   languages: {
-    'sr': `https://next-pixel-njs.onrender.com/sr${path}`,
-    'en': `https://next-pixel-njs.onrender.com/en${path}`,
-    'de': `https://next-pixel-njs.onrender.com/de${path}`,
+    'sr': `https://nextpixel.dev/sr${path}`,
+    'en': `https://nextpixel.dev/en${path}`,
+    'de': `https://nextpixel.dev/de${path}`,
   }
 }
 ```
@@ -123,13 +123,13 @@ Solutions:
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
-    <loc>https://next-pixel-njs.onrender.com/sitemap-sr.xml</loc>
+    <loc>https://nextpixel.dev/sitemap-sr.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://next-pixel-njs.onrender.com/sitemap-en.xml</loc>
+    <loc>https://nextpixel.dev/sitemap-en.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://next-pixel-njs.onrender.com/sitemap-de.xml</loc>
+    <loc>https://nextpixel.dev/sitemap-de.xml</loc>
   </sitemap>
 </sitemapindex>
 ```

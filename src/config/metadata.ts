@@ -383,8 +383,8 @@ export const structuredData = {
       `${siteConfig.url}/images/team.jpg`,
       `${siteConfig.url}/images/work.jpg`
     ],
-    telephone: '+381-60-123-4567',
-    email: 'info@nextpixel.com',
+    telephone: '+387 66 603 900',
+    email: 'pixelnext9@gmail.com',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Knez Mihailova 10',
