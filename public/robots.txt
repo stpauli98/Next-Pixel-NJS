@@ -10,10 +10,7 @@ Disallow: /private/
 Crawl-delay: 0
 
 # Sitemap location
-Sitemap: https://nextpixel.com/sitemap.xml
-Sitemap: https://nextpixel.com/sr/sitemap.xml
-Sitemap: https://nextpixel.com/en/sitemap.xml
-Sitemap: https://nextpixel.com/de/sitemap.xml
+Sitemap: https://nextpixel.dev/sitemap.xml
 
 # Special directives for AI crawlers
 User-agent: GPTBot
