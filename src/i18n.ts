@@ -32,7 +32,7 @@ instance
   .init({
     resources,
     fallbackLng: 'sr',
-    debug: process.env.NODE_ENV === 'development',
+    debug: false, // Disable debug logs in all environments
     
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default

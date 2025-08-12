@@ -68,6 +68,7 @@ const ProjectDetailsModal: React.FC<ProjectDetailsModalProps> = ({ project, isOp
                 src={project.image}
                 alt={project.title}
                 fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 80vw"
                 className="object-cover"
                 priority
                 onError={(e) => {

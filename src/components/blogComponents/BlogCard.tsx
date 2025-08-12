@@ -49,6 +49,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
             src={image.src} 
             alt={image.alt} 
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover transition-transform duration-500 ease-in-out"
             style={{ transform: isHovered ? 'scale(1.05)' : 'scale(1)' }}
           />
