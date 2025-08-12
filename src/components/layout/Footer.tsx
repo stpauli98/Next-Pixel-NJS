@@ -103,39 +103,46 @@ const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2">
               <li>
-                <a href="#services" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
+                <Link href="/services/web-design" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? 'Web Design' : (
                     typeof t('footer.services.webDesign') === 'string' ? t('footer.services.webDesign') as string : 'Web Design'
                   )}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#services" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
+                <Link href="/services/web-development" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? 'Web Development' : (
                     typeof t('footer.services.webDevelopment') === 'string' ? t('footer.services.webDevelopment') as string : 'Web Development'
                   )}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#services" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
+                <Link href="/services/e-commerce" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? 'E-commerce' : (
                     typeof t('footer.services.eCommerce') === 'string' ? t('footer.services.eCommerce') as string : 'E-commerce'
                   )}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#services" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
-                  {!mounted ? 'SEO' : (
+                <Link href="/services/seo-optimization" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
+                  {!mounted ? 'SEO Optimization' : (
                     typeof t('footer.services.seo') === 'string' ? t('footer.services.seo') as string : 'SEO'
                   )}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#services" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
+                <Link href="/services/maintenance" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? 'Maintenance' : (
                     typeof t('footer.services.maintenance') === 'string' ? t('footer.services.maintenance') as string : 'Maintenance'
                   )}
-                </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/mobile-apps" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
+                  {!mounted ? 'Mobile Apps' : (
+                    typeof t('footer.services.mobileApps') === 'string' ? t('footer.services.mobileApps') as string : 'Mobile Apps'
+                  )}
+                </Link>
               </li>
             </ul>
           </div>
@@ -183,16 +190,19 @@ const Footer: React.FC = () => {
               )}
             </p>
             <div className="mt-4 md:mt-0">
-              <a href="/privacy-policy" className="text-gray-400 hover:text-nextpixel-turquoise transition-colors mx-2">
+              <Link href="/privacy-policy" className="text-gray-400 hover:text-nextpixel-turquoise transition-colors mx-2">
                 {!mounted ? 'Privacy Policy' : (
                   typeof t('footer.privacyPolicy') === 'string' ? t('footer.privacyPolicy') as string : 'Privacy Policy'
                 )}
-              </a>
-              <a href="/terms" className="text-gray-400 hover:text-nextpixel-turquoise transition-colors mx-2">
+              </Link>
+              <Link href="/terms" className="text-gray-400 hover:text-nextpixel-turquoise transition-colors mx-2">
                 {!mounted ? 'Terms of Service' : (
                   typeof t('footer.terms') === 'string' ? t('footer.terms') as string : 'Terms of Service'
                 )}
-              </a>
+              </Link>
+              <Link href="/sitemap.xml" className="text-gray-400 hover:text-nextpixel-turquoise transition-colors mx-2">
+                Sitemap
+              </Link>
             </div>
           </div>
         </div>

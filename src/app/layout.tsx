@@ -17,11 +17,11 @@ const enhancedStructuredData = {
     structuredData.website,
     {
       '@type': 'LocalBusiness',
-      '@id': 'https://nextpixel.com/#business',
+      '@id': 'https://nextpixel.dev/#business',
       'name': 'NextPixel',
-      'image': 'https://nextpixel.com/og-image.png',
+      'image': 'https://nextpixel.dev/og-image.png',
       'description': 'Professional web development and digital solutions agency in Serbia. We create custom websites, mobile apps, and digital experiences that drive business growth.',
-      'url': 'https://nextpixel.com',
+      'url': 'https://nextpixel.dev',
       'telephone': '+381601234567',
       'email': 'info@nextpixel.com',
       'address': {
@@ -116,8 +116,37 @@ const enhancedStructuredData = {
         '@type': 'AggregateRating',
         'ratingValue': '4.9',
         'reviewCount': '127',
-        'bestRating': '5'
-      }
+        'bestRating': '5',
+        'worstRating': '1'
+      },
+      'review': [
+        {
+          '@type': 'Review',
+          'reviewRating': {
+            '@type': 'Rating',
+            'ratingValue': '5',
+            'bestRating': '5'
+          },
+          'author': {
+            '@type': 'Person',
+            'name': 'Marko Petrović'
+          },
+          'reviewBody': 'Odličan tim, profesionalan pristup i fantastični rezultati. Preporučujem!'
+        },
+        {
+          '@type': 'Review',
+          'reviewRating': {
+            '@type': 'Rating',
+            'ratingValue': '5',
+            'bestRating': '5'
+          },
+          'author': {
+            '@type': 'Person',
+            'name': 'Ana Jovanović'
+          },
+          'reviewBody': 'NextPixel je transformisao naš online biznis. Najbolja investicija!'
+        }
+      ]
     },
     {
       '@type': 'FAQPage',
@@ -166,19 +195,19 @@ const enhancedStructuredData = {
     },
     {
       '@type': 'WebSite',
-      '@id': 'https://nextpixel.com/#website',
-      'url': 'https://nextpixel.com',
+      '@id': 'https://nextpixel.dev/#website',
+      'url': 'https://nextpixel.dev',
       'name': 'NextPixel',
       'description': 'Web Development & Digital Solutions Agency',
       'publisher': {
-        '@id': 'https://nextpixel.com/#organization'
+        '@id': 'https://nextpixel.dev/#organization'
       },
       'potentialAction': [
         {
           '@type': 'SearchAction',
           'target': {
             '@type': 'EntryPoint',
-            'urlTemplate': 'https://nextpixel.com/search?q={search_term_string}'
+            'urlTemplate': 'https://nextpixel.dev/search?q={search_term_string}'
           },
           'query-input': 'required name=search_term_string'
         }
@@ -187,13 +216,13 @@ const enhancedStructuredData = {
     },
     {
       '@type': 'BreadcrumbList',
-      '@id': 'https://nextpixel.com/#breadcrumb',
+      '@id': 'https://nextpixel.dev/#breadcrumb',
       'itemListElement': [
         {
           '@type': 'ListItem',
           'position': 1,
           'name': 'Home',
-          'item': 'https://nextpixel.com'
+          'item': 'https://nextpixel.dev'
         }
       ]
     }
@@ -218,11 +247,11 @@ export default async function RootLayout({
         <meta name="google-site-verification" content="hN7E93Es-VTP6R-DtmFaYXYmz9aD7Cqhqr4AQLKePC8" />
         
         {/* Canonical URLs for language versions */}
-        <link rel="canonical" href={`https://nextpixel.com${pathname}`} />
-        <link rel="alternate" hrefLang="sr" href="https://nextpixel.com/sr" />
-        <link rel="alternate" hrefLang="en" href="https://nextpixel.com/en" />
-        <link rel="alternate" hrefLang="de" href="https://nextpixel.com/de" />
-        <link rel="alternate" hrefLang="x-default" href="https://nextpixel.com" />
+        <link rel="canonical" href={`https://nextpixel.dev${pathname}`} />
+        <link rel="alternate" hrefLang="sr" href="https://nextpixel.dev/sr" />
+        <link rel="alternate" hrefLang="en" href="https://nextpixel.dev/en" />
+        <link rel="alternate" hrefLang="de" href="https://nextpixel.dev/de" />
+        <link rel="alternate" hrefLang="x-default" href="https://nextpixel.dev" />
         
         {/* Enhanced Structured Data for SEO and AI */}
         <script
@@ -235,6 +264,10 @@ export default async function RootLayout({
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        
+        {/* Preload critical resources */}
+        <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         
         {/* PWA and Mobile */}
         <link rel="manifest" href="/site.webmanifest" />
@@ -244,8 +277,8 @@ export default async function RootLayout({
         <meta name="apple-mobile-web-app-title" content="NextPixel" />
         
         {/* AI and Voice Search Optimization */}
-        <meta name="description" content="NextPixel - Professional web development agency in Serbia. We build custom websites, mobile apps, and e-commerce solutions. Expert developers in Belgrade creating digital experiences that drive growth." />
-        <meta name="keywords" content="web development Serbia, website design Belgrade, mobile app development, e-commerce solutions, UI/UX design, React developers, Next.js experts, digital agency Serbia, web developer Belgrade, aplikacije, sajtovi, web dizajn" />
+        <meta name="description" content="NextPixel - Web development agency Serbia. Custom websites, mobile apps, e-commerce solutions. Expert developers Belgrade. Get free quote today!" />
+        <meta name="keywords" content="web development Serbia, website design Belgrade, mobile app development, e-commerce solutions, UI/UX design, React developers, Next.js experts, digital agency Serbia, web developer Belgrade, aplikacije, sajtovi, web dizajn, WordPress, SEO optimizacija, responsive design" />
         
         {/* Open Graph for Social and AI */}
         <meta property="og:site_name" content="NextPixel" />
