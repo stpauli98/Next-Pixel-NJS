@@ -140,18 +140,13 @@ export const defaultMetadata: Metadata = {
       'max-snippet': -1,
       noimageindex: false,
     },
-    // Allow AI crawlers
-    'ai-bot': {
-      index: true,
-      follow: true,
-    },
   },
   verification: {
-    google: 'your-google-verification-code', // Replace with actual code
-    yandex: 'your-yandex-verification',
-    bing: 'your-bing-verification',
+    google: 'hN7E93Es-VTP6R-DtmFaYXYmz9aD7Cqhqr4AQLKePC8',
+    // yandex: 'your-yandex-verification', // Add when you have Yandex verification
+    // bing: 'your-bing-verification', // Add when you have Bing verification
   },
-  // AI tools optimization
+  // AI tools optimization is handled through robots.txt and meta tags
   other: {
     'chatgpt-bot': 'index,follow',
     'claude-web': 'index,follow',

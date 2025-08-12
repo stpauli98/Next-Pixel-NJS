@@ -206,7 +206,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   // Get language from headers (set by middleware)
-  const headersList = headers();
+  const headersList = await headers();
   const pathname = headersList.get('x-pathname') || '/';
   const locale = pathname.split('/')[1] || 'sr';
   const validLocale = ['sr', 'en', 'de'].includes(locale) ? locale : 'sr';
@@ -215,7 +215,7 @@ export default async function RootLayout({
     <html lang={validLocale} suppressHydrationWarning>
       <head>
         {/* Google Search Console Verification */}
-        <meta name="google-site-verification" content="your-google-verification-code" />
+        <meta name="google-site-verification" content="hN7E93Es-VTP6R-DtmFaYXYmz9aD7Cqhqr4AQLKePC8" />
         
         {/* Canonical URLs for language versions */}
         <link rel="canonical" href={`https://nextpixel.com${pathname}`} />

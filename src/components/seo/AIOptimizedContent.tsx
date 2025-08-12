@@ -63,7 +63,6 @@ export default function AIOptimizedContent({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(aiContent) }}
-        aria-hidden="true"
       />
       
       {/* Hidden semantic content for AI crawlers */}

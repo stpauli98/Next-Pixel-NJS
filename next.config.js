@@ -22,7 +22,6 @@ const nextConfig = {
   },
   
   // Performance optimizations
-  swcMinify: true,
   compress: true,
   poweredByHeader: false,
   images: {

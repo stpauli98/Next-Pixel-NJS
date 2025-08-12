@@ -354,7 +354,7 @@ export const aiSearchOptimization = {
   },
 };
 
-export default {
+const seoEnhanced = {
   geoConfig,
   enhancedStructuredData,
   hreflangConfig,
@@ -362,3 +362,5 @@ export default {
   generateLocationMetadata,
   aiSearchOptimization,
 };
+
+export default seoEnhanced;
