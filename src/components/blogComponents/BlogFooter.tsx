@@ -75,7 +75,7 @@ const BlogFooter: React.FC<BlogFooterProps> = ({ lang }) => {
             </ul>
           </div>
           
-          {/* Contact Info */}
+          {/* Contact Info0 */}
           <div>
             <h4 className="text-xl font-bold mb-4">
               {!mounted ? 'Contact Info' : (
