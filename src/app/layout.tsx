@@ -26,16 +26,16 @@ const enhancedStructuredData = {
       'email': 'info@nextpixel.com',
       'address': {
         '@type': 'PostalAddress',
-        'streetAddress': 'Knez Mihailova 10',
-        'addressLocality': 'Belgrade',
-        'addressRegion': 'Serbia',
-        'postalCode': '11000',
-        'addressCountry': 'RS'
+        'streetAddress': '',
+        'addressLocality': 'Gradiška',
+        'addressRegion': 'Republika Srpska',
+        'postalCode': '78400',
+        'addressCountry': 'BA'
       },
       'geo': {
         '@type': 'GeoCoordinates',
-        'latitude': 44.8176,
-        'longitude': 20.4633
+        'latitude': 45.1447,
+        'longitude': 17.2522
       },
       'openingHoursSpecification': [
         {
@@ -46,28 +46,21 @@ const enhancedStructuredData = {
         }
       ],
       'sameAs': [
-        'https://www.facebook.com/nextpixel',
-        'https://www.linkedin.com/company/nextpixel',
-        'https://twitter.com/nextpixel',
-        'https://www.instagram.com/nextpixel'
+        'https://www.instagram.com/pixelnext9'
       ],
       'priceRange': '$$',
       'areaServed': [
         {
-          '@type': 'City',
-          'name': 'Belgrade'
-        },
-        {
-          '@type': 'City',
-          'name': 'Novi Sad'
-        },
-        {
-          '@type': 'City',
-          'name': 'Niš'
+          '@type': 'Country',
+          'name': 'Bosnia and Herzegovina'
         },
         {
           '@type': 'Country',
           'name': 'Serbia'
+        },
+        {
+          '@type': 'Country',
+          'name': 'Croatia'
         },
         {
           '@type': 'Place',
@@ -164,7 +157,7 @@ const enhancedStructuredData = {
           'name': 'Where is NextPixel located?',
           'acceptedAnswer': {
             '@type': 'Answer',
-            'text': 'NextPixel is based in Belgrade, Serbia, but we serve clients throughout Serbia including Novi Sad and Niš, as well as international clients across Europe and globally. We offer both on-site and remote collaboration.'
+            'text': 'NextPixel is based in Gradiška, Republika Srpska, Bosnia and Herzegovina. We serve clients throughout the Balkans region as well as international clients across Europe and globally. We offer both on-site and remote collaboration.'
           }
         },
         {
@@ -248,9 +241,6 @@ export default async function RootLayout({
         
         {/* Canonical URLs for language versions */}
         <link rel="canonical" href={`https://nextpixel.dev${pathname}`} />
-        <link rel="alternate" hrefLang="sr" href="https://nextpixel.dev/sr" />
-        <link rel="alternate" hrefLang="en" href="https://nextpixel.dev/en" />
-        <link rel="alternate" hrefLang="de" href="https://nextpixel.dev/de" />
         <link rel="alternate" hrefLang="x-default" href="https://nextpixel.dev" />
         
         {/* Enhanced Structured Data for SEO and AI */}
@@ -277,8 +267,8 @@ export default async function RootLayout({
         <meta name="apple-mobile-web-app-title" content="NextPixel" />
         
         {/* AI and Voice Search Optimization */}
-        <meta name="description" content="NextPixel - Web development agency Serbia. Custom websites, mobile apps, e-commerce solutions. Expert developers Belgrade. Get free quote today!" />
-        <meta name="keywords" content="web development Serbia, website design Belgrade, mobile app development, e-commerce solutions, UI/UX design, React developers, Next.js experts, digital agency Serbia, web developer Belgrade, aplikacije, sajtovi, web dizajn, WordPress, SEO optimizacija, responsive design" />
+        <meta name="description" content="NextPixel - Web development agency Republika Srpska, BiH. Custom websites, mobile apps, e-commerce solutions. Expert developers. Get free quote today!" />
+        <meta name="keywords" content="web development Republika Srpska, website design BiH, mobile app development, e-commerce solutions, UI/UX design, React developers, Next.js experts, digital agency Bosnia, web developer Gradiška, aplikacije, sajtovi, web dizajn, WordPress, SEO optimizacija, responsive design" />
         
         {/* Open Graph for Social and AI */}
         <meta property="og:site_name" content="NextPixel" />

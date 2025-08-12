@@ -36,17 +36,8 @@ const BlogFooter: React.FC<BlogFooterProps> = ({ lang }) => {
               )}
             </p>
             <div className="flex space-x-4">
-              <a href="https://facebook.com" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors" aria-label="Facebook">
-                <IconComponent icon={FaFacebookF} size={20} />
-              </a>
-              <a href="https://twitter.com" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors" aria-label="Twitter">
-                <IconComponent icon={FaTwitter} size={20} />
-              </a>
-              <a href="https://instagram.com" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors" aria-label="Instagram">
+              <a href="https://instagram.com/pixelnext9" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors" aria-label="Instagram">
                 <IconComponent icon={FaInstagram} size={20} />
-              </a>
-              <a href="https://linkedin.com" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors" aria-label="LinkedIn">
-                <IconComponent icon={FaLinkedinIn} size={20} />
               </a>
             </div>
           </div>
@@ -95,18 +86,18 @@ const BlogFooter: React.FC<BlogFooterProps> = ({ lang }) => {
               <li className="flex items-start">
                 <IconComponent icon={FaLocationDot} size={16} className="mt-1 mr-3 text-nextpixel-turquoise" />
                 <span className="text-gray-300">
-                  {!mounted ? 'Sarajevo, Bosnia and Herzegovina' : (
-                    typeof t('footer.contact.address') === 'string' ? t('footer.contact.address') as string : 'Sarajevo, Bosnia and Herzegovina'
+                  {!mounted ? 'Gradiška, Republika Srpska, BiH' : (
+                    typeof t('footer.contact.address') === 'string' ? t('footer.contact.address') as string : 'Gradiška, Republika Srpska, BiH'
                   )}
                 </span>
               </li>
               <li className="flex items-center">
                 <IconComponent icon={FaPhone} size={16} className="mr-3 text-nextpixel-turquoise" />
-                <span className="text-gray-300">+387 33 123 456</span>
+                <span className="text-gray-300">+387 66 603 900</span>
               </li>
               <li className="flex items-center">
                 <IconComponent icon={FaEnvelope} size={16} className="mr-3 text-nextpixel-turquoise" />
-                <span className="text-gray-300">info@nextpixel.com</span>
+                <span className="text-gray-300">pixelnext9@gmail.com</span>
               </li>
             </ul>
           </div>

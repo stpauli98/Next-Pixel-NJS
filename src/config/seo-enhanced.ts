@@ -9,26 +9,26 @@ import { Metadata } from 'next';
 export const geoConfig = {
   // Primary Business Location
   primary: {
-    country: 'RS',
-    countryName: 'Serbia',
-    city: 'Belgrade', // Update with actual city
-    region: 'Central Serbia',
-    postalCode: '11000', // Update with actual postal code
+    country: 'BA',
+    countryName: 'Bosnia and Herzegovina',
+    city: 'Gradiška',
+    region: 'Republika Srpska',
+    postalCode: '78400',
     streetAddress: '', // Add actual street address when available
-    latitude: 44.786568, // Belgrade coordinates - update with actual
-    longitude: 20.448922,
-    serviceArea: ['Serbia', 'Bosnia and Herzegovina', 'Montenegro', 'North Macedonia'],
+    latitude: 45.1447, // Gradiška coordinates
+    longitude: 17.2522,
+    serviceArea: ['Bosnia and Herzegovina', 'Serbia', 'Croatia', 'Montenegro'],
     languages: ['sr', 'en', 'de'],
-    currency: 'RSD',
-    timezone: 'Europe/Belgrade',
+    currency: 'BAM',
+    timezone: 'Europe/Sarajevo',
   },
   
   // Business Contact Information
   contact: {
-    phone: '+381-XX-XXX-XXXX', // Update with actual phone
-    whatsapp: '+381-XX-XXX-XXXX', // Update if available
-    email: 'info@nextpixel.rs', // Update with actual email
-    supportEmail: 'support@nextpixel.rs',
+    phone: '+387-51-123-456', // Update with actual phone
+    whatsapp: '+387-51-123-456', // Update if available
+    email: 'info@nextpixel.dev',
+    supportEmail: 'support@nextpixel.dev',
   },
   
   // Business Hours
@@ -40,40 +40,40 @@ export const geoConfig = {
     friday: '09:00-17:00',
     saturday: 'Closed',
     sunday: 'Closed',
-    timezone: 'Europe/Belgrade',
+    timezone: 'Europe/Sarajevo',
   },
   
   // Local Keywords for GEO Optimization
   localKeywords: {
     sr: [
-      'web dizajn Beograd',
-      'izrada sajtova Srbija',
-      'digitalna agencija Beograd',
-      'SEO optimizacija Srbija',
-      'web development Srbija',
-      'aplikacije Beograd',
-      'softverska rešenja Srbija',
-      'e-commerce Beograd',
-      'online prodavnica Srbija',
-      'web shop Beograd',
+      'web dizajn Republika Srpska',
+      'izrada sajtova BiH',
+      'digitalna agencija Gradiška',
+      'SEO optimizacija Bosna',
+      'web development BiH',
+      'aplikacije Republika Srpska',
+      'softverska rešenja BiH',
+      'e-commerce Bosna i Hercegovina',
+      'online prodavnica BiH',
+      'web shop Republika Srpska',
     ],
     en: [
-      'web design Belgrade',
-      'web development Serbia',
-      'digital agency Belgrade',
-      'SEO Serbia',
-      'software development Belgrade',
-      'mobile apps Serbia',
-      'e-commerce Belgrade',
-      'web solutions Serbia',
+      'web design Bosnia Herzegovina',
+      'web development Republika Srpska',
+      'digital agency Gradiška',
+      'SEO BiH',
+      'software development Bosnia',
+      'mobile apps Republika Srpska',
+      'e-commerce BiH',
+      'web solutions Bosnia Herzegovina',
     ],
     de: [
-      'Webdesign Belgrad',
-      'Webentwicklung Serbien',
-      'Digitalagentur Belgrad',
-      'SEO Serbien',
-      'Softwareentwicklung Belgrad',
-      'E-Commerce Serbien',
+      'Webdesign Bosnien',
+      'Webentwicklung Republika Srpska',
+      'Digitalagentur Gradiška',
+      'SEO BiH',
+      'Softwareentwicklung Bosnien',
+      'E-Commerce Bosnien Herzegowina',
     ],
   },
 };
@@ -87,7 +87,7 @@ export const enhancedStructuredData = {
     '@id': 'https://next-pixel-njs.onrender.com/#organization',
     name: 'NextPixel',
     alternateName: 'NextPixel Digital Agency',
-    description: 'Professional digital agency specialized in web design, software development, and digital marketing in Serbia',
+    description: 'Professional digital agency specialized in web design, software development, and digital marketing in Bosnia and Herzegovina',
     url: 'https://next-pixel-njs.onrender.com',
     logo: {
       '@type': 'ImageObject',

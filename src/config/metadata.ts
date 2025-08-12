@@ -8,23 +8,23 @@ import { Metadata } from 'next';
 // Base URL konfiguracija - Optimized for AI tools and search engines
 export const siteConfig = {
   name: 'NextPixel',
-  title: 'NextPixel - Professional Web Development & Digital Solutions Agency Serbia',
-  description: 'Leading web development agency in Serbia. We build custom websites, mobile apps, e-commerce solutions, and digital platforms. Expert developers in Belgrade, Novi Sad, and Niš creating modern web applications with React, Next.js, and Node.js.',
+  title: 'NextPixel - Professional Web Development & Digital Solutions Agency Bosnia and Herzegovina',
+  description: 'Leading web development agency in Republika Srpska, Bosnia and Herzegovina. We build custom websites, mobile apps, e-commerce solutions, and digital platforms. Expert developers creating modern web applications with React, Next.js, and Node.js.',
   url: process.env.NODE_ENV === 'production' 
-    ? 'https://nextpixel.com' 
+    ? 'https://nextpixel.dev' 
     : 'http://localhost:3000',
   ogImage: '/opengraph-image.png',
   locale: 'sr_RS',
   // Enhanced keywords for AI tools and voice search
   keywords: [
     // Primary services
-    'web development Serbia',
-    'website design Belgrade',
+    'web development Republika Srpska',
+    'website design BiH',
     'mobile app development',
     'e-commerce solutions',
-    'digital agency Serbia',
-    'web developer Belgrade',
-    'IT company Serbia',
+    'digital agency Bosnia',
+    'web developer Gradiška',
+    'IT company BiH',
     
     // Technologies
     'React developers',
@@ -35,10 +35,8 @@ export const siteConfig = {
     'full-stack development',
     
     // Local SEO
-    'izrada sajtova Beograd',
-    'web dizajn Srbija',
-    'aplikacije Novi Sad',
-    'IT kompanija Niš',
+    'izrada sajtova Republika Srpska',
+    'web dizajn BiH',
     'digitalna agencija',
     'razvoj softvera',
     
@@ -48,7 +46,7 @@ export const siteConfig = {
     'professional website creation',
     'custom web application development',
     'affordable web design services',
-    'hire web developers Serbia',
+    'hire web developers Bosnia Herzegovina',
     
     // Business focus
     'business website development',
@@ -381,7 +379,7 @@ export const structuredData = {
     url: siteConfig.url,
     logo: `${siteConfig.url}/logo.png`,
     image: [
-      `${siteConfig.url}/images/office-belgrade.jpg`,
+      `${siteConfig.url}/images/office.jpg`,
       `${siteConfig.url}/images/team.jpg`,
       `${siteConfig.url}/images/work.jpg`
     ],
@@ -390,32 +388,17 @@ export const structuredData = {
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Knez Mihailova 10',
-      addressLocality: 'Belgrade',
-      addressRegion: 'Central Serbia',
-      postalCode: '11000',
-      addressCountry: 'RS'
+      addressLocality: 'Gradiška',
+      addressRegion: 'Republika Srpska',
+      postalCode: '78400',
+      addressCountry: 'BA'
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 44.8176,
-      longitude: 20.4633
+      latitude: 45.1447,
+      longitude: 17.2522
     },
     areaServed: [
-      {
-        '@type': 'City',
-        name: 'Belgrade',
-        '@id': 'https://www.wikidata.org/wiki/Q3711'
-      },
-      {
-        '@type': 'City', 
-        name: 'Novi Sad',
-        '@id': 'https://www.wikidata.org/wiki/Q55630'
-      },
-      {
-        '@type': 'City',
-        name: 'Niš',
-        '@id': 'https://www.wikidata.org/wiki/Q55632'
-      },
       {
         '@type': 'Country',
         name: 'Serbia',

@@ -32,18 +32,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  // Location pages for each language
-  const locations = ['belgrade', 'novi-sad', 'nis']
-  const languages = ['en', 'sr', 'de']
-  
-  const locationPages = languages.flatMap(lang =>
-    locations.map(location => ({
-      url: `${baseUrl}/${lang}/locations/${location}`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
-      priority: 0.9,
-    }))
-  )
+  // Removed location pages - they don't exist or work properly
+  const locationPages: any[] = []
 
   // Static pages
   const staticPages = [

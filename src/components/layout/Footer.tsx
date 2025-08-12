@@ -35,9 +35,6 @@ const Footer: React.FC = () => {
               <a href="https://instagram.com/pixelnext9" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                 <Icon icon={FaInstagram} size={20} aria-hidden={true} />
               </a>
-              <a href="" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
-                <Icon icon={FaLinkedin} size={20} aria-hidden={true} />
-              </a>
             </div>
           </div>
           
@@ -103,46 +100,46 @@ const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/services/web-design" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
+                <a href="#services" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? 'Web Design' : (
                     typeof t('footer.services.webDesign') === 'string' ? t('footer.services.webDesign') as string : 'Web Design'
                   )}
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/services/web-development" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
+                <a href="#services" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? 'Web Development' : (
                     typeof t('footer.services.webDevelopment') === 'string' ? t('footer.services.webDevelopment') as string : 'Web Development'
                   )}
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/services/e-commerce" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
+                <a href="#services" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? 'E-commerce' : (
                     typeof t('footer.services.eCommerce') === 'string' ? t('footer.services.eCommerce') as string : 'E-commerce'
                   )}
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/services/seo-optimization" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
+                <a href="#services" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? 'SEO Optimization' : (
                     typeof t('footer.services.seo') === 'string' ? t('footer.services.seo') as string : 'SEO'
                   )}
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/services/maintenance" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
+                <a href="#services" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? 'Maintenance' : (
                     typeof t('footer.services.maintenance') === 'string' ? t('footer.services.maintenance') as string : 'Maintenance'
                   )}
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/services/mobile-apps" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
+                <a href="#services" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? 'Mobile Apps' : (
                     typeof t('footer.services.mobileApps') === 'string' ? t('footer.services.mobileApps') as string : 'Mobile Apps'
                   )}
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
