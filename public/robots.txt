@@ -1,9 +1,48 @@
-# *
+# NextPixel Robots.txt
+# For all search engines and AI crawlers
+
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /private/
+Crawl-delay: 0
 
-# Host
-Host: https://next-pixel-njs.onrender.com
+# Sitemap location
+Sitemap: https://nextpixel.com/sitemap.xml
+Sitemap: https://nextpixel.com/sr/sitemap.xml
+Sitemap: https://nextpixel.com/en/sitemap.xml
+Sitemap: https://nextpixel.com/de/sitemap.xml
 
-# Sitemaps
-Sitemap: https://next-pixel-njs.onrender.com/sitemap.xml
+# Special directives for AI crawlers
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: ChatGPT-User
+Allow: /
+Crawl-delay: 0
+
+User-agent: CCBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Claude-Web
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Allow all AI assistants to access our content
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /

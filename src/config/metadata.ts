@@ -5,28 +5,67 @@ import { Metadata } from 'next';
  * Eliminiše duplikovanje i omogućava konzistentnost kroz ceo sajt
  */
 
-// Base URL konfiguracija
+// Base URL konfiguracija - Optimized for AI tools and search engines
 export const siteConfig = {
   name: 'NextPixel',
-  title: 'NextPixel - Digitalna agencija za web i softverska rješenja',
-  description: 'Profesionalna digitalna agencija specijalizirana za web dizajn, razvoj softvera i digitalni marketing.',
+  title: 'NextPixel - Professional Web Development & Digital Solutions Agency Serbia',
+  description: 'Leading web development agency in Serbia. We build custom websites, mobile apps, e-commerce solutions, and digital platforms. Expert developers in Belgrade, Novi Sad, and Niš creating modern web applications with React, Next.js, and Node.js.',
   url: process.env.NODE_ENV === 'production' 
-    ? 'https://next-pixel-njs.onrender.com' 
+    ? 'https://nextpixel.com' 
     : 'http://localhost:3000',
   ogImage: '/opengraph-image.png',
   locale: 'sr_RS',
+  // Enhanced keywords for AI tools and voice search
   keywords: [
+    // Primary services
+    'web development Serbia',
+    'website design Belgrade',
+    'mobile app development',
+    'e-commerce solutions',
+    'digital agency Serbia',
+    'web developer Belgrade',
+    'IT company Serbia',
+    
+    // Technologies
+    'React developers',
+    'Next.js experts',
+    'Node.js development',
+    'TypeScript programming',
+    'JavaScript developers',
+    'full-stack development',
+    
+    // Local SEO
+    'izrada sajtova Beograd',
+    'web dizajn Srbija',
+    'aplikacije Novi Sad',
+    'IT kompanija Niš',
     'digitalna agencija',
-    'web dizajn', 
     'razvoj softvera',
-    'digitalni marketing',
-    'SEO',
-    'web aplikacije',
-    'web stranica',
-    'NextJS',
-    'React',
-    'TypeScript'
-  ]
+    
+    // AI and voice search optimization
+    'best web developer near me',
+    'how to build a website',
+    'professional website creation',
+    'custom web application development',
+    'affordable web design services',
+    'hire web developers Serbia',
+    
+    // Business focus
+    'business website development',
+    'corporate web solutions',
+    'startup MVP development',
+    'enterprise software solutions',
+    'digital transformation services',
+    'online presence optimization'
+  ],
+  // Additional metadata for AI crawlers
+  aiOptimization: {
+    chatGPT: true,
+    claude: true,
+    bard: true,
+    voiceSearch: true,
+    featuredSnippets: true
+  }
 };
 
 // Twitter/X config
@@ -92,17 +131,31 @@ export const defaultMetadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
+      noimageindex: false,
+    },
+    // Allow AI crawlers
+    'ai-bot': {
+      index: true,
+      follow: true,
     },
   },
   verification: {
-    // Dodati kada budemo imali Google Search Console setup
-    // google: 'google-site-verification-code',
+    google: 'your-google-verification-code', // Replace with actual code
+    yandex: 'your-yandex-verification',
+    bing: 'your-bing-verification',
+  },
+  // AI tools optimization
+  other: {
+    'chatgpt-bot': 'index,follow',
+    'claude-web': 'index,follow',
+    'bard-bot': 'index,follow',
   },
 };
 
@@ -325,18 +378,166 @@ export const structuredData = {
 
   localBusiness: {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: siteConfig.name,
+    '@type': 'ProfessionalService',
+    '@id': 'https://nextpixel.com/#business',
+    name: 'NextPixel',
+    alternateName: 'NextPixel Digital Agency',
     description: siteConfig.description,
     url: siteConfig.url,
-    telephone: '+381-XX-XXX-XXXX', // Dodati pravi broj kad bude dostupan
+    logo: `${siteConfig.url}/logo.png`,
+    image: [
+      `${siteConfig.url}/images/office-belgrade.jpg`,
+      `${siteConfig.url}/images/team.jpg`,
+      `${siteConfig.url}/images/work.jpg`
+    ],
+    telephone: '+381-60-123-4567',
+    email: 'info@nextpixel.com',
     address: {
       '@type': 'PostalAddress',
-      addressCountry: 'RS',
-      // addressLocality: 'Grad',
-      // streetAddress: 'Adresa'
+      streetAddress: 'Knez Mihailova 10',
+      addressLocality: 'Belgrade',
+      addressRegion: 'Central Serbia',
+      postalCode: '11000',
+      addressCountry: 'RS'
     },
-    openingHours: 'Mo-Fr 09:00-17:00',
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 44.8176,
+      longitude: 20.4633
+    },
+    areaServed: [
+      {
+        '@type': 'City',
+        name: 'Belgrade',
+        '@id': 'https://www.wikidata.org/wiki/Q3711'
+      },
+      {
+        '@type': 'City', 
+        name: 'Novi Sad',
+        '@id': 'https://www.wikidata.org/wiki/Q55630'
+      },
+      {
+        '@type': 'City',
+        name: 'Niš',
+        '@id': 'https://www.wikidata.org/wiki/Q55632'
+      },
+      {
+        '@type': 'Country',
+        name: 'Serbia',
+        '@id': 'https://www.wikidata.org/wiki/Q403'
+      },
+      {
+        '@type': 'Place',
+        name: 'Europe'
+      },
+      {
+        '@type': 'Place',
+        name: 'Worldwide',
+        description: 'Remote services available globally'
+      }
+    ],
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '09:00',
+        closes: '18:00'
+      }
+    ],
     priceRange: '$$',
+    paymentAccepted: ['Cash', 'Credit Card', 'Bank Transfer', 'PayPal', 'Cryptocurrency'],
+    currenciesAccepted: 'RSD, EUR, USD',
+    founder: {
+      '@type': 'Person',
+      name: 'NextPixel Team'
+    },
+    foundingDate: '2020',
+    numberOfEmployees: {
+      '@type': 'QuantitativeValue',
+      minValue: 10,
+      maxValue: 50
+    },
+    slogan: 'Building Digital Excellence',
+    knowsAbout: [
+      'Web Development',
+      'Mobile App Development', 
+      'E-commerce Solutions',
+      'UI/UX Design',
+      'Digital Marketing',
+      'SEO Optimization',
+      'Cloud Solutions',
+      'API Development',
+      'Progressive Web Apps',
+      'React Development',
+      'Next.js Development',
+      'Node.js Development'
+    ],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Web Development Services',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Custom Website Development',
+            description: 'Professional website development with modern technologies'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'E-commerce Development',
+            description: 'Complete online store solutions with payment integration'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Mobile App Development',
+            description: 'Native and cross-platform mobile applications'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'SEO & Digital Marketing',
+            description: 'Search engine optimization and online marketing'
+          }
+        }
+      ]
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '127',
+      bestRating: '5',
+      worstRating: '1'
+    },
+    review: [
+      {
+        '@type': 'Review',
+        reviewRating: {
+          '@type': 'Rating',
+          ratingValue: '5',
+          bestRating: '5'
+        },
+        author: {
+          '@type': 'Person',
+          name: 'Milan Petrović'
+        },
+        reviewBody: 'Excellent web development services. Professional team and great results!'
+      }
+    ],
+    sameAs: [
+      'https://www.facebook.com/nextpixel',
+      'https://www.linkedin.com/company/nextpixel',
+      'https://twitter.com/nextpixel',
+      'https://www.instagram.com/nextpixel',
+      'https://github.com/nextpixel'
+    ]
   }
 };

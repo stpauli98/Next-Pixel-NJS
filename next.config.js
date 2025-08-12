@@ -2,6 +2,7 @@ const createMDX = require('@next/mdx')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
+const securityHeaders = require('./next.config.headers')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -9,6 +10,21 @@ const nextConfig = {
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   // Optionally, add any other Next.js config below
   reactStrictMode: true,
+  
+  // SEO & Security Headers
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: securityHeaders,
+      },
+    ]
+  },
+  
+  // Performance optimizations
+  swcMinify: true,
+  compress: true,
+  poweredByHeader: false,
   images: {
     remotePatterns: [
       {

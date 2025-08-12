@@ -1,25 +1,31 @@
 {
-  "name": "NextPixel - Digital Solutions",
+  "name": "NextPixel - Web Development & Design Agency",
   "short_name": "NextPixel",
-  "description": "Digital agency specialized in creating modern websites, e-commerce solutions and digital marketing strategies.",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#0A2463",
-  "theme_color": "#00FFFF",
+  "description": "Professional web development, mobile apps, and digital solutions in Serbia. Expert team creating custom websites, applications, and digital experiences.",
   "icons": [
     {
-      "src": "/favicon-192.png",
+      "src": "/favicon-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
-      "src": "/favicon-512.png", 
+      "src": "/favicon-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
-  "categories": ["business", "technology", "productivity"],
-  "lang": "sr-Latn-RS",
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "display": "standalone",
+  "start_url": "/",
   "scope": "/",
-  "orientation": "portrait-primary"
+  "lang": "sr",
+  "dir": "ltr",
+  "orientation": "portrait-primary",
+  "categories": ["business", "developer", "productivity"],
+  "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7",
+  "prefer_related_applications": false,
+  "related_applications": []
 }
