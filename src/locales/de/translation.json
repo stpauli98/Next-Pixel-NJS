@@ -2,7 +2,7 @@
   "about": {
     "title": "Wer wir sind",
     "subtitle": "Digitalagentur mit Leidenschaft für Innovation",
-    "description": "NextPixel ist eine Digitalagentur, die sich auf die Erstellung von Websites, Webshops, SEO-Optimierung, Website-Wartung sowie die Entwicklung maßgeschneiderter Softwarelösungen nach Kundenwünschen spezialisiert hat.",
+    "description": "NextPixel ist eine ergebnisorientierte Digitalagentur. Wir sind spezialisiert auf Websites, E-Commerce, SEO, Wartung und maßgeschneiderte Software – alles zugeschnitten auf Ihre Geschäftsziele.",
     "history": "Seit 2020 widmen wir uns der Erstellung digitaler Lösungen, die unseren Kunden helfen, ihre Geschäftsziele zu erreichen. Unser Ansatz kombiniert technisches Fachwissen, Kreativität und ein tiefes Verständnis der geschäftlichen Anforderungen unserer Kunden.",
     "philosophy": "Wir glauben, dass erfolgreiche digitale Lösungen nicht nur technisch hervorragend sein müssen, sondern auch benutzerfreundlich, ästhetisch ansprechend und für die Erzielung von Geschäftsergebnissen optimiert sein sollten."
   },
@@ -38,15 +38,15 @@
     "de": "Deutsch"
   },
  "hero": {
-    "title": "Websites, die Ihnen Kunden bringen",
-    "subtitle": "Wir erstellen schnelle, SEO-optimierte und mobilfreundliche Websites – maßgeschneidert für wachstumsorientierte Unternehmen.",
+    "title": "Verwandeln Sie Besucher in Kunden",
+    "subtitle": "Wir erstellen blitzschnelle, SEO-optimierte Websites, die nicht nur gut aussehen – sondern auch konvertieren.",
     "services": "Unsere Dienstleistungen",
     "contact": "Kontaktieren Sie uns",
     "learnMore": "Mehr erfahren"
   },
  "services": {
   "title": "Unsere Dienstleistungen",
-  "subtitle": "Wir bieten eine breite Palette digitaler Services, maßgeschneidert auf Ihre Bedürfnisse",
+  "subtitle": "Von Websites bis hin zu SEO – alles, was Sie brauchen, um Ihre digitale Präsenz auszubauen.",
   "requestQuote": "Angebot anfordern",
   "webDesign": {
     "title": "Webdesign",
@@ -186,7 +186,7 @@
   },
   "contact": {
     "title": "Kontaktieren Sie uns",
-    "subtitle": "Nehmen Sie Kontakt mit uns auf für Ihre Fragen und Anfragen",
+    "subtitle": "Sie haben ein Projekt im Kopf? Lassen Sie es Wirklichkeit werden – sichern Sie sich noch heute eine kostenlose Beratung.",
     "sendMessage": "Senden Sie uns eine Nachricht",
     "name": "Vollständiger Name",
     "email": "E-Mail-Adresse",

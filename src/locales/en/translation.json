@@ -2,7 +2,7 @@
   "about": {
     "title": "Who we are",
     "subtitle": "Digital agency with a passion for innovation",
-    "description": "NextPixel is a digital agency that specializes in creating websites, web shops, SEO optimization, website maintenance, as well as developing custom software solutions according to client requirements.",
+    "description": "NextPixel is a results-driven digital agency. We specialize in websites, e-commerce, SEO, maintenance, and tailor-made software — all built around your business goals.",
     "history": "Since 2020, we have been dedicated to creating digital solutions that help our clients achieve their business goals. Our approach combines technical expertise, creativity, and a deep understanding of our clients' business needs.",
     "philosophy": "We believe that successful digital solutions must not only be technically excellent, but also user-friendly, aesthetically appealing, and optimized to achieve business results."
   },
@@ -38,15 +38,15 @@
     "de": "German"
   },
   "hero": {
-    "title": "Websites That Win You Clients",
-    "subtitle": "We build fast, SEO-optimized and mobile-friendly websites — tailored for growth-focused businesses.",
+   "title": "Turn Visitors Into Paying Clients",
+    "subtitle": "We craft lightning-fast, SEO-optimized websites that don't just look good — they convert.",
     "services": "Our services",
     "contact": "Contact us",
     "learnMore": "Learn more"
   },
   "services": {
   "title": "Our Services",
-  "subtitle": "We offer a wide range of digital services tailored to your needs",
+  "subtitle": "From websites to SEO — get everything you need to grow your digital presence.",
   "requestQuote": "Request a quote",
   "webDesign": {
     "title": "Web Design",
@@ -184,7 +184,7 @@
   },
   "contact": {
     "title": "Contact us",
-    "subtitle": "Get in touch with your questions and requests",
+    "subtitle": "Have a project in mind? Let’s bring it to life — get your free consultation today.",
     "sendMessage": "Send us a message",
     "name": "Full name",
     "email": "Email address",

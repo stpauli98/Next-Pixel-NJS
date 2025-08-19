@@ -2,20 +2,20 @@
   "about": {
     "title": "Ko smo mi",
     "subtitle": "Digitalna agencija sa strašću za inovacije",
-    "description": "NextPixel je digitalna agencija koja se bavi izradom web stranica, web shopova, SEO optimizacijom, održavanjem web sajtova, kao i razvojem softverskih rješenja po zahtjevu klijenata.",
+    "description": "NextPixel je digitalna agencija usmjerena na rezultate. Specijalizovani smo za web stranice, e-trgovinu, SEO, održavanje i softver po meri — sve prilagođeno vašim poslovnim ciljevima.",
     "history": "Od 2020. godine posvećeni smo stvaranju digitalnih rješenja koja pomažu našim klijentima da ostvare svoje poslovne ciljeve. Naš pristup kombinuje tehničku stručnost, kreativnost i duboko razumijevanje poslovnih potreba naših klijenata.",
     "philosophy": "Vjerujemo da uspješna digitalna rješenja moraju biti ne samo tehnički izvrsna, već i prilagođena korisnicima, estetski privlačna i optimizovana za postizanje poslovnih rezultata."
   },
   "hero": {
-  "title": "Veb sajtovi koji vam donose klijente",
-  "subtitle": "Pravimo brze, SEO-optimizovane i mobilno prilagođene veb sajtove — skrojene za biznise fokusirane na rast.",
+  "title": "Pretvorite posjetioce u klijente",
+  "subtitle": "Pravimo brze, SEO optimizovane web stranice koje ne samo da izgledaju sjajno — već i konvertuju.",
     "services": "Naše usluge",
     "contact": "Kontaktirajte nas",
     "learnMore": "Saznajte više"
   },
   "services": {
   "title": "Naše usluge",
-  "subtitle": "Pružamo širok spektar digitalnih usluga prilagođenih vašim potrebama",
+  "subtitle": "Od web sajtova do SEO-a — dobijate sve što vam je potrebno da razvijete svoje digitalno prisustvo.",
   "requestQuote": "Zatraži ponudu",
   "webDesign": {
     "title": "Web dizajn",
@@ -187,7 +187,7 @@
   "relatedProjects": "Slični projekti",
   "contact": {
     "title": "Kontaktirajte nas",
-    "subtitle": "Javite nam se sa vašim pitanjima i zahtjevima",
+    "subtitle": "Imate ideju za projekat? Hajde da je pretvorimo u stvarnost — zakažite besplatne konsultacije već danas.",
     "sendMessage": "Pošaljite nam poruku",
     "name": "Ime i prezime",
     "email": "Email adresa",
