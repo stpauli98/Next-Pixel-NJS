@@ -6,6 +6,8 @@ import './globals.css';
 import '@/i18n';
 import ClientLayout from './client-layout';
 import { defaultMetadata, structuredData } from '@/config/metadata';
+import { Analytics } from "@vercel/analytics/next"
+
 
 export const metadata: Metadata = defaultMetadata;
 
@@ -308,6 +310,7 @@ export default async function RootLayout({
         <meta name="twitter:creator" content="@nextpixel" />
       </head>
       <body>
+        <Analytics />
         <ClientLayout>
           {children}
         </ClientLayout>
