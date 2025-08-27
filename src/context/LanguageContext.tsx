@@ -3,6 +3,7 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { TFunction } from 'i18next';
+
 import i18n from '../i18n';
 import Cookies from 'js-cookie';
 
@@ -16,67 +17,49 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const { t } = useTranslation();
-  // Get initial language from cookie or use Serbian as default
-  const [language, setLanguage] = useState('sr');
   
-  // Koristi ref da pratimo da li je komponenta montirana
-  const isMounted = React.useRef(false);
-  const isInitialized = React.useRef(false);
+  // Safe cookie reading that works on both server and client
+  const getInitialLanguage = () => {
+    if (typeof window === 'undefined') {
+      // Server-side: can't access cookies directly in client component
+      return 'sr'; // Return default
+    }
+    // Client-side: read from cookie
+    return Cookies.get('i18nextLng') || 'sr';
+  };
+  
+  // Use default on initial render to avoid hydration mismatch
+  const [language, setLanguage] = useState('sr');
+  const [isClient, setIsClient] = useState(false);
 
-  // Inicijalizacija i postavljanje event listenera
+  // Update language after hydration completes
   useEffect(() => {
-    // Prvo proveravamo da li postoji cookie sa jezikom
-    const cookieLanguage = Cookies.get('i18nextLng');
-    const initialLanguage = cookieLanguage || 'sr';
-    
-    // Osiguravamo da i18n koristi odabrani jezik za inicijalno renderovanje
-    if (!isInitialized.current) {
-      i18n.changeLanguage(initialLanguage);
-      setLanguage(initialLanguage);
-      isInitialized.current = true;
-    }
+    setIsClient(true);
+    const cookieLanguage = Cookies.get('i18nextLng') || 'sr';
+    setLanguage(cookieLanguage);
+    i18n.changeLanguage(cookieLanguage);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // Run only once after mount - intentionally omit language dependency
 
-    isMounted.current = true;
-    
-    // Funkcija za ažuriranje jezika u state-u kada se promeni u i18n
+  // Listen for i18n language changes
+  useEffect(() => {
+    if (!isClient) return;
+
     const handleLanguageChanged = (lng: string) => {
-      if (isMounted.current) {
-        setLanguage(lng);
-        // Postavljamo cookie koji će trajati 365 dana
-        Cookies.set('i18nextLng', lng, { expires: 365, path: '/' });
-      }
+      setLanguage(lng);
+      Cookies.set('i18nextLng', lng, { expires: 365, path: '/' });
     };
-    
-    // Dodajemo event listener za promenu jezika
+
     i18n.on('languageChanged', handleLanguageChanged);
-    
-    // Ako smo na klijentu, pokušavamo da učitamo jezik iz cookie-a ili localStorage-a
-    if (typeof window !== 'undefined') {
-      const timer = setTimeout(() => {
-        const storedLanguage = Cookies.get('i18nextLng') || localStorage.getItem('i18nextLng');
-        if (storedLanguage) {
-          i18n.changeLanguage(storedLanguage);
-          setLanguage(storedLanguage);
-        }
-      }, 0);
-      
-      return () => {
-        clearTimeout(timer);
-        i18n.off('languageChanged', handleLanguageChanged);
-        isMounted.current = false;
-      };
-    }
     
     return () => {
       i18n.off('languageChanged', handleLanguageChanged);
-      isMounted.current = false;
     };
-  }, []);
+  }, [isClient]);
 
   const changeLanguage = (lang: string) => {
     i18n.changeLanguage(lang);
-    setLanguage(lang); // Eksplicitno postavljanje language state-a
-    // Postavljamo cookie koji će trajati 365 dana
+    setLanguage(lang);
     Cookies.set('i18nextLng', lang, { expires: 365, path: '/' });
   };
 

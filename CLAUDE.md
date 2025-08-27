@@ -1,0 +1,1 @@
+- uvijek prvo build frontend, i ne odustaj sa popravkom dok build ne pordje bez greske

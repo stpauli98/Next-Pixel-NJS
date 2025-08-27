@@ -125,6 +125,7 @@ export interface BlogContextData {
 }
 
 // Enum za blog statuse
+import type { UnknownObject } from '@/types/common';
 export enum BlogStatus {
   DRAFT = 'draft',
   PUBLISHED = 'published',
@@ -142,33 +143,44 @@ export enum BlogType {
 }
 
 // Type guards za proveru tipova
-export function isBlogPost(obj: any): obj is BlogPost {
-  return obj && 
-    typeof obj.slug === 'string' &&
-    typeof obj.title === 'string' &&
-    typeof obj.description === 'string' &&
-    typeof obj.date === 'string' &&
-    typeof obj.excerpt === 'string' &&
-    typeof obj.author === 'string' &&
-    Array.isArray(obj.tags);
+export function isBlogPost(obj: unknown): obj is BlogPost {
+  if (!obj || typeof obj !== 'object' || obj === null) {
+    return false;
+  }
+  
+  const post = obj as Record<string, unknown>;
+  return (
+    typeof post.slug === 'string' &&
+    typeof post.title === 'string' &&
+    typeof post.description === 'string' &&
+    typeof post.date === 'string' &&
+    typeof post.excerpt === 'string' &&
+    typeof post.author === 'string' &&
+    Array.isArray(post.tags)
+  );
 }
 
-export function isFullBlogPost(obj: any): obj is FullBlogPost {
-  return obj && 
-    typeof obj === 'object' &&
-    typeof obj.slug === 'string' &&
-    typeof obj.title === 'string' &&
-    typeof obj.description === 'string' &&
-    typeof obj.date === 'string' &&
-    typeof obj.excerpt === 'string' &&
-    typeof obj.author === 'string' &&
-    Array.isArray(obj.tags) &&
-    obj.content !== undefined && 
-    obj.blogData !== undefined;
+export function isFullBlogPost(obj: unknown): obj is FullBlogPost {
+  if (!obj || typeof obj !== 'object' || obj === null) {
+    return false;
+  }
+  
+  const post = obj as Record<string, unknown>;
+  return (
+    typeof post.slug === 'string' &&
+    typeof post.title === 'string' &&
+    typeof post.description === 'string' &&
+    typeof post.date === 'string' &&
+    typeof post.excerpt === 'string' &&
+    typeof post.author === 'string' &&
+    Array.isArray(post.tags) &&
+    typeof post.content === 'string' &&
+    typeof post.blogData === 'object'
+  );
 }
 
-export function isBlogFrontmatter(obj: any): obj is BlogFrontmatter {
-  return obj && typeof obj === 'object';
+export function isBlogFrontmatter(obj: unknown): obj is BlogFrontmatter {
+  return obj !== null && typeof obj === 'object';
 }
 
 // Helper tipovi

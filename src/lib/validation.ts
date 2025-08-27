@@ -4,6 +4,7 @@
  */
 
 // Email regex pattern za osnovnu validaciju
+import type { ContactFormInput, ApiResponseData } from '@/types/common';
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // Phone regex pattern za međunarodne telefone (opciono)
@@ -95,7 +96,7 @@ export function isValidMessage(message: string): boolean {
 /**
  * Comprehensive validation za contact form
  */
-export function validateContactForm(formData: any): ValidationResult {
+export function validateContactForm(formData: ContactFormInput): ValidationResult {
   const errors: string[] = [];
   
   // Type checking
@@ -109,22 +110,22 @@ export function validateContactForm(formData: any): ValidationResult {
   const { name, email, phone, message } = formData;
   
   // Name validation
-  if (!isValidName(name)) {
+  if (!name || typeof name !== 'string' || !isValidName(name)) {
     errors.push('Name must be between 2 and 100 characters');
   }
   
   // Email validation
-  if (!isValidEmail(email)) {
+  if (!email || typeof email !== 'string' || !isValidEmail(email)) {
     errors.push('Please provide a valid email address');
   }
   
   // Phone validation (opciono)
-  if (phone && !isValidPhone(phone)) {
+  if (phone && (typeof phone !== 'string' || !isValidPhone(phone))) {
     errors.push('Please provide a valid phone number');
   }
   
   // Message validation
-  if (!isValidMessage(message)) {
+  if (!message || typeof message !== 'string' || !isValidMessage(message)) {
     errors.push('Message must be between 10 and 5000 characters');
   }
   
@@ -138,10 +139,10 @@ export function validateContactForm(formData: any): ValidationResult {
   
   // Sanitize i vrati clean data
   const cleanData: ContactFormData = {
-    name: sanitizeString(name, 100),
-    email: sanitizeString(email, 254),
-    phone: phone ? sanitizeString(phone, 20) : undefined,
-    message: sanitizeString(message, 5000)
+    name: sanitizeString(String(name || ''), 100),
+    email: sanitizeString(String(email || ''), 254),
+    phone: phone ? sanitizeString(String(phone), 20) : undefined,
+    message: sanitizeString(String(message || ''), 5000)
   };
   
   return {
@@ -229,7 +230,7 @@ export function getClientIp(request: Request): string {
  * Create standardized API response
  */
 export function createApiResponse(
-  data: any, 
+  data: ApiResponseData, 
   status: number = 200, 
   message?: string
 ): Response {

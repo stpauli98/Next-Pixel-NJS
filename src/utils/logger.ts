@@ -5,13 +5,12 @@
 
 type LogLevel = 'log' | 'error' | 'warn' | 'info' | 'debug';
 
-interface LogContext {
-  component?: string;
-  function?: string;
-  userId?: string;
-  requestId?: string;
-  [key: string]: any;
-}
+// Use LogContext from common types
+
+import type { LogContext, LogData } from '@/types/common';
+
+// Re-export LogContext type for backward compatibility
+export type { LogContext };
 
 class Logger {
   private isDev: boolean;
@@ -23,7 +22,7 @@ class Logger {
   /**
    * Basic log - samo u development okruženju
    */
-  log(...args: any[]): void {
+  log(...args: unknown[]): void {
     if (this.isDev) {
       console.log('[NextPixel]', ...args);
     }
@@ -32,7 +31,7 @@ class Logger {
   /**
    * Error logging - uvek aktivan, ali sa kontrolisanim output-om
    */
-  error(message: string, error?: Error | any, context?: LogContext): void {
+  error(message: string, error?: Error | unknown, context?: LogContext): void {
     if (this.isDev) {
       console.error('[NextPixel ERROR]', message, error, context);
     } else {
@@ -41,7 +40,7 @@ class Logger {
       const errorLog = {
         level: 'error' as LogLevel,
         message,
-        error: error?.message || error,
+        error: error instanceof Error ? error.message : String(error),
         context,
         timestamp: new Date().toISOString(),
       };
@@ -72,7 +71,7 @@ class Logger {
   /**
    * Debug logging - detaljno za razvoj
    */
-  debug(message: string, data?: any, context?: LogContext): void {
+  debug(message: string, data?: unknown, context?: LogContext): void {
     if (this.isDev) {
       console.debug('[NextPixel DEBUG]', message, data, context);
     }
@@ -107,14 +106,14 @@ class Logger {
 export const logger = new Logger();
 
 // Export helper functions za lakše korišćenje
-export const log = (...args: any[]) => logger.log(...args);
-export const logError = (message: string, error?: Error | any, context?: LogContext) => 
+export const log = (...args: unknown[]) => logger.log(...args);
+export const logError = (message: string, error?: Error | unknown, context?: LogContext) => 
   logger.error(message, error, context);
 export const logWarn = (message: string, context?: LogContext) => 
   logger.warn(message, context);
 export const logInfo = (message: string, context?: LogContext) => 
   logger.info(message, context);
-export const logDebug = (message: string, data?: any, context?: LogContext) => 
+export const logDebug = (message: string, data?: unknown, context?: LogContext) => 
   logger.debug(message, data, context);
 
 export default logger;

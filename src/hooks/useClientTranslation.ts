@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import type { TranslationFunction, TranslationOptions } from '@/types/common';
 import { TFunction } from 'i18next';
 import { logWarn } from '@/utils/logger';
 
@@ -11,7 +12,7 @@ import { logWarn } from '@/utils/logger';
  */
 
 interface UseClientTranslationReturn {
-  t: (key: any, options?: any) => string;
+  t: (key: string | string[], options?: TranslationOptions) => string;
   language: string;
   changeLanguage: (lang: string) => Promise<TFunction<'translation', undefined>>;
   isHydrated: boolean;
@@ -55,7 +56,7 @@ export const useClientTranslation = (): UseClientTranslationReturn => {
   }, [i18n]);
 
   // Safe translation function that handles SSR/hydration
-  const safeT = (key: any, options?: any): string => {
+  const safeT = (key: string | string[], options?: TranslationOptions): string => {
     if (!isHydrated || !isReady) {
       // Return key during SSR or before hydration to prevent mismatch
       return typeof key === 'string' ? key : String(key);
@@ -98,7 +99,7 @@ export const useClientTranslation = (): UseClientTranslationReturn => {
 export const useClientTranslationWithFallback = (fallbackLanguage = 'sr') => {
   const translation = useClientTranslation();
   
-  const tWithFallback = (key: any, options?: any): string => {
+  const tWithFallback = (key: string | string[], options?: TranslationOptions): string => {
     const result = translation.t(key, options);
     
     // Ako je rezultat isti kao key (znači prevod nije pronađen), pokušaj sa fallback jezikom

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslate } from '../context/LanguageContext';
 import Image from 'next/image';
 
@@ -13,6 +13,11 @@ interface LanguageOption {
 const LanguageSelector: React.FC = () => {
   const { language, changeLanguage } = useTranslate();
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const languages: LanguageOption[] = [
     { code: 'sr', name: 'Srpski', flag: '/images/flags/serbia.svg' },
@@ -20,14 +25,25 @@ const LanguageSelector: React.FC = () => {
     { code: 'de', name: 'Deutsch', flag: '/images/flags/germany.svg' }
   ];
 
-  const currentLanguage = languages.find(lang => lang.code === language) || languages[0];
+  // Always use default language on server to avoid hydration mismatch
+  const currentLanguage = mounted 
+    ? (languages.find(lang => lang.code === language) || languages[0])
+    : languages[0]; // Always show Serbian on initial render
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
   const handleLanguageChange = (code: string) => {
+    // Set the cookie and reload to let middleware handle the redirect
     changeLanguage(code);
+    
+    // Set cookie directly to ensure it's saved before reload
+    document.cookie = `i18nextLng=${code}; path=/; max-age=${365 * 24 * 60 * 60}; SameSite=Lax`;
+    
+    // Reload the page to let middleware handle language routing
+    window.location.reload();
+    
     setIsOpen(false);
   };
 

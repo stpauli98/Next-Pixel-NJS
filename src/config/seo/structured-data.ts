@@ -45,6 +45,19 @@ export const socialProfiles = [
   'https://www.linkedin.com/company/nextpixel'
 ];
 
+export const urgentKeywords = [
+  'hitna izrada web stranice',
+  'express web development',
+  'brza izrada sajta',
+  'web stranica za 7 dana',
+  'hitno trebam sajt',
+  'urgent website creation',
+  'fast web development BiH',
+  'express izrada aplikacija',
+  'brzi web dizajn',
+  'hitna web rješenja',
+];
+
 export const services = [
   {
     '@type': 'Service',

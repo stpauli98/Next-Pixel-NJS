@@ -33,7 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ]
 
   // Removed location pages - they don't exist or work properly
-  const locationPages: any[] = []
+  const locationPages: MetadataRoute.Sitemap = []
 
   // Static pages
   const staticPages = [

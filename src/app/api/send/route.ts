@@ -9,6 +9,7 @@ import {
   createApiResponse,
   type ContactFormData 
 } from '@/lib/validation';
+import type { ContactFormInput } from '@/types/common';
 
 // Koristimo API ključ iz .env fajla
 // U produkciji, potrebno je postaviti pravi Resend API ključ u .env fajlu
@@ -44,7 +45,7 @@ export async function POST(request: Request) {
     }
 
     // Parse request body with size limit
-    let formData: any;
+    let formData: ContactFormInput;
     try {
       const requestText = await request.text();
       if (requestText.length > 10000) { // 10KB limit

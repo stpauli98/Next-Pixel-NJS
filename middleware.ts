@@ -27,7 +27,7 @@ function getLocaleFromAcceptLanguage(acceptLanguage: string | null): string {
 
   // Pronađi prvi podržani jezik
   for (const { code } of languages) {
-    if (locales.includes(code as any)) {
+    if (locales.includes(code as typeof locales[number])) {
       return code;
     }
   }
@@ -51,7 +51,7 @@ function getLocaleFromPathname(pathname: string): string | null {
   const segments = pathname.split('/');
   const firstSegment = segments[1];
   
-  if (locales.includes(firstSegment as any)) {
+  if (locales.includes(firstSegment as typeof locales[number])) {
     return firstSegment;
   }
   
@@ -97,7 +97,7 @@ export function middleware(request: NextRequest) {
 
   // Prvo proveravamo cookie
   const cookieLocale = request.cookies.get('i18nextLng')?.value;
-  if (cookieLocale && locales.includes(cookieLocale as any)) {
+  if (cookieLocale && locales.includes(cookieLocale as typeof locales[number])) {
     locale = cookieLocale;
   } else {
     // Zatim proveravamo Accept-Language header
