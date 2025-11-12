@@ -1,7 +1,9 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import { useRouter, usePathname } from 'next/navigation';
 import { useTranslate } from '../context/LanguageContext';
+import { getLocalizedPath, type Locale } from '@/config/i18n';
 import Image from 'next/image';
 
 interface LanguageOption {
@@ -12,6 +14,8 @@ interface LanguageOption {
 
 const LanguageSelector: React.FC = () => {
   const { language, changeLanguage } = useTranslate();
+  const router = useRouter();
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -35,14 +39,15 @@ const LanguageSelector: React.FC = () => {
   };
 
   const handleLanguageChange = (code: string) => {
-    // Set the cookie and reload to let middleware handle the redirect
+    // Update context state
     changeLanguage(code);
     
-    // Set cookie directly to ensure it's saved before reload
-    document.cookie = `i18nextLng=${code}; path=/; max-age=${365 * 24 * 60 * 60}; SameSite=Lax`;
+    // Construct new URL with the selected locale
+    const newPath = getLocalizedPath(pathname, code as Locale);
     
-    // Reload the page to let middleware handle language routing
-    window.location.reload();
+    // Navigate to the new localized path
+    // Middleware will handle setting the cookie
+    router.push(newPath);
     
     setIsOpen(false);
   };

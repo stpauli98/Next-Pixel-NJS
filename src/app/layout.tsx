@@ -1,29 +1,21 @@
 import React from 'react';
+import Script from 'next/script';
 import type { Metadata } from 'next';
-import { headers } from 'next/headers';
 import './globals.css';
 import '@/i18n';
 import ClientLayout from './client-layout';
 import { defaultMetadata } from '@/config/metadata';
-import { generateStructuredData } from '@/config/seo/structured-data';
 import { AnalyticsProvider } from '@/config/analytics';
-import { i18nConfig, getLocaleFromPathname, generateAlternateLinks, Locale } from '@/config/i18n';
 
 export const metadata: Metadata = defaultMetadata;
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Get language from headers (set by middleware)
-  const headersList = await headers();
-  const pathname = headersList.get('x-pathname') || '/';
-  const locale = getLocaleFromPathname(pathname);
-  const alternateLinks = generateAlternateLinks(pathname);
-  
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang="sr" suppressHydrationWarning>
       <head>
         {/* Core Meta Tags */}
         <meta charSet="utf-8" />
@@ -35,14 +27,6 @@ export default async function RootLayout({
         <meta name="googlebot" content="index, follow" />
         <meta name="bingbot" content="index, follow" />
         
-        {/* Language and Regional Tags */}
-        <meta httpEquiv="content-language" content={locale} />
-        <meta name="language" content={locale} />
-        <meta name="geo.region" content="BA-SRP" />
-        <meta name="geo.placename" content="Gradiška" />
-        <meta name="geo.position" content="45.1447;17.2522" />
-        <meta name="ICBM" content="45.1447, 17.2522" />
-        
         {/* Enhanced SEO Keywords for Local and AI Search */}
         <meta name="keywords" content="web development Republika Srpska, web dizajn Gradiška, izrada sajtova BiH, izrada aplikacija, web developer Bosnia, WordPress BiH, e-commerce Srpska, SEO optimizacija, responsive design, React developer, Next.js, Node.js, mobilne aplikacije, online prodavnica, digitalni marketing" />
         
@@ -51,24 +35,7 @@ export default async function RootLayout({
         <meta name="copyright" content="NextPixel" />
         <meta name="publisher" content="NextPixel" />
         
-        {/* Canonical and Alternate URLs */}
-        <link rel="canonical" href={alternateLinks.canonical} />
-        {alternateLinks.alternates.map((alt) => (
-          <link 
-            key={alt.hrefLang} 
-            rel="alternate" 
-            hrefLang={alt.hrefLang} 
-            href={alt.href} 
-          />
-        ))}
-        
-        {/* Enhanced Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(generateStructuredData(locale)),
-          }}
-        />
+
         
         {/* Preconnect for Performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -88,10 +55,6 @@ export default async function RootLayout({
         
         {/* Open Graph Enhanced */}
         <meta property="og:site_name" content="NextPixel" />
-        <meta property="og:locale" content={i18nConfig.localeCodes[locale as Locale]} />
-        {i18nConfig.locales.filter((l) => l !== locale).map((l) => (
-          <meta key={l} property="og:locale:alternate" content={i18nConfig.localeCodes[l]} />
-        ))}
         <meta property="og:type" content="website" />
         <meta property="og:determiner" content="the" />
         
@@ -115,20 +78,23 @@ export default async function RootLayout({
         <meta httpEquiv="X-Frame-Options" content="SAMEORIGIN" />
         <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
         
-        {/* Google tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-K5TQSBLLQF"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-K5TQSBLLQF');
-            `
-          }}
-        />
+
       </head>
       <body>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-K5TQSBLLQF"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-K5TQSBLLQF');
+          `}
+        </Script>
+        
         <AnalyticsProvider>
           <ClientLayout>
             {children}

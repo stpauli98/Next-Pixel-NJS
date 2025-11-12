@@ -66,6 +66,184 @@ export const siteConfig = {
   }
 };
 
+/**
+ * Locale-specific metadata configuration
+ */
+export const localeMetadata = {
+  sr: {
+    title: 'NextPixel - Profesionalan Web Development & Digitalna Rješenja | BiH',
+    description: 'Vodeca web development agencija u Republici Srpskoj i BiH. Gradimo prilagođene web stranice, mobilne aplikacije, e-commerce rješenja. Stručni developeri specijalizovani za React, Next.js i Node.js.',
+    keywords: 'web development Republika Srpska, web dizajn Gradiška, izrada sajtova BiH, izrada aplikacija, web developer Bosnia, WordPress BiH, e-commerce Srpska, SEO optimizacija, responsive design, React developer, Next.js, Node.js, mobilne aplikacije, online prodavnica, digitalni marketing',
+  },
+  en: {
+    title: 'NextPixel - Professional Web Development & Digital Solutions | Bosnia',
+    description: 'Leading web development agency in Republika Srpska, Bosnia and Herzegovina. We build custom websites, mobile apps, e-commerce solutions. Expert developers specializing in React, Next.js, and Node.js.',
+    keywords: 'web development Bosnia, website design BiH, mobile app development, e-commerce solutions, digital agency Bosnia, web developer Gradiska, React developers, Next.js experts, Node.js development, TypeScript programming, full-stack development',
+  },
+  de: {
+    title: 'NextPixel - Professionelle Webentwicklung & Digitale Lösungen | Bosnien',
+    description: 'Führende Webentwicklungsagentur in der Republika Srpska, Bosnien und Herzegowina. Wir erstellen maßgeschneiderte Websites, mobile Apps und E-Commerce-Lösungen. Experten für React, Next.js und Node.js.',
+    keywords: 'Webentwicklung Bosnien, Website-Design BiH, Mobile-App-Entwicklung, E-Commerce-Lösungen, Digitalagentur Bosnien, Webentwickler Gradiska, React-Entwickler, Next.js-Experten, Node.js-Entwicklung, TypeScript-Programmierung',
+  },
+} as const;
+
+/**
+ * Generate locale-specific metadata
+ */
+export function getLocaleMetadata(locale: 'sr' | 'en' | 'de'): Metadata {
+  const localeData = localeMetadata[locale];
+  const baseUrl = siteConfig.url;
+  const localeCode = locale === 'sr' ? 'sr_RS' : locale === 'en' ? 'en_US' : 'de_DE';
+
+  return {
+    title: localeData.title,
+    description: localeData.description,
+    keywords: localeData.keywords,
+    metadataBase: new URL(baseUrl),
+    alternates: {
+      canonical: `${baseUrl}/${locale}`,
+      languages: {
+        'sr': `${baseUrl}/sr`,
+        'en': `${baseUrl}/en`,
+        'de': `${baseUrl}/de`,
+        'x-default': `${baseUrl}/sr`,
+      },
+    },
+    openGraph: {
+      title: localeData.title,
+      description: localeData.description,
+      url: `${baseUrl}/${locale}`,
+      siteName: siteConfig.name,
+      locale: localeCode,
+      alternateLocale: ['sr_RS', 'en_US', 'de_DE'].filter(l => l !== localeCode),
+      type: 'website',
+      images: [
+        {
+          url: siteConfig.ogImage,
+          width: 1200,
+          height: 630,
+          alt: `${siteConfig.name} - ${localeData.title}`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: localeData.title,
+      description: localeData.description,
+      images: [siteConfig.ogImage],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+    other: {
+      'content-language': locale,
+      'language': locale,
+    },
+  };
+}
+
+/**
+ * Page-specific locale metadata
+ */
+export const pageLocaleMetadata = {
+  home: {
+    sr: {
+      title: 'Početna | NextPixel - Web Development & Digitalna Rješenja',
+      description: 'NextPixel - Vodeca web development agencija u BiH. Kreiramo moderne web stranice, mobilne aplikacije i e-commerce rješenja. React, Next.js, Node.js stručnjaci.',
+    },
+    en: {
+      title: 'Home | NextPixel - Web Development & Digital Solutions',
+      description: 'NextPixel - Leading web development agency in Bosnia. We create modern websites, mobile apps, and e-commerce solutions. React, Next.js, Node.js experts.',
+    },
+    de: {
+      title: 'Startseite | NextPixel - Webentwicklung & Digitale Lösungen',
+      description: 'NextPixel - Führende Webentwicklungsagentur in Bosnien. Wir erstellen moderne Websites, mobile Apps und E-Commerce-Lösungen. React, Next.js, Node.js Experten.',
+    },
+  },
+  blog: {
+    sr: {
+      title: 'Blog | NextPixel - Web Development Savjeti i Vodici',
+      description: 'Najnovije informacije o web developmentu, dizajnu, SEO-u i digitalnom marketingu. Stručni članci i tutorijali.',
+    },
+    en: {
+      title: 'Blog | NextPixel - Web Development Tips and Guides',
+      description: 'Latest insights on web development, design, SEO, and digital marketing. Expert articles and tutorials.',
+    },
+    de: {
+      title: 'Blog | NextPixel - Webentwicklung Tipps und Anleitungen',
+      description: 'Neueste Erkenntnisse über Webentwicklung, Design, SEO und digitales Marketing. Expertenartikel und Tutorials.',
+    },
+  },
+  terms: {
+    sr: {
+      title: 'Uslovi Korištenja | NextPixel',
+      description: 'Uslovi korištenja web stranice NextPixel. Prava i obaveze korisnika.',
+    },
+    en: {
+      title: 'Terms of Service | NextPixel',
+      description: 'Terms of service for NextPixel website. User rights and obligations.',
+    },
+    de: {
+      title: 'Nutzungsbedingungen | NextPixel',
+      description: 'Nutzungsbedingungen für die NextPixel-Website. Rechte und Pflichten der Nutzer.',
+    },
+  },
+  privacy: {
+    sr: {
+      title: 'Politika Privatnosti | NextPixel',
+      description: 'Politika privatnosti NextPixel web stranice. Zaštita vaših podataka.',
+    },
+    en: {
+      title: 'Privacy Policy | NextPixel',
+      description: 'NextPixel privacy policy. Protection of your data.',
+    },
+    de: {
+      title: 'Datenschutzrichtlinie | NextPixel',
+      description: 'NextPixel Datenschutzrichtlinie. Schutz Ihrer Daten.',
+    },
+  },
+} as const;
+
+/**
+ * Generate page-specific metadata for a locale
+ */
+export function getPageMetadata(
+  page: keyof typeof pageLocaleMetadata,
+  locale: 'sr' | 'en' | 'de'
+): Metadata {
+  const pageData = pageLocaleMetadata[page][locale];
+  const baseUrl = siteConfig.url;
+
+  return {
+    title: pageData.title,
+    description: pageData.description,
+    alternates: {
+      canonical: `${baseUrl}/${locale}`,
+      languages: {
+        'sr': `${baseUrl}/sr`,
+        'en': `${baseUrl}/en`,
+        'de': `${baseUrl}/de`,
+      },
+    },
+    openGraph: {
+      title: pageData.title,
+      description: pageData.description,
+      url: `${baseUrl}/${locale}`,
+      siteName: siteConfig.name,
+      locale: locale === 'sr' ? 'sr_RS' : locale === 'en' ? 'en_US' : 'de_DE',
+      type: 'website',
+    },
+  };
+}
+
 // Twitter/X config
 export const twitterConfig = {
   creator: '@nextpixel',

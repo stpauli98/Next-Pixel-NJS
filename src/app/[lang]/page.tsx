@@ -13,7 +13,27 @@ import WhyChooseUsSection from '@/components/sections/WhyChooseUsSection';
 // Lazy loaded komponente za bolje performance
 import { LazyPortfolioSection, LazyContactSection } from '@/components/LazySection';
 
-export default function Home() {
+interface HomeProps {
+  params: Promise<{
+    lang: string;
+  }>;
+}
+
+import { Metadata } from 'next';
+import { getPageMetadata } from '@/config/metadata';
+import { Locale } from '@/config/i18n';
+
+/**
+ * Generate metadata for home page based on locale
+ */
+export async function generateMetadata({ params }: HomeProps): Promise<Metadata> {
+  const resolvedParams = await params;
+  const locale = resolvedParams.lang as Locale;
+  return getPageMetadata('home', locale);
+}
+
+export default async function Home({ params }: HomeProps) {
+  const resolvedParams = await params;
   return (
     <div className="App">
       <Navbar />
