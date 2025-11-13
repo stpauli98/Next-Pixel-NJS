@@ -1,0 +1,82 @@
+{
+  "title": "Our portfolio",
+  "subtitle": "Check out some of our recent projects",
+  "viewProject": "View project",
+  "startProject": "Start a Project",
+  "visitWebsite": "Visit Website",
+  "technologies": "Technologies Used",
+  "keyFeatures": "Key Features",
+  "category": {
+    "all": "all",
+    "webApp": "web-app",
+    "webShop": "web-shop",
+    "website": "website"
+  },
+  "projects": {
+    "project1": {
+      "title": "E-commerce platform",
+      "description": "Development of a complete e-commerce solution with payment processing and inventory management."
+    },
+    "project2": {
+      "title": "Corporate website",
+      "description": "Design and development of a corporate website with a content management system."
+    },
+    "project3": {
+      "title": "Project Management Application",
+      "description": "Development of a custom project management application for teams."
+    },
+    "project4": {
+      "title": "SEO Optimization",
+      "description": "Implementation of an SEO strategy that increased organic traffic by 150%."
+    },
+    "project5": {
+      "title": "Mobile Application",
+      "description": "Development of a mobile application for iOS and Android platforms."
+    },
+    "project6": {
+      "title": "Website Redesign",
+      "description": "Complete redesign of an existing website with a focus on user experience."
+    },
+    "project7": {
+      "title": "Save All Your Wedding Memories",
+      "description": "A simple way to collect all photos taken by your guests during the wedding in one place, without complications."
+    },
+    "project8": {
+      "title": "Caffe Bar 919",
+      "description": "Modern website for a café in the center of Gradiška with menu, gallery, events, and CTA for reservations."
+    },
+    "project9": {
+      "title": "Šarena Čarolija – Scented Candles",
+      "description": "Online shop for handmade scented candles from soy wax, with local delivery in BiH."
+    },
+    "project10": {
+      "title": "Zahnarzt Grimmenstein – Dr. Visnja Milosevic",
+      "description": "Informative website for the dental practice in Grimmenstein. Clear services, opening hours, 'Alle Kassen', contact and directions."
+    }
+  },
+  "features": {
+    "createEvent": "Create a free wedding event",
+    "shareLink": "Easily share the link with guests",
+    "collectPhotos": "Automatic collection and organization of photos",
+    "viewPhotos": "View all photos in one place",
+    "downloadPhotos": "Download photos in high resolution",
+    "responsive": "Responsive design for mobile devices",
+    "heroSection": "Hero section with clear USP and call to reservation",
+    "events": "Events section",
+    "gallery": "Interior gallery",
+    "menuWithPrices": "Menu with prices",
+    "contactSection": "Contact with address, working hours, and call to navigation",
+    "fastLoading": "Responsive design and fast loading",
+    "handmadeCandles": "Handmade candles from soy wax, essential oils and cotton wick",
+    "onlineShop": "Online shop",
+    "contactInfo": "Contact phone and email on site",
+    "freeShipping": "Free shipping for orders over 50 KM",
+    "responsiveDesign": "Responsive design",
+    "seoOptimized": "SEO title and description for BiH market",
+    "dentistServices": "Dental practice services",
+    "openingHours": "Opening hours",
+    "allInsurances": "Alle Kassen",
+    "contactCta": "Contact and call to number",
+    "addressAndMap": "Address and map"
+  }
+}

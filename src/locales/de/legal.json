@@ -1,0 +1,68 @@
+{
+  "privacy": {
+    "title": "Datenschutzrichtlinie",
+    "collect": {
+      "title": "1. Informationen, die wir sammeln",
+      "content": "Wir sammeln persönliche Informationen, die Sie uns freiwillig zur Verfügung stellen, wenn Sie Interesse an Informationen über unsere Dienstleistungen bekunden, wenn Sie an Aktivitäten auf unserer Website teilnehmen oder wenn Sie uns anderweitig kontaktieren. Die persönlichen Informationen, die wir sammeln, können Namen, E-Mail-Adressen, Telefonnummern und andere Informationen umfassen, die Sie angeben möchten."
+    },
+    "use": {
+      "title": "2. Wie wir Ihre Informationen verwenden",
+      "content": "Wir verwenden die von uns gesammelten Informationen, um unsere Dienstleistungen bereitzustellen, zu warten und zu verbessern. Dazu gehört die Verwendung der Daten zur Kommunikation mit Ihnen, zur Beantwortung Ihrer Anfragen und zur Übermittlung von Informationen über unsere Dienstleistungen. Wir können Ihre Informationen auch verwenden, um gesetzlichen Verpflichtungen nachzukommen und Streitigkeiten zu lösen."
+    },
+    "sharing": {
+      "title": "3. Weitergabe und Offenlegung von Informationen",
+      "content": "Wir verkaufen, handeln oder übertragen Ihre persönlichen Daten nicht an externe Parteien. Dies schließt nicht vertrauenswürdige Dritte ein, die uns bei der Betreibung unserer Website, der Führung unseres Geschäfts oder der Erbringung von Dienstleistungen für Sie unterstützen, sofern diese Parteien zustimmen, diese Informationen vertraulich zu behandeln."
+    },
+    "security": {
+      "title": "4. Datensicherheit",
+      "content": "Wir implementieren angemessene technische und organisatorische Sicherheitsmaßnahmen, um Ihre persönlichen Daten vor unbefugtem Zugriff, Veränderung, Offenlegung oder Zerstörung zu schützen. Keine Methode der Übertragung über das Internet oder der elektronischen Speicherung ist jedoch zu 100% sicher, und wir können keine absolute Sicherheit garantieren."
+    },
+    "cookies": {
+      "title": "5. Cookies und Tracking-Technologien",
+      "content": "Wir können Cookies und ähnliche Tracking-Technologien verwenden, um Aktivitäten auf unserer Website zu verfolgen und bestimmte Informationen zu speichern. Sie können Ihren Browser anweisen, alle Cookies abzulehnen oder anzuzeigen, wenn ein Cookie gesendet wird. Wenn Sie jedoch keine Cookies akzeptieren, können Sie möglicherweise einige Teile unserer Website nicht nutzen."
+    },
+    "rights": {
+      "title": "6. Ihre Rechte",
+      "content": "Je nach Ihrem Standort haben Sie möglicherweise bestimmte Rechte in Bezug auf Ihre persönlichen Daten, wie das Recht auf Zugriff, Korrektur oder Löschung Ihrer Daten. Um diese Rechte auszuüben, kontaktieren Sie uns bitte über die unten angegebenen Informationen."
+    },
+    "changes": {
+      "title": "7. Änderungen dieser Datenschutzrichtlinie",
+      "content": "Wir können unsere Datenschutzrichtlinie von Zeit zu Zeit aktualisieren. Wir werden Sie über Änderungen informieren, indem wir die neue Datenschutzrichtlinie auf dieser Seite veröffentlichen und das Datum 'Zuletzt aktualisiert' aktualisieren. Wir empfehlen Ihnen, diese Datenschutzrichtlinie regelmäßig auf Änderungen zu überprüfen."
+    },
+    "contact": {
+      "title": "8. Kontaktieren Sie uns",
+      "content": "Wenn Sie Fragen zu dieser Datenschutzrichtlinie haben, kontaktieren Sie uns bitte unter pixelnext9@gmail.com."
+    }
+  },
+  "terms": {
+    "title": "Nutzungsbedingungen",
+    "acceptance": {
+      "title": "1. Annahme der Bedingungen",
+      "content": "Durch den Zugriff auf oder die Nutzung unserer Dienste stimmen Sie zu, an diese Nutzungsbedingungen gebunden zu sein. Wenn Sie mit diesen Bedingungen nicht einverstanden sind, nutzen Sie bitte unsere Dienste nicht."
+    },
+    "services": {
+      "title": "2. Beschreibung der Dienstleistungen",
+      "content": "NextPixel bietet Webdesign, Entwicklung, E-Commerce-Lösungen, SEO-Optimierung und andere digitale Dienstleistungen, wie auf unserer Website beschrieben. Wir behalten uns das Recht vor, jederzeit einen Teil unserer Dienstleistungen zu ändern, auszusetzen oder einzustellen."
+    },
+    "intellectual": {
+      "title": "3. Rechte an geistigem Eigentum",
+      "content": "Alle Inhalte, Designs, Codes und Materialien, die von NextPixel erstellt wurden, sind durch Gesetze zum Schutz des geistigen Eigentums geschützt. Nach vollständiger Zahlung erhalten Kunden eine Lizenz zur Nutzung der Lieferungen, wie in ihrer Dienstleistungsvereinbarung angegeben."
+    },
+    "payment": {
+      "title": "4. Zahlung und Abrechnung",
+      "content": "Die Zahlungsbedingungen sind in den einzelnen Dienstleistungsvereinbarungen festgelegt. Rechnungen sind bei Erhalt fällig, sofern nicht anders angegeben. Wir behalten uns das Recht vor, Dienstleistungen bei Nichtzahlung auszusetzen."
+    },
+    "liability": {
+      "title": "5. Haftungsbeschränkung",
+      "content": "NextPixel haftet nicht für indirekte, zufällige, besondere, Folge- oder Strafschäden oder für Gewinn- oder Einnahmeverluste, unabhängig davon, ob diese direkt oder indirekt entstanden sind, oder für Verluste von Daten, Nutzung, Goodwill oder anderen immateriellen Verlusten."
+    },
+    "law": {
+      "title": "6. Geltendes Recht",
+      "content": "Diese Bedingungen unterliegen den Gesetzen von Bosnien und Herzegowina und werden in Übereinstimmung mit diesen ausgelegt, ungeachtet der Bestimmungen zum Kollisionsrecht."
+    },
+    "changes": {
+      "title": "7. Änderungen der Bedingungen",
+      "content": "Wir behalten uns das Recht vor, diese Bedingungen jederzeit zu ändern. Wir werden Kunden über wesentliche Änderungen informieren. Ihre fortgesetzte Nutzung unserer Dienstleistungen nach solchen Änderungen stellt Ihre Annahme der aktualisierten Bedingungen dar."
+    }
+  }
+}

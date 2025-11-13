@@ -1,0 +1,44 @@
+{
+  "title": "Kontaktirajte nas",
+  "subtitle": "Imate ideju za projekat? Hajde da je pretvorimo u stvarnost — zakažite besplatne konsultacije već danas.",
+  "sendMessage": "Pošaljite nam poruku",
+  "name": "Ime i prezime",
+  "email": "Email adresa",
+  "phone": "Telefon",
+  "subject": "Predmet",
+  "message": "Poruka",
+  "namePlaceholder": "Vaše ime i prezime",
+  "emailPlaceholder": "email@example.com",
+  "phonePlaceholder": "+387 XX XXX XXX",
+  "subjectPlaceholder": "Naslov poruke",
+  "messagePlaceholder": "Vaša poruka...",
+  "send": "Pošalji poruku",
+  "sending": "Slanje...",
+  "successMessage": "Vaša poruka je uspješno poslata! Kontaktiraćemo vas uskoro.",
+  "form": {
+    "name": "Ime i prezime",
+    "email": "Email adresa",
+    "phone": "Telefon",
+    "subject": "Predmet",
+    "message": "Poruka",
+    "submit": "Pošalji poruku",
+    "sending": "Slanje...",
+    "success": "Vaša poruka je uspješno poslata! Kontaktiraćemo vas uskoro.",
+    "error": "Došlo je do greške prilikom slanja poruke. Molimo pokušajte ponovo.",
+    "required": "Obavezno polje",
+    "invalidEmail": "Unesite validnu email adresu"
+  },
+  "info": {
+    "title": "Kontakt informacije",
+    "address": "Adresa",
+    "phone": "Telefon",
+    "email": "Email",
+    "addressDetails": "Gradiška"
+  },
+  "workingHours": {
+    "title": "Radno vrijeme",
+    "weekdays": "Pon - Pet: 09:00 - 17:00",
+    "weekend": "Sub: 10:00 - 14:00"
+  },
+  "followUs": "Pratite nas"
+}

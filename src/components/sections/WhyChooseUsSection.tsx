@@ -63,48 +63,48 @@ const WhyChooseUsSection: React.FC = () => {
   const reasonsData: Reason[] = [
     {
       icon: FaLightbulb,
-      titleKey: 'whyChooseUs.creativity.title',
-      descriptionKey: 'whyChooseUs.creativity.description'
+      titleKey: 'whyChooseUs:creativity.title',
+      descriptionKey: 'whyChooseUs:creativity.description'
     },
     {
       icon: FaRocket,
-      titleKey: 'whyChooseUs.fastDelivery.title',
-      descriptionKey: 'whyChooseUs.fastDelivery.description'
+      titleKey: 'whyChooseUs:fastDelivery.title',
+      descriptionKey: 'whyChooseUs:fastDelivery.description'
     },
     {
       icon: FaUsers,
-      titleKey: 'whyChooseUs.expertTeam.title',
-      descriptionKey: 'whyChooseUs.expertTeam.description'
+      titleKey: 'whyChooseUs:expertTeam.title',
+      descriptionKey: 'whyChooseUs:expertTeam.description'
     },
     {
       icon: FaHeadset,
-      titleKey: 'whyChooseUs.support.title',
-      descriptionKey: 'whyChooseUs.support.description'
+      titleKey: 'whyChooseUs:support.title',
+      descriptionKey: 'whyChooseUs:support.description'
     },
     {
       icon: FaClock,
-      titleKey: 'whyChooseUs.deadlines.title',
-      descriptionKey: 'whyChooseUs.deadlines.description'
+      titleKey: 'whyChooseUs:deadlines.title',
+      descriptionKey: 'whyChooseUs:deadlines.description'
     },
     {
       icon: FaCheckCircle,
-      titleKey: 'whyChooseUs.quality.title',
-      descriptionKey: 'whyChooseUs.quality.description'
+      titleKey: 'whyChooseUs:quality.title',
+      descriptionKey: 'whyChooseUs:quality.description'
     },
     {
       icon: FaChartLine,
-      titleKey: 'whyChooseUs.results.title',
-      descriptionKey: 'whyChooseUs.results.description'
+      titleKey: 'whyChooseUs:results.title',
+      descriptionKey: 'whyChooseUs:results.description'
     },
     {
       icon: FaHandshake,
-      titleKey: 'whyChooseUs.clientFocus.title',
-      descriptionKey: 'whyChooseUs.clientFocus.description'
+      titleKey: 'whyChooseUs:clientFocus.title',
+      descriptionKey: 'whyChooseUs:clientFocus.description'
     },
     {
       icon: FaBriefcase,
-      titleKey: 'whyChooseUs.experience.title',
-      descriptionKey: 'whyChooseUs.experience.description'
+      titleKey: 'whyChooseUs:experience.title',
+      descriptionKey: 'whyChooseUs:experience.description'
     }
   ];
 
@@ -115,24 +115,24 @@ const WhyChooseUsSection: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
             {!mounted ? (
               <>Why <span className="text-nextpixel-turquoise">Choose</span> Us</>  
-            ) : language === 'sr' && typeof t('whyChooseUs.title') === 'string' && (t('whyChooseUs.title') as string).includes('Zašto') ? (
+            ) : language === 'sr' && typeof t('whyChooseUs:title') === 'string' && (t('whyChooseUs:title') as string).includes('Zašto') ? (
               <>
-                {(t('whyChooseUs.title') as string).split('Zašto')[0]}
+                {(t('whyChooseUs:title') as string).split('Zašto')[0]}
                 <span className="text-nextpixel-blue">Zašto</span>
-                {(t('whyChooseUs.title') as string).split('Zašto')[1]}
+                {(t('whyChooseUs:title') as string).split('Zašto')[1]}
               </>
-            ) : language === 'de' && typeof t('whyChooseUs.title') === 'string' && (t('whyChooseUs.title') as string).includes('uns') ? (
+            ) : language === 'de' && typeof t('whyChooseUs:title') === 'string' && (t('whyChooseUs:title') as string).includes('uns') ? (
               <>
-                {(t('whyChooseUs.title') as string).split('uns')[0]}
+                {(t('whyChooseUs:title') as string).split('uns')[0]}
                 <span className="text-nextpixel-turquoise">uns</span>
-                {(t('whyChooseUs.title') as string).split('uns')[1]}
+                {(t('whyChooseUs:title') as string).split('uns')[1]}
               </>
             ) : (
-              typeof t('whyChooseUs.title') === 'string' ? (
+              typeof t('whyChooseUs:title') === 'string' ? (
                 <>
-                  {(t('whyChooseUs.title') as string).split('Choose')[0]}
+                  {(t('whyChooseUs:title') as string).split('Choose')[0]}
                   <span className="text-nextpixel-turquoise">Choose</span>
-                  {(t('whyChooseUs.title') as string).split('Choose')[1]}
+                  {(t('whyChooseUs:title') as string).split('Choose')[1]}
                 </>
               ) : (
                 <>Why <span className="text-nextpixel-turquoise">Choose</span> Us</>
@@ -149,7 +149,7 @@ const WhyChooseUsSection: React.FC = () => {
           <p className="text-lg text-nextpixel-gray max-w-3xl mx-auto mb-16">
             {!mounted ? 
               'We deliver exceptional digital solutions that help your business grow and succeed in the digital world.' :
-              (typeof t('whyChooseUs.subtitle') === 'string' ? t('whyChooseUs.subtitle') as string : '')
+              (typeof t('whyChooseUs:subtitle') === 'string' ? t('whyChooseUs:subtitle') as string : '')
             }
           </p>
         </div>
@@ -193,7 +193,7 @@ const WhyChooseUsSection: React.FC = () => {
           <a href="#contact" className="btn-secondary inline-block">
             {!mounted ? 
               'Let\'s Talk About Your Project' :
-              (typeof t('whyChooseUs.talkAboutProject') === 'string' ? t('whyChooseUs.talkAboutProject') as string : 'Let\'s Talk About Your Project')
+              (typeof t('whyChooseUs:talkAboutProject') === 'string' ? t('whyChooseUs:talkAboutProject') as string : 'Let\'s Talk About Your Project')
             }
           </a>
         </motion.div>

@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
             </h3>
             <p className="mb-4 text-gray-300">
               {!mounted ? 'We create modern digital solutions for your business' : (
-                typeof t('footer.description') === 'string' ? t('footer.description') as string : ''
+                typeof t('footer:description') === 'string' ? t('footer:description') as string : ''
               )}
             </p>
             <div className="flex space-x-4">
@@ -42,49 +42,49 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-xl font-bold mb-4">
               {!mounted ? 'Quick Links' : (
-                typeof t('footer.quickLinks.title') === 'string' ? t('footer.quickLinks.title') as string : 'Quick Links'
+                typeof t('footer:quickLinks.title') === 'string' ? t('footer:quickLinks.title') as string : 'Quick Links'
               )}
             </h4>
             <ul className="space-y-2">
               <li>
                 <a href="#home" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? 'Home' : (
-                    typeof t('nav.home') === 'string' ? t('nav.home') as string : 'Home'
+                    typeof t('navigation:home') === 'string' ? t('navigation:home') as string : 'Home'
                   )}
                 </a>
               </li>
               <li>
                 <a href="#about" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? 'About' : (
-                    typeof t('nav.about') === 'string' ? t('nav.about') as string : 'About'
+                    typeof t('navigation:about') === 'string' ? t('navigation:about') as string : 'About'
                   )}
                 </a>
               </li>
               <li>
                 <a href="#services" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? 'Services' : (
-                    typeof t('nav.services') === 'string' ? t('nav.services') as string : 'Services'
+                    typeof t('navigation:services') === 'string' ? t('navigation:services') as string : 'Services'
                   )}
                 </a>
               </li>
               <li>
                 <a href="#portfolio" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? 'Portfolio' : (
-                    typeof t('nav.portfolio') === 'string' ? t('nav.portfolio') as string : 'Portfolio'
+                    typeof t('navigation:portfolio') === 'string' ? t('navigation:portfolio') as string : 'Portfolio'
                   )}
                 </a>
               </li>
               <li>
                 <a href="#contact" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? 'Contact' : (
-                    typeof t('nav.contact') === 'string' ? t('nav.contact') as string : 'Contact'
+                    typeof t('navigation:contact') === 'string' ? t('navigation:contact') as string : 'Contact'
                   )}
                 </a>
               </li>
               <li>
                 <Link href="/blog" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? 'Blog' : (
-                    typeof t('nav.blog') === 'string' ? t('nav.blog') as string : 'Blog'
+                    typeof t('navigation:blog') === 'string' ? t('navigation:blog') as string : 'Blog'
                   )}
                 </Link>
               </li>
@@ -95,49 +95,49 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-xl font-bold mb-4">
               {!mounted ? 'Services' : (
-                typeof t('footer.services.title') === 'string' ? t('footer.services.title') as string : 'Services'
+                typeof t('footer:services.title') === 'string' ? t('footer:services.title') as string : 'Services'
               )}
             </h4>
             <ul className="space-y-2">
               <li>
                 <a href="#services" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? 'Web Design' : (
-                    typeof t('footer.services.webDesign') === 'string' ? t('footer.services.webDesign') as string : 'Web Design'
+                    typeof t('footer:services.webDesign') === 'string' ? t('footer:services.webDesign') as string : 'Web Design'
                   )}
                 </a>
               </li>
               <li>
                 <a href="#services" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? 'Web Development' : (
-                    typeof t('footer.services.webDevelopment') === 'string' ? t('footer.services.webDevelopment') as string : 'Web Development'
+                    typeof t('footer:services.webDevelopment') === 'string' ? t('footer:services.webDevelopment') as string : 'Web Development'
                   )}
                 </a>
               </li>
               <li>
                 <a href="#services" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? 'E-commerce' : (
-                    typeof t('footer.services.eCommerce') === 'string' ? t('footer.services.eCommerce') as string : 'E-commerce'
+                    typeof t('footer:services.eCommerce') === 'string' ? t('footer:services.eCommerce') as string : 'E-commerce'
                   )}
                 </a>
               </li>
               <li>
                 <a href="#services" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? 'SEO Optimization' : (
-                    typeof t('footer.services.seo') === 'string' ? t('footer.services.seo') as string : 'SEO'
+                    typeof t('footer:services.seo') === 'string' ? t('footer:services.seo') as string : 'SEO'
                   )}
                 </a>
               </li>
               <li>
                 <a href="#services" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? 'Maintenance' : (
-                    typeof t('footer.services.maintenance') === 'string' ? t('footer.services.maintenance') as string : 'Maintenance'
+                    typeof t('footer:services.maintenance') === 'string' ? t('footer:services.maintenance') as string : 'Maintenance'
                   )}
                 </a>
               </li>
               <li>
                 <a href="#services" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? 'Mobile Apps' : (
-                    typeof t('footer.services.mobileApps') === 'string' ? t('footer.services.mobileApps') as string : 'Mobile Apps'
+                    typeof t('footer:services.mobileApps') === 'string' ? t('footer:services.mobileApps') as string : 'Mobile Apps'
                   )}
                 </a>
               </li>
@@ -148,7 +148,7 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-xl font-bold mb-4">
               {!mounted ? 'Contact Info' : (
-                typeof t('contact.info.title') === 'string' ? t('contact.info.title') as string : 'Contact Info'
+                typeof t('contact:info.title') === 'string' ? t('contact:info.title') as string : 'Contact Info'
               )}
             </h4>
             <ul className="space-y-3">
@@ -156,7 +156,7 @@ const Footer: React.FC = () => {
                 <Icon icon={FaLocationDot} className="mt-1 mr-3 text-nextpixel-turquoise" aria-hidden={true} />
                 <span className="text-gray-300">
                   {!mounted ? 'Sarajevo, Bosnia and Herzegovina' : (
-                    typeof t('footer.contact.address') === 'string' ? t('footer.contact.address') as string : 'Sarajevo, Bosnia and Herzegovina'
+                    typeof t('footer:contact.address') === 'string' ? t('footer:contact.address') as string : 'Sarajevo, Bosnia and Herzegovina'
                   )}
                 </span>
               </li>
@@ -183,18 +183,18 @@ const Footer: React.FC = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400">
               &copy; {currentYear} <a href="https://www.nextpixel.dev" className="hover:text-nextpixel-turquoise transition-colors">NextPixel</a>. {!mounted ? 'All rights reserved.' : (
-                typeof t('footer.copyright') === 'string' ? t('footer.copyright') as string : 'All rights reserved.'
+                typeof t('footer:copyright') === 'string' ? t('footer:copyright') as string : 'All rights reserved.'
               )}
             </p>
             <div className="mt-4 md:mt-0">
               <Link href="/privacy-policy" className="text-gray-400 hover:text-nextpixel-turquoise transition-colors mx-2">
                 {!mounted ? 'Privacy Policy' : (
-                  typeof t('footer.privacyPolicy') === 'string' ? t('footer.privacyPolicy') as string : 'Privacy Policy'
+                  typeof t('footer:privacyPolicy') === 'string' ? t('footer:privacyPolicy') as string : 'Privacy Policy'
                 )}
               </Link>
               <Link href="/terms" className="text-gray-400 hover:text-nextpixel-turquoise transition-colors mx-2">
                 {!mounted ? 'Terms of Service' : (
-                  typeof t('footer.terms') === 'string' ? t('footer.terms') as string : 'Terms of Service'
+                  typeof t('footer:terms') === 'string' ? t('footer:terms') as string : 'Terms of Service'
                 )}
               </Link>
               <Link href="/sitemap.xml" className="text-gray-400 hover:text-nextpixel-turquoise transition-colors mx-2">

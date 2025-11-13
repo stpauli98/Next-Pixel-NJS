@@ -1,0 +1,41 @@
+{
+  "title": "Naše usluge",
+  "subtitle": "Od web sajtova do SEO-a — dobijate sve što vam je potrebno da razvijete svoje digitalno prisustvo.",
+  "requestQuote": "Zatraži ponudu",
+  "webDesign": {
+    "title": "Web dizajn",
+    "description": "Kreiramo moderne, responzivne i jednostavne za korištenje web stranice koje najbolje predstavljaju vaš brend."
+  },
+  "ecommerce": {
+    "title": "E-commerce",
+    "description": "Razvijamo online prodavnice koje pružaju odlično korisničko iskustvo i povećavaju prodaju."
+  },
+  "seo": {
+    "title": "SEO optimizacija",
+    "description": "Povećavamo vidljivost vaše stranice na pretraživačima i privlačimo više posjetilaca."
+  },
+  "maintenance": {
+    "title": "Održavanje",
+    "description": "Nudimo redovno održavanje, tehničku podršku i sigurnosna ažuriranja za vašu web stranicu."
+  },
+  "webDevelopment": {
+    "title": "Web razvoj",
+    "description": "Razvijamo prilagođene web aplikacije koje rješavaju konkretne poslovne izazove."
+  },
+  "mobileDevelopment": {
+    "title": "Mobilni razvoj",
+    "description": "Kreiramo mobilne aplikacije sa odličnim korisničkim iskustvom na svim uređajima."
+  },
+  "design": {
+    "title": "Dizajn",
+    "description": "Kreiramo vizuelno privlačne i funkcionalne dizajne koji pojačavaju vaš brend."
+  },
+  "development": {
+    "title": "Web razvoj",
+    "description": "Gradimo moderna i skalabilna web rješenja koristeći najnovije tehnologije."
+  },
+  "responsive": {
+    "title": "Responzivni dizajn",
+    "description": "Obezbjeđujemo da vaša stranica izgleda i radi savršeno na svim uređajima."
+  }
+}

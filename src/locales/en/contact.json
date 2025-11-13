@@ -1,0 +1,44 @@
+{
+  "title": "Contact us",
+  "subtitle": "Have a project in mind? Let's bring it to life — get your free consultation today.",
+  "sendMessage": "Send us a message",
+  "name": "Full name",
+  "email": "Email address",
+  "phone": "Phone",
+  "subject": "Subject",
+  "message": "Message",
+  "namePlaceholder": "Your full name",
+  "emailPlaceholder": "email@example.com",
+  "phonePlaceholder": "+1 XXX XXX XXXX",
+  "subjectPlaceholder": "Message subject",
+  "messagePlaceholder": "Your message...",
+  "send": "Send message",
+  "sending": "Sending...",
+  "successMessage": "Your message has been sent successfully! We will contact you soon.",
+  "form": {
+    "name": "Full name",
+    "email": "Email address",
+    "phone": "Phone",
+    "subject": "Subject",
+    "message": "Message",
+    "submit": "Send message",
+    "sending": "Sending...",
+    "success": "Your message has been sent successfully! We will contact you soon.",
+    "error": "An error occurred while sending your message. Please try again.",
+    "required": "Required field",
+    "invalidEmail": "Enter a valid email address"
+  },
+  "info": {
+    "title": "Contact information",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "addressDetails": "Gradiška"
+  },
+  "workingHours": {
+    "title": "Working hours",
+    "weekdays": "Mon - Fri: 09:00 - 17:00",
+    "weekend": "Sat: 10:00 - 14:00"
+  },
+  "followUs": "Follow us"
+}

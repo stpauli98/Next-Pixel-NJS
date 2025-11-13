@@ -1,0 +1,25 @@
+{
+  "title": "Ko smo mi",
+  "subtitle": "Digitalna agencija sa strašću za inovacije",
+  "description": "NextPixel je digitalna agencija usmjerena na rezultate. Specijalizovani smo za web stranice, e-trgovinu, SEO, održavanje i softver po meri — sve prilagođeno vašim poslovnim ciljevima.",
+  "history": "Od 2020. godine posvećeni smo stvaranju digitalnih rješenja koja pomažu našim klijentima da ostvare svoje poslovne ciljeve. Naš pristup kombinuje tehničku stručnost, kreativnost i duboko razumijevanje poslovnih potreba naših klijenata.",
+  "philosophy": "Vjerujemo da uspješna digitalna rješenja moraju biti ne samo tehnički izvrsna, već i prilagođena korisnicima, estetski privlačna i optimizovana za postizanje poslovnih rezultata.",
+  "features": {
+    "expertise": {
+      "title": "Stručni tim",
+      "description": "Naš tim stručnjaka ima višegodišnje iskustvo u razvoju web i softverskih rješenja."
+    },
+    "userFocus": {
+      "title": "Korisnički fokus",
+      "description": "Svaki projekat prilagođavamo specifičnim potrebama klijenata i njihovih korisnika."
+    },
+    "fastDelivery": {
+      "title": "Brza isporuka",
+      "description": "Poštujemo rokove i osiguravamo brzu implementaciju projekata bez kompromisa u kvaliteti."
+    },
+    "quality": {
+      "title": "Kvalitet",
+      "description": "Koristimo najnovije tehnologije i najbolje prakse za razvoj visokokvalitetnih rješenja."
+    }
+  }
+}

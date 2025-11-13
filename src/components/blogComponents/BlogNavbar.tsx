@@ -55,10 +55,10 @@ const BlogNavbar: React.FC<BlogNavbarProps> = ({ lang }) => {
   
   // Koristi prevedene vrednosti samo nakon što je komponenta montirana na klijentu
   const navLinks = mounted ? [
-    { name: typeof t('nav.home') === 'string' ? t('nav.home') as string : 'Home', href: '/' },
+    { name: typeof t('navigation:home') === 'string' ? t('navigation:home') as string : 'Home', href: '/' },
     { name: 'Blog', href: '/blog' },
-    { name: typeof t('nav.about') === 'string' ? t('nav.about') as string : 'About', href: '/#about' },
-    { name: typeof t('nav.services') === 'string' ? t('nav.services') as string : 'Services', href: '/#services' }
+    { name: typeof t('navigation:about') === 'string' ? t('navigation:about') as string : 'About', href: '/#about' },
+    { name: typeof t('navigation:services') === 'string' ? t('navigation:services') as string : 'Services', href: '/#services' }
   ] : defaultNavLinks;
 
   return (

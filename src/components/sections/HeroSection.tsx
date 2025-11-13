@@ -6,7 +6,7 @@ import { useClientTranslation } from '@/hooks/useClientTranslation';
 import { HeroImage } from '@/components/OptimizedImage';
 
 const HeroSection: React.FC = () => {
-  const { t, isHydrated, isReady } = useClientTranslation();
+  const { t, isHydrated, isReady } = useClientTranslation('hero');
 
   // Pokazuj loading state tokom hydration-a da izbegneš mismatch
   if (!isHydrated || !isReady) {
@@ -40,31 +40,23 @@ const HeroSection: React.FC = () => {
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
               {!isHydrated ? 'Digital solutions for your success' : (
-                typeof t('hero.title') === 'string' && (t('hero.title') as string).includes('moderno') ? (
-                  <>
-                    {(t('hero.title') as string).split('moderno')[0]}
-                    <span className="text-nextpixel-turquoise">moderno</span>
-                    {(t('hero.title') as string).split('moderno')[1]}
-                  </>
-                ) : (
-                  t('hero.title')
-                )
+                t('title')
               )}
             </h1>
             <p className="text-lg text-gray-300 mb-8">
               {!isHydrated ? 'We create modern web solutions for your business' : (
-                typeof t('hero.subtitle') === 'string' ? t('hero.subtitle') as string : ''
+                typeof t('subtitle') === 'string' ? t('subtitle') as string : ''
               )}
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <a href="#services" className="btn-primary text-center">
                 {!isHydrated ? 'Our Services' : (
-                  typeof t('hero.services') === 'string' ? t('hero.services') as string : 'Our Services'
+                  typeof t('services') === 'string' ? t('services') as string : 'Our Services'
                 )}
               </a>
               <a href="#contact" className="btn-secondary text-center">
                 {!isHydrated ? 'Contact Us' : (
-                  typeof t('hero.contact') === 'string' ? t('hero.contact') as string : 'Contact Us'
+                  typeof t('contact') === 'string' ? t('contact') as string : 'Contact Us'
                 )}
               </a>
             </div>
@@ -128,7 +120,7 @@ const HeroSection: React.FC = () => {
         >
           <span className="mb-2">
             {!isHydrated ? 'Learn More' : (
-              typeof t('hero.learnMore') === 'string' ? t('hero.learnMore') as string : 'Learn More'
+              typeof t('learnMore') === 'string' ? t('learnMore') as string : 'Learn More'
             )}
           </span>
           <svg 

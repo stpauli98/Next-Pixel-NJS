@@ -1,0 +1,41 @@
+{
+  "title": "Warum uns wählen",
+  "subtitle": "Wir bieten unseren Kunden maßgeschneiderte Lösungen mit höchstem Anspruch",
+  "talkAboutProject": "Lassen Sie uns über Ihr Projekt sprechen",
+  "creativity": {
+    "title": "Kreativität",
+    "description": "Unser Team bringt frische und innovative Ideen in jedes Projekt ein."
+  },
+  "fastDelivery": {
+    "title": "Schnelle Lieferung",
+    "description": "Wir halten Fristen ein und liefern Projekte schnellstmöglich ab."
+  },
+  "expertTeam": {
+    "title": "Fachkundiges Team",
+    "description": "Unser Team besteht aus erfahrenen Spezialisten in verschiedenen digitalen Bereichen."
+  },
+  "support": {
+    "title": "24/7 Support",
+    "description": "Wir stehen Ihnen jederzeit für Fragen und Support zur Verfügung."
+  },
+  "deadlines": {
+    "title": "Termintreue",
+    "description": "Wir verstehen, wie wichtig Zeit ist, und liefern stets pünktlich."
+  },
+  "quality": {
+    "title": "Erstklassige Qualität",
+    "description": "Qualität steht bei uns an erster Stelle – ohne Kompromisse."
+  },
+  "results": {
+    "title": "Ergebnisorientierung",
+    "description": "Unser Ziel ist es, messbare Geschäftsergebnisse für Sie zu erzielen."
+  },
+  "clientFocus": {
+    "title": "Kundenorientierung",
+    "description": "Wir stellen Ihre Bedürfnisse in den Mittelpunkt und arbeiten eng mit Ihnen zusammen."
+  },
+  "experience": {
+    "title": "Erfahrung",
+    "description": "Über 5 Jahre Erfahrung in der Umsetzung digitaler Projekte auf höchstem Niveau."
+  }
+}

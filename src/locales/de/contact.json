@@ -1,0 +1,44 @@
+{
+  "title": "Kontaktieren Sie uns",
+  "subtitle": "Sie haben ein Projekt im Kopf? Lassen Sie es Wirklichkeit werden – sichern Sie sich noch heute eine kostenlose Beratung.",
+  "sendMessage": "Senden Sie uns eine Nachricht",
+  "name": "Vollständiger Name",
+  "email": "E-Mail-Adresse",
+  "phone": "Telefon",
+  "subject": "Betreff",
+  "message": "Nachricht",
+  "namePlaceholder": "Ihr vollständiger Name",
+  "emailPlaceholder": "email@beispiel.com",
+  "phonePlaceholder": "+49 XXX XXX XXXX",
+  "subjectPlaceholder": "Betreff der Nachricht",
+  "messagePlaceholder": "Ihre Nachricht...",
+  "send": "Nachricht senden",
+  "sending": "Wird gesendet...",
+  "successMessage": "Ihre Nachricht wurde erfolgreich gesendet! Wir werden Sie in Kürze kontaktieren.",
+  "form": {
+    "name": "Vollständiger Name",
+    "email": "E-Mail-Adresse",
+    "phone": "Telefon",
+    "subject": "Betreff",
+    "message": "Nachricht",
+    "submit": "Nachricht senden",
+    "sending": "Wird gesendet...",
+    "success": "Ihre Nachricht wurde erfolgreich gesendet! Wir werden Sie in Kürze kontaktieren.",
+    "error": "Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+    "required": "Pflichtfeld",
+    "invalidEmail": "Geben Sie eine gültige E-Mail-Adresse ein"
+  },
+  "info": {
+    "title": "Kontaktinformationen",
+    "address": "Adresse",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "addressDetails": "Gradiška"
+  },
+  "workingHours": {
+    "title": "Öffnungszeiten",
+    "weekdays": "Mo - Fr: 09:00 - 17:00",
+    "weekend": "Sa: 10:00 - 14:00"
+  },
+  "followUs": "Folgen Sie uns"
+}

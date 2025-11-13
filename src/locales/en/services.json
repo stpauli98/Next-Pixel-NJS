@@ -1,0 +1,41 @@
+{
+  "title": "Our Services",
+  "subtitle": "From websites to SEO — get everything you need to grow your digital presence.",
+  "requestQuote": "Request a quote",
+  "webDesign": {
+    "title": "Web Design",
+    "description": "We create modern, responsive, and user-friendly websites that represent your brand at its best."
+  },
+  "ecommerce": {
+    "title": "E-Commerce",
+    "description": "We build online stores that offer great user experience and boost sales."
+  },
+  "seo": {
+    "title": "SEO Optimization",
+    "description": "We improve your site's visibility in search engines and increase organic traffic."
+  },
+  "maintenance": {
+    "title": "Maintenance",
+    "description": "We provide regular updates, monitoring, and technical support for your site."
+  },
+  "webDevelopment": {
+    "title": "Web Development",
+    "description": "We build custom web applications to solve business challenges and improve efficiency."
+  },
+  "mobileDevelopment": {
+    "title": "Mobile Development",
+    "description": "We create mobile apps that deliver excellent user experience across all devices."
+  },
+  "design": {
+    "title": "Design",
+    "description": "We design visually attractive and functional interfaces that enhance your brand."
+  },
+  "development": {
+    "title": "Web Development",
+    "description": "We build custom digital solutions using the latest technologies and best practices."
+  },
+  "responsive": {
+    "title": "Responsive Design",
+    "description": "We ensure your website looks and works great on all devices."
+  }
+}

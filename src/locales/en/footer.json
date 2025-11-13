@@ -1,0 +1,21 @@
+{
+  "description": "Digital agency specialized in creating modern websites, e-commerce solutions and digital marketing strategies.",
+  "quickLinks": {
+    "title": "Quick Links"
+  },
+  "services": {
+    "title": "Services",
+    "webDesign": "Web Design",
+    "webDevelopment": "Web Development",
+    "mobileApps": "Mobile Apps",
+    "eCommerce": "E-Commerce",
+    "seo": "SEO Optimization",
+    "maintenance": "Maintenance"
+  },
+  "contact": {
+    "address": "Gradiška"
+  },
+  "copyright": "All rights reserved.",
+  "privacyPolicy": "Privacy Policy",
+  "terms": "Terms of Service"
+}

@@ -19,8 +19,8 @@ interface UseClientTranslationReturn {
   isReady: boolean;
 }
 
-export const useClientTranslation = (): UseClientTranslationReturn => {
-  const { t, i18n } = useTranslation();
+export const useClientTranslation = (ns?: string | string[]): UseClientTranslationReturn => {
+  const { t, i18n } = useTranslation(ns || 'common');
   const [isHydrated, setIsHydrated] = useState(false);
   const [isReady, setIsReady] = useState(false);
   const [currentLanguage, setCurrentLanguage] = useState(i18n.language || 'sr');
@@ -96,8 +96,8 @@ export const useClientTranslation = (): UseClientTranslationReturn => {
  * Hook za komponente koje imaju fallback sadržaj
  * Korisno za komponente sa default text-om pre učitavanja prevoda
  */
-export const useClientTranslationWithFallback = (fallbackLanguage = 'sr') => {
-  const translation = useClientTranslation();
+export const useClientTranslationWithFallback = (ns?: string | string[], fallbackLanguage = 'sr') => {
+  const translation = useClientTranslation(ns);
   
   const tWithFallback = (key: string | string[], options?: TranslationOptions): string => {
     const result = translation.t(key, options);

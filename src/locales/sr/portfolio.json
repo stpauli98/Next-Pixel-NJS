@@ -1,0 +1,82 @@
+{
+  "title": "Naši radovi",
+  "subtitle": "Pogledajte neke od naših najuspješnijih projekata i otkrijte šta možemo učiniti za vas.",
+  "viewProject": "Pogledaj projekat",
+  "startProject": "Započnite projekat",
+  "visitWebsite": "Posjetite web stranicu",
+  "technologies": "Korištene tehnologije",
+  "keyFeatures": "Ključne karakteristike",
+  "category": {
+    "all": "sve",
+    "webApp": "web-aplikacija",
+    "webShop": "web-shop",
+    "website": "web stranica"
+  },
+  "projects": {
+    "project1": {
+      "title": "E-commerce platforma",
+      "description": "Razvoj moderne e-commerce platforme sa integriranim sistemom plaćanja i upravljanjem zalihama."
+    },
+    "project2": {
+      "title": "Korporativna web stranica",
+      "description": "Dizajn i razvoj responzivne korporativne web stranice sa naprednim funkcionalnostima."
+    },
+    "project3": {
+      "title": "Aplikacija za upravljanje projektima",
+      "description": "Razvoj prilagođene aplikacije za upravljanje projektima i timovima."
+    },
+    "project4": {
+      "title": "SEO optimizacija",
+      "description": "Implementacija SEO strategije koja je povećala organsku posjećenost za 150%."
+    },
+    "project5": {
+      "title": "Mobilna aplikacija",
+      "description": "Razvoj mobilne aplikacije za iOS i Android platforme."
+    },
+    "project6": {
+      "title": "Redizajn web stranice",
+      "description": "Kompletan redizajn postojeće web stranice sa fokusom na korisničko iskustvo."
+    },
+    "project7": {
+      "title": "Sačuvajte sve uspomene sa vašeg vjenčanja",
+      "description": "Jednostavan način da prikupite sve fotografije koje su vaši gosti napravili tokom vjenčanja na jednom mestu, bez komplikacija."
+    },
+    "project8": {
+      "title": "Caffe Bar 919",
+      "description": "Moderan web sajt za kafić u centru Gradiške sa jelovnikom, galerijom, događajima i CTA za rezervacije."
+    },
+    "project9": {
+      "title": "Šarena Čarolija – mirisne svijeće",
+      "description": "Online shop za ručno rađene mirisne svijeće od sojinog voska, sa lokalnom dostavom u BiH."
+    },
+    "project10": {
+      "title": "Zahnarzt Grimmenstein – Dr. Visnja Milosevic",
+      "description": "Informativna web stranica za zubarsku ordinaciju u Grimmensteinu. Jasne usluge, radno vrijeme, 'Alle Kassen', kontakt i mapa za dolazak."
+    }
+  },
+  "features": {
+    "createEvent": "Kreiranje besplatnog događaja za vjenčanje",
+    "shareLink": "Jednostavno dijeljenje linka sa gostima",
+    "collectPhotos": "Automatsko prikupljanje i organizacija fotografija",
+    "viewPhotos": "Pregled svih fotografija na jednom mjestu",
+    "downloadPhotos": "Preuzimanje fotografija u visokoj rezoluciji",
+    "responsive": "Responzivan dizajn za mobilne uređaje",
+    "heroSection": "Hero sekcija sa jasnim USP i pozivom na rezervaciju",
+    "events": "Sekcija Događaji",
+    "gallery": "Galerija enterijera",
+    "menuWithPrices": "Meni sa cijenama",
+    "contactSection": "Kontakt sa adresom, radnim vremenom i pozivom na navigaciju",
+    "fastLoading": "Responsive dizajn i brzo učitavanje",
+    "handmadeCandles": "Ručno rađene svijeće od sojinog voska, esencijalna ulja i pamučni fitilj",
+    "onlineShop": "Online shop",
+    "contactInfo": "Kontakt telefon i email na sajtu",
+    "freeShipping": "Besplatna dostava za narudžbe iznad 50 KM",
+    "responsiveDesign": "Responsive dizajn",
+    "seoOptimized": "SEO naslov i opis za BiH tržište",
+    "dentistServices": "Usluge ordinacije",
+    "openingHours": "Radno vrijeme",
+    "allInsurances": "Alle Kassen",
+    "contactCta": "Kontakt i poziv na broj",
+    "addressAndMap": "Adresa i mapa"
+  }
+}

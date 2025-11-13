@@ -1,0 +1,41 @@
+{
+  "title": "Zašto odabrati nas",
+  "subtitle": "Razlozi zbog kojih nas klijenti biraju",
+  "talkAboutProject": "Razgovarajmo o vašem projektu",
+  "creativity": {
+    "title": "Kreativnost",
+    "description": "Naš tim donosi svježe i inovativne ideje za svaki projekat."
+  },
+  "fastDelivery": {
+    "title": "Brza isporuka",
+    "description": "Poštujemo rokove i trudimo se da projekte završimo u najkraćem mogućem roku."
+  },
+  "expertTeam": {
+    "title": "Stručni tim",
+    "description": "Naš tim čine iskusni stručnjaci iz različitih oblasti digitalnih tehnologija."
+  },
+  "support": {
+    "title": "Podrška 24/7",
+    "description": "Dostupni smo u svakom trenutku za pitanja i tehničku pomoć."
+  },
+  "deadlines": {
+    "title": "Poštovanje rokova",
+    "description": "Razumijemo važnost vremena i uvijek isporučujemo na vrijeme."
+  },
+  "quality": {
+    "title": "Vrhunski kvalitet",
+    "description": "Ne pravimo kompromise kada je u pitanju kvalitet našeg rada."
+  },
+  "results": {
+    "title": "Fokus na rezultate",
+    "description": "Naš cilj je da ostvarite mjerljive i konkretne poslovne rezultate."
+  },
+  "clientFocus": {
+    "title": "Orijentisanost ka klijentima",
+    "description": "Uvijek stavljamo potrebe klijenata na prvo mjesto i radimo u bliskoj saradnji s njima."
+  },
+  "experience": {
+    "title": "Iskustvo",
+    "description": "Više od 5 godina iskustva u isporuci kvalitetnih digitalnih rješenja."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Wer wir sind",
+  "subtitle": "Digitalagentur mit Leidenschaft für Innovation",
+  "description": "NextPixel ist eine ergebnisorientierte Digitalagentur. Wir sind spezialisiert auf Websites, E-Commerce, SEO, Wartung und maßgeschneiderte Software – alles zugeschnitten auf Ihre Geschäftsziele.",
+  "history": "Seit 2020 widmen wir uns der Erstellung digitaler Lösungen, die unseren Kunden helfen, ihre Geschäftsziele zu erreichen. Unser Ansatz kombiniert technisches Fachwissen, Kreativität und ein tiefes Verständnis der geschäftlichen Anforderungen unserer Kunden.",
+  "philosophy": "Wir glauben, dass erfolgreiche digitale Lösungen nicht nur technisch hervorragend sein müssen, sondern auch benutzerfreundlich, ästhetisch ansprechend und für die Erzielung von Geschäftsergebnissen optimiert sein sollten.",
+  "features": {
+    "expertise": {
+      "title": "Expertenteam",
+      "description": "Unser Expertenteam verfügt über jahrelange Erfahrung in der Entwicklung von Web- und Softwarelösungen."
+    },
+    "userFocus": {
+      "title": "Benutzerfokus",
+      "description": "Wir passen jedes Projekt an die spezifischen Bedürfnisse der Kunden und ihrer Benutzer an."
+    },
+    "fastDelivery": {
+      "title": "Schnelle Lieferung",
+      "description": "Wir respektieren Fristen und gewährleisten eine schnelle Umsetzung von Projekten ohne Qualitätseinbußen."
+    },
+    "quality": {
+      "title": "Qualität",
+      "description": "Wir verwenden die neuesten Technologien und Best Practices, um hochwertige Lösungen zu entwickeln."
+    }
+  }
+}

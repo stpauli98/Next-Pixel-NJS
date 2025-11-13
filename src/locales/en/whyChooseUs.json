@@ -1,0 +1,41 @@
+{
+  "title": "Why Choose Us",
+  "subtitle": "We are dedicated to providing the best solutions for our clients",
+  "talkAboutProject": "Let's talk about your project",
+  "creativity": {
+    "title": "Creativity",
+    "description": "Our team brings fresh and innovative ideas to every project."
+  },
+  "fastDelivery": {
+    "title": "Fast Delivery",
+    "description": "We meet deadlines and strive to complete projects as quickly as possible."
+  },
+  "expertTeam": {
+    "title": "Expert Team",
+    "description": "Our team consists of experienced professionals in various areas of digital development."
+  },
+  "support": {
+    "title": "24/7 Support",
+    "description": "We're always available to answer questions and provide support."
+  },
+  "deadlines": {
+    "title": "Deadline Respect",
+    "description": "We understand the importance of time and always deliver on time."
+  },
+  "quality": {
+    "title": "Top Quality",
+    "description": "We never compromise on the quality of our work."
+  },
+  "results": {
+    "title": "Result-Oriented",
+    "description": "We aim to deliver measurable and impactful business results."
+  },
+  "clientFocus": {
+    "title": "Client Focus",
+    "description": "We put client needs first and collaborate closely to achieve their goals."
+  },
+  "experience": {
+    "title": "Experience",
+    "description": "With over 5 years of experience, we deliver high-quality digital solutions."
+  }
+}

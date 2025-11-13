@@ -32,70 +32,70 @@ const PortfolioSection: React.FC = () => {
   const getProjects = useCallback(() => [
     {
       id: 1,
-      title: typeof t('portfolio.projects.project7.title') === 'string' ? t('portfolio.projects.project7.title') as string : 'Sačuvajte sve uspomene sa vašeg vjenčanja',
-      description: typeof t('portfolio.projects.project7.description') === 'string' ? t('portfolio.projects.project7.description') as string : 'Jednostavan način da prikupite sve fotografije koje su vaši gosti napravili tokom vjenčanja na jednom mestu, bez komplikacija.',
-      category: typeof t('portfolio.category.webApp') === 'string' ? t('portfolio.category.webApp') as string : 'Web App',
+      title: typeof t('portfolio:projects.project7.title') === 'string' ? t('portfolio:projects.project7.title') as string : 'Sačuvajte sve uspomene sa vašeg vjenčanja',
+      description: typeof t('portfolio:projects.project7.description') === 'string' ? t('portfolio:projects.project7.description') as string : 'Jednostavan način da prikupite sve fotografije koje su vaši gosti napravili tokom vjenčanja na jednom mestu, bez komplikacija.',
+      category: typeof t('portfolio:category.webApp') === 'string' ? t('portfolio:category.webApp') as string : 'Web App',
       image: '/images/DodajUspomenuHero.webp',
       url: 'https://www.dodajuspomenu.com',
       technologies: ['Next.js', 'React', 'Tailwind CSS', 'Firebase', 'Cloudinary'],
       features: [
-        typeof t('portfolio.features.createEvent') === 'string' ? t('portfolio.features.createEvent') as string : 'Kreiranje besplatnog događaja za vjenčanje',
-        typeof t('portfolio.features.shareLink') === 'string' ? t('portfolio.features.shareLink') as string : 'Jednostavno dijeljenje linka sa gostima',
-        typeof t('portfolio.features.collectPhotos') === 'string' ? t('portfolio.features.collectPhotos') as string : 'Automatsko prikupljanje i organizacija fotografija',
-        typeof t('portfolio.features.viewPhotos') === 'string' ? t('portfolio.features.viewPhotos') as string : 'Pregled svih fotografija na jednom mjestu',
-        typeof t('portfolio.features.downloadPhotos') === 'string' ? t('portfolio.features.downloadPhotos') as string : 'Preuzimanje fotografija u visokoj rezoluciji',
-        typeof t('portfolio.features.responsive') === 'string' ? t('portfolio.features.responsive') as string : 'Responzivan dizajn za mobilne uređaje'
+        typeof t('portfolio:features.createEvent') === 'string' ? t('portfolio:features.createEvent') as string : 'Kreiranje besplatnog događaja za vjenčanje',
+        typeof t('portfolio:features.shareLink') === 'string' ? t('portfolio:features.shareLink') as string : 'Jednostavno dijeljenje linka sa gostima',
+        typeof t('portfolio:features.collectPhotos') === 'string' ? t('portfolio:features.collectPhotos') as string : 'Automatsko prikupljanje i organizacija fotografija',
+        typeof t('portfolio:features.viewPhotos') === 'string' ? t('portfolio:features.viewPhotos') as string : 'Pregled svih fotografija na jednom mjestu',
+        typeof t('portfolio:features.downloadPhotos') === 'string' ? t('portfolio:features.downloadPhotos') as string : 'Preuzimanje fotografija u visokoj rezoluciji',
+        typeof t('portfolio:features.responsive') === 'string' ? t('portfolio:features.responsive') as string : 'Responzivan dizajn za mobilne uređaje'
       ]
     },
     {
       id: 2,
-      title: typeof t('portfolio.projects.project8.title') === 'string' ? t('portfolio.projects.project8.title') as string : 'Caffe Bar 919',
-      description: typeof t('portfolio.projects.project8.description') === 'string' ? t('portfolio.projects.project8.description') as string : 'Moderan web sajt za kafić u centru Gradiške sa jelovnikom, galerijom, događajima i CTA za rezervacije.',
-      category: typeof t('portfolio.category.website') === 'string' ? t('portfolio.category.website') as string : 'Web Site',
+      title: typeof t('portfolio:projects.project8.title') === 'string' ? t('portfolio:projects.project8.title') as string : 'Caffe Bar 919',
+      description: typeof t('portfolio:projects.project8.description') === 'string' ? t('portfolio:projects.project8.description') as string : 'Moderan web sajt za kafić u centru Gradiške sa jelovnikom, galerijom, događajima i CTA za rezervacije.',
+      category: typeof t('portfolio:category.website') === 'string' ? t('portfolio:category.website') as string : 'Web Site',
       image: '/images/919BarHero.webp',
       url: 'https://www.919bar.com/',
       technologies: ['Next.js', 'React', 'Tailwind CSS'],
       features: [
-        typeof t('portfolio.features.heroSection') === 'string' ? t('portfolio.features.heroSection') as string : 'Hero sekcija sa jasnim USP i pozivom na rezervaciju',
-        typeof t('portfolio.features.events') === 'string' ? t('portfolio.features.events') as string : 'Sekcija Događaji',
-        typeof t('portfolio.features.gallery') === 'string' ? t('portfolio.features.gallery') as string : 'Galerija enterijera',
-        typeof t('portfolio.features.menuWithPrices') === 'string' ? t('portfolio.features.menuWithPrices') as string : 'Meni sa cijenama',
-        typeof t('portfolio.features.contactSection') === 'string' ? t('portfolio.features.contactSection') as string : 'Kontakt sa adresom, radnim vremenom i pozivom na navigaciju',
-        typeof t('portfolio.features.fastLoading') === 'string' ? t('portfolio.features.fastLoading') as string : 'Responsive dizajn i brzo učitavanje'
+        typeof t('portfolio:features.heroSection') === 'string' ? t('portfolio:features.heroSection') as string : 'Hero sekcija sa jasnim USP i pozivom na rezervaciju',
+        typeof t('portfolio:features.events') === 'string' ? t('portfolio:features.events') as string : 'Sekcija Događaji',
+        typeof t('portfolio:features.gallery') === 'string' ? t('portfolio:features.gallery') as string : 'Galerija enterijera',
+        typeof t('portfolio:features.menuWithPrices') === 'string' ? t('portfolio:features.menuWithPrices') as string : 'Meni sa cijenama',
+        typeof t('portfolio:features.contactSection') === 'string' ? t('portfolio:features.contactSection') as string : 'Kontakt sa adresom, radnim vremenom i pozivom na navigaciju',
+        typeof t('portfolio:features.fastLoading') === 'string' ? t('portfolio:features.fastLoading') as string : 'Responsive dizajn i brzo učitavanje'
       ]
     },
     {
       id: 3,
-      title: typeof t('portfolio.projects.project9.title') === 'string' ? t('portfolio.projects.project9.title') as string : 'Šarena Čarolija – mirisne svijeće',
-      description: typeof t('portfolio.projects.project9.description') === 'string' ? t('portfolio.projects.project9.description') as string : 'Online shop za ručno rađene mirisne svijeće od sojinog voska, sa lokalnom dostavom u BiH.',
-      category: typeof t('portfolio.category.webShop') === 'string' ? t('portfolio.category.webShop') as string : 'Web Shop',
+      title: typeof t('portfolio:projects.project9.title') === 'string' ? t('portfolio:projects.project9.title') as string : 'Šarena Čarolija – mirisne svijeće',
+      description: typeof t('portfolio:projects.project9.description') === 'string' ? t('portfolio:projects.project9.description') as string : 'Online shop za ručno rađene mirisne svijeće od sojinog voska, sa lokalnom dostavom u BiH.',
+      category: typeof t('portfolio:category.webShop') === 'string' ? t('portfolio:category.webShop') as string : 'Web Shop',
       image: '/images/SarenCarolijaHero.webp',
       url: 'https://www.sarenacarolija.com/',
       technologies: ['Next.js', 'React', 'Tailwind CSS'],
       features: [
-        typeof t('portfolio.features.handmadeCandles') === 'string' ? t('portfolio.features.handmadeCandles') as string : 'Ručno rađene svijeće od sojinog voska, esencijalna ulja i pamučni fitilj',
-        typeof t('portfolio.features.onlineShop') === 'string' ? t('portfolio.features.onlineShop') as string : 'Online shop',
-        typeof t('portfolio.features.contactInfo') === 'string' ? t('portfolio.features.contactInfo') as string : 'Kontakt telefon i email na sajtu',
-        typeof t('portfolio.features.freeShipping') === 'string' ? t('portfolio.features.freeShipping') as string : 'Besplatna dostava za narudžbe iznad 50 KM',
-        typeof t('portfolio.features.responsiveDesign') === 'string' ? t('portfolio.features.responsiveDesign') as string : 'Responsive dizajn',
-        typeof t('portfolio.features.seoOptimized') === 'string' ? t('portfolio.features.seoOptimized') as string : 'SEO naslov i opis za BiH tržište'
+        typeof t('portfolio:features.handmadeCandles') === 'string' ? t('portfolio:features.handmadeCandles') as string : 'Ručno rađene svijeće od sojinog voska, esencijalna ulja i pamučni fitilj',
+        typeof t('portfolio:features.onlineShop') === 'string' ? t('portfolio:features.onlineShop') as string : 'Online shop',
+        typeof t('portfolio:features.contactInfo') === 'string' ? t('portfolio:features.contactInfo') as string : 'Kontakt telefon i email na sajtu',
+        typeof t('portfolio:features.freeShipping') === 'string' ? t('portfolio:features.freeShipping') as string : 'Besplatna dostava za narudžbe iznad 50 KM',
+        typeof t('portfolio:features.responsiveDesign') === 'string' ? t('portfolio:features.responsiveDesign') as string : 'Responsive dizajn',
+        typeof t('portfolio:features.seoOptimized') === 'string' ? t('portfolio:features.seoOptimized') as string : 'SEO naslov i opis za BiH tržište'
       ]
     },
     {
       id: 4,
-      title: typeof t('portfolio.projects.project10.title') === 'string' ? t('portfolio.projects.project10.title') as string : 'Zahnarzt Grimmenstein – Dr. Visnja Milosevic',
-      description: typeof t('portfolio.projects.project10.description') === 'string' ? t('portfolio.projects.project10.description') as string : 'Informativna web stranica za zubarsku ordinaciju u Grimmensteinu. Jasne usluge, radno vrijeme, "Alle Kassen", kontakt i mapa za dolazak.',
-      category: typeof t('portfolio.category.website') === 'string' ? t('portfolio.category.website') as string : 'Website',
+      title: typeof t('portfolio:projects.project10.title') === 'string' ? t('portfolio:projects.project10.title') as string : 'Zahnarzt Grimmenstein – Dr. Visnja Milosevic',
+      description: typeof t('portfolio:projects.project10.description') === 'string' ? t('portfolio:projects.project10.description') as string : 'Informativna web stranica za zubarsku ordinaciju u Grimmensteinu. Jasne usluge, radno vrijeme, "Alle Kassen", kontakt i mapa za dolazak.',
+      category: typeof t('portfolio:category.website') === 'string' ? t('portfolio:category.website') as string : 'Website',
       image: '/images/DentistHero.webp',
       url: 'https://www.zahnarzt-grimmenstein.at/',
       technologies: ['Next.js', 'React', 'Tailwind CSS'],
       features: [
-        typeof t('portfolio.features.dentistServices') === 'string' ? t('portfolio.features.dentistServices') as string : 'Usluge ordinacije',
-        typeof t('portfolio.features.openingHours') === 'string' ? t('portfolio.features.openingHours') as string : 'Radno vrijeme',
-        typeof t('portfolio.features.allInsurances') === 'string' ? t('portfolio.features.allInsurances') as string : 'Alle Kassen',
-        typeof t('portfolio.features.contactCta') === 'string' ? t('portfolio.features.contactCta') as string : 'Kontakt i poziv na broj',
-        typeof t('portfolio.features.addressAndMap') === 'string' ? t('portfolio.features.addressAndMap') as string : 'Adresa i mapa',
-        typeof t('portfolio.features.fastLoading') === 'string' ? t('portfolio.features.fastLoading') as string : 'Responsive dizajn i brzo učitavanje'
+        typeof t('portfolio:features.dentistServices') === 'string' ? t('portfolio:features.dentistServices') as string : 'Usluge ordinacije',
+        typeof t('portfolio:features.openingHours') === 'string' ? t('portfolio:features.openingHours') as string : 'Radno vrijeme',
+        typeof t('portfolio:features.allInsurances') === 'string' ? t('portfolio:features.allInsurances') as string : 'Alle Kassen',
+        typeof t('portfolio:features.contactCta') === 'string' ? t('portfolio:features.contactCta') as string : 'Kontakt i poziv na broj',
+        typeof t('portfolio:features.addressAndMap') === 'string' ? t('portfolio:features.addressAndMap') as string : 'Adresa i mapa',
+        typeof t('portfolio:features.fastLoading') === 'string' ? t('portfolio:features.fastLoading') as string : 'Responsive dizajn i brzo učitavanje'
       ]
     },
   ], [t]);
@@ -110,10 +110,10 @@ const PortfolioSection: React.FC = () => {
 
   // Definišemo kategorije sa fallback vrednostima za inicijalni render
   const getCategories = () => [
-    { id: 'all', name: !mounted ? 'All' : (typeof t('portfolio.category.all') === 'string' ? t('portfolio.category.all') as string : 'All') },
-    { id: 'web-app', name: !mounted ? 'Web App' : (typeof t('portfolio.category.webApp') === 'string' ? t('portfolio.category.webApp') as string : 'Web App') },
-    { id: 'web-shop', name: !mounted ? 'Web Shop' : (typeof t('portfolio.category.webShop') === 'string' ? t('portfolio.category.webShop') as string : 'Web Shop') },
-    { id: 'website', name: !mounted ? 'Website' : (typeof t('portfolio.category.website') === 'string' ? t('portfolio.category.website') as string : 'Website') },
+    { id: 'all', name: !mounted ? 'All' : (typeof t('portfolio:category.all') === 'string' ? t('portfolio:category.all') as string : 'All') },
+    { id: 'web-app', name: !mounted ? 'Web App' : (typeof t('portfolio:category.webApp') === 'string' ? t('portfolio:category.webApp') as string : 'Web App') },
+    { id: 'web-shop', name: !mounted ? 'Web Shop' : (typeof t('portfolio:category.webShop') === 'string' ? t('portfolio:category.webShop') as string : 'Web Shop') },
+    { id: 'website', name: !mounted ? 'Website' : (typeof t('portfolio:category.website') === 'string' ? t('portfolio:category.website') as string : 'Website') },
   ];
 
   const [activeCategory, setActiveCategory] = useState('all');
@@ -132,9 +132,9 @@ const PortfolioSection: React.FC = () => {
     : visibleProjects.filter(project => {
       // Get the category ID for the current project by comparing with translation keys
       const categoryEntries = Object.entries({
-        'webApp': t('portfolio.category.webApp'),
-        'webShop': t('portfolio.category.webShop'),
-        'website': t('portfolio.category.website')
+        'webApp': t('portfolio:category.webApp'),
+        'webShop': t('portfolio:category.webShop'),
+        'website': t('portfolio:category.website')
       });
       
       // Find which category key matches this project's category name
@@ -193,7 +193,7 @@ const PortfolioSection: React.FC = () => {
             className="text-3xl md:text-4xl font-bold mb-4"
           >
             {!mounted ? 'Portfolio' : (
-              formatTitle(typeof t('portfolio.title') === 'string' ? t('portfolio.title') as string : 'Portfolio')
+              formatTitle(typeof t('portfolio:title') === 'string' ? t('portfolio:title') as string : 'Portfolio')
             )}
           </motion.h2>
           <motion.div
@@ -211,7 +211,7 @@ const PortfolioSection: React.FC = () => {
             className="text-lg text-nextpixel-gray max-w-3xl mx-auto mb-12"
           >
             {!mounted ? 'Check out some of our recent projects' : (
-              typeof t('portfolio.subtitle') === 'string' ? t('portfolio.subtitle') as string : ''
+              typeof t('portfolio:subtitle') === 'string' ? t('portfolio:subtitle') as string : ''
             )}
           </motion.p>
         </div>
@@ -290,7 +290,7 @@ const PortfolioSection: React.FC = () => {
                     }}
                     className="inline-block text-white text-sm font-medium hover:text-nextpixel-turquoise transition-colors"
                   >
-                    {typeof t('portfolio.viewProject') === 'string' ? t('portfolio.viewProject') as string : 'View Project'} →
+                    {typeof t('portfolio:viewProject') === 'string' ? t('portfolio:viewProject') as string : 'View Project'} →
                   </button>
                 </div>
               </div>
@@ -310,7 +310,7 @@ const PortfolioSection: React.FC = () => {
             className="btn-primary inline-block px-8 py-4 text-white bg-nextpixel-blue hover:bg-blue-700 rounded-full font-medium transition-colors duration-300 shadow-md hover:shadow-lg"
           >
             {!mounted ? 'Start Your Project' : (
-              typeof t('portfolio.startProject') === 'string' ? t('portfolio.startProject') as string : 'Start Your Project'
+              typeof t('portfolio:startProject') === 'string' ? t('portfolio:startProject') as string : 'Start Your Project'
             )}
           </a>
         </motion.div>

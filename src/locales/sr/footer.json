@@ -1,0 +1,21 @@
+{
+  "description": "Digitalna agencija specijalizovana za kreiranje modernih web stranica, e-commerce rješenja i digitalnih marketinških strategija.",
+  "quickLinks": {
+    "title": "Brzi linkovi"
+  },
+  "services": {
+    "title": "Usluge",
+    "webDesign": "Web dizajn",
+    "webDevelopment": "Web razvoj",
+    "mobileApps": "Mobilne aplikacije",
+    "eCommerce": "E-Commerce",
+    "seo": "SEO-Optimizacija",
+    "maintenance": "Održavanje"
+  },
+  "contact": {
+    "address": "Gradiška"
+  },
+  "copyright": "Sva prava zadržana.",
+  "privacyPolicy": "Politika privatnosti",
+  "terms": "Uslovi korištenja"
+}

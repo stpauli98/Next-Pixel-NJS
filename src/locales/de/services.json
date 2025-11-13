@@ -1,0 +1,41 @@
+{
+  "title": "Unsere Dienstleistungen",
+  "subtitle": "Von Websites bis hin zu SEO – alles, was Sie brauchen, um Ihre digitale Präsenz auszubauen.",
+  "requestQuote": "Angebot anfordern",
+  "webDesign": {
+    "title": "Webdesign",
+    "description": "Moderne, responsive und benutzerfreundliche Websites, die Ihre Marke perfekt repräsentieren."
+  },
+  "ecommerce": {
+    "title": "E-Commerce",
+    "description": "Wir entwickeln Online-Shops mit exzellentem Nutzererlebnis, die den Umsatz steigern."
+  },
+  "seo": {
+    "title": "SEO-Optimierung",
+    "description": "Wir verbessern die Sichtbarkeit Ihrer Website in Suchmaschinen und erhöhen den Traffic."
+  },
+  "maintenance": {
+    "title": "Wartung",
+    "description": "Regelmäßige Updates, technische Betreuung und Support für Ihre Website."
+  },
+  "webDevelopment": {
+    "title": "Webentwicklung",
+    "description": "Individuelle Webanwendungen zur Lösung spezifischer Geschäftsanforderungen."
+  },
+  "mobileDevelopment": {
+    "title": "Mobile Entwicklung",
+    "description": "Mobile Apps mit hervorragender Nutzererfahrung auf allen Geräten."
+  },
+  "design": {
+    "title": "Design",
+    "description": "Visuell ansprechende und funktionale Designs, die Ihre Marke hervorheben."
+  },
+  "development": {
+    "title": "Webentwicklung",
+    "description": "Individuelle Weblösungen mit modernsten Technologien."
+  },
+  "responsive": {
+    "title": "Responsive Design",
+    "description": "Ihre Website funktioniert optimal auf allen Geräten – vom Handy bis zum Desktop."
+  }
+}
