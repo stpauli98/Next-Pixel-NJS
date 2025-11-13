@@ -32,52 +32,10 @@ const PortfolioSection: React.FC = () => {
   const getProjects = useCallback(() => [
     {
       id: 1,
-      title: typeof t('portfolio.projects.project1.title') === 'string' ? t('portfolio.projects.project1.title') as string : 'Project 1',
-      description: typeof t('portfolio.projects.project1.description') === 'string' ? t('portfolio.projects.project1.description') as string : '',
-      category: typeof t('portfolio.category.webShop') === 'string' ? t('portfolio.category.webShop') as string : 'web-shop',
-      image: '/images/web-shop.png',
-    },
-    {
-      id: 2,
-      title: typeof t('portfolio.projects.project2.title') === 'string' ? t('portfolio.projects.project2.title') as string : 'Project 2',
-      description: typeof t('portfolio.projects.project2.description') === 'string' ? t('portfolio.projects.project2.description') as string : '',
-      category: typeof t('portfolio.category.webDesign') === 'string' ? t('portfolio.category.webDesign') as string : 'web-design',
-      image: '/images/corporate-website.png',
-    },
-    {
-      id: 3,
-      title: typeof t('portfolio.projects.project3.title') === 'string' ? t('portfolio.projects.project3.title') as string : 'Project 3',
-      description: typeof t('portfolio.projects.project3.description') === 'string' ? t('portfolio.projects.project3.description') as string : '',
-      category: typeof t('portfolio.category.software') === 'string' ? t('portfolio.category.software') as string : 'Software',
-      image: '/images/pm-app.png',
-    },
-    {
-      id: 4,
-      title: typeof t('portfolio.projects.project4.title') === 'string' ? t('portfolio.projects.project4.title') as string : 'Project 4',
-      description: typeof t('portfolio.projects.project4.description') === 'string' ? t('portfolio.projects.project4.description') as string : '',
-      category: typeof t('portfolio.category.seo') === 'string' ? t('portfolio.category.seo') as string : 'SEO',
-      image: '/images/seo-optim.png',
-    },
-    {
-      id: 5,
-      title: typeof t('portfolio.projects.project5.title') === 'string' ? t('portfolio.projects.project5.title') as string : 'Project 5',
-      description: typeof t('portfolio.projects.project5.description') === 'string' ? t('portfolio.projects.project5.description') as string : '',
-      category: typeof t('portfolio.category.software') === 'string' ? t('portfolio.category.software') as string : 'Software',
-      image: '/images/mobile-app.png',
-    },
-    {
-      id: 6,
-      title: typeof t('portfolio.projects.project6.title') === 'string' ? t('portfolio.projects.project6.title') as string : 'Project 6',
-      description: typeof t('portfolio.projects.project6.description') === 'string' ? t('portfolio.projects.project6.description') as string : '',
-      category: typeof t('portfolio.category.webDesign') === 'string' ? t('portfolio.category.webDesign') as string : 'Web Design',
-      image: '/images/redesign.png',
-    },
-    {
-      id: 7,
       title: typeof t('portfolio.projects.project7.title') === 'string' ? t('portfolio.projects.project7.title') as string : 'Sačuvajte sve uspomene sa vašeg vjenčanja',
       description: typeof t('portfolio.projects.project7.description') === 'string' ? t('portfolio.projects.project7.description') as string : 'Jednostavan način da prikupite sve fotografije koje su vaši gosti napravili tokom vjenčanja na jednom mestu, bez komplikacija.',
       category: typeof t('portfolio.category.webApp') === 'string' ? t('portfolio.category.webApp') as string : 'Web App',
-      image: 'https://i.imgur.com/43BFX0Q.png',
+      image: '/images/DodajUspomenuHero.webp',
       url: 'https://www.dodajuspomenu.com',
       technologies: ['Next.js', 'React', 'Tailwind CSS', 'Firebase', 'Cloudinary'],
       features: [
@@ -87,6 +45,57 @@ const PortfolioSection: React.FC = () => {
         typeof t('portfolio.features.viewPhotos') === 'string' ? t('portfolio.features.viewPhotos') as string : 'Pregled svih fotografija na jednom mjestu',
         typeof t('portfolio.features.downloadPhotos') === 'string' ? t('portfolio.features.downloadPhotos') as string : 'Preuzimanje fotografija u visokoj rezoluciji',
         typeof t('portfolio.features.responsive') === 'string' ? t('portfolio.features.responsive') as string : 'Responzivan dizajn za mobilne uređaje'
+      ]
+    },
+    {
+      id: 2,
+      title: typeof t('portfolio.projects.project8.title') === 'string' ? t('portfolio.projects.project8.title') as string : 'Caffe Bar 919',
+      description: typeof t('portfolio.projects.project8.description') === 'string' ? t('portfolio.projects.project8.description') as string : 'Moderan web sajt za kafić u centru Gradiške sa jelovnikom, galerijom, događajima i CTA za rezervacije.',
+      category: typeof t('portfolio.category.website') === 'string' ? t('portfolio.category.website') as string : 'Web Site',
+      image: '/images/919BarHero.webp',
+      url: 'https://www.919bar.com/',
+      technologies: ['Next.js', 'React', 'Tailwind CSS'],
+      features: [
+        typeof t('portfolio.features.heroSection') === 'string' ? t('portfolio.features.heroSection') as string : 'Hero sekcija sa jasnim USP i pozivom na rezervaciju',
+        typeof t('portfolio.features.events') === 'string' ? t('portfolio.features.events') as string : 'Sekcija Događaji',
+        typeof t('portfolio.features.gallery') === 'string' ? t('portfolio.features.gallery') as string : 'Galerija enterijera',
+        typeof t('portfolio.features.menuWithPrices') === 'string' ? t('portfolio.features.menuWithPrices') as string : 'Meni sa cijenama',
+        typeof t('portfolio.features.contactSection') === 'string' ? t('portfolio.features.contactSection') as string : 'Kontakt sa adresom, radnim vremenom i pozivom na navigaciju',
+        typeof t('portfolio.features.fastLoading') === 'string' ? t('portfolio.features.fastLoading') as string : 'Responsive dizajn i brzo učitavanje'
+      ]
+    },
+    {
+      id: 3,
+      title: typeof t('portfolio.projects.project9.title') === 'string' ? t('portfolio.projects.project9.title') as string : 'Šarena Čarolija – mirisne svijeće',
+      description: typeof t('portfolio.projects.project9.description') === 'string' ? t('portfolio.projects.project9.description') as string : 'Online shop za ručno rađene mirisne svijeće od sojinog voska, sa lokalnom dostavom u BiH.',
+      category: typeof t('portfolio.category.webShop') === 'string' ? t('portfolio.category.webShop') as string : 'Web Shop',
+      image: '/images/SarenCarolijaHero.webp',
+      url: 'https://www.sarenacarolija.com/',
+      technologies: ['Next.js', 'React', 'Tailwind CSS'],
+      features: [
+        typeof t('portfolio.features.handmadeCandles') === 'string' ? t('portfolio.features.handmadeCandles') as string : 'Ručno rađene svijeće od sojinog voska, esencijalna ulja i pamučni fitilj',
+        typeof t('portfolio.features.onlineShop') === 'string' ? t('portfolio.features.onlineShop') as string : 'Online shop',
+        typeof t('portfolio.features.contactInfo') === 'string' ? t('portfolio.features.contactInfo') as string : 'Kontakt telefon i email na sajtu',
+        typeof t('portfolio.features.freeShipping') === 'string' ? t('portfolio.features.freeShipping') as string : 'Besplatna dostava za narudžbe iznad 50 KM',
+        typeof t('portfolio.features.responsiveDesign') === 'string' ? t('portfolio.features.responsiveDesign') as string : 'Responsive dizajn',
+        typeof t('portfolio.features.seoOptimized') === 'string' ? t('portfolio.features.seoOptimized') as string : 'SEO naslov i opis za BiH tržište'
+      ]
+    },
+    {
+      id: 4,
+      title: typeof t('portfolio.projects.project10.title') === 'string' ? t('portfolio.projects.project10.title') as string : 'Zahnarzt Grimmenstein – Dr. Visnja Milosevic',
+      description: typeof t('portfolio.projects.project10.description') === 'string' ? t('portfolio.projects.project10.description') as string : 'Informativna web stranica za zubarsku ordinaciju u Grimmensteinu. Jasne usluge, radno vrijeme, "Alle Kassen", kontakt i mapa za dolazak.',
+      category: typeof t('portfolio.category.website') === 'string' ? t('portfolio.category.website') as string : 'Website',
+      image: '/images/DentistHero.webp',
+      url: 'https://www.zahnarzt-grimmenstein.at/',
+      technologies: ['Next.js', 'React', 'Tailwind CSS'],
+      features: [
+        typeof t('portfolio.features.dentistServices') === 'string' ? t('portfolio.features.dentistServices') as string : 'Usluge ordinacije',
+        typeof t('portfolio.features.openingHours') === 'string' ? t('portfolio.features.openingHours') as string : 'Radno vrijeme',
+        typeof t('portfolio.features.allInsurances') === 'string' ? t('portfolio.features.allInsurances') as string : 'Alle Kassen',
+        typeof t('portfolio.features.contactCta') === 'string' ? t('portfolio.features.contactCta') as string : 'Kontakt i poziv na broj',
+        typeof t('portfolio.features.addressAndMap') === 'string' ? t('portfolio.features.addressAndMap') as string : 'Adresa i mapa',
+        typeof t('portfolio.features.fastLoading') === 'string' ? t('portfolio.features.fastLoading') as string : 'Responsive dizajn i brzo učitavanje'
       ]
     },
   ], [t]);
@@ -102,11 +111,9 @@ const PortfolioSection: React.FC = () => {
   // Definišemo kategorije sa fallback vrednostima za inicijalni render
   const getCategories = () => [
     { id: 'all', name: !mounted ? 'All' : (typeof t('portfolio.category.all') === 'string' ? t('portfolio.category.all') as string : 'All') },
-    { id: 'web-design', name: !mounted ? 'Web Design' : (typeof t('portfolio.category.webDesign') === 'string' ? t('portfolio.category.webDesign') as string : 'Web Design') },
     { id: 'web-app', name: !mounted ? 'Web App' : (typeof t('portfolio.category.webApp') === 'string' ? t('portfolio.category.webApp') as string : 'Web App') },
     { id: 'web-shop', name: !mounted ? 'Web Shop' : (typeof t('portfolio.category.webShop') === 'string' ? t('portfolio.category.webShop') as string : 'Web Shop') },
-    { id: 'seo', name: !mounted ? 'SEO' : (typeof t('portfolio.category.seo') === 'string' ? t('portfolio.category.seo') as string : 'SEO') },
-    { id: 'software', name: !mounted ? 'Software' : (typeof t('portfolio.category.software') === 'string' ? t('portfolio.category.software') as string : 'Software') },
+    { id: 'website', name: !mounted ? 'Website' : (typeof t('portfolio.category.website') === 'string' ? t('portfolio.category.website') as string : 'Website') },
   ];
 
   const [activeCategory, setActiveCategory] = useState('all');
@@ -125,11 +132,9 @@ const PortfolioSection: React.FC = () => {
     : visibleProjects.filter(project => {
       // Get the category ID for the current project by comparing with translation keys
       const categoryEntries = Object.entries({
-        'webDesign': t('portfolio.category.webDesign'),
         'webApp': t('portfolio.category.webApp'),
         'webShop': t('portfolio.category.webShop'),
-        'seo': t('portfolio.category.seo'),
-        'software': t('portfolio.category.software')
+        'website': t('portfolio.category.website')
       });
       
       // Find which category key matches this project's category name
@@ -144,11 +149,10 @@ const PortfolioSection: React.FC = () => {
       // Also check if the category name directly includes the active category
       const directMatch = project.category.toLowerCase().includes(activeCategory.toLowerCase());
       
-      // For webDesign, webApp, webShop, software - do direct comparison with the category ID
-      if (activeCategory === 'web-design' && projectCategoryId === 'webDesign') return true;
+      // For webApp, webShop, website - do direct comparison with the category ID
       if (activeCategory === 'web-app' && projectCategoryId === 'webApp') return true;
       if (activeCategory === 'web-shop' && projectCategoryId === 'webShop') return true;
-      if (activeCategory === 'software' && projectCategoryId === 'software') return true;
+      if (activeCategory === 'website' && projectCategoryId === 'website') return true;
       
       // Special case for Serbian 'softver' category
       if (activeCategory === 'softver' && projectCategoryId === 'software') return true;
@@ -259,7 +263,7 @@ const PortfolioSection: React.FC = () => {
                   alt={project.title} 
                   width={600}
                   height={400}
-                  className={`w-full h-full transition-transform duration-500 group-hover:scale-110 ${project.id === 7 ? 'object-contain bg-nextpixel-white' : 'object-cover'}`} //Ovde se mjenja oblik i izgled sike u kartici
+                  className={`w-full h-full transition-transform duration-500 group-hover:scale-110 ${project.id === 1 || project.id === 2 || project.id === 3 ? 'object-contain bg-nextpixel-white' : 'object-cover'}`} //Ovde se mjenja oblik i izgled sike u kartici
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.onerror = null;

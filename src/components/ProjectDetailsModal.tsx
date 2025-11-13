@@ -30,6 +30,28 @@ const ProjectDetailsModal: React.FC<ProjectDetailsModalProps> = ({ project, isOp
     setForceUpdate(prev => prev + 1);
   }, [language]);
   
+  // Blokiranje scroll-a na body elementu kada je modal otvoren
+  useEffect(() => {
+    if (isOpen) {
+      // Blokiraj scroll samo sa overflow hidden - bez mijenjanja pozicije
+      const originalOverflow = document.body.style.overflow;
+      const originalPaddingRight = document.body.style.paddingRight;
+      
+      // Izračunaj širinu scrollbar-a da bi se izbjegao layout shift
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      
+      // Primjeni stilove
+      document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+      
+      // Cleanup funkcija - vrati originalne stilove
+      return () => {
+        document.body.style.overflow = originalOverflow;
+        document.body.style.paddingRight = originalPaddingRight;
+      };
+    }
+  }, [isOpen]);
+  
   if (!project) return null;
 
   return (
@@ -142,7 +164,7 @@ const ProjectDetailsModal: React.FC<ProjectDetailsModalProps> = ({ project, isOp
                           </svg>
                         </div>
                         <span className="text-nextpixel-gray dark:text-gray-300">
-                          {project.id === 7 ? (
+                          {project.id === 1 ? (
                             feature.toLowerCase().includes('kreiranje') || feature.toLowerCase().includes('create') ?
                               typeof t('portfolio.features.createEvent') === 'string' ? t('portfolio.features.createEvent') as string : feature :
                             feature.toLowerCase().includes('dijeljenje') || feature.toLowerCase().includes('share') ?
@@ -155,6 +177,48 @@ const ProjectDetailsModal: React.FC<ProjectDetailsModalProps> = ({ project, isOp
                               typeof t('portfolio.features.downloadPhotos') === 'string' ? t('portfolio.features.downloadPhotos') as string : feature :
                             feature.toLowerCase().includes('responzivan') || feature.toLowerCase().includes('responsive') ?
                               typeof t('portfolio.features.responsive') === 'string' ? t('portfolio.features.responsive') as string : feature :
+                            feature
+                          ) : project.id === 2 ? (
+                            feature.toLowerCase().includes('hero') ?
+                              typeof t('portfolio.features.heroSection') === 'string' ? t('portfolio.features.heroSection') as string : feature :
+                            feature.toLowerCase().includes('događaji') || feature.toLowerCase().includes('events') ?
+                              typeof t('portfolio.features.events') === 'string' ? t('portfolio.features.events') as string : feature :
+                            feature.toLowerCase().includes('galerija') || feature.toLowerCase().includes('gallery') ?
+                              typeof t('portfolio.features.gallery') === 'string' ? t('portfolio.features.gallery') as string : feature :
+                            feature.toLowerCase().includes('meni') || feature.toLowerCase().includes('menu') ?
+                              typeof t('portfolio.features.menuWithPrices') === 'string' ? t('portfolio.features.menuWithPrices') as string : feature :
+                            feature.toLowerCase().includes('kontakt') || feature.toLowerCase().includes('contact') ?
+                              typeof t('portfolio.features.contactSection') === 'string' ? t('portfolio.features.contactSection') as string : feature :
+                            feature.toLowerCase().includes('učitavanje') || feature.toLowerCase().includes('loading') || feature.toLowerCase().includes('responsive') ?
+                              typeof t('portfolio.features.fastLoading') === 'string' ? t('portfolio.features.fastLoading') as string : feature :
+                            feature
+                          ) : project.id === 3 ? (
+                            feature.toLowerCase().includes('ručno') || feature.toLowerCase().includes('handmade') || feature.toLowerCase().includes('svijeće') || feature.toLowerCase().includes('candles') ?
+                              typeof t('portfolio.features.handmadeCandles') === 'string' ? t('portfolio.features.handmadeCandles') as string : feature :
+                            feature.toLowerCase().includes('online') && feature.toLowerCase().includes('shop') ?
+                              typeof t('portfolio.features.onlineShop') === 'string' ? t('portfolio.features.onlineShop') as string : feature :
+                            feature.toLowerCase().includes('kontakt') || feature.toLowerCase().includes('contact') || feature.toLowerCase().includes('telefon') || feature.toLowerCase().includes('email') ?
+                              typeof t('portfolio.features.contactInfo') === 'string' ? t('portfolio.features.contactInfo') as string : feature :
+                            feature.toLowerCase().includes('besplatna') || feature.toLowerCase().includes('free') || feature.toLowerCase().includes('dostava') || feature.toLowerCase().includes('shipping') ?
+                              typeof t('portfolio.features.freeShipping') === 'string' ? t('portfolio.features.freeShipping') as string : feature :
+                            feature.toLowerCase().includes('responsive') && !feature.toLowerCase().includes('seo') ?
+                              typeof t('portfolio.features.responsiveDesign') === 'string' ? t('portfolio.features.responsiveDesign') as string : feature :
+                            feature.toLowerCase().includes('seo') ?
+                              typeof t('portfolio.features.seoOptimized') === 'string' ? t('portfolio.features.seoOptimized') as string : feature :
+                            feature
+                          ) : project.id === 4 ? (
+                            feature.toLowerCase().includes('usluge') || feature.toLowerCase().includes('services') || feature.toLowerCase().includes('leistungen') ?
+                              typeof t('portfolio.features.dentistServices') === 'string' ? t('portfolio.features.dentistServices') as string : feature :
+                            feature.toLowerCase().includes('radno vrijeme') || feature.toLowerCase().includes('opening') || feature.toLowerCase().includes('öffnungszeiten') ?
+                              typeof t('portfolio.features.openingHours') === 'string' ? t('portfolio.features.openingHours') as string : feature :
+                            feature.toLowerCase().includes('alle kassen') || feature.toLowerCase().includes('insurance') ?
+                              typeof t('portfolio.features.allInsurances') === 'string' ? t('portfolio.features.allInsurances') as string : feature :
+                            feature.toLowerCase().includes('kontakt') || feature.toLowerCase().includes('contact') || feature.toLowerCase().includes('poziv') || feature.toLowerCase().includes('call') ?
+                              typeof t('portfolio.features.contactCta') === 'string' ? t('portfolio.features.contactCta') as string : feature :
+                            feature.toLowerCase().includes('adresa') || feature.toLowerCase().includes('address') || feature.toLowerCase().includes('mapa') || feature.toLowerCase().includes('map') ?
+                              typeof t('portfolio.features.addressAndMap') === 'string' ? t('portfolio.features.addressAndMap') as string : feature :
+                            feature.toLowerCase().includes('učitavanje') || feature.toLowerCase().includes('loading') || feature.toLowerCase().includes('responsive') ?
+                              typeof t('portfolio.features.fastLoading') === 'string' ? t('portfolio.features.fastLoading') as string : feature :
                             feature
                           ) : feature}
                         </span>

@@ -134,11 +134,9 @@
     "startProject": "Projekt starten",
     "category": {
       "all": "alle",
-      "webDesign": "webdesign",
-      "webShop": "webshop",
       "webApp": "webapp",
-      "seo": "seo",
-      "software": "software"
+      "webShop": "webshop",
+      "website": "website"
     },
     "projects": {
       "project1": {
@@ -168,6 +166,18 @@
       "project7": {
        "title": "Bewahren Sie alle Erinnerungen an Ihre Hochzeit auf",
        "description": "Eine einfache Möglichkeit, alle Fotos zu sammeln, die Ihre Gäste während der Hochzeit gemacht haben – alles an einem Ort, ganz ohne Aufwand"
+      },
+      "project8": {
+        "title": "Caffe Bar 919",
+        "description": "Moderne Website für ein Café im Zentrum von Gradiška mit Menü, Galerie, Veranstaltungen und CTA für Reservierungen."
+      },
+      "project9": {
+        "title": "Šarena Čarolija – Duftkerzen",
+        "description": "Online-Shop für handgefertigte Duftkerzen aus Sojawachs, mit lokaler Lieferung in BiH."
+      },
+      "project10": {
+        "title": "Zahnarzt Grimmenstein – Dr. Visnja Milosevic",
+        "description": "Informative Website für die Zahnarztpraxis in Grimmenstein. Klare Leistungen, Öffnungszeiten, 'Alle Kassen', Kontakt und Anfahrt."
       }
     },
    "technologies": "Verwendete Technologien",
@@ -180,7 +190,24 @@
     "collectPhotos": "Automatische Sammlung und Organisation von Fotos",
     "viewPhotos": "Alle Fotos an einem Ort ansehen",
     "downloadPhotos": "Fotos in hoher Auflösung herunterladen",
-    "responsive": "Responsives Design für mobile Geräte"
+    "responsive": "Responsives Design für mobile Geräte",
+    "heroSection": "Hero-Bereich mit klarem USP und Aufruf zur Reservierung",
+    "events": "Veranstaltungsbereich",
+    "gallery": "Interieur-Galerie",
+    "menuWithPrices": "Menü mit Preisen",
+    "contactSection": "Kontakt mit Adresse, Öffnungszeiten und Aufruf zur Navigation",
+    "fastLoading": "Responsives Design und schnelles Laden",
+    "handmadeCandles": "Handgefertigte Kerzen aus Sojawachs, ätherischen Ölen und Baumwolldocht",
+    "onlineShop": "Online-Shop",
+    "contactInfo": "Kontakttelefon und E-Mail auf der Website",
+    "freeShipping": "Kostenloser Versand für Bestellungen über 50 KM",
+    "responsiveDesign": "Responsives Design",
+    "seoOptimized": "SEO-Titel und Beschreibung für den BiH-Markt",
+    "dentistServices": "Zahnarztpraxis Leistungen",
+    "openingHours": "Öffnungszeiten",
+    "allInsurances": "Alle Kassen",
+    "contactCta": "Kontakt und Anruf zur Nummer",
+    "addressAndMap": "Adresse und Karte"
   }
 
   },
