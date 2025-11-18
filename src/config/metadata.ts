@@ -103,9 +103,9 @@ export function getLocaleMetadata(locale: 'sr' | 'en' | 'de'): Metadata {
     alternates: {
       canonical: `${baseUrl}/${locale}`,
       languages: {
-        'sr': `${baseUrl}/sr`,
-        'en': `${baseUrl}/en`,
-        'de': `${baseUrl}/de`,
+        'sr-RS': `${baseUrl}/sr`,
+        'en-US': `${baseUrl}/en`,
+        'de-DE': `${baseUrl}/de`,
         'x-default': `${baseUrl}/sr`,
       },
     },
@@ -228,9 +228,10 @@ export function getPageMetadata(
     alternates: {
       canonical: `${baseUrl}/${locale}`,
       languages: {
-        'sr': `${baseUrl}/sr`,
-        'en': `${baseUrl}/en`,
-        'de': `${baseUrl}/de`,
+        'sr-RS': `${baseUrl}/sr`,
+        'en-US': `${baseUrl}/en`,
+        'de-DE': `${baseUrl}/de`,
+        'x-default': `${baseUrl}/sr`,
       },
     },
     openGraph: {
