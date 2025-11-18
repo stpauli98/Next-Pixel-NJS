@@ -1,6 +1,6 @@
 import React from 'react';
 import Script from 'next/script';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import '@/i18n';
 import ClientLayout from './client-layout';
@@ -9,17 +9,23 @@ import { AnalyticsProvider } from '@/config/analytics';
 
 export const metadata: Metadata = defaultMetadata;
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="sr" suppressHydrationWarning>
+    <html suppressHydrationWarning>
       <head>
         {/* Core Meta Tags */}
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="google-site-verification" content="hN7E93Es-VTP6R-DtmFaYXYmz9aD7Cqhqr4AQLKePC8" />
         
         {/* SEO Meta Tags */}

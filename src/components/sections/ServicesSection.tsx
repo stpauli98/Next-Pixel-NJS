@@ -71,7 +71,7 @@ const services: Service[] = [
     <section id="services" className="section bg-nextpixel-light py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-24 max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
         {typeof t('services:title') === 'string' && (t('services:title') as string).includes('Usluge') ? (
           <>
             {(t('services:title') as string).split('Usluge')[0]}

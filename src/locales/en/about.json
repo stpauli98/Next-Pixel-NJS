@@ -1,25 +1,25 @@
 {
-  "title": "Who we are",
-  "subtitle": "Digital agency with a passion for innovation",
-  "description": "NextPixel is a results-driven digital agency. We specialize in websites, e-commerce, SEO, maintenance, and tailor-made software — all built around your business goals.",
-  "history": "Since 2020, we have been dedicated to creating digital solutions that help our clients achieve their business goals. Our approach combines technical expertise, creativity, and a deep understanding of our clients' business needs.",
-  "philosophy": "We believe that successful digital solutions must not only be technically excellent, but also user-friendly, aesthetically appealing, and optimized to achieve business results.",
+  "title": "Who We Are",
+  "subtitle": "We solve digital problems that slow down your business",
+  "description": "We help you get a website, shop or software that increases sales and reduces technical issues. We focus on the problems that block your growth.",
+  "history": "Since 2020 we have been working with businesses that struggle with slow websites, weak online presence or systems that do not deliver results. Our work brings stability, clarity and growth.",
+  "philosophy": "A solution must be easy to use, fast and clear. We focus on functionality that delivers measurable results and improves the user experience.",
   "features": {
     "expertise": {
-      "title": "Expert Team",
-      "description": "Our team of experts has years of experience in developing web and software solutions."
+      "title": "Experience",
+      "description": "We solve common issues that hold back local businesses. Slow shops, low conversion, weak SEO visibility and technical errors."
     },
     "userFocus": {
-      "title": "User Focus",
-      "description": "We tailor each project to the specific needs of clients and their users."
+      "title": "Your problem first",
+      "description": "We adapt each solution to your situation. We identify where you lose customers and what needs improvement for a steady flow of inquiries."
     },
     "fastDelivery": {
-      "title": "Fast Delivery",
-      "description": "We respect deadlines and ensure fast implementation of projects without compromising quality."
+      "title": "Clear timelines",
+      "description": "You receive a clear plan, regular updates and delivery within the agreed deadline."
     },
     "quality": {
-      "title": "Quality",
-      "description": "We use the latest technologies and best practices to develop high-quality solutions."
+      "title": "Stability and speed",
+      "description": "We use proven technologies that increase security, performance and long-term reliability."
     }
   }
 }

@@ -1,25 +1,25 @@
 {
   "title": "Wer wir sind",
-  "subtitle": "Digitalagentur mit Leidenschaft für Innovation",
-  "description": "NextPixel ist eine ergebnisorientierte Digitalagentur. Wir sind spezialisiert auf Websites, E-Commerce, SEO, Wartung und maßgeschneiderte Software – alles zugeschnitten auf Ihre Geschäftsziele.",
-  "history": "Seit 2020 widmen wir uns der Erstellung digitaler Lösungen, die unseren Kunden helfen, ihre Geschäftsziele zu erreichen. Unser Ansatz kombiniert technisches Fachwissen, Kreativität und ein tiefes Verständnis der geschäftlichen Anforderungen unserer Kunden.",
-  "philosophy": "Wir glauben, dass erfolgreiche digitale Lösungen nicht nur technisch hervorragend sein müssen, sondern auch benutzerfreundlich, ästhetisch ansprechend und für die Erzielung von Geschäftsergebnissen optimiert sein sollten.",
+  "subtitle": "Wir lösen digitale Probleme, die Ihr Unternehmen bremsen",
+  "description": "Wir helfen Ihnen, eine Website, einen Shop oder eine Software zu erhalten, die den Umsatz steigert und technische Probleme reduziert. Unser Fokus liegt auf den Hindernissen, die Ihr Wachstum stoppen.",
+  "history": "Seit 2020 arbeiten wir mit Unternehmen, die unter langsamen Websites, schwacher Online-Präsenz oder Systemen ohne klare Ergebnisse leiden. Unsere Arbeit bringt Stabilität, Übersicht und Wachstum.",
+  "philosophy": "Eine Lösung muss leicht zu bedienen, schnell und übersichtlich sein. Wir konzentrieren uns auf Funktionen, die messbare Ergebnisse liefern und das Nutzererlebnis verbessern.",
   "features": {
     "expertise": {
-      "title": "Expertenteam",
-      "description": "Unser Expertenteam verfügt über jahrelange Erfahrung in der Entwicklung von Web- und Softwarelösungen."
+      "title": "Erfahrung",
+      "description": "Wir lösen Probleme, die viele lokale Unternehmen bremsen. Langsame Shops, niedrige Conversion, schwache SEO-Sichtbarkeit und technische Fehler."
     },
     "userFocus": {
-      "title": "Benutzerfokus",
-      "description": "Wir passen jedes Projekt an die spezifischen Bedürfnisse der Kunden und ihrer Benutzer an."
+      "title": "Ihr Problem zuerst",
+      "description": "Wir passen jede Lösung Ihrer Situation an. Wir analysieren, wo Sie Kunden verlieren und was verbessert werden muss, um einen stabilen Zufluss an Anfragen zu erreichen."
     },
     "fastDelivery": {
-      "title": "Schnelle Lieferung",
-      "description": "Wir respektieren Fristen und gewährleisten eine schnelle Umsetzung von Projekten ohne Qualitätseinbußen."
+      "title": "Klare Fristen",
+      "description": "Sie erhalten einen klaren Plan, regelmäßige Updates und eine Lieferung zum vereinbarten Termin."
     },
     "quality": {
-      "title": "Qualität",
-      "description": "Wir verwenden die neuesten Technologien und Best Practices, um hochwertige Lösungen zu entwickeln."
+      "title": "Stabilität und Geschwindigkeit",
+      "description": "Wir verwenden bewährte Technologien, die Sicherheit, Geschwindigkeit und langfristige Zuverlässigkeit erhöhen."
     }
   }
 }

@@ -156,16 +156,16 @@ export function getLocaleMetadata(locale: 'sr' | 'en' | 'de'): Metadata {
 export const pageLocaleMetadata = {
   home: {
     sr: {
-      title: 'Početna | NextPixel - Web Development & Digitalna Rješenja',
-      description: 'NextPixel - Vodeca web development agencija u BiH. Kreiramo moderne web stranice, mobilne aplikacije i e-commerce rješenja. React, Next.js, Node.js stručnjaci.',
+      title: 'Web Development & Digitalna Rješenja',
+      description: 'Web development agencija u BiH. Profesionalne web stranice, aplikacije i e-commerce rješenja. React, Next.js i Node.js ekspertiza.',
     },
     en: {
-      title: 'Home | NextPixel - Web Development & Digital Solutions',
-      description: 'NextPixel - Leading web development agency in Bosnia. We create modern websites, mobile apps, and e-commerce solutions. React, Next.js, Node.js experts.',
+      title: 'Web Development & Digital Solutions',
+      description: 'Web development agency in Bosnia. Professional websites, apps and e-commerce solutions. React, Next.js and Node.js expertise.',
     },
     de: {
-      title: 'Startseite | NextPixel - Webentwicklung & Digitale Lösungen',
-      description: 'NextPixel - Führende Webentwicklungsagentur in Bosnien. Wir erstellen moderne Websites, mobile Apps und E-Commerce-Lösungen. React, Next.js, Node.js Experten.',
+      title: 'Webentwicklung & Digitale Lösungen',
+      description: 'Webentwicklungsagentur in Bosnien. Professionelle Websites, Apps und E-Commerce-Lösungen. React, Next.js und Node.js Expertise.',
     },
   },
   blog: {

@@ -2,6 +2,7 @@
 
 import { LanguageProvider } from '@/context/LanguageContext';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
+import LangAttributeSetter from '@/components/LangAttributeSetter';
 import { useEffect } from 'react';
 import '@/i18n'; // Import i18n configuration
 
@@ -37,7 +38,7 @@ export default function ClientLayout({
   }, []);
   
   return (
-    <ErrorBoundary 
+    <ErrorBoundary
       level="global"
       onError={(error, errorInfo) => {
         // Custom error handling za app-level greške
@@ -48,6 +49,7 @@ export default function ClientLayout({
       }}
     >
       <LanguageProvider>
+        <LangAttributeSetter />
         {children}
       </LanguageProvider>
     </ErrorBoundary>

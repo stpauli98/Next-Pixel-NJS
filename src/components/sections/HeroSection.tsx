@@ -2,18 +2,36 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 import { useClientTranslation } from '@/hooks/useClientTranslation';
 import { HeroImage } from '@/components/OptimizedImage';
 
 const HeroSection: React.FC = () => {
   const { t, isHydrated, isReady } = useClientTranslation('hero');
+  const pathname = usePathname();
 
-  // Pokazuj loading state tokom hydration-a da izbegneš mismatch
+  // Detektuj jezik iz URL-a za SEO fallback
+  const getLangFromPath = () => {
+    const lang = pathname?.split('/')[1];
+    return ['sr', 'en', 'de'].includes(lang) ? lang : 'sr';
+  };
+
+  const fallbackH1: Record<string, string> = {
+    sr: 'NextPixel - Web Development & Digitalna Rješenja',
+    en: 'NextPixel - Web Development & Digital Solutions',
+    de: 'NextPixel - Webentwicklung & Digitale Lösungen'
+  };
+
+  // Pokazuj loading state tokom hydration-a sa H1 tagom za SEO
   if (!isHydrated || !isReady) {
+    const currentLang = getLangFromPath();
     return (
       <section id="home" className="relative min-h-screen flex items-center bg-gradient-to-br from-nextpixel-dark to-nextpixel-blue overflow-hidden">
         <div className="container mx-auto px-4 z-10">
           <div className="text-center text-white">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 opacity-0">
+              {fallbackH1[currentLang]}
+            </h1>
             <div className="animate-pulse">
               <div className="h-12 bg-white/20 rounded mb-4"></div>
               <div className="h-6 bg-white/10 rounded mb-8"></div>

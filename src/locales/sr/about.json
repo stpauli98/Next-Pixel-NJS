@@ -1,25 +1,25 @@
 {
   "title": "Ko smo mi",
-  "subtitle": "Digitalna agencija sa strašću za inovacije",
-  "description": "NextPixel je digitalna agencija usmjerena na rezultate. Specijalizovani smo za web stranice, e-trgovinu, SEO, održavanje i softver po meri — sve prilagođeno vašim poslovnim ciljevima.",
-  "history": "Od 2020. godine posvećeni smo stvaranju digitalnih rješenja koja pomažu našim klijentima da ostvare svoje poslovne ciljeve. Naš pristup kombinuje tehničku stručnost, kreativnost i duboko razumijevanje poslovnih potreba naših klijenata.",
-  "philosophy": "Vjerujemo da uspješna digitalna rješenja moraju biti ne samo tehnički izvrsna, već i prilagođena korisnicima, estetski privlačna i optimizovana za postizanje poslovnih rezultata.",
+  "subtitle": "Rješavamo digitalne probleme koji koče vaš biznis",
+  "description": "Pomažemo vam da dobijete stranicu, shop ili softver koji povećava prodaju i smanjuje tehničke brige. Fokus stavljamo na probleme koji sprečavaju rast vašeg biznisa.",
+  "history": "Od 2020. godine radimo sa firmama koje imaju spore stranice, slabu online prezentaciju ili sistem koji ne donosi rezultat. Naš rad donosi stabilnost, preglednost i rast.",
+  "philosophy": "Rješenje mora biti jednostavno za korištenje, brzo i pregledno. Fokus stavljamo na funkcionalnost koja donosi jasan rezultat i poboljšava iskustvo korisnika.",
   "features": {
     "expertise": {
-      "title": "Stručni tim",
-      "description": "Naš tim stručnjaka ima višegodišnje iskustvo u razvoju web i softverskih rješenja."
+      "title": "Iskustvo",
+      "description": "Rješavamo probleme koji često koče lokalne biznise. Spori shopovi, slaba konverzija, loša SEO vidljivost i tehničke greške."
     },
     "userFocus": {
-      "title": "Korisnički fokus",
-      "description": "Svaki projekat prilagođavamo specifičnim potrebama klijenata i njihovih korisnika."
+      "title": "Fokus na vaš problem",
+      "description": "Prilagođavamo rješenje vašoj situaciji. Posmatramo gdje gubite kupce i šta treba popraviti da dobijete stabilan priliv upita."
     },
     "fastDelivery": {
-      "title": "Brza isporuka",
-      "description": "Poštujemo rokove i osiguravamo brzu implementaciju projekata bez kompromisa u kvaliteti."
+      "title": "Jasni rokovi",
+      "description": "Dobijate tačan plan, redovne statuse i isporuku u dogovorenom roku bez odgađanja."
     },
     "quality": {
-      "title": "Kvalitet",
-      "description": "Koristimo najnovije tehnologije i najbolje prakse za razvoj visokokvalitetnih rješenja."
+      "title": "Stabilnost i brzina",
+      "description": "Koristimo provjerene tehnologije koje povećavaju sigurnost, brzinu i dugoročnu pouzdanost."
     }
   }
 }
