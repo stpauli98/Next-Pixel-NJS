@@ -31,11 +31,11 @@ const securityHeaders = [
     key: 'Content-Security-Policy',
     value: `
       default-src 'self';
-      script-src 'self' 'unsafe-eval' 'unsafe-inline' *.google-analytics.com *.googletagmanager.com;
+      script-src 'self' 'unsafe-eval' 'unsafe-inline' *.google-analytics.com *.googletagmanager.com *.facebook.net connect.facebook.net *.vercel-scripts.com va.vercel-scripts.com;
       style-src 'self' 'unsafe-inline' fonts.googleapis.com;
-      img-src 'self' data: https: blob: *.googleusercontent.com placehold.co i.imgur.com;
+      img-src 'self' data: https: blob: *.googleusercontent.com placehold.co i.imgur.com *.facebook.com;
       font-src 'self' fonts.gstatic.com;
-      connect-src 'self' *.google-analytics.com *.googletagmanager.com vitals.vercel-insights.com;
+      connect-src 'self' *.google-analytics.com *.googletagmanager.com vitals.vercel-insights.com *.vercel-scripts.com *.facebook.com *.facebook.net;
       media-src 'self';
       object-src 'none';
       frame-src 'self' *.youtube.com *.google.com;

@@ -20,7 +20,17 @@ const nextConfig = {
       },
     ]
   },
-  
+
+  // Rewrites for manifest - ensure it's always served from root
+  async rewrites() {
+    return [
+      {
+        source: '/:lang(sr|en|de)/manifest.webmanifest',
+        destination: '/manifest.webmanifest',
+      },
+    ]
+  },
+
   // Performance optimizations
   compress: true,
   poweredByHeader: false,

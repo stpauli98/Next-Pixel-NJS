@@ -304,7 +304,6 @@ export const defaultMetadata: Metadata = {
     shortcut: '/favicon-16x16.png',
     apple: '/apple-touch-icon.png',
   },
-  manifest: '/site.webmanifest',
   robots: {
     index: true,
     follow: true,

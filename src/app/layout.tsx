@@ -50,7 +50,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
         
         {/* PWA and Mobile Optimization */}
-        <link rel="manifest" href="/site.webmanifest" />
+        {/* Manifest is set via metadata API in metadata.ts */}
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -79,11 +79,8 @@ export default function RootLayout({
         <meta name="HandheldFriendly" content="true" />
         <meta name="MobileOptimized" content="320" />
         
-        {/* Security Headers via Meta */}
-        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
-        <meta httpEquiv="X-Frame-Options" content="SAMEORIGIN" />
-        <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
-        
+        {/* Note: Security headers (X-Frame-Options, CSP, etc.) should be set via HTTP headers in next.config.js or hosting provider */}
+
 
       </head>
       <body>

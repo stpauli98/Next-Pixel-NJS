@@ -4,11 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:clean": "npm run manifest:hide && next dev",
     "build": "next build",
+    "build:prod": "npm run manifest:restore && next build && npm run siteMap",
     "analyze": "cross-env ANALYZE=true next build",
     "siteMap": "next-sitemap",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "manifest:restore": "node -e \"try{require('fs').renameSync('src/app/manifest.ts.backup','src/app/manifest.ts')}catch(e){console.log('Manifest already active')}\"",
+    "manifest:hide": "node -e \"try{require('fs').renameSync('src/app/manifest.ts','src/app/manifest.ts.backup')}catch(e){console.log('Manifest already hidden')}\""
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
@@ -31,6 +35,7 @@
     "@vercel/analytics": "^1.5.0",
     "@vercel/og": "^0.6.8",
     "accept-language": "^3.0.20",
+    "caniuse-lite": "^1.0.30001755",
     "framer-motion": "^12.6.3",
     "i18next": "^23.7.16",
     "i18next-browser-languagedetector": "^7.2.0",
