@@ -144,7 +144,7 @@ const Navbar: React.FC = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="md:hidden bg-white shadow-lg absolute w-full"
+          className="md:hidden bg-white shadow-lg absolute left-0 right-0 w-full"
         >
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
             {navLinks.map((link) => (
