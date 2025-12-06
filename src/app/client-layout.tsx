@@ -49,7 +49,7 @@ export default function ClientLayout({
         });
       }}
     >
-      <SplashScreen duration={2000} />
+      <SplashScreen />
       <LanguageProvider>
         <LangAttributeSetter />
         {children}
