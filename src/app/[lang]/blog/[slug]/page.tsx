@@ -4,7 +4,6 @@ import { notFound } from 'next/navigation';
 import BlogNavbar from '@/components/blogComponents/BlogNavbar';
 import BlogFooter from '@/components/blogComponents/BlogFooter';
 import { getBlogPost, getAllBlogSlugs } from '@/lib/blog';
-import { BlogLanguageSelector } from '@/components/blogComponents/BlogLanguageSelector';
 import { BlogContent } from '@/components/blogComponents/BlogContent';
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string; slug: string }> }): Promise<Metadata> {
@@ -69,9 +68,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ lang:
       <BlogNavbar lang={lang} />
       <main className="flex-grow pt-24">
         <div className="container mx-auto px-4">
-          <div className="flex justify-center mb-6">
-            <BlogLanguageSelector currentLang={lang} slug={slug} />
-          </div>
           <BlogContent blogData={{
             // Ensure we have a default empty object if blogData is undefined
             ...(post.blogData || {}),

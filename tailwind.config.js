@@ -16,8 +16,19 @@ module.exports = {
       fontFamily: {
         'sans': ['Poppins', 'sans-serif'],
         'heading': ['Montserrat', 'sans-serif']
-      }
+      },
+      animation: {
+        'shimmer': 'shimmer 1.5s infinite',
+      },
+      keyframes: {
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

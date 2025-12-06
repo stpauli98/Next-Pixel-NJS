@@ -16,6 +16,7 @@ import portfolioEN from './locales/en/portfolio.json';
 import contactEN from './locales/en/contact.json';
 import footerEN from './locales/en/footer.json';
 import legalEN from './locales/en/legal.json';
+import blogEN from './locales/en/blog.json';
 
 // Import Serbian translations
 import commonSR from './locales/sr/common.json';
@@ -29,6 +30,7 @@ import portfolioSR from './locales/sr/portfolio.json';
 import contactSR from './locales/sr/contact.json';
 import footerSR from './locales/sr/footer.json';
 import legalSR from './locales/sr/legal.json';
+import blogSR from './locales/sr/blog.json';
 
 // Import German translations
 import commonDE from './locales/de/common.json';
@@ -42,6 +44,7 @@ import portfolioDE from './locales/de/portfolio.json';
 import contactDE from './locales/de/contact.json';
 import footerDE from './locales/de/footer.json';
 import legalDE from './locales/de/legal.json';
+import blogDE from './locales/de/blog.json';
 
 // The translations organized by namespaces
 const resources = {
@@ -56,7 +59,8 @@ const resources = {
     portfolio: portfolioSR,
     contact: contactSR,
     footer: footerSR,
-    legal: legalSR
+    legal: legalSR,
+    blog: blogSR
   },
   en: {
     common: commonEN,
@@ -69,7 +73,8 @@ const resources = {
     portfolio: portfolioEN,
     contact: contactEN,
     footer: footerEN,
-    legal: legalEN
+    legal: legalEN,
+    blog: blogEN
   },
   de: {
     common: commonDE,
@@ -82,7 +87,8 @@ const resources = {
     portfolio: portfolioDE,
     contact: contactDE,
     footer: footerDE,
-    legal: legalDE
+    legal: legalDE,
+    blog: blogDE
   }
 };
 
@@ -97,7 +103,7 @@ instance
     resources,
     fallbackLng: 'sr',
     defaultNS: 'common',
-    ns: ['common', 'navigation', 'language', 'hero', 'about', 'services', 'whyChooseUs', 'portfolio', 'contact', 'footer', 'legal'],
+    ns: ['common', 'navigation', 'language', 'hero', 'about', 'services', 'whyChooseUs', 'portfolio', 'contact', 'footer', 'legal', 'blog'],
     keySeparator: '.',
     nsSeparator: ':',
     debug: false, // Disable debug logs in all environments

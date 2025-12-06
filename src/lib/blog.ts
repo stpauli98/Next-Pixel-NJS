@@ -60,27 +60,27 @@ export async function getBlogPosts(lang: string): Promise<BlogPost[]> {
       
       if (blogDataMatch && blogDataMatch[1]) {
         try {
-          // Safe parsing - use a custom parser for the object literal
-          const dataString = blogDataMatch[1]
-            .replace(/date:\s*["']([^"']+)["']/g, '"date": "$1"')
-            .replace(/author:\s*["']([^"']+)["']/g, '"author": "$1"')
-            .replace(/excerpt:\s*["']([^"']+)["']/g, '"excerpt": "$1"')
-            .replace(/tags:\s*\[([^\]]+)\]/g, (match, tags) => {
-              const formattedTags = tags.split(',').map((tag: string) => 
+          // Safe parsing - convert JS object literal to valid JSON
+          let dataString = blogDataMatch[1]
+            // First, handle the tags array
+            .replace(/tags:\s*\[([^\]]+)\]/g, (_match, tags) => {
+              const formattedTags = tags.split(',').map((tag: string) =>
                 '"' + tag.trim().replace(/["']/g, '') + '"'
               ).join(',');
               return '"tags": [' + formattedTags + ']';
             })
-            .replace(/([{,])\s*([a-zA-Z_][a-zA-Z0-9_]*):/g, '$1"$2":')
-            .replace(/'/g, '"');
-          
-          const extractedData = JSON.parse('{' + dataString + '}');
+            // Convert property names to quoted strings
+            .replace(/(\{|,)\s*([a-zA-Z_][a-zA-Z0-9_]*):/g, '$1"$2":')
+            // Convert single quotes to double quotes for string values
+            .replace(/:\s*'([^']*)'/g, ': "$1"');
+
+          const extractedData = JSON.parse(dataString);
           blogData = { ...blogData, ...extractedData };
         } catch (error) {
-          logError('Greška pri parsiranju blogData', error, { 
-            file, 
+          logError('Greška pri parsiranju blogData', error, {
+            file,
             component: 'getBlogPosts',
-            blogDataMatch: blogDataMatch[1] 
+            blogDataMatch: blogDataMatch[1]
           });
         }
       }
@@ -137,27 +137,27 @@ export async function getBlogPost(lang: string, slug: string): Promise<FullBlogP
   
   if (blogDataMatch && blogDataMatch[1]) {
     try {
-      // Safe parsing - use a custom parser for the object literal
-      const dataString = blogDataMatch[1]
-        .replace(/date:\s*["']([^"']+)["']/g, '"date": "$1"')
-        .replace(/author:\s*["']([^"']+)["']/g, '"author": "$1"')
-        .replace(/excerpt:\s*["']([^"']+)["']/g, '"excerpt": "$1"')
-        .replace(/tags:\s*\[([^\]]+)\]/g, (match, tags) => {
-          const formattedTags = tags.split(',').map((tag: string) => 
+      // Safe parsing - convert JS object literal to valid JSON
+      let dataString = blogDataMatch[1]
+        // First, handle the tags array
+        .replace(/tags:\s*\[([^\]]+)\]/g, (_match, tags) => {
+          const formattedTags = tags.split(',').map((tag: string) =>
             '"' + tag.trim().replace(/["']/g, '') + '"'
           ).join(',');
           return '"tags": [' + formattedTags + ']';
         })
-        .replace(/([{,])\s*([a-zA-Z_][a-zA-Z0-9_]*):/g, '$1"$2":')
-        .replace(/'/g, '"');
-      
-      const extractedData = JSON.parse('{' + dataString + '}');
+        // Convert property names to quoted strings
+        .replace(/(\{|,)\s*([a-zA-Z_][a-zA-Z0-9_]*):/g, '$1"$2":')
+        // Convert single quotes to double quotes for string values
+        .replace(/:\s*'([^']*)'/g, ': "$1"');
+
+      const extractedData = JSON.parse(dataString);
       blogData = { ...blogData, ...extractedData };
     } catch (error) {
-      logError('Greška pri parsiranju blogData', error, { 
-        slug, 
+      logError('Greška pri parsiranju blogData', error, {
+        slug,
         component: 'getBlogPost',
-        blogDataMatch: blogDataMatch[1] 
+        blogDataMatch: blogDataMatch[1]
       });
     }
   }
