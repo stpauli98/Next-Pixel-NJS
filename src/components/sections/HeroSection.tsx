@@ -22,6 +22,12 @@ const HeroSection: React.FC = () => {
     de: 'NextPixel - Webentwicklung & Digitale Lösungen'
   };
 
+  const fallbackSubtitle: Record<string, string> = {
+    sr: 'Kreiramo moderna digitalna rješenja za vaš biznis',
+    en: 'We create modern digital solutions for your business',
+    de: 'Wir erstellen moderne digitale Lösungen für Ihr Unternehmen'
+  };
+
   // Pokazuj loading state tokom hydration-a sa H1 tagom za SEO
   if (!isHydrated || !isReady) {
     const currentLang = getLangFromPath();
@@ -29,13 +35,12 @@ const HeroSection: React.FC = () => {
       <section id="home" className="relative min-h-screen flex items-center bg-gradient-to-br from-nextpixel-dark to-nextpixel-blue overflow-hidden">
         <div className="container mx-auto px-4 z-10">
           <div className="text-center text-white">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 opacity-0">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
               {fallbackH1[currentLang]}
             </h1>
-            <div className="animate-pulse">
-              <div className="h-12 bg-white/20 rounded mb-4"></div>
-              <div className="h-6 bg-white/10 rounded mb-8"></div>
-            </div>
+            <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+              {fallbackSubtitle[currentLang]}
+            </p>
           </div>
         </div>
       </section>

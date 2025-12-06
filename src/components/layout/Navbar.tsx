@@ -6,6 +6,7 @@ import { Icon } from '../../utils/icons';
 import { motion } from 'framer-motion';
 import LanguageSelector from '../../components/LanguageSelector';
 import { useTranslate } from '../../context/LanguageContext';
+import { usePathname } from 'next/navigation';
 
 
 
@@ -14,12 +15,51 @@ const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const { t, language } = useTranslate();
   const [mounted, setMounted] = useState(false);
+  const pathname = usePathname();
+
+  // Detektuje jezik iz URL-a za SSR fallback
+  const getLangFromPath = (): string => {
+    const lang = pathname?.split('/')[1];
+    return ['sr', 'en', 'de'].includes(lang) ? lang : 'sr';
+  };
+
+  // Locale-aware SSR fallback za navigaciju
+  const getDefaultNavLinks = (lang: string) => {
+    const translations: Record<string, { name: string; href: string }[]> = {
+      sr: [
+        { name: 'Početna', href: '#home' },
+        { name: 'O nama', href: '#about' },
+        { name: 'Usluge', href: '#services' },
+        { name: 'Portfolio', href: '#portfolio' }
+      ],
+      en: [
+        { name: 'Home', href: '#home' },
+        { name: 'About', href: '#about' },
+        { name: 'Services', href: '#services' },
+        { name: 'Portfolio', href: '#portfolio' }
+      ],
+      de: [
+        { name: 'Startseite', href: '#home' },
+        { name: 'Über uns', href: '#about' },
+        { name: 'Dienstleistungen', href: '#services' },
+        { name: 'Portfolio', href: '#portfolio' }
+      ]
+    };
+    return translations[lang] || translations.en;
+  };
+
+  // Locale-aware CTA button fallback
+  const getDefaultCta = (lang: string): string => {
+    return lang === 'sr' ? 'Kontaktirajte nas' :
+           lang === 'de' ? 'Kontaktieren Sie uns' :
+           'Contact Us';
+  };
 
   // Postavlja mounted na true nakon inicijalne hidratacije
   useEffect(() => {
     setMounted(true);
   }, []);
-  
+
   // Force re-render when language changes
   useEffect(() => {
     // This will force the component to re-render when language changes
@@ -42,14 +82,10 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Koristi fiksne vrednosti za inicijalni render da bi se izbegao hydration mismatch
-  const defaultNavLinks = [
-    { name: 'Početna', href: '#home' },
-    { name: 'O nama', href: '#about' },
-    { name: 'Usluge', href: '#services' },
-    { name: 'Portfolio', href: '#portfolio' }
-  ];
-  
+  // Koristi locale-aware fallback vrijednosti za SSR
+  const currentLang = getLangFromPath();
+  const defaultNavLinks = getDefaultNavLinks(currentLang);
+
   // Koristi prevedene vrednosti samo nakon što je komponenta montirana na klijentu
   const navLinks = mounted ? [
     { name: typeof t('navigation:home') === 'string' ? t('navigation:home') as string : 'Home', href: '#home' },
@@ -80,10 +116,10 @@ const Navbar: React.FC = () => {
           ))}
           <a href="#contact" className="btn-primary">
             {mounted ? (
-              language === 'sr' ? 'Kontaktirajte nas' : 
-              language === 'en' ? 'Contact Us' : 
+              language === 'sr' ? 'Kontaktirajte nas' :
+              language === 'en' ? 'Contact Us' :
               language === 'de' ? 'Kontaktieren Sie uns' : 'Contact Us'
-            ) : 'Kontaktirajte nas'}
+            ) : getDefaultCta(currentLang)}
           </a>
           <LanguageSelector />
         </div>
@@ -121,16 +157,16 @@ const Navbar: React.FC = () => {
                 {link.name}
               </a>
             ))}
-            <a 
-              href="#contact" 
+            <a
+              href="#contact"
               className="btn-primary text-center"
               onClick={() => setIsOpen(false)}
             >
               {mounted ? (
-                language === 'sr' ? 'Kontaktirajte nas' : 
-                language === 'en' ? 'Contact Us' : 
+                language === 'sr' ? 'Kontaktirajte nas' :
+                language === 'en' ? 'Contact Us' :
                 language === 'de' ? 'Kontaktieren Sie uns' : 'Contact Us'
-              ) : 'Kontaktirajte nas'}
+              ) : getDefaultCta(currentLang)}
             </a>
           </div>
         </motion.div>

@@ -35,7 +35,9 @@ const WhyChooseUsSection: React.FC = () => {
       '24/7 Support',
       'Meeting Deadlines',
       'Quality Assurance',
-      'Measurable Results'
+      'Measurable Results',
+      'Client Focus',
+      'Experience'
     ];
     return fallbackTitles[index] || '';
   };
@@ -48,9 +50,11 @@ const WhyChooseUsSection: React.FC = () => {
       'We provide continuous support and are always available to address your concerns.',
       'We value your time and always strive to complete projects within agreed timeframes.',
       'Quality is our priority, and we ensure that every project meets the highest standards.',
-      'We focus on delivering measurable results that contribute to your business growth.'
+      'We focus on delivering measurable results that contribute to your business growth.',
+      'We put client needs first and collaborate closely to achieve their goals.',
+      'With over 5 years of experience, we deliver high-quality digital solutions.'
     ];
-    return fallbackDescriptions[index] || '';  
+    return fallbackDescriptions[index] || '';
   };
 
   interface Reason {

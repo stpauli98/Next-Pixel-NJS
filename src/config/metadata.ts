@@ -241,6 +241,20 @@ export function getPageMetadata(
       siteName: siteConfig.name,
       locale: locale === 'sr' ? 'sr_RS' : locale === 'en' ? 'en_US' : 'de_DE',
       type: 'website',
+      images: [
+        {
+          url: siteConfig.ogImage,
+          width: 1200,
+          height: 630,
+          alt: pageData.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: pageData.title,
+      description: pageData.description,
+      images: [siteConfig.ogImage],
     },
   };
 }
