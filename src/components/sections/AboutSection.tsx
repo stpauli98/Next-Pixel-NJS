@@ -104,7 +104,7 @@ const AboutSection: React.FC = () => {
               <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-nextpixel-blue rounded-lg opacity-20"></div>
               <figure className="relative z-10 mx-auto max-w-2xl my-6">  
                 <Image
-                  src="/images/team.png" 
+                  src="/images/team.webp" 
                   alt="NextPixel Team" 
                   width={600}
                   height={400}

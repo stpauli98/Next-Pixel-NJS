@@ -91,12 +91,12 @@ export const enhancedStructuredData = {
     url: 'https://nextpixel.dev',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://nextpixel.dev/images/NextPixelV2.png',
+      url: 'https://nextpixel.dev/images/NextPixelV2.webp',
       width: 500,
       height: 350,
     },
     image: [
-      'https://nextpixel.dev/images/NextPixelV2.png',
+      'https://nextpixel.dev/images/NextPixelV2.webp',
       'https://nextpixel.dev/opengraph-image.png',
     ],
     telephone: geoConfig.contact.phone,

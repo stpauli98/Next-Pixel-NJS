@@ -113,7 +113,7 @@ const HeroSection: React.FC = () => {
                 
                 {/* Sama slika */}
                 <HeroImage 
-                  src="/images/NextPixelV2.png" 
+                  src="/images/NextPixelV2.webp" 
                   alt="NextPixel Digital Solutions - Digitalna agencija za web i softverska rješenja" 
                   className="w-full h-auto object-cover max-h-[400px]"
                   width={500}
