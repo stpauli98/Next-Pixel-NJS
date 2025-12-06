@@ -10,7 +10,8 @@
     "all": "alle",
     "webApp": "webapp",
     "webShop": "webshop",
-    "website": "website"
+    "website": "website",
+    "mobileApp": "mobile app"
   },
   "projects": {
     "project1": {
@@ -52,6 +53,10 @@
     "project10": {
       "title": "Zahnarzt Grimmenstein – Dr. Visnja Milosevic",
       "description": "Informative Website für die Zahnarztpraxis in Grimmenstein. Klare Leistungen, Öffnungszeiten, 'Alle Kassen', Kontakt und Anfahrt."
+    },
+    "project11": {
+      "title": "Service-Heft",
+      "description": "Mobile App zur Verfolgung von Fahrzeugservices, Erinnerungen und Kosten. Funktioniert offline und synchronisiert mit der Cloud-Datenbank."
     }
   },
   "features": {
@@ -77,6 +82,12 @@
     "openingHours": "Öffnungszeiten",
     "allInsurances": "Alle Kassen",
     "contactCta": "Kontakt und Anruf zur Nummer",
-    "addressAndMap": "Adresse und Karte"
+    "addressAndMap": "Adresse und Karte",
+    "offlineSync": "Offline-Modus und automatische Synchronisierung",
+    "serviceReminders": "Automatische Service-Erinnerungen",
+    "expenseTracking": "Fahrzeugkostenverfolgung",
+    "multiDevice": "Multi-Geräte-Synchronisierung",
+    "vehicleManagement": "Fahrzeugverwaltung in der Garage",
+    "pushNotifications": "Push-Benachrichtigungen für Erinnerungen"
   }
 }

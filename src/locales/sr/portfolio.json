@@ -10,7 +10,8 @@
     "all": "sve",
     "webApp": "web-aplikacija",
     "webShop": "web-shop",
-    "website": "web stranica"
+    "website": "web stranica",
+    "mobileApp": "mobilna aplikacija"
   },
   "projects": {
     "project1": {
@@ -52,6 +53,10 @@
     "project10": {
       "title": "Zahnarzt Grimmenstein – Dr. Visnja Milosevic",
       "description": "Informativna web stranica za zubarsku ordinaciju u Grimmensteinu. Jasne usluge, radno vrijeme, 'Alle Kassen', kontakt i mapa za dolazak."
+    },
+    "project11": {
+      "title": "Servisna Knjižica",
+      "description": "Mobilna aplikacija za praćenje servisa vozila, podsjetnika i troškova. Radi offline i sinkronizuje se sa cloud bazom."
     }
   },
   "features": {
@@ -77,6 +82,12 @@
     "openingHours": "Radno vrijeme",
     "allInsurances": "Alle Kassen",
     "contactCta": "Kontakt i poziv na broj",
-    "addressAndMap": "Adresa i mapa"
+    "addressAndMap": "Adresa i mapa",
+    "offlineSync": "Offline rad i automatska sinkronizacija",
+    "serviceReminders": "Automatski podsjetnici za servise",
+    "expenseTracking": "Praćenje troškova vozila",
+    "multiDevice": "Sinkronizacija između uređaja",
+    "vehicleManagement": "Upravljanje vozilima u Garaži",
+    "pushNotifications": "Push notifikacije za podsjetnike"
   }
 }

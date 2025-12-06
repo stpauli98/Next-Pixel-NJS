@@ -98,6 +98,23 @@ const PortfolioSection: React.FC = () => {
         typeof t('portfolio:features.fastLoading') === 'string' ? t('portfolio:features.fastLoading') as string : 'Responsive dizajn i brzo učitavanje'
       ]
     },
+    {
+      id: 5,
+      title: typeof t('portfolio:projects.project11.title') === 'string' ? t('portfolio:projects.project11.title') as string : 'Servisna Knjižica',
+      description: typeof t('portfolio:projects.project11.description') === 'string' ? t('portfolio:projects.project11.description') as string : 'Mobilna aplikacija za praćenje servisa vozila, podsjetnika i troškova. Radi offline i sinkronizuje se sa cloud bazom.',
+      category: typeof t('portfolio:category.mobileApp') === 'string' ? t('portfolio:category.mobileApp') as string : 'Mobile App',
+      image: '/images/CarAppHero.webp',
+      url: 'https://www.servisnaknjizica.app/',
+      technologies: ['React Native', 'Expo', 'TypeScript', 'Zustand', 'Supabase'],
+      features: [
+        typeof t('portfolio:features.offlineSync') === 'string' ? t('portfolio:features.offlineSync') as string : 'Offline rad i automatska sinkronizacija',
+        typeof t('portfolio:features.serviceReminders') === 'string' ? t('portfolio:features.serviceReminders') as string : 'Automatski podsjetnici za servise',
+        typeof t('portfolio:features.expenseTracking') === 'string' ? t('portfolio:features.expenseTracking') as string : 'Praćenje troškova vozila',
+        typeof t('portfolio:features.multiDevice') === 'string' ? t('portfolio:features.multiDevice') as string : 'Sinkronizacija između uređaja',
+        typeof t('portfolio:features.vehicleManagement') === 'string' ? t('portfolio:features.vehicleManagement') as string : 'Upravljanje vozilima u Garaži',
+        typeof t('portfolio:features.pushNotifications') === 'string' ? t('portfolio:features.pushNotifications') as string : 'Push notifikacije za podsjetnike'
+      ]
+    },
   ], [t]);
 
   // Osvježavanje komponente kada se promijeni jezik
@@ -114,6 +131,7 @@ const PortfolioSection: React.FC = () => {
     { id: 'web-app', name: !mounted ? 'Web App' : (typeof t('portfolio:category.webApp') === 'string' ? t('portfolio:category.webApp') as string : 'Web App') },
     { id: 'web-shop', name: !mounted ? 'Web Shop' : (typeof t('portfolio:category.webShop') === 'string' ? t('portfolio:category.webShop') as string : 'Web Shop') },
     { id: 'website', name: !mounted ? 'Website' : (typeof t('portfolio:category.website') === 'string' ? t('portfolio:category.website') as string : 'Website') },
+    { id: 'mobile-app', name: !mounted ? 'Mobile App' : (typeof t('portfolio:category.mobileApp') === 'string' ? t('portfolio:category.mobileApp') as string : 'Mobile App') },
   ];
 
   const [activeCategory, setActiveCategory] = useState('all');
@@ -134,7 +152,8 @@ const PortfolioSection: React.FC = () => {
       const categoryEntries = Object.entries({
         'webApp': t('portfolio:category.webApp'),
         'webShop': t('portfolio:category.webShop'),
-        'website': t('portfolio:category.website')
+        'website': t('portfolio:category.website'),
+        'mobileApp': t('portfolio:category.mobileApp')
       });
       
       // Find which category key matches this project's category name
@@ -149,10 +168,11 @@ const PortfolioSection: React.FC = () => {
       // Also check if the category name directly includes the active category
       const directMatch = project.category.toLowerCase().includes(activeCategory.toLowerCase());
       
-      // For webApp, webShop, website - do direct comparison with the category ID
+      // For webApp, webShop, website, mobileApp - do direct comparison with the category ID
       if (activeCategory === 'web-app' && projectCategoryId === 'webApp') return true;
       if (activeCategory === 'web-shop' && projectCategoryId === 'webShop') return true;
       if (activeCategory === 'website' && projectCategoryId === 'website') return true;
+      if (activeCategory === 'mobile-app' && projectCategoryId === 'mobileApp') return true;
       
       // Special case for Serbian 'softver' category
       if (activeCategory === 'softver' && projectCategoryId === 'software') return true;
@@ -263,7 +283,7 @@ const PortfolioSection: React.FC = () => {
                   alt={project.title} 
                   width={600}
                   height={400}
-                  className={`w-full h-full transition-transform duration-500 group-hover:scale-110 ${project.id === 1 || project.id === 2 || project.id === 3 ? 'object-contain bg-nextpixel-white' : 'object-cover'}`} //Ovde se mjenja oblik i izgled sike u kartici
+                  className={`w-full h-full transition-transform duration-500 group-hover:scale-110 ${project.id === 1 || project.id === 2 || project.id === 3 || project.id === 5 ? 'object-contain bg-nextpixel-white' : 'object-cover'}`} //Ovde se mjenja oblik i izgled sike u kartici
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.onerror = null;
