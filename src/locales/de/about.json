@@ -21,5 +21,28 @@
       "title": "Stabilität und Geschwindigkeit",
       "description": "Wir verwenden bewährte Technologien, die Sicherheit, Geschwindigkeit und langfristige Zuverlässigkeit erhöhen."
     }
+  },
+  "stats": {
+    "projects": {
+      "value": "50",
+      "label": "Abgeschlossene Projekte"
+    },
+    "clients": {
+      "value": "40",
+      "label": "Zufriedene Kunden"
+    },
+    "experience": {
+      "value": "5",
+      "label": "Jahre Erfahrung"
+    },
+    "support": {
+      "value": "24/7",
+      "label": "Support verfügbar"
+    }
+  },
+  "cta": {
+    "title": "Bereit, Ihr Unternehmen zu transformieren?",
+    "description": "Lassen Sie uns besprechen, wie wir Ihrem Unternehmen mit modernen digitalen Lösungen zum Wachstum verhelfen können.",
+    "button": "Loslegen"
   }
 }

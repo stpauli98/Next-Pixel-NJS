@@ -21,5 +21,28 @@
       "title": "Stability and speed",
       "description": "We use proven technologies that increase security, performance and long-term reliability."
     }
+  },
+  "stats": {
+    "projects": {
+      "value": "50",
+      "label": "Projects Completed"
+    },
+    "clients": {
+      "value": "40",
+      "label": "Satisfied Clients"
+    },
+    "experience": {
+      "value": "5",
+      "label": "Years Experience"
+    },
+    "support": {
+      "value": "24/7",
+      "label": "Support Available"
+    }
+  },
+  "cta": {
+    "title": "Ready to Transform Your Business?",
+    "description": "Let's discuss how we can help your business grow with modern digital solutions.",
+    "button": "Get Started"
   }
 }

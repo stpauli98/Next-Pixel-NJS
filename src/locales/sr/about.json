@@ -21,5 +21,28 @@
       "title": "Stabilnost i brzina",
       "description": "Koristimo provjerene tehnologije koje povećavaju sigurnost, brzinu i dugoročnu pouzdanost."
     }
+  },
+  "stats": {
+    "projects": {
+      "value": "50",
+      "label": "Završenih projekata"
+    },
+    "clients": {
+      "value": "40",
+      "label": "Zadovoljnih klijenata"
+    },
+    "experience": {
+      "value": "5",
+      "label": "Godina iskustva"
+    },
+    "support": {
+      "value": "24/7",
+      "label": "Podrška dostupna"
+    }
+  },
+  "cta": {
+    "title": "Spremni za transformaciju vašeg biznisa?",
+    "description": "Razgovarajmo kako možemo pomoći vašem biznisu da raste uz moderna digitalna rješenja.",
+    "button": "Započnite"
   }
 }
