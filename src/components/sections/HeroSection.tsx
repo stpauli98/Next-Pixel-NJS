@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import { useClientTranslation } from '@/hooks/useClientTranslation';
 import { HeroImage } from '@/components/OptimizedImage';
+import { cn } from '@/lib/utils';
 
 const HeroSection: React.FC = () => {
   const { t, isHydrated, isReady } = useClientTranslation('hero');
@@ -28,6 +29,30 @@ const HeroSection: React.FC = () => {
     de: 'Wir erstellen moderne digitale Lösungen für Ihr Unternehmen'
   };
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
   // Pokazuj loading state tokom hydration-a sa H1 tagom za SEO
   if (!isHydrated || !isReady) {
     const currentLang = getLangFromPath();
@@ -46,123 +71,143 @@ const HeroSection: React.FC = () => {
       </section>
     );
   }
+
   return (
-    <section id="home" className="relative min-h-screen flex items-center bg-gradient-to-br from-nextpixel-dark to-nextpixel-blue overflow-hidden">
+    <motion.section
+      id="home"
+      className={cn(
+        "relative flex min-h-screen w-full flex-col overflow-hidden bg-gradient-to-br from-nextpixel-dark to-nextpixel-blue md:flex-row"
+      )}
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+    >
       {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-20 -right-20 w-96 h-96 bg-nextpixel-turquoise rounded-full opacity-10"></div>
         <div className="absolute bottom-10 -left-20 w-80 h-80 bg-nextpixel-turquoise rounded-full opacity-10"></div>
       </div>
-      
-      <div className="container mx-auto px-4 z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              {!isHydrated ? 'Digital solutions for your success' : (
-                t('title')
-              )}
-            </h1>
-            <p className="text-lg text-gray-300 mb-8">
-              {!isHydrated ? 'We create modern web solutions for your business' : (
-                typeof t('subtitle') === 'string' ? t('subtitle') as string : ''
-              )}
-            </p>
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-              <a href="#services" className="btn-primary text-center">
-                {!isHydrated ? 'Our Services' : (
-                  typeof t('services') === 'string' ? t('services') as string : 'Our Services'
-                )}
-              </a>
-              <a href="#contact" className="btn-secondary text-center">
-                {!isHydrated ? 'Contact Us' : (
-                  typeof t('contact') === 'string' ? t('contact') as string : 'Contact Us'
-                )}
-              </a>
-            </div>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="hidden lg:block"
-          >
-            <div className="relative overflow-hidden rounded-xl max-w-md mx-auto">
-              {/* Pozadinski efekt */}
-              <div className="absolute inset-0 bg-nextpixel-turquoise rounded-xl opacity-25 blur-xl transform -rotate-6"></div>
-              
-              {/* Kontejner za sliku s gradijentnim rubovima koji se stapaju s pozadinom sekcije */}
-              <div className="relative z-10 w-full h-full rounded-xl overflow-hidden">
-                {/* Gradijentne maske za postepeni prijelaz u pozadinu sekcije */}
-                <div className="absolute inset-0 bg-gradient-to-t from-nextpixel-dark via-nextpixel-dark/50 to-transparent opacity-40 z-20"></div>
-                <div className="absolute inset-0 bg-gradient-to-l from-nextpixel-dark via-nextpixel-dark/50 to-transparent opacity-40 z-20"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-nextpixel-dark via-nextpixel-dark/50 to-transparent opacity-40 z-20"></div>
-                <div className="absolute inset-0 bg-gradient-to-b from-nextpixel-dark via-nextpixel-dark/50 to-transparent opacity-40 z-20"></div>
-                
-                {/* Dodatni gradijent za kuteve koji se stapa s pozadinom */}
-                <div className="absolute inset-0 rounded-lg z-20" 
-                     style={{
-                       background: 'radial-gradient(circle at center, transparent 40%, rgba(10, 36, 99, 0.9) 100%)',
-                       opacity: 0.7
-                     }}>
-                </div>
-                
-                {/* Sama slika */}
-                <HeroImage 
-                  src="/images/NextPixelV2.webp" 
-                  alt="NextPixel Digital Solutions - Digitalna agencija za web i softverska rješenja" 
-                  className="w-full h-auto object-cover max-h-[400px]"
-                  width={500}
-                  height={350}
-                  fallbackSrc="https://placehold.co/500x350/0A2463/FFFFFF?text=NextPixel"
-                  quality={90}
-                />
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </div>
-      
-      <div className="absolute bottom-10 left-0 right-0 flex justify-center">
-        <motion.a
-          href="#about"
-          initial={{ y: -10, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ 
-            duration: 0.5, 
-            delay: 1,
-            repeat: Infinity,
-            repeatType: "reverse",
-            repeatDelay: 0.5
-          }}
-          className="text-white flex flex-col items-center"
-        >
-          <span className="mb-2">
-            {!isHydrated ? 'Learn More' : (
-              typeof t('learnMore') === 'string' ? t('learnMore') as string : 'Learn More'
-            )}
-          </span>
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            className="h-6 w-6" 
-            fill="none" 
-            viewBox="0 0 24 24" 
-            stroke="currentColor"
-          >
-            <path 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              strokeWidth={2} 
-              d="M19 14l-7 7m0 0l-7-7m7 7V3" 
+
+      {/* Left Side: Content */}
+      <div className="flex w-full flex-col justify-center p-8 md:w-1/2 md:p-12 lg:w-3/5 lg:p-16 z-10">
+        {/* Logo */}
+        <motion.header className="mb-8 md:mb-12" variants={itemVariants}>
+          <div className="flex items-center">
+            <img
+              src="/images/logo.webp"
+              alt="NextPixel Logo"
+              className="mr-3 h-10 md:h-12"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+              }}
             />
-          </svg>
-        </motion.a>
+            <div>
+              <p className="text-xl md:text-2xl font-bold text-white">NextPixel</p>
+              <p className="text-xs tracking-wider text-nextpixel-turquoise uppercase">
+                {typeof t('slogan') === 'string' ? t('slogan') as string : 'Digital Excellence'}
+              </p>
+            </div>
+          </div>
+        </motion.header>
+
+        {/* Main Content */}
+        <motion.main variants={containerVariants}>
+          <motion.h1
+            className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-white"
+            variants={itemVariants}
+          >
+            {t('title')}
+          </motion.h1>
+
+          <motion.div
+            className="my-6 h-1 w-20 bg-nextpixel-turquoise"
+            variants={itemVariants}
+          />
+
+          <motion.p
+            className="mb-8 max-w-lg text-base md:text-lg text-gray-300"
+            variants={itemVariants}
+          >
+            {typeof t('subtitle') === 'string' ? t('subtitle') as string : ''}
+          </motion.p>
+
+          {/* CTA Buttons */}
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4"
+            variants={itemVariants}
+          >
+            <a
+              href="#services"
+              className="btn-primary text-center px-8 py-3 rounded-full font-medium"
+            >
+              {typeof t('services') === 'string' ? t('services') as string : 'Our Services'}
+            </a>
+            <a
+              href="#contact"
+              className="btn-secondary text-center px-8 py-3 rounded-full font-medium"
+            >
+              {typeof t('contact') === 'string' ? t('contact') as string : 'Contact Us'}
+            </a>
+          </motion.div>
+        </motion.main>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          className="mt-12 md:mt-16"
+          variants={itemVariants}
+        >
+          <motion.a
+            href="#about"
+            className="text-white/70 hover:text-white flex items-center gap-2 text-sm transition-colors"
+            animate={{ y: [0, 5, 0] }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          >
+            <span>{typeof t('learnMore') === 'string' ? t('learnMore') as string : 'Learn More'}</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </motion.a>
+        </motion.div>
       </div>
-    </section>
+
+      {/* Right Side: Image with Clip Path Animation */}
+      <motion.div
+        className="relative w-full min-h-[300px] md:min-h-full md:w-1/2 lg:w-2/5"
+        initial={{ clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)' }}
+        animate={{ clipPath: 'polygon(15% 0, 100% 0, 100% 100%, 0% 100%)' }}
+        transition={{ duration: 1.2, ease: "circOut", delay: 0.3 }}
+      >
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-nextpixel-dark/80 via-transparent to-transparent z-10 pointer-events-none" />
+
+        {/* Image */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <HeroImage
+            src="/images/NextPixelV2.webp"
+            alt="NextPixel Digital Solutions - Digitalna agencija za web i softverska rješenja"
+            className="w-auto h-auto max-w-full max-h-full object-contain"
+            width={800}
+            height={900}
+            fallbackSrc="https://placehold.co/800x900/0A2463/FFFFFF?text=NextPixel"
+            quality={90}
+          />
+        </div>
+
+        {/* Bottom gradient for mobile */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-nextpixel-dark to-transparent md:hidden z-10" />
+      </motion.div>
+    </motion.section>
   );
 };
 
