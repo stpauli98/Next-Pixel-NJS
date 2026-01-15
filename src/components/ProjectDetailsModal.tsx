@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { useTranslate } from '../context/LanguageContext';
 import { ContainerScroll } from './ui/ContainerScrollAnimation';
+import { Spinner } from './ui/ios-spinner';
 
 interface ProjectDetailsModalProps {
   project: {
@@ -24,8 +25,17 @@ interface ProjectDetailsModalProps {
 const ProjectDetailsModal: React.FC<ProjectDetailsModalProps> = ({ project, isOpen, onClose }) => {
   const { t, language } = useTranslate();
   const [forceUpdate, setForceUpdate] = useState(0);
+  const [imageLoading, setImageLoading] = useState(true);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const savedStyles = useRef({ html: '', body: '' });
+
+  // Reset loading state when project changes
+  useEffect(() => {
+    if (project) {
+      setImageLoading(true);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [project?.id]);
 
   useEffect(() => {
     setForceUpdate(prev => prev + 1);
@@ -172,20 +182,30 @@ const ProjectDetailsModal: React.FC<ProjectDetailsModalProps> = ({ project, isOp
                 </>
               }
             >
-              <Image
-                src={project.image}
-                alt={project.title}
-                height={720}
-                width={1400}
-                className="mx-auto rounded-2xl object-cover h-full object-center md:object-left-top"
-                draggable={false}
-                priority
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.onerror = null;
-                  target.src = `https://placehold.co/1400x720/0A2463/FFFFFF?text=${encodeURIComponent(project.title)}`;
-                }}
-              />
+              <div className="relative w-full h-full">
+                {/* Loading spinner */}
+                {imageLoading && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-nextpixel-light rounded-2xl z-10">
+                    <Spinner size="lg" className="h-10 w-10" />
+                  </div>
+                )}
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  height={720}
+                  width={1400}
+                  className="mx-auto rounded-2xl object-cover h-full object-center md:object-left-top"
+                  draggable={false}
+                  priority
+                  onLoad={() => setImageLoading(false)}
+                  onError={(e) => {
+                    setImageLoading(false);
+                    const target = e.target as HTMLImageElement;
+                    target.onerror = null;
+                    target.src = `https://placehold.co/1400x720/0A2463/FFFFFF?text=${encodeURIComponent(project.title)}`;
+                  }}
+                />
+              </div>
             </ContainerScroll>
           </div>
 

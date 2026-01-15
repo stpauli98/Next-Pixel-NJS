@@ -20,11 +20,17 @@ module.exports = {
       },
       animation: {
         'shimmer': 'shimmer 1.5s infinite',
+        'spinner-blade': 'spinner-blade 1s linear infinite',
       },
       keyframes: {
         shimmer: {
           '0%': { backgroundPosition: '-200% 0' },
           '100%': { backgroundPosition: '200% 0' },
+        },
+        'spinner-blade': {
+          '0%': { opacity: '0.85' },
+          '50%': { opacity: '0.25' },
+          '100%': { opacity: '0.25' },
         },
       },
     },

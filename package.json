@@ -37,6 +37,7 @@
     "@vercel/og": "^0.6.8",
     "accept-language": "^3.0.20",
     "caniuse-lite": "^1.0.30001755",
+    "clsx": "^2.1.1",
     "framer-motion": "^12.6.3",
     "i18next": "^23.7.16",
     "i18next-browser-languagedetector": "^7.2.0",
@@ -50,6 +51,7 @@
     "react-i18next": "^14.0.5",
     "react-icons": "^5.5.0",
     "resend": "^4.2.0",
+    "tailwind-merge": "^3.4.0",
     "typescript": "^4.9.5"
   },
   "eslintConfig": {
