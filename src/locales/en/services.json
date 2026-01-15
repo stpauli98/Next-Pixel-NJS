@@ -2,6 +2,7 @@
   "title": "Our Services",
   "subtitle": "From websites to SEO — get everything you need to grow your digital presence.",
   "requestQuote": "Request a quote",
+  "dragHint": "Drag to explore services",
   "webDesign": {
     "title": "Web Design",
     "description": "We create modern, responsive, and user-friendly websites that represent your brand at its best."

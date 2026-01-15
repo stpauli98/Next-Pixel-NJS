@@ -2,31 +2,24 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaDesktop, FaShoppingCart, FaSearch, FaServer, FaCode, FaMobileAlt, FaLaptopCode } from 'react-icons/fa';
-import { FaMobileScreen, FaMagnifyingGlass, FaPalette } from 'react-icons/fa6';
-import { Icon } from '../../utils/icons';
+import { FaMobileAlt, FaLaptopCode } from 'react-icons/fa';
+import { FaMobileScreen, FaMagnifyingGlass, FaPalette, FaCartShopping } from 'react-icons/fa6';
 import { useTranslate } from '../../context/LanguageContext';
+import { ShuffleCards } from '../ui/service-shuffle-cards';
 
 const ServicesSection: React.FC = () => {
-  const { t, language } = useTranslate();
+  const { t } = useTranslate();
   const [mounted, setMounted] = useState(false);
-  const [forceUpdate, setForceUpdate] = useState(0);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  useEffect(() => {
-    if (mounted) {
-      setForceUpdate(prev => prev + 1);
-    }
-  }, [language, mounted]);
-
   if (!mounted) {
     return null;
   }
 
-  type IconType = typeof FaDesktop;
+  type IconType = typeof FaLaptopCode;
 
 interface Service {
   icon: IconType;
@@ -46,7 +39,7 @@ const services: Service[] = [
       description: typeof t('services:mobileDevelopment.description') === 'string' ? t('services:mobileDevelopment.description') as string : ''
     },
     {
-      icon: FaShoppingCart,
+      icon: FaCartShopping,
       title: typeof t('services:ecommerce.title') === 'string' ? t('services:ecommerce.title') as string : 'E-commerce',
       description: typeof t('services:ecommerce.description') === 'string' ? t('services:ecommerce.description') as string : ''
     },
@@ -100,23 +93,12 @@ const services: Service[] = [
       </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-12">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-              className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow"
-            >
-              <div className="text-nextpixel-blue mb-4">
-                <Icon icon={service.icon} size={36} aria-hidden={true} />
-              </div>
-              <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-              <p className="text-nextpixel-gray">{service.description}</p>
-            </motion.div>
-          ))}
+        {/* Shuffle Cards - Interactive */}
+        <div className="flex justify-center mt-12">
+          <ShuffleCards
+            services={services}
+            dragHint={typeof t('services:dragHint') === 'string' ? t('services:dragHint') as string : 'Drag to explore services'}
+          />
         </div>
 
         <motion.div
