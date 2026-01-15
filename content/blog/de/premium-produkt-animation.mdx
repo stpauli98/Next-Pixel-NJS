@@ -1,0 +1,287 @@
+export const blogData = {
+  title: 'Wie Sie aus einem Produktfoto eine Premium-Animation für den Webshop erstellen',
+  date: '2025-01-15',
+  author: 'Next Pixel',
+  excerpt: 'Erfahren Sie, wie Sie mit den KI-Tools WHISK und FLOW ein gewöhnliches Produktfoto in eine professionelle Animation für die Hero-Sektion Ihres Webshops verwandeln.',
+  tags: ['KI', 'eCommerce', 'Animation', 'Webshop', 'Tutorial'],
+  readTime: 12,
+  featured: true,
+  image: '/blogImages/premium-animacija.webp',
+  category: 'Tutorial'
+}
+
+# Wie Sie aus einem Produktfoto eine Premium-Animation für den Webshop erstellen
+
+Komplette Anleitung zur Erstellung professioneller Produktanimationen mit Google Labs KI-Tools.
+
+## Was Sie bekommen
+
+- **Zwei Premium-Bilder** - Start- und Endframe
+- **Ein flüssiger Video-Übergang**
+- **Web-optimierte Ausgabe** bereit für Hero-Sektion oder Webshop
+
+## Für wen ist das geeignet
+
+- Wenn Sie physische Produkte verkaufen
+- Wenn Sie bessere Visuals ohne Fotostudio und ohne Videoaufnahmen wünschen
+- Wenn Sie Content wünschen, der teurer aussieht als die tatsächlichen Produktionskosten
+
+## Die Tools, die wir verwenden
+
+| Tool | Zweck | Link |
+|------|-------|------|
+| **WHISK** | Premium-Bildgenerierung | [labs.google/fx/tools/whisk](https://labs.google/fx/tools/whisk) |
+| **FLOW** | Video-Übergänge | [labs.google/flow/about](https://labs.google/flow/about) |
+| **EZGIF** | WebP-Konvertierung | [ezgif.com/video-to-webp](https://ezgif.com/video-to-webp) |
+
+> **Wichtig:** WHISK und FLOW sind kostenpflichtig. Dies sind KEINE kostenlosen Tools. Sie haben Limits durch Credits und Tokens.
+
+---
+
+## Schritt 1: Bereiten Sie ein gutes Produktbild vor
+
+Verwenden Sie ein Bild, das:
+- Scharf ist
+- Gut beleuchtet ist
+- Ohne zu viele Reflexionen ist
+- So gerahmt ist, dass das gesamte Produkt sichtbar ist
+
+> **Warnung:** Wenn Sie mit einem schlechten Bild beginnen, wird alles danach schlecht aussehen. KI rettet keine schlechte Grundlage.
+
+---
+
+## Schritt 2: WHISK - Stabilisieren Sie Ihr Produkt (Startframe)
+
+Hier machen Sie eine Sache: Sie bekommen ein "sauberes" Premium-Produktfoto, das Sie als Startframe verwenden können.
+
+### So geht's:
+1. Öffnen Sie WHISK
+2. Registrieren Sie sich falls nötig
+3. Betreten Sie das Tool
+4. In **Subject** laden Sie Ihr Produktbild hoch
+5. Im **Prompt-Feld** geben Sie den Prompt unten ein
+
+### Prompt für Startframe
+
+```
+Create a high-quality product image using the uploaded photo of the scented candle flower arrangement.
+
+Place the candle arrangement centered in the frame with a natural, gentle tilt similar to luxury home decor photography.
+
+Use soft, clean studio lighting with subtle highlights and shadows to emphasize wax textures and floral shapes. Light should feel warm and inviting.
+
+Keep all candle forms, colors, and details sharp.
+
+STYLE:
+• Premium handmade candle look
+• Soft, elegant, calm mood
+• Simple aesthetic like modern home fragrance ads
+
+BACKGROUND:
+• Pastel warm cream or soft beige
+• No harsh contrasts
+• No distracting textures
+• Light shadow under product only to add depth
+
+FRAMING:
+• Full vertical frame
+• Product centered
+• Enough margin for later motion editing
+
+OUTPUT:
+• High-resolution still image
+• Background easy to mask/match brand palette
+• Preserve original wax color and proportions
+```
+
+### Extrem wichtig
+- **Fragen Sie nicht nach Kreativität. Fragen Sie nach Kontrolle.**
+- Ändern Sie das Produkt nicht. Polieren Sie es nur
+- Behalten Sie denselben Winkel, Proportionen und Farben bei
+
+Wenn Ihr erstes Bild schlecht ausfällt, liegt das Problem nicht am "Tool". Das Problem ist der Prompt oder das Eingabebild.
+
+---
+
+## Schritt 3: WHISK - Generieren Sie das Endbild (Endframe)
+
+Hier erstellen Sie den Endframe. Dies ist das Bild, in dem Duftelemente um das Produkt erscheinen.
+
+**Wichtig:**
+- Jetzt verwenden Sie das generierte Startbild als neues Subject
+- Gehen Sie nicht zum Original zurück, denn Sie wollen einen konsistenten Stil
+
+### Prompt für Endframe
+
+```
+Using the uploaded product image, generate the final frame of a product animation for a handmade scented candle flower arrangement.
+
+The candle arrangement floats in the center of the frame with a gentle forward tilt. Angle feels soft and elegant. Focus stays on craftsmanship and floral details.
+
+INGREDIENT BURST:
+• Surround the candle with floating scent elements inspired by the fragrance (dried flowers, rose petals, lavender, vanilla pods, citrus peel)
+• Elements spread outward in a calm, organic motion. No aggressive explosion
+• Include a soft wax-like swirl or delicate fragrance mist wrapping partially around the arrangement
+• Ingredients appear suspended in air, crisp and sharp, like high-speed studio photography
+• Candle shapes and floral forms stay fully visible and unobstructed
+
+STYLE:
+• Soft commercial studio lighting
+• Warm highlights on wax petals
+• Clear texture on flowers and box
+• Calm, elegant composition inspired by premium home decor and gift visuals
+• Feminine, gentle, refined mood
+
+PRODUCT POSITION:
+• Center of the frame
+• Slight forward tilt for hero look
+• Ingredients placed around the product with balanced spacing for animation
+
+BACKGROUND:
+• Warm pastel background matching brand aesthetic
+• Soft cream, blush beige, or warm off-white
+• Flat background or subtle fabric-like softness
+• No harsh contrast
+• Clean and consistent for hero section use
+
+OUTPUT:
+• High-resolution final frame
+• Product centered with floating fragrance elements
+• Background suitable for webshop hero section
+• Exact colors, shapes, and proportions preserved
+• Photorealistic, premium handmade candle look
+```
+
+### Häufige Fehler hier
+- Elemente verdecken das Produkt
+- Elemente sehen aus wie eine Explosion
+- Der Hintergrund ändert den Ton, sodass das Video später visuell "bricht"
+
+Wenn das passiert, kürzen Sie den "ingredient burst"-Abschnitt und betonen Sie **"unobstructed, calm, balanced spacing"**.
+
+---
+
+## Schritt 4: FLOW - Erstellen Sie den Übergang von Start zu End
+
+Flow macht eine Sache: **Es wandelt zwei Bilder in ein Video um**.
+
+### So geht's:
+1. Öffnen Sie FLOW
+2. Erstellen Sie ein neues Projekt
+3. Wählen Sie **Frames to Video**
+4. Im linken Frame laden Sie das Startbild hoch
+5. Im rechten Frame laden Sie das Endbild hoch
+6. Geben Sie den Übergangs-Prompt ein
+
+### Prompt für Video-Übergang
+
+```
+Create a smooth animated transition using the uploaded product image of a handmade scented candle flower arrangement.
+
+SCENE START:
+Begin with the candle arrangement gently floating and slightly tilted to the left. Movement feels slow, elegant, and calming. Product appears centered on a warm, soft pastel background.
+
+BACKGROUND:
+• Warm cream, blush beige, or soft pastel gradient
+• Light, airy, and calm tone
+• No harsh contrast
+• No dark colors
+• Suitable for hero section on a webshop
+
+TRANSITION MOTION:
+As the candle slowly rotates toward the viewer, introduce fragrance elements gradually from behind and around the product.
+
+INGREDIENT INTRO:
+• Floating rose petals
+• Lavender sprigs
+• Vanilla pods
+• Citrus peel curls
+• Small natural fragrance particles
+
+Elements enter softly and organically, as if carried by warm air. Motion stays gentle and refined.
+
+FRAGRANCE SWIRL:
+Add a soft, luminous wax or fragrance swirl wrapping partially around the arrangement. Motion looks silky and light, not explosive. Glow stays subtle and warm.
+
+BUILD-UP:
+Increase the number of floating fragrance elements gradually. Composition becomes richer but remains elegant and balanced. Nothing feels chaotic.
+
+PRODUCT FOCUS:
+• Candle arrangement always fully visible
+• No elements covering flower candles
+• Wax texture and floral details stay sharp
+• Box edges clean and defined
+
+LIGHTING:
+• Soft studio lighting
+• Warm highlights on wax petals
+• Gentle shadows for depth
+• Calm, premium mood
+
+FINAL FRAME:
+End on a fully formed fragrance composition similar to the ingredient-burst image. Candle centered, surrounded by floating scent elements and soft swirl.
+
+OUTPUT:
+• High-resolution animation frames
+• Hero-ready composition for webshop
+• Colors aligned with brand palette
+• Exact product shape, color, and proportions preserved
+• Feminine, warm, premium handmade candle aesthetic
+```
+
+> **Extrem wichtig:** Wenn Start- und Endbild nicht konsistent sind, erstellt Flow einen seltsamen "Morph". Das sieht billig aus. Deshalb polieren Sie zuerst die Bilder in Whisk.
+
+---
+
+## Schritt 5: EZGIF - Video in WebP und Frames konvertieren
+
+Machen Sie das, wenn Sie eine webfreundliche Animation wünschen. WebP ist leichter und schneller zu laden als klassisches Video.
+
+### So geht's:
+1. Öffnen Sie [EZGIF video to WebP](https://ezgif.com/video-to-webp)
+2. Laden Sie das Video hoch
+3. Setzen Sie die Startzeit auf **0s**
+4. Setzen Sie die Endzeit auf **Ende des Videos**
+5. Setzen Sie die Methode auf **FFMPEG**
+6. Klicken Sie auf **Convert to WebP**
+7. Laden Sie die ZIP herunter
+
+### Was Sie bekommen
+- WebP-Datei
+- ZIP mit Frames
+
+Dann laden Sie es auf die Website hoch oder geben es einem Entwickler zur Implementierung.
+
+---
+
+## Warnung zu Preisen und Limits
+
+Google Labs Tools haben ein Zahlungs- und Creditsystem. Sie haben Limits durch Tokens und Credits.
+
+Mehr Informationen: [support.google.com/googleone/answer/16287445](https://support.google.com/googleone/answer/16287445)
+
+---
+
+## Wann ich das NICHT empfehle
+
+- **Wenn das Produkt 100% identisch zum echten Foto aussehen muss** - KI kann Details "fälschen"
+- **Wenn Sie keine Zeit für Iterationen haben** - Manchmal braucht es mehrere Versuche
+- **Wenn Sie Konsistenz für 50 Produkte brauchen** - Dann brauchen Sie ein System und Vorlagen, keine manuelle Arbeit
+
+---
+
+## Fazit
+
+Dieser Text gibt Ihnen den Prozess und die Prompts, um loszulegen.
+
+**Beginnen Sie mit einem Produkt.** Machen Sie keine Serie, bis Sie ein Ergebnis bekommen, das Premium aussieht.
+
+---
+
+## Möchten Sie, dass wir es für Sie machen?
+
+Wenn Sie eine fertige Animation für Ihren Webshop wünschen, ohne Testen und Credits zu verschwenden, kontaktieren Sie uns.
+
+- **Email:** [pixelnext9@gmail.com](mailto:pixelnext9@gmail.com)
+- **WhatsApp:** [0038766603900](https://wa.me/38766603900)
+- **Kontaktformular:** [nextpixel.dev/de#contact](https://www.nextpixel.dev/de#contact)

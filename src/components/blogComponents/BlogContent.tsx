@@ -49,54 +49,61 @@ export const BlogContent: React.FC<BlogContentProps> = ({ blogData, children }) 
   return (
     <BlogDataContext.Provider value={blogData}>
       <article className="
-        prose prose-lg dark:prose-invert
+        prose prose-lg
         max-w-none mx-auto
 
         prose-headings:font-bold
-        prose-headings:text-nextpixel-dark prose-headings:dark:text-white
+        prose-headings:text-nextpixel-dark
 
         prose-h1:text-3xl prose-h1:sm:text-4xl prose-h1:md:text-5xl
         prose-h1:mb-6 prose-h1:mt-0
 
         prose-h2:text-2xl prose-h2:sm:text-3xl
         prose-h2:mt-12 prose-h2:mb-6
-        prose-h2:pb-3 prose-h2:border-b prose-h2:border-gray-200 prose-h2:dark:border-gray-700
+        prose-h2:pb-3 prose-h2:border-b prose-h2:border-gray-200
 
         prose-h3:text-xl prose-h3:sm:text-2xl
         prose-h3:mt-8 prose-h3:mb-4
 
-        prose-p:text-gray-800 prose-p:dark:text-gray-200
+        prose-p:text-nextpixel-gray
         prose-p:leading-relaxed prose-p:mb-6
 
         prose-a:text-nextpixel-turquoise prose-a:no-underline
         hover:prose-a:underline prose-a:transition-colors
 
-        prose-strong:text-nextpixel-dark prose-strong:dark:text-white
+        prose-strong:text-nextpixel-dark
 
         prose-ul:my-6 prose-ul:pl-6
         prose-ol:my-6 prose-ol:pl-6
-        prose-li:my-2
+        prose-li:my-2 prose-li:text-nextpixel-gray
 
         prose-blockquote:border-l-4 prose-blockquote:border-nextpixel-turquoise
-        prose-blockquote:bg-gray-50 prose-blockquote:dark:bg-gray-800/50
+        prose-blockquote:bg-nextpixel-light
         prose-blockquote:py-4 prose-blockquote:px-6
         prose-blockquote:rounded-r-xl
         prose-blockquote:not-italic
         prose-blockquote:my-8
 
-        prose-code:bg-gray-100 prose-code:dark:bg-gray-800
+        prose-code:bg-nextpixel-light prose-code:text-nextpixel-dark
         prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
         prose-code:text-sm prose-code:font-mono
         prose-code:before:content-[''] prose-code:after:content-['']
 
-        prose-pre:bg-gray-900 prose-pre:text-gray-100
+        prose-pre:bg-nextpixel-light prose-pre:text-nextpixel-dark
         prose-pre:rounded-xl prose-pre:shadow-lg
         prose-pre:overflow-x-auto
 
         prose-img:rounded-xl prose-img:shadow-lg
         prose-figure:my-8
 
-        prose-hr:my-10 prose-hr:border-gray-200 prose-hr:dark:border-gray-700
+        prose-hr:my-10 prose-hr:border-gray-200
+
+        prose-table:w-full prose-table:my-8
+        prose-table:border-collapse prose-table:border prose-table:border-gray-200
+        prose-th:bg-nextpixel-light prose-th:text-nextpixel-dark prose-th:font-bold
+        prose-th:px-4 prose-th:py-3 prose-th:border prose-th:border-gray-200 prose-th:text-left
+        prose-td:text-nextpixel-gray prose-td:px-4 prose-td:py-3
+        prose-td:border prose-td:border-gray-200
       ">
         <div className="blog-content">
           {children}
@@ -112,7 +119,7 @@ export const BlogMeta: React.FC<{
   dateFormat?: Intl.DateTimeFormatOptions;
   locale?: string;
 }> = ({
-  className = "flex flex-wrap items-center gap-4 mb-6 text-sm sm:text-base text-gray-700 dark:text-gray-300",
+  className = "flex flex-wrap items-center gap-4 mb-6 text-sm sm:text-base text-nextpixel-gray",
   dateFormat = { day: 'numeric', month: 'long', year: 'numeric' },
   locale = 'en-US'
 }) => {

@@ -64,7 +64,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ lang:
   }
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-white">
       <BlogNavbar lang={lang} />
       <main className="flex-grow pt-24">
         <div className="container mx-auto px-4">

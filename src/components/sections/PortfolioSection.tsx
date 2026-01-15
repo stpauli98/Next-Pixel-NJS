@@ -3,8 +3,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslate } from '../../context/LanguageContext';
-import Image from 'next/image';
 import ProjectDetailsModal from '../ProjectDetailsModal';
+import { VerticalProjectStack } from '../ui/VerticalProjectStack';
 
 interface Project {
   id: number;
@@ -22,13 +22,11 @@ const PortfolioSection: React.FC = () => {
   const [mounted, setMounted] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  
-  // Rešava problem hidratacije
+
   useEffect(() => {
     setMounted(true);
   }, []);
-  
-  // Definišemo projekte nakon što je komponenta montirana da bi se izbegli problemi hidratacije
+
   const getProjects = useCallback(() => [
     {
       id: 1,
@@ -117,15 +115,12 @@ const PortfolioSection: React.FC = () => {
     },
   ], [t]);
 
-  // Osvježavanje komponente kada se promijeni jezik
   useEffect(() => {
     if (mounted) {
-      // Osvježavanje projekata kada se promijeni jezik
       setVisibleProjects(getProjects());
     }
   }, [language, mounted, getProjects]);
 
-  // Definišemo kategorije sa fallback vrednostima za inicijalni render
   const getCategories = () => [
     { id: 'all', name: !mounted ? 'All' : (typeof t('portfolio:category.all') === 'string' ? t('portfolio:category.all') as string : 'All') },
     { id: 'web-app', name: !mounted ? 'Web App' : (typeof t('portfolio:category.webApp') === 'string' ? t('portfolio:category.webApp') as string : 'Web App') },
@@ -137,47 +132,36 @@ const PortfolioSection: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState('all');
   const [visibleProjects, setVisibleProjects] = useState<Project[]>([]);
 
-  // Inicijalizacija projekata nakon što je komponenta montirana
   useEffect(() => {
     if (mounted) {
       setVisibleProjects(getProjects());
     }
   }, [mounted, getProjects]);
 
-  // Filtriramo projekte na osnovu aktivne kategorije
   const filteredProjects = activeCategory === 'all'
     ? visibleProjects
     : visibleProjects.filter(project => {
-      // Get the category ID for the current project by comparing with translation keys
       const categoryEntries = Object.entries({
         'webApp': t('portfolio:category.webApp'),
         'webShop': t('portfolio:category.webShop'),
         'website': t('portfolio:category.website'),
         'mobileApp': t('portfolio:category.mobileApp')
       });
-      
-      // Find which category key matches this project's category name
-      const matchingCategory = categoryEntries.find(([_, translatedName]) => 
-        project.category === translatedName || 
+
+      const matchingCategory = categoryEntries.find(([_, translatedName]) =>
+        project.category === translatedName ||
         project.category.toLowerCase() === translatedName?.toString().toLowerCase()
       );
-      
-      // Get the category ID from the matching entry
+
       const projectCategoryId = matchingCategory ? matchingCategory[0] : null;
-      
-      // Also check if the category name directly includes the active category
       const directMatch = project.category.toLowerCase().includes(activeCategory.toLowerCase());
-      
-      // For webApp, webShop, website, mobileApp - do direct comparison with the category ID
+
       if (activeCategory === 'web-app' && projectCategoryId === 'webApp') return true;
       if (activeCategory === 'web-shop' && projectCategoryId === 'webShop') return true;
       if (activeCategory === 'website' && projectCategoryId === 'website') return true;
       if (activeCategory === 'mobile-app' && projectCategoryId === 'mobileApp') return true;
-      
-      // Special case for Serbian 'softver' category
       if (activeCategory === 'softver' && projectCategoryId === 'software') return true;
-      
-      // For other categories or fallback
+
       return directMatch;
     });
 
@@ -201,143 +185,134 @@ const PortfolioSection: React.FC = () => {
     }
   };
 
+  // Handle scroll exit from the stack
+  const handleScrollExit = useCallback((direction: 'up' | 'down') => {
+    // Restore body scroll
+    document.body.style.overflow = '';
+
+    if (direction === 'down') {
+      // Scroll to why-choose-us section (directly below portfolio)
+      const nextSection = document.getElementById('why-choose-us');
+      if (nextSection) {
+        nextSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Scroll to services section (directly above portfolio)
+      const prevSection = document.getElementById('services');
+      if (prevSection) {
+        prevSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, []);
+
   return (
-    <section id="portfolio" className="section bg-white py-32">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-24 max-w-4xl mx-auto">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl md:text-4xl font-bold mb-4"
-          >
-            {!mounted ? 'Portfolio' : (
-              formatTitle(typeof t('portfolio:title') === 'string' ? t('portfolio:title') as string : 'Portfolio')
-            )}
-          </motion.h2>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-20 h-1 bg-nextpixel-turquoise mx-auto mb-6"
-          ></motion.div>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-lg text-nextpixel-gray max-w-3xl mx-auto mb-12"
-          >
-            {!mounted ? 'Check out some of our recent projects' : (
-              typeof t('portfolio:subtitle') === 'string' ? t('portfolio:subtitle') as string : ''
-            )}
-          </motion.p>
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex flex-wrap justify-center mb-20 gap-4"
-        >
-          {getCategories().map((category, index) => (
-            <button
-              key={index}
-              onClick={() => setActiveCategory(category.id)}
-              className={`px-6 py-3 rounded-full transition-all text-sm font-medium ${
-                activeCategory === category.id
-                  ? 'bg-nextpixel-blue text-white shadow-md'
-                  : 'bg-gray-100 text-nextpixel-gray hover:bg-gray-200 hover:shadow-sm'
-              }`}
-            >
-              {category.name.charAt(0).toUpperCase() + category.name.slice(1)}
-            </button>
-          ))}
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-12">
-          {!mounted ? (
-            // Prikazujemo placeholder projekte tokom inicijalnog renderovanja
-            Array(3).fill(0).map((_, index) => (
-              <div 
-                key={index}
-                className="relative overflow-hidden rounded-xl shadow-lg h-full flex flex-col bg-gray-100"
-                style={{height: '400px'}}
-              ></div>
-            ))
-          ) : filteredProjects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 30 }}
+    <section
+      id="portfolio"
+      className="section bg-white py-16 lg:py-0 lg:min-h-screen lg:sticky lg:top-0 relative overflow-hidden"
+    >
+      {/* Desktop: Full viewport container */}
+      <div className="lg:h-screen lg:flex lg:flex-col">
+        {/* Header - positioned at top on desktop */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-8 lg:pt-16">
+          <div className="text-center max-w-4xl mx-auto">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-              className="group relative overflow-hidden rounded-xl shadow-lg h-full flex flex-col transform transition-transform hover:-translate-y-2 duration-300"
+              transition={{ duration: 0.6 }}
+              className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 lg:mb-4"
             >
-              <div className="w-full h-72 overflow-hidden bg-white flex items-center justify-center p-0">
-                <Image
-                  src={project.image} 
-                  alt={project.title} 
-                  width={600}
-                  height={400}
-                  className={`w-full h-full transition-transform duration-500 group-hover:scale-110 ${project.id === 1 || project.id === 2 || project.id === 3 || project.id === 5 ? 'object-contain bg-nextpixel-white' : 'object-cover'}`} //Ovde se mjenja oblik i izgled sike u kartici
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.onerror = null;
-                    target.src = `https://placehold.co/600x400/0A2463/FFFFFF?text=${encodeURIComponent(project.title)}`;
-                  }}
-                />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-nextpixel-dark/80 to-transparent opacity-0 group-hover:opacity-95 transition-opacity duration-300 flex flex-col justify-end p-6 z-10">
-                <h3 className="text-xl font-bold mb-2 inline-block">
-                  <span className="bg-nextpixel-dark/90 px-3 py-1 rounded-md text-nextpixel-turquoise shadow-md">
-                    {formatTitle(project.title)}
-                  </span>
-                </h3>
-                <p className="text-gray-100 text-sm leading-relaxed">{typeof project.description === 'string' ? project.description : ''}</p>
-                <div className="flex justify-between items-center mt-4">
-                  <span className="inline-block text-nextpixel-turquoise text-sm font-medium">
-                    {project.category.charAt(0).toUpperCase() + project.category.slice(1)}
-                  </span>
-                  <button 
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setSelectedProject(project);
-                      setIsModalOpen(true);
-                    }}
-                    className="inline-block text-white text-sm font-medium hover:text-nextpixel-turquoise transition-colors"
-                  >
-                    {typeof t('portfolio:viewProject') === 'string' ? t('portfolio:viewProject') as string : 'View Project'} →
-                  </button>
-                </div>
-              </div>
+              {!mounted ? 'Portfolio' : (
+                formatTitle(typeof t('portfolio:title') === 'string' ? t('portfolio:title') as string : 'Portfolio')
+              )}
+            </motion.h2>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="w-16 lg:w-20 h-1 bg-nextpixel-turquoise mx-auto mb-4 lg:mb-5"
+            ></motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-base lg:text-lg text-nextpixel-gray max-w-3xl mx-auto mb-6 lg:mb-8"
+            >
+              {!mounted ? 'Check out some of our recent projects' : (
+                typeof t('portfolio:subtitle') === 'string' ? t('portfolio:subtitle') as string : ''
+              )}
+            </motion.p>
+
+            {/* Category filters */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="flex flex-wrap justify-center gap-2 lg:gap-3"
+            >
+              {getCategories().map((category, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveCategory(category.id)}
+                  className={`px-4 lg:px-6 py-2 lg:py-2.5 rounded-full transition-all text-sm lg:text-base font-medium ${
+                    activeCategory === category.id
+                      ? 'bg-nextpixel-blue text-white shadow-md'
+                      : 'bg-gray-100 text-nextpixel-gray hover:bg-gray-200 hover:shadow-sm'
+                  }`}
+                >
+                  {category.name.charAt(0).toUpperCase() + category.name.slice(1)}
+                </button>
+              ))}
             </motion.div>
-          ))}
+          </div>
         </div>
 
+        {/* Vertical Project Stack - takes remaining space on desktop */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-center mt-24"
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="flex-1 mt-6 lg:mt-0"
         >
-          <a 
-            href="#contact" 
-            className="btn-primary inline-block px-8 py-4 text-white bg-nextpixel-blue hover:bg-blue-700 rounded-full font-medium transition-colors duration-300 shadow-md hover:shadow-lg"
-          >
-            {!mounted ? 'Start Your Project' : (
-              typeof t('portfolio:startProject') === 'string' ? t('portfolio:startProject') as string : 'Start Your Project'
-            )}
-          </a>
+          {!mounted ? (
+            <div className="flex h-[600px] lg:h-full items-center justify-center">
+              <div className="h-[500px] lg:h-[600px] w-[320px] lg:w-[680px] rounded-2xl lg:rounded-3xl bg-gray-100 animate-pulse" />
+            </div>
+          ) : (
+            <VerticalProjectStack
+              projects={filteredProjects}
+              onProjectClick={(project) => {
+                setSelectedProject(project);
+                setIsModalOpen(true);
+              }}
+              viewProjectText={typeof t('portfolio:viewProject') === 'string' ? t('portfolio:viewProject') as string : 'View Project'}
+              enableScrollLock={true}
+              onScrollExit={handleScrollExit}
+            />
+          )}
         </motion.div>
+
+        {/* CTA Button - mobile only below stack */}
+        <div className="lg:hidden container mx-auto px-4 py-8">
+          <div className="text-center">
+            <a
+              href="#contact"
+              className="btn-primary inline-block px-8 py-4 text-white bg-nextpixel-blue hover:bg-blue-700 rounded-full font-medium transition-colors duration-300 shadow-md hover:shadow-lg"
+            >
+              {!mounted ? 'Start Your Project' : (
+                typeof t('portfolio:startProject') === 'string' ? t('portfolio:startProject') as string : 'Start Your Project'
+              )}
+            </a>
+          </div>
+        </div>
       </div>
-      
+
       {/* Project Details Modal */}
-      <ProjectDetailsModal 
+      <ProjectDetailsModal
         project={selectedProject}
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
