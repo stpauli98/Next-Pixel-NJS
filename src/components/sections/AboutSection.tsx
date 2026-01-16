@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useEffect, useState } from 'react';
-import { motion, useScroll, useTransform, useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { FaLaptopCode, FaUsers, FaRocket, FaAward, FaProjectDiagram, FaHandshake, FaClock, FaHeadset } from 'react-icons/fa';
 import { IconType } from 'react-icons';
 import { Icon } from '../../utils/icons';
@@ -12,12 +12,14 @@ import { cn } from '@/lib/utils';
 // Animated counter component
 const AnimatedCounter = ({ value, isInView }: { value: string; isInView: boolean }) => {
   const [displayValue, setDisplayValue] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
   const numericValue = parseInt(value.replace(/\D/g, ''), 10);
   const isNumeric = !isNaN(numericValue) && value !== '24/7';
 
   useEffect(() => {
-    if (!isInView || !isNumeric) return;
+    if (!isInView || !isNumeric || hasAnimated) return;
 
+    setHasAnimated(true);
     const duration = 2000;
     const steps = 60;
     const stepDuration = duration / steps;
@@ -35,7 +37,7 @@ const AnimatedCounter = ({ value, isInView }: { value: string; isInView: boolean
     }, stepDuration);
 
     return () => clearInterval(timer);
-  }, [isInView, numericValue, isNumeric]);
+  }, [isInView, numericValue, isNumeric, hasAnimated]);
 
   if (!isNumeric) {
     return <span>{value}</span>;
@@ -53,7 +55,8 @@ const StatCard = ({ value, label, icon, index }: { value: string; label: string;
     <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 30 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow"
     >
@@ -82,14 +85,11 @@ const FeatureItem = ({
   index: number;
   isReversed: boolean;
 }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-
   return (
     <motion.div
-      ref={ref}
       initial={{ opacity: 0, x: isReversed ? 30 : -30 }}
-      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: isReversed ? 30 : -30 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.15 }}
       className={cn(
         "flex items-start gap-4 p-6 rounded-xl bg-white shadow-md border border-gray-100 hover:shadow-lg transition-all",
@@ -108,30 +108,11 @@ const FeatureItem = ({
 };
 
 const AboutSection: React.FC = () => {
-  const [mounted, setMounted] = React.useState(false);
+  const [mounted, setMounted] = useState(false);
   const { t, language } = useTranslate();
-  const [forceUpdate, setForceUpdate] = React.useState(0);
-  const containerRef = useRef<HTMLElement>(null);
-
-  // Parallax scroll animations
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
-  const y1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, 100]);
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.3, 1, 1, 0.3]);
 
   // Postavljanje mounted na true nakon inicijalne hidratacije
-  React.useEffect(() => setMounted(true), []);
-
-  // Osvježavanje komponente kada se promijeni jezik
-  React.useEffect(() => {
-    if (mounted) {
-      setForceUpdate(prev => prev + 1);
-    }
-  }, [language, mounted]);
+  useEffect(() => setMounted(true), []);
 
   if (!mounted) {
     return null;
@@ -184,20 +165,11 @@ const AboutSection: React.FC = () => {
   ];
 
   return (
-    <section id="about" ref={containerRef} className="relative section bg-gradient-to-b from-gray-50 to-white py-24 md:py-32 overflow-hidden">
-      {/* Parallax background elements */}
-      <motion.div
-        style={{ y: y1, opacity }}
-        className="absolute top-20 -left-20 w-72 h-72 bg-nextpixel-turquoise/10 rounded-full blur-3xl pointer-events-none"
-      />
-      <motion.div
-        style={{ y: y2, opacity }}
-        className="absolute bottom-20 -right-20 w-96 h-96 bg-nextpixel-blue/10 rounded-full blur-3xl pointer-events-none"
-      />
-      <motion.div
-        style={{ y: y1 }}
-        className="absolute top-1/2 left-1/4 w-40 h-40 bg-nextpixel-turquoise/5 rounded-full blur-2xl pointer-events-none"
-      />
+    <section id="about" className="relative section bg-gradient-to-b from-gray-50 to-white py-24 md:py-32 overflow-hidden">
+      {/* Static background elements - no parallax */}
+      <div className="absolute top-20 -left-20 w-72 h-72 bg-nextpixel-turquoise/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-20 -right-20 w-96 h-96 bg-nextpixel-blue/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/4 w-40 h-40 bg-nextpixel-turquoise/5 rounded-full blur-2xl pointer-events-none" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
