@@ -6,6 +6,7 @@ import { FaCheckCircle, FaLightbulb, FaClock, FaChartLine, FaRocket, FaUsers, Fa
 import { Icon } from '../../utils/icons';
 import { useTranslate } from '../../context/LanguageContext';
 import { SpinningLogos } from '../ui/spinning-logos';
+import { StarButton } from '@/components/ui/star-button';
 
 const WhyChooseUsSection: React.FC = () => {
   const { t, language } = useTranslate();
@@ -289,18 +290,12 @@ const WhyChooseUsSection: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-center mt-12"
         >
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 bg-nextpixel-turquoise hover:bg-nextpixel-turquoise/90 text-nextpixel-dark px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 hover:shadow-lg"
-          >
+          <StarButton href="#contact">
             {!mounted ?
               'Let\'s Talk About Your Project' :
               (typeof t('whyChooseUs:talkAboutProject') === 'string' ? t('whyChooseUs:talkAboutProject') as string : 'Let\'s Talk About Your Project')
             }
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
+          </StarButton>
         </motion.div>
       </div>
     </section>

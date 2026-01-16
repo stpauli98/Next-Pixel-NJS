@@ -28,6 +28,7 @@ module.exports = {
         'spinner-blade': 'spinner-blade 1s linear infinite',
         'spin-slow': 'spin-slow 20s linear infinite',
         'spin-reverse': 'spin-reverse 20s linear infinite',
+        'star-btn': 'star-btn calc(var(--duration)*1s) linear infinite',
       },
       keyframes: {
         shimmer: {
@@ -46,6 +47,10 @@ module.exports = {
         'spin-reverse': {
           from: { transform: 'rotate(0deg)' },
           to: { transform: 'rotate(-360deg)' },
+        },
+        'star-btn': {
+          '0%': { offsetDistance: '0%' },
+          '100%': { offsetDistance: '100%' },
         },
       },
     },

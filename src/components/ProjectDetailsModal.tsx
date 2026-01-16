@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { useTranslate } from '../context/LanguageContext';
 import { ContainerScroll } from './ui/ContainerScrollAnimation';
 import { Spinner } from './ui/ios-spinner';
+import { StarButton } from '@/components/ui/star-button';
 
 interface ProjectDetailsModalProps {
   project: {
@@ -269,17 +270,16 @@ const ProjectDetailsModal: React.FC<ProjectDetailsModalProps> = ({ project, isOp
               {/* Visit Website Button */}
               {project.url && (
                 <div className="pt-4 border-t border-gray-100">
-                  <a
+                  <StarButton
                     href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center px-8 py-4 bg-nextpixel-blue text-white rounded-full hover:bg-nextpixel-dark transition-colors shadow-lg text-lg font-medium"
                   >
                     <span>{typeof t('portfolio:visitWebsite') === 'string' ? t('portfolio:visitWebsite') as string : 'Visit Website'}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
-                  </a>
+                  </StarButton>
                 </div>
               )}
             </motion.div>

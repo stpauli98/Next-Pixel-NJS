@@ -8,6 +8,7 @@ import { Icon } from '../../utils/icons';
 import { useTranslate } from '../../context/LanguageContext';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
+import { StarButton } from '@/components/ui/star-button';
 
 // Animated counter component
 const AnimatedCounter = ({ value, isInView }: { value: string; isInView: boolean }) => {
@@ -59,11 +60,11 @@ const StatCard = ({ value, label, icon, index }: { value: string; label: string;
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow"
+      transition={{ duration: 0.4, delay: index * 0.05, ease: "easeOut" }}
+      className="flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow-lg border border-gray-100 will-change-transform"
     >
       <div className="w-14 h-14 rounded-full bg-nextpixel-light flex items-center justify-center mb-4">
         <Icon icon={icon} size={24} className="text-nextpixel-blue" aria-hidden={true} />
@@ -92,12 +93,12 @@ const FeatureItem = ({
 }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, x: isReversed ? 30 : -30 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: index * 0.15 }}
+      transition={{ duration: 0.4, delay: index * 0.08, ease: "easeOut" }}
       className={cn(
-        "flex items-start gap-4 p-6 rounded-xl bg-white shadow-md border border-gray-100 hover:shadow-lg transition-all",
+        "flex items-start gap-4 p-6 rounded-xl bg-white shadow-md border border-gray-100 will-change-transform",
         isReversed && "md:flex-row-reverse md:text-right"
       )}
     >
@@ -174,19 +175,18 @@ const AboutSection: React.FC = () => {
       {/* Gradient transition from Hero (dark) */}
       <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-nextpixel-blue/30 to-transparent pointer-events-none" />
 
-      {/* Static background elements - no parallax */}
-      <div className="absolute top-20 -left-20 w-72 h-72 bg-nextpixel-turquoise/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-20 -right-20 w-96 h-96 bg-nextpixel-blue/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/2 left-1/4 w-40 h-40 bg-nextpixel-turquoise/5 rounded-full blur-2xl pointer-events-none" />
+      {/* Static background elements - hidden on mobile for performance */}
+      <div className="hidden md:block absolute top-20 -left-20 w-72 h-72 bg-nextpixel-turquoise/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="hidden md:block absolute bottom-20 -right-20 w-96 h-96 bg-nextpixel-blue/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center mb-16 md:mb-24 max-w-4xl mx-auto">
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
             className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-nextpixel-dark"
           >
             {typeof t('about:title') === 'string' && (t('about:title') as string).includes('Ko smo mi') ? (
@@ -209,14 +209,14 @@ const AboutSection: React.FC = () => {
             initial={{ opacity: 0, scaleX: 0 }}
             whileInView={{ opacity: 1, scaleX: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
             className="w-20 h-1 bg-nextpixel-turquoise mx-auto mb-6 origin-center"
           />
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.4, delay: 0.15, ease: "easeOut" }}
             className="text-lg text-nextpixel-gray max-w-3xl mx-auto"
           >
             {typeof t('about:description') === 'string' ? t('about:description') as string : ''}
@@ -227,11 +227,11 @@ const AboutSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20 md:mb-28">
           {/* Image */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative"
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="relative will-change-transform"
           >
             <div className="relative">
               {/* Decorative elements */}
@@ -256,10 +256,11 @@ const AboutSection: React.FC = () => {
 
           {/* Text content */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
+            className="will-change-transform"
           >
             <h3 className="text-2xl md:text-3xl font-bold mb-6 text-nextpixel-dark">
               {typeof t('about:subtitle') === 'string' ? t('about:subtitle') as string : ''}
@@ -289,10 +290,10 @@ const AboutSection: React.FC = () => {
         {/* Features grid */}
         <div className="mb-20 md:mb-28">
           <motion.h3
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
             className="text-2xl md:text-3xl font-bold text-center mb-12 text-nextpixel-dark"
           >
             {language === 'sr' ? 'Zašto mi?' : language === 'de' ? 'Warum wir?' : 'Why Us?'}
@@ -313,15 +314,15 @@ const AboutSection: React.FC = () => {
 
         {/* CTA Section */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="relative bg-gradient-to-r from-nextpixel-dark to-nextpixel-blue rounded-3xl p-8 md:p-12 text-center text-white overflow-hidden"
+          transition={{ duration: 0.4, ease: "easeOut" }}
+          className="relative bg-gradient-to-r from-nextpixel-dark to-nextpixel-blue rounded-3xl p-8 md:p-12 text-center text-white overflow-hidden will-change-transform"
         >
-          {/* CTA background decoration */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-nextpixel-turquoise/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-          <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2" />
+          {/* CTA background decoration - hidden on mobile for performance */}
+          <div className="hidden md:block absolute top-0 right-0 w-64 h-64 bg-nextpixel-turquoise/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+          <div className="hidden md:block absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2" />
 
           <div className="relative z-10">
             <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
@@ -330,15 +331,9 @@ const AboutSection: React.FC = () => {
             <p className="text-white/80 max-w-2xl mx-auto mb-8 text-lg">
               {typeof t('about:cta.description') === 'string' ? t('about:cta.description') as string : 'Let\'s discuss how we can help your business grow.'}
             </p>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 bg-nextpixel-turquoise hover:bg-nextpixel-turquoise/90 text-nextpixel-dark px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 hover:shadow-lg"
-            >
+            <StarButton href="#contact">
               {typeof t('about:cta.button') === 'string' ? t('about:cta.button') as string : 'Get Started'}
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
+            </StarButton>
           </div>
         </motion.div>
       </div>

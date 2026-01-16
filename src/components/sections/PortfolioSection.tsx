@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { useTranslate } from '../../context/LanguageContext';
 import ProjectDetailsModal from '../ProjectDetailsModal';
 import { VerticalProjectStack } from '../ui/VerticalProjectStack';
+import { StarButton } from '@/components/ui/star-button';
 
 interface Project {
   id: number;
@@ -302,14 +303,11 @@ const PortfolioSection: React.FC = () => {
         {/* CTA Button - mobile only below stack */}
         <div className="lg:hidden container mx-auto px-4 py-8">
           <div className="text-center">
-            <a
-              href="#contact"
-              className="btn-primary inline-block px-8 py-4 text-white bg-nextpixel-blue hover:bg-blue-700 rounded-full font-medium transition-colors duration-300 shadow-md hover:shadow-lg"
-            >
+            <StarButton href="#contact">
               {!mounted ? 'Start Your Project' : (
                 typeof t('portfolio:startProject') === 'string' ? t('portfolio:startProject') as string : 'Start Your Project'
               )}
-            </a>
+            </StarButton>
           </div>
         </div>
       </div>

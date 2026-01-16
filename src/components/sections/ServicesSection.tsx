@@ -6,6 +6,7 @@ import { FaMobileAlt, FaLaptopCode } from 'react-icons/fa';
 import { FaMobileScreen, FaMagnifyingGlass, FaPalette, FaCartShopping } from 'react-icons/fa6';
 import { useTranslate } from '../../context/LanguageContext';
 import { ShuffleCards } from '../ui/service-shuffle-cards';
+import { StarButton } from '@/components/ui/star-button';
 
 const ServicesSection: React.FC = () => {
   const { t } = useTranslate();
@@ -111,11 +112,9 @@ const services: Service[] = [
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-center mt-24"
         >
-          <a 
-            href="#contact" 
-            className="inline-flex items-center gap-2 bg-nextpixel-turquoise hover:bg-nextpixel-turquoise/90 text-nextpixel-dark px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 hover:shadow-lg">
+          <StarButton href="#contact">
             {t('services:requestQuote')}
-          </a>
+          </StarButton>
         </motion.div>
       </div>
     </section>

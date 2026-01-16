@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { useClientTranslation } from '@/hooks/useClientTranslation';
 import { HeroImage } from '@/components/OptimizedImage';
 import { cn } from '@/lib/utils';
+import { StarButton } from '@/components/ui/star-button';
 
 const HeroSection: React.FC = () => {
   const { t, isHydrated, isReady } = useClientTranslation('hero');
@@ -89,7 +90,7 @@ const HeroSection: React.FC = () => {
       </div>
 
       {/* Left Side: Content */}
-      <div className="flex w-full flex-col justify-center p-8 md:w-1/2 md:p-12 lg:w-3/5 lg:p-16 z-10">
+      <div className="flex w-full flex-col justify-center pt-40 px-8 pb-8 md:pt-12 md:w-1/2 md:p-12 lg:w-3/5 lg:p-16 z-10">
         {/* Main Content */}
         <motion.main variants={containerVariants}>
           <motion.h1
@@ -116,48 +117,14 @@ const HeroSection: React.FC = () => {
             className="flex flex-col sm:flex-row gap-4"
             variants={itemVariants}
           >
-            <a
-              href="#services"
-              className="btn-primary text-center px-8 py-3 rounded-full font-medium"
-            >
+            <StarButton href="#services">
               {typeof t('services') === 'string' ? t('services') as string : 'Our Services'}
-            </a>
-            <a
-              href="#contact"
-              className="btn-secondary text-center px-8 py-3 rounded-full font-medium"
-            >
+            </StarButton>
+            <StarButton href="#contact" lightColor="#1E3A5F" backgroundColor="#2E8B9A">
               {typeof t('contact') === 'string' ? t('contact') as string : 'Contact Us'}
-            </a>
+            </StarButton>
           </motion.div>
         </motion.main>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          className="mt-12 md:mt-16"
-          variants={itemVariants}
-        >
-          <motion.a
-            href="#about"
-            className="text-white/70 hover:text-white flex items-center gap-2 text-sm transition-colors"
-            animate={{ y: [0, 5, 0] }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          >
-            <span>{typeof t('learnMore') === 'string' ? t('learnMore') as string : 'Learn More'}</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </motion.a>
-        </motion.div>
       </div>
 
       {/* Right Side: Image with Clip Path Animation */}
