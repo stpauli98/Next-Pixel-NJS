@@ -210,8 +210,11 @@ const PortfolioSection: React.FC = () => {
       id="portfolio"
       className="section bg-white py-16 lg:py-0 lg:min-h-screen lg:sticky lg:top-0 relative overflow-hidden"
     >
+      {/* Gradient transition from WhyChooseUs (dark) */}
+      <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-nextpixel-dark/20 to-transparent pointer-events-none z-0" />
+
       {/* Desktop: Full viewport container */}
-      <div className="lg:h-screen lg:flex lg:flex-col">
+      <div className="lg:h-screen lg:flex lg:flex-col relative z-10">
         {/* Header - positioned at top on desktop */}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-8 lg:pt-16">
           <div className="text-center max-w-4xl mx-auto">

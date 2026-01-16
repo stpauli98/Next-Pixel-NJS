@@ -61,8 +61,11 @@ const services: Service[] = [
   ];
 
   return (
-    <section id="services" className="section bg-nextpixel-light py-32">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" className="relative section bg-nextpixel-light py-24 md:py-32 overflow-hidden">
+      {/* Gradient transition to WhyChooseUs (dark) */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-nextpixel-dark/30 pointer-events-none" />
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-24 max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
         {typeof t('services:title') === 'string' && (t('services:title') as string).includes('Usluge') ? (
@@ -110,7 +113,7 @@ const services: Service[] = [
         >
           <a 
             href="#contact" 
-            className="btn-primary inline-block px-8 py-4 text-white bg-nextpixel-blue hover:bg-blue-700 rounded-full font-medium transition-colors duration-300 shadow-md hover:shadow-lg">
+            className="inline-flex items-center gap-2 bg-nextpixel-turquoise hover:bg-nextpixel-turquoise/90 text-nextpixel-dark px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 hover:shadow-lg">
             {t('services:requestQuote')}
           </a>
         </motion.div>

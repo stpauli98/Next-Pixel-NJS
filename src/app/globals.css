@@ -4,6 +4,35 @@
 @tailwind components;
 @tailwind utilities;
 
+/* =============================================
+   NextPixel Brand Color System
+   ============================================= */
+:root {
+  /* Primary Brand Colors */
+  --color-navy: #1E3A5F;
+  --color-teal: #2E8B9A;
+  --color-dark: #0F172A;
+  --color-cream: #F8F6F0;
+  --color-gray: #64748B;
+
+  /* Semantic Colors */
+  --color-primary: var(--color-navy);
+  --color-accent: var(--color-teal);
+  --color-background: var(--color-cream);
+  --color-background-dark: var(--color-dark);
+  --color-text: var(--color-dark);
+  --color-text-muted: var(--color-gray);
+
+  /* Component Colors */
+  --color-border: rgba(30, 58, 95, 0.2);
+  --color-border-light: rgba(30, 58, 95, 0.1);
+  --color-shadow: rgba(15, 23, 42, 0.1);
+
+  /* Device Frame Colors (for mockups) */
+  --color-device-frame: #222222;
+  --color-device-border: #6C6C6C;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -11,7 +40,9 @@
     scrollbar-gutter: stable;
   }
   body {
-    @apply font-sans text-nextpixel-dark bg-nextpixel-light;
+    @apply font-sans;
+    color: var(--color-text);
+    background-color: var(--color-background);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
@@ -28,10 +59,14 @@
     @apply px-6 py-2 rounded-md font-medium transition-all duration-300;
   }
   .btn-primary {
-    @apply btn bg-nextpixel-blue text-white hover:bg-opacity-90;
+    background-color: var(--color-primary);
+    color: white;
+    @apply btn hover:opacity-90;
   }
   .btn-secondary {
-    @apply btn bg-nextpixel-turquoise text-nextpixel-dark hover:bg-opacity-90;
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+    @apply btn hover:opacity-90;
   }
   .section {
     @apply py-16 md:py-24;
@@ -42,7 +77,8 @@
 
   /* iOS Spinner */
   .spinner-blade {
-    @apply absolute h-[20%] w-[8%] bg-nextpixel-blue rounded-[1px];
+    @apply absolute h-[20%] w-[8%] rounded-[1px];
+    background-color: var(--color-primary);
     animation: spinner-blade 1s linear infinite;
     will-change: opacity;
     top: 37%;

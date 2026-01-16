@@ -19,24 +19,29 @@ const AnimatedCounter = ({ value, isInView }: { value: string; isInView: boolean
   useEffect(() => {
     if (!isInView || !isNumeric || hasAnimated) return;
 
-    setHasAnimated(true);
-    const duration = 2000;
-    const steps = 60;
-    const stepDuration = duration / steps;
-    const increment = numericValue / steps;
-    let current = 0;
+    // Small delay to ensure component is visible
+    const startDelay = setTimeout(() => {
+      setHasAnimated(true);
+      const duration = 2000;
+      const steps = 60;
+      const stepDuration = duration / steps;
+      const increment = numericValue / steps;
+      let current = 0;
 
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= numericValue) {
-        setDisplayValue(numericValue);
-        clearInterval(timer);
-      } else {
-        setDisplayValue(Math.floor(current));
-      }
-    }, stepDuration);
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= numericValue) {
+          setDisplayValue(numericValue);
+          clearInterval(timer);
+        } else {
+          setDisplayValue(Math.floor(current));
+        }
+      }, stepDuration);
 
-    return () => clearInterval(timer);
+      return () => clearInterval(timer);
+    }, 100);
+
+    return () => clearTimeout(startDelay);
   }, [isInView, numericValue, isNumeric, hasAnimated]);
 
   if (!isNumeric) {
@@ -49,7 +54,7 @@ const AnimatedCounter = ({ value, isInView }: { value: string; isInView: boolean
 // Stat card component
 const StatCard = ({ value, label, icon, index }: { value: string; label: string; icon: IconType; index: number }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
     <motion.div
@@ -166,6 +171,9 @@ const AboutSection: React.FC = () => {
 
   return (
     <section id="about" className="relative section bg-gradient-to-b from-gray-50 to-white py-24 md:py-32 overflow-hidden">
+      {/* Gradient transition from Hero (dark) */}
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-nextpixel-blue/30 to-transparent pointer-events-none" />
+
       {/* Static background elements - no parallax */}
       <div className="absolute top-20 -left-20 w-72 h-72 bg-nextpixel-turquoise/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-20 -right-20 w-96 h-96 bg-nextpixel-blue/10 rounded-full blur-3xl pointer-events-none" />
@@ -324,7 +332,7 @@ const AboutSection: React.FC = () => {
             </p>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 bg-nextpixel-turquoise hover:bg-nextpixel-turquoise/90 text-white px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 hover:shadow-lg"
+              className="inline-flex items-center gap-2 bg-nextpixel-turquoise hover:bg-nextpixel-turquoise/90 text-nextpixel-dark px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 hover:shadow-lg"
             >
               {typeof t('about:cta.button') === 'string' ? t('about:cta.button') as string : 'Get Started'}
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

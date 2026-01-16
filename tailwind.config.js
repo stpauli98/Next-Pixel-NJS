@@ -8,11 +8,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'nextpixel-blue': '#0A2463', // Dark blue
-        'nextpixel-turquoise': '#1CEFFF', // Turquoise
-        'nextpixel-light': '#F2F7FF',
-        'nextpixel-dark': '#0F172A',
-        'nextpixel-gray': '#64748B'
+        // Primary brand colors - centralized via CSS variables in globals.css
+        'nextpixel-navy': 'var(--color-navy)',
+        'nextpixel-teal': 'var(--color-teal)',
+        'nextpixel-dark': 'var(--color-dark)',
+        'nextpixel-cream': 'var(--color-cream)',
+        'nextpixel-gray': 'var(--color-gray)',
+        // Legacy aliases (for backward compatibility)
+        'nextpixel-blue': 'var(--color-navy)',
+        'nextpixel-turquoise': 'var(--color-teal)',
+        'nextpixel-light': 'var(--color-cream)',
       },
       fontFamily: {
         'sans': ['Poppins', 'sans-serif'],

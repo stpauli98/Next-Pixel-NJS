@@ -112,7 +112,7 @@ const ContactSection: React.FC = () => {
   ];
 
   return (
-    <section id="contact" className="section bg-nextpixel-light py-16 md:py-24">
+    <section id="contact" className="section bg-nextpixel-light py-24 md:py-32">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -271,7 +271,7 @@ const ContactSection: React.FC = () => {
                     <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="px-6 py-3 bg-nextpixel-blue text-white font-medium rounded-md hover:bg-nextpixel-blue/90 transition-colors flex items-center justify-center disabled:opacity-70 w-full md:w-auto"
+                    className="px-8 py-4 bg-nextpixel-turquoise text-nextpixel-dark font-semibold rounded-full hover:bg-nextpixel-turquoise/90 transition-all hover:scale-105 flex items-center justify-center disabled:opacity-70 w-full md:w-auto"
                   >
                     {isSubmitting ? (
                       <>

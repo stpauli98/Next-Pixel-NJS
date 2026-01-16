@@ -90,27 +90,6 @@ const HeroSection: React.FC = () => {
 
       {/* Left Side: Content */}
       <div className="flex w-full flex-col justify-center p-8 md:w-1/2 md:p-12 lg:w-3/5 lg:p-16 z-10">
-        {/* Logo */}
-        <motion.header className="mb-8 md:mb-12" variants={itemVariants}>
-          <div className="flex items-center">
-            <img
-              src="/images/logo.webp"
-              alt="NextPixel Logo"
-              className="mr-3 h-10 md:h-12"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.style.display = 'none';
-              }}
-            />
-            <div>
-              <p className="text-xl md:text-2xl font-bold text-white">NextPixel</p>
-              <p className="text-xs tracking-wider text-nextpixel-turquoise uppercase">
-                {typeof t('slogan') === 'string' ? t('slogan') as string : 'Digital Excellence'}
-              </p>
-            </div>
-          </div>
-        </motion.header>
-
         {/* Main Content */}
         <motion.main variants={containerVariants}>
           <motion.h1

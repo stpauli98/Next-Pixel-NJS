@@ -107,8 +107,14 @@ const WhyChooseUsSection: React.FC = () => {
   const bottomReason = reasonsData[8];
 
   return (
-    <section id="why-choose-us" className="section bg-nextpixel-dark text-white py-24 md:py-32 overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="why-choose-us" className="relative section bg-nextpixel-dark text-white py-24 md:py-32 overflow-hidden">
+      {/* Gradient transition from Services (light) */}
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-nextpixel-light/20 to-transparent pointer-events-none" />
+
+      {/* Gradient transition to Portfolio (white) */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-white/20 pointer-events-none" />
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center mb-16 md:mb-20 max-w-4xl mx-auto">
           <motion.h2
