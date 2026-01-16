@@ -5,28 +5,18 @@ import { motion } from 'framer-motion';
 import { FaCheckCircle, FaLightbulb, FaClock, FaChartLine, FaRocket, FaUsers, FaHeadset, FaBriefcase, FaHandshake } from 'react-icons/fa';
 import { Icon } from '../../utils/icons';
 import { useTranslate } from '../../context/LanguageContext';
+import { SpinningLogos } from '../ui/spinning-logos';
 
 const WhyChooseUsSection: React.FC = () => {
   const { t, language } = useTranslate();
   const [mounted, setMounted] = useState(false);
-  const [forceUpdate, setForceUpdate] = useState(0);
 
-  // Rešava problem hidratacije
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  // Osvježavanje komponente kada se promijeni jezik
-  useEffect(() => {
-    if (mounted) {
-      // Ovo će prisiliti komponentu da se ponovno renderira kada se promijeni jezik
-      setForceUpdate(prev => prev + 1);
-    }
-  }, [language, mounted]);
-
   type IconType = typeof FaLightbulb;
 
-  // Fallback funkcije za slučaj da prevodi nisu dostupni
   const getFallbackTitle = (index: number): string => {
     const fallbackTitles = [
       'Creativity & Innovation',
@@ -63,7 +53,6 @@ const WhyChooseUsSection: React.FC = () => {
     descriptionKey: string;
   }
 
-  // Definišemo razloge sa ključevima prevoda umesto direktnih prevoda
   const reasonsData: Reason[] = [
     {
       icon: FaLightbulb,
@@ -112,17 +101,29 @@ const WhyChooseUsSection: React.FC = () => {
     }
   ];
 
+  // Split reasons into left and right columns
+  const leftReasons = reasonsData.slice(0, 4);
+  const rightReasons = reasonsData.slice(4, 8);
+  const bottomReason = reasonsData[8];
+
   return (
-    <section id="why-choose-us" className="section bg-nextpixel-dark text-white py-32">
+    <section id="why-choose-us" className="section bg-nextpixel-dark text-white py-24 md:py-32 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-24 max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+        {/* Header */}
+        <div className="text-center mb-16 md:mb-20 max-w-4xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
+          >
             {!mounted ? (
-              <>Why <span className="text-nextpixel-turquoise">Choose</span> Us</>  
+              <>Why <span className="text-nextpixel-turquoise">Choose</span> Us</>
             ) : language === 'sr' && typeof t('whyChooseUs:title') === 'string' && (t('whyChooseUs:title') as string).includes('Zašto') ? (
               <>
                 {(t('whyChooseUs:title') as string).split('Zašto')[0]}
-                <span className="text-nextpixel-blue">Zašto</span>
+                <span className="text-nextpixel-turquoise">Zašto</span>
                 {(t('whyChooseUs:title') as string).split('Zašto')[1]}
               </>
             ) : language === 'de' && typeof t('whyChooseUs:title') === 'string' && (t('whyChooseUs:title') as string).includes('uns') ? (
@@ -142,51 +143,139 @@ const WhyChooseUsSection: React.FC = () => {
                 <>Why <span className="text-nextpixel-turquoise">Choose</span> Us</>
               )
             )}
-          </h2>
+          </motion.h2>
           <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            whileInView={{ opacity: 1, scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="w-20 h-1 bg-nextpixel-turquoise mx-auto mb-6 origin-center"
+          />
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-20 h-1 bg-nextpixel-turquoise mx-auto mb-6"
-          ></motion.div>
-          <p className="text-lg text-nextpixel-gray max-w-3xl mx-auto mb-16">
-            {!mounted ? 
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-lg text-gray-400 max-w-3xl mx-auto"
+          >
+            {!mounted ?
               'We deliver exceptional digital solutions that help your business grow and succeed in the digital world.' :
               (typeof t('whyChooseUs:subtitle') === 'string' ? t('whyChooseUs:subtitle') as string : '')
             }
-          </p>
+          </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-12">
-          {reasonsData.map((reason, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-              className="bg-nextpixel-blue bg-opacity-30 rounded-lg p-8 border border-nextpixel-blue border-opacity-20 hover:border-nextpixel-turquoise transition-colors"
-            >
-              <div className="text-nextpixel-turquoise mb-4">
-                <Icon icon={reason.icon} size={36} aria-hidden={true} />
-              </div>
-              <h3 className="text-xl font-bold mb-3">
-                {!mounted ? 
-                  getFallbackTitle(index) :
-                  (typeof t(reason.titleKey) === 'string' ? t(reason.titleKey) as string : getFallbackTitle(index))
+        {/* Main content with spinning logos in center */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6 items-center">
+          {/* Left column - reasons */}
+          <div className="space-y-4 order-2 lg:order-1">
+            {leftReasons.map((reason, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="flex items-start gap-4 p-4 bg-nextpixel-blue/20 rounded-xl border border-nextpixel-blue/30 hover:border-nextpixel-turquoise/50 transition-colors"
+              >
+                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-nextpixel-turquoise/20 flex items-center justify-center">
+                  <Icon icon={reason.icon} size={20} className="text-nextpixel-turquoise" aria-hidden={true} />
+                </div>
+                <div>
+                  <h3 className="font-bold text-white mb-1">
+                    {!mounted ?
+                      getFallbackTitle(index) :
+                      (typeof t(reason.titleKey) === 'string' ? t(reason.titleKey) as string : getFallbackTitle(index))
+                    }
+                  </h3>
+                  <p className="text-sm text-gray-400 leading-relaxed">
+                    {!mounted ?
+                      getFallbackDescription(index) :
+                      (typeof t(reason.descriptionKey) === 'string' ? t(reason.descriptionKey) as string : getFallbackDescription(index))
+                    }
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Center - Spinning logos */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex justify-center order-1 lg:order-2 py-8 lg:py-0"
+          >
+            <SpinningLogos
+              centerText="NextPixel"
+              className="scale-90 md:scale-100"
+            />
+          </motion.div>
+
+          {/* Right column - reasons */}
+          <div className="space-y-4 order-3">
+            {rightReasons.map((reason, index) => (
+              <motion.div
+                key={index + 4}
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="flex items-start gap-4 p-4 bg-nextpixel-blue/20 rounded-xl border border-nextpixel-blue/30 hover:border-nextpixel-turquoise/50 transition-colors"
+              >
+                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-nextpixel-turquoise/20 flex items-center justify-center">
+                  <Icon icon={reason.icon} size={20} className="text-nextpixel-turquoise" aria-hidden={true} />
+                </div>
+                <div>
+                  <h3 className="font-bold text-white mb-1">
+                    {!mounted ?
+                      getFallbackTitle(index + 4) :
+                      (typeof t(reason.titleKey) === 'string' ? t(reason.titleKey) as string : getFallbackTitle(index + 4))
+                    }
+                  </h3>
+                  <p className="text-sm text-gray-400 leading-relaxed">
+                    {!mounted ?
+                      getFallbackDescription(index + 4) :
+                      (typeof t(reason.descriptionKey) === 'string' ? t(reason.descriptionKey) as string : getFallbackDescription(index + 4))
+                    }
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom reason card - centered */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="max-w-md mx-auto mt-8"
+        >
+          <div className="flex items-start gap-4 p-4 bg-nextpixel-blue/20 rounded-xl border border-nextpixel-blue/30 hover:border-nextpixel-turquoise/50 transition-colors">
+            <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-nextpixel-turquoise/20 flex items-center justify-center">
+              <Icon icon={bottomReason.icon} size={20} className="text-nextpixel-turquoise" aria-hidden={true} />
+            </div>
+            <div>
+              <h3 className="font-bold text-white mb-1">
+                {!mounted ?
+                  getFallbackTitle(8) :
+                  (typeof t(bottomReason.titleKey) === 'string' ? t(bottomReason.titleKey) as string : getFallbackTitle(8))
                 }
               </h3>
-              <p className="text-nextpixel-gray">
-                {!mounted ? 
-                  getFallbackDescription(index) :
-                  (typeof t(reason.descriptionKey) === 'string' ? t(reason.descriptionKey) as string : getFallbackDescription(index))
+              <p className="text-sm text-gray-400 leading-relaxed">
+                {!mounted ?
+                  getFallbackDescription(8) :
+                  (typeof t(bottomReason.descriptionKey) === 'string' ? t(bottomReason.descriptionKey) as string : getFallbackDescription(8))
                 }
               </p>
-            </motion.div>
-          ))}
-        </div>
+            </div>
+          </div>
+        </motion.div>
 
+        {/* CTA Button */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -194,11 +283,17 @@ const WhyChooseUsSection: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-center mt-12"
         >
-          <a href="#contact" className="btn-secondary inline-block">
-            {!mounted ? 
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 bg-nextpixel-turquoise hover:bg-nextpixel-turquoise/90 text-nextpixel-dark px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 hover:shadow-lg"
+          >
+            {!mounted ?
               'Let\'s Talk About Your Project' :
               (typeof t('whyChooseUs:talkAboutProject') === 'string' ? t('whyChooseUs:talkAboutProject') as string : 'Let\'s Talk About Your Project')
             }
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
           </a>
         </motion.div>
       </div>

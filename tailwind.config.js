@@ -21,6 +21,8 @@ module.exports = {
       animation: {
         'shimmer': 'shimmer 1.5s infinite',
         'spinner-blade': 'spinner-blade 1s linear infinite',
+        'spin-slow': 'spin-slow 20s linear infinite',
+        'spin-reverse': 'spin-reverse 20s linear infinite',
       },
       keyframes: {
         shimmer: {
@@ -31,6 +33,14 @@ module.exports = {
           '0%': { opacity: '0.85' },
           '50%': { opacity: '0.25' },
           '100%': { opacity: '0.25' },
+        },
+        'spin-slow': {
+          from: { transform: 'rotate(0deg)' },
+          to: { transform: 'rotate(360deg)' },
+        },
+        'spin-reverse': {
+          from: { transform: 'rotate(0deg)' },
+          to: { transform: 'rotate(-360deg)' },
         },
       },
     },
