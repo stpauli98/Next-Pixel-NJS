@@ -209,7 +209,7 @@ const PortfolioSection: React.FC = () => {
   return (
     <section
       id="portfolio"
-      className="section bg-white py-16 lg:py-0 lg:min-h-screen lg:sticky lg:top-0 relative overflow-hidden"
+      className="section bg-white py-10 sm:py-16 lg:py-0 lg:pb-8 lg:min-h-screen lg:sticky lg:top-0 relative overflow-hidden"
     >
       {/* Gradient transition from WhyChooseUs (dark) */}
       <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-nextpixel-dark/20 to-transparent pointer-events-none z-0" />
@@ -217,14 +217,14 @@ const PortfolioSection: React.FC = () => {
       {/* Desktop: Full viewport container */}
       <div className="lg:h-screen lg:flex lg:flex-col relative z-10">
         {/* Header - positioned at top on desktop */}
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-8 lg:pt-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-8 lg:pt-10">
           <div className="text-center max-w-4xl mx-auto">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 lg:mb-4"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 lg:mb-3"
             >
               {!mounted ? 'Portfolio' : (
                 formatTitle(typeof t('portfolio:title') === 'string' ? t('portfolio:title') as string : 'Portfolio')
@@ -235,14 +235,14 @@ const PortfolioSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="w-16 lg:w-20 h-1 bg-nextpixel-turquoise mx-auto mb-4 lg:mb-5"
+              className="w-16 lg:w-20 h-1 bg-nextpixel-turquoise mx-auto mb-4 lg:mb-3"
             ></motion.div>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-base lg:text-lg text-nextpixel-gray max-w-3xl mx-auto mb-6 lg:mb-8"
+              className="text-sm sm:text-base lg:text-lg text-nextpixel-gray max-w-3xl mx-auto mb-4 sm:mb-6 lg:mb-5"
             >
               {!mounted ? 'Check out some of our recent projects' : (
                 typeof t('portfolio:subtitle') === 'string' ? t('portfolio:subtitle') as string : ''
@@ -255,13 +255,13 @@ const PortfolioSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-wrap justify-center gap-2 lg:gap-3"
+              className="flex flex-nowrap sm:flex-wrap justify-start sm:justify-center gap-2 lg:gap-3 overflow-x-auto sm:overflow-x-visible px-1 sm:px-0 pb-2 sm:pb-0 mb-4 lg:mb-6 scrollbar-hide"
             >
               {getCategories().map((category, index) => (
                 <button
                   key={index}
                   onClick={() => setActiveCategory(category.id)}
-                  className={`px-4 lg:px-6 py-2 lg:py-2.5 rounded-full transition-all text-sm lg:text-base font-medium ${
+                  className={`px-3 sm:px-4 lg:px-6 py-1.5 sm:py-2 lg:py-2.5 rounded-full transition-all text-xs sm:text-sm lg:text-base font-medium whitespace-nowrap shrink-0 ${
                     activeCategory === category.id
                       ? 'bg-nextpixel-blue text-white shadow-md'
                       : 'bg-gray-100 text-nextpixel-gray hover:bg-gray-200 hover:shadow-sm'
@@ -280,11 +280,11 @@ const PortfolioSection: React.FC = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex-1 mt-6 lg:mt-0"
+          className="flex-1 min-h-0 mt-6 lg:mt-0"
         >
           {!mounted ? (
-            <div className="flex h-[600px] lg:h-full items-center justify-center">
-              <div className="h-[500px] lg:h-[600px] w-[320px] lg:w-[680px] rounded-2xl lg:rounded-3xl bg-gray-100 animate-pulse" />
+            <div className="flex h-[540px] sm:h-[620px] md:h-[700px] lg:h-full items-center justify-center">
+              <div className="h-[470px] sm:h-[540px] md:h-[620px] lg:h-[660px] w-[320px] sm:w-[360px] md:w-[510px] lg:w-[740px] rounded-2xl lg:rounded-3xl bg-gray-100 animate-pulse" />
             </div>
           ) : (
             <VerticalProjectStack
