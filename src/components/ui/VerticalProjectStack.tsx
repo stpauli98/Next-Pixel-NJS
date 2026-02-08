@@ -86,7 +86,6 @@ export function VerticalProjectStack({
     // Handle exit logic for scroll lock mode
     if (enableScrollLock && isDesktop && onScrollExit) {
       if (newDirection > 0 && isAtEnd) {
-        // Trying to go forward at end
         if (hasReachedEndRef.current && now - exitCooldownRef.current > 600) {
           onScrollExit('down')
           return false
@@ -96,7 +95,6 @@ export function VerticalProjectStack({
         return false
       }
       if (newDirection < 0 && isAtStart) {
-        // Trying to go back at start
         if (hasReachedStartRef.current && now - exitCooldownRef.current > 600) {
           onScrollExit('up')
           return false
@@ -171,31 +169,29 @@ export function VerticalProjectStack({
     return () => container.removeEventListener("wheel", handleWheel)
   }, [handleWheel])
 
-  // Desktop: scale offsets for larger cards
   const getCardStyle = (index: number) => {
     const total = projects.length
-    if (total === 0) return { y: 0, scale: 1, opacity: 0, zIndex: 0, rotateX: 0 }
+    if (total === 0) return { y: 0, scale: 1, opacity: 0, zIndex: 0, rotateX: 0, filter: "blur(0px)" }
 
     let diff = index - currentIndex
     if (diff > total / 2) diff -= total
     if (diff < -total / 2) diff += total
 
-    // Offsets scaled for screen size
     const yOffset = isDesktop ? 200 : 140
     const yOffset2 = isDesktop ? 360 : 260
 
     if (diff === 0) {
-      return { y: 0, scale: 1, opacity: 1, zIndex: 5, rotateX: 0 }
+      return { y: 0, scale: 1, opacity: 1, zIndex: 5, rotateX: 0, filter: "blur(0px)" }
     } else if (diff === -1) {
-      return { y: -yOffset, scale: 0.88, opacity: 0.35, zIndex: 4, rotateX: 5 }
+      return { y: -yOffset, scale: 0.88, opacity: 0.4, zIndex: 4, rotateX: 4, filter: "blur(1px)" }
     } else if (diff === -2) {
-      return { y: -yOffset2, scale: 0.76, opacity: 0.15, zIndex: 3, rotateX: 10 }
+      return { y: -yOffset2, scale: 0.76, opacity: 0.15, zIndex: 3, rotateX: 8, filter: "blur(2px)" }
     } else if (diff === 1) {
-      return { y: yOffset, scale: 0.88, opacity: 0.35, zIndex: 4, rotateX: -5 }
+      return { y: yOffset, scale: 0.88, opacity: 0.4, zIndex: 4, rotateX: -4, filter: "blur(1px)" }
     } else if (diff === 2) {
-      return { y: yOffset2, scale: 0.76, opacity: 0.15, zIndex: 3, rotateX: -10 }
+      return { y: yOffset2, scale: 0.76, opacity: 0.15, zIndex: 3, rotateX: -8, filter: "blur(2px)" }
     } else {
-      return { y: diff > 0 ? 400 : -400, scale: 0.6, opacity: 0, zIndex: 0, rotateX: diff > 0 ? -12 : 12 }
+      return { y: diff > 0 ? 400 : -400, scale: 0.6, opacity: 0, zIndex: 0, rotateX: diff > 0 ? -12 : 12, filter: "blur(4px)" }
     }
   }
 
@@ -216,7 +212,6 @@ export function VerticalProjectStack({
     )
   }
 
-  // How many technologies to show based on screen size
   const techLimit = isDesktop ? 5 : 3
 
   return (
@@ -224,15 +219,16 @@ export function VerticalProjectStack({
       ref={containerRef}
       className="relative flex h-[540px] sm:h-[620px] md:h-[700px] lg:h-full w-full items-center justify-center overflow-hidden"
     >
-      {/* Subtle ambient glow - larger on desktop */}
+      {/* Dual-tone ambient glow */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-1/2 h-[300px] w-[300px] lg:h-[500px] lg:w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-nextpixel-turquoise/3 blur-3xl" />
+        <div className="absolute left-1/2 top-1/2 h-[280px] w-[280px] lg:h-[460px] lg:w-[460px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-nextpixel-turquoise/[0.04] blur-3xl" />
+        <div className="absolute left-[45%] top-[55%] h-[200px] w-[200px] lg:h-[340px] lg:w-[340px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-nextpixel-navy/[0.03] blur-3xl" />
       </div>
 
-      {/* Card Stack - responsive sizing */}
+      {/* Card Stack */}
       <div
         className="relative flex h-[560px] sm:h-[650px] md:h-[740px] lg:h-full w-full max-w-[340px] sm:max-w-[380px] md:max-w-[540px] lg:max-w-[780px] items-center justify-center px-4"
-        style={{ perspective: "1400px" }}
+        style={{ perspective: "1200px" }}
       >
         {projects.map((project, index) => {
           if (!isVisible(index)) return null
@@ -249,16 +245,17 @@ export function VerticalProjectStack({
                 opacity: style.opacity,
                 rotateX: style.rotateX,
                 zIndex: style.zIndex,
+                filter: style.filter,
               }}
               transition={{
                 type: "spring",
-                stiffness: 280,
-                damping: 28,
-                mass: 1,
+                stiffness: 240,
+                damping: 30,
+                mass: 0.8,
               }}
               drag={isCurrent ? "y" : false}
               dragConstraints={{ top: 0, bottom: 0 }}
-              dragElastic={0.15}
+              dragElastic={0.12}
               onDragEnd={handleDragEnd}
               style={{
                 transformStyle: "preserve-3d",
@@ -269,17 +266,17 @@ export function VerticalProjectStack({
                 className="relative h-[470px] sm:h-[540px] md:h-[620px] lg:h-[min(660px,68vh)] w-full overflow-hidden rounded-2xl lg:rounded-3xl bg-white"
                 style={{
                   boxShadow: isCurrent
-                    ? "0 30px 60px -15px rgba(10, 36, 99, 0.3), 0 0 0 1px rgba(10, 36, 99, 0.05)"
-                    : "0 15px 40px -12px rgba(10, 36, 99, 0.2)",
+                    ? "0 25px 50px -12px rgba(30, 58, 95, 0.25), 0 12px 24px -8px rgba(46, 139, 154, 0.08), 0 0 0 1px rgba(30, 58, 95, 0.06), inset 0 1px 0 0 rgba(255, 255, 255, 0.6)"
+                    : "0 12px 32px -10px rgba(30, 58, 95, 0.15), 0 0 0 1px rgba(30, 58, 95, 0.04)",
                 }}
               >
-                {/* Image - 55% height on desktop for more content space */}
+                {/* Image section */}
                 <div className="relative h-[45%] sm:h-[48%] md:h-[52%] lg:h-[55%] w-full overflow-hidden bg-nextpixel-light">
                   <Image
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     draggable={false}
                     priority={isCurrent}
                     onError={(e) => {
@@ -288,37 +285,39 @@ export function VerticalProjectStack({
                       target.src = `https://placehold.co/800x500/0A2463/FFFFFF?text=${encodeURIComponent(project.title)}`;
                     }}
                   />
+                  {/* Subtle bottom gradient for text readability */}
+                  <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/10 to-transparent" />
                   {/* Category badge */}
                   <div className="absolute top-3 left-3 lg:top-5 lg:left-5">
-                    <span className="inline-block px-3 py-1.5 lg:px-4 lg:py-2 text-xs lg:text-sm font-medium text-white bg-nextpixel-blue/90 rounded-full backdrop-blur-sm shadow-lg">
+                    <span className="inline-flex items-center px-3 py-1.5 lg:px-4 lg:py-2 text-xs lg:text-sm font-medium text-white bg-nextpixel-navy/85 rounded-full backdrop-blur-md shadow-sm ring-1 ring-white/10">
                       {project.category}
                     </span>
                   </div>
                 </div>
 
-                {/* Content - flex column so button stays at bottom */}
+                {/* Content */}
                 <div className="flex flex-col justify-between p-3 pb-4 sm:p-4 sm:pb-5 md:p-5 md:pb-6 lg:p-7 lg:pb-8 h-[55%] sm:h-[52%] md:h-[48%] lg:h-[45%]">
                   <div>
-                    <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-nextpixel-dark mb-1 sm:mb-1.5 lg:mb-2 line-clamp-1 sm:line-clamp-2">
+                    <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-nextpixel-dark mb-1 sm:mb-1.5 lg:mb-2 line-clamp-1 sm:line-clamp-2 tracking-tight">
                       {project.title}
                     </h3>
-                    <p className="text-xs sm:text-sm lg:text-base text-nextpixel-gray line-clamp-2 sm:line-clamp-3 lg:line-clamp-4 mb-2 sm:mb-3 lg:mb-4">
+                    <p className="text-xs sm:text-sm lg:text-base text-nextpixel-gray/80 line-clamp-2 sm:line-clamp-3 lg:line-clamp-4 mb-2 sm:mb-3 lg:mb-4 leading-relaxed">
                       {project.description}
                     </p>
 
-                    {/* Technologies - show more on desktop */}
+                    {/* Technologies */}
                     {project.technologies && project.technologies.length > 0 && (
                       <div className="flex flex-wrap gap-1 sm:gap-1.5 lg:gap-2">
                         {project.technologies.slice(0, techLimit).map((tech, i) => (
                           <span
                             key={i}
-                            className="text-[10px] sm:text-xs lg:text-sm px-1.5 py-0.5 sm:px-2 lg:px-3 lg:py-1 bg-nextpixel-light text-nextpixel-blue rounded-md lg:rounded-lg font-medium"
+                            className="text-[10px] sm:text-xs lg:text-sm px-1.5 py-0.5 sm:px-2 lg:px-3 lg:py-1 bg-nextpixel-navy/[0.06] text-nextpixel-navy rounded-md lg:rounded-lg font-medium"
                           >
                             {tech}
                           </span>
                         ))}
                         {project.technologies.length > techLimit && (
-                          <span className="text-[10px] sm:text-xs lg:text-sm px-1.5 py-0.5 sm:px-2 text-nextpixel-gray">
+                          <span className="text-[10px] sm:text-xs lg:text-sm px-1.5 py-0.5 sm:px-2 text-nextpixel-gray/60">
                             +{project.technologies.length - techLimit}
                           </span>
                         )}
@@ -326,15 +325,20 @@ export function VerticalProjectStack({
                     )}
                   </div>
 
-                  {/* View Project Button - always visible at bottom */}
+                  {/* View Project Button */}
                   <button
                     onClick={(e) => {
                       e.stopPropagation()
                       onProjectClick(project)
                     }}
-                    className="w-full py-2 sm:py-2.5 lg:py-3.5 mt-2 sm:mt-3 mb-1 sm:mb-1.5 lg:mb-2 text-xs sm:text-sm lg:text-base font-medium text-white bg-nextpixel-blue hover:bg-nextpixel-dark rounded-lg lg:rounded-xl transition-colors duration-200 shadow-md hover:shadow-lg"
+                    className="group/btn w-full py-2 sm:py-2.5 lg:py-3.5 mt-2 sm:mt-3 mb-1 sm:mb-1.5 lg:mb-2 text-xs sm:text-sm lg:text-base font-semibold text-white bg-nextpixel-navy hover:bg-nextpixel-dark rounded-lg lg:rounded-xl transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-nextpixel-navy/20"
                   >
-                    {viewProjectText} →
+                    <span className="inline-flex items-center gap-2">
+                      {viewProjectText}
+                      <svg className="w-3.5 h-3.5 lg:w-4 lg:h-4 transition-transform duration-300 group-hover/btn:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                      </svg>
+                    </span>
                   </button>
                 </div>
               </div>
@@ -343,7 +347,7 @@ export function VerticalProjectStack({
         })}
       </div>
 
-      {/* Navigation dots - right side, larger on desktop */}
+      {/* Navigation dots — right side, with active glow */}
       <div className="absolute right-1.5 sm:right-3 md:right-6 lg:right-12 top-1/2 flex -translate-y-1/2 flex-col gap-1.5 sm:gap-2 lg:gap-3 z-10">
         {projects.map((_, index) => (
           <button
@@ -357,22 +361,22 @@ export function VerticalProjectStack({
             }}
             className={`rounded-full transition-all duration-300 ${
               index === currentIndex
-                ? "w-2 sm:w-2.5 lg:w-3 h-5 sm:h-7 lg:h-10 bg-nextpixel-blue"
-                : "w-2 sm:w-2.5 lg:w-3 h-2 sm:h-2.5 lg:h-3 bg-nextpixel-gray/30 hover:bg-nextpixel-gray/50"
+                ? "w-2 sm:w-2.5 lg:w-3 h-5 sm:h-7 lg:h-10 bg-nextpixel-teal shadow-[0_0_8px_rgba(46,139,154,0.4)]"
+                : "w-2 sm:w-2.5 lg:w-3 h-2 sm:h-2.5 lg:h-3 bg-nextpixel-gray/25 hover:bg-nextpixel-gray/45"
             }`}
             aria-label={`Go to project ${index + 1}`}
           />
         ))}
       </div>
 
-      {/* Counter - left side, larger on desktop */}
+      {/* Counter — left side, editorial style */}
       <div className="absolute left-1.5 sm:left-3 md:left-6 lg:left-12 top-1/2 -translate-y-1/2 z-10 hidden sm:block">
         <div className="flex flex-col items-center">
-          <span className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-light text-nextpixel-dark tabular-nums">
+          <span className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-light text-nextpixel-dark/90 tabular-nums tracking-tighter">
             {String(currentIndex + 1).padStart(2, "0")}
           </span>
-          <div className="my-1 sm:my-1.5 lg:my-3 h-px w-5 sm:w-6 lg:w-10 bg-nextpixel-gray/30" />
-          <span className="text-[10px] sm:text-xs md:text-sm lg:text-lg text-nextpixel-gray tabular-nums">
+          <div className="my-1.5 sm:my-2 lg:my-3 h-6 sm:h-8 lg:h-12 w-px bg-gradient-to-b from-nextpixel-teal/50 via-nextpixel-gray/20 to-transparent" />
+          <span className="text-[10px] sm:text-xs md:text-sm lg:text-lg text-nextpixel-gray/50 tabular-nums tracking-tight">
             {String(projects.length).padStart(2, "0")}
           </span>
         </div>

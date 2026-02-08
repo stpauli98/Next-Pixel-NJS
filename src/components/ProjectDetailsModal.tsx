@@ -145,12 +145,12 @@ const ProjectDetailsModal: React.FC<ProjectDetailsModalProps> = ({ project, isOp
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 bg-white overflow-y-auto overscroll-contain"
+          className="fixed inset-0 z-[55] bg-white overflow-y-auto overscroll-contain"
         >
           {/* Close button - fixed position */}
           <button
             onClick={onClose}
-            className="fixed top-4 right-4 md:top-8 md:right-8 z-[60] bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg hover:bg-gray-100 transition-colors border border-gray-200"
+            className="fixed top-20 right-4 md:top-24 md:right-8 z-[60] bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg hover:bg-gray-100 transition-colors border border-gray-200"
             aria-label="Close modal"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-nextpixel-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor">

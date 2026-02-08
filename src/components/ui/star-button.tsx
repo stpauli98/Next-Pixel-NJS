@@ -77,7 +77,7 @@ export function StarButton({
         }}
         aria-hidden="true"
       />
-      <span className="z-10 relative text-white font-semibold">
+      <span className="z-10 relative text-white font-semibold inline-flex items-center gap-2">
         {children}
       </span>
     </>
