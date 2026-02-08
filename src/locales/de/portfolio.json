@@ -57,6 +57,10 @@
     "project11": {
       "title": "Service-Heft",
       "description": "Mobile App zur Verfolgung von Fahrzeugservices, Erinnerungen und Kosten. Funktioniert offline und synchronisiert mit der Cloud-Datenbank."
+    },
+    "project12": {
+      "title": "Global Grinding",
+      "description": "Professioneller Webauftritt für ein Industrieunternehmen mit drei Generationen Erfahrung in der Stahlindustrie. Mehrsprachige Website, die Vertrauen bei Partnern schafft und den Erstkontakt erleichtert."
     }
   },
   "features": {
@@ -88,6 +92,12 @@
     "expenseTracking": "Fahrzeugkostenverfolgung",
     "multiDevice": "Multi-Geräte-Synchronisierung",
     "vehicleManagement": "Fahrzeugverwaltung in der Garage",
-    "pushNotifications": "Push-Benachrichtigungen für Erinnerungen"
+    "pushNotifications": "Push-Benachrichtigungen für Erinnerungen",
+    "multiLanguage": "Mehrsprachige Website (EN, DE, FR, NL) für internationale Kunden",
+    "industrialDesign": "Industrielles Design, das die Stärke und Professionalität der Marke widerspiegelt",
+    "serviceShowcase": "Übersicht aller Leistungen mit detaillierten Beschreibungen",
+    "companyHistory": "Geschichte von drei Generationen Familienbetrieb",
+    "processGallery": "Galerie der Arbeitsprozesse mit 19 Fotografien",
+    "quickContact": "Schneller Kontakt für neue Geschäftsmöglichkeiten"
   }
 }

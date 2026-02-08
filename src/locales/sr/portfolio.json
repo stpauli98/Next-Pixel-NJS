@@ -57,6 +57,10 @@
     "project11": {
       "title": "Servisna Knjižica",
       "description": "Mobilna aplikacija za praćenje servisa vozila, podsjetnika i troškova. Radi offline i sinkronizuje se sa cloud bazom."
+    },
+    "project12": {
+      "title": "Global Grinding",
+      "description": "Profesionalna web prezentacija za industrijsku kompaniju sa tri generacije iskustva u čeličnoj industriji. Višejezični sajt koji gradi povjerenje partnera i olakšava prvi kontakt."
     }
   },
   "features": {
@@ -88,6 +92,12 @@
     "expenseTracking": "Praćenje troškova vozila",
     "multiDevice": "Sinkronizacija između uređaja",
     "vehicleManagement": "Upravljanje vozilima u Garaži",
-    "pushNotifications": "Push notifikacije za podsjetnike"
+    "pushNotifications": "Push notifikacije za podsjetnike",
+    "multiLanguage": "Višejezični sajt (EN, DE, FR, NL) za međunarodne klijente",
+    "industrialDesign": "Industrijski dizajn koji odražava snagu i profesionalnost brenda",
+    "serviceShowcase": "Pregled svih usluga sa detaljnim opisima",
+    "companyHistory": "Priča o tri generacije porodičnog biznisa",
+    "processGallery": "Galerija radnih procesa sa 19 fotografija",
+    "quickContact": "Brz kontakt za nove poslovne prilike"
   }
 }

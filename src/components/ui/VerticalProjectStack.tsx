@@ -271,7 +271,7 @@ export function VerticalProjectStack({
                 }}
               >
                 {/* Image section */}
-                <div className="relative h-[45%] sm:h-[48%] md:h-[52%] lg:h-[55%] w-full overflow-hidden bg-nextpixel-light">
+                <div className="relative h-[45%] sm:h-[48%] md:h-[50%] lg:h-[50%] w-full overflow-hidden bg-nextpixel-light">
                   <Image
                     src={project.image}
                     alt={project.title}
@@ -296,12 +296,12 @@ export function VerticalProjectStack({
                 </div>
 
                 {/* Content */}
-                <div className="flex flex-col justify-between p-3 pb-4 sm:p-4 sm:pb-5 md:p-5 md:pb-6 lg:p-7 lg:pb-8 h-[55%] sm:h-[52%] md:h-[48%] lg:h-[45%]">
+                <div className="flex flex-col justify-between p-3 pb-4 sm:p-4 sm:pb-5 md:p-5 md:pb-6 lg:p-7 lg:pb-8 h-[55%] sm:h-[52%] md:h-[50%] lg:h-[50%]">
                   <div>
                     <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-nextpixel-dark mb-1 sm:mb-1.5 lg:mb-2 line-clamp-1 sm:line-clamp-2 tracking-tight">
                       {project.title}
                     </h3>
-                    <p className="text-xs sm:text-sm lg:text-base text-nextpixel-gray/80 line-clamp-2 sm:line-clamp-3 lg:line-clamp-4 mb-2 sm:mb-3 lg:mb-4 leading-relaxed">
+                    <p className="text-xs sm:text-sm lg:text-base text-nextpixel-gray/80 line-clamp-2 sm:line-clamp-3 lg:line-clamp-3 mb-2 sm:mb-3 lg:mb-4 leading-relaxed">
                       {project.description}
                     </p>
 

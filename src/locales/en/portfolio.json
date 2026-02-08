@@ -57,6 +57,10 @@
     "project11": {
       "title": "Car Service Book",
       "description": "Mobile app for tracking vehicle services, reminders and expenses. Works offline and syncs with cloud database."
+    },
+    "project12": {
+      "title": "Global Grinding",
+      "description": "Professional web presence for an industrial company with three generations of expertise in the steel industry. Multilingual site that builds partner trust and makes first contact easy."
     }
   },
   "features": {
@@ -88,6 +92,12 @@
     "expenseTracking": "Vehicle expense tracking",
     "multiDevice": "Multi-device synchronization",
     "vehicleManagement": "Vehicle management in Garage",
-    "pushNotifications": "Push notifications for reminders"
+    "pushNotifications": "Push notifications for reminders",
+    "multiLanguage": "Multilingual site (EN, DE, FR, NL) for international clients",
+    "industrialDesign": "Industrial design reflecting the strength and professionalism of the brand",
+    "serviceShowcase": "Overview of all services with detailed descriptions",
+    "companyHistory": "Story of three generations of family business",
+    "processGallery": "Work process gallery with 19 photographs",
+    "quickContact": "Quick contact for new business opportunities"
   }
 }

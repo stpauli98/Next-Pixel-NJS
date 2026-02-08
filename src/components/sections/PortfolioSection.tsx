@@ -114,6 +114,23 @@ const PortfolioSection: React.FC = () => {
         typeof t('portfolio:features.pushNotifications') === 'string' ? t('portfolio:features.pushNotifications') as string : 'Push notifikacije za podsjetnike'
       ]
     },
+    {
+      id: 6,
+      title: typeof t('portfolio:projects.project12.title') === 'string' ? t('portfolio:projects.project12.title') as string : 'Global Grinding',
+      description: typeof t('portfolio:projects.project12.description') === 'string' ? t('portfolio:projects.project12.description') as string : 'Profesionalna web prezentacija za industrijsku kompaniju sa tri generacije iskustva u čeličnoj industriji. Višejezični sajt koji gradi povjerenje partnera i olakšava prvi kontakt.',
+      category: typeof t('portfolio:category.website') === 'string' ? t('portfolio:category.website') as string : 'Website',
+      image: '/images/globalgrinding.webp',
+      url: 'https://www.globalgrinding.be/',
+      technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+      features: [
+        typeof t('portfolio:features.multiLanguage') === 'string' ? t('portfolio:features.multiLanguage') as string : 'Višejezični sajt (EN, DE, FR, NL) za međunarodne klijente',
+        typeof t('portfolio:features.industrialDesign') === 'string' ? t('portfolio:features.industrialDesign') as string : 'Industrijski dizajn koji odražava snagu i profesionalnost brenda',
+        typeof t('portfolio:features.serviceShowcase') === 'string' ? t('portfolio:features.serviceShowcase') as string : 'Pregled svih usluga sa detaljnim opisima',
+        typeof t('portfolio:features.companyHistory') === 'string' ? t('portfolio:features.companyHistory') as string : 'Priča o tri generacije porodičnog biznisa',
+        typeof t('portfolio:features.processGallery') === 'string' ? t('portfolio:features.processGallery') as string : 'Galerija radnih procesa sa 19 fotografija',
+        typeof t('portfolio:features.quickContact') === 'string' ? t('portfolio:features.quickContact') as string : 'Brz kontakt za nove poslovne prilike'
+      ]
+    },
   ], [t]);
 
   useEffect(() => {
@@ -209,7 +226,7 @@ const PortfolioSection: React.FC = () => {
   return (
     <section
       id="portfolio"
-      className="section bg-white py-10 sm:py-16 lg:py-0 lg:pb-8 lg:min-h-screen lg:sticky lg:top-0 relative overflow-hidden"
+      className="section bg-white py-10 sm:py-16 lg:py-0 lg:min-h-screen lg:sticky lg:top-0 relative overflow-hidden"
     >
       {/* Gradient transition from WhyChooseUs (dark) */}
       <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-nextpixel-dark/20 to-transparent pointer-events-none z-0" />
@@ -217,14 +234,14 @@ const PortfolioSection: React.FC = () => {
       {/* Desktop: Full viewport container */}
       <div className="lg:h-screen lg:flex lg:flex-col relative z-10">
         {/* Header - positioned at top on desktop */}
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-8 lg:pt-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-8 lg:pt-6">
           <div className="text-center max-w-4xl mx-auto">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 lg:mb-3"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 lg:mb-2"
             >
               {!mounted ? 'Portfolio' : (
                 formatTitle(typeof t('portfolio:title') === 'string' ? t('portfolio:title') as string : 'Portfolio')
@@ -235,14 +252,14 @@ const PortfolioSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="w-16 lg:w-20 h-1 bg-nextpixel-turquoise mx-auto mb-4 lg:mb-3"
+              className="w-16 lg:w-20 h-1 bg-nextpixel-turquoise mx-auto mb-3 lg:mb-2"
             ></motion.div>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-sm sm:text-base lg:text-lg text-nextpixel-gray max-w-3xl mx-auto mb-4 sm:mb-6 lg:mb-5"
+              className="text-sm sm:text-base lg:text-lg text-nextpixel-gray max-w-3xl mx-auto mb-3 sm:mb-5 lg:mb-3"
             >
               {!mounted ? 'Check out some of our recent projects' : (
                 typeof t('portfolio:subtitle') === 'string' ? t('portfolio:subtitle') as string : ''
@@ -255,7 +272,7 @@ const PortfolioSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-nowrap sm:flex-wrap justify-start sm:justify-center gap-2 lg:gap-3 overflow-x-auto sm:overflow-x-visible px-1 sm:px-0 pb-2 sm:pb-0 mb-4 lg:mb-6 scrollbar-hide"
+              className="flex flex-nowrap sm:flex-wrap justify-start sm:justify-center gap-2 lg:gap-2 overflow-x-auto sm:overflow-x-visible px-1 sm:px-0 pb-2 sm:pb-0 mb-3 lg:mb-2 scrollbar-hide"
             >
               {getCategories().map((category, index) => (
                 <button
