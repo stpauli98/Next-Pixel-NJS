@@ -164,14 +164,6 @@ const ProjectDetailsModal: React.FC<ProjectDetailsModalProps> = ({ project, isOp
               scrollContainer={scrollContainerRef}
               titleComponent={
                 <>
-                  <motion.span
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 }}
-                    className="inline-block px-4 py-1.5 bg-nextpixel-turquoise/10 text-nextpixel-turquoise rounded-full text-sm font-medium mb-4"
-                  >
-                    {project.category}
-                  </motion.span>
                   <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
