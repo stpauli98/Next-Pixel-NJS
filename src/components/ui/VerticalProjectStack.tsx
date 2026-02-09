@@ -369,9 +369,21 @@ export function VerticalProjectStack({
         ))}
       </div>
 
-      {/* Counter — left side, editorial style */}
+      {/* Counter & arrows — left side, editorial style */}
       <div className="absolute left-1.5 sm:left-3 md:left-6 lg:left-12 top-1/2 -translate-y-1/2 z-10 hidden sm:block">
         <div className="flex flex-col items-center">
+          {/* Up arrow — desktop only */}
+          <button
+            onClick={() => navigate(-1)}
+            disabled={currentIndex === 0}
+            className="hidden lg:flex w-9 h-9 items-center justify-center rounded-full border border-nextpixel-gray/20 text-nextpixel-gray/40 hover:text-nextpixel-teal hover:border-nextpixel-teal/40 hover:bg-nextpixel-teal/5 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:text-nextpixel-gray/40 disabled:hover:border-nextpixel-gray/20 disabled:hover:bg-transparent transition-all duration-300 mb-3"
+            aria-label="Previous project"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+            </svg>
+          </button>
+
           <span className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-light text-nextpixel-dark/90 tabular-nums tracking-tighter">
             {String(currentIndex + 1).padStart(2, "0")}
           </span>
@@ -379,6 +391,18 @@ export function VerticalProjectStack({
           <span className="text-[10px] sm:text-xs md:text-sm lg:text-lg text-nextpixel-gray/50 tabular-nums tracking-tight">
             {String(projects.length).padStart(2, "0")}
           </span>
+
+          {/* Down arrow — desktop only */}
+          <button
+            onClick={() => navigate(1)}
+            disabled={currentIndex === projects.length - 1}
+            className="hidden lg:flex w-9 h-9 items-center justify-center rounded-full border border-nextpixel-gray/20 text-nextpixel-gray/40 hover:text-nextpixel-teal hover:border-nextpixel-teal/40 hover:bg-nextpixel-teal/5 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:text-nextpixel-gray/40 disabled:hover:border-nextpixel-gray/20 disabled:hover:bg-transparent transition-all duration-300 mt-3"
+            aria-label="Next project"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+            </svg>
+          </button>
         </div>
       </div>
     </div>
