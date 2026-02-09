@@ -5,11 +5,11 @@ export const businessInfo = {
   name: 'NextPixel',
   legalName: 'NextPixel Development Agency',
   url: 'https://nextpixel.dev',
-  logo: 'https://nextpixel.dev/logo.png',
-  image: 'https://nextpixel.dev/og-image.png',
+  logo: 'https://nextpixel.dev/images/NextPixelV2.webp',
+  image: 'https://nextpixel.dev/opengraph-image.png',
   telephone: '+38766603900',
   email: 'pixelnext9@gmail.com',
-  foundingDate: '2022-01-01',
+  foundingDate: '2025',
   founders: [
     {
       '@type': 'Person',
@@ -19,15 +19,15 @@ export const businessInfo = {
   ],
   numberOfEmployees: {
     '@type': 'QuantitativeValue',
-    minValue: 5,
-    maxValue: 15
+    minValue: 2,
+    maxValue: 10
   }
 } as const;
 
 export const addressInfo = {
   '@type': 'PostalAddress',
-  streetAddress: 'Vidovdanska',
-  addressLocality: 'Gradiška',
+  streetAddress: 'Jovana Ducica 15',
+  addressLocality: 'Gradiska',
   addressRegion: 'Republika Srpska',
   postalCode: '78400',
   addressCountry: 'BA'
@@ -40,9 +40,7 @@ export const geoInfo = {
 } as const;
 
 export const socialProfiles = [
-  'https://www.instagram.com/pixelnext9',
-  'https://github.com/nextpixel',
-  'https://www.linkedin.com/company/nextpixel'
+  'https://www.instagram.com/pixelnext9'
 ];
 
 export const urgentKeywords = [
@@ -125,29 +123,7 @@ export const services = [
   }
 ];
 
-export const reviews = [
-  {
-    '@type': 'Review',
-    reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-    author: { '@type': 'Person', name: 'Marko Petrović' },
-    reviewBody: 'Odličan tim, profesionalan pristup i fantastični rezultati. Preporučujem!',
-    datePublished: '2024-01-15'
-  },
-  {
-    '@type': 'Review',
-    reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-    author: { '@type': 'Person', name: 'Ana Jovanović' },
-    reviewBody: 'NextPixel je transformisao naš online biznis. Najbolja investicija!',
-    datePublished: '2024-02-20'
-  },
-  {
-    '@type': 'Review',
-    reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-    author: { '@type': 'Person', name: 'Stefan Nikolić' },
-    reviewBody: 'Brzina, kvalitet i podrška na najvišem nivou. Svaka preporuka!',
-    datePublished: '2024-03-10'
-  }
-];
+// Reviews removed - no real reviews yet
 
 export const faqs = [
   {
@@ -284,14 +260,6 @@ export function generateStructuredData(locale: string = 'sr') {
             itemOffered: service
           }))
         },
-        aggregateRating: {
-          '@type': 'AggregateRating',
-          ratingValue: '4.9',
-          reviewCount: '127',
-          bestRating: '5',
-          worstRating: '1'
-        },
-        review: reviews,
         slogan: locale === 'sr' 
           ? 'Vaš partner za digitalni uspjeh'
           : 'Your Partner in Digital Success',
@@ -311,22 +279,12 @@ export function generateStructuredData(locale: string = 'sr') {
         name: businessInfo.name,
         description: 'Web Development & Digital Solutions Agency',
         publisher: { '@id': `${baseUrl}/#organization` },
-        potentialAction: [
-          {
-            '@type': 'SearchAction',
-            target: {
-              '@type': 'EntryPoint',
-              urlTemplate: `${baseUrl}/search?q={search_term_string}`
-            },
-            'query-input': 'required name=search_term_string'
-          }
-        ],
         inLanguage: ['sr', 'en', 'de'],
-        copyrightYear: new Date().getFullYear(),
+        copyrightYear: 2025,
         copyrightHolder: { '@id': `${baseUrl}/#organization` },
         creator: { '@id': `${baseUrl}/#organization` },
-        dateCreated: '2022-01-01',
-        dateModified: new Date().toISOString(),
+        dateCreated: '2025-01-01',
+        dateModified: '2025-01-01',
         isAccessibleForFree: true
       },
       // WebPage
@@ -350,8 +308,8 @@ export function generateStructuredData(locale: string = 'sr') {
             target: [currentUrl]
           }
         ],
-        datePublished: '2022-01-01',
-        dateModified: new Date().toISOString()
+        datePublished: '2025-01-01',
+        dateModified: '2025-01-01'
       },
       // BreadcrumbList
       {

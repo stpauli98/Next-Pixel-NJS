@@ -20,8 +20,8 @@ module.exports = {
         'nextpixel-light': 'var(--color-cream)',
       },
       fontFamily: {
-        'sans': ['Poppins', 'sans-serif'],
-        'heading': ['Montserrat', 'sans-serif']
+        'sans': ['var(--font-poppins)', 'Poppins', 'sans-serif'],
+        'heading': ['var(--font-montserrat)', 'Montserrat', 'sans-serif']
       },
       animation: {
         'shimmer': 'shimmer 1.5s infinite',

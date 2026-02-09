@@ -95,7 +95,7 @@ const Navbar: React.FC = () => {
   ] : defaultNavLinks;
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`}>
+    <nav aria-label="Main navigation" className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         <a href="#home" className="flex items-center">
         <span className="text-2xl font-heading font-bold text-nextpixel-blue">
@@ -132,6 +132,9 @@ const Navbar: React.FC = () => {
           <button
             className="text-nextpixel-dark focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
           >
             {isOpen ? <Icon icon={FaXmark} size={24} aria-hidden={true} /> : <Icon icon={FaBars} size={24} aria-hidden={true} />}
           </button>
@@ -141,6 +144,8 @@ const Navbar: React.FC = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <motion.div
+          id="mobile-menu"
+          role="menu"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}

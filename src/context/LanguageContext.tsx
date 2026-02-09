@@ -18,75 +18,47 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const { t } = useTranslation(['common', 'navigation', 'language', 'hero', 'about', 'services', 'whyChooseUs', 'portfolio', 'contact', 'footer', 'legal']);
   const pathname = usePathname();
 
   // Extract locale from URL pathname
   const getLocaleFromPathname = (): Locale => {
     if (!pathname) return 'sr';
     const segments = pathname.split('/');
-    const potentialLocale = segments[1]; // First segment after "/"
+    const potentialLocale = segments[1];
 
     if (potentialLocale && isValidLocale(potentialLocale)) {
       return potentialLocale;
     }
-    return 'sr'; // Default fallback
+    return 'sr';
   };
 
-  // Use default on initial render to avoid hydration mismatch
-  const [language, setLanguage] = useState('sr');
-  const [isClient, setIsClient] = useState(false);
+  const urlLocale = getLocaleFromPathname();
 
-  // Update language after hydration completes - READ FROM URL FIRST!
+  // Pass lng to useTranslation so it returns translations for the URL locale
+  // without calling i18n.changeLanguage() during render (which triggers setState in other components).
+  const { t } = useTranslation(
+    ['common', 'navigation', 'language', 'hero', 'about', 'services', 'whyChooseUs', 'portfolio', 'contact', 'footer', 'legal'],
+    { lng: urlLocale }
+  );
+
+  const [language, setLanguage] = useState(urlLocale);
+
+  // Sync i18n internal state after render (safe in useEffect, won't cause setState-during-render)
   useEffect(() => {
-    setIsClient(true);
-
-    // Priority: URL locale > default
-    const urlLocale = getLocaleFromPathname();
-
-    setLanguage(urlLocale);
-    i18n.changeLanguage(urlLocale);
-
-    // Update cookie to match URL
-    Cookies.set('i18nextLng', urlLocale, { expires: 365, path: '/' });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); // Run only once after mount
-
-  // Sync language when URL pathname changes
-  useEffect(() => {
-    if (!isClient) return;
-
-    const urlLocale = getLocaleFromPathname();
-
-    // Only change if URL locale is different from current language
+    if (i18n.language !== urlLocale) {
+      i18n.changeLanguage(urlLocale);
+    }
     if (urlLocale !== language) {
       setLanguage(urlLocale);
-      i18n.changeLanguage(urlLocale);
-      Cookies.set('i18nextLng', urlLocale, { expires: 365, path: '/' });
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pathname, isClient]); // React to pathname changes - language intentionally omitted to prevent loops
-
-  // Listen for i18n language changes
-  useEffect(() => {
-    if (!isClient) return;
-
-    const handleLanguageChanged = (lng: string) => {
-      setLanguage(lng);
-      Cookies.set('i18nextLng', lng, { expires: 365, path: '/' });
-    };
-
-    i18n.on('languageChanged', handleLanguageChanged);
-    
-    return () => {
-      i18n.off('languageChanged', handleLanguageChanged);
-    };
-  }, [isClient]);
+    Cookies.set('i18nextLng', urlLocale, { expires: 365, path: '/' });
+  }, [urlLocale]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const changeLanguage = (lang: string) => {
-    i18n.changeLanguage(lang);
-    setLanguage(lang);
-    Cookies.set('i18nextLng', lang, { expires: 365, path: '/' });
+    const locale = isValidLocale(lang) ? lang : 'sr';
+    i18n.changeLanguage(locale);
+    setLanguage(locale);
+    Cookies.set('i18nextLng', locale, { expires: 365, path: '/' });
   };
 
   return (

@@ -92,7 +92,7 @@ export const LazyPortfolioSection = dynamic(
   () => import('@/components/sections/PortfolioSection'),
   {
     loading: () => <SectionSkeleton height="h-screen" className="min-h-[600px]" />,
-    ssr: false // Ne renderuj na serveru zbog performance-a
+    ssr: true // SSR enabled for SEO crawlability
   }
 );
 

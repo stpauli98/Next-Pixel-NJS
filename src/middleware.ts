@@ -44,7 +44,12 @@ export function middleware(request: NextRequest) {
 
   // If path already has valid locale, continue with headers
   if (potentialLocale && isValidLocale(potentialLocale)) {
-    const response = NextResponse.next();
+    // Forward locale as request header so root layout can set <html lang> correctly
+    const requestHeaders = new Headers(request.headers);
+    requestHeaders.set('x-locale', potentialLocale);
+    const response = NextResponse.next({
+      request: { headers: requestHeaders }
+    });
 
     // Add SEO and security headers
     const lastModified = new Date().toUTCString();

@@ -36,7 +36,9 @@ export default async function Home({ params }: HomeProps) {
   const resolvedParams = await params;
   return (
     <div className="App">
-      <Navbar />
+      <header>
+        <Navbar />
+      </header>
       <main>
         <HeroSection />
         <AboutSection />

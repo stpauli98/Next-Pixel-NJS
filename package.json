@@ -15,10 +15,6 @@
     "manifest:hide": "node -e \"try{require('fs').renameSync('src/app/manifest.ts','src/app/manifest.ts.backup')}catch(e){console.log('Manifest already hidden')}\""
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.7.2",
-    "@fortawesome/free-brands-svg-icons": "^6.7.2",
-    "@fortawesome/free-solid-svg-icons": "^6.7.2",
-    "@fortawesome/react-fontawesome": "^0.2.2",
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
     "@next/mdx": "^15.3.6",

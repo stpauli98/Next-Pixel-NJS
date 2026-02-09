@@ -535,17 +535,18 @@ export const structuredData = {
     '@type': 'Organization',
     name: siteConfig.name,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/logo.png`,
+    logo: `${siteConfig.url}/images/NextPixelV2.webp`,
     description: siteConfig.description,
     address: {
       '@type': 'PostalAddress',
-      addressCountry: 'RS', // Serbia
+      streetAddress: 'Jovana Ducica 15',
+      addressLocality: 'Gradiska',
+      addressRegion: 'Republika Srpska',
+      postalCode: '78400',
+      addressCountry: 'BA',
     },
     sameAs: [
-      // Dodati socijalne mreže kad budu dostupne
-      // 'https://www.facebook.com/nextpixel',
-      // 'https://www.linkedin.com/company/nextpixel',
-      // 'https://twitter.com/nextpixel'
+      'https://www.instagram.com/pixelnext9'
     ],
   },
 
@@ -564,23 +565,22 @@ export const structuredData = {
   localBusiness: {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
-    '@id': 'https://nextpixel.com/#business',
+    '@id': 'https://nextpixel.dev/#business',
     name: 'NextPixel',
     alternateName: 'NextPixel Digital Agency',
     description: siteConfig.description,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/logo.png`,
+    logo: `${siteConfig.url}/images/NextPixelV2.webp`,
     image: [
-      `${siteConfig.url}/images/office.jpg`,
-      `${siteConfig.url}/images/team.jpg`,
-      `${siteConfig.url}/images/work.jpg`
+      `${siteConfig.url}/images/NextPixelV2.webp`,
+      `${siteConfig.url}/images/team.webp`
     ],
     telephone: '+387 66 603 900',
     email: 'pixelnext9@gmail.com',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Knez Mihailova 10',
-      addressLocality: 'Gradiška',
+      streetAddress: 'Jovana Ducica 15',
+      addressLocality: 'Gradiska',
       addressRegion: 'Republika Srpska',
       postalCode: '78400',
       addressCountry: 'BA'
@@ -593,17 +593,15 @@ export const structuredData = {
     areaServed: [
       {
         '@type': 'Country',
-        name: 'Serbia',
-        '@id': 'https://www.wikidata.org/wiki/Q403'
+        name: 'Bosnia and Herzegovina'
+      },
+      {
+        '@type': 'Country',
+        name: 'Serbia'
       },
       {
         '@type': 'Place',
         name: 'Europe'
-      },
-      {
-        '@type': 'Place',
-        name: 'Worldwide',
-        description: 'Remote services available globally'
       }
     ],
     openingHoursSpecification: [
@@ -615,22 +613,22 @@ export const structuredData = {
       }
     ],
     priceRange: '$$',
-    paymentAccepted: ['Cash', 'Credit Card', 'Bank Transfer', 'PayPal', 'Cryptocurrency'],
-    currenciesAccepted: 'RSD, EUR, USD',
+    paymentAccepted: ['Cash', 'Credit Card', 'Bank Transfer', 'PayPal'],
+    currenciesAccepted: 'EUR, BAM, USD',
     founder: {
       '@type': 'Person',
       name: 'NextPixel Team'
     },
-    foundingDate: '2020',
+    foundingDate: '2025',
     numberOfEmployees: {
       '@type': 'QuantitativeValue',
-      minValue: 10,
-      maxValue: 50
+      minValue: 2,
+      maxValue: 10
     },
     slogan: 'Building Digital Excellence',
     knowsAbout: [
       'Web Development',
-      'Mobile App Development', 
+      'Mobile App Development',
       'E-commerce Solutions',
       'UI/UX Design',
       'Digital Marketing',
@@ -680,34 +678,8 @@ export const structuredData = {
         }
       ]
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '127',
-      bestRating: '5',
-      worstRating: '1'
-    },
-    review: [
-      {
-        '@type': 'Review',
-        reviewRating: {
-          '@type': 'Rating',
-          ratingValue: '5',
-          bestRating: '5'
-        },
-        author: {
-          '@type': 'Person',
-          name: 'Milan Petrović'
-        },
-        reviewBody: 'Excellent web development services. Professional team and great results!'
-      }
-    ],
     sameAs: [
-      'https://www.facebook.com/nextpixel',
-      'https://www.linkedin.com/company/nextpixel',
-      'https://twitter.com/nextpixel',
-      'https://www.instagram.com/nextpixel',
-      'https://github.com/nextpixel'
+      'https://www.instagram.com/pixelnext9'
     ]
   }
 };

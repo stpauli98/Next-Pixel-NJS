@@ -2,7 +2,6 @@
 
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
 
 // Import English translations
 import commonEN from './locales/en/common.json';
@@ -92,34 +91,22 @@ const resources = {
   }
 };
 
-// Only use language detector on the client side
-const instance = typeof window !== 'undefined' ? i18n.use(LanguageDetector) : i18n;
-
-instance
-  // pass the i18n instance to react-i18next
+i18n
   .use(initReactI18next)
-  // init i18next
   .init({
     resources,
+    lng: 'sr',
     fallbackLng: 'sr',
     defaultNS: 'common',
     ns: ['common', 'navigation', 'language', 'hero', 'about', 'services', 'whyChooseUs', 'portfolio', 'contact', 'footer', 'legal', 'blog'],
     keySeparator: '.',
     nsSeparator: ':',
-    debug: false, // Disable debug logs in all environments
-    
+    debug: false,
+
     interpolation: {
-      escapeValue: false, // not needed for react as it escapes by default
+      escapeValue: false,
     },
-    
-    // detection options
-    detection: {
-      order: ['cookie', 'localStorage', 'navigator'],
-      lookupCookie: 'i18nextLng',
-      caches: ['cookie', 'localStorage'],
-    },
-    
-    // Ensure language is loaded on init
+
     react: {
       useSuspense: false,
     }

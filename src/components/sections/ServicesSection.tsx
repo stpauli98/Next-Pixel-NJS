@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { FaMobileAlt, FaLaptopCode } from 'react-icons/fa';
 import { FaMobileScreen, FaMagnifyingGlass, FaPalette, FaCartShopping } from 'react-icons/fa6';
@@ -10,15 +10,6 @@ import { StarButton } from '@/components/ui/star-button';
 
 const ServicesSection: React.FC = () => {
   const { t } = useTranslate();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null;
-  }
 
   type IconType = typeof FaLaptopCode;
 

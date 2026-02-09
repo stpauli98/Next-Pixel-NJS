@@ -14,7 +14,7 @@ export const geoConfig = {
     city: 'Gradiška',
     region: 'Republika Srpska',
     postalCode: '78400',
-    streetAddress: '', // Add actual street address when available
+    streetAddress: 'Jovana Ducica 15',
     latitude: 45.1447, // Gradiška coordinates
     longitude: 17.2522,
     serviceArea: ['Bosnia and Herzegovina', 'Serbia', 'Croatia', 'Montenegro'],
@@ -128,7 +128,7 @@ export const enhancedStructuredData = {
     })),
     priceRange: '$$',
     paymentAccepted: ['Cash', 'Credit Card', 'Bank Transfer', 'PayPal'],
-    currenciesAccepted: 'RSD, EUR, USD',
+    currenciesAccepted: 'EUR, BAM, USD',
     availableLanguage: [
       {
         '@type': 'Language',
@@ -184,13 +184,6 @@ export const enhancedStructuredData = {
           },
         },
       ],
-    },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '24',
-      bestRating: '5',
-      worstRating: '1',
     },
   },
   

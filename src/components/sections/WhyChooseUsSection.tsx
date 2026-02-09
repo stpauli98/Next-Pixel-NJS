@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { FaCheckCircle, FaLightbulb, FaClock, FaChartLine, FaRocket, FaUsers, FaHeadset, FaBriefcase, FaHandshake } from 'react-icons/fa';
 import { Icon } from '../../utils/icons';
@@ -10,11 +10,6 @@ import { StarButton } from '@/components/ui/star-button';
 
 const WhyChooseUsSection: React.FC = () => {
   const { t, language } = useTranslate();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   type IconType = typeof FaLightbulb;
 
@@ -125,9 +120,7 @@ const WhyChooseUsSection: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
           >
-            {!mounted ? (
-              <>Why <span className="text-nextpixel-turquoise">Choose</span> Us</>
-            ) : language === 'sr' && typeof t('whyChooseUs:title') === 'string' && (t('whyChooseUs:title') as string).includes('Zašto') ? (
+            {language === 'sr' && typeof t('whyChooseUs:title') === 'string' && (t('whyChooseUs:title') as string).includes('Zašto') ? (
               <>
                 {(t('whyChooseUs:title') as string).split('Zašto')[0]}
                 <span className="text-nextpixel-turquoise">Zašto</span>
@@ -165,10 +158,7 @@ const WhyChooseUsSection: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-lg text-gray-400 max-w-3xl mx-auto"
           >
-            {!mounted ?
-              'We deliver exceptional digital solutions that help your business grow and succeed in the digital world.' :
-              (typeof t('whyChooseUs:subtitle') === 'string' ? t('whyChooseUs:subtitle') as string : '')
-            }
+            {typeof t('whyChooseUs:subtitle') === 'string' ? t('whyChooseUs:subtitle') as string : 'We deliver exceptional digital solutions that help your business grow and succeed in the digital world.'}
           </motion.p>
         </div>
 
@@ -190,16 +180,10 @@ const WhyChooseUsSection: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-white mb-1">
-                    {!mounted ?
-                      getFallbackTitle(index) :
-                      (typeof t(reason.titleKey) === 'string' ? t(reason.titleKey) as string : getFallbackTitle(index))
-                    }
+                    {typeof t(reason.titleKey) === 'string' ? t(reason.titleKey) as string : getFallbackTitle(index)}
                   </h3>
                   <p className="text-sm text-gray-400 leading-relaxed">
-                    {!mounted ?
-                      getFallbackDescription(index) :
-                      (typeof t(reason.descriptionKey) === 'string' ? t(reason.descriptionKey) as string : getFallbackDescription(index))
-                    }
+                    {typeof t(reason.descriptionKey) === 'string' ? t(reason.descriptionKey) as string : getFallbackDescription(index)}
                   </p>
                 </div>
               </motion.div>
@@ -236,16 +220,10 @@ const WhyChooseUsSection: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-white mb-1">
-                    {!mounted ?
-                      getFallbackTitle(index + 4) :
-                      (typeof t(reason.titleKey) === 'string' ? t(reason.titleKey) as string : getFallbackTitle(index + 4))
-                    }
+                    {typeof t(reason.titleKey) === 'string' ? t(reason.titleKey) as string : getFallbackTitle(index + 4)}
                   </h3>
                   <p className="text-sm text-gray-400 leading-relaxed">
-                    {!mounted ?
-                      getFallbackDescription(index + 4) :
-                      (typeof t(reason.descriptionKey) === 'string' ? t(reason.descriptionKey) as string : getFallbackDescription(index + 4))
-                    }
+                    {typeof t(reason.descriptionKey) === 'string' ? t(reason.descriptionKey) as string : getFallbackDescription(index + 4)}
                   </p>
                 </div>
               </motion.div>
@@ -267,16 +245,10 @@ const WhyChooseUsSection: React.FC = () => {
             </div>
             <div>
               <h3 className="font-bold text-white mb-1">
-                {!mounted ?
-                  getFallbackTitle(8) :
-                  (typeof t(bottomReason.titleKey) === 'string' ? t(bottomReason.titleKey) as string : getFallbackTitle(8))
-                }
+                {typeof t(bottomReason.titleKey) === 'string' ? t(bottomReason.titleKey) as string : getFallbackTitle(8)}
               </h3>
               <p className="text-sm text-gray-400 leading-relaxed">
-                {!mounted ?
-                  getFallbackDescription(8) :
-                  (typeof t(bottomReason.descriptionKey) === 'string' ? t(bottomReason.descriptionKey) as string : getFallbackDescription(8))
-                }
+                {typeof t(bottomReason.descriptionKey) === 'string' ? t(bottomReason.descriptionKey) as string : getFallbackDescription(8)}
               </p>
             </div>
           </div>
@@ -291,10 +263,7 @@ const WhyChooseUsSection: React.FC = () => {
           className="text-center mt-12"
         >
           <StarButton href="#contact">
-            {!mounted ?
-              'Let\'s Talk About Your Project' :
-              (typeof t('whyChooseUs:talkAboutProject') === 'string' ? t('whyChooseUs:talkAboutProject') as string : 'Let\'s Talk About Your Project')
-            }
+            {typeof t('whyChooseUs:talkAboutProject') === 'string' ? t('whyChooseUs:talkAboutProject') as string : 'Let\'s Talk About Your Project'}
           </StarButton>
         </motion.div>
       </div>

@@ -1,0 +1,3 @@
+Contact: mailto:pixelnext9@gmail.com
+Preferred-Languages: sr, en, de
+Canonical: https://nextpixel.dev/.well-known/security.txt

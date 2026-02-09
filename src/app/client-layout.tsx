@@ -2,7 +2,6 @@
 
 import { LanguageProvider } from '@/context/LanguageContext';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
-import LangAttributeSetter from '@/components/LangAttributeSetter';
 import SplashScreen from '@/components/SplashScreen';
 import { useEffect } from 'react';
 import '@/i18n'; // Import i18n configuration
@@ -51,7 +50,6 @@ export default function ClientLayout({
     >
       <SplashScreen />
       <LanguageProvider>
-        <LangAttributeSetter />
         {children}
       </LanguageProvider>
     </ErrorBoundary>

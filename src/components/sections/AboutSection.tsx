@@ -114,15 +114,7 @@ const FeatureItem = ({
 };
 
 const AboutSection: React.FC = () => {
-  const [mounted, setMounted] = useState(false);
   const { t, language } = useTranslate();
-
-  // Postavljanje mounted na true nakon inicijalne hidratacije
-  useEffect(() => setMounted(true), []);
-
-  if (!mounted) {
-    return null;
-  }
 
   const features = [
     {
@@ -242,7 +234,7 @@ const AboutSection: React.FC = () => {
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src="/images/team.webp"
-                  alt="NextPixel Team"
+                  alt="NextPixel development team collaborating on web projects"
                   width={600}
                   height={400}
                   className="w-full h-auto object-cover"
