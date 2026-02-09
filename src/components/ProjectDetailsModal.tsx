@@ -203,7 +203,7 @@ const ProjectDetailsModal: React.FC<ProjectDetailsModalProps> = ({ project, isOp
           </div>
 
           {/* Project details section */}
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 -mt-40 relative z-10">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 -mt-60 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
