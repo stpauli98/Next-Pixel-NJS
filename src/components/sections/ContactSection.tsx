@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaPhone, FaLocationDot } from 'react-icons/fa6';
+import { FaEnvelope, FaPhone, FaWhatsapp, FaLocationDot } from 'react-icons/fa6';
 import { Icon } from '../../utils/icons';
 import { useClientTranslation } from '@/hooks/useClientTranslation';
 import { logInfo, logError } from '@/utils/logger';
@@ -83,7 +83,7 @@ const ContactSection: React.FC = () => {
 
   // Definišemo tipove za kontakt informacije
   interface ContactInfoItem {
-    icon: typeof FaEnvelope | typeof FaPhone | typeof FaLocationDot;
+    icon: typeof FaEnvelope | typeof FaPhone | typeof FaWhatsapp | typeof FaLocationDot;
     titleKey: string;
     info?: string;
     infoKey?: string;
@@ -102,6 +102,12 @@ const ContactSection: React.FC = () => {
       titleKey: 'contact:info.phone',
       info: '+387 66 603 900',
       link: 'tel:+38766603900'
+    },
+    {
+      icon: FaWhatsapp,
+      titleKey: 'contact:info.whatsapp',
+      info: '+387 66 603 900',
+      link: 'https://wa.me/message/U4Z7GJU4ZSL5M1'
     },
     {
       icon: FaLocationDot,
@@ -319,18 +325,18 @@ const ContactSection: React.FC = () => {
                     </div>
                     <div className="text-center sm:text-left">
                        <h4 className="font-bold text-gray-800">
-                         {!isHydrated ? 
-                           (index === 0 ? 'Email' : index === 1 ? 'Phone' : 'Address') :
-                           (typeof t(item.titleKey || '') === 'string' ? t(item.titleKey || '') as string : (index === 0 ? 'Email' : index === 1 ? 'Phone' : 'Address'))
+                         {!isHydrated ?
+                           (index === 0 ? 'Email' : index === 1 ? 'Phone' : index === 2 ? 'WhatsApp' : 'Address') :
+                           (typeof t(item.titleKey || '') === 'string' ? t(item.titleKey || '') as string : (index === 0 ? 'Email' : index === 1 ? 'Phone' : index === 2 ? 'WhatsApp' : 'Address'))
                          }
                        </h4>
                        <a 
                          href={item.link} 
                          className="text-nextpixel-gray hover:text-nextpixel-blue transition-colors block"
                        >
-                         {!isHydrated ? 
-                           (item.info || (index === 2 ? 'Gradiška, Bosnia and Herzegovina' : '')) :
-                           (index === 2 && 'infoKey' in item ? 
+                         {!isHydrated ?
+                           (item.info || (index === 3 ? 'Gradiška, Bosnia and Herzegovina' : '')) :
+                           (index === 3 && 'infoKey' in item ?
                              (typeof t(item.infoKey || '') === 'string' ? t(item.infoKey || '') as string : 'Gradiška, Bosnia and Herzegovina') :
                              item.info)
                          }

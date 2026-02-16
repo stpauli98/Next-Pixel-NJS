@@ -108,7 +108,7 @@ export const ContainerScroll = ({
 
   return (
     <div
-      className="h-[40rem] md:h-[50rem] lg:h-[60rem] flex items-center justify-center relative px-4 py-2 md:p-20"
+      className="h-[30rem] md:h-[50rem] lg:h-[60rem] flex items-center justify-center relative px-4 py-2 md:p-20"
       ref={containerRef}
     >
       <div
@@ -158,7 +158,7 @@ export const Card = ({
         backgroundColor: 'var(--color-device-frame)',
         boxShadow: "0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003",
       }}
-      className="max-w-5xl -mt-8 md:-mt-12 mx-auto h-[20rem] md:h-[30rem] lg:h-[40rem] w-full border-2 md:border-4 p-1.5 md:p-4 lg:p-6 rounded-[20px] md:rounded-[30px] shadow-2xl"
+      className="max-w-5xl -mt-8 md:-mt-12 mx-auto h-[13rem] md:h-[30rem] lg:h-[40rem] w-full border-2 md:border-4 p-1.5 md:p-4 lg:p-6 rounded-[20px] md:rounded-[30px] shadow-2xl"
     >
       <div className="h-full w-full overflow-hidden rounded-xl md:rounded-2xl bg-nextpixel-cream p-1 md:p-4">
         {children}

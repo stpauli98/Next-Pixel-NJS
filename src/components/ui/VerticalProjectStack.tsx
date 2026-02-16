@@ -276,7 +276,7 @@ export function VerticalProjectStack({
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                     draggable={false}
                     priority={isCurrent}
                     onError={(e) => {
