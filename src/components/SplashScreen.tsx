@@ -8,6 +8,7 @@ interface SplashScreenProps {
 }
 
 const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
+  const [mounted, setMounted] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [hasAnimated, setHasAnimated] = useState(false);
   const [animationDone, setAnimationDone] = useState(false);
@@ -15,7 +16,14 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
 
   const MIN_ANIMATION_TIME = 800;
 
+  // Only render on client - SSR returns null so crawlers see content directly
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+
     const hasSeenSplash = sessionStorage.getItem('splashShown');
     if (hasSeenSplash) {
       setIsVisible(false);
@@ -40,7 +48,7 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
       document.removeEventListener('readystatechange', checkReady);
       clearTimeout(animTimer);
     };
-  }, []);
+  }, [mounted]);
 
   // Završi kad su oba uvjeta ispunjena
   useEffect(() => {
@@ -52,6 +60,8 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
     }
   }, [animationDone, documentReady, isVisible, onComplete]);
 
+  // Don't render anything on server - crawlers see page content directly
+  if (!mounted) return null;
   if (!isVisible && !hasAnimated) return null;
 
   return (

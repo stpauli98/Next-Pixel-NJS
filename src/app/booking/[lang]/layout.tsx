@@ -12,15 +12,15 @@ interface LayoutProps {
 
 const bookingMetadata: Record<string, { title: string; description: string }> = {
   de: {
-    title: 'Online-Buchungssystem Entwicklung | NextPixel',
+    title: 'Online-Buchungssystem Entwicklung',
     description: 'Professionelle Entwicklung von Online-Buchungssystemen. Terminbuchung, Kalender-Synchronisation, automatische Erinnerungen, Online-Zahlung. Ab 990 EUR.',
   },
   en: {
-    title: 'Online Booking System Development | NextPixel',
+    title: 'Online Booking System Development',
     description: 'Professional development of online booking systems. Appointment scheduling, calendar sync, automatic reminders, online payments. From 990 EUR.',
   },
   sr: {
-    title: 'Izrada Online Booking Sistema | NextPixel',
+    title: 'Izrada Online Booking Sistema',
     description: 'Profesionalna izrada online booking sistema. Zakazivanje termina, sinhronizacija kalendara, automatski podsjetnici, online plaćanje. Od 990 EUR.',
   },
 };
@@ -56,6 +56,7 @@ export async function generateMetadata({ params }: LayoutProps) {
       title: meta.title,
       description: meta.description,
     },
+    keywords: null,
   };
 }
 

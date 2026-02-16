@@ -105,6 +105,85 @@ const BookingCtaSection: React.FC = () => {
     }
   };
 
+  // SSR fallback - visible to crawlers without JS
+  if (!mounted) {
+    return (
+      <section id="contact" className="py-20 bg-gradient-to-br from-nextpixel-dark to-nextpixel-blue">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              {l.title}
+            </h2>
+            <p className="text-gray-300 max-w-2xl mx-auto">
+              {l.subtitle}
+            </p>
+          </div>
+
+          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl">
+            <form className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="booking-name" className="block text-sm font-medium text-gray-700 mb-1">
+                    {l.name} *
+                  </label>
+                  <input
+                    id="booking-name"
+                    type="text"
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-nextpixel-blue focus:border-transparent outline-none transition-all"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="booking-email" className="block text-sm font-medium text-gray-700 mb-1">
+                    {l.email} *
+                  </label>
+                  <input
+                    id="booking-email"
+                    type="email"
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-nextpixel-blue focus:border-transparent outline-none transition-all"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="booking-phone" className="block text-sm font-medium text-gray-700 mb-1">
+                  {l.phone}
+                </label>
+                <input
+                  id="booking-phone"
+                  type="tel"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-nextpixel-blue focus:border-transparent outline-none transition-all"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="booking-message" className="block text-sm font-medium text-gray-700 mb-1">
+                  {l.message} *
+                </label>
+                <textarea
+                  id="booking-message"
+                  required
+                  rows={5}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-nextpixel-blue focus:border-transparent outline-none transition-all resize-none"
+                />
+              </div>
+
+              <div className="text-center">
+                <a
+                  href="#contact"
+                  className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-white bg-nextpixel-blue hover:opacity-90 transition-colors"
+                >
+                  {l.send}
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section id="contact" className="py-20 bg-gradient-to-br from-nextpixel-dark to-nextpixel-blue">
       <div className="container mx-auto px-4 max-w-4xl">

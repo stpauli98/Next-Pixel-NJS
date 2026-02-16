@@ -8,6 +8,12 @@ import LanguageSelector from '@/components/LanguageSelector';
 import { useClientTranslation } from '@/hooks/useClientTranslation';
 import { usePathname } from 'next/navigation';
 
+const fallbackNav: Record<string, Record<string, string>> = {
+  de: { features: 'Funktionen', process: 'Ablauf', pricing: 'Preise', faq: 'FAQ', contact: 'Kontakt', cta: 'Beratung buchen', backToMain: 'Zur Hauptseite' },
+  en: { features: 'Features', process: 'Process', pricing: 'Pricing', faq: 'FAQ', contact: 'Contact', cta: 'Book Consultation', backToMain: 'Back to main site' },
+  sr: { features: 'Funkcije', process: 'Proces', pricing: 'Cijene', faq: 'FAQ', contact: 'Kontakt', cta: 'Zakažite konsultaciju', backToMain: 'Nazad na glavni sajt' },
+};
+
 const BookingNavbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -25,13 +31,14 @@ const BookingNavbar: React.FC = () => {
 
   const currentLang = getLangFromPath();
   const mounted = isHydrated && isReady;
+  const fb = fallbackNav[currentLang] || fallbackNav.de;
 
   const navLinks = [
-    { name: mounted ? t('nav.features') : 'Funktionen', href: '#features' },
-    { name: mounted ? t('nav.process') : 'Ablauf', href: '#process' },
-    { name: mounted ? t('nav.pricing') : 'Preise', href: '#pricing' },
-    { name: mounted ? t('nav.faq') : 'FAQ', href: '#faq' },
-    { name: mounted ? t('nav.contact') : 'Kontakt', href: '#contact' },
+    { name: mounted ? t('nav.features') : fb.features, href: '#features' },
+    { name: mounted ? t('nav.process') : fb.process, href: '#process' },
+    { name: mounted ? t('nav.pricing') : fb.pricing, href: '#pricing' },
+    { name: mounted ? t('nav.faq') : fb.faq, href: '#faq' },
+    { name: mounted ? t('nav.contact') : fb.contact, href: '#contact' },
   ];
 
   useEffect(() => {
@@ -57,7 +64,7 @@ const BookingNavbar: React.FC = () => {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center gap-4">
-          <a href={mainSiteUrl} className="flex items-center text-sm text-gray-500 hover:text-nextpixel-blue transition-colors" title={mounted ? t('nav.backToMain') : 'Zur Hauptseite'}>
+          <a href={mainSiteUrl} className="flex items-center text-sm text-gray-500 hover:text-nextpixel-blue transition-colors" title={mounted ? t('nav.backToMain') : fb.backToMain}>
             <Icon icon={FaArrowLeft} className="mr-1" size={12} aria-hidden={true} />
           </a>
           <a href="#home" className="flex items-center">
@@ -82,7 +89,7 @@ const BookingNavbar: React.FC = () => {
             </a>
           ))}
           <a href="#contact" className="btn-primary">
-            {mounted ? t('nav.cta') : 'Beratung buchen'}
+            {mounted ? t('nav.cta') : fb.cta}
           </a>
           <LanguageSelector />
         </div>
@@ -124,7 +131,7 @@ const BookingNavbar: React.FC = () => {
               className="btn-primary text-center"
               onClick={() => setIsOpen(false)}
             >
-              {mounted ? t('nav.cta') : 'Beratung buchen'}
+              {mounted ? t('nav.cta') : fb.cta}
             </a>
           </div>
         </motion.div>
