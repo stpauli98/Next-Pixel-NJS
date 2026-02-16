@@ -1,0 +1,38 @@
+{
+  "title": "Everything Your Booking System Needs",
+  "subtitle": "Modern features that your customers love and that relieve your team.",
+  "items": [
+    {
+      "title": "Online Appointment Booking",
+      "description": "Customers book appointments directly on your website - 24/7, no phone call needed. Simple calendar view with real-time availability."
+    },
+    {
+      "title": "Automatic Reminders",
+      "description": "Reduce no-shows by up to 80% with automatic email and SMS reminders before each appointment."
+    },
+    {
+      "title": "Calendar Sync",
+      "description": "Seamless integration with Google Calendar, Outlook and Apple Calendar. Your appointments always in view."
+    },
+    {
+      "title": "Online Payment",
+      "description": "Integrated payment processing with Stripe, PayPal or Klarna. Deposits and prepayments made easy."
+    },
+    {
+      "title": "Dashboard & Analytics",
+      "description": "Clear dashboard with statistics on bookings, utilization and revenue. Make data-driven decisions."
+    },
+    {
+      "title": "Responsive Design",
+      "description": "Optimized for all devices. Your customers book conveniently from smartphone, tablet or desktop."
+    },
+    {
+      "title": "Multilingual",
+      "description": "Reach international customers with automatic language detection and multilingual interface."
+    },
+    {
+      "title": "GDPR Compliant",
+      "description": "Full data protection compliance. Secure data storage and transparent data processing."
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "title": "Häufig gestellte Fragen",
+  "subtitle": "Antworten auf die wichtigsten Fragen rund um Ihr Online-Buchungssystem.",
+  "items": [
+    {
+      "question": "Wie lange dauert die Entwicklung eines Buchungssystems?",
+      "answer": "Je nach Umfang dauert die Entwicklung 3-8 Wochen. Ein Starter-System kann in 3-4 Wochen live gehen, während komplexere Enterprise-Lösungen 6-8 Wochen benötigen."
+    },
+    {
+      "question": "Kann ich das System später erweitern?",
+      "answer": "Ja, alle unsere Systeme sind modular aufgebaut. Sie können jederzeit neue Funktionen hinzufügen, z.B. Online-Zahlung, SMS-Erinnerungen oder zusätzliche Sprachen."
+    },
+    {
+      "question": "Welche Zahlungsanbieter werden unterstützt?",
+      "answer": "Wir integrieren Stripe, PayPal, Klarna und weitere Zahlungsanbieter. Die Integration wird individuell an Ihre Bedürfnisse angepasst."
+    },
+    {
+      "question": "Ist das System DSGVO-konform?",
+      "answer": "Ja, alle unsere Buchungssysteme sind vollständig DSGVO-konform. Daten werden auf europäischen Servern gespeichert und verschlüsselt übertragen."
+    },
+    {
+      "question": "Brauche ich technische Kenntnisse für die Verwaltung?",
+      "answer": "Nein, das Admin-Dashboard ist intuitiv gestaltet. Wir bieten zusätzlich eine Einschulung für Ihr Team an."
+    },
+    {
+      "question": "Was passiert nach dem Launch?",
+      "answer": "Je nach Paket erhalten Sie 3-12 Monate technischen Support. Danach bieten wir optionale Wartungsverträge für Updates, Sicherheit und Weiterentwicklung."
+    },
+    {
+      "question": "Kann das System in meine bestehende Website integriert werden?",
+      "answer": "Ja, wir können das Buchungssystem als eigenständige Lösung oder als Integration in Ihre bestehende Website entwickeln."
+    },
+    {
+      "question": "Welche Branchen nutzen Online-Buchungssysteme?",
+      "answer": "Unsere Systeme werden von Arztpraxen, Friseuren, Coaches, Fitnessstudios, Restaurants, Hotels und vielen weiteren Branchen genutzt."
+    }
+  ]
+}

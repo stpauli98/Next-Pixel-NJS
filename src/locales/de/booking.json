@@ -1,0 +1,15 @@
+{
+  "nav": {
+    "features": "Funktionen",
+    "process": "Ablauf",
+    "pricing": "Preise",
+    "faq": "FAQ",
+    "contact": "Kontakt",
+    "backToMain": "Zur Hauptseite",
+    "cta": "Beratung buchen"
+  },
+  "meta": {
+    "title": "Online-Buchungssystem Entwicklung | NextPixel",
+    "description": "Professionelle Entwicklung von Online-Buchungssystemen. Terminbuchung, Kalender-Synchronisation, automatische Erinnerungen. Ab 990 EUR."
+  }
+}

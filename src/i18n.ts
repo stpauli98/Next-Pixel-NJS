@@ -16,6 +16,12 @@ import contactEN from './locales/en/contact.json';
 import footerEN from './locales/en/footer.json';
 import legalEN from './locales/en/legal.json';
 import blogEN from './locales/en/blog.json';
+import bookingEN from './locales/en/booking.json';
+import bookingHeroEN from './locales/en/bookingHero.json';
+import bookingFeaturesEN from './locales/en/bookingFeatures.json';
+import bookingProcessEN from './locales/en/bookingProcess.json';
+import bookingPricingEN from './locales/en/bookingPricing.json';
+import bookingFaqEN from './locales/en/bookingFaq.json';
 
 // Import Serbian translations
 import commonSR from './locales/sr/common.json';
@@ -30,6 +36,12 @@ import contactSR from './locales/sr/contact.json';
 import footerSR from './locales/sr/footer.json';
 import legalSR from './locales/sr/legal.json';
 import blogSR from './locales/sr/blog.json';
+import bookingSR from './locales/sr/booking.json';
+import bookingHeroSR from './locales/sr/bookingHero.json';
+import bookingFeaturesSR from './locales/sr/bookingFeatures.json';
+import bookingProcessSR from './locales/sr/bookingProcess.json';
+import bookingPricingSR from './locales/sr/bookingPricing.json';
+import bookingFaqSR from './locales/sr/bookingFaq.json';
 
 // Import German translations
 import commonDE from './locales/de/common.json';
@@ -44,6 +56,12 @@ import contactDE from './locales/de/contact.json';
 import footerDE from './locales/de/footer.json';
 import legalDE from './locales/de/legal.json';
 import blogDE from './locales/de/blog.json';
+import bookingDE from './locales/de/booking.json';
+import bookingHeroDE from './locales/de/bookingHero.json';
+import bookingFeaturesDE from './locales/de/bookingFeatures.json';
+import bookingProcessDE from './locales/de/bookingProcess.json';
+import bookingPricingDE from './locales/de/bookingPricing.json';
+import bookingFaqDE from './locales/de/bookingFaq.json';
 
 // The translations organized by namespaces
 const resources = {
@@ -59,7 +77,13 @@ const resources = {
     contact: contactSR,
     footer: footerSR,
     legal: legalSR,
-    blog: blogSR
+    blog: blogSR,
+    booking: bookingSR,
+    bookingHero: bookingHeroSR,
+    bookingFeatures: bookingFeaturesSR,
+    bookingProcess: bookingProcessSR,
+    bookingPricing: bookingPricingSR,
+    bookingFaq: bookingFaqSR
   },
   en: {
     common: commonEN,
@@ -73,7 +97,13 @@ const resources = {
     contact: contactEN,
     footer: footerEN,
     legal: legalEN,
-    blog: blogEN
+    blog: blogEN,
+    booking: bookingEN,
+    bookingHero: bookingHeroEN,
+    bookingFeatures: bookingFeaturesEN,
+    bookingProcess: bookingProcessEN,
+    bookingPricing: bookingPricingEN,
+    bookingFaq: bookingFaqEN
   },
   de: {
     common: commonDE,
@@ -87,7 +117,13 @@ const resources = {
     contact: contactDE,
     footer: footerDE,
     legal: legalDE,
-    blog: blogDE
+    blog: blogDE,
+    booking: bookingDE,
+    bookingHero: bookingHeroDE,
+    bookingFeatures: bookingFeaturesDE,
+    bookingProcess: bookingProcessDE,
+    bookingPricing: bookingPricingDE,
+    bookingFaq: bookingFaqDE
   }
 };
 
@@ -98,7 +134,7 @@ i18n
     lng: 'sr',
     fallbackLng: 'sr',
     defaultNS: 'common',
-    ns: ['common', 'navigation', 'language', 'hero', 'about', 'services', 'whyChooseUs', 'portfolio', 'contact', 'footer', 'legal', 'blog'],
+    ns: ['common', 'navigation', 'language', 'hero', 'about', 'services', 'whyChooseUs', 'portfolio', 'contact', 'footer', 'legal', 'blog', 'booking', 'bookingHero', 'bookingFeatures', 'bookingProcess', 'bookingPricing', 'bookingFaq'],
     keySeparator: '.',
     nsSeparator: ':',
     debug: false,

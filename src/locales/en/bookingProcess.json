@@ -1,0 +1,26 @@
+{
+  "title": "Your Booking System in 4 Steps",
+  "subtitle": "A clear, transparent process from the first idea to the finished system.",
+  "steps": [
+    {
+      "step": "01",
+      "title": "Consultation",
+      "description": "We analyze your requirements, understand your processes and together define the optimal feature set."
+    },
+    {
+      "step": "02",
+      "title": "Design",
+      "description": "We design an intuitive user interface that matches your branding and delights your customers."
+    },
+    {
+      "step": "03",
+      "title": "Development",
+      "description": "Our team develops your booking system with cutting-edge technologies. Regular updates keep you informed."
+    },
+    {
+      "step": "04",
+      "title": "Launch & Support",
+      "description": "We deploy your system, train your team and provide long-term technical support."
+    }
+  ]
+}

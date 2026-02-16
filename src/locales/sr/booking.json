@@ -1,0 +1,15 @@
+{
+  "nav": {
+    "features": "Funkcije",
+    "process": "Proces",
+    "pricing": "Cijene",
+    "faq": "FAQ",
+    "contact": "Kontakt",
+    "backToMain": "Nazad na glavni sajt",
+    "cta": "Zakazi konsultaciju"
+  },
+  "meta": {
+    "title": "Izrada Online Booking Sistema | NextPixel",
+    "description": "Profesionalna izrada online booking sistema. Zakazivanje termina, sinhronizacija kalendara, automatski podsjetnici. Od 990 EUR."
+  }
+}

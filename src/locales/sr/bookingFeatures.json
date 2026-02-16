@@ -1,0 +1,38 @@
+{
+  "title": "Sve što vaš booking sistem treba",
+  "subtitle": "Moderne funkcije koje vaši klijenti vole i koje rasterećuju vaš tim.",
+  "items": [
+    {
+      "title": "Online zakazivanje termina",
+      "description": "Klijenti zakazuju termine direktno na vašoj web stranici - 24/7, bez telefonskog poziva. Jednostavan kalendar sa dostupnošću u realnom vremenu."
+    },
+    {
+      "title": "Automatski podsjetnici",
+      "description": "Smanjite izostanke do 80% sa automatskim email i SMS podsjetnicima prije svakog termina."
+    },
+    {
+      "title": "Sinhronizacija kalendara",
+      "description": "Integracija sa Google Calendar, Outlook i Apple Calendar. Vaši termini uvijek na jednom mjestu."
+    },
+    {
+      "title": "Online plaćanje",
+      "description": "Integrisana obrada plaćanja sa Stripe, PayPal ili Klarna. Depoziti i avansna plaćanja bez komplikacija."
+    },
+    {
+      "title": "Dashboard i analitika",
+      "description": "Pregledna kontrolna tabla sa statistikama o rezervacijama, popunjenosti i prihodima."
+    },
+    {
+      "title": "Responsive dizajn",
+      "description": "Optimizovano za sve uređaje. Vaši klijenti rezervišu sa telefona, tableta ili računara."
+    },
+    {
+      "title": "Višejezično",
+      "description": "Dosegnite međunarodne klijente sa automatskom detekcijom jezika i višejezičnim interfejsom."
+    },
+    {
+      "title": "GDPR usklađenost",
+      "description": "Potpuna usklađenost sa zaštitom podataka. Sigurno skladištenje i transparentna obrada podataka."
+    }
+  ]
+}

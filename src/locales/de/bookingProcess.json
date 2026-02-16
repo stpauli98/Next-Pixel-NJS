@@ -1,0 +1,26 @@
+{
+  "title": "In 4 Schritten zu Ihrem Buchungssystem",
+  "subtitle": "Ein klarer, transparenter Prozess von der ersten Idee bis zum fertigen System.",
+  "steps": [
+    {
+      "step": "01",
+      "title": "Beratung",
+      "description": "Wir analysieren Ihre Anforderungen, verstehen Ihre Prozesse und definieren gemeinsam den optimalen Funktionsumfang."
+    },
+    {
+      "step": "02",
+      "title": "Design",
+      "description": "Wir gestalten eine intuitive Benutzeroberfläche, die zu Ihrem Branding passt und Ihre Kunden begeistert."
+    },
+    {
+      "step": "03",
+      "title": "Entwicklung",
+      "description": "Unser Team entwickelt Ihr Buchungssystem mit modernsten Technologien. Regelmäßige Updates halten Sie auf dem Laufenden."
+    },
+    {
+      "step": "04",
+      "title": "Launch & Support",
+      "description": "Wir deployen Ihr System, schulen Ihr Team und bieten langfristigen technischen Support."
+    }
+  ]
+}

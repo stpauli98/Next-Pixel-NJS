@@ -1,0 +1,38 @@
+{
+  "title": "Alles, was Ihr Buchungssystem braucht",
+  "subtitle": "Moderne Funktionen, die Ihre Kunden lieben und Ihr Team entlasten.",
+  "items": [
+    {
+      "title": "Online-Terminbuchung",
+      "description": "Kunden buchen Termine direkt auf Ihrer Website - 24/7, ohne Anruf. Einfache Kalenderansicht mit Echtzeit-Verfügbarkeit."
+    },
+    {
+      "title": "Automatische Erinnerungen",
+      "description": "Reduzieren Sie No-Shows um bis zu 80% mit automatischen E-Mail- und SMS-Erinnerungen vor jedem Termin."
+    },
+    {
+      "title": "Kalender-Synchronisation",
+      "description": "Nahtlose Integration mit Google Calendar, Outlook und Apple Calendar. Ihre Termine immer im Blick."
+    },
+    {
+      "title": "Online-Zahlung",
+      "description": "Integrierte Zahlungsabwicklung mit Stripe, PayPal oder Klarna. Anzahlungen und Vorauszahlungen leicht gemacht."
+    },
+    {
+      "title": "Dashboard & Analytics",
+      "description": "Übersichtliches Dashboard mit Statistiken zu Buchungen, Auslastung und Umsatz. Datenbasierte Entscheidungen treffen."
+    },
+    {
+      "title": "Responsive Design",
+      "description": "Optimiert für alle Geräte. Ihre Kunden buchen bequem vom Smartphone, Tablet oder Desktop."
+    },
+    {
+      "title": "Mehrsprachig",
+      "description": "Erreichen Sie internationale Kunden mit automatischer Spracherkennung und mehrsprachiger Oberfläche."
+    },
+    {
+      "title": "DSGVO-konform",
+      "description": "Volle Datenschutzkonformität nach DSGVO. Sichere Datenspeicherung und transparente Datenverarbeitung."
+    }
+  ]
+}

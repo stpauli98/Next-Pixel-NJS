@@ -1,0 +1,38 @@
+{
+  "title": "Često postavljana pitanja",
+  "subtitle": "Odgovori na najvažnija pitanja o vašem online booking sistemu.",
+  "items": [
+    {
+      "question": "Koliko traje razvoj booking sistema?",
+      "answer": "Zavisno od obima, razvoj traje 3-8 sedmica. Starter sistem može biti gotov za 3-4 sedmice, dok složenija Enterprise rješenja zahtijevaju 6-8 sedmica."
+    },
+    {
+      "question": "Mogu li kasnije proširiti sistem?",
+      "answer": "Da, svi naši sistemi su modularno izgrađeni. Možete dodati nove funkcije u bilo kom trenutku, kao što su online plaćanje, SMS podsjetnici ili dodatni jezici."
+    },
+    {
+      "question": "Koji provajderi plaćanja su podržani?",
+      "answer": "Integrišemo Stripe, PayPal, Klarna i druge provajdere plaćanja. Integracija se individualno prilagođava vašim potrebama."
+    },
+    {
+      "question": "Da li je sistem usklađen sa GDPR-om?",
+      "answer": "Da, svi naši booking sistemi su potpuno usklađeni sa GDPR-om. Podaci se čuvaju na evropskim serverima i prenose šifrovano."
+    },
+    {
+      "question": "Trebam li tehničko znanje za upravljanje?",
+      "answer": "Ne, admin dashboard je intuitivno dizajniran. Takođe nudimo obuku za vaš tim."
+    },
+    {
+      "question": "Šta se dešava nakon pokretanja?",
+      "answer": "Zavisno od paketa, dobijate 3-12 mjeseci tehničke podrške. Nakon toga nudimo opcionalne ugovore o održavanju za nadogradnje, sigurnost i dalji razvoj."
+    },
+    {
+      "question": "Može li se sistem integrisati u moju postojeću web stranicu?",
+      "answer": "Da, možemo razviti booking sistem kao samostalno rješenje ili kao integraciju u vašu postojeću web stranicu."
+    },
+    {
+      "question": "Koje branše koriste online booking sisteme?",
+      "answer": "Naši sistemi se koriste u ordinacijama, frizerskim salonima, kod coaches-a, fitness studija, restorana, hotela i mnogih drugih branši."
+    }
+  ]
+}

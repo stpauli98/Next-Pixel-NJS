@@ -1,0 +1,57 @@
+{
+  "title": "Transparent Pricing",
+  "subtitle": "Choose the package that fits your business. All prices excl. VAT.",
+  "packages": [
+    {
+      "name": "Starter",
+      "price": "from 990",
+      "currency": "EUR",
+      "description": "Perfect for solo entrepreneurs and small businesses",
+      "features": [
+        "Online appointment booking",
+        "Email confirmations",
+        "Responsive design",
+        "Google Calendar Sync",
+        "Basic dashboard",
+        "3 months support"
+      ],
+      "cta": "Get Started"
+    },
+    {
+      "name": "Professional",
+      "price": "from 2,490",
+      "currency": "EUR",
+      "description": "Ideal for growing businesses with multiple employees",
+      "popular": true,
+      "features": [
+        "Everything in Starter",
+        "SMS reminders",
+        "Online payment (Stripe/PayPal)",
+        "Staff management",
+        "Advanced analytics",
+        "Multilingual (DE/EN)",
+        "Custom modifications",
+        "6 months support"
+      ],
+      "cta": "Most Popular"
+    },
+    {
+      "name": "Enterprise",
+      "price": "on request",
+      "currency": "",
+      "description": "Tailored solution for large organizations",
+      "features": [
+        "Everything in Professional",
+        "API integration",
+        "Multi-location",
+        "Custom branding",
+        "Automated workflows",
+        "Priority support",
+        "SLA guarantee",
+        "12 months support"
+      ],
+      "cta": "Contact Us"
+    }
+  ],
+  "note": "Custom requirements? Contact us for a tailored quote."
+}

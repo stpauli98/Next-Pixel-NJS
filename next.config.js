@@ -10,7 +10,7 @@ const nextConfig = {
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   // Optionally, add any other Next.js config below
   reactStrictMode: true,
-  
+
   // SEO & Security Headers
   async headers() {
     return [
@@ -21,14 +21,49 @@ const nextConfig = {
     ]
   },
 
-  // Rewrites for manifest - ensure it's always served from root
+  // Rewrites for manifest and booking subdomain SEO files
   async rewrites() {
-    return [
-      {
-        source: '/:lang(sr|en|de)/manifest.webmanifest',
-        destination: '/manifest.webmanifest',
-      },
-    ]
+    return {
+      beforeFiles: [
+        // Booking subdomain: robots.txt → API route
+        {
+          source: '/robots.txt',
+          destination: '/api/booking-robots',
+          has: [
+            { type: 'host', value: 'booking.nextpixel.dev' },
+          ],
+        },
+        {
+          source: '/robots.txt',
+          destination: '/api/booking-robots',
+          has: [
+            { type: 'host', value: 'booking.localhost:3000' },
+          ],
+        },
+        // Booking subdomain: sitemap.xml → API route
+        {
+          source: '/sitemap.xml',
+          destination: '/api/booking-sitemap',
+          has: [
+            { type: 'host', value: 'booking.nextpixel.dev' },
+          ],
+        },
+        {
+          source: '/sitemap.xml',
+          destination: '/api/booking-sitemap',
+          has: [
+            { type: 'host', value: 'booking.localhost:3000' },
+          ],
+        },
+      ],
+      afterFiles: [
+        // Manifest rewrite for locale paths
+        {
+          source: '/:lang(sr|en|de)/manifest.webmanifest',
+          destination: '/manifest.webmanifest',
+        },
+      ],
+    }
   },
 
   // Performance optimizations
