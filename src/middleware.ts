@@ -35,8 +35,6 @@ function detectLocale(request: NextRequest, defaultLocale: Locale = i18nConfig.d
 }
 
 function addSecurityHeaders(response: NextResponse, locale: string) {
-  const lastModified = new Date().toUTCString();
-  response.headers.set('Last-Modified', lastModified);
   response.headers.set('Cache-Control', 'public, max-age=3600, must-revalidate');
   response.headers.set('X-Robots-Tag', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
   response.headers.set('X-Content-Type-Options', 'nosniff');

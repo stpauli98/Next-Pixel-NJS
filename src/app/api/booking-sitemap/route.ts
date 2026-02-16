@@ -9,7 +9,6 @@ export async function GET() {
     (locale) => `  <url>
     <loc>${baseUrl}/${locale}</loc>
     <lastmod>${lastmod}</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>${locale === 'de' ? '1.0' : '0.8'}</priority>
     <xhtml:link rel="alternate" hreflang="de" href="${baseUrl}/de"/>
     <xhtml:link rel="alternate" hreflang="en" href="${baseUrl}/en"/>

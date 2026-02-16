@@ -8,14 +8,13 @@ User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /_next/
-Disallow: /*.json$
+Disallow: /*.json
 
 User-agent: Googlebot
 Allow: /
 Disallow: /api/
 
 Sitemap: ${baseUrl}/sitemap.xml
-Host: ${baseUrl}
 `;
 
   return new NextResponse(robotsTxt, {

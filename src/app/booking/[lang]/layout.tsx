@@ -10,21 +10,18 @@ interface LayoutProps {
   }>;
 }
 
-const bookingMetadata: Record<string, { title: string; description: string; keywords: string }> = {
+const bookingMetadata: Record<string, { title: string; description: string }> = {
   de: {
     title: 'Online-Buchungssystem Entwicklung | NextPixel',
     description: 'Professionelle Entwicklung von Online-Buchungssystemen. Terminbuchung, Kalender-Synchronisation, automatische Erinnerungen, Online-Zahlung. Ab 990 EUR.',
-    keywords: 'Online-Buchungssystem, Terminbuchung, Booking System, Buchungssoftware, Online Terminvergabe, Kalender-Synchronisation, NextPixel',
   },
   en: {
     title: 'Online Booking System Development | NextPixel',
     description: 'Professional development of online booking systems. Appointment scheduling, calendar sync, automatic reminders, online payments. From 990 EUR.',
-    keywords: 'online booking system, appointment scheduling, booking software, calendar sync, NextPixel',
   },
   sr: {
     title: 'Izrada Online Booking Sistema | NextPixel',
     description: 'Profesionalna izrada online booking sistema. Zakazivanje termina, sinhronizacija kalendara, automatski podsjetnici, online plaćanje. Od 990 EUR.',
-    keywords: 'online booking sistem, zakazivanje termina, booking softver, sinhronizacija kalendara, NextPixel',
   },
 };
 
@@ -37,13 +34,12 @@ export async function generateMetadata({ params }: LayoutProps) {
   return {
     title: meta.title,
     description: meta.description,
-    keywords: meta.keywords,
     alternates: {
       canonical: `${baseUrl}/${locale}`,
       languages: {
-        'de-DE': `${baseUrl}/de`,
-        'en-US': `${baseUrl}/en`,
-        'sr-RS': `${baseUrl}/sr`,
+        'de': `${baseUrl}/de`,
+        'en': `${baseUrl}/en`,
+        'sr': `${baseUrl}/sr`,
         'x-default': `${baseUrl}/de`,
       },
     },
