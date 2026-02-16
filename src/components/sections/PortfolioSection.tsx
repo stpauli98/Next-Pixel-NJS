@@ -144,8 +144,7 @@ const PortfolioSection: React.FC = () => {
         typeof t('portfolio:features.salonManagement') === 'string' ? t('portfolio:features.salonManagement') as string : 'Kompletno upravljanje salonom – usluge, zaposlenici, radno vrijeme',
         typeof t('portfolio:features.realtimeCalendar') === 'string' ? t('portfolio:features.realtimeCalendar') as string : 'Kalendarski i listni pregled termina u realnom vremenu',
         typeof t('portfolio:features.pwaApp') === 'string' ? t('portfolio:features.pwaApp') as string : 'PWA – radi kao nativna aplikacija na mobilnim uređajima',
-        typeof t('portfolio:features.pushAndNotifications') === 'string' ? t('portfolio:features.pushAndNotifications') as string : 'Push notifikacije, email i SMS podsjetnici',
-        typeof t('portfolio:features.chatSystem') === 'string' ? t('portfolio:features.chatSystem') as string : 'Chat sistem između vlasnika salona i klijenata'
+        typeof t('portfolio:features.pushAndNotifications') === 'string' ? t('portfolio:features.pushAndNotifications') as string : 'Push notifikacije, email i SMS podsjetnici'
       ]
     },
   ], [t]);

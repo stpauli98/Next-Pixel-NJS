@@ -107,7 +107,6 @@
     "salonManagement": "Kompletno upravljanje salonom – usluge, zaposlenici, radno vrijeme",
     "realtimeCalendar": "Kalendarski i listni pregled termina u realnom vremenu",
     "pwaApp": "PWA – radi kao nativna aplikacija na mobilnim uređajima",
-    "pushAndNotifications": "Push notifikacije, email i SMS podsjetnici",
-    "chatSystem": "Chat sistem između vlasnika salona i klijenata"
+    "pushAndNotifications": "Push notifikacije, email i SMS podsjetnici"
   }
 }

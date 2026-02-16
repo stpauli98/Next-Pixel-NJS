@@ -107,7 +107,6 @@
     "salonManagement": "Komplette Salonverwaltung – Dienstleistungen, Mitarbeiter, Öffnungszeiten",
     "realtimeCalendar": "Kalender- und Listenansicht der Termine in Echtzeit",
     "pwaApp": "PWA – funktioniert wie eine native App auf Mobilgeräten",
-    "pushAndNotifications": "Push-Benachrichtigungen, E-Mail- und SMS-Erinnerungen",
-    "chatSystem": "Chat-System zwischen Saloninhabern und Kunden"
+    "pushAndNotifications": "Push-Benachrichtigungen, E-Mail- und SMS-Erinnerungen"
   }
 }

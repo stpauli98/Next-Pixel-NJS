@@ -141,12 +141,15 @@ const ProjectDetailsModal: React.FC<ProjectDetailsModalProps> = ({ project, isOp
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          ref={scrollContainerRef}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[55] bg-white overflow-y-auto overscroll-contain"
+          className="fixed inset-0 z-[55] bg-white"
         >
+          <div
+            ref={scrollContainerRef}
+            className="h-full overflow-y-auto overscroll-contain"
+          >
           {/* Close button - fixed position */}
           <button
             onClick={onClose}
@@ -187,7 +190,7 @@ const ProjectDetailsModal: React.FC<ProjectDetailsModalProps> = ({ project, isOp
                   alt={project.title}
                   height={720}
                   width={1400}
-                  className="mx-auto rounded-2xl object-cover h-full object-center md:object-left-top"
+                  className="mx-auto rounded-2xl object-cover h-full object-center"
                   draggable={false}
                   priority
                   onLoad={() => setImageLoading(false)}
@@ -275,6 +278,7 @@ const ProjectDetailsModal: React.FC<ProjectDetailsModalProps> = ({ project, isOp
                 </div>
               )}
             </motion.div>
+          </div>
           </div>
         </motion.div>
       )}
