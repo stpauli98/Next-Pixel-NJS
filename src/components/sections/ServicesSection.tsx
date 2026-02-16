@@ -1,15 +1,19 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { FaMobileAlt, FaLaptopCode } from 'react-icons/fa';
-import { FaMobileScreen, FaMagnifyingGlass, FaPalette, FaCartShopping } from 'react-icons/fa6';
+import { FaMobileScreen, FaMagnifyingGlass, FaPalette, FaCartShopping, FaCalendarCheck, FaArrowRight } from 'react-icons/fa6';
+import { Icon } from '../../utils/icons';
 import { useTranslate } from '../../context/LanguageContext';
 import { ShuffleCards } from '../ui/service-shuffle-cards';
 import { StarButton } from '@/components/ui/star-button';
 
+const BOOKING_CARD_INDEX = 0;
+
 const ServicesSection: React.FC = () => {
-  const { t } = useTranslate();
+  const { t, language } = useTranslate();
+  const [frontIndex, setFrontIndex] = useState(0);
 
   type IconType = typeof FaLaptopCode;
 
@@ -20,6 +24,11 @@ interface Service {
 }
 
 const services: Service[] = [
+    {
+      icon: FaCalendarCheck,
+      title: typeof t('services:bookingSystem.title') === 'string' ? t('services:bookingSystem.title') as string : 'Online Booking System',
+      description: typeof t('services:bookingSystem.description') === 'string' ? t('services:bookingSystem.description') as string : ''
+    },
     {
       icon: FaLaptopCode,
       title: typeof t('services:webDevelopment.title') === 'string' ? t('services:webDevelopment.title') as string : 'Web Development',
@@ -51,6 +60,8 @@ const services: Service[] = [
       description: typeof t('services:responsive.description') === 'string' ? t('services:responsive.description') as string : ''
     }
   ];
+
+  const isBookingVisible = frontIndex === BOOKING_CARD_INDEX;
 
   return (
     <section id="services" className="relative section bg-nextpixel-light py-24 md:py-32 overflow-hidden">
@@ -93,15 +104,50 @@ const services: Service[] = [
           <ShuffleCards
             services={services}
             dragHint={typeof t('services:dragHint') === 'string' ? t('services:dragHint') as string : 'Drag to explore services'}
+            onFrontIndexChange={setFrontIndex}
           />
         </div>
+
+        {/* Booking System CTA Banner - only when booking card is front */}
+        <AnimatePresence>
+          {isBookingVisible && (
+            <motion.a
+              href={`https://booking.nextpixel.dev/${language || 'de'}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 10, height: 0, marginTop: 0 }}
+              animate={{ opacity: 1, y: 0, height: 'auto', marginTop: 48 }}
+              exit={{ opacity: 0, y: -10, height: 0, marginTop: 0 }}
+              transition={{ duration: 0.3 }}
+              className="mx-auto max-w-2xl flex items-center gap-4 rounded-2xl border border-nextpixel-turquoise/30 bg-white p-6 shadow-sm hover:shadow-md transition-shadow group cursor-pointer overflow-hidden"
+            >
+              <div className="flex-shrink-0 w-12 h-12 bg-nextpixel-turquoise/10 rounded-xl flex items-center justify-center">
+                <Icon icon={FaCalendarCheck} className="text-nextpixel-turquoise" size={24} aria-hidden={true} />
+              </div>
+              <div className="flex-1 min-w-0">
+                <h3 className="font-bold text-nextpixel-dark text-sm md:text-base">
+                  {typeof t('services:bookingCta.title') === 'string' ? t('services:bookingCta.title') as string : 'Online Booking System'}
+                </h3>
+                <p className="text-nextpixel-gray text-xs md:text-sm mt-0.5">
+                  {typeof t('services:bookingCta.description') === 'string' ? t('services:bookingCta.description') as string : ''}
+                </p>
+              </div>
+              <div className="flex-shrink-0">
+                <span className="inline-flex items-center gap-1 text-nextpixel-turquoise font-medium text-sm group-hover:gap-2 transition-all">
+                  {typeof t('services:bookingCta.button') === 'string' ? t('services:bookingCta.button') as string : 'Learn more'}
+                  <Icon icon={FaArrowRight} size={12} aria-hidden={true} />
+                </span>
+              </div>
+            </motion.a>
+          )}
+        </AnimatePresence>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-center mt-24"
+          className="text-center mt-12"
         >
           <StarButton href="#contact">
             {t('services:requestQuote')}

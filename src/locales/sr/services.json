@@ -38,5 +38,14 @@
   "responsive": {
     "title": "Responzivni dizajn",
     "description": "Obezbjeđujemo da vaša stranica izgleda i radi savršeno na svim uređajima."
+  },
+  "bookingSystem": {
+    "title": "Online Booking Sistem",
+    "description": "Prilagođena booking rješenja sa upravljanjem terminima, sinhronizacijom kalendara i online plaćanjem."
+  },
+  "bookingCta": {
+    "title": "Online Booking Sistem za vaše poslovanje",
+    "description": "Više rezervacija, manje posla. Individualna booking rješenja od 990 EUR.",
+    "button": "Saznaj više"
   }
 }

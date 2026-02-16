@@ -101,14 +101,19 @@ interface Service {
 interface ShuffleCardsProps {
   services: Service[];
   dragHint?: string;
+  onFrontIndexChange?: (index: number) => void;
 }
 
-export function ShuffleCards({ services, dragHint = "Drag to explore" }: ShuffleCardsProps) {
+export function ShuffleCards({ services, dragHint = "Drag to explore", onFrontIndexChange }: ShuffleCardsProps) {
   // Current front card index - cycles through all services
   const [frontIndex, setFrontIndex] = React.useState(0);
 
   const handleShuffle = () => {
-    setFrontIndex(prev => (prev + 1) % services.length);
+    setFrontIndex(prev => {
+      const next = (prev + 1) % services.length;
+      onFrontIndexChange?.(next);
+      return next;
+    });
   };
 
   // Calculate which 3 services to show based on front index

@@ -38,5 +38,14 @@
   "responsive": {
     "title": "Responsive Design",
     "description": "Ihre Website funktioniert optimal auf allen Geräten – vom Handy bis zum Desktop."
+  },
+  "bookingSystem": {
+    "title": "Online-Buchungssystem",
+    "description": "Maßgeschneiderte Buchungslösungen mit Terminverwaltung, Kalender-Sync und Online-Zahlung."
+  },
+  "bookingCta": {
+    "title": "Online-Buchungssystem für Ihr Unternehmen",
+    "description": "Mehr Buchungen, weniger Aufwand. Individuelle Buchungslösungen ab 990 EUR.",
+    "button": "Mehr erfahren"
   }
 }

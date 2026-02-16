@@ -38,5 +38,14 @@
   "responsive": {
     "title": "Responsive Design",
     "description": "We ensure your website looks and works great on all devices."
+  },
+  "bookingSystem": {
+    "title": "Online Booking System",
+    "description": "Custom booking solutions with appointment management, calendar sync and online payments."
+  },
+  "bookingCta": {
+    "title": "Online Booking System for Your Business",
+    "description": "More bookings, less effort. Custom booking solutions from 990 EUR.",
+    "button": "Learn more"
   }
 }
