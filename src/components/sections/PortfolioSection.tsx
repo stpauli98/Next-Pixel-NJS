@@ -120,7 +120,7 @@ const PortfolioSection: React.FC = () => {
       description: typeof t('portfolio:projects.project12.description') === 'string' ? t('portfolio:projects.project12.description') as string : 'Profesionalna web prezentacija za industrijsku kompaniju sa tri generacije iskustva u čeličnoj industriji. Višejezični sajt koji gradi povjerenje partnera i olakšava prvi kontakt.',
       category: typeof t('portfolio:category.website') === 'string' ? t('portfolio:category.website') as string : 'Website',
       image: '/images/globalgrinding.webp',
-      url: 'https://www.globalgrinding.be/',
+      url: 'https://www.globalgrinding.eu/',
       technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
       features: [
         typeof t('portfolio:features.multiLanguage') === 'string' ? t('portfolio:features.multiLanguage') as string : 'Višejezični sajt (EN, DE, FR, NL) za međunarodne klijente',
@@ -129,6 +129,23 @@ const PortfolioSection: React.FC = () => {
         typeof t('portfolio:features.companyHistory') === 'string' ? t('portfolio:features.companyHistory') as string : 'Priča o tri generacije porodičnog biznisa',
         typeof t('portfolio:features.processGallery') === 'string' ? t('portfolio:features.processGallery') as string : 'Galerija radnih procesa sa 19 fotografija',
         typeof t('portfolio:features.quickContact') === 'string' ? t('portfolio:features.quickContact') as string : 'Brz kontakt za nove poslovne prilike'
+      ]
+    },
+    {
+      id: 7,
+      title: typeof t('portfolio:projects.project13.title') === 'string' ? t('portfolio:projects.project13.title') as string : 'Termin – Online zakazivanje',
+      description: typeof t('portfolio:projects.project13.description') === 'string' ? t('portfolio:projects.project13.description') as string : 'SaaS platforma za online zakazivanje termina u salonima. Vlasnici registruju salon i dobiju kompletan sistem za upravljanje, a korisnici zakazuju u par klikova.',
+      category: typeof t('portfolio:category.webApp') === 'string' ? t('portfolio:category.webApp') as string : 'Web App',
+      image: '/images/TerminiAppHero.webp',
+      url: 'https://www.terminonlineapp.com/',
+      technologies: ['Next.js', 'React', 'Supabase', 'TanStack Query', 'Tailwind CSS', 'PWA'],
+      features: [
+        typeof t('portfolio:features.onlineBooking') === 'string' ? t('portfolio:features.onlineBooking') as string : 'Online zakazivanje termina za klijente salona',
+        typeof t('portfolio:features.salonManagement') === 'string' ? t('portfolio:features.salonManagement') as string : 'Kompletno upravljanje salonom – usluge, zaposlenici, radno vrijeme',
+        typeof t('portfolio:features.realtimeCalendar') === 'string' ? t('portfolio:features.realtimeCalendar') as string : 'Kalendarski i listni pregled termina u realnom vremenu',
+        typeof t('portfolio:features.pwaApp') === 'string' ? t('portfolio:features.pwaApp') as string : 'PWA – radi kao nativna aplikacija na mobilnim uređajima',
+        typeof t('portfolio:features.pushAndNotifications') === 'string' ? t('portfolio:features.pushAndNotifications') as string : 'Push notifikacije, email i SMS podsjetnici',
+        typeof t('portfolio:features.chatSystem') === 'string' ? t('portfolio:features.chatSystem') as string : 'Chat sistem između vlasnika salona i klijenata'
       ]
     },
   ], [t]);

@@ -61,6 +61,10 @@
     "project12": {
       "title": "Global Grinding",
       "description": "Profesionalna web prezentacija za industrijsku kompaniju sa tri generacije iskustva u čeličnoj industriji. Višejezični sajt koji gradi povjerenje partnera i olakšava prvi kontakt."
+    },
+    "project13": {
+      "title": "Termin – Online zakazivanje",
+      "description": "SaaS platforma za online zakazivanje termina u salonima. Vlasnici registruju salon i dobiju kompletan sistem za upravljanje, a korisnici zakazuju u par klikova."
     }
   },
   "features": {
@@ -98,6 +102,12 @@
     "serviceShowcase": "Pregled svih usluga sa detaljnim opisima",
     "companyHistory": "Priča o tri generacije porodičnog biznisa",
     "processGallery": "Galerija radnih procesa sa 19 fotografija",
-    "quickContact": "Brz kontakt za nove poslovne prilike"
+    "quickContact": "Brz kontakt za nove poslovne prilike",
+    "onlineBooking": "Online zakazivanje termina za klijente salona",
+    "salonManagement": "Kompletno upravljanje salonom – usluge, zaposlenici, radno vrijeme",
+    "realtimeCalendar": "Kalendarski i listni pregled termina u realnom vremenu",
+    "pwaApp": "PWA – radi kao nativna aplikacija na mobilnim uređajima",
+    "pushAndNotifications": "Push notifikacije, email i SMS podsjetnici",
+    "chatSystem": "Chat sistem između vlasnika salona i klijenata"
   }
 }

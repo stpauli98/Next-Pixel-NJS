@@ -61,6 +61,10 @@
     "project12": {
       "title": "Global Grinding",
       "description": "Professioneller Webauftritt für ein Industrieunternehmen mit drei Generationen Erfahrung in der Stahlindustrie. Mehrsprachige Website, die Vertrauen bei Partnern schafft und den Erstkontakt erleichtert."
+    },
+    "project13": {
+      "title": "Termin – Online-Buchung",
+      "description": "SaaS-Plattform für Online-Terminbuchung in Salons. Inhaber registrieren ihren Salon und erhalten ein komplettes Verwaltungssystem, während Kunden in wenigen Klicks buchen."
     }
   },
   "features": {
@@ -98,6 +102,12 @@
     "serviceShowcase": "Übersicht aller Leistungen mit detaillierten Beschreibungen",
     "companyHistory": "Geschichte von drei Generationen Familienbetrieb",
     "processGallery": "Galerie der Arbeitsprozesse mit 19 Fotografien",
-    "quickContact": "Schneller Kontakt für neue Geschäftsmöglichkeiten"
+    "quickContact": "Schneller Kontakt für neue Geschäftsmöglichkeiten",
+    "onlineBooking": "Online-Terminbuchung für Salonkunden",
+    "salonManagement": "Komplette Salonverwaltung – Dienstleistungen, Mitarbeiter, Öffnungszeiten",
+    "realtimeCalendar": "Kalender- und Listenansicht der Termine in Echtzeit",
+    "pwaApp": "PWA – funktioniert wie eine native App auf Mobilgeräten",
+    "pushAndNotifications": "Push-Benachrichtigungen, E-Mail- und SMS-Erinnerungen",
+    "chatSystem": "Chat-System zwischen Saloninhabern und Kunden"
   }
 }
