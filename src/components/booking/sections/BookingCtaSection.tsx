@@ -87,7 +87,8 @@ const BookingCtaSection: React.FC = () => {
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
-          message: `[Booking Inquiry]\n\n${formData.message}`,
+          message: formData.message,
+          source: 'booking',
         }),
       });
 

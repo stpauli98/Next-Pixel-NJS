@@ -91,6 +91,10 @@ export async function POST(request: Request) {
     }
 
     const cleanData = validation.data as ContactFormData;
+    const source = typeof formData.source === 'string' ? formData.source : 'website';
+    const emailSubject = source === 'booking'
+      ? `[Booking] Nova poruka od ${cleanData.name}`
+      : `Nova poruka od ${cleanData.name}`;
 
     // Proveravamo da li imamo inicijalizovan Resend objekat
     if (!resend) {
@@ -146,11 +150,11 @@ export async function POST(request: Request) {
     const { data, error } = await resend!.emails.send({
       from: 'Poruka od musterije | NextPixel <onboarding@resend.dev>',
       to: [recipientEmail],
-      subject: `Nova poruka od ${cleanData.name}`,
+      subject: emailSubject,
       react: EmailTemplate({ 
         name: cleanData.name,
         email: cleanData.email,
-        subject: `Nova poruka od ${cleanData.name}`,
+        subject: emailSubject,
         phone: cleanData.phone || '',
         message: cleanData.message
       }) as React.ReactElement,
