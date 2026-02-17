@@ -6,7 +6,7 @@ import { FaMobileAlt, FaLaptopCode } from 'react-icons/fa';
 import { FaMobileScreen, FaMagnifyingGlass, FaPalette, FaCartShopping, FaCalendarCheck, FaArrowRight } from 'react-icons/fa6';
 import { Icon } from '../../utils/icons';
 import { useTranslate } from '../../context/LanguageContext';
-import { ShuffleCards } from '../ui/service-shuffle-cards';
+import { ServiceVerticalStack } from '../ui/service-vertical-stack';
 import { StarButton } from '@/components/ui/star-button';
 
 const BOOKING_CARD_INDEX = 0;
@@ -99,11 +99,10 @@ const services: Service[] = [
       </p>
         </div>
 
-        {/* Shuffle Cards - Interactive */}
+        {/* Animated Card Stack */}
         <div className="flex justify-center mt-12">
-          <ShuffleCards
+          <ServiceVerticalStack
             services={services}
-            dragHint={typeof t('services:dragHint') === 'string' ? t('services:dragHint') as string : 'Drag to explore services'}
             onFrontIndexChange={setFrontIndex}
           />
         </div>
