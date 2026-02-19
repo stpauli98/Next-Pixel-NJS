@@ -11,33 +11,33 @@ const fallbackContent: Record<string, {
   steps: { step: string; title: string; description: string }[];
 }> = {
   de: {
-    title: 'In 4 Schritten zu Ihrem Buchungssystem',
-    subtitle: 'Ein klarer, transparenter Prozess von der ersten Idee bis zum fertigen System.',
+    title: 'Ihr fertiges Buchungssystem in wenigen Tagen – ohne Stress',
+    subtitle: 'Wir übernehmen alles für Sie. Schnell, professionell und ohne technischen Aufwand auf Ihrer Seite.',
     steps: [
-      { step: '01', title: 'Beratung', description: 'Wir analysieren Ihre Anforderungen, verstehen Ihre Prozesse und definieren gemeinsam den optimalen Funktionsumfang.' },
-      { step: '02', title: 'Design', description: 'Wir gestalten eine intuitive Benutzeroberfl\u00E4che, die zu Ihrem Branding passt und Ihre Kunden begeistert.' },
-      { step: '03', title: 'Entwicklung', description: 'Unser Team entwickelt Ihr Buchungssystem mit modernsten Technologien. Regelm\u00E4\u00DFige Updates halten Sie auf dem Laufenden.' },
-      { step: '04', title: 'Launch & Support', description: 'Wir deployen Ihr System, schulen Ihr Team und bieten langfristigen technischen Support.' },
+      { step: '01', title: 'Kostenlose Beratung', description: 'Wir zeigen Ihnen eine Live-Demo und analysieren, wie Ihr Buchungssystem aussehen soll, um mehr Kunden zu gewinnen und Ihren Alltag zu erleichtern.' },
+      { step: '02', title: 'Individuelle Einrichtung', description: 'Wir richten Ihr komplettes Buchungssystem ein – angepasst an Ihre Leistungen, Ihr Team und Ihr Branding.' },
+      { step: '03', title: 'Fertigstellung & Test', description: 'Sie erhalten Ihr fertiges System zur Vorschau. Erst wenn alles perfekt ist, wird es final aktiviert.' },
+      { step: '04', title: 'Start & laufende Betreuung', description: 'Ihr System geht live und Ihre Kunden können sofort online buchen. Wir bleiben Ihr Ansprechpartner für Support und Erweiterungen.' },
     ],
   },
   en: {
-    title: 'Your Booking System in 4 Steps',
-    subtitle: 'A clear, transparent process from the first idea to the finished system.',
+    title: 'Your finished booking system in just days – stress-free',
+    subtitle: 'We handle everything for you. Fast, professional, and without any technical effort on your part.',
     steps: [
-      { step: '01', title: 'Consultation', description: 'We analyze your requirements, understand your processes and together define the optimal feature set.' },
-      { step: '02', title: 'Design', description: 'We design an intuitive user interface that matches your branding and delights your customers.' },
-      { step: '03', title: 'Development', description: 'Our team develops your booking system with cutting-edge technologies. Regular updates keep you informed.' },
-      { step: '04', title: 'Launch & Support', description: 'We deploy your system, train your team and provide long-term technical support.' },
+      { step: '01', title: 'Free consultation', description: 'We show you a live demo and analyze how your booking system should look to win more customers and simplify your daily routine.' },
+      { step: '02', title: 'Custom setup', description: 'We set up your complete booking system – tailored to your services, your team, and your branding.' },
+      { step: '03', title: 'Finalization & testing', description: 'You receive your finished system for preview. Only when everything is perfect will it be finally activated.' },
+      { step: '04', title: 'Launch & ongoing support', description: 'Your system goes live and your customers can book online immediately. We remain your contact for support and enhancements.' },
     ],
   },
   sr: {
-    title: 'Va\u0161 booking sistem u 4 koraka',
-    subtitle: 'Jasan, transparentan proces od prve ideje do gotovog sistema.',
+    title: 'Vaš gotov booking sistem za samo nekoliko dana – bez stresa',
+    subtitle: 'Mi se brinemo o svemu. Brzo, profesionalno i bez tehničkog napora sa vaše strane.',
     steps: [
-      { step: '01', title: 'Konsultacija', description: 'Analiziramo va\u0161e zahtjeve, razumijemo va\u0161e procese i zajedno defini\u0161emo optimalan set funkcija.' },
-      { step: '02', title: 'Dizajn', description: 'Dizajniramo intuitivan korisni\u010Dki interfejs koji odgovara va\u0161em brendu i odu\u0161evljava va\u0161e klijente.' },
-      { step: '03', title: 'Razvoj', description: 'Na\u0161 tim razvija va\u0161 booking sistem sa najnovijim tehnologijama. Redovni izvje\u0161taji vas dr\u017Ee u toku.' },
-      { step: '04', title: 'Pokretanje i podr\u0161ka', description: 'Postavljamo va\u0161 sistem, obu\u010Davamo va\u0161 tim i pru\u017Eamo dugoro\u010Dnu tehni\u010Dku podr\u0161ku.' },
+      { step: '01', title: 'Besplatna konsultacija', description: 'Pokazujemo vam demo uživo i analiziramo kako vaš booking sistem treba da izgleda da biste osvojili više klijenata i pojednostavili svakodnevicu.' },
+      { step: '02', title: 'Individualno podešavanje', description: 'Postavljamo vaš kompletni booking sistem – prilagođen vašim uslugama, vašem timu i vašem brendu.' },
+      { step: '03', title: 'Finalizacija i testiranje', description: 'Dobijate gotov sistem na pregled. Tek kada je sve savršeno, sistem se konačno aktivira.' },
+      { step: '04', title: 'Pokretanje i kontinuirana podrška', description: 'Vaš sistem ide uživo i vaši klijenti mogu odmah online rezervisati. Ostajemo vaš kontakt za podršku i nadogradnje.' },
     ],
   },
 };

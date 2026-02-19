@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import Script from 'next/script';
+import { notFound } from 'next/navigation';
 import { i18nConfig, type Locale } from '@/config/i18n';
 import { generateBookingStructuredData } from '@/config/seo/booking-structured-data';
 
@@ -12,16 +13,16 @@ interface LayoutProps {
 
 const bookingMetadata: Record<string, { title: string; description: string }> = {
   de: {
-    title: 'Online-Buchungssystem Entwicklung',
-    description: 'Professionelle Entwicklung von Online-Buchungssystemen. Terminbuchung, Kalender-Synchronisation, automatische Erinnerungen, Online-Zahlung. Ab 990 EUR.',
+    title: 'Online-Buchungssystem Entwicklung | NextPixel',
+    description: 'Gewinnen Sie automatisch mehr Kunden mit einem maßgeschneiderten Buchungssystem. Bis zu 30% mehr Buchungen, 80% weniger Terminausfälle. Fertig in 7-21 Tagen. Ab 990 EUR.',
   },
   en: {
-    title: 'Online Booking System Development',
-    description: 'Professional development of online booking systems. Appointment scheduling, calendar sync, automatic reminders, online payments. From 990 EUR.',
+    title: 'Online Booking System Development | NextPixel',
+    description: 'Automatically win more customers with a custom booking system. Up to 30% more bookings, 80% fewer no-shows. Ready in 7-21 days. From 990 EUR.',
   },
   sr: {
-    title: 'Izrada Online Booking Sistema',
-    description: 'Profesionalna izrada online booking sistema. Zakazivanje termina, sinhronizacija kalendara, automatski podsjetnici, online plaćanje. Od 990 EUR.',
+    title: 'Izrada Online Booking Sistema | NextPixel',
+    description: 'Automatski osvojite više klijenata sa prilagođenim booking sistemom. Do 30% više rezervacija, 80% manje propuštenih termina. Gotovo za 7-21 dan. Od 990 EUR.',
   },
 };
 
@@ -65,7 +66,7 @@ export default async function BookingLangLayout({ children, params }: LayoutProp
   const locale = resolvedParams.lang as Locale;
 
   if (!i18nConfig.locales.includes(locale)) {
-    return null;
+    notFound();
   }
 
   const structuredData = generateBookingStructuredData(locale);

@@ -9,20 +9,20 @@ export const contentType = 'image/png';
 
 const content: Record<string, { title: string; subtitle: string; price: string; badge: string }> = {
   de: {
-    title: 'Ihr maßgeschneidertes Online-Buchungssystem',
-    subtitle: 'Mehr Buchungen. Weniger Aufwand.',
+    title: 'Mehr Kunden gewinnen mit einem Online-Buchungssystem',
+    subtitle: 'Weniger Telefonanrufe. Weniger Ausfälle. Mehr Umsatz.',
     price: 'Ab 990 EUR',
     badge: 'Buchungssystem',
   },
   en: {
-    title: 'Your Custom Online Booking System',
-    subtitle: 'More bookings. Less effort.',
+    title: 'Win more customers with an online booking system',
+    subtitle: 'Fewer phone calls. Fewer no-shows. More revenue.',
     price: 'From 990 EUR',
     badge: 'Booking System',
   },
   sr: {
-    title: 'Vaš prilagođeni online booking sistem',
-    subtitle: 'Više rezervacija. Manje posla.',
+    title: 'Osvojite više klijenata sa online booking sistemom',
+    subtitle: 'Manje poziva. Manje propuštenih termina. Više prihoda.',
     price: 'Od 990 EUR',
     badge: 'Booking Sistem',
   },

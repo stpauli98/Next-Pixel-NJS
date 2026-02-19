@@ -100,7 +100,7 @@ const BookingNavbar: React.FC = () => {
           <button
             className="text-nextpixel-dark focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
-            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            aria-label={isOpen ? (currentLang === 'de' ? 'Menü schließen' : currentLang === 'sr' ? 'Zatvori meni' : 'Close menu') : (currentLang === 'de' ? 'Menü öffnen' : currentLang === 'sr' ? 'Otvori meni' : 'Open menu')}
             aria-expanded={isOpen}
           >
             {isOpen ? <Icon icon={FaXmark} size={24} aria-hidden={true} /> : <Icon icon={FaBars} size={24} aria-hidden={true} />}

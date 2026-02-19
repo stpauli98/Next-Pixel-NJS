@@ -8,7 +8,7 @@ import { usePathname } from 'next/navigation';
 
 const BookingCtaSection: React.FC = () => {
   const { t, isHydrated, isReady } = useClientTranslation('booking');
-  const { t: tHero } = useClientTranslation('bookingHero');
+
   const pathname = usePathname();
   const mounted = isHydrated && isReady;
 

@@ -19,15 +19,15 @@ const BookingHeroSection: React.FC = () => {
   };
 
   const fallbackTitle: Record<string, string> = {
-    de: 'Ihr maßgeschneidertes Online-Buchungssystem',
-    en: 'Your Custom Online Booking System',
-    sr: 'Vaš prilagođeni online booking sistem',
+    de: 'Gewinnen Sie automatisch mehr Kunden mit einem Online-Buchungssystem',
+    en: 'Automatically win more customers with an online booking system',
+    sr: 'Automatski osvojite više klijenata sa online booking sistemom',
   };
 
   const fallbackSubtitle: Record<string, string> = {
-    de: 'Mehr Buchungen. Weniger Aufwand. Wir entwickeln individuelle Buchungslösungen.',
-    en: 'More bookings. Less effort. We develop individual booking solutions.',
-    sr: 'Više rezervacija. Manje posla. Razvijamo individualna booking rješenja.',
+    de: 'Reduzieren Sie Telefonanrufe, vermeiden Sie Terminausfälle und steigern Sie Ihren Umsatz. Wir entwickeln ein maßgeschneidertes Buchungssystem, das rund um die Uhr für Sie arbeitet.',
+    en: 'Reduce phone calls, avoid no-shows, and increase your revenue. We build a custom booking system that works for you around the clock.',
+    sr: 'Smanjite telefonske pozive, izbjegnite propuštene termine i povećajte prihod. Razvijamo prilagođeni booking sistem koji radi za vas non-stop.',
   };
 
   const containerVariants = {
