@@ -1,0 +1,42 @@
+{
+  "title": "Frequently Asked Questions",
+  "subtitle": "Everything you need to know before your booking system goes live.",
+  "items": [
+    {
+      "question": "How quickly can my booking system go live?",
+      "answer": "In most cases, your booking system is fully set up and ready to use within 7 to 21 days. You can start winning new customers online right away."
+    },
+    {
+      "question": "Will the system be set up individually for my business?",
+      "answer": "Yes. Your booking system is fully tailored to your services, staff, and branding. You won't receive a standard solution, but a professional system built for your business."
+    },
+    {
+      "question": "Does the system really reduce no-shows?",
+      "answer": "Yes. Automatic SMS and email reminders reduce no-shows by up to 80% based on experience. That means more kept appointments and more revenue for your business."
+    },
+    {
+      "question": "Is the system easy to use?",
+      "answer": "Yes. The dashboard is clear and intuitively designed. Most customers can use it immediately without any technical knowledge. You also receive a personal onboarding session."
+    },
+    {
+      "question": "Can I add features or expand later?",
+      "answer": "Yes. Your system can be expanded at any time, for example with online payments, additional staff, multiple locations, or further features."
+    },
+    {
+      "question": "What happens after launch?",
+      "answer": "Your system runs stably right away and your customers can book online. We remain your contact for support, updates, and further development."
+    },
+    {
+      "question": "Is the system GDPR compliant and secure?",
+      "answer": "Yes. All data is processed securely and stored on European servers. Your system meets all GDPR requirements."
+    },
+    {
+      "question": "When does the investment pay off?",
+      "answer": "Many of our customers gain additional bookings in the very first month. In most cases, the system pays for itself within a short time."
+    },
+    {
+      "question": "What if my customers prefer to book by phone or don't use the internet?",
+      "answer": "No problem. You can enter phone appointments into the system yourself in just a few seconds. The appointment is instantly saved to the calendar and all times are automatically updated. This reliably prevents double bookings. You keep full control and can easily manage both phone and online bookings."
+    }
+  ]
+}

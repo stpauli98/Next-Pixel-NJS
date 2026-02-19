@@ -1,0 +1,56 @@
+{
+  "title": "Investition, die sich bereits nach wenigen Wochen auszahlt",
+  "subtitle": "Ein professionelles Buchungssystem, das Ihnen Zeit spart, Ausfälle reduziert und mehr Umsatz bringt. Einmalige Einrichtung, keine versteckten Kosten.",
+  "packages": [
+    {
+      "name": "Starter",
+      "price": "ab 990",
+      "currency": "EUR",
+      "description": "Ideal für Selbstständige, die Termine automatisieren und Zeit sparen möchten",
+      "features": [
+        "Online-Buchung rund um die Uhr",
+        "Automatische Bestätigungen für Kunden",
+        "Optimiert für Smartphone und Desktop",
+        "Google Kalender Synchronisation",
+        "Übersichtliches Buchungs-Dashboard",
+        "Persönlicher Support nach dem Launch"
+      ],
+      "cta": "Demo anfragen"
+    },
+    {
+      "name": "Professional",
+      "price": "ab 2.490",
+      "currency": "EUR",
+      "description": "Für Unternehmen, die mehr Kunden gewinnen und Ausfälle deutlich reduzieren wollen",
+      "popular": true,
+      "features": [
+        "Alles aus Starter",
+        "Automatische SMS-Erinnerungen gegen No-Shows",
+        "Online-Zahlungen und Anzahlungen",
+        "Verwaltung mehrerer Mitarbeiter",
+        "Detaillierte Statistiken und Umsatzübersicht",
+        "Mehrsprachiges Buchungssystem",
+        "Individuelle Anpassung an Ihr Unternehmen",
+        "Priorisierter Support"
+      ],
+      "cta": "Beliebteste Wahl"
+    },
+    {
+      "name": "Enterprise",
+      "price": "auf Anfrage",
+      "currency": "",
+      "description": "Individuelle Lösung für Unternehmen mit speziellen Anforderungen und mehreren Standorten",
+      "features": [
+        "Komplett maßgeschneiderte Lösung",
+        "Integration in bestehende Systeme",
+        "Multi-Standort und komplexe Strukturen",
+        "Eigenes Branding und individuelle Funktionen",
+        "Automatisierung von internen Prozessen",
+        "Prioritäts-Support mit direktem Ansprechpartner",
+        "Langfristige Betreuung und Weiterentwicklung"
+      ],
+      "cta": "Kontaktieren Sie uns"
+    }
+  ],
+  "note": "Die meisten Kunden haben ihre Investition bereits nach wenigen Wochen durch zusätzliche Buchungen wieder verdient."
+}

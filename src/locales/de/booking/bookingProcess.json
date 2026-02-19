@@ -1,0 +1,26 @@
+{
+  "title": "Ihr fertiges Buchungssystem in wenigen Tagen – ohne Stress",
+  "subtitle": "Wir übernehmen alles für Sie. Schnell, professionell und ohne technischen Aufwand auf Ihrer Seite.",
+  "steps": [
+    {
+      "step": "01",
+      "title": "Kostenlose Beratung",
+      "description": "Wir zeigen Ihnen eine Live-Demo und analysieren, wie Ihr Buchungssystem aussehen soll, um mehr Kunden zu gewinnen und Ihren Alltag zu erleichtern."
+    },
+    {
+      "step": "02",
+      "title": "Individuelle Einrichtung",
+      "description": "Wir richten Ihr komplettes Buchungssystem ein – angepasst an Ihre Leistungen, Ihr Team und Ihr Branding."
+    },
+    {
+      "step": "03",
+      "title": "Fertigstellung & Test",
+      "description": "Sie erhalten Ihr fertiges System zur Vorschau. Erst wenn alles perfekt ist, wird es final aktiviert."
+    },
+    {
+      "step": "04",
+      "title": "Start & laufende Betreuung",
+      "description": "Ihr System geht live und Ihre Kunden können sofort online buchen. Wir bleiben Ihr Ansprechpartner für Support und Erweiterungen."
+    }
+  ]
+}

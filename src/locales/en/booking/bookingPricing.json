@@ -1,0 +1,56 @@
+{
+  "title": "An investment that pays for itself within weeks",
+  "subtitle": "A professional booking system that saves you time, reduces no-shows, and generates more revenue. One-time setup, no hidden costs.",
+  "packages": [
+    {
+      "name": "Starter",
+      "price": "from 990",
+      "currency": "EUR",
+      "description": "Ideal for self-employed professionals who want to automate appointments and save time",
+      "features": [
+        "24/7 online booking",
+        "Automatic confirmations for customers",
+        "Optimized for smartphone and desktop",
+        "Google Calendar synchronization",
+        "Clear booking dashboard",
+        "Personal support after launch"
+      ],
+      "cta": "Get started"
+    },
+    {
+      "name": "Professional",
+      "price": "from 2,490",
+      "currency": "EUR",
+      "description": "For businesses that want to win more customers and significantly reduce no-shows",
+      "popular": true,
+      "features": [
+        "Everything from Starter",
+        "Automatic SMS reminders against no-shows",
+        "Online payments and deposits",
+        "Multi-staff management",
+        "Detailed statistics and revenue overview",
+        "Multilingual booking system",
+        "Custom tailoring to your business",
+        "Priority support"
+      ],
+      "cta": "Choose plan"
+    },
+    {
+      "name": "Enterprise",
+      "price": "on request",
+      "currency": "",
+      "description": "Custom solution for businesses with special requirements and multiple locations",
+      "features": [
+        "Fully custom-built solution",
+        "Integration with existing systems",
+        "Multi-location and complex structures",
+        "Custom branding and individual features",
+        "Internal process automation",
+        "Priority support with dedicated contact",
+        "Long-term support and development"
+      ],
+      "cta": "Contact us"
+    }
+  ],
+  "note": "Most customers have already recovered their investment within a few weeks through additional bookings."
+}

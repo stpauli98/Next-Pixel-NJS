@@ -1,0 +1,26 @@
+{
+  "title": "Vaš gotov booking sistem za samo nekoliko dana – bez stresa",
+  "subtitle": "Mi se brinemo o svemu. Brzo, profesionalno i bez tehničkog napora sa vaše strane.",
+  "steps": [
+    {
+      "step": "01",
+      "title": "Besplatna konsultacija",
+      "description": "Pokazujemo vam demo uživo i analiziramo kako vaš booking sistem treba da izgleda da biste osvojili više klijenata i pojednostavili svakodnevicu."
+    },
+    {
+      "step": "02",
+      "title": "Individualno podešavanje",
+      "description": "Postavljamo vaš kompletni booking sistem – prilagođen vašim uslugama, vašem timu i vašem brendu."
+    },
+    {
+      "step": "03",
+      "title": "Finalizacija i testiranje",
+      "description": "Dobijate gotov sistem na pregled. Tek kada je sve savršeno, sistem se konačno aktivira."
+    },
+    {
+      "step": "04",
+      "title": "Pokretanje i kontinuirana podrška",
+      "description": "Vaš sistem ide uživo i vaši klijenti mogu odmah online rezervisati. Ostajemo vaš kontakt za podršku i nadogradnje."
+    }
+  ]
+}

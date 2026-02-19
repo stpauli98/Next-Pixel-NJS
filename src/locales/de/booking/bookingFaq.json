@@ -1,0 +1,42 @@
+{
+  "title": "Häufig gestellte Fragen",
+  "subtitle": "Alles, was Sie wissen müssen, bevor Ihr Buchungssystem live geht.",
+  "items": [
+    {
+      "question": "Wie schnell kann mein Buchungssystem live gehen?",
+      "answer": "In den meisten Fällen ist Ihr Buchungssystem innerhalb von 7 bis 21 Tagen vollständig eingerichtet und einsatzbereit. Sie können sofort neue Kunden online gewinnen."
+    },
+    {
+      "question": "Wird das System individuell für mein Unternehmen eingerichtet?",
+      "answer": "Ja. Ihr Buchungssystem wird vollständig an Ihre Leistungen, Mitarbeiter und Ihr Branding angepasst. Sie erhalten keine Standardlösung, sondern ein professionelles System für Ihr Unternehmen."
+    },
+    {
+      "question": "Reduziert das System wirklich Terminausfälle?",
+      "answer": "Ja. Automatische SMS- und E-Mail-Erinnerungen reduzieren Terminausfälle erfahrungsgemäß um bis zu 80%. Das bedeutet mehr wahrgenommene Termine und mehr Umsatz für Ihr Unternehmen."
+    },
+    {
+      "question": "Ist das System einfach zu bedienen?",
+      "answer": "Ja. Das Dashboard ist übersichtlich und intuitiv gestaltet. Die meisten Kunden können es sofort ohne technische Kenntnisse nutzen. Zusätzlich erhalten Sie eine persönliche Einführung."
+    },
+    {
+      "question": "Kann ich später Funktionen hinzufügen oder erweitern?",
+      "answer": "Ja. Ihr System kann jederzeit erweitert werden, zum Beispiel um Online-Zahlungen, zusätzliche Mitarbeiter, mehrere Standorte oder weitere Funktionen."
+    },
+    {
+      "question": "Was passiert nach dem Launch?",
+      "answer": "Ihr System läuft sofort stabil und Ihre Kunden können online buchen. Wir bleiben Ihr Ansprechpartner für Support, Updates und Weiterentwicklungen."
+    },
+    {
+      "question": "Ist das System DSGVO-konform und sicher?",
+      "answer": "Ja. Alle Daten werden sicher verarbeitet und auf europäischen Servern gespeichert. Ihr System erfüllt alle DSGVO-Anforderungen."
+    },
+    {
+      "question": "Wann lohnt sich die Investition?",
+      "answer": "Viele unserer Kunden gewinnen bereits im ersten Monat zusätzliche Buchungen. In den meisten Fällen amortisiert sich das System innerhalb kurzer Zeit."
+    },
+    {
+      "question": "Was ist, wenn meine Kunden lieber telefonisch buchen oder kein Internet nutzen?",
+      "answer": "Kein Problem. Sie können Termine, die Sie telefonisch erhalten, selbst in wenigen Sekunden in das System eintragen. Der Termin wird sofort im Kalender gespeichert und alle Zeiten werden automatisch aktualisiert. Dadurch werden Doppelbuchungen zuverlässig verhindert. Sie behalten weiterhin die volle Kontrolle und können sowohl telefonische als auch Online-Buchungen einfach verwalten."
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "title": "Investicija koja se isplati već nakon nekoliko sedmica",
+  "subtitle": "Profesionalni booking sistem koji vam štedi vrijeme, smanjuje izostanke i donosi više prihoda. Jednokratno podešavanje, bez skrivenih troškova.",
+  "packages": [
+    {
+      "name": "Starter",
+      "price": "od 990",
+      "currency": "EUR",
+      "description": "Idealno za samostalne profesionalce koji žele automatizovati termine i uštedjeti vrijeme",
+      "features": [
+        "Online rezervacija 24/7",
+        "Automatske potvrde za klijente",
+        "Optimizovano za telefon i računar",
+        "Google Calendar sinhronizacija",
+        "Pregledan booking dashboard",
+        "Lična podrška nakon pokretanja"
+      ],
+      "cta": "Zatraži demo"
+    },
+    {
+      "name": "Professional",
+      "price": "od 2.490",
+      "currency": "EUR",
+      "description": "Za firme koje žele osvojiti više klijenata i značajno smanjiti izostanke",
+      "popular": true,
+      "features": [
+        "Sve iz Starter paketa",
+        "Automatski SMS podsjetnici protiv izostanaka",
+        "Online plaćanja i depoziti",
+        "Upravljanje više zaposlenih",
+        "Detaljne statistike i pregled prihoda",
+        "Višejezični booking sistem",
+        "Individualna prilagodba vašem poslovanju",
+        "Prioritetna podrška"
+      ],
+      "cta": "Izaberi paket"
+    },
+    {
+      "name": "Enterprise",
+      "price": "na upit",
+      "currency": "",
+      "description": "Individualno rješenje za firme sa posebnim zahtjevima i više lokacija",
+      "features": [
+        "Kompletno prilagođeno rješenje",
+        "Integracija u postojeće sisteme",
+        "Više lokacija i kompleksne strukture",
+        "Vlastiti brending i individualne funkcije",
+        "Automatizacija internih procesa",
+        "Prioritetna podrška sa direktnim kontaktom",
+        "Dugoročna podrška i razvoj"
+      ],
+      "cta": "Kontaktirajte nas"
+    }
+  ],
+  "note": "Većina klijenata je svoju investiciju već nadoknadila u roku od nekoliko sedmica kroz dodatne rezervacije."
+}

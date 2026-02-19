@@ -1,0 +1,42 @@
+{
+  "title": "Često postavljana pitanja",
+  "subtitle": "Sve što trebate znati prije nego vaš booking sistem bude aktivan.",
+  "items": [
+    {
+      "question": "Koliko brzo može moj booking sistem biti aktivan?",
+      "answer": "U većini slučajeva, vaš booking sistem je potpuno podešen i spreman za korištenje u roku od 7 do 21 dan. Možete odmah početi osvajati nove klijente online."
+    },
+    {
+      "question": "Da li se sistem postavlja individualno za moju firmu?",
+      "answer": "Da. Vaš booking sistem se potpuno prilagođava vašim uslugama, zaposlenima i brendu. Nećete dobiti standardno rješenje, već profesionalan sistem izgrađen za vaše poslovanje."
+    },
+    {
+      "question": "Da li sistem zaista smanjuje propuštene termine?",
+      "answer": "Da. Automatski SMS i email podsjetnici smanjuju propuštene termine za do 80% prema iskustvu. To znači više realizovanih termina i više prihoda za vaše poslovanje."
+    },
+    {
+      "question": "Da li je sistem jednostavan za korištenje?",
+      "answer": "Da. Dashboard je pregledan i intuitivno dizajniran. Većina klijenata može ga koristiti odmah bez tehničkog znanja. Takođe dobijate ličnu obuku."
+    },
+    {
+      "question": "Mogu li kasnije dodati funkcije ili proširiti sistem?",
+      "answer": "Da. Vaš sistem se može proširiti u bilo kom trenutku, na primjer online plaćanjima, dodatnim zaposlenima, više lokacija ili dodatnim funkcijama."
+    },
+    {
+      "question": "Šta se dešava nakon pokretanja?",
+      "answer": "Vaš sistem radi stabilno odmah i vaši klijenti mogu rezervisati online. Ostajemo vaš kontakt za podršku, ažuriranja i dalji razvoj."
+    },
+    {
+      "question": "Da li je sistem GDPR usklađen i siguran?",
+      "answer": "Da. Svi podaci se sigurno obrađuju i čuvaju na evropskim serverima. Vaš sistem ispunjava sve GDPR zahtjeve."
+    },
+    {
+      "question": "Kada se investicija isplati?",
+      "answer": "Mnogi naši klijenti dobiju dodatne rezervacije već u prvom mjesecu. U većini slučajeva, sistem se isplati u kratkom roku."
+    },
+    {
+      "question": "Šta ako moji klijenti radije rezervišu telefonski ili ne koriste internet?",
+      "answer": "Nema problema. Termine koje dobijete telefonom možete sami unijeti u sistem za samo nekoliko sekundi. Termin se odmah sprema u kalendar i sva vremena se automatski ažuriraju. Time se pouzdano sprečavaju duple rezervacije. Zadržavate punu kontrolu i možete jednostavno upravljati i telefonskim i online rezervacijama."
+    }
+  ]
+}

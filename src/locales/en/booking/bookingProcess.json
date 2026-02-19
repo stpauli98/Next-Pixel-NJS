@@ -1,0 +1,26 @@
+{
+  "title": "Your finished booking system in just days – stress-free",
+  "subtitle": "We handle everything for you. Fast, professional, and without any technical effort on your part.",
+  "steps": [
+    {
+      "step": "01",
+      "title": "Free consultation",
+      "description": "We show you a live demo and analyze how your booking system should look to win more customers and simplify your daily routine."
+    },
+    {
+      "step": "02",
+      "title": "Custom setup",
+      "description": "We set up your complete booking system – tailored to your services, your team, and your branding."
+    },
+    {
+      "step": "03",
+      "title": "Finalization & testing",
+      "description": "You receive your finished system for preview. Only when everything is perfect will it be finally activated."
+    },
+    {
+      "step": "04",
+      "title": "Launch & ongoing support",
+      "description": "Your system goes live and your customers can book online immediately. We remain your contact for support and enhancements."
+    }
+  ]
+}
