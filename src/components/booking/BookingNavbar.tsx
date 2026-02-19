@@ -9,9 +9,9 @@ import { useClientTranslation } from '@/hooks/useClientTranslation';
 import { usePathname } from 'next/navigation';
 
 const fallbackNav: Record<string, Record<string, string>> = {
-  de: { features: 'Funktionen', process: 'Ablauf', pricing: 'Preise', faq: 'FAQ', contact: 'Kontakt', cta: 'Beratung buchen', backToMain: 'Zur Hauptseite' },
-  en: { features: 'Features', process: 'Process', pricing: 'Pricing', faq: 'FAQ', contact: 'Contact', cta: 'Book Consultation', backToMain: 'Back to main site' },
-  sr: { features: 'Funkcije', process: 'Proces', pricing: 'Cijene', faq: 'FAQ', contact: 'Kontakt', cta: 'Zakažite konsultaciju', backToMain: 'Nazad na glavni sajt' },
+  de: { features: 'Funktionen', process: 'Ablauf', pricing: 'Preise', faq: 'FAQ', contact: 'Kontakt', demo: 'Demo', cta: 'Beratung buchen', backToMain: 'Zur Hauptseite' },
+  en: { features: 'Features', process: 'Process', pricing: 'Pricing', faq: 'FAQ', contact: 'Contact', demo: 'Demo', cta: 'Book Consultation', backToMain: 'Back to main site' },
+  sr: { features: 'Funkcije', process: 'Proces', pricing: 'Cijene', faq: 'FAQ', contact: 'Kontakt', demo: 'Demo', cta: 'Zakažite konsultaciju', backToMain: 'Nazad na glavni sajt' },
 };
 
 const BookingNavbar: React.FC = () => {
@@ -33,12 +33,13 @@ const BookingNavbar: React.FC = () => {
   const mounted = isHydrated && isReady;
   const fb = fallbackNav[currentLang] || fallbackNav.de;
 
-  const navLinks = [
+  const navLinks: Array<{ name: string; href: string; external?: boolean }> = [
     { name: mounted ? t('nav.features') : fb.features, href: '#features' },
     { name: mounted ? t('nav.process') : fb.process, href: '#process' },
     { name: mounted ? t('nav.pricing') : fb.pricing, href: '#pricing' },
     { name: mounted ? t('nav.faq') : fb.faq, href: '#faq' },
     { name: mounted ? t('nav.contact') : fb.contact, href: '#contact' },
+    { name: mounted ? t('nav.demo') : fb.demo, href: `/demo/#/${currentLang}`, external: true },
   ];
 
   useEffect(() => {
@@ -83,7 +84,13 @@ const BookingNavbar: React.FC = () => {
             <a
               key={link.href}
               href={link.href}
-              className="font-medium text-nextpixel-dark hover:text-nextpixel-blue transition-colors"
+              target={link.external ? '_blank' : undefined}
+              rel={link.external ? 'noopener noreferrer' : undefined}
+              className={`font-medium transition-colors ${
+                link.external
+                  ? 'text-nextpixel-turquoise hover:text-nextpixel-turquoise-dark font-semibold'
+                  : 'text-nextpixel-dark hover:text-nextpixel-blue'
+              }`}
             >
               {link.name}
             </a>
@@ -120,7 +127,13 @@ const BookingNavbar: React.FC = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="font-medium text-nextpixel-dark hover:text-nextpixel-blue transition-colors py-2"
+                target={link.external ? '_blank' : undefined}
+                rel={link.external ? 'noopener noreferrer' : undefined}
+                className={`font-medium transition-colors py-2 ${
+                  link.external
+                    ? 'text-nextpixel-turquoise hover:text-nextpixel-turquoise-dark font-semibold'
+                    : 'text-nextpixel-dark hover:text-nextpixel-blue'
+                }`}
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}

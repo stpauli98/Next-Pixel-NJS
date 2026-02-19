@@ -106,7 +106,7 @@ const BookingHeroSection: React.FC = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center"
             variants={itemVariants}
           >
-            <StarButton href="#contact">
+            <StarButton href={`/demo/#/${currentLang}`} target="_blank" rel="noopener noreferrer">
               {t('cta.primary')}
             </StarButton>
             <StarButton href="#pricing" lightColor="#1E3A5F" backgroundColor="#2E8B9A">

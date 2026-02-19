@@ -25,6 +25,11 @@ const nextConfig = {
   async rewrites() {
     return {
       beforeFiles: [
+        // Demo app: serve index.html for /demo path
+        {
+          source: '/demo',
+          destination: '/demo/index.html',
+        },
         // Booking subdomain: robots.txt → API route
         {
           source: '/robots.txt',

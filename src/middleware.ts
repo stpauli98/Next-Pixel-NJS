@@ -116,6 +116,6 @@ export const config = {
      * - robots.txt, sitemap.xml (SEO files - subdomain handled via next.config.js rewrites)
      * - booking (internal rewrite prefix)
      */
-    '/((?!api|_next/static|_next/image|favicon.ico|images|booking|robots.txt|sitemap.xml|.*\\.png$|.*\\.jpg$|.*\\.jpeg$|.*\\.svg$|.*\\.ico$|.*\\.webp$).*)',
+    '/((?!api|_next/static|_next/image|favicon.ico|images|booking|demo|robots.txt|sitemap.xml|.*\\.png$|.*\\.jpg$|.*\\.jpeg$|.*\\.svg$|.*\\.ico$|.*\\.webp$).*)',
   ],
 };
