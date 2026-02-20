@@ -41,5 +41,7 @@
     "weekdays": "Mon - Fri: 09:00 - 17:00",
     "weekend": "Sat: 10:00 - 14:00"
   },
-  "followUs": "Follow us"
+  "followUs": "Follow us",
+  "privacyConsent": "I agree that my data will be processed in accordance with the",
+  "privacyConsentLink": "Privacy Policy"
 }

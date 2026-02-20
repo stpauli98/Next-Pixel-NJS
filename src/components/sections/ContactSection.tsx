@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaPhone, FaWhatsapp, FaLocationDot } from 'react-icons/fa6';
 import { Icon } from '../../utils/icons';
+import Link from 'next/link';
 import { useClientTranslation } from '@/hooks/useClientTranslation';
 import { logInfo, logError } from '@/utils/logger';
 
@@ -17,6 +18,7 @@ const ContactSection: React.FC = () => {
     message: ''
   });
   
+  const [privacyConsent, setPrivacyConsent] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState('');
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -56,6 +58,7 @@ const ContactSection: React.FC = () => {
           message: ''
         });
         
+        setPrivacyConsent(false);
         setSubmitSuccess(true);
         logInfo('Forma uspešno poslata', { 
           name: formData.name, 
@@ -273,10 +276,30 @@ const ContactSection: React.FC = () => {
                   ></textarea>
                 </div>
                 
+                {/* Privacy Consent Checkbox */}
+                <div className="mb-6">
+                  <label className="flex items-start gap-3 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={privacyConsent}
+                      onChange={(e) => setPrivacyConsent(e.target.checked)}
+                      className="mt-1 w-4 h-4 text-nextpixel-blue border-gray-300 rounded focus:ring-nextpixel-blue flex-shrink-0"
+                      required
+                    />
+                    <span className="text-sm text-nextpixel-gray">
+                      {!isHydrated ? 'I agree that my data will be processed in accordance with the' : (typeof t('contact:privacyConsent') === 'string' ? t('contact:privacyConsent') as string : 'I agree that my data will be processed in accordance with the')}{' '}
+                      <Link href={`/${language}/privacy-policy`} className="text-nextpixel-blue hover:underline font-medium" target="_blank">
+                        {!isHydrated ? 'Privacy Policy' : (typeof t('contact:privacyConsentLink') === 'string' ? t('contact:privacyConsentLink') as string : 'Privacy Policy')}
+                      </Link>
+                      {isHydrated && typeof t('contact:privacyConsentSuffix') === 'string' ? ` ${t('contact:privacyConsentSuffix') as string}` : ''}
+                    </span>
+                  </label>
+                </div>
+
                 <div className="flex justify-center">
                     <button
                     type="submit"
-                    disabled={isSubmitting}
+                    disabled={isSubmitting || !privacyConsent}
                     className="px-8 py-4 bg-nextpixel-turquoise text-nextpixel-dark font-semibold rounded-full hover:bg-nextpixel-turquoise/90 transition-all hover:scale-105 flex items-center justify-center disabled:opacity-70 w-full md:w-auto"
                   >
                     {isSubmitting ? (

@@ -41,5 +41,7 @@
     "weekdays": "Pon - Pet: 09:00 - 17:00",
     "weekend": "Sub: 10:00 - 14:00"
   },
-  "followUs": "Pratite nas"
+  "followUs": "Pratite nas",
+  "privacyConsent": "Saglasan/na sam da se moji podaci obrađuju u skladu sa",
+  "privacyConsentLink": "Politikom privatnosti"
 }

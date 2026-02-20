@@ -1,37 +1,192 @@
 {
   "privacy": {
     "title": "Politika privatnosti",
-    "collect": {
-      "title": "1. Informacije koje prikupljamo",
-      "content": "Prikupljamo lične podatke koje dobrovoljno dajete kada izrazite interes za dobijanje informacija o našim uslugama, kada učestvujete u aktivnostima na našoj web stranici ili kada nas kontaktirate. Lični podaci koje prikupljamo mogu uključivati imena, e-mail adrese, brojeve telefona i druge informacije koje odlučite dati."
+    "lastUpdated": "Posljednje ažuriranje: 20. februar 2026.",
+    "controller": {
+      "title": "1. Kontrolor podataka",
+      "content": "Kontrolor podataka odgovoran za obradu vaših ličnih podataka je:",
+      "name": "NextPixel",
+      "address": "Jovana Dučića 15, 78400 Gradiška, Republika Srpska, Bosna i Hercegovina",
+      "email": "pixelnext9@gmail.com",
+      "phone": "+387 66 603 900"
     },
-    "use": {
-      "title": "2. Kako koristimo vaše informacije",
-      "content": "Koristimo informacije koje prikupljamo za pružanje, održavanje i poboljšanje naših usluga. To uključuje korištenje podataka za komunikaciju s vama, odgovaranje na vaše upite i slanje informacija o našim uslugama. Također možemo koristiti vaše informacije za ispunjavanje zakonskih obaveza i rješavanje sporova."
+    "legalBasis": {
+      "title": "2. Pravni osnov obrade",
+      "content": "Vaše lične podatke obrađujemo na osnovu sljedećih pravnih osnova prema članu 6(1) GDPR-a:",
+      "consent": "Saglasnost (čl. 6(1)(a) GDPR): Za analitičke kolačiće, marketinške kolačiće i pretplate na bilten. Svoju saglasnost možete povući u bilo kojem trenutku.",
+      "contract": "Izvršenje ugovora (čl. 6(1)(b) GDPR): Za obradu podnesaka kontakt forme kako bismo odgovorili na vaše upite o našim uslugama.",
+      "legitimate": "Legitimni interes (čl. 6(1)(f) GDPR): Za sigurnost web stranice, prevenciju prevara i osnovnu funkcionalnost web stranice (npr. kolačići za jezičke preferencije)."
     },
-    "sharing": {
-      "title": "3. Dijeljenje i otkrivanje informacija",
-      "content": "Ne prodajemo, ne trgujemo ili na drugi način prenosimo vaše lične podatke vanjskim stranama. To ne uključuje pouzdane treće strane koje nam pomažu u radu naše web stranice, vođenju našeg poslovanja ili pružanju usluga vama, pod uslovom da se te strane slože da će čuvati ove informacije kao povjerljive."
+    "dataCollected": {
+      "title": "3. Podaci koje prikupljamo",
+      "content": "Prikupljamo sljedeće kategorije ličnih podataka:",
+      "contactForm": "Podaci kontakt forme: Ime, email adresa, broj telefona (opcionalno), naslov i sadržaj poruke - prikupljeni kada pošaljete našu kontakt formu.",
+      "analytics": "Analitički podaci: IP adresa (anonimizirana), tip i verzija preglednika, operativni sistem, posjećene stranice, vrijeme posjete i trajanje sesije - prikupljeni putem analitičkih kolačića uz vašu saglasnost.",
+      "cookies": "Podaci kolačića: Jezičke preferencije i postavke saglasnosti - pohranjeni u kolačićima na vašem uređaju.",
+      "technical": "Tehnički podaci: Serverski logovi uključujući IP adresu, tip preglednika i vremena pristupa - automatski prikupljeni u svrhe sigurnosti."
     },
-    "security": {
-      "title": "4. Sigurnost podataka",
-      "content": "Implementiramo odgovarajuće tehničke i organizacione sigurnosne mjere za zaštitu vaših ličnih podataka od neovlaštenog pristupa, izmjene, otkrivanja ili uništenja. Međutim, nijedna metoda prijenosa putem interneta ili elektronskog skladištenja nije 100% sigurna, i ne možemo garantovati apsolutnu sigurnost."
+    "purposes": {
+      "title": "4. Svrhe obrade",
+      "content": "Vaše lične podatke obrađujemo u sljedeće svrhe:",
+      "list": "Odgovaranje na vaše upite putem kontakt forme i pružanje informacija o našim uslugama; Analiza prometa na web stranici i poboljšanje naše web stranice (uz vašu saglasnost); Mjerenje efikasnosti marketinških kampanja (uz vašu saglasnost); Osiguravanje tehničke funkcionalnosti i sigurnosti naše web stranice; Ispunjavanje zakonskih obaveza."
     },
-    "cookies": {
-      "title": "5. Kolačići i tehnologije praćenja",
-      "content": "Možemo koristiti kolačiće i slične tehnologije praćenja za praćenje aktivnosti na našoj web stranici i pohranu određenih informacija. Možete uputiti svoj preglednik da odbije sve kolačiće ili da naznači kada se kolačić šalje. Međutim, ako ne prihvatite kolačiće, možda nećete moći koristiti neke dijelove naše web stranice."
+    "thirdParties": {
+      "title": "5. Usluge trećih strana",
+      "content": "Koristimo sljedeće usluge trećih strana koje mogu obrađivati vaše lične podatke:",
+      "ga": "Google Analytics (Google LLC, SAD): Usluga web analitike koja prikuplja anonimizirane podatke o korištenju. Google je sertifikovan prema EU-US Data Privacy Framework-u. Politika privatnosti: https://policies.google.com/privacy",
+      "meta": "Meta Pixel (Meta Platforms Inc., SAD): Usluga marketinške analitike koja prati efikasnost reklamnih kampanja. Meta je sertifikovana prema EU-US Data Privacy Framework-u. Politika privatnosti: https://www.facebook.com/privacy/policy/",
+      "vercel": "Vercel Analytics (Vercel Inc., SAD): Privatnosti prilagođena analitika web stranice. Ne koristi kolačiće i prikuplja samo anonimizirane podatke. Politika privatnosti: https://vercel.com/legal/privacy-policy",
+      "resend": "Resend (Resend Inc.): Usluga dostave e-pošte koja se koristi za obradu podnesaka kontakt forme. Vaše ime, email i poruka se prenose Resendu radi dostave e-pošte. Politika privatnosti: https://resend.com/legal/privacy-policy"
+    },
+    "dataTransfers": {
+      "title": "6. Međunarodni transferi podataka",
+      "content": "Neki od naših pružalaca usluga trećih strana nalaze se u Sjedinjenim Američkim Državama. Ovi transferi su zaštićeni EU-US Data Privacy Framework-om, koji osigurava adekvatan nivo zaštite podataka kako ga priznaje Evropska komisija. Gdje se Data Privacy Framework ne primjenjuje, oslanjamo se na Standardne ugovorne klauzule (SCC) odobrene od Evropske komisije."
+    },
+    "retention": {
+      "title": "7. Čuvanje podataka",
+      "content": "Vaše lične podatke čuvamo samo onoliko koliko je potrebno za svrhe za koje su prikupljeni:",
+      "contactData": "Podaci kontakt forme: Čuvaju se 12 mjeseci nakon vašeg upita, zatim se brišu.",
+      "analyticsCookies": "Analitički kolačići (_ga, _ga_*): Do 2 godine, postavljeni od strane Google Analytics.",
+      "marketingCookies": "Marketinški kolačići (_fbp): 90 dana, postavljeni od strane Meta Pixel.",
+      "consentCookie": "Kolačić za postavke saglasnosti: 1 godina.",
+      "languageCookie": "Kolačić za jezičke preferencije: 1 godina."
     },
     "rights": {
-      "title": "6. Vaša prava",
-      "content": "Ovisno o vašoj lokaciji, možete imati određena prava u vezi s vašim ličnim podacima, kao što su pravo pristupa, ispravljanja ili brisanja vaših podataka. Za ostvarivanje ovih prava, kontaktirajte nas koristeći informacije navedene ispod."
+      "title": "8. Vaša prava prema GDPR-u",
+      "content": "Prema Općoj uredbi o zaštiti podataka (GDPR), imate sljedeća prava u vezi s vašim ličnim podacima:",
+      "access": "Pravo pristupa (čl. 15 GDPR): Imate pravo zatražiti informacije o ličnim podacima koje o vama posjedujemo.",
+      "rectification": "Pravo na ispravku (čl. 16 GDPR): Imate pravo zatražiti ispravku netačnih ličnih podataka.",
+      "erasure": "Pravo na brisanje (čl. 17 GDPR): Imate pravo zatražiti brisanje vaših ličnih podataka kada više nisu potrebni za svrhe za koje su prikupljeni.",
+      "restriction": "Pravo na ograničenje (čl. 18 GDPR): Imate pravo zatražiti ograničenje obrade vaših ličnih podataka.",
+      "portability": "Pravo na prenosivost podataka (čl. 20 GDPR): Imate pravo primiti vaše lične podatke u strukturiranom, uobičajeno korištenom i mašinski čitljivom formatu.",
+      "objection": "Pravo na prigovor (čl. 21 GDPR): Imate pravo uložiti prigovor na obradu vaših ličnih podataka zasnovanu na legitimnim interesima.",
+      "withdrawConsent": "Pravo na povlačenje saglasnosti (čl. 7(3) GDPR): Svoju saglasnost možete povući u bilo kojem trenutku promjenom postavki kolačića ili kontaktiranjem nas.",
+      "complaint": "Pravo na podnošenje žalbe: Imate pravo podnijeti žalbu nadzornom tijelu. Nadležno nadzorno tijelo u Bosni i Hercegovini je Agencija za zaštitu ličnih podataka u BiH."
+    },
+    "cookies": {
+      "title": "9. Kolačići",
+      "content": "Za detaljne informacije o kolačićima koje koristimo, njihovim svrhama i načinu upravljanja njima, pogledajte našu Politiku kolačića.",
+      "link": "Pogledaj Politiku kolačića"
+    },
+    "children": {
+      "title": "10. Privatnost djece",
+      "content": "Naša web stranica i usluge nisu namijenjene djeci mlađoj od 16 godina. Svjesno ne prikupljamo lične podatke djece mlađe od 16 godina. Ako saznamo da smo prikupili lične podatke djeteta mlađeg od 16 godina bez potvrđene roditeljske saglasnosti, preduzet ćemo korake za brisanje tih informacija."
     },
     "changes": {
-      "title": "7. Promjene ove Politike privatnosti",
-      "content": "Možemo povremeno ažurirati našu Politiku privatnosti. Obavijestit ćemo vas o svim promjenama objavljivanjem nove Politike privatnosti na ovoj stranici i ažuriranjem datuma 'Posljednje ažuriranje'. Savjetujemo vam da periodično pregledate ovu Politiku privatnosti zbog eventualnih promjena."
+      "title": "11. Promjene ove Politike privatnosti",
+      "content": "Možemo povremeno ažurirati ovu Politiku privatnosti kako bismo odrazili promjene u našim praksama, tehnologijama, zakonskim zahtjevima ili drugim faktorima. Kada napravimo značajne promjene, ažurirat ćemo datum \"Posljednje ažuriranje\" na vrhu ove stranice. Savjetujemo vam da periodično pregledate ovu Politiku privatnosti."
+    },
+    "contact": {
+      "title": "12. Kontaktirajte nas",
+      "content": "Ako imate bilo kakvih pitanja o ovoj Politici privatnosti, želite ostvariti svoja prava zaštite podataka ili imate nedoumice o tome kako postupamo s vašim ličnim podacima, kontaktirajte nas:",
+      "details": "NextPixel, Jovana Dučića 15, 78400 Gradiška, Republika Srpska, Bosna i Hercegovina. Email: pixelnext9@gmail.com, Telefon: +387 66 603 900"
+    }
+  },
+  "consent": {
+    "title": "Postavke kolačića",
+    "description": "Koristimo kolačiće za poboljšanje vašeg iskustva pregledanja, analizu prometa na stranici i prikazivanje personaliziranog sadržaja. Možete odabrati koje kolačiće dozvoljavate.",
+    "necessary": "Neophodni",
+    "necessaryDesc": "Potrebni za pravilno funkcionisanje web stranice. Ovi kolačići se ne mogu onemogućiti.",
+    "analytics": "Analitički",
+    "analyticsDesc": "Pomažu nam da razumijemo kako posjetioci koriste našu web stranicu prikupljanjem anonimnih podataka o korištenju.",
+    "marketing": "Marketinški",
+    "marketingDesc": "Koriste se za prikazivanje relevantnih oglasa i praćenje efikasnosti kampanja.",
+    "acceptAll": "Prihvati sve",
+    "rejectNonEssential": "Odbij nebitne",
+    "customize": "Prilagodi",
+    "savePreferences": "Sačuvaj postavke",
+    "cookiePolicy": "Politika kolačića",
+    "privacyPolicy": "Politika privatnosti"
+  },
+  "cookiePolicy": {
+    "title": "Politika kolačića",
+    "lastUpdated": "Posljednje ažuriranje",
+    "whatAreCookies": {
+      "title": "1. Šta su kolačići",
+      "content": "Kolačići su male tekstualne datoteke koje se pohranjuju na vašem uređaju (računar, tablet ili pametni telefon) kada posjetite web stranicu. Široko se koriste kako bi web stranice funkcionisale efikasnije, pružale informacije vlasnicima stranica i poboljšale korisničko iskustvo."
+    },
+    "howWeUse": {
+      "title": "2. Kako koristimo kolačiće",
+      "content": "Koristimo kolačiće za sljedeće svrhe: osnovno funkcionisanje web stranice (jezičke preferencije, pohrana saglasnosti), razumijevanje kako posjetioci koriste našu stranicu putem analitike, i mjerenje efikasnosti naših marketinških kampanja. Nebitne kolačiće postavljamo tek nakon što date izričitu saglasnost."
+    },
+    "cookieTable": {
+      "title": "3. Kolačići koje koristimo",
+      "name": "Kolačić",
+      "type": "Tip",
+      "duration": "Trajanje",
+      "provider": "Pružalac",
+      "purpose": "Svrha"
+    },
+    "typeNecessary": "Neophodni",
+    "typeAnalytics": "Analitički",
+    "typeMarketing": "Marketinški",
+    "duration1Year": "1 godina",
+    "duration2Years": "2 godine",
+    "duration90Days": "90 dana",
+    "purposeLanguage": "Čuva vašu jezičku preferenciju",
+    "purposeConsent": "Pohranjuje vaše postavke saglasnosti za kolačiće",
+    "purposeGA": "Google Analytics - anonimno prati korištenje i performanse web stranice",
+    "purposeFB": "Meta Pixel - prati efikasnost reklamnih kampanja",
+    "categories": {
+      "title": "4. Kategorije kolačića",
+      "necessary": "Neophodni kolačići",
+      "necessaryDesc": "Ovi kolačići su neophodni za pravilno funkcionisanje web stranice. Omogućavaju osnovne funkcije kao što su navigacija stranicom i odabir jezika. Web stranica ne može pravilno funkcionisati bez ovih kolačića. Postavljaju se bez potrebe za saglasnošću.",
+      "analytics": "Analitički kolačići",
+      "analyticsDesc": "Ovi kolačići nam pomažu da razumijemo kako posjetioci koriste našu web stranicu prikupljanjem i izvještavanjem informacija anonimno. Ovi podaci nam pomažu da poboljšamo strukturu i sadržaj naše web stranice. Ovi kolačići se postavljaju samo uz vašu izričitu saglasnost.",
+      "marketing": "Marketinški kolačići",
+      "marketingDesc": "Ovi kolačići se koriste za praćenje posjetilaca na web stranicama radi prikazivanja relevantnih oglasa. Postavljaju ih reklamne mreže trećih strana uz naše odobrenje i samo uz vašu izričitu saglasnost."
+    },
+    "thirdPartyCookies": {
+      "title": "5. Kolačići trećih strana",
+      "content": "Neke kolačiće na našoj web stranici postavljaju usluge trećih strana. Koristimo sljedeće usluge trećih strana koje mogu postaviti kolačiće:"
+    },
+    "manageCookies": {
+      "title": "6. Upravljanje postavkama kolačića",
+      "content": "Možete promijeniti svoje postavke kolačića u bilo koje vrijeme klikom na dugme ispod. Ovo će ponovo otvoriti baner za saglasnost za kolačiće gdje možete prilagoditi svoje postavke. Kolačićima možete upravljati i putem postavki vašeg preglednika.",
+      "button": "Promijeni postavke kolačića"
+    },
+    "changes": {
+      "title": "7. Promjene ove politike",
+      "content": "Možemo povremeno ažurirati ovu Politiku kolačića kako bismo odrazili promjene u našim praksama ili iz drugih operativnih, pravnih ili regulatornih razloga. Sve promjene će biti objavljene na ovoj stranici s ažuriranim datumom."
     },
     "contact": {
       "title": "8. Kontaktirajte nas",
-      "content": "Ako imate bilo kakvih pitanja o ovoj Politici privatnosti, molimo vas da nas kontaktirate na pixelnext9@gmail.com."
+      "content": "Ako imate bilo kakvih pitanja o našem korištenju kolačića, kontaktirajte nas na pixelnext9@gmail.com ili nam pišite na: NextPixel, Jovana Ducica 15, 78400 Gradiška, Bosna i Hercegovina."
+    }
+  },
+  "impressum": {
+    "title": "Impresum",
+    "company": {
+      "title": "1. Podaci o preduzeću",
+      "type": "Digitalna agencija / Web development",
+      "country": "Bosna i Hercegovina"
+    },
+    "contact": {
+      "title": "2. Kontakt",
+      "phone": "Telefon",
+      "email": "E-mail",
+      "website": "Web stranica"
+    },
+    "responsible": {
+      "title": "3. Odgovorna osoba za sadržaj",
+      "content": "Odgovorno za sadržaj prema § 55 Abs. 2 RStV:"
+    },
+    "dispute": {
+      "title": "4. EU platforma za rješavanje sporova",
+      "content": "Evropska komisija pruža platformu za online rješavanje sporova (ODR):",
+      "note": "Nismo obavezni niti spremni da učestvujemo u postupcima rješavanja sporova pred potrošačkim arbitražnim tijelom."
+    },
+    "contentLiability": {
+      "title": "5. Odgovornost za sadržaj",
+      "content": "Sadržaj naših stranica kreiran je s najvećom pažnjom. Međutim, ne možemo garantovati tačnost, potpunost i aktuelnost sadržaja. Kao pružalac usluga, odgovorni smo za vlastiti sadržaj na ovim stranicama prema opštim zakonima. Međutim, nismo obavezni da nadgledamo prenesene ili pohranjene informacije trećih strana ili da istražujemo okolnosti koje ukazuju na nezakonitu aktivnost."
+    },
+    "linksLiability": {
+      "title": "6. Odgovornost za linkove",
+      "content": "Naša web stranica sadrži linkove ka eksternim web stranicama trećih strana na čiji sadržaj nemamo uticaj. Stoga ne možemo preuzeti nikakvu odgovornost za sadržaj trećih strana. Odgovorni pružalac ili operater stranica uvijek je odgovoran za sadržaj linkanih stranica."
+    },
+    "copyright": {
+      "title": "7. Autorska prava",
+      "content": "Sadržaj i djela koja su operateri stranice kreirali na ovim stranicama podliježu zakonu o autorskim pravima. Umnožavanje, obrada, distribucija i bilo koji oblik iskorištavanja izvan okvira zakona o autorskim pravima zahtijevaju pisanu saglasnost autora ili kreatora."
     }
   },
   "terms": {

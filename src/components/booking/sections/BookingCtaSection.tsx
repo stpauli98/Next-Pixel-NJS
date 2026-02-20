@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useClientTranslation } from '@/hooks/useClientTranslation';
+import Link from 'next/link';
 import { StarButton } from '@/components/ui/star-button';
 import { usePathname } from 'next/navigation';
 
@@ -29,6 +30,7 @@ const BookingCtaSection: React.FC = () => {
     message: '',
     interest: 'booking',
   });
+  const [privacyConsent, setPrivacyConsent] = useState(false);
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState('');
@@ -45,6 +47,9 @@ const BookingCtaSection: React.FC = () => {
       sending: 'Wird gesendet...',
       success: 'Vielen Dank! Wir melden uns innerhalb von 24 Stunden.',
       error: 'Fehler beim Senden. Bitte versuchen Sie es erneut.',
+      privacyConsent: 'Ich stimme zu, dass meine Daten gemäß der',
+      privacyConsentLink: 'Datenschutzerklärung',
+      privacyConsentSuffix: 'verarbeitet werden',
     },
     en: {
       title: 'Ready for Your Booking System?',
@@ -57,6 +62,9 @@ const BookingCtaSection: React.FC = () => {
       sending: 'Sending...',
       success: 'Thank you! We will get back to you within 24 hours.',
       error: 'Error sending. Please try again.',
+      privacyConsent: 'I agree that my data will be processed in accordance with the',
+      privacyConsentLink: 'Privacy Policy',
+      privacyConsentSuffix: '',
     },
     sr: {
       title: 'Spremni za vaš booking sistem?',
@@ -69,6 +77,9 @@ const BookingCtaSection: React.FC = () => {
       sending: 'Šalje se...',
       success: 'Hvala! Javit ćemo vam se u roku od 24 sata.',
       error: 'Greška pri slanju. Pokušajte ponovo.',
+      privacyConsent: 'Saglasan/na sam da se moji podaci obrađuju u skladu sa',
+      privacyConsentLink: 'Politikom privatnosti',
+      privacyConsentSuffix: '',
     },
   };
 
@@ -94,6 +105,7 @@ const BookingCtaSection: React.FC = () => {
 
       if (res.ok) {
         setSent(true);
+        setPrivacyConsent(false);
         setFormData({ name: '', email: '', phone: '', message: '', interest: 'booking' });
       } else {
         setError(l.error);
@@ -167,6 +179,24 @@ const BookingCtaSection: React.FC = () => {
                   rows={5}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-nextpixel-blue focus:border-transparent outline-none transition-all resize-none"
                 />
+              </div>
+
+              {/* Privacy Consent Checkbox */}
+              <div>
+                <label className="flex items-start gap-3 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    className="mt-1 w-4 h-4 text-nextpixel-blue border-gray-300 rounded focus:ring-nextpixel-blue flex-shrink-0"
+                    required
+                  />
+                  <span className="text-sm text-gray-600">
+                    {l.privacyConsent}{' '}
+                    <Link href={`/booking/${currentLang}`} className="text-nextpixel-blue hover:underline font-medium">
+                      {l.privacyConsentLink}
+                    </Link>
+                    {l.privacyConsentSuffix ? ` ${l.privacyConsentSuffix}` : ''}
+                  </span>
+                </label>
               </div>
 
               <div className="text-center">
@@ -272,12 +302,32 @@ const BookingCtaSection: React.FC = () => {
                 />
               </div>
 
+              {/* Privacy Consent Checkbox */}
+              <div>
+                <label className="flex items-start gap-3 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={privacyConsent}
+                    onChange={(e) => setPrivacyConsent(e.target.checked)}
+                    className="mt-1 w-4 h-4 text-nextpixel-blue border-gray-300 rounded focus:ring-nextpixel-blue flex-shrink-0"
+                    required
+                  />
+                  <span className="text-sm text-gray-600">
+                    {l.privacyConsent}{' '}
+                    <Link href={`/${currentLang}/privacy-policy`} className="text-nextpixel-blue hover:underline font-medium" target="_blank">
+                      {l.privacyConsentLink}
+                    </Link>
+                    {l.privacyConsentSuffix ? ` ${l.privacyConsentSuffix}` : ''}
+                  </span>
+                </label>
+              </div>
+
               {error && (
                 <p className="text-red-500 text-sm">{error}</p>
               )}
 
               <div className="text-center">
-                <StarButton type="submit" disabled={sending}>
+                <StarButton type="submit" disabled={sending || !privacyConsent}>
                   {sending ? l.sending : l.send}
                 </StarButton>
               </div>

@@ -1,5 +1,4 @@
 import React from 'react';
-import Script from 'next/script';
 import type { Metadata, Viewport } from 'next';
 import { headers } from 'next/headers';
 import { Montserrat, Poppins } from 'next/font/google';
@@ -7,7 +6,6 @@ import './globals.css';
 import '@/i18n';
 import ClientLayout from './client-layout';
 import { defaultMetadata } from '@/config/metadata';
-import { AnalyticsProvider } from '@/config/analytics';
 
 const montserrat = Montserrat({
   subsets: ['latin', 'latin-ext'],
@@ -58,10 +56,6 @@ export default async function RootLayout({
         <meta name="copyright" content="NextPixel" />
         <meta name="publisher" content="NextPixel" />
 
-        {/* DNS Prefetch for Performance */}
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="https://connect.facebook.net" />
-
         {/* PWA and Mobile Optimization */}
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -87,25 +81,9 @@ export default async function RootLayout({
 
       </head>
       <body>
-        {/* Google Analytics */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-K5TQSBLLQF"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-K5TQSBLLQF');
-          `}
-        </Script>
-        
-        <AnalyticsProvider>
-          <ClientLayout>
-            {children}
-          </ClientLayout>
-        </AnalyticsProvider>
+        <ClientLayout>
+          {children}
+        </ClientLayout>
       </body>
     </html>
   );

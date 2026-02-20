@@ -1,8 +1,11 @@
 'use client';
 
 import { LanguageProvider } from '@/context/LanguageContext';
+import { CookieConsentProvider } from '@/context/CookieConsentContext';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import SplashScreen from '@/components/SplashScreen';
+import CookieConsentBanner from '@/components/CookieConsentBanner';
+import { AnalyticsProvider } from '@/config/analytics';
 import { useEffect } from 'react';
 import '@/i18n'; // Import i18n configuration
 
@@ -50,7 +53,12 @@ export default function ClientLayout({
     >
       <SplashScreen />
       <LanguageProvider>
-        {children}
+        <CookieConsentProvider>
+          <AnalyticsProvider>
+            {children}
+          </AnalyticsProvider>
+          <CookieConsentBanner />
+        </CookieConsentProvider>
       </LanguageProvider>
     </ErrorBoundary>
   );

@@ -25,29 +25,41 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 1,
   }
 
-  // Static pages
-  const staticPages = [
+  // Legal pages for each locale
+  const legalPages = locales.flatMap(locale => [
     {
-      url: `${baseUrl}/privacy-policy`,
+      url: `${baseUrl}/${locale}/privacy-policy`,
       lastModified,
       changeFrequency: 'monthly' as const,
       priority: 0.3,
     },
     {
-      url: `${baseUrl}/terms`,
+      url: `${baseUrl}/${locale}/terms`,
       lastModified,
       changeFrequency: 'monthly' as const,
       priority: 0.3,
     },
-  ]
+    {
+      url: `${baseUrl}/${locale}/impressum`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/${locale}/cookie-policy`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: 0.3,
+    },
+  ])
 
-  // Blog index page
-  const blogIndex = {
-    url: `${baseUrl}/blog`,
+  // Blog index pages for each locale
+  const blogIndexPages = locales.map(locale => ({
+    url: `${baseUrl}/${locale}/blog`,
     lastModified,
     changeFrequency: 'weekly' as const,
     priority: 0.8,
-  }
+  }))
 
   // Dynamically discover blog posts from content directory
   const blogPages: MetadataRoute.Sitemap = []
@@ -74,5 +86,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  return [rootPage, ...mainPages, ...staticPages, blogIndex, ...blogPages]
+  return [rootPage, ...mainPages, ...legalPages, ...blogIndexPages, ...blogPages]
 }

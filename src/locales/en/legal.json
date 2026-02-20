@@ -1,37 +1,192 @@
 {
   "privacy": {
     "title": "Privacy Policy",
-    "collect": {
-      "title": "1. Information We Collect",
-      "content": "We collect personal information that you voluntarily provide to us when you express interest in obtaining information about our services, when you participate in activities on our website, or otherwise when you contact us. The personal information we collect may include names, email addresses, phone numbers, and other information you choose to provide."
+    "lastUpdated": "Last updated: February 20, 2026",
+    "controller": {
+      "title": "1. Data Controller",
+      "content": "The data controller responsible for the processing of your personal data is:",
+      "name": "NextPixel",
+      "address": "Jovana Ducica 15, 78400 Gradiska, Republika Srpska, Bosnia and Herzegovina",
+      "email": "pixelnext9@gmail.com",
+      "phone": "+387 66 603 900"
     },
-    "use": {
-      "title": "2. How We Use Your Information",
-      "content": "We use the information we collect to provide, maintain, and improve our services. This includes using the data to communicate with you, respond to your inquiries, and send you information about our services. We may also use your information to comply with legal obligations and resolve disputes."
+    "legalBasis": {
+      "title": "2. Legal Basis for Processing",
+      "content": "We process your personal data based on the following legal grounds under Article 6(1) of the GDPR:",
+      "consent": "Consent (Art. 6(1)(a) GDPR): For analytics cookies, marketing cookies, and newsletter subscriptions. You may withdraw your consent at any time.",
+      "contract": "Contract Performance (Art. 6(1)(b) GDPR): For processing contact form submissions to respond to your inquiries about our services.",
+      "legitimate": "Legitimate Interest (Art. 6(1)(f) GDPR): For website security, fraud prevention, and essential website functionality (e.g., language preference cookies)."
     },
-    "sharing": {
-      "title": "3. Information Sharing and Disclosure",
-      "content": "We do not sell, trade, or otherwise transfer your personal information to outside parties. This does not include trusted third parties who assist us in operating our website, conducting our business, or servicing you, as long as those parties agree to keep this information confidential."
+    "dataCollected": {
+      "title": "3. Data We Collect",
+      "content": "We collect the following categories of personal data:",
+      "contactForm": "Contact Form Data: Name, email address, phone number (optional), subject, and message content - collected when you submit our contact form.",
+      "analytics": "Analytics Data: IP address (anonymized), browser type and version, operating system, pages visited, time of visit, and session duration - collected through analytics cookies with your consent.",
+      "cookies": "Cookie Data: Language preference and consent preferences - stored in cookies on your device.",
+      "technical": "Technical Data: Server logs including IP address, browser type, and access times - collected automatically for security purposes."
     },
-    "security": {
-      "title": "4. Data Security",
-      "content": "We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet or electronic storage is 100% secure, and we cannot guarantee absolute security."
+    "purposes": {
+      "title": "4. Purposes of Processing",
+      "content": "We process your personal data for the following purposes:",
+      "list": "To respond to your contact form inquiries and provide information about our services; To analyze website traffic and improve our website (with your consent); To measure the effectiveness of marketing campaigns (with your consent); To ensure the technical functionality and security of our website; To comply with legal obligations."
     },
-    "cookies": {
-      "title": "5. Cookies and Tracking Technologies",
-      "content": "We may use cookies and similar tracking technologies to track activity on our website and store certain information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our website."
+    "thirdParties": {
+      "title": "5. Third-Party Services",
+      "content": "We use the following third-party services that may process your personal data:",
+      "ga": "Google Analytics (Google LLC, USA): Website analytics service that collects anonymized usage data. Google is certified under the EU-US Data Privacy Framework. Privacy policy: https://policies.google.com/privacy",
+      "meta": "Meta Pixel (Meta Platforms Inc., USA): Marketing analytics service that tracks ad campaign effectiveness. Meta is certified under the EU-US Data Privacy Framework. Privacy policy: https://www.facebook.com/privacy/policy/",
+      "vercel": "Vercel Analytics (Vercel Inc., USA): First-party, privacy-friendly website analytics. Does not use cookies and collects only anonymized data. Privacy policy: https://vercel.com/legal/privacy-policy",
+      "resend": "Resend (Resend Inc.): Email delivery service used to process contact form submissions. Your name, email, and message are transmitted to Resend to deliver the email. Privacy policy: https://resend.com/legal/privacy-policy"
+    },
+    "dataTransfers": {
+      "title": "6. International Data Transfers",
+      "content": "Some of our third-party service providers are located in the United States. These transfers are protected by the EU-US Data Privacy Framework, ensuring an adequate level of data protection as recognized by the European Commission. Where the Data Privacy Framework does not apply, we rely on Standard Contractual Clauses (SCCs) approved by the European Commission."
+    },
+    "retention": {
+      "title": "7. Data Retention",
+      "content": "We retain your personal data only for as long as necessary for the purposes for which it was collected:",
+      "contactData": "Contact form data: Retained for 12 months after your inquiry, then deleted.",
+      "analyticsCookies": "Analytics cookies (_ga, _ga_*): Up to 2 years, set by Google Analytics.",
+      "marketingCookies": "Marketing cookies (_fbp): 90 days, set by Meta Pixel.",
+      "consentCookie": "Consent preferences cookie: 1 year.",
+      "languageCookie": "Language preference cookie: 1 year."
     },
     "rights": {
-      "title": "6. Your Rights",
-      "content": "Depending on your location, you may have certain rights regarding your personal information, such as the right to access, correct, or delete your data. To exercise these rights, please contact us using the information provided below."
+      "title": "8. Your Rights Under GDPR",
+      "content": "Under the General Data Protection Regulation (GDPR), you have the following rights regarding your personal data:",
+      "access": "Right of Access (Art. 15 GDPR): You have the right to request information about the personal data we hold about you.",
+      "rectification": "Right to Rectification (Art. 16 GDPR): You have the right to request correction of inaccurate personal data.",
+      "erasure": "Right to Erasure (Art. 17 GDPR): You have the right to request deletion of your personal data when it is no longer necessary for the purposes for which it was collected.",
+      "restriction": "Right to Restriction (Art. 18 GDPR): You have the right to request restriction of processing of your personal data.",
+      "portability": "Right to Data Portability (Art. 20 GDPR): You have the right to receive your personal data in a structured, commonly used, and machine-readable format.",
+      "objection": "Right to Object (Art. 21 GDPR): You have the right to object to the processing of your personal data based on legitimate interests.",
+      "withdrawConsent": "Right to Withdraw Consent (Art. 7(3) GDPR): You can withdraw your consent at any time by changing your cookie preferences or contacting us.",
+      "complaint": "Right to Lodge a Complaint: You have the right to lodge a complaint with a supervisory authority. The competent supervisory authority in Bosnia and Herzegovina is the Agency for Personal Data Protection (Agencija za zaštitu ličnih podataka u BiH)."
+    },
+    "cookies": {
+      "title": "9. Cookies",
+      "content": "For detailed information about the cookies we use, their purposes, and how to manage them, please see our Cookie Policy.",
+      "link": "View Cookie Policy"
+    },
+    "children": {
+      "title": "10. Children's Privacy",
+      "content": "Our website and services are not directed to children under the age of 16. We do not knowingly collect personal data from children under 16. If we become aware that we have collected personal data from a child under 16 without verified parental consent, we will take steps to delete that information."
     },
     "changes": {
-      "title": "7. Changes to This Privacy Policy",
-      "content": "We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the 'Last Updated' date. You are advised to review this Privacy Policy periodically for any changes."
+      "title": "11. Changes to This Privacy Policy",
+      "content": "We may update this Privacy Policy from time to time to reflect changes in our practices, technologies, legal requirements, or other factors. When we make material changes, we will update the \"Last updated\" date at the top of this page. We encourage you to review this Privacy Policy periodically."
+    },
+    "contact": {
+      "title": "12. Contact Us",
+      "content": "If you have any questions about this Privacy Policy, wish to exercise your data protection rights, or have concerns about how we handle your personal data, please contact us:",
+      "details": "NextPixel, Jovana Ducica 15, 78400 Gradiska, Republika Srpska, Bosnia and Herzegovina. Email: pixelnext9@gmail.com, Phone: +387 66 603 900"
+    }
+  },
+  "consent": {
+    "title": "Cookie Settings",
+    "description": "We use cookies to enhance your browsing experience, analyze site traffic, and serve personalized content. You can choose which cookies you allow.",
+    "necessary": "Necessary",
+    "necessaryDesc": "Required for the website to function properly. These cookies cannot be disabled.",
+    "analytics": "Analytics",
+    "analyticsDesc": "Help us understand how visitors interact with our website by collecting anonymous usage data.",
+    "marketing": "Marketing",
+    "marketingDesc": "Used to deliver relevant advertisements and track the effectiveness of campaigns.",
+    "acceptAll": "Accept All",
+    "rejectNonEssential": "Reject Non-Essential",
+    "customize": "Customize",
+    "savePreferences": "Save Preferences",
+    "cookiePolicy": "Cookie Policy",
+    "privacyPolicy": "Privacy Policy"
+  },
+  "cookiePolicy": {
+    "title": "Cookie Policy",
+    "lastUpdated": "Last updated",
+    "whatAreCookies": {
+      "title": "1. What Are Cookies",
+      "content": "Cookies are small text files that are stored on your device (computer, tablet, or smartphone) when you visit a website. They are widely used to make websites work more efficiently, provide information to site owners, and improve the user experience."
+    },
+    "howWeUse": {
+      "title": "2. How We Use Cookies",
+      "content": "We use cookies for the following purposes: essential website functionality (language preferences, consent storage), understanding how visitors use our site through analytics, and measuring the effectiveness of our marketing campaigns. We only set non-essential cookies after you have given your explicit consent."
+    },
+    "cookieTable": {
+      "title": "3. Cookies We Use",
+      "name": "Cookie",
+      "type": "Type",
+      "duration": "Duration",
+      "provider": "Provider",
+      "purpose": "Purpose"
+    },
+    "typeNecessary": "Necessary",
+    "typeAnalytics": "Analytics",
+    "typeMarketing": "Marketing",
+    "duration1Year": "1 year",
+    "duration2Years": "2 years",
+    "duration90Days": "90 days",
+    "purposeLanguage": "Saves your language preference",
+    "purposeConsent": "Stores your cookie consent preferences",
+    "purposeGA": "Google Analytics - tracks website usage and performance anonymously",
+    "purposeFB": "Meta Pixel - tracks advertising campaign effectiveness",
+    "categories": {
+      "title": "4. Cookie Categories",
+      "necessary": "Necessary Cookies",
+      "necessaryDesc": "These cookies are essential for the website to function properly. They enable basic functions such as page navigation and language selection. The website cannot function properly without these cookies. They are set without requiring consent.",
+      "analytics": "Analytics Cookies",
+      "analyticsDesc": "These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. This data helps us improve the structure and content of our website. These cookies are only set with your explicit consent.",
+      "marketing": "Marketing Cookies",
+      "marketingDesc": "These cookies are used to track visitors across websites in order to display relevant advertisements. They are set by third-party advertising networks with our permission and only with your explicit consent."
+    },
+    "thirdPartyCookies": {
+      "title": "5. Third-Party Cookies",
+      "content": "Some cookies on our website are set by third-party services. We use the following third-party services that may set cookies:"
+    },
+    "manageCookies": {
+      "title": "6. Managing Your Cookie Preferences",
+      "content": "You can change your cookie preferences at any time by clicking the button below. This will reopen the cookie consent banner where you can adjust your settings. You can also manage cookies through your browser settings.",
+      "button": "Change Cookie Preferences"
+    },
+    "changes": {
+      "title": "7. Changes to This Policy",
+      "content": "We may update this Cookie Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. Any changes will be posted on this page with an updated date."
     },
     "contact": {
       "title": "8. Contact Us",
-      "content": "If you have any questions about this Privacy Policy, please contact us at pixelnext9@gmail.com."
+      "content": "If you have any questions about our use of cookies, please contact us at pixelnext9@gmail.com or write to us at: NextPixel, Jovana Ducica 15, 78400 Gradiska, Bosnia and Herzegovina."
+    }
+  },
+  "impressum": {
+    "title": "Legal Notice",
+    "company": {
+      "title": "1. Company Information",
+      "type": "Digital Agency / Web Development",
+      "country": "Bosnia and Herzegovina"
+    },
+    "contact": {
+      "title": "2. Contact",
+      "phone": "Phone",
+      "email": "Email",
+      "website": "Website"
+    },
+    "responsible": {
+      "title": "3. Responsible for Content",
+      "content": "Responsible for the content according to § 55 Abs. 2 RStV:"
+    },
+    "dispute": {
+      "title": "4. EU Dispute Resolution",
+      "content": "The European Commission provides a platform for online dispute resolution (ODR):",
+      "note": "We are not obligated and not willing to participate in dispute resolution proceedings before a consumer arbitration board."
+    },
+    "contentLiability": {
+      "title": "5. Liability for Content",
+      "content": "The contents of our pages were created with the greatest care. However, we cannot guarantee the accuracy, completeness, and timeliness of the content. As a service provider, we are responsible for our own content on these pages according to general laws. However, we are not obligated to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity. Obligations to remove or block the use of information under general law remain unaffected."
+    },
+    "linksLiability": {
+      "title": "6. Liability for Links",
+      "content": "Our website contains links to external third-party websites over whose content we have no influence. Therefore, we cannot accept any liability for this third-party content. The respective provider or operator of the pages is always responsible for the content of the linked pages. The linked pages were checked for possible legal violations at the time of linking. Illegal content was not recognizable at the time of linking."
+    },
+    "copyright": {
+      "title": "7. Copyright",
+      "content": "The content and works created by the site operators on these pages are subject to copyright law. Duplication, processing, distribution, and any form of exploitation beyond the scope of copyright law require the written consent of the respective author or creator. Downloads and copies of this site are only permitted for private, non-commercial use."
     }
   },
   "terms": {

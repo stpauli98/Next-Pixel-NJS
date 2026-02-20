@@ -210,6 +210,34 @@ export const pageLocaleMetadata = {
       description: 'NextPixel Datenschutzrichtlinie. Schutz Ihrer Daten.',
     },
   },
+  cookiePolicy: {
+    sr: {
+      title: 'Politika Kolačića | NextPixel',
+      description: 'Politika kolačića NextPixel web stranice. Informacije o kolačićima koje koristimo i kako njima upravljati.',
+    },
+    en: {
+      title: 'Cookie Policy | NextPixel',
+      description: 'NextPixel cookie policy. Information about the cookies we use and how to manage them.',
+    },
+    de: {
+      title: 'Cookie-Richtlinie | NextPixel',
+      description: 'NextPixel Cookie-Richtlinie. Informationen über die von uns verwendeten Cookies und deren Verwaltung.',
+    },
+  },
+  impressum: {
+    sr: {
+      title: 'Impresum | NextPixel',
+      description: 'Pravne informacije o NextPixel digitalnoj agenciji. Identifikacija preduzeća i kontakt podaci.',
+    },
+    en: {
+      title: 'Legal Notice | NextPixel',
+      description: 'Legal notice and company information for NextPixel digital agency.',
+    },
+    de: {
+      title: 'Impressum | NextPixel',
+      description: 'Impressum und rechtliche Informationen der NextPixel Digitalagentur gemäß § 5 TMG.',
+    },
+  },
 } as const;
 
 /**

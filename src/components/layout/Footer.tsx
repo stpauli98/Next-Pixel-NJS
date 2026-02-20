@@ -75,7 +75,9 @@ const Footer: React.FC = () => {
     ecommerce: { sr: 'E-commerce', en: 'E-commerce', de: 'E-Commerce' },
     seo: { sr: 'SEO optimizacija', en: 'SEO Optimization', de: 'SEO-Optimierung' },
     maintenance: { sr: 'Održavanje', en: 'Maintenance', de: 'Wartung' },
-    mobileApps: { sr: 'Mobilne aplikacije', en: 'Mobile Apps', de: 'Mobile Apps' }
+    mobileApps: { sr: 'Mobilne aplikacije', en: 'Mobile Apps', de: 'Mobile Apps' },
+    impressum: { sr: 'Pravne informacije', en: 'Legal Notice', de: 'Impressum' },
+    cookiePolicy: { sr: 'Politika kolačića', en: 'Cookie Policy', de: 'Cookie-Richtlinie' }
   };
 
   const getFallback = (key: string): string => {
@@ -152,7 +154,7 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <Link href="/blog" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
+                <Link href={`/${currentLang}/blog`} className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? getFallback('blog') : (
                     typeof t('navigation:blog') === 'string' ? t('navigation:blog') as string : getFallback('blog')
                   )}
@@ -254,15 +256,25 @@ const Footer: React.FC = () => {
                 typeof t('footer:copyright') === 'string' ? t('footer:copyright') as string : getFallback('copyright')
               )}
             </p>
-            <div className="mt-4 md:mt-0">
-              <Link href="/privacy-policy" className="text-gray-400 hover:text-nextpixel-turquoise transition-colors mx-2">
+            <div className="mt-4 md:mt-0 flex flex-wrap justify-center gap-x-1 gap-y-1">
+              <Link href={`/${currentLang}/privacy-policy`} className="text-gray-400 hover:text-nextpixel-turquoise transition-colors mx-2">
                 {!mounted ? getFallback('privacy') : (
                   typeof t('footer:privacyPolicy') === 'string' ? t('footer:privacyPolicy') as string : getFallback('privacy')
                 )}
               </Link>
-              <Link href="/terms" className="text-gray-400 hover:text-nextpixel-turquoise transition-colors mx-2">
+              <Link href={`/${currentLang}/terms`} className="text-gray-400 hover:text-nextpixel-turquoise transition-colors mx-2">
                 {!mounted ? getFallback('terms') : (
                   typeof t('footer:terms') === 'string' ? t('footer:terms') as string : getFallback('terms')
+                )}
+              </Link>
+              <Link href={`/${currentLang}/impressum`} className="text-gray-400 hover:text-nextpixel-turquoise transition-colors mx-2">
+                {!mounted ? getFallback('impressum') : (
+                  typeof t('footer:impressum') === 'string' ? t('footer:impressum') as string : getFallback('impressum')
+                )}
+              </Link>
+              <Link href={`/${currentLang}/cookie-policy`} className="text-gray-400 hover:text-nextpixel-turquoise transition-colors mx-2">
+                {!mounted ? getFallback('cookiePolicy') : (
+                  typeof t('footer:cookiePolicy') === 'string' ? t('footer:cookiePolicy') as string : getFallback('cookiePolicy')
                 )}
               </Link>
               <Link href="/sitemap.xml" className="text-gray-400 hover:text-nextpixel-turquoise transition-colors mx-2">
