@@ -21,15 +21,22 @@ const nextConfig = {
     ]
   },
 
+  // Redirect www.booking to booking (SSL/canonical)
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.booking.nextpixel.dev' }],
+        destination: 'https://booking.nextpixel.dev/:path*',
+        permanent: true,
+      },
+    ]
+  },
+
   // Rewrites for manifest and booking subdomain SEO files
   async rewrites() {
     return {
       beforeFiles: [
-        // Demo app: serve index.html for /demo path
-        {
-          source: '/demo',
-          destination: '/demo/index.html',
-        },
         // Booking subdomain: robots.txt → API route
         {
           source: '/robots.txt',

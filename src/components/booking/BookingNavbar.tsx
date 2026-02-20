@@ -39,7 +39,7 @@ const BookingNavbar: React.FC = () => {
     { name: mounted ? t('nav.pricing') : fb.pricing, href: '#pricing' },
     { name: mounted ? t('nav.faq') : fb.faq, href: '#faq' },
     { name: mounted ? t('nav.contact') : fb.contact, href: '#contact' },
-    { name: mounted ? t('nav.demo') : fb.demo, href: `/demo/#/${currentLang}`, external: true },
+    { name: mounted ? t('nav.demo') : fb.demo, href: `/demo/${currentLang}`, external: true },
   ];
 
   useEffect(() => {
