@@ -66,13 +66,10 @@ function persistPreferences(prefs: ConsentPreferences) {
 export const CookieConsentProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [consentGiven, setConsentGiven] = useState(false);
   const [preferences, setPreferences] = useState<ConsentPreferences>(defaultPreferences);
-  const [mounted, setMounted] = useState(false);
-
   useEffect(() => {
     const loaded = loadPreferences();
     setConsentGiven(loaded.consentGiven);
     setPreferences(loaded.preferences);
-    setMounted(true);
   }, []);
 
   const acceptAll = useCallback(() => {
@@ -110,8 +107,6 @@ export const CookieConsentProvider: React.FC<{ children: ReactNode }> = ({ child
       );
     }
   }, []);
-
-  if (!mounted) return <>{children}</>;
 
   return (
     <CookieConsentContext.Provider

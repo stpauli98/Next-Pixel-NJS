@@ -21,7 +21,7 @@ const nextConfig = {
     ]
   },
 
-  // Redirect www.booking to booking (SSL/canonical)
+  // Redirect www.booking to booking (canonical)
   async redirects() {
     return [
       {
