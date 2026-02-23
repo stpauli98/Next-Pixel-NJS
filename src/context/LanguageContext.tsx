@@ -20,14 +20,15 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const pathname = usePathname();
 
-  // Extract locale from URL pathname
+  // Extract locale from URL pathname (checks all segments, not just the first)
   const getLocaleFromPathname = (): Locale => {
     if (!pathname) return 'sr';
-    const segments = pathname.split('/');
-    const potentialLocale = segments[1];
+    const segments = pathname.split('/').filter(Boolean);
 
-    if (potentialLocale && isValidLocale(potentialLocale)) {
-      return potentialLocale;
+    for (const segment of segments) {
+      if (isValidLocale(segment)) {
+        return segment;
+      }
     }
     return 'sr';
   };
