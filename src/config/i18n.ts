@@ -69,7 +69,7 @@ export function stripLocaleFromPathname(pathname: string): string {
 // SEO helpers for language alternates
 export function generateAlternateLinks(pathname: string) {
   const basePath = stripLocaleFromPathname(pathname);
-  const baseUrl = 'https://nextpixel.dev';
+  const baseUrl = 'https://www.nextpixel.dev';
   
   return {
     canonical: `${baseUrl}${basePath}`,

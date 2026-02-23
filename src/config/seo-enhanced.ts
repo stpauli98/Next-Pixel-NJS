@@ -84,20 +84,20 @@ export const enhancedStructuredData = {
   localBusiness: {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
-    '@id': 'https://nextpixel.dev/#organization',
+    '@id': 'https://www.nextpixel.dev/#organization',
     name: 'NextPixel',
     alternateName: 'NextPixel Digital Agency',
     description: 'Professional digital agency specialized in web design, software development, and digital marketing in Bosnia and Herzegovina',
-    url: 'https://nextpixel.dev',
+    url: 'https://www.nextpixel.dev',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://nextpixel.dev/images/NextPixelV2.webp',
+      url: 'https://www.nextpixel.dev/images/NextPixelV2.webp',
       width: 500,
       height: 350,
     },
     image: [
-      'https://nextpixel.dev/images/NextPixelV2.webp',
-      'https://nextpixel.dev/opengraph-image.png',
+      'https://www.nextpixel.dev/images/NextPixelV2.webp',
+      'https://www.nextpixel.dev/opengraph-image.png',
     ],
     telephone: geoConfig.contact.phone,
     email: geoConfig.contact.email,
@@ -212,7 +212,7 @@ export const enhancedStructuredData = {
     areaServed: geoConfig.primary.serviceArea,
     availableChannel: {
       '@type': 'ServiceChannel',
-      serviceUrl: 'https://nextpixel.dev/#contact',
+      serviceUrl: 'https://www.nextpixel.dev/#contact',
       servicePhone: geoConfig.contact.phone,
       availableLanguage: geoConfig.primary.languages,
     },
@@ -245,7 +245,7 @@ export const hreflangConfig = {
   
   // Generate hreflang links for a given path
   generateHreflangLinks: (path: string) => {
-    const baseUrl = 'https://nextpixel.dev';
+    const baseUrl = 'https://www.nextpixel.dev';
     return {
       'sr': `${baseUrl}/sr${path}`,
       'en': `${baseUrl}/en${path}`,

@@ -4,9 +4,9 @@
 export const businessInfo = {
   name: 'NextPixel',
   legalName: 'NextPixel Development Agency',
-  url: 'https://nextpixel.dev',
-  logo: 'https://nextpixel.dev/images/NextPixelV2.webp',
-  image: 'https://nextpixel.dev/opengraph-image.png',
+  url: 'https://www.nextpixel.dev',
+  logo: 'https://www.nextpixel.dev/images/NextPixelV2.webp',
+  image: 'https://www.nextpixel.dev/opengraph-image.png',
   telephone: '+38766603900',
   email: 'pixelnext9@gmail.com',
   foundingDate: '2025',
@@ -61,7 +61,7 @@ export const services = [
     '@type': 'Service',
     name: 'Custom Web Development',
     description: 'Professional website development with Next.js, React, Node.js. Modern, fast, SEO-optimized web applications.',
-    provider: { '@id': 'https://nextpixel.dev/#organization' },
+    provider: { '@id': 'https://www.nextpixel.dev/#organization' },
     areaServed: ['Bosnia and Herzegovina', 'Serbia', 'Croatia', 'Europe', 'Worldwide'],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
@@ -95,31 +95,31 @@ export const services = [
     '@type': 'Service',
     name: 'Mobile App Development',
     description: 'React Native and Flutter mobile applications for iOS and Android',
-    provider: { '@id': 'https://nextpixel.dev/#organization' }
+    provider: { '@id': 'https://www.nextpixel.dev/#organization' }
   },
   {
     '@type': 'Service',
     name: 'E-commerce Solutions',
     description: 'Complete online stores with payment integration, inventory management, and analytics',
-    provider: { '@id': 'https://nextpixel.dev/#organization' }
+    provider: { '@id': 'https://www.nextpixel.dev/#organization' }
   },
   {
     '@type': 'Service',
     name: 'UI/UX Design',
     description: 'Modern, responsive design that converts visitors into customers',
-    provider: { '@id': 'https://nextpixel.dev/#organization' }
+    provider: { '@id': 'https://www.nextpixel.dev/#organization' }
   },
   {
     '@type': 'Service',
     name: 'SEO Optimization',
     description: 'Technical SEO, content optimization, and local SEO for better rankings',
-    provider: { '@id': 'https://nextpixel.dev/#organization' }
+    provider: { '@id': 'https://www.nextpixel.dev/#organization' }
   },
   {
     '@type': 'Service',
     name: 'Website Maintenance',
     description: '24/7 monitoring, updates, backups, and technical support',
-    provider: { '@id': 'https://nextpixel.dev/#organization' }
+    provider: { '@id': 'https://www.nextpixel.dev/#organization' }
   }
 ];
 
@@ -170,7 +170,7 @@ export const faqs = [
 
 // Generate complete structured data
 export function generateStructuredData(locale: string = 'sr') {
-  const baseUrl = 'https://nextpixel.dev';
+  const baseUrl = 'https://www.nextpixel.dev';
   const currentUrl = locale === 'sr' ? baseUrl : `${baseUrl}/${locale}`;
   
   return {

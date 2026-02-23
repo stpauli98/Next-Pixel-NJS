@@ -8,7 +8,9 @@ import { getBlogPost, getAllBlogSlugs } from '@/lib/blog';
 // Dynamic import for BlogContent since it may use client-side features
 import { BlogContent } from '@/components/blogComponents/BlogContent';
 
-const baseUrl = 'https://nextpixel.dev';
+import { siteConfig } from '@/config/metadata';
+
+const baseUrl = siteConfig.url;
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string; slug: string }> }): Promise<Metadata> {
   const resolvedParams = await params;

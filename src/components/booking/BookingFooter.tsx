@@ -7,22 +7,22 @@ import { usePathname } from 'next/navigation';
 
 const legalLinks: Record<string, Array<{ label: string; href: string }>> = {
   de: [
-    { label: 'Impressum', href: 'https://nextpixel.dev/de/impressum' },
-    { label: 'Datenschutzerklärung', href: 'https://nextpixel.dev/de/privacy-policy' },
-    { label: 'Cookie-Richtlinie', href: 'https://nextpixel.dev/de/cookie-policy' },
-    { label: 'Nutzungsbedingungen', href: 'https://nextpixel.dev/de/terms' },
+    { label: 'Impressum', href: 'https://www.nextpixel.dev/de/impressum' },
+    { label: 'Datenschutzerklärung', href: 'https://www.nextpixel.dev/de/privacy-policy' },
+    { label: 'Cookie-Richtlinie', href: 'https://www.nextpixel.dev/de/cookie-policy' },
+    { label: 'Nutzungsbedingungen', href: 'https://www.nextpixel.dev/de/terms' },
   ],
   en: [
-    { label: 'Legal Notice', href: 'https://nextpixel.dev/en/impressum' },
-    { label: 'Privacy Policy', href: 'https://nextpixel.dev/en/privacy-policy' },
-    { label: 'Cookie Policy', href: 'https://nextpixel.dev/en/cookie-policy' },
-    { label: 'Terms of Service', href: 'https://nextpixel.dev/en/terms' },
+    { label: 'Legal Notice', href: 'https://www.nextpixel.dev/en/impressum' },
+    { label: 'Privacy Policy', href: 'https://www.nextpixel.dev/en/privacy-policy' },
+    { label: 'Cookie Policy', href: 'https://www.nextpixel.dev/en/cookie-policy' },
+    { label: 'Terms of Service', href: 'https://www.nextpixel.dev/en/terms' },
   ],
   sr: [
-    { label: 'Pravne informacije', href: 'https://nextpixel.dev/sr/impressum' },
-    { label: 'Politika privatnosti', href: 'https://nextpixel.dev/sr/privacy-policy' },
-    { label: 'Politika kolačića', href: 'https://nextpixel.dev/sr/cookie-policy' },
-    { label: 'Uslovi korištenja', href: 'https://nextpixel.dev/sr/terms' },
+    { label: 'Pravne informacije', href: 'https://www.nextpixel.dev/sr/impressum' },
+    { label: 'Politika privatnosti', href: 'https://www.nextpixel.dev/sr/privacy-policy' },
+    { label: 'Politika kolačića', href: 'https://www.nextpixel.dev/sr/cookie-policy' },
+    { label: 'Uslovi korištenja', href: 'https://www.nextpixel.dev/sr/terms' },
   ],
 };
 
@@ -41,10 +41,10 @@ const BookingFooter: React.FC = () => {
   const currentLang = getLangFromPath();
 
   const mainSiteUrl = currentLang === 'de'
-    ? 'https://nextpixel.dev/de'
+    ? 'https://www.nextpixel.dev/de'
     : currentLang === 'en'
-      ? 'https://nextpixel.dev/en'
-      : 'https://nextpixel.dev/sr';
+      ? 'https://www.nextpixel.dev/en'
+      : 'https://www.nextpixel.dev/sr';
 
   const copyrightText: Record<string, string> = {
     de: 'Alle Rechte vorbehalten.',

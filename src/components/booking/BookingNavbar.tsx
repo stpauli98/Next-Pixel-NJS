@@ -51,10 +51,10 @@ const BookingNavbar: React.FC = () => {
   }, []);
 
   const mainSiteUrl = currentLang === 'de'
-    ? 'https://nextpixel.dev/de'
+    ? 'https://www.nextpixel.dev/de'
     : currentLang === 'en'
-      ? 'https://nextpixel.dev/en'
-      : 'https://nextpixel.dev/sr';
+      ? 'https://www.nextpixel.dev/en'
+      : 'https://www.nextpixel.dev/sr';
 
   return (
     <nav

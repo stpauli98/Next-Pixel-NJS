@@ -17,7 +17,7 @@ export const ServiceSchema: React.FC<ServiceSchemaProps> = ({
   url,
   priceRange = '€€',
   areaServed = ['Serbia', 'Bosnia and Herzegovina', 'Montenegro', 'Europe'],
-  image = 'https://nextpixel.dev/og-image.png'
+  image = 'https://www.nextpixel.dev/og-image.png'
 }) => {
   const schemaData = {
     '@context': 'https://schema.org',
@@ -27,7 +27,7 @@ export const ServiceSchema: React.FC<ServiceSchemaProps> = ({
     provider: {
       '@type': 'LocalBusiness',
       name: provider,
-      '@id': 'https://nextpixel.dev/#business'
+      '@id': 'https://www.nextpixel.dev/#business'
     },
     url: url,
     areaServed: areaServed.map(area => ({
@@ -48,7 +48,7 @@ export const ServiceSchema: React.FC<ServiceSchemaProps> = ({
     },
     image: image,
     serviceType: serviceName,
-    termsOfService: 'https://nextpixel.dev/terms',
+    termsOfService: 'https://www.nextpixel.dev/terms',
     availableChannel: {
       '@type': 'ServiceChannel',
       serviceUrl: url,

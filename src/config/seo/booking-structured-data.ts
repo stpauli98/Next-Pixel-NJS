@@ -1,7 +1,7 @@
 import { businessInfo, addressInfo, geoInfo, socialProfiles } from './structured-data';
 
 const bookingBaseUrl = 'https://booking.nextpixel.dev';
-const mainBaseUrl = 'https://nextpixel.dev';
+const mainBaseUrl = 'https://www.nextpixel.dev';
 
 // All 9 FAQs per language - synced with bookingFaq.json translation files
 const bookingFaqs: Record<string, Array<{ question: string; answer: string }>> = {

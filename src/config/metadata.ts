@@ -10,8 +10,8 @@ export const siteConfig = {
   name: 'NextPixel',
   title: 'NextPixel - Professional Web Development & Digital Solutions Agency Bosnia and Herzegovina',
   description: 'Leading web development agency in Republika Srpska, Bosnia and Herzegovina. We build custom websites, mobile apps, e-commerce solutions, and digital platforms. Expert developers creating modern web applications with React, Next.js, and Node.js.',
-  url: process.env.NODE_ENV === 'production' 
-    ? 'https://nextpixel.dev' 
+  url: process.env.NODE_ENV === 'production'
+    ? 'https://www.nextpixel.dev'
     : 'http://localhost:3000',
   ogImage: '/opengraph-image.png',
   locale: 'sr_RS',
@@ -241,6 +241,18 @@ export const pageLocaleMetadata = {
 } as const;
 
 /**
+ * Page path mapping for correct canonical URLs
+ */
+const pagePathMap: Record<keyof typeof pageLocaleMetadata, string> = {
+  home: '',
+  blog: '/blog',
+  terms: '/terms',
+  privacy: '/privacy-policy',
+  cookiePolicy: '/cookie-policy',
+  impressum: '/impressum',
+};
+
+/**
  * Generate page-specific metadata for a locale
  */
 export function getPageMetadata(
@@ -249,23 +261,24 @@ export function getPageMetadata(
 ): Metadata {
   const pageData = pageLocaleMetadata[page][locale];
   const baseUrl = siteConfig.url;
+  const pagePath = pagePathMap[page];
 
   return {
     title: pageData.title,
     description: pageData.description,
     alternates: {
-      canonical: `${baseUrl}/${locale}`,
+      canonical: `${baseUrl}/${locale}${pagePath}`,
       languages: {
-        'sr-RS': `${baseUrl}/sr`,
-        'en-US': `${baseUrl}/en`,
-        'de-DE': `${baseUrl}/de`,
-        'x-default': `${baseUrl}/sr`,
+        'sr-RS': `${baseUrl}/sr${pagePath}`,
+        'en-US': `${baseUrl}/en${pagePath}`,
+        'de-DE': `${baseUrl}/de${pagePath}`,
+        'x-default': `${baseUrl}/sr${pagePath}`,
       },
     },
     openGraph: {
       title: pageData.title,
       description: pageData.description,
-      url: `${baseUrl}/${locale}`,
+      url: `${baseUrl}/${locale}${pagePath}`,
       siteName: siteConfig.name,
       locale: locale === 'sr' ? 'sr_RS' : locale === 'en' ? 'en_US' : 'de_DE',
       type: 'website',
@@ -593,7 +606,7 @@ export const structuredData = {
   localBusiness: {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
-    '@id': 'https://nextpixel.dev/#business',
+    '@id': 'https://www.nextpixel.dev/#business',
     name: 'NextPixel',
     alternateName: 'NextPixel Digital Agency',
     description: siteConfig.description,

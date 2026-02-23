@@ -1,11 +1,12 @@
 import { MetadataRoute } from 'next'
 import fs from 'fs'
 import path from 'path'
+import { siteConfig } from '@/config/metadata'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://nextpixel.dev'
+  const baseUrl = siteConfig.url
   // Use a fixed date for sitemap stability (update when content changes)
-  const lastModified = '2025-02-01'
+  const lastModified = '2026-02-23'
 
   const locales = ['sr', 'en', 'de']
 

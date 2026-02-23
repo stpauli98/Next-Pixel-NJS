@@ -15,10 +15,9 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: '*',
         allow: [
           '/',
-          '/blog/',
-          '/blog/sr/',
-          '/blog/en/',
-          '/blog/de/',
+          '/sr/',
+          '/en/',
+          '/de/',
         ],
         disallow: [
           '/api/',
@@ -28,15 +27,14 @@ export default function robots(): MetadataRoute.Robots {
           '/temp/',
           '*.json',
           '/*.json$',
-          // Disallow crawling of dynamic API routes
           '/api/send',
-          // Disallow crawling of development files
           '/src/',
           '/node_modules/',
           '/.git/',
           '/.env*',
+          '/twitter-image*',
+          '/opengraph-image*',
         ],
-        // Crawl delay za velike bot-ove
         crawlDelay: 1,
       },
       // Specifična pravila za Google bot
@@ -44,20 +42,18 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: 'Googlebot',
         allow: [
           '/',
-          '/blog/',
-          '/blog/sr/',
-          '/blog/en/',
-          '/blog/de/',
-          '/opengraph-image.png',
-          '/twitter-image.png',
+          '/sr/',
+          '/en/',
+          '/de/',
           '/favicon.ico',
         ],
         disallow: [
           '/api/',
           '/admin/',
-          '/_next/static/chunks/', // Allow other _next but not chunks for analysis
+          '/_next/static/chunks/',
+          '/twitter-image*',
+          '/opengraph-image*',
         ],
-        // Google može brže da crawl-uje
         crawlDelay: 0,
       },
       // Specifična pravila za Bing bot
@@ -65,14 +61,16 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: 'Bingbot',
         allow: [
           '/',
-          '/blog/',
-          '/opengraph-image.png',
-          '/twitter-image.png',
+          '/sr/',
+          '/en/',
+          '/de/',
         ],
         disallow: [
           '/api/',
           '/admin/',
           '/_next/',
+          '/twitter-image*',
+          '/opengraph-image*',
         ],
         crawlDelay: 2,
       },
