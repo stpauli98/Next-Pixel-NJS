@@ -311,6 +311,15 @@ export const twitterConfig = {
  */
 export const defaultMetadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
+  alternates: {
+    canonical: `${siteConfig.url}/sr`,
+    languages: {
+      'sr-RS': `${siteConfig.url}/sr`,
+      'en-US': `${siteConfig.url}/en`,
+      'de-DE': `${siteConfig.url}/de`,
+      'x-default': `${siteConfig.url}/sr`,
+    },
+  },
   title: {
     default: siteConfig.title,
     template: `%s | ${siteConfig.name}`,

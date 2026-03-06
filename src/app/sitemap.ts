@@ -18,14 +18,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 1,
   }))
 
-  // Root URL
-  const rootPage = {
-    url: baseUrl,
-    lastModified,
-    changeFrequency: 'weekly' as const,
-    priority: 1,
-  }
-
   // Legal pages for each locale
   const legalPages = locales.flatMap(locale => [
     {
@@ -87,5 +79,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  return [rootPage, ...mainPages, ...legalPages, ...blogIndexPages, ...blogPages]
+  return [...mainPages, ...legalPages, ...blogIndexPages, ...blogPages]
 }

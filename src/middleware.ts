@@ -76,7 +76,7 @@ export function middleware(request: NextRequest) {
     // No locale in path → detect and redirect
     const detectedLocale = detectLocale(request, config.defaultLocale);
     const redirectPath = `/${detectedLocale}${pathname === '/' ? '' : pathname}`;
-    const response = NextResponse.redirect(new URL(redirectPath, request.url));
+    const response = NextResponse.redirect(new URL(redirectPath, request.url), 301);
     addSecurityHeaders(response, detectedLocale);
     return response;
   }
@@ -99,7 +99,7 @@ export function middleware(request: NextRequest) {
   // Path doesn't have locale, detect and redirect
   const detectedLocale = detectLocale(request);
   const redirectPath = `/${detectedLocale}${pathname === '/' ? '' : pathname}`;
-  const response = NextResponse.redirect(new URL(redirectPath, request.url));
+  const response = NextResponse.redirect(new URL(redirectPath, request.url), 301);
   addSecurityHeaders(response, detectedLocale);
   return response;
 }
