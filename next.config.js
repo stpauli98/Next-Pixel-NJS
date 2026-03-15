@@ -31,6 +31,17 @@ const nextConfig = {
         permanent: true,
       },
       // Fix old blog URLs that Google is trying to crawl (404s in GSC)
+      // Specific old posts that no longer exist → redirect to blog index
+      {
+        source: '/blog/:lang(sr|en|de)/why-website-2025',
+        destination: '/:lang/blog',
+        permanent: true,
+      },
+      {
+        source: '/:lang(sr|en|de)/blog/why-website-2025',
+        destination: '/:lang/blog',
+        permanent: true,
+      },
       // Old format: /blog/{lang}/... → New format: /{lang}/blog/...
       {
         source: '/blog/:lang(sr|en|de)/:slug',
