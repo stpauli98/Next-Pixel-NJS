@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaPhone, FaWhatsapp, FaLocationDot } from 'react-icons/fa6';
 import { Icon } from '../../utils/icons';
 import Link from 'next/link';
 import { useClientTranslation } from '@/hooks/useClientTranslation';
 import { logInfo, logError } from '@/utils/logger';
+import { trackEvent, trackConversion } from '@/config/analytics';
 
 const ContactSection: React.FC = () => {
   const { t, language, isHydrated } = useClientTranslation(['contact', 'common']);
@@ -22,6 +23,7 @@ const ContactSection: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState('');
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const formStartTracked = useRef(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -60,6 +62,8 @@ const ContactSection: React.FC = () => {
         
         setPrivacyConsent(false);
         setSubmitSuccess(true);
+        trackConversion('contact');
+        formStartTracked.current = false;
         logInfo('Forma uspešno poslata', { 
           name: formData.name, 
           email: formData.email,
@@ -67,6 +71,7 @@ const ContactSection: React.FC = () => {
         });
       } else {
         setSubmitError(data.error || 'Došlo je do greške prilikom slanja poruke. Molimo pokušajte ponovo.');
+        trackEvent('form_error', 'contact', data.error || 'API error');
         logError('Greška pri slanju forme', new Error(data.error || 'Unknown error'), {
           component: 'ContactSection',
           formData: { name: formData.name, email: formData.email },
@@ -75,12 +80,20 @@ const ContactSection: React.FC = () => {
       }
     } catch (error) {
       setSubmitError('Došlo je do greške prilikom slanja poruke. Molimo pokušajte ponovo.');
+      trackEvent('form_error', 'contact', error instanceof Error ? error.message : 'Network error');
       logError('Greška pri slanju forme - mrežna greška', error, {
         component: 'ContactSection',
         formData: { name: formData.name, email: formData.email }
       });
     } finally {
       setIsSubmitting(false);
+    }
+  };
+
+  const handleFormFocus = () => {
+    if (!formStartTracked.current) {
+      formStartTracked.current = true;
+      trackEvent('form_start', 'contact', 'contact_form');
     }
   };
 
@@ -91,6 +104,7 @@ const ContactSection: React.FC = () => {
     info?: string;
     infoKey?: string;
     link: string;
+    trackingType: 'email' | 'phone' | 'whatsapp' | 'address';
   }
 
   const contactInfo: ContactInfoItem[] = [
@@ -98,25 +112,29 @@ const ContactSection: React.FC = () => {
       icon: FaEnvelope,
       titleKey: 'contact:info.email',
       info: 'pixelnext9@gmail.com',
-      link: 'mailto:pixelnext9@gmail.com'
+      link: 'mailto:pixelnext9@gmail.com',
+      trackingType: 'email'
     },
     {
       icon: FaPhone,
       titleKey: 'contact:info.phone',
       info: '+387 66 603 900',
-      link: 'tel:+38766603900'
+      link: 'tel:+38766603900',
+      trackingType: 'phone'
     },
     {
       icon: FaWhatsapp,
       titleKey: 'contact:info.whatsapp',
       info: '+387 66 603 900',
-      link: 'https://wa.me/message/U4Z7GJU4ZSL5M1'
+      link: 'https://wa.me/message/U4Z7GJU4ZSL5M1',
+      trackingType: 'whatsapp'
     },
     {
       icon: FaLocationDot,
       titleKey: 'contact:info.address',
       infoKey: 'contact:info.addressDetails',
-      link: 'https://maps.google.com/?q=Gradiska'
+      link: 'https://maps.google.com/?q=Gradiska',
+      trackingType: 'address'
     }
   ];
 
@@ -195,7 +213,7 @@ const ContactSection: React.FC = () => {
                 </div>
               )}
               
-              <form onSubmit={handleSubmit} className="w-full">
+              <form onSubmit={handleSubmit} onFocus={handleFormFocus} className="w-full">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
                   <div className="w-full">
                     <label htmlFor="name" className="block text-nextpixel-gray mb-2 font-medium">
@@ -353,9 +371,10 @@ const ContactSection: React.FC = () => {
                            (typeof t(item.titleKey || '') === 'string' ? t(item.titleKey || '') as string : (index === 0 ? 'Email' : index === 1 ? 'Phone' : index === 2 ? 'WhatsApp' : 'Address'))
                          }
                        </h4>
-                       <a 
-                         href={item.link} 
+                       <a
+                         href={item.link}
                          className="text-nextpixel-gray hover:text-nextpixel-blue transition-colors block"
+                         onClick={() => trackEvent('contact_click', 'contact', item.trackingType)}
                        >
                          {!isHydrated ?
                            (item.info || (index === 3 ? 'Gradiška, Bosnia and Herzegovina' : '')) :
