@@ -103,9 +103,9 @@ export function getLocaleMetadata(locale: 'sr' | 'en' | 'de'): Metadata {
     alternates: {
       canonical: `${baseUrl}/${locale}`,
       languages: {
-        'sr-RS': `${baseUrl}/sr`,
-        'en-US': `${baseUrl}/en`,
-        'de-DE': `${baseUrl}/de`,
+        'sr': `${baseUrl}/sr`,
+        'en': `${baseUrl}/en`,
+        'de': `${baseUrl}/de`,
         'x-default': `${baseUrl}/sr`,
       },
     },
@@ -269,9 +269,9 @@ export function getPageMetadata(
     alternates: {
       canonical: `${baseUrl}/${locale}${pagePath}`,
       languages: {
-        'sr-RS': `${baseUrl}/sr${pagePath}`,
-        'en-US': `${baseUrl}/en${pagePath}`,
-        'de-DE': `${baseUrl}/de${pagePath}`,
+        'sr': `${baseUrl}/sr${pagePath}`,
+        'en': `${baseUrl}/en${pagePath}`,
+        'de': `${baseUrl}/de${pagePath}`,
         'x-default': `${baseUrl}/sr${pagePath}`,
       },
     },
@@ -314,9 +314,9 @@ export const defaultMetadata: Metadata = {
   alternates: {
     canonical: `${siteConfig.url}/sr`,
     languages: {
-      'sr-RS': `${siteConfig.url}/sr`,
-      'en-US': `${siteConfig.url}/en`,
-      'de-DE': `${siteConfig.url}/de`,
+      'sr': `${siteConfig.url}/sr`,
+      'en': `${siteConfig.url}/en`,
+      'de': `${siteConfig.url}/de`,
       'x-default': `${siteConfig.url}/sr`,
     },
   },

@@ -3,58 +3,57 @@ import fs from 'fs'
 import path from 'path'
 import { siteConfig } from '@/config/metadata'
 
+// Helper to generate hreflang alternates for a given path across all locales
+function generateAlternates(baseUrl: string, pagePath: string) {
+  return {
+    languages: {
+      sr: `${baseUrl}/sr${pagePath}`,
+      en: `${baseUrl}/en${pagePath}`,
+      de: `${baseUrl}/de${pagePath}`,
+      'x-default': `${baseUrl}/sr${pagePath}`,
+    },
+  }
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.url
-  // Use a fixed date for sitemap stability (update when content changes)
-  const lastModified = '2026-02-23'
+  // Update this date when content changes — tells Google to re-crawl
+  const lastModified = '2026-03-15'
 
   const locales = ['sr', 'en', 'de']
 
-  // Main pages for each locale
+  // Main pages for each locale (with hreflang alternates)
   const mainPages = locales.map(locale => ({
     url: `${baseUrl}/${locale}`,
     lastModified,
     changeFrequency: 'weekly' as const,
     priority: 1,
+    alternates: generateAlternates(baseUrl, ''),
   }))
 
-  // Legal pages for each locale
-  const legalPages = locales.flatMap(locale => [
-    {
-      url: `${baseUrl}/${locale}/privacy-policy`,
+  // Legal pages for each locale (with hreflang alternates)
+  const legalPaths = ['/privacy-policy', '/terms', '/impressum', '/cookie-policy']
+  const legalPages = legalPaths.flatMap(pagePath =>
+    locales.map(locale => ({
+      url: `${baseUrl}/${locale}${pagePath}`,
       lastModified,
       changeFrequency: 'monthly' as const,
       priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/${locale}/terms`,
-      lastModified,
-      changeFrequency: 'monthly' as const,
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/${locale}/impressum`,
-      lastModified,
-      changeFrequency: 'monthly' as const,
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/${locale}/cookie-policy`,
-      lastModified,
-      changeFrequency: 'monthly' as const,
-      priority: 0.3,
-    },
-  ])
+      alternates: generateAlternates(baseUrl, pagePath),
+    }))
+  )
 
-  // Blog index pages for each locale
+  // Blog index pages for each locale (with hreflang alternates)
   const blogIndexPages = locales.map(locale => ({
     url: `${baseUrl}/${locale}/blog`,
     lastModified,
     changeFrequency: 'weekly' as const,
     priority: 0.8,
+    alternates: generateAlternates(baseUrl, '/blog'),
   }))
 
   // Dynamically discover blog posts from content directory
+  // Note: blog posts have different slugs per language, so no cross-language alternates
   const blogPages: MetadataRoute.Sitemap = []
   const blogDir = path.join(process.cwd(), 'content', 'blog')
 

@@ -30,6 +30,18 @@ const nextConfig = {
         destination: 'https://booking.nextpixel.dev/:path*',
         permanent: true,
       },
+      // Fix old blog URLs that Google is trying to crawl (404s in GSC)
+      // Old format: /blog/{lang}/... → New format: /{lang}/blog/...
+      {
+        source: '/blog/:lang(sr|en|de)/:slug',
+        destination: '/:lang/blog/:slug',
+        permanent: true,
+      },
+      {
+        source: '/blog/:lang(sr|en|de)',
+        destination: '/:lang/blog',
+        permanent: true,
+      },
     ]
   },
 

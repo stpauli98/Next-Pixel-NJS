@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-import Script from 'next/script';
 import { i18nConfig, type Locale } from '@/config/i18n';
 import { getLocaleMetadata } from '@/config/metadata';
 import { generateStructuredData } from '@/config/seo/structured-data';
@@ -41,9 +40,8 @@ export default async function LangLayout({ children, params }: LayoutProps) {
 
   return (
     <>
-      {/* Locale-specific structured data */}
-      <Script
-        id="structured-data"
+      {/* Locale-specific structured data — uses <script> not <Script> so Googlebot sees it in initial HTML */}
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(structuredData),
