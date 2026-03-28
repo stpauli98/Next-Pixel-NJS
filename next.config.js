@@ -53,6 +53,12 @@ const nextConfig = {
         destination: '/:lang/blog',
         permanent: true,
       },
+      // Fix trailing slash redirects (Google Search Console validation failures)
+      {
+        source: '/:lang(sr|en|de)/',
+        destination: '/:lang',
+        permanent: true,
+      },
     ]
   },
 
