@@ -104,8 +104,8 @@ ${contentWithoutBlogDataExport}`,
       
       return {
         slug: file.replace(/\.mdx$/, ''),
-        title: frontmatter.title || '',
-        description: frontmatter.description || '',
+        title: frontmatter.title || blogData.title || '',
+        description: frontmatter.description || blogData.excerpt || '',
         date: frontmatter.date || blogData.date,
         excerpt: frontmatter.excerpt || blogData.excerpt,
         author: frontmatter.author || blogData.author,
@@ -181,8 +181,8 @@ ${contentWithoutBlogDataExport}`,
   
   return {
     slug,
-    title: frontmatter.title || '',
-    description: frontmatter.description || '',
+    title: frontmatter.title || blogData.title || '',
+    description: frontmatter.description || blogData.excerpt || '',
     date: frontmatter.date || blogData.date,
     content: result.content,
     author: frontmatter.author || blogData.author,
