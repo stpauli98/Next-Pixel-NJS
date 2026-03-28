@@ -8,8 +8,8 @@ import { Metadata } from 'next';
 // Base URL konfiguracija - Optimized for AI tools and search engines
 export const siteConfig = {
   name: 'NextPixel',
-  title: 'NextPixel - Professional Web Development & Digital Solutions Agency Bosnia and Herzegovina',
-  description: 'Leading web development agency in Republika Srpska, Bosnia and Herzegovina. We build custom websites, mobile apps, e-commerce solutions, and digital platforms. Expert developers creating modern web applications with React, Next.js, and Node.js.',
+  title: 'NextPixel - Izrada Web Stranica i Aplikacija | Gradiška, BiH',
+  description: 'Pravimo brze, moderne web stranice i aplikacije za firme u BiH i regionu. Od ideje do gotovog sajta — responsive dizajn, SEO optimizacija i podrška. Besplatna konsultacija.',
   url: process.env.NODE_ENV === 'production'
     ? 'https://www.nextpixel.dev'
     : 'http://localhost:3000',
@@ -71,18 +71,18 @@ export const siteConfig = {
  */
 export const localeMetadata = {
   sr: {
-    title: 'NextPixel - Profesionalan Web Development & Digitalna Rješenja | BiH',
-    description: 'Vodeca web development agencija u Republici Srpskoj i BiH. Gradimo prilagođene web stranice, mobilne aplikacije, e-commerce rješenja. Stručni developeri specijalizovani za React, Next.js i Node.js.',
+    title: 'NextPixel - Izrada Web Stranica i Aplikacija | Gradiška, BiH',
+    description: 'Pravimo brze, moderne web stranice i aplikacije za firme u BiH i regionu. Od ideje do gotovog sajta — responsive dizajn, SEO optimizacija i podrška. Besplatna konsultacija.',
     keywords: 'web development Republika Srpska, web dizajn Gradiška, izrada sajtova BiH, izrada aplikacija, web developer Bosnia, WordPress BiH, e-commerce Srpska, SEO optimizacija, responsive design, React developer, Next.js, Node.js, mobilne aplikacije, online prodavnica, digitalni marketing',
   },
   en: {
-    title: 'NextPixel - Professional Web Development & Digital Solutions | Bosnia',
-    description: 'Leading web development agency in Republika Srpska, Bosnia and Herzegovina. We build custom websites, mobile apps, e-commerce solutions. Expert developers specializing in React, Next.js, and Node.js.',
+    title: 'NextPixel - Web Development & Custom Apps | Bosnia & Herzegovina',
+    description: 'We build fast, modern websites and web apps for businesses across Bosnia and Europe. From concept to launch — responsive design, SEO optimization, and ongoing support. Free consultation.',
     keywords: 'web development Bosnia, website design BiH, mobile app development, e-commerce solutions, digital agency Bosnia, web developer Gradiska, React developers, Next.js experts, Node.js development, TypeScript programming, full-stack development',
   },
   de: {
-    title: 'NextPixel - Professionelle Webentwicklung & Digitale Lösungen | Bosnien',
-    description: 'Führende Webentwicklungsagentur in der Republika Srpska, Bosnien und Herzegowina. Wir erstellen maßgeschneiderte Websites, mobile Apps und E-Commerce-Lösungen. Experten für React, Next.js und Node.js.',
+    title: 'NextPixel - Webentwicklung & Individuelle Apps | Bosnien & Herzegowina',
+    description: 'Wir entwickeln schnelle, moderne Websites und Web-Apps für Unternehmen in Bosnien und Europa. Vom Konzept bis zum Launch — responsives Design, SEO-Optimierung und laufender Support. Kostenlose Beratung.',
     keywords: 'Webentwicklung Bosnien, Website-Design BiH, Mobile-App-Entwicklung, E-Commerce-Lösungen, Digitalagentur Bosnien, Webentwickler Gradiska, React-Entwickler, Next.js-Experten, Node.js-Entwicklung, TypeScript-Programmierung',
   },
 } as const;
@@ -170,16 +170,16 @@ export const pageLocaleMetadata = {
   },
   blog: {
     sr: {
-      title: 'Blog | NextPixel - Web Development Savjeti i Vodici',
-      description: 'Najnovije informacije o web developmentu, dizajnu, SEO-u i digitalnom marketingu. Stručni članci i tutorijali.',
+      title: 'Blog | NextPixel - Savjeti za Web Dizajn, SEO i Digitalni Marketing',
+      description: 'Praktični vodici i analize iz web developmenta: kako napraviti brzu web stranicu, poboljšati SEO, i privući više klijenata online. Čitajte članke NextPixel tima.',
     },
     en: {
-      title: 'Blog | NextPixel - Web Development Tips and Guides',
-      description: 'Latest insights on web development, design, SEO, and digital marketing. Expert articles and tutorials.',
+      title: 'Blog | NextPixel - Web Design, SEO & Digital Marketing Guides',
+      description: 'Practical guides and case studies on web development: how to build fast websites, improve SEO rankings, and grow your business online. Read articles by the NextPixel team.',
     },
     de: {
-      title: 'Blog | NextPixel - Webentwicklung Tipps und Anleitungen',
-      description: 'Neueste Erkenntnisse über Webentwicklung, Design, SEO und digitales Marketing. Expertenartikel und Tutorials.',
+      title: 'Blog | NextPixel - Webdesign, SEO & Digital Marketing Ratgeber',
+      description: 'Praxisnahe Anleitungen und Analysen zur Webentwicklung: schnelle Websites erstellen, SEO verbessern und mehr Kunden online gewinnen. Artikel vom NextPixel-Team.',
     },
   },
   terms: {
@@ -241,6 +241,11 @@ export const pageLocaleMetadata = {
 } as const;
 
 /**
+ * Pages that should not be indexed by search engines (legal/policy pages)
+ */
+const noIndexPages: Set<string> = new Set(['terms', 'privacy', 'cookiePolicy', 'impressum']);
+
+/**
  * Page path mapping for correct canonical URLs
  */
 const pagePathMap: Record<keyof typeof pageLocaleMetadata, string> = {
@@ -262,6 +267,8 @@ export function getPageMetadata(
   const pageData = pageLocaleMetadata[page][locale];
   const baseUrl = siteConfig.url;
   const pagePath = pagePathMap[page];
+
+  const shouldNoIndex = noIndexPages.has(page);
 
   return {
     title: pageData.title,
@@ -297,6 +304,12 @@ export function getPageMetadata(
       description: pageData.description,
       images: [siteConfig.ogImage],
     },
+    ...(shouldNoIndex ? {
+      robots: {
+        index: false,
+        follow: false,
+      },
+    } : {}),
   };
 }
 
