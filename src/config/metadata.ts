@@ -682,7 +682,7 @@ export const structuredData = {
       '@type': 'Person',
       name: 'NextPixel Team'
     },
-    foundingDate: '2025',
+    foundingDate: '2020',
     numberOfEmployees: {
       '@type': 'QuantitativeValue',
       minValue: 2,
