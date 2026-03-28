@@ -31,18 +31,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     alternates: generateAlternates(baseUrl, ''),
   }))
 
-  // Legal pages for each locale (with hreflang alternates)
-  const legalPaths = ['/privacy-policy', '/terms', '/impressum', '/cookie-policy']
-  const legalPages = legalPaths.flatMap(pagePath =>
-    locales.map(locale => ({
-      url: `${baseUrl}/${locale}${pagePath}`,
-      lastModified,
-      changeFrequency: 'monthly' as const,
-      priority: 0.3,
-      alternates: generateAlternates(baseUrl, pagePath),
-    }))
-  )
-
   // Blog index pages for each locale (with hreflang alternates)
   const blogIndexPages = locales.map(locale => ({
     url: `${baseUrl}/${locale}/blog`,
@@ -78,5 +66,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  return [...mainPages, ...legalPages, ...blogIndexPages, ...blogPages]
+  return [...mainPages, ...blogIndexPages, ...blogPages]
 }
