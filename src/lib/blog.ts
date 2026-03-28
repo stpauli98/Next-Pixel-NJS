@@ -216,3 +216,17 @@ export async function getAllBlogSlugs(): Promise<BlogSlugParams[]> {
   
   return slugs;
 }
+
+const SUPPORTED_LANGUAGES = ['sr', 'en', 'de'];
+
+export function blogSlugExistsInOtherLanguages(currentLang: string, slug: string): boolean {
+  return SUPPORTED_LANGUAGES
+    .filter(lang => lang !== currentLang)
+    .some(lang => fs.existsSync(path.join(BLOG_DIR, lang, `${slug}.mdx`)));
+}
+
+export function getLanguagesWithSlug(slug: string): string[] {
+  return SUPPORTED_LANGUAGES.filter(lang =>
+    fs.existsSync(path.join(BLOG_DIR, lang, `${slug}.mdx`))
+  );
+}

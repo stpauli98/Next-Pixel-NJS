@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import BlogNavbar from '@/components/blogComponents/BlogNavbar';
 import BlogFooter from '@/components/blogComponents/BlogFooter';
-import { getBlogPost, getAllBlogSlugs } from '@/lib/blog';
+import { getBlogPost, getAllBlogSlugs, blogSlugExistsInOtherLanguages, getLanguagesWithSlug } from '@/lib/blog';
 
 // Dynamic import for BlogContent since it may use client-side features
 import { BlogContent } from '@/components/blogComponents/BlogContent';
@@ -24,18 +24,22 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   }
 
   const localeCode = lang === 'sr' ? 'sr_RS' : lang === 'en' ? 'en_US' : 'de_DE';
+  const hasTranslations = blogSlugExistsInOtherLanguages(lang, slug);
+
+  const alternateLanguages: Record<string, string> = {};
+  if (hasTranslations) {
+    for (const l of getLanguagesWithSlug(slug)) {
+      alternateLanguages[l] = `${baseUrl}/${l}/blog/${slug}`;
+    }
+    alternateLanguages['x-default'] = `${baseUrl}/sr/blog/${slug}`;
+  }
 
   return {
     title: post.title,
     description: post.description,
     alternates: {
       canonical: `${baseUrl}/${lang}/blog/${slug}`,
-      languages: {
-        'sr': `${baseUrl}/sr/blog/${slug}`,
-        'en': `${baseUrl}/en/blog/${slug}`,
-        'de': `${baseUrl}/de/blog/${slug}`,
-        'x-default': `${baseUrl}/sr/blog/${slug}`,
-      },
+      ...(hasTranslations ? { languages: alternateLanguages } : {}),
     },
     openGraph: {
       title: post.title,
@@ -85,6 +89,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ lang:
     notFound();
   }
 
+  const hasTranslations = blogSlugExistsInOtherLanguages(lang, slug);
+
   // Article structured data
   const articleSchema = {
     '@context': 'https://schema.org',
@@ -116,7 +122,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ lang:
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      <BlogNavbar lang={lang} />
+      <BlogNavbar lang={lang} hideLanguageSelector={!hasTranslations} />
       <main className="flex-grow pt-24">
         <div className="container mx-auto px-4">
           <article>

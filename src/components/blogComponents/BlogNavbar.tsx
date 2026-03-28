@@ -10,9 +10,10 @@ import { IconComponent } from '@/components/ui/IconComponent';
 
 interface BlogNavbarProps {
   lang?: string;
+  hideLanguageSelector?: boolean;
 }
 
-const BlogNavbar: React.FC<BlogNavbarProps> = ({ lang }) => {
+const BlogNavbar: React.FC<BlogNavbarProps> = ({ lang, hideLanguageSelector = false }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { t, language } = useTranslate();
@@ -97,7 +98,7 @@ const BlogNavbar: React.FC<BlogNavbarProps> = ({ lang }) => {
           >
             {getContactText()}
           </Link>
-          <LanguageSelector />
+          {!hideLanguageSelector && <LanguageSelector />}
         </div>
 
         {/* Mobile Menu Button */}
@@ -146,9 +147,11 @@ const BlogNavbar: React.FC<BlogNavbarProps> = ({ lang }) => {
               >
                 {getContactText()}
               </Link>
-              <div className="py-3 px-3 border-t border-gray-100 mt-2">
-                <LanguageSelector />
-              </div>
+              {!hideLanguageSelector && (
+                <div className="py-3 px-3 border-t border-gray-100 mt-2">
+                  <LanguageSelector />
+                </div>
+              )}
             </div>
           </motion.div>
         )}
