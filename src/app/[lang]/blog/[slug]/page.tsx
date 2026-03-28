@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     for (const l of getLanguagesWithSlug(slug)) {
       alternateLanguages[l] = `${baseUrl}/${l}/blog/${slug}`;
     }
-    alternateLanguages['x-default'] = `${baseUrl}/sr/blog/${slug}`;
+    alternateLanguages['x-default'] = `${baseUrl}/en/blog/${slug}`;
   }
 
   return {

@@ -106,7 +106,7 @@ export function getLocaleMetadata(locale: 'sr' | 'en' | 'de'): Metadata {
         'sr': `${baseUrl}/sr`,
         'en': `${baseUrl}/en`,
         'de': `${baseUrl}/de`,
-        'x-default': `${baseUrl}/sr`,
+        'x-default': `${baseUrl}/en`,
       },
     },
     openGraph: {
@@ -279,7 +279,7 @@ export function getPageMetadata(
         'sr': `${baseUrl}/sr${pagePath}`,
         'en': `${baseUrl}/en${pagePath}`,
         'de': `${baseUrl}/de${pagePath}`,
-        'x-default': `${baseUrl}/sr${pagePath}`,
+        'x-default': `${baseUrl}/en${pagePath}`,
       },
     },
     openGraph: {
@@ -330,7 +330,7 @@ export const defaultMetadata: Metadata = {
       'sr': `${siteConfig.url}/sr`,
       'en': `${siteConfig.url}/en`,
       'de': `${siteConfig.url}/de`,
-      'x-default': `${siteConfig.url}/sr`,
+      'x-default': `${siteConfig.url}/en`,
     },
   },
   title: {

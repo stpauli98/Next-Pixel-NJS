@@ -10,7 +10,7 @@ function generateAlternates(baseUrl: string, pagePath: string) {
       sr: `${baseUrl}/sr${pagePath}`,
       en: `${baseUrl}/en${pagePath}`,
       de: `${baseUrl}/de${pagePath}`,
-      'x-default': `${baseUrl}/sr${pagePath}`,
+      'x-default': `${baseUrl}/en${pagePath}`,
     },
   }
 }
