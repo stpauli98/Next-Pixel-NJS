@@ -19,6 +19,26 @@ import { ReactNode } from 'react';
 
 const BLOG_DIR = path.join(process.cwd(), 'content', 'blog');
 
+/**
+ * Calculate estimated reading time for MDX content.
+ * Strips MDX syntax before counting. Uses 200 words/minute.
+ */
+export function calculateReadingTime(content: string): number {
+  const cleanContent = content
+    .replace(/import\s+.*?from\s+['"].*?['"]/g, '')
+    .replace(/export\s+(const|default|function)\s+.*?[={]/g, '')
+    .replace(/<[^>]+>/g, '')
+    .replace(/\{[^}]*\}/g, '')
+    .replace(/```[\s\S]*?```/g, '')
+    .replace(/!\[.*?\]\(.*?\)/g, '')
+    .replace(/\[([^\]]+)\]\(.*?\)/g, '$1')
+    .replace(/[#*_~`>-]/g, '')
+    .trim();
+
+  const wordCount = cleanContent.split(/\s+/).filter(word => word.length > 0).length;
+  return Math.max(1, Math.ceil(wordCount / 200));
+}
+
 // Re-export tipova iz centralnog mesta
 export type { BlogPost, FullBlogPost, BlogSlugParams, BlogDataExtracted, BlogFrontmatter } from '@/types/blog';
 
@@ -111,6 +131,7 @@ ${contentWithoutBlogDataExport}`,
         excerpt: frontmatter.excerpt || blogData.excerpt,
         author: frontmatter.author || blogData.author,
         tags: frontmatter.tags || blogData.tags,
+        readTime: calculateReadingTime(fileContent),
       } as BlogPost;
     })
   );

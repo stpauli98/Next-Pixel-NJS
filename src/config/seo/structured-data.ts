@@ -9,7 +9,7 @@ export const businessInfo = {
   image: 'https://www.nextpixel.dev/opengraph-image.png',
   telephone: '+38766603900',
   email: 'info@nextpixel.dev',
-  foundingDate: '2025',
+  foundingDate: '2020',
   founders: [
     {
       '@type': 'Person',

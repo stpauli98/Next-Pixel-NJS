@@ -43,5 +43,6 @@
   },
   "followUs": "Pratite nas",
   "privacyConsent": "Saglasan/na sam da se moji podaci obrađuju u skladu sa",
-  "privacyConsentLink": "Politikom privatnosti"
+  "privacyConsentLink": "Politikom privatnosti",
+  "privacyConsentSuffix": ""
 }

@@ -123,6 +123,38 @@ export default async function BlogPostPage({ params }: { params: Promise<{ lang:
     image: (typeof post.blogData?.image === 'string' ? `${baseUrl}${post.blogData.image}` : null) || `${baseUrl}/opengraph-image.png`,
   };
 
+  const breadcrumbNames = {
+    sr: { home: 'Početna', blog: 'Blog' },
+    en: { home: 'Home', blog: 'Blog' },
+    de: { home: 'Startseite', blog: 'Blog' },
+  };
+  const names = breadcrumbNames[lang as keyof typeof breadcrumbNames] || breadcrumbNames.en;
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: names.home,
+        item: `${baseUrl}/${lang}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: names.blog,
+        item: `${baseUrl}/${lang}/blog`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: post.title,
+        item: `${baseUrl}/${lang}/blog/${slug}`,
+      },
+    ],
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <BlogNavbar lang={lang} hideLanguageSelector={!hasTranslations} />
@@ -132,6 +164,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ lang:
             <script
               type="application/ld+json"
               dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+            />
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
             />
             {post.date && (
               <time dateTime={post.date} className="sr-only">

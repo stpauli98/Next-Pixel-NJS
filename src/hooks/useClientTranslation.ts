@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { usePathname } from 'next/navigation';
 import type { TranslationFunction, TranslationOptions } from '@/types/common';
 import { TFunction } from 'i18next';
+import { isValidLocale } from '@/config/i18n';
 import { logWarn } from '@/utils/logger';
 
 /**
@@ -21,9 +23,22 @@ interface UseClientTranslationReturn {
 
 export const useClientTranslation = (ns?: string | string[]): UseClientTranslationReturn => {
   const { t, i18n } = useTranslation(ns || 'common');
+  const pathname = usePathname();
   const [isHydrated, setIsHydrated] = useState(false);
   const [isReady, setIsReady] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState(i18n.language || 'sr');
+
+  // Derive initial language from URL pathname (same source of truth as LanguageProvider)
+  // This prevents hydration mismatch where i18n singleton starts as 'sr' but URL says otherwise
+  const getLocaleFromPath = (): string => {
+    if (!pathname) return i18n.language || 'sr';
+    const segments = pathname.split('/').filter(Boolean);
+    for (const seg of segments) {
+      if (isValidLocale(seg)) return seg;
+    }
+    return i18n.language || 'sr';
+  };
+
+  const [currentLanguage, setCurrentLanguage] = useState(getLocaleFromPath);
 
   // Hydration effect - runs only on client
   useEffect(() => {

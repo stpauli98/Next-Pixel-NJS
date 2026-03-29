@@ -13,6 +13,7 @@ interface BlogPost {
   excerpt?: string;
   author?: string;
   tags?: string[];
+  readTime?: number;
 }
 
 interface BlogListProps {
@@ -115,7 +116,7 @@ export default function BlogList({ posts, currentLang }: BlogListProps) {
                     month: 'long',
                     year: 'numeric'
                   })}
-                  readTime="5 min"
+                  readTime={`${post.readTime || 5} min`}
                   readMoreText={t('readMore')}
                   lang={currentLang}
                   image={

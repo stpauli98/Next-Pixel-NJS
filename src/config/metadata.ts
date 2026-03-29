@@ -98,7 +98,6 @@ export function getLocaleMetadata(locale: 'sr' | 'en' | 'de'): Metadata {
   return {
     title: localeData.title,
     description: localeData.description,
-    keywords: localeData.keywords,
     metadataBase: new URL(baseUrl),
     alternates: {
       canonical: `${baseUrl}/${locale}`,
@@ -338,7 +337,6 @@ export const defaultMetadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  keywords: siteConfig.keywords,
   authors: [
     {
       name: siteConfig.name,
@@ -399,12 +397,6 @@ export const defaultMetadata: Metadata = {
     // yandex: 'your-yandex-verification', // Add when you have Yandex verification
     // bing: 'your-bing-verification', // Add when you have Bing verification
   },
-  // AI tools optimization is handled through robots.txt and meta tags
-  other: {
-    'chatgpt-bot': 'index,follow',
-    'claude-web': 'index,follow',
-    'bard-bot': 'index,follow',
-  },
 };
 
 /**
@@ -413,14 +405,12 @@ export const defaultMetadata: Metadata = {
 export function createPageMetadata({
   title,
   description,
-  keywords,
   image,
   path = '',
   noIndex = false,
 }: {
   title: string;
   description?: string;
-  keywords?: string[];
   image?: string;
   path?: string;
   noIndex?: boolean;
@@ -431,7 +421,6 @@ export function createPageMetadata({
   return {
     title,
     description: description || siteConfig.description,
-    keywords: keywords ? [...siteConfig.keywords, ...keywords] : siteConfig.keywords,
     openGraph: {
       title,
       description: description || siteConfig.description,
@@ -466,7 +455,6 @@ export function createPageMetadata({
 export function createBlogMetadata({
   title,
   description,
-  keywords,
   image,
   slug = '',
   publishedDate,
@@ -476,7 +464,6 @@ export function createBlogMetadata({
 }: {
   title: string;
   description?: string;
-  keywords?: string[];
   image?: string;
   slug?: string;
   publishedDate?: string;
@@ -486,18 +473,9 @@ export function createBlogMetadata({
 }): Metadata {
   const url = `${siteConfig.url}/blog/${slug}`;
   const ogImage = image || siteConfig.ogImage;
-  const allKeywords = [
-    ...siteConfig.keywords,
-    ...(keywords || []),
-    ...tags,
-    'blog',
-    'članak'
-  ];
-  
   return {
     title,
     description: description || siteConfig.description,
-    keywords: allKeywords,
     authors: [
       {
         name: author,
@@ -540,14 +518,12 @@ export const pageMetadata = {
   blog: createPageMetadata({
     title: 'NextPixel Blog',
     description: 'Pročitajte najnovije članke o web razvoju, dizajnu i digitalnom marketingu.',
-    keywords: ['blog', 'članci', 'web razvoj', 'digitalni marketing'],
     path: '/blog'
   }),
 
   privacy: createPageMetadata({
     title: 'Privacy Policy',
     description: 'Politika privatnosti NextPixel digitalne agencije.',
-    keywords: ['privacy policy', 'privatnost', 'GDPR'],
     path: '/privacy-policy',
     noIndex: true // Ne indeksiramo legal stranice
   }),
@@ -555,7 +531,6 @@ export const pageMetadata = {
   terms: createPageMetadata({
     title: 'Terms of Service',
     description: 'Uslovi korišćenja NextPixel digitalnih usluga.',
-    keywords: ['terms of service', 'uslovi', 'korišćenje'],
     path: '/terms',
     noIndex: true // Ne indeksiramo legal stranice
   }),
@@ -563,28 +538,24 @@ export const pageMetadata = {
   contact: createPageMetadata({
     title: 'Kontakt',
     description: 'Kontaktirajte NextPixel digitalnu agenciju. Pošaljite nam poruku ili nas pozovite.',
-    keywords: ['kontakt', 'poruka', 'telefon', 'email'],
     path: '/contact'
   }),
 
   portfolio: createPageMetadata({
     title: 'Portfolio',
     description: 'Pogledajte naše najnovije projekte i uspešne realizacije.',
-    keywords: ['portfolio', 'projekti', 'realizacije', 'rad'],
     path: '/portfolio'
   }),
 
   services: createPageMetadata({
     title: 'Usluge',
     description: 'Naše digitalne usluge: web dizajn, razvoj softvera, digitalni marketing i SEO.',
-    keywords: ['usluge', 'web dizajn', 'softver', 'marketing'],
     path: '/services'
   }),
 
   about: createPageMetadata({
     title: 'O nama',
     description: 'Upoznajte NextPixel tim eksperata za digitalne tehnologije.',
-    keywords: ['o nama', 'tim', 'eksperti', 'agencija'],
     path: '/about'
   }),
 };

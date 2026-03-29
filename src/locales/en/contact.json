@@ -43,5 +43,6 @@
   },
   "followUs": "Follow us",
   "privacyConsent": "I agree that my data will be processed in accordance with the",
-  "privacyConsentLink": "Privacy Policy"
+  "privacyConsentLink": "Privacy Policy",
+  "privacyConsentSuffix": ""
 }

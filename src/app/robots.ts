@@ -71,6 +71,37 @@ export default function robots(): MetadataRoute.Robots {
           '/opengraph-image*',
         ],
       },
+      // AI Search Engine Bots — allow for AI search visibility (GEO optimization)
+      {
+        userAgent: 'GPTBot',
+        allow: ['/', '/sr/', '/en/', '/de/'],
+        disallow: ['/api/', '/_next/', '/admin/', '/private/'],
+      },
+      {
+        userAgent: 'ChatGPT-User',
+        allow: ['/', '/sr/', '/en/', '/de/'],
+        disallow: ['/api/', '/_next/', '/admin/', '/private/'],
+      },
+      {
+        userAgent: 'Google-Extended',
+        allow: ['/', '/sr/', '/en/', '/de/'],
+        disallow: ['/api/', '/_next/', '/admin/'],
+      },
+      {
+        userAgent: 'ClaudeBot',
+        allow: ['/', '/sr/', '/en/', '/de/'],
+        disallow: ['/api/', '/_next/', '/admin/', '/private/'],
+      },
+      {
+        userAgent: 'PerplexityBot',
+        allow: ['/', '/sr/', '/en/', '/de/'],
+        disallow: ['/api/', '/_next/', '/admin/', '/private/'],
+      },
+      {
+        userAgent: 'Bytespider',
+        allow: ['/', '/sr/', '/en/', '/de/'],
+        disallow: ['/api/', '/_next/', '/admin/', '/private/'],
+      },
       // Blokiranje spam botova
       {
         userAgent: [

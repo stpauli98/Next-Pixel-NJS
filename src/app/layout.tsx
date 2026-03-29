@@ -79,6 +79,10 @@ export default async function RootLayout({
         <meta name="rating" content="general" />
         <meta name="distribution" content="global" />
 
+        {/* Resource Hints for Performance — reduces DNS lookup time for external origins */}
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
       </head>
       <body>
         <ClientLayout>

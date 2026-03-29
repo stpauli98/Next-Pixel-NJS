@@ -305,11 +305,11 @@ const ContactSection: React.FC = () => {
                       required
                     />
                     <span className="text-sm text-nextpixel-gray">
-                      {!isHydrated ? 'I agree that my data will be processed in accordance with the' : (typeof t('contact:privacyConsent') === 'string' ? t('contact:privacyConsent') as string : 'I agree that my data will be processed in accordance with the')}{' '}
+                      {t('contact:privacyConsent')}{' '}
                       <Link href={`/${language}/privacy-policy`} className="text-nextpixel-blue hover:underline font-medium" target="_blank">
-                        {!isHydrated ? 'Privacy Policy' : (typeof t('contact:privacyConsentLink') === 'string' ? t('contact:privacyConsentLink') as string : 'Privacy Policy')}
+                        {t('contact:privacyConsentLink')}
                       </Link>
-                      {isHydrated && typeof t('contact:privacyConsentSuffix') === 'string' ? ` ${t('contact:privacyConsentSuffix') as string}` : ''}
+                      {t('contact:privacyConsentSuffix') ? ` ${t('contact:privacyConsentSuffix')}` : ''}
                     </span>
                   </label>
                 </div>

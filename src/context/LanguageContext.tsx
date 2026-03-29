@@ -52,14 +52,14 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     if (urlLocale !== language) {
       setLanguage(urlLocale);
     }
-    Cookies.set('i18nextLng', urlLocale, { expires: 365, path: '/' });
+    Cookies.set('i18next', urlLocale, { expires: 365, path: '/' });
   }, [urlLocale]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const changeLanguage = (lang: string) => {
     const locale = isValidLocale(lang) ? lang : 'sr';
     i18n.changeLanguage(locale);
     setLanguage(locale);
-    Cookies.set('i18nextLng', locale, { expires: 365, path: '/' });
+    Cookies.set('i18next', locale, { expires: 365, path: '/' });
   };
 
   return (
