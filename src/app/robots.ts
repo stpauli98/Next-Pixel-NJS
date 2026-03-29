@@ -35,9 +35,8 @@ export default function robots(): MetadataRoute.Robots {
           '/twitter-image*',
           '/opengraph-image*',
         ],
-        crawlDelay: 1,
       },
-      // Specifična pravila za Google bot
+      // Specifična pravila za Google bot — bez crawlDelay za brži crawl malog sajta
       {
         userAgent: 'Googlebot',
         allow: [
@@ -54,7 +53,6 @@ export default function robots(): MetadataRoute.Robots {
           '/twitter-image*',
           '/opengraph-image*',
         ],
-        crawlDelay: 0,
       },
       // Specifična pravila za Bing bot
       {
@@ -72,7 +70,6 @@ export default function robots(): MetadataRoute.Robots {
           '/twitter-image*',
           '/opengraph-image*',
         ],
-        crawlDelay: 2,
       },
       // Blokiranje spam botova
       {

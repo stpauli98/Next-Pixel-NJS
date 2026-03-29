@@ -6,6 +6,7 @@ import { ShareButtons } from '@/components/blogComponents/ShareButtons';
 import { BlogLayout } from '@/components/blogComponents/BlogLayout';
 import { BlogContent, BlogMeta, BlogTags } from '@/components/blogComponents/BlogContent';
 import { logError, logWarn } from '@/utils/logger';
+import { i18nConfig } from '@/config/i18n';
 import { 
   BlogDataExtracted, 
   BlogFrontmatter, 
@@ -217,16 +218,84 @@ export async function getAllBlogSlugs(): Promise<BlogSlugParams[]> {
   return slugs;
 }
 
-const SUPPORTED_LANGUAGES = ['sr', 'en', 'de'];
+const SUPPORTED_LANGUAGES: readonly string[] = i18nConfig.locales;
+
+/**
+ * Translation mapping between blog post slugs across languages.
+ * Each entry maps slugs that are translations of the same content.
+ * Key: any slug from any language. Value: { lang: slug } for all translations.
+ *
+ * IMPORTANT: When adding a new blog post with translations, add an entry here.
+ * Posts not in this map will have NO cross-language hreflang tags.
+ */
+const BLOG_TRANSLATION_MAP: Record<string, Record<string, string>> = (() => {
+  const groups = [
+    { sr: 'premium-animacija-proizvoda', en: 'premium-product-animation', de: 'premium-produkt-animation' },
+    { sr: 'analiza-sajtova-rs-2026', en: 'website-analysis-rs-2026', de: 'website-analyse-rs-2026' },
+  ];
+
+  const map: Record<string, Record<string, string>> = {};
+  for (const group of groups) {
+    for (const slug of Object.values(group)) {
+      map[slug] = group;
+    }
+  }
+  return map;
+})();
 
 export function blogSlugExistsInOtherLanguages(currentLang: string, slug: string): boolean {
+  const translations = BLOG_TRANSLATION_MAP[slug];
+  if (translations) {
+    return SUPPORTED_LANGUAGES
+      .filter(lang => lang !== currentLang)
+      .some(lang => lang in translations);
+  }
+  // Fallback: check filesystem for posts with the same slug
   return SUPPORTED_LANGUAGES
     .filter(lang => lang !== currentLang)
     .some(lang => fs.existsSync(path.join(BLOG_DIR, lang, `${slug}.mdx`)));
 }
 
 export function getLanguagesWithSlug(slug: string): string[] {
+  const translations = BLOG_TRANSLATION_MAP[slug];
+  if (translations) {
+    return SUPPORTED_LANGUAGES.filter(lang =>
+      lang in translations && fs.existsSync(path.join(BLOG_DIR, lang, `${translations[lang]}.mdx`))
+    );
+  }
   return SUPPORTED_LANGUAGES.filter(lang =>
     fs.existsSync(path.join(BLOG_DIR, lang, `${slug}.mdx`))
   );
+}
+
+/**
+ * Get the translated slug for a blog post in a target language.
+ * Returns the slug for the target language, or undefined if no translation exists.
+ */
+export function getTranslatedSlug(slug: string, targetLang: string): string | undefined {
+  const translations = BLOG_TRANSLATION_MAP[slug];
+  if (translations && targetLang in translations) {
+    const translatedSlug = translations[targetLang];
+    if (fs.existsSync(path.join(BLOG_DIR, targetLang, `${translatedSlug}.mdx`))) {
+      return translatedSlug;
+    }
+  }
+  return undefined;
+}
+
+/**
+ * Get all translations for a given blog post slug.
+ * Returns a map of { lang: slug } for all available translations (including the current language).
+ */
+export function getBlogTranslations(slug: string): Record<string, string> {
+  const translations = BLOG_TRANSLATION_MAP[slug];
+  if (!translations) return {};
+
+  const result: Record<string, string> = {};
+  for (const lang of SUPPORTED_LANGUAGES) {
+    if (lang in translations && fs.existsSync(path.join(BLOG_DIR, lang, `${translations[lang]}.mdx`))) {
+      result[lang] = translations[lang];
+    }
+  }
+  return result;
 }

@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import BlogNavbar from '@/components/blogComponents/BlogNavbar';
 import BlogFooter from '@/components/blogComponents/BlogFooter';
-import { getBlogPost, getAllBlogSlugs, blogSlugExistsInOtherLanguages, getLanguagesWithSlug } from '@/lib/blog';
+import { getBlogPost, getAllBlogSlugs, blogSlugExistsInOtherLanguages, getBlogTranslations } from '@/lib/blog';
 
 // Dynamic import for BlogContent since it may use client-side features
 import { BlogContent } from '@/components/blogComponents/BlogContent';
@@ -28,10 +28,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 
   const alternateLanguages: Record<string, string> = {};
   if (hasTranslations) {
-    for (const l of getLanguagesWithSlug(slug)) {
-      alternateLanguages[l] = `${baseUrl}/${l}/blog/${slug}`;
+    const translations = getBlogTranslations(slug);
+    for (const [l, translatedSlug] of Object.entries(translations)) {
+      alternateLanguages[l] = `${baseUrl}/${l}/blog/${translatedSlug}`;
     }
-    alternateLanguages['x-default'] = `${baseUrl}/en/blog/${slug}`;
+    const xDefaultLang = translations['en'] ? 'en' : Object.keys(translations)[0] || lang;
+    const xDefaultSlug = translations[xDefaultLang] || slug;
+    alternateLanguages['x-default'] = `${baseUrl}/${xDefaultLang}/blog/${xDefaultSlug}`;
   }
 
   return {
