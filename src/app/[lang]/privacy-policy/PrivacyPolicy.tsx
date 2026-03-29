@@ -50,7 +50,7 @@ export default function PrivacyPolicy() {
               <div className="text-nextpixel-gray leading-relaxed space-y-1">
                 <p className="font-semibold text-nextpixel-dark">{tr('controller.name', 'NextPixel')}</p>
                 <p>{tr('controller.address', 'Jovana Ducica 15, 78400 Gradiska, Republika Srpska, Bosnia and Herzegovina')}</p>
-                <p>Email: <a href="mailto:pixelnext9@gmail.com" className="text-nextpixel-blue hover:underline">{tr('controller.email', 'pixelnext9@gmail.com')}</a></p>
+                <p>Email: <a href="mailto:info@nextpixel.dev" className="text-nextpixel-blue hover:underline">{tr('controller.email', 'info@nextpixel.dev')}</a></p>
                 <p>Tel: <a href="tel:+38766603900" className="text-nextpixel-blue hover:underline">{tr('controller.phone', '+387 66 603 900')}</a></p>
               </div>
             </section>
@@ -209,7 +209,7 @@ export default function PrivacyPolicy() {
                 {tr('contact.content', 'If you have any questions about this Privacy Policy, wish to exercise your data protection rights, or have concerns about how we handle your personal data, please contact us:')}
               </p>
               <p className="text-nextpixel-gray text-sm leading-relaxed">
-                {tr('contact.details', 'NextPixel, Jovana Ducica 15, 78400 Gradiska, Republika Srpska, Bosnia and Herzegovina. Email: pixelnext9@gmail.com, Phone: +387 66 603 900')}
+                {tr('contact.details', 'NextPixel, Jovana Ducica 15, 78400 Gradiska, Republika Srpska, Bosnia and Herzegovina. Email: info@nextpixel.dev, Phone: +387 66 603 900')}
               </p>
             </section>
           </div>

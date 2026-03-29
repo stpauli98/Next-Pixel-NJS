@@ -133,8 +133,8 @@ const BlogFooter: React.FC<BlogFooterProps> = ({ lang }) => {
                 <span className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center mr-3 group-hover:bg-nextpixel-turquoise/20 transition-colors">
                   <IconComponent icon={FaEnvelope} size={14} className="text-nextpixel-turquoise" />
                 </span>
-                <a href="mailto:pixelnext9@gmail.com" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
-                  pixelnext9@gmail.com
+                <a href="mailto:info@nextpixel.dev" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
+                  info@nextpixel.dev
                 </a>
               </li>
             </ul>

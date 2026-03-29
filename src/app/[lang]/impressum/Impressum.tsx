@@ -57,7 +57,7 @@ export default function Impressum() {
               </h2>
               <div className="text-nextpixel-gray leading-relaxed space-y-1">
                 <p>{tr('contact.phone', 'Phone')}: <a href="tel:+38766603900" className="text-nextpixel-blue hover:underline">+387 66 603 900</a></p>
-                <p>{tr('contact.email', 'Email')}: <a href="mailto:pixelnext9@gmail.com" className="text-nextpixel-blue hover:underline">pixelnext9@gmail.com</a></p>
+                <p>{tr('contact.email', 'Email')}: <a href="mailto:info@nextpixel.dev" className="text-nextpixel-blue hover:underline">info@nextpixel.dev</a></p>
                 <p>{tr('contact.website', 'Website')}: <a href="https://nextpixel.dev" className="text-nextpixel-blue hover:underline">https://nextpixel.dev</a></p>
               </div>
             </section>

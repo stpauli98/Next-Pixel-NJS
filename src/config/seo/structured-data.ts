@@ -8,7 +8,7 @@ export const businessInfo = {
   logo: 'https://www.nextpixel.dev/images/NextPixelV2.webp',
   image: 'https://www.nextpixel.dev/opengraph-image.png',
   telephone: '+38766603900',
-  email: 'pixelnext9@gmail.com',
+  email: 'info@nextpixel.dev',
   foundingDate: '2025',
   founders: [
     {

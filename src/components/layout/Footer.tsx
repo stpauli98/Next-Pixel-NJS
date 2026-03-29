@@ -238,7 +238,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center">
                 <Icon icon={FaEnvelope} className="mr-3 text-nextpixel-turquoise" aria-hidden={true} />
-                <span className="text-gray-300">pixelnext9@gmail.com</span>
+                <span className="text-gray-300">info@nextpixel.dev</span>
               </li>
             </ul>
 

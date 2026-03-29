@@ -230,7 +230,7 @@ const GlobalError: React.FC<GlobalErrorProps> = ({ error, reset }) => {
             {/* Support Information */}
             <div className="support-info">
               <p>Potrebna je pomoć? Kontaktirajte našu tehničku podršku:</p>
-              <a href="mailto:pixelnext9@gmail.com">pixelnext9@gmail.com</a>
+              <a href="mailto:info@nextpixel.dev">info@nextpixel.dev</a>
             </div>
           </div>
         </div>

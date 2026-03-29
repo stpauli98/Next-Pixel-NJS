@@ -129,7 +129,7 @@ const nextConfig = {
     RESEND_API_KEY: process.env.RESEND_API_KEY,
     // BEZBEDNOSNA POPRAVKA: Uklonjen NEXT_PUBLIC_RECIPIENT_EMAIL
     // Email adresa mora ostati samo na server strani
-    RECIPIENT_EMAIL: process.env.RECIPIENT_EMAIL || 'pixelnext9@gmail.com',
+    RECIPIENT_EMAIL: process.env.RECIPIENT_EMAIL || 'info@nextpixel.dev',
   },
 }
 

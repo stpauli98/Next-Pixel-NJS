@@ -95,8 +95,8 @@ const BookingFooter: React.FC = () => {
               </li>
               <li className="flex items-center">
                 <Icon icon={FaEnvelope} className="mr-3 text-nextpixel-turquoise" aria-hidden={true} />
-                <a href="mailto:pixelnext9@gmail.com" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
-                  pixelnext9@gmail.com
+                <a href="mailto:info@nextpixel.dev" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
+                  info@nextpixel.dev
                 </a>
               </li>
             </ul>

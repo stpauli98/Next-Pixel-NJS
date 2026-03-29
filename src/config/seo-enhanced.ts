@@ -27,8 +27,8 @@ export const geoConfig = {
   contact: {
     phone: '+387 66 603 900',
     whatsapp: '+387 66 603 900',
-    email: 'pixelnext9@gmail.com',
-    supportEmail: 'pixelnext9@gmail.com',
+    email: 'info@nextpixel.dev',
+    supportEmail: 'info@nextpixel.dev',
   },
   
   // Business Hours

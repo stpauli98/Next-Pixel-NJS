@@ -107,7 +107,7 @@ interface ContactInfoItem {
 Add `trackingType` to each item in the `contactInfo` array:
 
 ```tsx
-{ icon: FaEnvelope, titleKey: 'contact:info.email', info: 'pixelnext9@gmail.com', link: 'mailto:pixelnext9@gmail.com', trackingType: 'email' },
+{ icon: FaEnvelope, titleKey: 'contact:info.email', info: 'info@nextpixel.dev', link: 'mailto:info@nextpixel.dev', trackingType: 'email' },
 { icon: FaPhone, titleKey: 'contact:info.phone', info: '+387 66 603 900', link: 'tel:+38766603900', trackingType: 'phone' },
 { icon: FaWhatsapp, titleKey: 'contact:info.whatsapp', info: '+387 66 603 900', link: 'https://wa.me/message/U4Z7GJU4ZSL5M1', trackingType: 'whatsapp' },
 { icon: FaLocationDot, titleKey: 'contact:info.address', infoKey: 'contact:info.addressDetails', link: 'https://maps.google.com/?q=Gradiska', trackingType: 'address' },

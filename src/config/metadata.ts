@@ -639,7 +639,7 @@ export const structuredData = {
       `${siteConfig.url}/images/team.webp`
     ],
     telephone: '+387 66 603 900',
-    email: 'pixelnext9@gmail.com',
+    email: 'info@nextpixel.dev',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Jovana Ducica 15',

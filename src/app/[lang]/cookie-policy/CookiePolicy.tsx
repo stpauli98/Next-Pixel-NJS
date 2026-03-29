@@ -56,7 +56,7 @@ export default function CookiePolicy() {
     },
     contact: {
       title: '8. Contact Us',
-      content: 'If you have any questions about our use of cookies, please contact us at pixelnext9@gmail.com.',
+      content: 'If you have any questions about our use of cookies, please contact us at info@nextpixel.dev.',
     },
   };
 

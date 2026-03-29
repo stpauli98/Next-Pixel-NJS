@@ -60,7 +60,7 @@ Metadata is locale-aware and configured in `src/config/metadata.ts` with `getPag
 ## Environment Variables
 
 - `RESEND_API_KEY` - Server-side only, for email sending
-- `RECIPIENT_EMAIL` - Email recipient (defaults to pixelnext9@gmail.com)
+- `RECIPIENT_EMAIL` - Email recipient (defaults to info@nextpixel.dev)
 
 ## Conventions
 

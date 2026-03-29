@@ -111,8 +111,8 @@ const ContactSection: React.FC = () => {
     {
       icon: FaEnvelope,
       titleKey: 'contact:info.email',
-      info: 'pixelnext9@gmail.com',
-      link: 'mailto:pixelnext9@gmail.com',
+      info: 'info@nextpixel.dev',
+      link: 'mailto:info@nextpixel.dev',
       trackingType: 'email'
     },
     {
