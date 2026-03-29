@@ -69,3 +69,27 @@ Metadata is locale-aware and configured in `src/config/metadata.ts` with `getPag
 - Server Components by default; `"use client"` only when needed
 - Fonts: Montserrat (headings), Poppins (body) via next/font/google
 - Brand colors defined as CSS variables: `--color-navy`, `--color-teal`, `--color-dark`, `--color-cream`
+
+## Agent-First Workflow
+
+**Critical rule:** For every task, ALWAYS follow the agent-first workflow:
+
+1. **Analyze first**: Before doing any work, analyze which specialized agents are best suited for the task. Consider: `Explore`, `Plan`, `backend-architect`, `frontend-architect`, `security-engineer`, `performance-engineer`, `quality-engineer`, `refactoring-expert`, `system-architect`, `seo-geo-optimizer`, `devops-architect`, `root-cause-analyst`, `technical-writer`, `python-expert`, and `superpowers:code-reviewer`.
+2. **Delegate to agents**: Use the Agent tool to dispatch work to the best-fit agents. Each agent starts with a fresh context (no prior conversation leakage).
+3. **Parallel when possible**: If tasks are independent, launch multiple agents in a single message for parallel execution.
+4. **Isolate when needed**: Use `isolation: "worktree"` for agents that modify files, so each works on an isolated copy.
+5. **Review results**: After agents complete, synthesize their outputs and present a unified result.
+
+**Agent selection criteria:**
+- Codebase exploration/search → `Explore`
+- Planning/architecture → `Plan` or `system-architect`
+- Backend work → `backend-architect`
+- Frontend/UI work → `frontend-architect`
+- Bug investigation → `root-cause-analyst`
+- Performance issues → `performance-engineer`
+- Security concerns → `security-engineer`
+- Testing → `quality-engineer`
+- Refactoring → `refactoring-expert`
+- SEO → `seo-geo-optimizer`
+- Code review → `superpowers:code-reviewer`
+- Documentation → `technical-writer`
