@@ -1,24 +1,17 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { useTranslate } from '@/context/LanguageContext';
 import { ExternalLink, Quote } from 'lucide-react';
 import Image from 'next/image';
+import { useInView } from '@/hooks/useInView';
 
 const PROJECT_COUNT = 3;
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
-
 export default function SajamProof() {
   const { t } = useTranslate();
+  const { ref: headerRef, isInView: headerVisible } = useInView<HTMLDivElement>();
+  const { ref: gridRef, isInView: gridVisible } = useInView<HTMLDivElement>();
+  const { ref: testimonialRef, isInView: testimonialVisible } = useInView<HTMLDivElement>();
 
   const stats = [
     { value: t('sajam2026:proof.stats.projects'), label: t('sajam2026:proof.stats.projectsLabel') },
@@ -29,55 +22,37 @@ export default function SajamProof() {
   return (
     <section id="proof" className="py-24 bg-gray-950">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <motion.div
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
+        <div ref={headerRef} className={`text-center mb-12 animate-on-scroll ${headerVisible ? 'is-visible' : ''}`}>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             {t('sajam2026:proof.sectionTitle')}
           </h2>
           <p className="text-gray-400 max-w-xl mx-auto">
             {t('sajam2026:proof.sectionSubtitle')}
           </p>
-        </motion.div>
+        </div>
 
-        {/* Stats bar */}
-        <motion.div
-          className="flex flex-wrap justify-center gap-8 sm:gap-16 mb-16"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-        >
+        <div className={`flex flex-wrap justify-center gap-8 sm:gap-16 mb-16 animate-on-scroll ${headerVisible ? 'is-visible' : ''}`} style={{ transitionDelay: '200ms' }}>
           {stats.map((stat, i) => (
             <div key={i} className="text-center">
               <p className="text-3xl sm:text-4xl font-bold text-cyan-400">{stat.value}</p>
               <p className="text-gray-400 text-sm mt-1">{stat.label}</p>
             </div>
           ))}
-        </motion.div>
+        </div>
 
-        {/* Portfolio grid */}
-        <motion.div
-          className="grid md:grid-cols-3 gap-6 mb-16"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
+        <div ref={gridRef} className="grid md:grid-cols-3 gap-6 mb-16">
           {Array.from({ length: PROJECT_COUNT }).map((_, i) => {
             const image = t(`sajam2026:proof.projects.${i}.image`) as string;
             const url = t(`sajam2026:proof.projects.${i}.url`) as string;
 
             return (
-              <motion.a
+              <a
                 key={i}
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer nofollow"
-                variants={itemVariants}
-                className="group bg-gray-900/60 border border-gray-800 rounded-2xl overflow-hidden hover:border-cyan-500/30 transition-all"
+                className={`group bg-gray-900/60 border border-gray-800 rounded-2xl overflow-hidden hover:border-cyan-500/30 transition-all animate-on-scroll ${gridVisible ? 'is-visible' : ''}`}
+                style={{ transitionDelay: `${i * 150}ms` }}
               >
                 <div className="relative h-48 overflow-hidden">
                   <Image
@@ -104,25 +79,19 @@ export default function SajamProof() {
                     {t(`sajam2026:proof.projects.${i}.description`)}
                   </p>
                 </div>
-              </motion.a>
+              </a>
             );
           })}
-        </motion.div>
+        </div>
 
-        {/* Testimonial */}
-        <motion.div
-          className="max-w-2xl mx-auto text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
+        <div ref={testimonialRef} className={`max-w-2xl mx-auto text-center animate-on-scroll ${testimonialVisible ? 'is-visible' : ''}`}>
           <Quote className="w-8 h-8 text-cyan-500/20 mx-auto mb-4" />
           <p className="text-gray-300 text-lg italic leading-relaxed mb-4">
             &ldquo;{t('sajam2026:proof.testimonial.quote')}&rdquo;
           </p>
           <p className="text-white font-medium">{t('sajam2026:proof.testimonial.name')}</p>
           <p className="text-gray-500 text-sm">{t('sajam2026:proof.testimonial.role')}</p>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

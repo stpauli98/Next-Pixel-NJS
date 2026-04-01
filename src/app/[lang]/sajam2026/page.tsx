@@ -1,13 +1,16 @@
 import { Metadata } from 'next';
 import { getPageMetadata } from '@/config/metadata';
 import { Locale } from '@/config/i18n';
+import dynamic from 'next/dynamic';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import SajamHero from '@/components/sajam/SajamHero';
-import SajamProblems from '@/components/sajam/SajamProblems';
-import SajamProof from '@/components/sajam/SajamProof';
-import SajamOffer from '@/components/sajam/SajamOffer';
-import SajamCTA from '@/components/sajam/SajamCTA';
+
+// Lazy load below-fold sections — HTML still SSR'd for SEO
+const SajamProblems = dynamic(() => import('@/components/sajam/SajamProblems'), { ssr: true });
+const SajamProof = dynamic(() => import('@/components/sajam/SajamProof'), { ssr: true });
+const SajamOffer = dynamic(() => import('@/components/sajam/SajamOffer'), { ssr: true });
+const SajamCTA = dynamic(() => import('@/components/sajam/SajamCTA'), { ssr: true });
 
 interface PageProps {
   params: Promise<{
@@ -19,6 +22,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const resolvedParams = await params;
   const locale = resolvedParams.lang as Locale;
   return getPageMetadata('sajam2026', locale);
+}
+
+export async function generateStaticParams() {
+  return [{ lang: 'sr' }, { lang: 'en' }, { lang: 'de' }];
 }
 
 function getSajamStructuredData(locale: string) {

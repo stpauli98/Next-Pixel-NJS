@@ -8,15 +8,15 @@ import ClientLayout from './client-layout';
 import { defaultMetadata } from '@/config/metadata';
 
 const montserrat = Montserrat({
-  subsets: ['latin', 'latin-ext'],
-  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
+  weight: ['500', '600', '700'],
   variable: '--font-montserrat',
   display: 'swap',
 });
 
 const poppins = Poppins({
-  subsets: ['latin', 'latin-ext'],
-  weight: ['300', '400', '500', '600'],
+  subsets: ['latin'],
+  weight: ['400', '600'],
   variable: '--font-poppins',
   display: 'swap',
 });

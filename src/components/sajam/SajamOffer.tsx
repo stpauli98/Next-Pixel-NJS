@@ -1,8 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { useTranslate } from '@/context/LanguageContext';
 import { Check, Sparkles, MessageCircle } from 'lucide-react';
+import { useInView } from '@/hooks/useInView';
 
 const INCLUDE_COUNT = 4;
 const PRICE_COUNT = 3;
@@ -10,33 +10,22 @@ const STEP_COUNT = 3;
 
 export default function SajamOffer() {
   const { t } = useTranslate();
+  const { ref, isInView } = useInView<HTMLDivElement>();
 
   return (
     <section id="offer" className="py-24 bg-gray-900/50">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6">
-        <motion.div
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
+      <div className="max-w-4xl mx-auto px-4 sm:px-6" ref={ref}>
+        <div className={`text-center mb-12 animate-on-scroll ${isInView ? 'is-visible' : ''}`}>
           <h2 className="text-3xl sm:text-4xl font-bold text-white">
             {t('sajam2026:offer.sectionTitle')}
           </h2>
-        </motion.div>
+        </div>
 
-        <motion.div
-          className="relative bg-gradient-to-br from-gray-900 to-gray-900/80 border border-cyan-500/20 rounded-3xl p-8 sm:p-10 overflow-hidden"
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+        <div className={`relative bg-gradient-to-br from-gray-900 to-gray-900/80 border border-cyan-500/20 rounded-3xl p-8 sm:p-10 overflow-hidden animate-on-scroll-scale ${isInView ? 'is-visible' : ''}`} style={{ transitionDelay: '200ms' }}>
           <div className="absolute -top-24 -right-24 w-48 h-48 bg-cyan-500/10 rounded-full blur-3xl" />
           <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-blue-500/10 rounded-full blur-3xl" />
 
           <div className="relative z-10">
-            {/* Badge */}
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm font-medium mb-6">
               <Sparkles className="w-3.5 h-3.5" />
               {t('sajam2026:offer.badge')}
@@ -49,7 +38,6 @@ export default function SajamOffer() {
               {t('sajam2026:offer.description')}
             </p>
 
-            {/* Includes */}
             <ul className="space-y-3 mb-8">
               {Array.from({ length: INCLUDE_COUNT }).map((_, i) => (
                 <li key={i} className="flex items-start gap-2.5 text-gray-300 text-sm">
@@ -59,7 +47,6 @@ export default function SajamOffer() {
               ))}
             </ul>
 
-            {/* Pricing */}
             <div className="border-t border-gray-700/50 pt-6 mb-8">
               <p className="text-sm font-semibold text-white mb-3">
                 {t('sajam2026:offer.pricing.title')}
@@ -76,7 +63,6 @@ export default function SajamOffer() {
               </p>
             </div>
 
-            {/* How it works */}
             <div className="border-t border-gray-700/50 pt-6 mb-8">
               <p className="text-sm font-semibold text-white mb-4">
                 {t('sajam2026:offer.process.title')}
@@ -95,7 +81,6 @@ export default function SajamOffer() {
               </div>
             </div>
 
-            {/* CTA */}
             <a
               href="https://wa.me/message/U4Z7GJU4ZSL5M1"
               target="_blank"
@@ -106,7 +91,7 @@ export default function SajamOffer() {
               {t('sajam2026:cta.whatsapp')}
             </a>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

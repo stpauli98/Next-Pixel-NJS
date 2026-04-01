@@ -1,19 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { useTranslate } from '@/context/LanguageContext';
 import { MessageCircle, ArrowDown } from 'lucide-react';
-import Image from 'next/image';
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.12 } },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
 
 export default function SajamHero() {
   const { t } = useTranslate();
@@ -29,34 +17,28 @@ export default function SajamHero() {
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-24 sm:py-32">
         <div className="grid lg:grid-cols-5 gap-12 items-center">
-          {/* Left content */}
-          <motion.div
-            className="lg:col-span-3"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
+          <div className="lg:col-span-3">
             <h1 className="sr-only">{t('sajam2026:hero.headline')}</h1>
-            <motion.p variants={itemVariants} className="text-gray-400 text-lg mb-1">
+            <p className="text-gray-400 text-lg mb-1 animate-fade-in-up" style={{ animationDelay: '0ms' }}>
               {t('sajam2026:hero.greeting')}
-            </motion.p>
-            <motion.p variants={itemVariants} className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-2">
+            </p>
+            <p className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-2 animate-fade-in-up" style={{ animationDelay: '120ms' }}>
               {t('sajam2026:hero.name')}
               <span className="text-cyan-400">,</span>
-            </motion.p>
-            <motion.p variants={itemVariants} className="text-gray-400 text-lg mb-8">
+            </p>
+            <p className="text-gray-400 text-lg mb-8 animate-fade-in-up" style={{ animationDelay: '240ms' }}>
               {t('sajam2026:hero.role')}
-            </motion.p>
+            </p>
 
-            <motion.h2 variants={itemVariants} className="text-2xl sm:text-3xl font-semibold text-white mb-6 leading-snug">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-white mb-6 leading-snug animate-fade-in-up" style={{ animationDelay: '360ms' }}>
               {t('sajam2026:hero.title')}
-            </motion.h2>
+            </h2>
 
-            <motion.p variants={itemVariants} className="text-gray-300 text-lg max-w-lg mb-10 leading-relaxed">
+            <p className="text-gray-300 text-lg max-w-lg mb-10 leading-relaxed animate-fade-in-up" style={{ animationDelay: '480ms' }}>
               {t('sajam2026:hero.description')}
-            </motion.p>
+            </p>
 
-            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: '600ms' }}>
               <a
                 href="https://wa.me/message/U4Z7GJU4ZSL5M1"
                 target="_blank"
@@ -72,40 +54,28 @@ export default function SajamHero() {
               >
                 {t('sajam2026:hero.ctaSecondary')}
               </a>
-            </motion.div>
-            <motion.p variants={itemVariants} className="text-gray-400 text-sm mt-3">
+            </div>
+            <p className="text-gray-400 text-sm mt-3 animate-fade-in-up" style={{ animationDelay: '720ms' }}>
               {t('sajam2026:hero.ctaSubtext')}
-            </motion.p>
-          </motion.div>
+            </p>
+          </div>
 
-          {/* Right side — profile photo */}
-          <motion.div
-            className="lg:col-span-2 flex justify-center"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
+          <div className="lg:col-span-2 flex justify-center animate-fade-in-up" style={{ animationDelay: '300ms' }}>
             <div className="relative">
               <div className="w-56 h-56 sm:w-72 sm:h-72 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1">
                 <div className="w-full h-full rounded-full bg-gray-800 flex items-center justify-center overflow-hidden">
-                  {/* Placeholder — replace with real photo */}
                   <span className="text-7xl sm:text-8xl font-bold text-cyan-400/30">N</span>
                 </div>
               </div>
-              {/* Decorative ring */}
               <div className="absolute -inset-4 rounded-full border border-cyan-500/10 animate-pulse" />
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
 
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        animate={{ y: [0, 8, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
-      >
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <ArrowDown className="w-5 h-5 text-gray-500" />
-      </motion.div>
+      </div>
     </section>
   );
 }
