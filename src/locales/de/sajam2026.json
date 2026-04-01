@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "title": "Nikola von NextPixel | Wir haben uns auf der Messe getroffen",
+    "description": "Kostenlose Analyse Ihrer digitalen Präsenz. Messeangebot — Websites ab 999 KM. Schreiben Sie mir auf WhatsApp."
+  },
+  "hero": {
+    "headline": "Webdesign & IT-Lösungen für Unternehmen | Messe Gradiška 2026",
+    "greeting": "Hallo! Ich bin",
+    "name": "Nikola",
+    "role": "Gründer von NextPixel",
+    "title": "Schön, Sie auf der Messe in Gradiška kennengelernt zu haben.",
+    "description": "Wenn Sie bereit sind, darüber zu sprechen, wie Ihre digitale Präsenz Ihnen mehr Kunden in Gradiška, Banja Luka und der gesamten Republika Srpska bringen kann — melden Sie sich. Unverbindlich, ohne Druck.",
+    "cta": "Schreiben Sie mir auf WhatsApp",
+    "ctaSubtext": "Ich antworte innerhalb weniger Stunden",
+    "ctaSecondary": "Sehen Sie unsere Arbeiten"
+  },
+  "problems": {
+    "sectionTitle": "Erkennen Sie sich wieder?",
+    "sectionSubtitle": "Das sind die Probleme, die ich am häufigsten von Unternehmern auf Messen in Gradiška und Banja Luka höre",
+    "items": [
+      {
+        "problem": "Sie haben keine Website",
+        "description": "Kunden können Sie online nicht finden. Ihre Konkurrenz mit Website bekommt Ihre potenziellen Kunden.",
+        "solution": "Professionelle Website ab 999 KM — fertig in 4-6 Wochen."
+      },
+      {
+        "problem": "Ihre Website ist veraltet",
+        "description": "Die Website sieht aus wie 2015. Funktioniert nicht auf dem Handy. Ist langsam. Kunden gehen zur Konkurrenz.",
+        "solution": "Redesign, das Ihr Erscheinungsbild modernisiert und die Ergebnisse verbessert."
+      },
+      {
+        "problem": "Sie verkaufen nicht online",
+        "description": "Ihre Produkte sind hervorragend, aber Sie verkaufen nur lokal. Das Internet kann ganz BiH für Sie öffnen.",
+        "solution": "Online-Shop ab 2.499 KM — Ihre Produkte für alle verfügbar."
+      }
+    ]
+  },
+  "proof": {
+    "sectionTitle": "Einige unserer Arbeiten",
+    "sectionSubtitle": "Projekte für Kunden aus Gradiška, Banja Luka und der Region",
+    "stats": {
+      "projects": "50+",
+      "projectsLabel": "abgeschlossene Projekte",
+      "years": "5+",
+      "yearsLabel": "Jahre Erfahrung",
+      "clients": "40+",
+      "clientsLabel": "zufriedene Kunden"
+    },
+    "projects": [
+      {
+        "title": "Šarena Čarolija",
+        "category": "Online-Shop",
+        "description": "Online-Shop für handgemachte Kerzen. Die Inhaberin verkauft jetzt in ganz BiH.",
+        "image": "/images/SarenCarolijaHero.webp",
+        "url": "https://www.sarenacarolija.com/"
+      },
+      {
+        "title": "Global Grinding",
+        "category": "Website",
+        "description": "Industrieunternehmen — Website in 4 Sprachen, die internationale Kunden anzieht.",
+        "image": "/images/globalgrinding.webp",
+        "url": "https://www.globalgrinding.eu/"
+      },
+      {
+        "title": "Termin Online App",
+        "category": "Buchungssystem",
+        "description": "SaaS-App für Online-Terminbuchung. Reduziert verpasste Termine um 80%.",
+        "image": "/images/TerminiAppHero.webp",
+        "url": "https://www.terminonlineapp.com/"
+      }
+    ],
+    "viewProject": "Website ansehen",
+    "testimonial": {
+      "quote": "NextPixel hat uns eine Website erstellt, die 3-4 Anfragen pro Woche bringt. Vorher waren wir nur auf Empfehlungen angewiesen.",
+      "name": "Marko P.",
+      "role": "GP Konstrukt d.o.o., Gradiška"
+    }
+  },
+  "offer": {
+    "sectionTitle": "Messeangebot",
+    "badge": "Gültig bis 30. Juni 2026.",
+    "title": "Sonderkonditionen für Messebesucher",
+    "description": "Alle, mit denen ich auf der Messe in Gradiška gesprochen habe, haben Anspruch auf eine kostenlose Analyse und 20% Rabatt. Wir sind spezialisiert auf Webdesign in Gradiška und Banja Luka — von Geschäftswebsites bis Online-Shops.",
+    "includes": [
+      "Kostenlose Analyse Ihrer aktuellen Website oder digitalen Präsenz",
+      "Personalisiertes Angebot innerhalb von 48 Stunden",
+      "20% Rabatt auf alle Dienstleistungen",
+      "Zahlung in bis zu 6 zinslosen Raten"
+    ],
+    "pricing": {
+      "title": "Projekte starten ab",
+      "items": [
+        "999 KM — Geschäftswebsite",
+        "2.499 KM — Online-Shop",
+        "1.499 KM — Buchungssystem"
+      ],
+      "note": "Preise inkl. Messerabatt. Keine versteckten Kosten."
+    },
+    "process": {
+      "title": "Wie geht es weiter?",
+      "steps": [
+        "Schreiben Sie mir auf WhatsApp — sagen Sie mir, was Sie brauchen",
+        "Ich sende Ihnen innerhalb von 48h ein Angebot mit Preisen und Fristen",
+        "Wenn es passt — wir starten. Wenn nicht — keine Verpflichtungen."
+      ]
+    }
+  },
+  "cta": {
+    "title": "Melden Sie sich, wenn Sie bereit sind.",
+    "subtitle": "Unverbindlich, ohne Druck. Wir besprechen Ihre Bedürfnisse und schauen, was Sinn macht.",
+    "whatsapp": "Schreiben Sie mir auf WhatsApp",
+    "whatsappSubtext": "Schnellster Weg — Antwort am selben Tag",
+    "phone": "+387 66 603 900",
+    "phoneLabel": "Rufen Sie mich an",
+    "email": "info@nextpixel.dev",
+    "emailLabel": "E-Mail senden",
+    "address": "Jovana Dučića 15, 78400 Gradiška, Republika Srpska",
+    "servicesLink": "Alle unsere Dienstleistungen ansehen",
+    "portfolioLink": "Unser komplettes Portfolio ansehen",
+    "closing": "— Nikola, NextPixel"
+  }
+}

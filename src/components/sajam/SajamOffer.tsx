@@ -71,7 +71,7 @@ export default function SajamOffer() {
                   </p>
                 ))}
               </div>
-              <p className="text-xs text-gray-500 mt-2">
+              <p className="text-xs text-gray-400 mt-2">
                 {t('sajam2026:offer.pricing.note')}
               </p>
             </div>

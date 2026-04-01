@@ -64,6 +64,7 @@ import bookingFeaturesDE from './locales/de/booking/bookingFeatures.json';
 import bookingProcessDE from './locales/de/booking/bookingProcess.json';
 import bookingPricingDE from './locales/de/booking/bookingPricing.json';
 import bookingFaqDE from './locales/de/booking/bookingFaq.json';
+import deSajam2026 from './locales/de/sajam2026.json';
 
 // The translations organized by namespaces
 const resources = {
@@ -127,7 +128,8 @@ const resources = {
     bookingFeatures: bookingFeaturesDE,
     bookingProcess: bookingProcessDE,
     bookingPricing: bookingPricingDE,
-    bookingFaq: bookingFaqDE
+    bookingFaq: bookingFaqDE,
+    sajam2026: deSajam2026
   }
 };
 

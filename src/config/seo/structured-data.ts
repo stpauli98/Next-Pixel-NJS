@@ -135,6 +135,15 @@ export function getLocalizedFaqs(locale: string) {
       { '@type': 'Question', name: 'Do you offer SEO optimization?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, all our websites come with basic SEO optimization. We also offer advanced SEO services including technical optimization, content marketing, local SEO, and link building strategies.' } }
     ];
   }
+  if (locale === 'de') {
+    return [
+      { '@type': 'Question', name: 'Wie viel kostet eine Website?', acceptedAnswer: { '@type': 'Answer', text: 'Die Kosten hängen von Komplexität und Funktionalität ab. Einfache Websites ab 500€, Geschäftswebsites ab 2.000€, komplexe Anwendungen ab 5.000€. Kontaktieren Sie uns für ein kostenloses, individuelles Angebot.' } },
+      { '@type': 'Question', name: 'Wie lange dauert die Erstellung einer Website?', acceptedAnswer: { '@type': 'Answer', text: 'Die Dauer hängt vom Projektumfang ab. Einfache Websites 2-3 Wochen, Geschäftswebsites 4-8 Wochen, komplexe Anwendungen 3-6 Monate. Wir erstellen immer einen detaillierten Zeitplan vor Beginn.' } },
+      { '@type': 'Question', name: 'Bieten Sie Website-Wartung an?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, wir bieten komplette Wartungspakete mit regelmäßigen Updates, Sicherheitsüberwachung, Performance-Optimierung, Inhaltsaktualisierungen und 24/7 technischem Support.' } },
+      { '@type': 'Question', name: 'Welche Technologien verwenden Sie?', acceptedAnswer: { '@type': 'Answer', text: 'Wir verwenden modernste Technologien: Next.js, React, Node.js, TypeScript, Tailwind CSS für Frontend; Node.js, Python, PostgreSQL, MongoDB für Backend; AWS, Vercel, Docker für Deployment.' } },
+      { '@type': 'Question', name: 'Bieten Sie SEO-Optimierung an?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, alle unsere Websites kommen mit grundlegender SEO-Optimierung. Wir bieten auch erweiterte SEO-Services wie technische Optimierung, Content-Marketing, lokales SEO und Linkbuilding-Strategien.' } }
+    ];
+  }
   // Default: Serbian
   return [
     { '@type': 'Question', name: 'Koliko košta izrada web sajta?', acceptedAnswer: { '@type': 'Answer', text: 'Cijena izrade web sajta zavisi od kompleksnosti i funkcionalnosti. Osnovni sajtovi počinju od 500€, poslovni sajtovi od 2000€, a kompleksne aplikacije od 5000€. Kontaktirajte nas za besplatnu ponudu prilagođenu vašim potrebama.' } },
