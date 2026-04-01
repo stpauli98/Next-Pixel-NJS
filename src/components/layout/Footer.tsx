@@ -21,6 +21,8 @@ const Footer: React.FC = () => {
   };
 
   const currentLang = getLangFromPath();
+  const isHomepage = pathname === `/${currentLang}` || pathname === `/${currentLang}/`;
+  const linkPrefix = isHomepage ? '' : `/${currentLang}/`;
 
   // Locale-aware fallback vrijednosti
   const fallbacks: Record<string, Record<string, string>> = {
@@ -119,35 +121,35 @@ const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2">
               <li>
-                <a href="#home" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
+                <a href={`${linkPrefix}#home`} className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? getFallback('home') : (
                     typeof t('navigation:home') === 'string' ? t('navigation:home') as string : getFallback('home')
                   )}
                 </a>
               </li>
               <li>
-                <a href="#about" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
+                <a href={`${linkPrefix}#about`} className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? getFallback('about') : (
                     typeof t('navigation:about') === 'string' ? t('navigation:about') as string : getFallback('about')
                   )}
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
+                <a href={`${linkPrefix}#services`} className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? getFallback('servicesNav') : (
                     typeof t('navigation:services') === 'string' ? t('navigation:services') as string : getFallback('servicesNav')
                   )}
                 </a>
               </li>
               <li>
-                <a href="#portfolio" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
+                <a href={`${linkPrefix}#portfolio`} className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? getFallback('portfolio') : (
                     typeof t('navigation:portfolio') === 'string' ? t('navigation:portfolio') as string : getFallback('portfolio')
                   )}
                 </a>
               </li>
               <li>
-                <a href="#contact" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
+                <a href={`${linkPrefix}#contact`} className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? getFallback('contact') : (
                     typeof t('navigation:contact') === 'string' ? t('navigation:contact') as string : getFallback('contact')
                   )}
@@ -172,42 +174,42 @@ const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2">
               <li>
-                <a href="#services" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
+                <a href={`${linkPrefix}#services`} className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? getFallback('webDesign') : (
                     typeof t('footer:services.webDesign') === 'string' ? t('footer:services.webDesign') as string : getFallback('webDesign')
                   )}
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
+                <a href={`${linkPrefix}#services`} className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? getFallback('webDev') : (
                     typeof t('footer:services.webDevelopment') === 'string' ? t('footer:services.webDevelopment') as string : getFallback('webDev')
                   )}
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
+                <a href={`${linkPrefix}#services`} className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? getFallback('ecommerce') : (
                     typeof t('footer:services.eCommerce') === 'string' ? t('footer:services.eCommerce') as string : getFallback('ecommerce')
                   )}
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
+                <a href={`${linkPrefix}#services`} className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? getFallback('seo') : (
                     typeof t('footer:services.seo') === 'string' ? t('footer:services.seo') as string : getFallback('seo')
                   )}
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
+                <a href={`${linkPrefix}#services`} className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? getFallback('maintenance') : (
                     typeof t('footer:services.maintenance') === 'string' ? t('footer:services.maintenance') as string : getFallback('maintenance')
                   )}
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
+                <a href={`${linkPrefix}#services`} className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
                   {!mounted ? getFallback('mobileApps') : (
                     typeof t('footer:services.mobileApps') === 'string' ? t('footer:services.mobileApps') as string : getFallback('mobileApps')
                   )}
