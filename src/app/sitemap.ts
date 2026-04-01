@@ -42,6 +42,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     alternates: generateAlternates(baseUrl, '/blog'),
   }))
 
+  // Sajam 2026 landing pages for each locale
+  const sajam2026Pages = locales.map(locale => ({
+    url: `${baseUrl}/${locale}/sajam2026`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+    alternates: generateAlternates(baseUrl, '/sajam2026'),
+  }))
+
   // Dynamically discover blog posts from content directory
   // Uses translation mapping for cross-language hreflang alternates
   const blogPages: MetadataRoute.Sitemap = []
@@ -85,5 +94,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  return [...mainPages, ...blogIndexPages, ...blogPages]
+  return [...mainPages, ...blogIndexPages, ...sajam2026Pages, ...blogPages]
 }

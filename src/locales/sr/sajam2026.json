@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "title": "Nikola iz NextPixel-a | Sreli smo se na sajmu",
+    "description": "Besplatna analiza vaše digitalne prisutnosti. Sajamska ponuda — web sajtovi od 999 KM. Javite se na WhatsApp."
+  },
+  "hero": {
+    "headline": "Web Dizajn i IT Rješenja za Firme | Sajam Gradiška 2026",
+    "greeting": "Zdravo! Ja sam",
+    "name": "Nikola",
+    "role": "osnivač NextPixel-a",
+    "title": "Drago mi je što smo se upoznali na sajmu u Gradišci.",
+    "description": "Ako ste spremni da razgovaramo o tome kako vam digitalno prisustvo može donijeti više klijenata u Gradišci, Banjoj Luci i cijeloj Republici Srpskoj — javite mi se. Bez obaveza, bez pritiska.",
+    "cta": "Pišite mi na WhatsApp",
+    "ctaSubtext": "Odgovaram u roku od par sati",
+    "ctaSecondary": "Pogledajte naše radove"
+  },
+  "problems": {
+    "sectionTitle": "Prepoznajete li se?",
+    "sectionSubtitle": "Ovo su problemi koje najčešće čujem od privrednika na sajmovima u Gradišci i Banjoj Luci",
+    "items": [
+      {
+        "problem": "Nemate web sajt",
+        "description": "Klijenti vas ne mogu naći online. Konkurencija koja ima sajt dobija vaše potencijalne mušterije.",
+        "solution": "Profesionalni sajt od 999 KM — gotov za 4-6 sedmica."
+      },
+      {
+        "problem": "Sajt vam je zastario",
+        "description": "Sajt izgleda kao iz 2015. Ne radi na mobilnom. Spor je. Klijenti odu na konkurenciju.",
+        "solution": "Redizajn koji modernizuje izgled i poboljšava rezultate."
+      },
+      {
+        "problem": "Ne prodajete online",
+        "description": "Vaši proizvodi su odlični, ali prodajete samo lokalno. Internet vam može otvoriti cijelu BiH.",
+        "solution": "Online prodavnica od 2.499 KM — vaši proizvodi dostupni svima."
+      }
+    ]
+  },
+  "proof": {
+    "sectionTitle": "Nekoliko naših radova",
+    "sectionSubtitle": "Projekti za klijente iz Gradiške, Banje Luke i regiona",
+    "stats": {
+      "projects": "50+",
+      "projectsLabel": "završenih projekata",
+      "years": "5+",
+      "yearsLabel": "godina iskustva",
+      "clients": "40+",
+      "clientsLabel": "zadovoljnih klijenata"
+    },
+    "projects": [
+      {
+        "title": "Šarena Čarolija",
+        "category": "Web Shop",
+        "description": "Online prodavnica za ručno pravljene svijeće. Vlasnica sada prodaje po cijeloj BiH.",
+        "image": "/images/SarenCarolijaHero.webp",
+        "url": "https://www.sarenacarolija.com/"
+      },
+      {
+        "title": "Global Grinding",
+        "category": "Web sajt",
+        "description": "Industrijska firma — sajt na 4 jezika koji privlači međunarodne klijente.",
+        "image": "/images/globalgrinding.webp",
+        "url": "https://www.globalgrinding.eu/"
+      },
+      {
+        "title": "Termin Online App",
+        "category": "Booking sistem",
+        "description": "SaaS aplikacija za online zakazivanje. Smanjuje propuštene termine za 80%.",
+        "image": "/images/TerminiAppHero.webp",
+        "url": "https://www.terminonlineapp.com/"
+      }
+    ],
+    "viewProject": "Pogledajte sajt",
+    "testimonial": {
+      "quote": "NextPixel nam je napravio sajt koji donosi 3-4 upita sedmično. Prije toga smo zavisili samo od preporuka.",
+      "name": "Marko P.",
+      "role": "GP Konstrukt d.o.o."
+    }
+  },
+  "offer": {
+    "sectionTitle": "Sajamska ponuda",
+    "badge": "Važi do 30. juna 2026.",
+    "title": "Posebni uslovi za ljude sa sajma",
+    "description": "Svi sa kojima sam razgovarao na sajmu u Gradišci imaju pravo na besplatnu analizu i 20% popusta.",
+    "includes": [
+      "Besplatna analiza vašeg trenutnog sajta ili digitalne prisutnosti",
+      "Personalizovana ponuda u roku od 48h",
+      "20% popusta na sve usluge",
+      "Plaćanje u do 6 rata bez kamata"
+    ],
+    "pricing": {
+      "title": "Projekti kreću od",
+      "items": [
+        "999 KM — poslovni web sajt",
+        "2.499 KM — online prodavnica",
+        "1.499 KM — booking sistem"
+      ],
+      "note": "Cijene sa uračunatim popustom. Bez skrivenih troškova."
+    },
+    "process": {
+      "title": "Kako dalje?",
+      "steps": [
+        "Javite mi se na WhatsApp — kažete šta vam treba",
+        "Pošaljem vam ponudu sa cijenama i rokovima za 48h",
+        "Ako vam odgovara — krećemo. Ako ne — bez obaveza."
+      ]
+    }
+  },
+  "cta": {
+    "title": "Javite mi se kad budete spremni.",
+    "subtitle": "Bez obaveza, bez pritiska. Razgovaramo o vašim potrebama i vidimo šta ima smisla.",
+    "whatsapp": "Pišite mi na WhatsApp",
+    "whatsappSubtext": "Najbrži način — odgovaram isti dan",
+    "phone": "+387 66 603 900",
+    "phoneLabel": "Pozovite me",
+    "email": "info@nextpixel.dev",
+    "emailLabel": "Pošaljite email",
+    "address": "Jovana Dučića 15, 78400 Gradiška, Republika Srpska",
+    "servicesLink": "Pogledajte sve naše usluge",
+    "portfolioLink": "Pogledajte kompletan portfolio",
+    "closing": "— Nikola, NextPixel"
+  }
+}

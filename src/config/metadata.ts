@@ -237,6 +237,20 @@ export const pageLocaleMetadata = {
       description: 'Impressum und rechtliche Informationen der NextPixel Digitalagentur gemäß § 5 TMG.',
     },
   },
+  sajam2026: {
+    sr: {
+      title: 'Web Dizajn Gradiška | Sajamska Ponuda 2026 — NextPixel',
+      description: 'Besplatna analiza digitalne prisutnosti + 20% popusta. Sajamska ponuda za firme iz Gradiške i Banje Luke — web sajtovi od 999 KM, online prodavnice, booking sistemi.',
+    },
+    en: {
+      title: 'Web Design Gradiška | Trade Fair Offer 2026 — NextPixel',
+      description: 'Free digital presence analysis + 20% discount. Trade fair offer for businesses in Gradiška and Banja Luka — websites from 999 KM, online stores, booking systems.',
+    },
+    de: {
+      title: 'Webdesign Gradiška | Messeangebot 2026 — NextPixel',
+      description: 'Kostenlose Analyse der digitalen Präsenz + 20% Rabatt. Messeangebot für Unternehmen in Gradiška und Banja Luka — Websites ab 999 KM.',
+    },
+  },
 } as const;
 
 /**
@@ -254,6 +268,7 @@ const pagePathMap: Record<keyof typeof pageLocaleMetadata, string> = {
   privacy: '/privacy-policy',
   cookiePolicy: '/cookie-policy',
   impressum: '/impressum',
+  sajam2026: '/sajam2026',
 };
 
 /**

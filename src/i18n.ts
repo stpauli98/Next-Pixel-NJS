@@ -22,6 +22,7 @@ import bookingFeaturesEN from './locales/en/booking/bookingFeatures.json';
 import bookingProcessEN from './locales/en/booking/bookingProcess.json';
 import bookingPricingEN from './locales/en/booking/bookingPricing.json';
 import bookingFaqEN from './locales/en/booking/bookingFaq.json';
+import enSajam2026 from './locales/en/sajam2026.json';
 
 // Import Serbian translations
 import commonSR from './locales/sr/common.json';
@@ -42,6 +43,7 @@ import bookingFeaturesSR from './locales/sr/booking/bookingFeatures.json';
 import bookingProcessSR from './locales/sr/booking/bookingProcess.json';
 import bookingPricingSR from './locales/sr/booking/bookingPricing.json';
 import bookingFaqSR from './locales/sr/booking/bookingFaq.json';
+import srSajam2026 from './locales/sr/sajam2026.json';
 
 // Import German translations
 import commonDE from './locales/de/common.json';
@@ -83,7 +85,8 @@ const resources = {
     bookingFeatures: bookingFeaturesSR,
     bookingProcess: bookingProcessSR,
     bookingPricing: bookingPricingSR,
-    bookingFaq: bookingFaqSR
+    bookingFaq: bookingFaqSR,
+    sajam2026: srSajam2026
   },
   en: {
     common: commonEN,
@@ -103,7 +106,8 @@ const resources = {
     bookingFeatures: bookingFeaturesEN,
     bookingProcess: bookingProcessEN,
     bookingPricing: bookingPricingEN,
-    bookingFaq: bookingFaqEN
+    bookingFaq: bookingFaqEN,
+    sajam2026: enSajam2026
   },
   de: {
     common: commonDE,
@@ -134,7 +138,7 @@ i18n
     lng: 'sr',
     fallbackLng: 'sr',
     defaultNS: 'common',
-    ns: ['common', 'navigation', 'language', 'hero', 'about', 'services', 'whyChooseUs', 'portfolio', 'contact', 'footer', 'legal', 'blog', 'booking', 'bookingHero', 'bookingFeatures', 'bookingProcess', 'bookingPricing', 'bookingFaq'],
+    ns: ['common', 'navigation', 'language', 'hero', 'about', 'services', 'whyChooseUs', 'portfolio', 'contact', 'footer', 'legal', 'blog', 'booking', 'bookingHero', 'bookingFeatures', 'bookingProcess', 'bookingPricing', 'bookingFaq', 'sajam2026'],
     keySeparator: '.',
     nsSeparator: ':',
     debug: false,

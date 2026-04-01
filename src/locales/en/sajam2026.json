@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "title": "Nikola from NextPixel | We met at the fair",
+    "description": "Free analysis of your digital presence. Fair offer — websites from 999 KM. Message me on WhatsApp."
+  },
+  "hero": {
+    "headline": "Web Design & IT Solutions for Businesses | Gradiška Fair 2026",
+    "greeting": "Hi! I'm",
+    "name": "Nikola",
+    "role": "founder of NextPixel",
+    "title": "Great meeting you at the fair in Gradiška.",
+    "description": "If you're ready to talk about how your digital presence can bring more clients in Gradiška, Banja Luka and across Republika Srpska — reach out. No obligations, no pressure.",
+    "cta": "Message me on WhatsApp",
+    "ctaSubtext": "I reply within a few hours",
+    "ctaSecondary": "See our work"
+  },
+  "problems": {
+    "sectionTitle": "Sound familiar?",
+    "sectionSubtitle": "These are the problems I hear most from business owners at fairs in Gradiška and Banja Luka",
+    "items": [
+      {
+        "problem": "You don't have a website",
+        "description": "Clients can't find you online. Your competition with a website is getting your potential customers.",
+        "solution": "Professional website from 999 KM — ready in 4-6 weeks."
+      },
+      {
+        "problem": "Your website is outdated",
+        "description": "It looks like it's from 2015. Doesn't work on mobile. Slow. Clients leave for the competition.",
+        "solution": "Redesign that modernizes your look and improves results."
+      },
+      {
+        "problem": "You don't sell online",
+        "description": "Your products are great, but you only sell locally. The internet can open up all of BiH for you.",
+        "solution": "Online store from 2,499 KM — your products available to everyone."
+      }
+    ]
+  },
+  "proof": {
+    "sectionTitle": "Some of our work",
+    "sectionSubtitle": "Projects for clients from Gradiška, Banja Luka and the region",
+    "stats": {
+      "projects": "50+",
+      "projectsLabel": "completed projects",
+      "years": "5+",
+      "yearsLabel": "years of experience",
+      "clients": "40+",
+      "clientsLabel": "satisfied clients"
+    },
+    "projects": [
+      {
+        "title": "Šarena Čarolija",
+        "category": "Web Shop",
+        "description": "Online store for handmade candles. The owner now sells across all of BiH.",
+        "image": "/images/SarenCarolijaHero.webp",
+        "url": "https://www.sarenacarolija.com/"
+      },
+      {
+        "title": "Global Grinding",
+        "category": "Website",
+        "description": "Industrial company — website in 4 languages attracting international clients.",
+        "image": "/images/globalgrinding.webp",
+        "url": "https://www.globalgrinding.eu/"
+      },
+      {
+        "title": "Termin Online App",
+        "category": "Booking System",
+        "description": "SaaS app for online scheduling. Reduces missed appointments by 80%.",
+        "image": "/images/TerminiAppHero.webp",
+        "url": "https://www.terminonlineapp.com/"
+      }
+    ],
+    "viewProject": "View website",
+    "testimonial": {
+      "quote": "NextPixel built us a website that brings 3-4 inquiries per week. Before that we relied only on word-of-mouth.",
+      "name": "Marko P.",
+      "role": "GP Konstrukt d.o.o."
+    }
+  },
+  "offer": {
+    "sectionTitle": "Fair offer",
+    "badge": "Valid until June 30, 2026.",
+    "title": "Special terms for people from the fair",
+    "description": "Everyone I spoke with at the fair in Gradiška gets a free analysis and 20% discount.",
+    "includes": [
+      "Free analysis of your current website or digital presence",
+      "Personalized quote within 48 hours",
+      "20% discount on all services",
+      "Payment in up to 6 interest-free installments"
+    ],
+    "pricing": {
+      "title": "Projects start from",
+      "items": [
+        "999 KM — business website",
+        "2,499 KM — online store",
+        "1,499 KM — booking system"
+      ],
+      "note": "Prices include the fair discount. No hidden costs."
+    },
+    "process": {
+      "title": "What's next?",
+      "steps": [
+        "Message me on WhatsApp — tell me what you need",
+        "I'll send you a quote with prices and timelines in 48h",
+        "If it works for you — we start. If not — no obligations."
+      ]
+    }
+  },
+  "cta": {
+    "title": "Reach out when you're ready.",
+    "subtitle": "No obligations, no pressure. We'll talk about your needs and see what makes sense.",
+    "whatsapp": "Message me on WhatsApp",
+    "whatsappSubtext": "Fastest way — I reply same day",
+    "phone": "+387 66 603 900",
+    "phoneLabel": "Call me",
+    "email": "info@nextpixel.dev",
+    "emailLabel": "Send an email",
+    "address": "Jovana Dučića 15, 78400 Gradiška, Republika Srpska",
+    "servicesLink": "See all our services",
+    "portfolioLink": "See our full portfolio",
+    "closing": "— Nikola, NextPixel"
+  }
+}
