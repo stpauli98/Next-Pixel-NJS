@@ -24,25 +24,25 @@ const Navbar: React.FC = () => {
   };
 
   // Locale-aware SSR fallback za navigaciju
-  const getDefaultNavLinks = (lang: string) => {
+  const getDefaultNavLinks = (lang: string, prefix: string) => {
     const translations: Record<string, { name: string; href: string }[]> = {
       sr: [
-        { name: 'Početna', href: '#home' },
-        { name: 'O nama', href: '#about' },
-        { name: 'Usluge', href: '#services' },
-        { name: 'Portfolio', href: '#portfolio' }
+        { name: 'Početna', href: `${prefix}#home` },
+        { name: 'O nama', href: `${prefix}#about` },
+        { name: 'Usluge', href: `${prefix}#services` },
+        { name: 'Portfolio', href: `${prefix}#portfolio` }
       ],
       en: [
-        { name: 'Home', href: '#home' },
-        { name: 'About', href: '#about' },
-        { name: 'Services', href: '#services' },
-        { name: 'Portfolio', href: '#portfolio' }
+        { name: 'Home', href: `${prefix}#home` },
+        { name: 'About', href: `${prefix}#about` },
+        { name: 'Services', href: `${prefix}#services` },
+        { name: 'Portfolio', href: `${prefix}#portfolio` }
       ],
       de: [
-        { name: 'Startseite', href: '#home' },
-        { name: 'Über uns', href: '#about' },
-        { name: 'Dienstleistungen', href: '#services' },
-        { name: 'Portfolio', href: '#portfolio' }
+        { name: 'Startseite', href: `${prefix}#home` },
+        { name: 'Über uns', href: `${prefix}#about` },
+        { name: 'Dienstleistungen', href: `${prefix}#services` },
+        { name: 'Portfolio', href: `${prefix}#portfolio` }
       ]
     };
     return translations[lang] || translations.en;
@@ -84,20 +84,22 @@ const Navbar: React.FC = () => {
 
   // Koristi locale-aware fallback vrijednosti za SSR
   const currentLang = getLangFromPath();
-  const defaultNavLinks = getDefaultNavLinks(currentLang);
+  const isHomepage = pathname === `/${currentLang}` || pathname === `/${currentLang}/`;
+  const linkPrefix = isHomepage ? '' : `/${currentLang}`;
+  const defaultNavLinks = getDefaultNavLinks(currentLang, linkPrefix);
 
   // Koristi prevedene vrednosti samo nakon što je komponenta montirana na klijentu
   const navLinks = mounted ? [
-    { name: typeof t('navigation:home') === 'string' ? t('navigation:home') as string : 'Home', href: '#home' },
-    { name: typeof t('navigation:about') === 'string' ? t('navigation:about') as string : 'About', href: '#about' },
-    { name: typeof t('navigation:services') === 'string' ? t('navigation:services') as string : 'Services', href: '#services' },
-    { name: typeof t('navigation:portfolio') === 'string' ? t('navigation:portfolio') as string : 'Portfolio', href: '#portfolio' }
+    { name: typeof t('navigation:home') === 'string' ? t('navigation:home') as string : 'Home', href: `${linkPrefix}#home` },
+    { name: typeof t('navigation:about') === 'string' ? t('navigation:about') as string : 'About', href: `${linkPrefix}#about` },
+    { name: typeof t('navigation:services') === 'string' ? t('navigation:services') as string : 'Services', href: `${linkPrefix}#services` },
+    { name: typeof t('navigation:portfolio') === 'string' ? t('navigation:portfolio') as string : 'Portfolio', href: `${linkPrefix}#portfolio` }
   ] : defaultNavLinks;
 
   return (
     <nav aria-label="Main navigation" className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <a href="#home" className="flex items-center">
+        <a href={`${linkPrefix}#home`} className="flex items-center">
         <span className="text-2xl font-heading font-bold text-nextpixel-blue">
             Next<span className="text-nextpixel-turquoise">Pixel</span>
           </span>
@@ -114,7 +116,7 @@ const Navbar: React.FC = () => {
               {link.name}
             </a>
           ))}
-          <a href="#contact" className="btn-primary">
+          <a href={`${linkPrefix}#contact`} className="btn-primary">
             {mounted ? (
               language === 'sr' ? 'Kontaktirajte nas' :
               language === 'en' ? 'Contact Us' :
@@ -163,7 +165,7 @@ const Navbar: React.FC = () => {
               </a>
             ))}
             <a
-              href="#contact"
+              href={`${linkPrefix}#contact`}
               className="btn-primary text-center"
               onClick={() => setIsOpen(false)}
             >

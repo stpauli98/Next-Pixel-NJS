@@ -124,6 +124,16 @@ const HeroSection: React.FC = () => {
               {typeof t('contact') === 'string' ? t('contact') as string : 'Contact Us'}
             </StarButton>
           </motion.div>
+
+          {/* Sajam 2026 promo banner */}
+          <motion.div variants={itemVariants} className="mt-6">
+            <a
+              href={`/${getLangFromPath()}/sajam2026`}
+              className="inline-flex items-center gap-2 px-4 py-2 text-sm text-nextpixel-turquoise hover:text-white border border-nextpixel-turquoise/30 hover:border-nextpixel-turquoise/60 rounded-full transition-all hover:bg-nextpixel-turquoise/10"
+            >
+              🎪 {typeof t('sajamBanner') === 'string' ? t('sajamBanner') as string : 'Fair offer — websites from 999 KM →'}
+            </a>
+          </motion.div>
         </motion.main>
       </div>
 

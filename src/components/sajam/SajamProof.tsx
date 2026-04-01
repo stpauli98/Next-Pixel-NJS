@@ -75,7 +75,7 @@ export default function SajamProof() {
                 key={i}
                 href={url}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 variants={itemVariants}
                 className="group bg-gray-900/60 border border-gray-800 rounded-2xl overflow-hidden hover:border-cyan-500/30 transition-all"
               >

@@ -26,8 +26,8 @@ export const businessInfo = {
 
 export const addressInfo = {
   '@type': 'PostalAddress',
-  streetAddress: 'Jovana Ducica 15',
-  addressLocality: 'Gradiska',
+  streetAddress: 'Jovana Dučića 15',
+  addressLocality: 'Gradiška',
   addressRegion: 'Republika Srpska',
   postalCode: '78400',
   addressCountry: 'BA'
@@ -125,48 +125,25 @@ export const services = [
 
 // Reviews removed - no real reviews yet
 
-export const faqs = [
-  {
-    '@type': 'Question',
-    name: 'Koliko košta izrada web sajta?',
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: 'Cijena izrade web sajta zavisi od kompleksnosti i funkcionalnosti. Osnovni sajtovi počinju od 500€, poslovni sajtovi od 2000€, a kompleksne aplikacije od 5000€. Kontaktirajte nas za besplatnu ponudu prilagođenu vašim potrebama.'
-    }
-  },
-  {
-    '@type': 'Question',
-    name: 'Koliko traje izrada web sajta?',
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: 'Vremenski okvir zavisi od obima projekta. Osnovni sajt 2-3 sedmice, poslovni sajt 4-8 sedmica, kompleksne aplikacije 3-6 mjeseci. Uvijek dostavljamo detaljan vremenski plan prije početka rada.'
-    }
-  },
-  {
-    '@type': 'Question',
-    name: 'Da li nudite održavanje web sajta?',
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: 'Da, nudimo kompletne pakete održavanja koji uključuju redovne update-ove, sigurnosni monitoring, optimizaciju performansi, ažuriranje sadržaja i tehničku podršku 24/7.'
-    }
-  },
-  {
-    '@type': 'Question',
-    name: 'Koje tehnologije koristite?',
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: 'Koristimo najmodernije tehnologije: Next.js, React, Node.js, TypeScript, Tailwind CSS za frontend; Node.js, Python, PostgreSQL, MongoDB za backend; AWS, Vercel, Docker za deployment.'
-    }
-  },
-  {
-    '@type': 'Question',
-    name: 'Da li radite SEO optimizaciju?',
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: 'Da, svi naši sajtovi dolaze sa osnovnom SEO optimizacijom. Nudimo i napredne SEO usluge koje uključuju tehničku optimizaciju, content marketing, local SEO i link building strategije.'
-    }
+export function getLocalizedFaqs(locale: string) {
+  if (locale === 'en') {
+    return [
+      { '@type': 'Question', name: 'How much does a website cost?', acceptedAnswer: { '@type': 'Answer', text: 'Website pricing depends on complexity and features. Basic websites start from €500, business websites from €2,000, and complex applications from €5,000. Contact us for a free quote tailored to your needs.' } },
+      { '@type': 'Question', name: 'How long does it take to build a website?', acceptedAnswer: { '@type': 'Answer', text: 'Timelines depend on project scope. Basic websites take 2-3 weeks, business websites 4-8 weeks, complex applications 3-6 months. We always provide a detailed timeline before starting.' } },
+      { '@type': 'Question', name: 'Do you offer website maintenance?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, we offer complete maintenance packages including regular updates, security monitoring, performance optimization, content updates, and 24/7 technical support.' } },
+      { '@type': 'Question', name: 'What technologies do you use?', acceptedAnswer: { '@type': 'Answer', text: 'We use cutting-edge technologies: Next.js, React, Node.js, TypeScript, Tailwind CSS for frontend; Node.js, Python, PostgreSQL, MongoDB for backend; AWS, Vercel, Docker for deployment.' } },
+      { '@type': 'Question', name: 'Do you offer SEO optimization?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, all our websites come with basic SEO optimization. We also offer advanced SEO services including technical optimization, content marketing, local SEO, and link building strategies.' } }
+    ];
   }
-];
+  // Default: Serbian
+  return [
+    { '@type': 'Question', name: 'Koliko košta izrada web sajta?', acceptedAnswer: { '@type': 'Answer', text: 'Cijena izrade web sajta zavisi od kompleksnosti i funkcionalnosti. Osnovni sajtovi počinju od 500€, poslovni sajtovi od 2000€, a kompleksne aplikacije od 5000€. Kontaktirajte nas za besplatnu ponudu prilagođenu vašim potrebama.' } },
+    { '@type': 'Question', name: 'Koliko traje izrada web sajta?', acceptedAnswer: { '@type': 'Answer', text: 'Vremenski okvir zavisi od obima projekta. Osnovni sajt 2-3 sedmice, poslovni sajt 4-8 sedmica, kompleksne aplikacije 3-6 mjeseci. Uvijek dostavljamo detaljan vremenski plan prije početka rada.' } },
+    { '@type': 'Question', name: 'Da li nudite održavanje web sajta?', acceptedAnswer: { '@type': 'Answer', text: 'Da, nudimo kompletne pakete održavanja koji uključuju redovne update-ove, sigurnosni monitoring, optimizaciju performansi, ažuriranje sadržaja i tehničku podršku 24/7.' } },
+    { '@type': 'Question', name: 'Koje tehnologije koristite?', acceptedAnswer: { '@type': 'Answer', text: 'Koristimo najmodernije tehnologije: Next.js, React, Node.js, TypeScript, Tailwind CSS za frontend; Node.js, Python, PostgreSQL, MongoDB za backend; AWS, Vercel, Docker za deployment.' } },
+    { '@type': 'Question', name: 'Da li radite SEO optimizaciju?', acceptedAnswer: { '@type': 'Answer', text: 'Da, svi naši sajtovi dolaze sa osnovnom SEO optimizacijom. Nudimo i napredne SEO usluge koje uključuju tehničku optimizaciju, content marketing, local SEO i link building strategije.' } }
+  ];
+}
 
 // Generate complete structured data
 export function generateStructuredData(locale: string = 'sr') {
@@ -328,7 +305,7 @@ export function generateStructuredData(locale: string = 'sr') {
       {
         '@type': 'FAQPage',
         '@id': `${currentUrl}/#faq`,
-        mainEntity: faqs
+        mainEntity: getLocalizedFaqs(locale)
       },
       // Service (Main)
       {
