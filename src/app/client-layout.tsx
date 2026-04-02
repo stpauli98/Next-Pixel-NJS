@@ -3,7 +3,8 @@
 import { LanguageProvider } from '@/context/LanguageContext';
 import { CookieConsentProvider } from '@/context/CookieConsentContext';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
-import SplashScreen from '@/components/SplashScreen';
+import dynamic from 'next/dynamic';
+const SplashScreen = dynamic(() => import('@/components/SplashScreen'), { ssr: false });
 import CookieConsentBanner from '@/components/CookieConsentBanner';
 import { AnalyticsProvider } from '@/config/analytics';
 import { useEffect } from 'react';

@@ -19,14 +19,14 @@ export default function SajamHero() {
         <div className="grid lg:grid-cols-5 gap-12 items-center">
           <div className="lg:col-span-3">
             <h1 className="sr-only">{t('sajam2026:hero.headline')}</h1>
-            <p className="text-gray-400 text-lg mb-1 animate-fade-in-up" style={{ animationDelay: '0ms' }}>
+            <p className="text-gray-400 text-lg mb-1">
               {t('sajam2026:hero.greeting')}
             </p>
-            <p className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-2 animate-fade-in-up" style={{ animationDelay: '120ms' }}>
+            <p className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-2">
               {t('sajam2026:hero.name')}
               <span className="text-cyan-400">,</span>
             </p>
-            <p className="text-gray-400 text-lg mb-8 animate-fade-in-up" style={{ animationDelay: '240ms' }}>
+            <p className="text-gray-400 text-lg mb-8">
               {t('sajam2026:hero.role')}
             </p>
 
@@ -60,7 +60,7 @@ export default function SajamHero() {
             </p>
           </div>
 
-          <div className="lg:col-span-2 flex justify-center animate-fade-in-up" style={{ animationDelay: '300ms' }}>
+          <div className="lg:col-span-2 flex justify-center">
             <div className="relative">
               <div className="w-56 h-56 sm:w-72 sm:h-72 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1">
                 <div className="w-full h-full rounded-full bg-gray-800 flex items-center justify-center overflow-hidden">

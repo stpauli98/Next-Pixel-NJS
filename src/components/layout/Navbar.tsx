@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaBars, FaXmark } from 'react-icons/fa6';
 import { Icon } from '../../utils/icons';
-import { motion } from 'framer-motion';
+
 import LanguageSelector from '../../components/LanguageSelector';
 import { useTranslate } from '../../context/LanguageContext';
 import { usePathname } from 'next/navigation';
@@ -145,13 +145,11 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <motion.div
+        <div
           id="mobile-menu"
           role="menu"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          className="md:hidden bg-white shadow-lg absolute left-0 right-0 w-full"
+          className="md:hidden bg-white shadow-lg absolute left-0 right-0 w-full animate-fade-in-up"
+          style={{ animationDuration: '0.2s' }}
         >
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
             {navLinks.map((link) => (
@@ -176,7 +174,7 @@ const Navbar: React.FC = () => {
               ) : getDefaultCta(currentLang)}
             </a>
           </div>
-        </motion.div>
+        </div>
       )}
     </nav>
   );

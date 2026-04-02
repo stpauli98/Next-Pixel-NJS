@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 
 interface SplashScreenProps {
   onComplete?: () => void;
@@ -14,7 +15,11 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
   const [animationDone, setAnimationDone] = useState(false);
   const [documentReady, setDocumentReady] = useState(false);
 
+  const pathname = usePathname();
   const MIN_ANIMATION_TIME = 800;
+
+  // Skip splash on landing pages — they need instant LCP
+  const isLandingPage = pathname?.includes('/sajam2026');
 
   // Only render on client - SSR returns null so crawlers see content directly
   useEffect(() => {
@@ -62,6 +67,7 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
 
   // Don't render anything on server - crawlers see page content directly
   if (!mounted) return null;
+  if (isLandingPage) return null;
   if (!isVisible && !hasAnimated) return null;
 
   return (
