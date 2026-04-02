@@ -110,6 +110,9 @@ const nextConfig = {
   // Performance optimizations
   compress: true,
   poweredByHeader: false,
+  experimental: {
+    optimizePackageImports: ['lucide-react', 'react-icons'],
+  },
   images: {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
