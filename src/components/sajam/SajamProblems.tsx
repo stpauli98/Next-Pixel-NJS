@@ -35,7 +35,7 @@ export default function SajamProblems() {
                   {t(`sajam2026:problems.items.${i}.problem`)}
                 </h3>
               </div>
-              <p className="text-gray-400 text-sm leading-relaxed flex-1 mb-5">
+              <p className="text-gray-300 text-sm leading-relaxed flex-1 mb-5">
                 {t(`sajam2026:problems.items.${i}.description`)}
               </p>
               <div className="flex items-start gap-2 pt-4 border-t border-gray-800">
