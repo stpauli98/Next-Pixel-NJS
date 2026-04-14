@@ -9,6 +9,7 @@ import { useTranslate } from '../../context/LanguageContext';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { StarButton } from '@/components/ui/star-button';
+import { ImageComparison } from '@/components/ui/image-comparison-slider';
 
 // Animated counter component
 const AnimatedCounter = ({ value, isInView }: { value: string; isInView: boolean }) => {
@@ -230,18 +231,18 @@ const AboutSection: React.FC = () => {
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-nextpixel-turquoise rounded-lg opacity-20 -z-10" />
               <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-nextpixel-blue rounded-lg opacity-20 -z-10" />
 
-              {/* Main image */}
-              <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
-                <Image
-                  src="/images/team.webp"
-                  alt="NextPixel development team collaborating on web projects"
-                  width={600}
-                  height={400}
-                  className="w-full h-auto object-cover"
-                  priority
+              {/* Main image — interactive team comparison slider */}
+              <div className="relative z-10">
+                <ImageComparison
+                  beforeImage="/Nikola_SEO.webp"
+                  afterImage="/Damir_Developer.webp"
+                  altBefore="Nikola — cofounder & SEO at NextPixel"
+                  altAfter="Damir — developer at NextPixel"
+                  aspectClassName="aspect-[4/5]"
+                  imageObjectPosition="object-top"
+                  beforeImageStyle={{ transform: 'scale(1.55) translateY(-16%)', transformOrigin: 'center top' }}
+                  afterImageStyle={{ transform: 'scale(1.1) translateY(-2%)', transformOrigin: 'center top' }}
                 />
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-nextpixel-dark/20 to-transparent" />
               </div>
             </div>
           </motion.div>

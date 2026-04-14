@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useTranslate } from '@/context/LanguageContext';
 import { MessageCircle, ArrowDown } from 'lucide-react';
 
@@ -63,8 +64,15 @@ export default function SajamHero() {
           <div className="lg:col-span-2 flex justify-center">
             <div className="relative">
               <div className="w-56 h-56 sm:w-72 sm:h-72 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1">
-                <div className="w-full h-full rounded-full bg-gray-800 flex items-center justify-center overflow-hidden">
-                  <span className="text-7xl sm:text-8xl font-bold text-cyan-400/30">N</span>
+                <div className="relative w-full h-full rounded-full bg-gray-800 overflow-hidden">
+                  <Image
+                    src="/Nikola_SEO.webp"
+                    alt={t('sajam2026:hero.name')}
+                    fill
+                    sizes="(max-width: 640px) 224px, 288px"
+                    className="object-cover object-top"
+                    priority
+                  />
                 </div>
               </div>
               <div className="absolute -inset-4 rounded-full border border-cyan-500/10 animate-pulse" />
