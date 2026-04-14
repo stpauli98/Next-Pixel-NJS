@@ -66,7 +66,7 @@ export default function SajamHero() {
               <div className="w-56 h-56 sm:w-72 sm:h-72 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1">
                 <div className="relative w-full h-full rounded-full bg-gray-800 overflow-hidden">
                   <Image
-                    src="/Nikola_SEO.webp"
+                    src="/Nikola_SEO_1.webp"
                     alt={t('sajam2026:hero.name')}
                     fill
                     sizes="(max-width: 640px) 224px, 288px"

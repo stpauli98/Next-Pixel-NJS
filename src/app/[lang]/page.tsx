@@ -9,6 +9,7 @@ import HeroSection from '@/components/sections/HeroSection';
 import AboutSection from '@/components/sections/AboutSection';
 import ServicesSection from '@/components/sections/ServicesSection';
 import WhyChooseUsSection from '@/components/sections/WhyChooseUsSection';
+import FaqSection from '@/components/sections/FaqSection';
 
 // Lazy loaded komponente za bolje performance
 import { LazyPortfolioSection, LazyContactSection } from '@/components/LazySection';
@@ -45,6 +46,7 @@ export default async function Home({ params }: HomeProps) {
         <ServicesSection />
         <LazyPortfolioSection />
         <WhyChooseUsSection />
+        <FaqSection />
         <LazyContactSection />
       </main>
       <Footer />

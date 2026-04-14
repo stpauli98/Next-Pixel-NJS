@@ -139,7 +139,7 @@ const HeroSection: React.FC = () => {
 
       {/* Right Side: Image with Clip Path Animation */}
       <motion.div
-        className="relative w-full min-h-[300px] md:min-h-full md:w-1/2 lg:w-2/5"
+        className="hidden relative md:block md:min-h-full md:w-1/2 lg:w-2/5"
         initial={{ clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)' }}
         animate={{ clipPath: 'polygon(15% 0, 100% 0, 100% 100%, 0% 100%)' }}
         transition={{ duration: 1.2, ease: "circOut", delay: 0.3 }}
