@@ -106,7 +106,7 @@ const BookingFooter: React.FC = () => {
           <div className="flex flex-col items-start md:items-end">
             <div className="flex space-x-4 mb-4">
               <a
-                href="https://instagram.com/pixelnext9"
+                href="https://www.instagram.com/nextpixel.dev"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"

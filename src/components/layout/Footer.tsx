@@ -106,8 +106,14 @@ const Footer: React.FC = () => {
               )}
             </p>
             <div className="flex space-x-4">
-              <a href="https://instagram.com/pixelnext9" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors">
+              <a href="https://www.instagram.com/nextpixel.dev" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors" aria-label="Instagram">
                 <Icon icon={FaInstagram} size={20} aria-hidden={true} />
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=61576929374377" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors" aria-label="Facebook">
+                <Icon icon={FaFacebook} size={20} aria-hidden={true} />
+              </a>
+              <a href="https://www.linkedin.com/company/112221794" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-nextpixel-turquoise transition-colors" aria-label="LinkedIn">
+                <Icon icon={FaLinkedin} size={20} aria-hidden={true} />
               </a>
             </div>
           </div>

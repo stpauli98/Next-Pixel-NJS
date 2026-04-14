@@ -66,7 +66,7 @@ const BlogFooter: React.FC<BlogFooterProps> = ({ lang }) => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://instagram.com/pixelnext9"
+                href="https://www.instagram.com/nextpixel.dev"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:bg-nextpixel-turquoise hover:text-white transition-all duration-300"
                 aria-label="Instagram"
                 target="_blank"

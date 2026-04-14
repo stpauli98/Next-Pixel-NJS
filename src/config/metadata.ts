@@ -588,14 +588,16 @@ export const structuredData = {
     description: siteConfig.description,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Jovana Ducica 15',
-      addressLocality: 'Gradiska',
+      streetAddress: 'Jovana Dučića 15',
+      addressLocality: 'Gradiška',
       addressRegion: 'Republika Srpska',
       postalCode: '78400',
       addressCountry: 'BA',
     },
     sameAs: [
-      'https://www.instagram.com/pixelnext9'
+      'https://www.instagram.com/nextpixel.dev',
+      'https://www.facebook.com/profile.php?id=61576929374377',
+      'https://www.linkedin.com/company/112221794'
     ],
   },
 
@@ -628,8 +630,8 @@ export const structuredData = {
     email: 'info@nextpixel.dev',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Jovana Ducica 15',
-      addressLocality: 'Gradiska',
+      streetAddress: 'Jovana Dučića 15',
+      addressLocality: 'Gradiška',
       addressRegion: 'Republika Srpska',
       postalCode: '78400',
       addressCountry: 'BA'
@@ -658,7 +660,7 @@ export const structuredData = {
         '@type': 'OpeningHoursSpecification',
         dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
         opens: '09:00',
-        closes: '18:00'
+        closes: '17:00'
       }
     ],
     priceRange: '$$',
@@ -728,7 +730,9 @@ export const structuredData = {
       ]
     },
     sameAs: [
-      'https://www.instagram.com/pixelnext9'
+      'https://www.instagram.com/nextpixel.dev',
+      'https://www.facebook.com/profile.php?id=61576929374377',
+      'https://www.linkedin.com/company/112221794'
     ]
   }
 };

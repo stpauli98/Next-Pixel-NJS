@@ -7,7 +7,7 @@ export const businessInfo = {
   url: 'https://www.nextpixel.dev',
   logo: 'https://www.nextpixel.dev/images/NextPixelV2.webp',
   image: 'https://www.nextpixel.dev/opengraph-image.png',
-  telephone: '+38766603900',
+  telephone: '+387 66 603 900',
   email: 'info@nextpixel.dev',
   foundingDate: '2020',
   founders: [
@@ -40,7 +40,9 @@ export const geoInfo = {
 } as const;
 
 export const socialProfiles = [
-  'https://www.instagram.com/pixelnext9'
+  'https://www.instagram.com/nextpixel.dev',
+  'https://www.facebook.com/profile.php?id=61576929374377',
+  'https://www.linkedin.com/company/112221794'
 ];
 
 export const urgentKeywords = [
@@ -222,13 +224,7 @@ export function generateStructuredData(locale: string = 'sr') {
             '@type': 'OpeningHoursSpecification',
             dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
             opens: '09:00',
-            closes: '18:00'
-          },
-          {
-            '@type': 'OpeningHoursSpecification',
-            dayOfWeek: 'Saturday',
-            opens: '10:00',
-            closes: '14:00'
+            closes: '17:00'
           }
         ],
         areaServed: [

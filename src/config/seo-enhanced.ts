@@ -14,7 +14,7 @@ export const geoConfig = {
     city: 'Gradiška',
     region: 'Republika Srpska',
     postalCode: '78400',
-    streetAddress: 'Jovana Ducica 15',
+    streetAddress: 'Jovana Dučića 15',
     latitude: 45.1447, // Gradiška coordinates
     longitude: 17.2522,
     serviceArea: ['Bosnia and Herzegovina', 'Serbia', 'Croatia', 'Montenegro'],
@@ -250,7 +250,7 @@ export const hreflangConfig = {
       'sr': `${baseUrl}/sr${path}`,
       'en': `${baseUrl}/en${path}`,
       'de': `${baseUrl}/de${path}`,
-      'x-default': `${baseUrl}${path}`, // Fallback for unmatched languages
+      'x-default': `${baseUrl}/en${path}`, // Fallback for unmatched languages
     };
   },
 };
