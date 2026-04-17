@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslate } from '@/context/LanguageContext';
-import { ExternalLink, Quote } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import { useInView } from '@/hooks/useInView';
 
@@ -11,7 +11,6 @@ export default function SajamProof() {
   const { t } = useTranslate();
   const { ref: headerRef, isInView: headerVisible } = useInView<HTMLDivElement>();
   const { ref: gridRef, isInView: gridVisible } = useInView<HTMLDivElement>();
-  const { ref: testimonialRef, isInView: testimonialVisible } = useInView<HTMLDivElement>();
 
   const stats = [
     { value: t('sajam2026:proof.stats.projects'), label: t('sajam2026:proof.stats.projectsLabel') },
@@ -20,7 +19,7 @@ export default function SajamProof() {
   ];
 
   return (
-    <section id="proof" className="py-24 bg-gray-950">
+    <section id="proof" className="pt-24 pb-8 bg-gray-950">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div ref={headerRef} className={`text-center mb-12 animate-on-scroll ${headerVisible ? 'is-visible' : ''}`}>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
@@ -40,7 +39,7 @@ export default function SajamProof() {
           ))}
         </div>
 
-        <div ref={gridRef} className="grid md:grid-cols-3 gap-6 mb-16">
+        <div ref={gridRef} className="grid md:grid-cols-3 gap-6">
           {Array.from({ length: PROJECT_COUNT }).map((_, i) => {
             const image = t(`sajam2026:proof.projects.${i}.image`) as string;
             const url = t(`sajam2026:proof.projects.${i}.url`) as string;
@@ -84,14 +83,6 @@ export default function SajamProof() {
           })}
         </div>
 
-        <div ref={testimonialRef} className={`max-w-2xl mx-auto text-center animate-on-scroll ${testimonialVisible ? 'is-visible' : ''}`}>
-          <Quote className="w-8 h-8 text-cyan-500/20 mx-auto mb-4" />
-          <p className="text-gray-300 text-lg italic leading-relaxed mb-4">
-            &ldquo;{t('sajam2026:proof.testimonial.quote')}&rdquo;
-          </p>
-          <p className="text-white font-medium">{t('sajam2026:proof.testimonial.name')}</p>
-          <p className="text-gray-500 text-sm">{t('sajam2026:proof.testimonial.role')}</p>
-        </div>
       </div>
     </section>
   );

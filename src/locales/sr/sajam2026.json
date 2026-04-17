@@ -118,5 +118,9 @@
     "servicesLink": "Pogledajte sve naše usluge",
     "portfolioLink": "Pogledajte kompletan portfolio",
     "closing": "— Nikola, NextPixel"
+  },
+  "reviews": {
+    "sectionTitle": "Šta kažu naši klijenti",
+    "sectionSubtitle": "Realne recenzije sa Google-a od zadovoljnih klijenata"
   }
 }

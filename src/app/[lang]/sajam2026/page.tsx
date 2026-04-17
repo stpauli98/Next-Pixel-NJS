@@ -9,6 +9,7 @@ import SajamHero from '@/components/sajam/SajamHero';
 // Lazy load below-fold sections — HTML still SSR'd for SEO
 const SajamProblems = dynamic(() => import('@/components/sajam/SajamProblems'), { ssr: true });
 const SajamProof = dynamic(() => import('@/components/sajam/SajamProof'), { ssr: true });
+const SajamReviews = dynamic(() => import('@/components/sajam/SajamReviews'), { ssr: true });
 const SajamOffer = dynamic(() => import('@/components/sajam/SajamOffer'), { ssr: true });
 const SajamCTA = dynamic(() => import('@/components/sajam/SajamCTA'), { ssr: true });
 
@@ -182,6 +183,7 @@ export default async function Sajam2026Page({ params }: PageProps) {
         <SajamHero />
         <SajamProblems />
         <SajamProof />
+        <SajamReviews />
         <SajamOffer />
         <SajamCTA />
       </main>
