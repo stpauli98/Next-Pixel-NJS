@@ -4,24 +4,6 @@ import { useTranslate } from '@/context/LanguageContext';
 import { ExternalLink, Quote } from 'lucide-react';
 import Image from 'next/image';
 import { useInView } from '@/hooks/useInView';
-import { useEffect, useRef } from 'react';
-
-function TrustmaryWidget() {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!containerRef.current) return;
-    // Avoid loading twice
-    if (containerRef.current.querySelector('script')) return;
-
-    const script = document.createElement('script');
-    script.src = 'https://widget.trustmary.com/GzDiI_7BO';
-    script.async = true;
-    containerRef.current.appendChild(script);
-  }, []);
-
-  return <div ref={containerRef} className="mt-16" />;
-}
 
 const PROJECT_COUNT = 3;
 
@@ -110,9 +92,6 @@ export default function SajamProof() {
           <p className="text-white font-medium">{t('sajam2026:proof.testimonial.name')}</p>
           <p className="text-gray-500 text-sm">{t('sajam2026:proof.testimonial.role')}</p>
         </div>
-
-        {/* Trustmary Google Reviews Widget */}
-        <TrustmaryWidget />
       </div>
     </section>
   );
