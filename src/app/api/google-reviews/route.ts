@@ -59,7 +59,7 @@ export async function GET() {
       { rating: 0, userRatingCount: 0, reviews: [] } satisfies ReviewsData,
       {
         status: 200,
-        headers: { 'Cache-Control': 'public, s-maxage=86400, stale-while-revalidate=43200' },
+        headers: { 'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=43200' },
       }
     );
   }
@@ -68,7 +68,7 @@ export async function GET() {
     const url = `https://places.googleapis.com/v1/places/${PLACE_ID}?fields=${FIELDS}&key=${apiKey}`;
 
     const res = await fetch(url, {
-      next: { revalidate: 86400 }, // 24h ISR
+      next: { revalidate: 3600 }, // 24h ISR
     });
 
     if (!res.ok) {
@@ -94,7 +94,7 @@ export async function GET() {
 
     return NextResponse.json(result, {
       status: 200,
-      headers: { 'Cache-Control': 'public, s-maxage=86400, stale-while-revalidate=43200' },
+      headers: { 'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=43200' },
     });
   } catch (error) {
     console.error('[google-reviews] Error fetching reviews:', error);
