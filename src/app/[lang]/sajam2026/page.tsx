@@ -10,6 +10,7 @@ import SajamHero from '@/components/sajam/SajamHero';
 const SajamProblems = dynamic(() => import('@/components/sajam/SajamProblems'), { ssr: true });
 const SajamProof = dynamic(() => import('@/components/sajam/SajamProof'), { ssr: true });
 const SajamReviews = dynamic(() => import('@/components/sajam/SajamReviews'), { ssr: true });
+const SajamAI = dynamic(() => import('@/components/sajam/SajamAI'), { ssr: true });
 const SajamOffer = dynamic(() => import('@/components/sajam/SajamOffer'), { ssr: true });
 const SajamCTA = dynamic(() => import('@/components/sajam/SajamCTA'), { ssr: true });
 
@@ -88,6 +89,26 @@ function getSajamStructuredData(locale: string) {
             '@type': 'Offer',
             name: isSr ? 'Booking sistem' : 'Booking System',
             price: '1499',
+            priceCurrency: 'BAM',
+            validFrom: '2026-05-01',
+            validThrough: '2026-06-30',
+            availability: 'https://schema.org/InStock',
+            url: `${baseUrl}/${locale}/sajam2026`,
+          },
+          {
+            '@type': 'Offer',
+            name: isSr ? 'AI Asistent za firmu' : 'AI Business Assistant',
+            price: '2500',
+            priceCurrency: 'BAM',
+            validFrom: '2026-05-01',
+            validThrough: '2026-06-30',
+            availability: 'https://schema.org/InStock',
+            url: `${baseUrl}/${locale}/sajam2026`,
+          },
+          {
+            '@type': 'Offer',
+            name: isSr ? 'Workflow Automatizacija' : 'Workflow Automation',
+            price: '1500',
             priceCurrency: 'BAM',
             validFrom: '2026-05-01',
             validThrough: '2026-06-30',
@@ -184,6 +205,7 @@ export default async function Sajam2026Page({ params }: PageProps) {
         <SajamProblems />
         <SajamProof />
         <SajamReviews />
+        <SajamAI />
         <SajamOffer />
         <SajamCTA />
       </main>

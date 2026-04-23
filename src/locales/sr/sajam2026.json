@@ -122,5 +122,35 @@
   "reviews": {
     "sectionTitle": "Šta kažu naši klijenti",
     "sectionSubtitle": "Realne recenzije sa Google-a od zadovoljnih klijenata"
+  },
+  "ai": {
+    "badge": "Novo",
+    "sectionTitle": "AI Automatizacija za firme",
+    "sectionSubtitle": "Usluge koje štede sate ručnog rada — bez skupih sistema",
+    "items": [
+      {
+        "title": "AI Asistent",
+        "subtitle": "za katalog i klijentske upite",
+        "description": "Vaš asistent koji zna sve o firmi i odgovara klijentima 24/7 — katalog, FAQ, procedure.",
+        "example": "npr. asistent koji zna katalog, cijene i procedure na 3 jezika",
+        "price": "od 2.500 KM"
+      },
+      {
+        "title": "Pametni Dashboard",
+        "subtitle": "za praćenje prodaje i podataka",
+        "description": "Uploadate CSV → odmah vidite grafikone po kanalima i AI generiše tekstualni izvještaj.",
+        "example": "npr. prodaja po 5 kanala — web shop, veleprodaja, maloprodaja",
+        "price": "od 3.500 KM"
+      },
+      {
+        "title": "Workflow Automatizacija",
+        "subtitle": "za ponavljajuće zadatke",
+        "description": "Kontakt forma, booking ili email → automatski: CRM unos + odgovor klijentu + notifikacija timu.",
+        "example": "npr. svaka nova narudžba → email potvrda + Slack notifikacija za tim",
+        "price": "od 1.500 KM"
+      }
+    ],
+    "cta": "Pišite mi o AI usluzi",
+    "ctaNote": "Besplatna analiza vaših poslovnih procesa"
   }
 }

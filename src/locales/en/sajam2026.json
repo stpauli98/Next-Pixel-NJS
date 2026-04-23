@@ -122,5 +122,35 @@
   "reviews": {
     "sectionTitle": "What our clients say",
     "sectionSubtitle": "Real reviews from Google by satisfied clients"
+  },
+  "ai": {
+    "badge": "New",
+    "sectionTitle": "AI Automation for Businesses",
+    "sectionSubtitle": "Services that save hours of manual work — without expensive systems",
+    "items": [
+      {
+        "title": "AI Assistant",
+        "subtitle": "for catalog and client inquiries",
+        "description": "Your assistant that knows everything about your business and answers clients 24/7 — catalog, FAQ, procedures.",
+        "example": "e.g. assistant that knows the catalog, prices and procedures in 3 languages",
+        "price": "from 2,500 KM"
+      },
+      {
+        "title": "Smart Dashboard",
+        "subtitle": "for sales and data tracking",
+        "description": "Upload CSV → instantly see charts by channel and AI generates a text report.",
+        "example": "e.g. sales across 5 channels — web shop, wholesale, retail",
+        "price": "from 3,500 KM"
+      },
+      {
+        "title": "Workflow Automation",
+        "subtitle": "for repetitive tasks",
+        "description": "Contact form, booking or email → automatic: CRM entry + client reply + team notification.",
+        "example": "e.g. every new order → email confirmation + Slack notification for the team",
+        "price": "from 1,500 KM"
+      }
+    ],
+    "cta": "Message me about AI services",
+    "ctaNote": "Free analysis of your business processes"
   }
 }

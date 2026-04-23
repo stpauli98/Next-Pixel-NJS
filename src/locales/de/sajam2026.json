@@ -122,5 +122,35 @@
   "reviews": {
     "sectionTitle": "Was unsere Kunden sagen",
     "sectionSubtitle": "Echte Bewertungen von Google zufriedener Kunden"
+  },
+  "ai": {
+    "badge": "Neu",
+    "sectionTitle": "KI-Automatisierung für Unternehmen",
+    "sectionSubtitle": "Dienste, die Stunden manueller Arbeit sparen — ohne teure Systeme",
+    "items": [
+      {
+        "title": "KI-Assistent",
+        "subtitle": "für Katalog und Kundenanfragen",
+        "description": "Ihr Assistent, der alles über Ihr Unternehmen weiß und Kunden 24/7 antwortet — Katalog, FAQ, Verfahren.",
+        "example": "z.B. Assistent, der den Katalog, Preise und Verfahren in 3 Sprachen kennt",
+        "price": "ab 2.500 KM"
+      },
+      {
+        "title": "Intelligentes Dashboard",
+        "subtitle": "für Vertriebs- und Datenverfolgung",
+        "description": "CSV hochladen → sofort Diagramme nach Kanälen sehen und KI erstellt einen Textbericht.",
+        "example": "z.B. Verkäufe über 5 Kanäle — Web-Shop, Großhandel, Einzelhandel",
+        "price": "ab 3.500 KM"
+      },
+      {
+        "title": "Workflow-Automatisierung",
+        "subtitle": "für wiederkehrende Aufgaben",
+        "description": "Kontaktformular, Buchung oder E-Mail → automatisch: CRM-Eintrag + Kundenantwort + Team-Benachrichtigung.",
+        "example": "z.B. jede neue Bestellung → E-Mail-Bestätigung + Slack-Benachrichtigung für das Team",
+        "price": "ab 1.500 KM"
+      }
+    ],
+    "cta": "Schreiben Sie mir über KI-Dienste",
+    "ctaNote": "Kostenlose Analyse Ihrer Geschäftsprozesse"
   }
 }
