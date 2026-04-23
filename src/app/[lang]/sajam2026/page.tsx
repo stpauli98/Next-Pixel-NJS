@@ -204,8 +204,8 @@ export default async function Sajam2026Page({ params }: PageProps) {
         <SajamHero />
         <SajamProblems />
         <SajamProof />
-        <SajamReviews />
         <SajamAI />
+        <SajamReviews />
         <SajamOffer />
         <SajamCTA />
       </main>
