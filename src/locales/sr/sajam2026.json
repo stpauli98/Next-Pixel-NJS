@@ -125,32 +125,31 @@
   },
   "ai": {
     "badge": "Novo",
-    "sectionTitle": "AI Automatizacija za firme",
-    "sectionSubtitle": "Usluge koje štede sate ručnog rada — bez skupih sistema",
+    "sectionTitle": "Dok ste na sajmu — ko odgovara vašim kupcima?",
+    "sectionSubtitle": "Tri jednostavna rješenja za domaćinstva, uzgajivače i turističke radnike koji žele manje ručnog posla",
+    "solutionLabel": "Rješenje",
+    "fairDiscount": "sajamski popust",
     "items": [
       {
-        "title": "AI Asistent",
-        "subtitle": "za katalog i klijentske upite",
-        "description": "Vaš asistent koji zna sve o firmi i odgovara klijentima 24/7 — katalog, FAQ, procedure.",
-        "example": "npr. asistent koji zna katalog, cijene i procedure na 3 jezika",
+        "problem": "Kupac pita o cijeni — vi ste zauzeti.",
+        "solution": "Vaš asistent zna vaše cijene, termine i usluge. Odgovori kupcima i gostima dok vi radite, putujete ili spavate.",
+        "outcome": "Nijedan upit ne ostane bez odgovora.",
         "price": "od 2.500 KM"
       },
       {
-        "title": "Pametni Dashboard",
-        "subtitle": "za praćenje prodaje i podataka",
-        "description": "Uploadate CSV → odmah vidite grafikone po kanalima i AI generiše tekstualni izvještaj.",
-        "example": "npr. prodaja po 5 kanala — web shop, veleprodaja, maloprodaja",
+        "problem": "Svaka sedmica isti papiri i tablice.",
+        "solution": "Vidite koje su vam najuspješnije sedmice, koji proizvod donosi najviše i gdje gubite prihod — bez prepisivanja i prebrojavanja.",
+        "outcome": "Pet minuta pregleda umjesto sat vremena papiranja.",
         "price": "od 3.500 KM"
       },
       {
-        "title": "Workflow Automatizacija",
-        "subtitle": "za ponavljajuće zadatke",
-        "description": "Kontakt forma, booking ili email → automatski: CRM unos + odgovor klijentu + notifikacija timu.",
-        "example": "npr. svaka nova narudžba → email potvrda + Slack notifikacija za tim",
+        "problem": "Jeste li poslali potvrdu gostu?",
+        "solution": "Rezervacija, upit ili narudžba — gost odmah dobija potvrdu. Bez da pamtite, kucate ili šaljete ručno.",
+        "outcome": "Gost je siguran. Vi ste slobodni.",
         "price": "od 1.500 KM"
       }
     ],
-    "cta": "Pišite mi o AI usluzi",
-    "ctaNote": "Besplatna analiza vaših poslovnih procesa"
+    "cta": "Razgovarajmo — bez tehničkog žargona",
+    "ctaNote": "Besplatan razgovor o vašim svakodnevnim izazovima"
   }
 }
