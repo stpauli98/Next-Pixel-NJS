@@ -29,17 +29,25 @@ export default function SajamAI() {
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
+        {/*
+          CSS subgrid — roditeljski grid definira 4 reda:
+            1. auto  — problem zona
+            2. auto  — divider
+            3. 1fr   — rješenje zona (rasteže se jednako u sve 3 kartice)
+            4. auto  — footer
+          Svaki article nasljeđuje te redove (grid-rows-subgrid),
+          pa su sve zone poravnate na isti vertikalni položaj.
+        */}
+        <div className="grid grid-cols-1 gap-5 mb-12 md:grid-cols-3 md:grid-rows-[auto_auto_1fr_auto] md:gap-x-5 md:gap-y-0">
           {Array.from({ length: ITEM_COUNT }).map((_, i) => {
             const Icon = icons[i];
             return (
               <article
                 key={i}
-                className={`relative flex flex-col rounded-2xl overflow-hidden border border-gray-800 hover:border-cyan-500/30 transition-all duration-300 animate-on-scroll ${isInView ? 'is-visible' : ''}`}
+                className={`flex flex-col rounded-2xl overflow-hidden border border-gray-800 hover:border-cyan-500/30 transition-all duration-300 md:grid md:grid-rows-subgrid md:row-span-4 animate-on-scroll ${isInView ? 'is-visible' : ''}`}
                 style={{ transitionDelay: `${i * 120}ms` }}
               >
-                {/* Problem zone — slightly darker */}
+                {/* Zona 1 — Problem */}
                 <div className="bg-gray-900/80 px-6 pt-6 pb-5">
                   <div className="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-4">
                     <Icon className="w-5 h-5 text-amber-400" />
@@ -49,7 +57,7 @@ export default function SajamAI() {
                   </p>
                 </div>
 
-                {/* Divider — visual "before → after" marker */}
+                {/* Zona 2 — Divider */}
                 <div className="flex items-center gap-3 px-6 py-3 bg-gray-900/40">
                   <div className="flex-1 h-px bg-gray-800" />
                   <div className="w-6 h-6 rounded-full bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center shrink-0">
@@ -58,7 +66,7 @@ export default function SajamAI() {
                   <div className="flex-1 h-px bg-gray-800" />
                 </div>
 
-                {/* Solution zone — brighter */}
+                {/* Zona 3 — Rješenje (rasteže se) */}
                 <div className="bg-gray-900/60 px-6 pt-4 pb-5 flex-1 flex flex-col">
                   <p className="text-[10px] font-bold text-cyan-400 uppercase tracking-widest mb-2">
                     {t('sajam2026:ai.solutionLabel') as string}
@@ -71,7 +79,7 @@ export default function SajamAI() {
                   </p>
                 </div>
 
-                {/* Price footer */}
+                {/* Zona 4 — Footer / cijena */}
                 <div className="px-6 py-4 border-t border-gray-800 bg-gray-900/80 flex items-center justify-between">
                   <span className="text-white font-semibold text-sm">
                     {t(`sajam2026:ai.items.${i}.price`) as string}
