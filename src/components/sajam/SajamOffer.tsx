@@ -97,7 +97,7 @@ export default function SajamOffer() {
               href="https://wa.me/message/U4Z7GJU4ZSL5M1"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold rounded-xl hover:from-green-400 hover:to-green-500 transition-all shadow-lg shadow-green-500/25"
+              className="inline-flex items-center justify-center gap-2.5 w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold rounded-xl hover:from-green-400 hover:to-green-500 transition-all shadow-lg shadow-green-500/25"
             >
               <MessageCircle className="w-5 h-5" />
               {t('sajam2026:cta.whatsapp')}

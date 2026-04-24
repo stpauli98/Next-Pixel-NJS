@@ -16,14 +16,14 @@ export default function SajamHero() {
         }} />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-24 sm:py-32">
-        <div className="grid lg:grid-cols-5 gap-12 items-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24 lg:py-32">
+        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
           <div className="lg:col-span-3">
             <h1 className="sr-only">{t('sajam2026:hero.headline')}</h1>
             <p className="text-gray-400 text-lg mb-1">
               {t('sajam2026:hero.greeting')}
             </p>
-            <p className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-2">
+            <p className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-2">
               {t('sajam2026:hero.name')}
               <span className="text-cyan-400">,</span>
             </p>

@@ -77,7 +77,7 @@ export const ReviewSummaryCard: React.FC<ReviewSummaryCardProps> = ({
   return (
     <motion.div
       className={cn(
-        'w-full max-w-xs rounded-xl border border-gray-800 bg-gray-900/60 p-6 text-center shadow-lg',
+        'w-full max-w-xs rounded-xl border border-gray-800 bg-gray-900/60 p-4 sm:p-6 text-center shadow-lg',
         'flex flex-col items-center justify-center',
         className
       )}
@@ -102,9 +102,9 @@ export const ReviewSummaryCard: React.FC<ReviewSummaryCardProps> = ({
       </div>
 
       {/* Animated Rating + Count */}
-      <h2 className="mt-4 text-4xl font-bold tracking-tight text-white">
+      <h2 className="mt-4 text-3xl sm:text-4xl font-bold tracking-tight text-white">
         <span ref={ratingRef}>0.0</span>
-        <span className="text-2xl font-semibold text-gray-300">
+        <span className="text-lg sm:text-2xl font-semibold text-gray-300">
           {' '}(<span ref={reviewCountRef}>0</span> Reviews)
         </span>
       </h2>

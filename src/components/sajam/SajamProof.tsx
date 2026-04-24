@@ -30,11 +30,11 @@ export default function SajamProof() {
           </p>
         </div>
 
-        <div className={`flex flex-wrap justify-center gap-8 sm:gap-16 mb-16 animate-on-scroll ${headerVisible ? 'is-visible' : ''}`} style={{ transitionDelay: '200ms' }}>
+        <div className={`grid grid-cols-3 gap-4 sm:gap-16 mb-16 animate-on-scroll ${headerVisible ? 'is-visible' : ''}`} style={{ transitionDelay: '200ms' }}>
           {stats.map((stat, i) => (
             <div key={i} className="text-center">
-              <p className="text-3xl sm:text-4xl font-bold text-cyan-400">{stat.value}</p>
-              <p className="text-gray-400 text-sm mt-1">{stat.label}</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-cyan-400">{stat.value}</p>
+              <p className="text-gray-400 text-xs sm:text-sm mt-1">{stat.label}</p>
             </div>
           ))}
         </div>

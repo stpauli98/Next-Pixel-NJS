@@ -68,7 +68,7 @@ export default function SajamAI() {
 
                 {/* Zona 3 — Rješenje (rasteže se) */}
                 <div className="bg-gray-900/60 px-6 pt-4 pb-5 flex-1 flex flex-col">
-                  <p className="text-[10px] font-bold text-cyan-400 uppercase tracking-widest mb-2">
+                  <p className="text-xs font-bold text-cyan-400 uppercase tracking-widest mb-2">
                     {t('sajam2026:ai.solutionLabel') as string}
                   </p>
                   <p className="text-gray-300 text-sm leading-relaxed flex-1">
@@ -80,11 +80,11 @@ export default function SajamAI() {
                 </div>
 
                 {/* Zona 4 — Footer / cijena */}
-                <div className="px-6 py-4 border-t border-gray-800 bg-gray-900/80 flex items-center justify-between">
-                  <span className="text-white font-semibold text-sm">
+                <div className="px-6 py-4 border-t border-gray-800 bg-gray-900/80 flex items-center justify-between gap-2">
+                  <span className="text-white font-semibold text-sm shrink-0">
                     {t(`sajam2026:ai.items.${i}.price`) as string}
                   </span>
-                  <span className="text-gray-600 text-xs">
+                  <span className="text-gray-600 text-xs truncate text-right">
                     {t('sajam2026:ai.fairDiscount') as string}
                   </span>
                 </div>

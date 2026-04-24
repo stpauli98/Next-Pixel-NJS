@@ -55,14 +55,14 @@ export default function SajamCTA() {
           <div className={`flex flex-col sm:flex-row justify-center gap-4 mt-8 animate-on-scroll ${isInView ? 'is-visible' : ''}`} style={{ transitionDelay: '300ms' }}>
             <a
               href="tel:+38766603900"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-gray-700 text-gray-300 rounded-xl hover:border-cyan-500/30 hover:text-white transition-all"
+              className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 border border-gray-700 text-gray-300 rounded-xl hover:border-cyan-500/30 hover:text-white transition-all"
             >
               <Phone className="w-4 h-4" />
               {t('sajam2026:cta.phoneLabel')}
             </a>
             <a
               href="mailto:info@nextpixel.dev"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-gray-700 text-gray-300 rounded-xl hover:border-cyan-500/30 hover:text-white transition-all"
+              className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 border border-gray-700 text-gray-300 rounded-xl hover:border-cyan-500/30 hover:text-white transition-all"
             >
               <Mail className="w-4 h-4" />
               {t('sajam2026:cta.emailLabel')}
@@ -93,10 +93,11 @@ export default function SajamCTA() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="WhatsApp"
-        className={`fixed bottom-6 right-6 z-40 flex items-center gap-2 px-4 py-3.5 bg-green-500 text-white font-semibold rounded-full shadow-lg shadow-green-500/30 hover:bg-green-400 transition-all duration-300 ${showFloating ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-4 scale-90 pointer-events-none'}`}
+        style={{ bottom: 'calc(1.5rem + env(safe-area-inset-bottom, 0px))', right: '1.5rem' }}
+        className={`fixed z-40 flex items-center gap-2 px-4 py-3.5 bg-green-500 text-white font-semibold rounded-full shadow-lg shadow-green-500/30 hover:bg-green-400 transition-all duration-300 ${showFloating ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-4 scale-90 pointer-events-none'}`}
       >
         <MessageCircle className="w-5 h-5" />
-        <span className="hidden sm:inline">WhatsApp</span>
+        <span className="sm:inline">WhatsApp</span>
       </a>
     </>
   );

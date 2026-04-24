@@ -143,7 +143,7 @@ export default function SajamReviews() {
             </div>
 
             {/* Google Attribution (ToS required) */}
-            <div className="flex items-center justify-center gap-2 text-gray-500 text-xs">
+            <div className="flex flex-wrap items-center justify-center gap-2 text-gray-500 text-xs text-center">
               <GoogleG />
               <a
                 href={`https://www.google.com/maps/place/?q=place_id:ChIJ40ZeSCkQoWARKnA5HDgWS1s`}

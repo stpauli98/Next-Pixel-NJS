@@ -29,8 +29,8 @@ export default function SajamProblems() {
               className={`bg-gray-900/80 border border-gray-700 rounded-2xl p-6 hover:border-cyan-500/30 transition-all flex flex-col animate-on-scroll ${isInView ? 'is-visible' : ''}`}
               style={{ transitionDelay: `${i * 150}ms` }}
             >
-              <div className="flex items-center gap-2 mb-4">
-                <AlertCircle className="w-5 h-5 text-cyan-400 shrink-0" />
+              <div className="flex items-start gap-2 mb-4">
+                <AlertCircle className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
                 <h3 className="text-lg font-semibold text-white">
                   {t(`sajam2026:problems.items.${i}.problem`)}
                 </h3>
