@@ -14,6 +14,7 @@ interface GoogleReviewText {
 }
 
 interface GoogleReview {
+  name: string;
   rating: number;
   text?: GoogleReviewText;
   originalText?: GoogleReviewText;
@@ -47,7 +48,25 @@ export interface ReviewsData {
 // ── Config ──
 
 const PLACE_ID = 'ChIJ40ZeSCkQoWARKnA5HDgWS1s';
-const FIELDS = 'reviews,rating,userRatingCount';
+// Fetch with 3 language codes in parallel — Google returns different
+// batches of reviews per language, so we can surface more text reviews.
+const LANG_CODES = ['bs', 'en', 'de'] as const;
+const FIELD_MASK =
+  'reviews.name,reviews.rating,reviews.text,reviews.originalText,' +
+  'reviews.authorAttribution,reviews.relativePublishTimeDescription,' +
+  'reviews.publishTime,reviews.googleMapsUri,rating,userRatingCount';
+
+// ── Helper ──
+
+async function fetchReviews(apiKey: string, lang: string): Promise<GooglePlacesResponse> {
+  const url = `https://places.googleapis.com/v1/places/${PLACE_ID}?key=${apiKey}&languageCode=${lang}`;
+  const res = await fetch(url, {
+    headers: { 'X-Goog-FieldMask': FIELD_MASK },
+    next: { revalidate: 3600 },
+  });
+  if (!res.ok) throw new Error(`Places API ${lang}: ${res.status}`);
+  return res.json() as Promise<GooglePlacesResponse>;
+}
 
 // ── Handler ──
 
@@ -65,32 +84,50 @@ export async function GET() {
   }
 
   try {
-    const url = `https://places.googleapis.com/v1/places/${PLACE_ID}?fields=${FIELDS}&key=${apiKey}`;
+    // Fetch all 3 language variants in parallel
+    const results = await Promise.allSettled(
+      LANG_CODES.map((lang) => fetchReviews(apiKey, lang))
+    );
 
-    const res = await fetch(url, {
-      next: { revalidate: 3600 }, // 24h ISR
-    });
+    // Use the first successful response for the overall rating/count
+    const firstOk = results.find((r): r is PromiseFulfilledResult<GooglePlacesResponse> => r.status === 'fulfilled');
+    const rating = firstOk?.value.rating ?? 0;
+    const userRatingCount = firstOk?.value.userRatingCount ?? 0;
 
-    if (!res.ok) {
-      throw new Error(`Google Places API error: ${res.status}`);
+    // Collect all raw reviews, deduplicate by review `name` (unique ID)
+    const seen = new Set<string>();
+    const allRaw: GoogleReview[] = [];
+
+    for (const result of results) {
+      if (result.status !== 'fulfilled') continue;
+      for (const r of result.value.reviews ?? []) {
+        if (!r.name || seen.has(r.name)) continue;
+        seen.add(r.name);
+        allRaw.push(r);
+      }
     }
 
-    const data: GooglePlacesResponse = await res.json();
+    // Keep only reviews with actual text content, sort newest first
+    const reviews: CleanReview[] = allRaw
+      .filter((r) => {
+        const text = r.originalText?.text ?? r.text?.text ?? '';
+        return text.trim().length > 0;
+      })
+      .sort((a, b) => {
+        const ta = a.publishTime ? new Date(a.publishTime).getTime() : 0;
+        const tb = b.publishTime ? new Date(b.publishTime).getTime() : 0;
+        return tb - ta;
+      })
+      .map((r) => ({
+        author: r.authorAttribution.displayName,
+        rating: r.rating,
+        text: r.originalText?.text ?? r.text?.text ?? '',
+        relativeTime: r.relativePublishTimeDescription,
+        publishTime: r.publishTime,
+        mapsUri: r.googleMapsUri,
+      }));
 
-    const reviews: CleanReview[] = (data.reviews ?? []).map((r) => ({
-      author: r.authorAttribution.displayName,
-      rating: r.rating,
-      text: r.originalText?.text ?? r.text?.text ?? '',
-      relativeTime: r.relativePublishTimeDescription,
-      publishTime: r.publishTime,
-      mapsUri: r.googleMapsUri,
-    }));
-
-    const result: ReviewsData = {
-      rating: data.rating ?? 0,
-      userRatingCount: data.userRatingCount ?? 0,
-      reviews,
-    };
+    const result: ReviewsData = { rating, userRatingCount, reviews };
 
     return NextResponse.json(result, {
       status: 200,
