@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslate } from '@/context/LanguageContext';
-import { Bot, BarChart2, Zap, MessageCircle, Sparkles, ArrowDown } from 'lucide-react';
+import { Bot, BarChart2, Zap, Sparkles, ArrowDown } from 'lucide-react';
 import { useInView } from '@/hooks/useInView';
 
 const ITEM_COUNT = 3;
@@ -85,19 +85,17 @@ export default function SajamAI() {
           })}
         </div>
 
-        {/* CTA */}
+        {/* CTA — anchor ka Offer sekciji */}
         <div
           className={`text-center animate-on-scroll ${isInView ? 'is-visible' : ''}`}
           style={{ transitionDelay: '360ms' }}
         >
           <a
-            href="https://wa.me/message/U4Z7GJU4ZSL5M1"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold rounded-xl hover:from-green-400 hover:to-green-500 transition-all shadow-lg shadow-green-500/25"
+            href="#offer"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-cyan-500/40 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-500/10 hover:border-cyan-400 transition-all"
           >
-            <MessageCircle className="w-5 h-5" />
             {t('sajam2026:ai.cta') as string}
+            <ArrowDown className="w-4 h-4" />
           </a>
           <p className="text-gray-500 text-xs mt-3">
             {t('sajam2026:ai.ctaNote') as string}

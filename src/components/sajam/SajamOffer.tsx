@@ -6,6 +6,7 @@ import { useInView } from '@/hooks/useInView';
 
 const INCLUDE_COUNT = 4;
 const PRICE_COUNT = 3;
+const AI_PRICE_COUNT = 3;
 const STEP_COUNT = 3;
 
 export default function SajamOffer() {
@@ -61,6 +62,17 @@ export default function SajamOffer() {
               <p className="text-xs text-gray-400 mt-2">
                 {t('sajam2026:offer.pricing.note')}
               </p>
+
+              <p className="text-sm font-semibold text-white mt-6 mb-3">
+                {t('sajam2026:offer.aiPricing.title')}
+              </p>
+              <div className="space-y-1.5">
+                {Array.from({ length: AI_PRICE_COUNT }).map((_, i) => (
+                  <p key={i} className="text-gray-300 text-sm">
+                    {t(`sajam2026:offer.aiPricing.items.${i}`)}
+                  </p>
+                ))}
+              </div>
             </div>
 
             <div className="border-t border-gray-700/50 pt-6 mb-8">

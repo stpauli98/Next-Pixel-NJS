@@ -32,6 +32,11 @@
         "problem": "Ne prodajete online",
         "description": "Vaši proizvodi su odlični, ali prodajete samo lokalno. Internet vam može otvoriti cijelu BiH.",
         "solution": "Online prodavnica od 2.499 KM — vaši proizvodi dostupni svima."
+      },
+      {
+        "problem": "Dostupni ste samo dok radite",
+        "description": "Kupci i gosti pitaju navečer, za vikend, usred sezone. Svaki propušten upit je propušten prihod.",
+        "solution": "AI asistent odgovara umjesto vas — 24 sata dnevno, bez odmora."
       }
     ]
   },
@@ -96,6 +101,14 @@
       ],
       "note": "Cijene sa uračunatim popustom. Bez skrivenih troškova."
     },
+    "aiPricing": {
+      "title": "AI usluge kreću od",
+      "items": [
+        "2.500 KM — AI asistent za upite klijenata",
+        "3.500 KM — pametni dashboard prodaje",
+        "1.500 KM — automatizacija rezervacija i notifikacija"
+      ]
+    },
     "process": {
       "title": "Kako dalje?",
       "steps": [
@@ -149,7 +162,7 @@
         "price": "od 1.500 KM"
       }
     ],
-    "cta": "Razgovarajmo — bez tehničkog žargona",
+    "cta": "Pogledajte sajamsku ponudu",
     "ctaNote": "Besplatan razgovor o vašim svakodnevnim izazovima"
   }
 }

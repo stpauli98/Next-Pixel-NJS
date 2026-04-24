@@ -32,6 +32,11 @@
         "problem": "You don't sell online",
         "description": "Your products are great, but you only sell locally. The internet can open up all of BiH for you.",
         "solution": "Online store from 2,499 KM — your products available to everyone."
+      },
+      {
+        "problem": "You're only available when you're working",
+        "description": "Customers and guests ask in the evening, on weekends, in peak season. Every missed inquiry is missed income.",
+        "solution": "An AI assistant replies instead of you — 24 hours a day, without rest."
       }
     ]
   },
@@ -96,6 +101,14 @@
       ],
       "note": "Prices include the fair discount. No hidden costs."
     },
+    "aiPricing": {
+      "title": "AI services start from",
+      "items": [
+        "2,500 KM — AI assistant for client inquiries",
+        "3,500 KM — smart sales dashboard",
+        "1,500 KM — automation for bookings and notifications"
+      ]
+    },
     "process": {
       "title": "What's next?",
       "steps": [
@@ -149,7 +162,7 @@
         "price": "from 1,500 KM"
       }
     ],
-    "cta": "Let's talk — no tech jargon",
+    "cta": "View the fair offer",
     "ctaNote": "Free conversation about your everyday challenges"
   }
 }

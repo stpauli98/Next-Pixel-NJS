@@ -32,6 +32,11 @@
         "problem": "Sie verkaufen nicht online",
         "description": "Ihre Produkte sind hervorragend, aber Sie verkaufen nur lokal. Das Internet kann ganz BiH für Sie öffnen.",
         "solution": "Online-Shop ab 2.499 KM — Ihre Produkte für alle verfügbar."
+      },
+      {
+        "problem": "Sie sind nur erreichbar, wenn Sie arbeiten",
+        "description": "Kunden und Gäste fragen abends, am Wochenende, mitten in der Saison. Jede verpasste Anfrage ist entgangener Umsatz.",
+        "solution": "Ein KI-Assistent antwortet für Sie — 24 Stunden am Tag, ohne Pause."
       }
     ]
   },
@@ -96,6 +101,14 @@
       ],
       "note": "Preise inkl. Messerabatt. Keine versteckten Kosten."
     },
+    "aiPricing": {
+      "title": "KI-Dienste ab",
+      "items": [
+        "2.500 KM — KI-Assistent für Kundenanfragen",
+        "3.500 KM — intelligentes Vertriebs-Dashboard",
+        "1.500 KM — Automatisierung für Buchungen und Benachrichtigungen"
+      ]
+    },
     "process": {
       "title": "Wie geht es weiter?",
       "steps": [
@@ -149,7 +162,7 @@
         "price": "ab 1.500 KM"
       }
     ],
-    "cta": "Lassen Sie uns reden — kein Fachjargon",
+    "cta": "Messeangebot ansehen",
     "ctaNote": "Kostenloses Gespräch über Ihre alltäglichen Herausforderungen"
   }
 }
