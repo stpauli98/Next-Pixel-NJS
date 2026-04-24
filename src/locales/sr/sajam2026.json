@@ -19,14 +19,9 @@
     "sectionSubtitle": "Ovo su problemi koje najčešće čujem od privrednika na sajmovima u Gradišci i Banjoj Luci",
     "items": [
       {
-        "problem": "Nemate web sajt",
-        "description": "Klijenti vas ne mogu naći online. Konkurencija koja ima sajt dobija vaše potencijalne mušterije.",
-        "solution": "Profesionalni sajt od 999 KM — gotov za 4-6 sedmica."
-      },
-      {
-        "problem": "Sajt vam je zastario",
-        "description": "Sajt izgleda kao iz 2015. Ne radi na mobilnom. Spor je. Klijenti odu na konkurenciju.",
-        "solution": "Redizajn koji modernizuje izgled i poboljšava rezultate."
+        "problem": "Nemate sajt ili je zastario",
+        "description": "Klijenti vas ne mogu naći online — ili vas nađu ali odmah odu. Sajt koji izgleda staro, sporo se učitava ili ne radi na mobilnom radi isti posao kao da ga nema.",
+        "solution": "Profesionalni sajt ili redizajn od 999 KM — gotov za 4-6 sedmica."
       },
       {
         "problem": "Ne prodajete online",

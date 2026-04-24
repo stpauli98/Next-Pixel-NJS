@@ -4,7 +4,7 @@ import { useTranslate } from '@/context/LanguageContext';
 import { AlertCircle, ArrowRight } from 'lucide-react';
 import { useInView } from '@/hooks/useInView';
 
-const PROBLEM_COUNT = 4;
+const PROBLEM_COUNT = 3;
 
 export default function SajamProblems() {
   const { t } = useTranslate();

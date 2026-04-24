@@ -19,14 +19,9 @@
     "sectionSubtitle": "Das sind die Probleme, die ich am häufigsten von Unternehmern auf Messen in Gradiška und Banja Luka höre",
     "items": [
       {
-        "problem": "Sie haben keine Website",
-        "description": "Kunden können Sie online nicht finden. Ihre Konkurrenz mit Website bekommt Ihre potenziellen Kunden.",
-        "solution": "Professionelle Website ab 999 KM — fertig in 4-6 Wochen."
-      },
-      {
-        "problem": "Ihre Website ist veraltet",
-        "description": "Die Website sieht aus wie 2015. Funktioniert nicht auf dem Handy. Ist langsam. Kunden gehen zur Konkurrenz.",
-        "solution": "Redesign, das Ihr Erscheinungsbild modernisiert und die Ergebnisse verbessert."
+        "problem": "Keine Website oder sie ist veraltet",
+        "description": "Kunden können Sie online nicht finden — oder sie finden Sie und gehen sofort wieder. Eine alte, langsame oder mobiluntaugliche Website macht dasselbe wie gar keine.",
+        "solution": "Professionelle Website oder Redesign ab 999 KM — fertig in 4-6 Wochen."
       },
       {
         "problem": "Sie verkaufen nicht online",
